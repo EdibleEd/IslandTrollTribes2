@@ -1,0 +1,16 @@
+// This file is used to override exisitng heros
+// New hero creation is NOT possible
+
+"DOTAHeroes"
+{
+	// 	This is an example of an overridden hero
+	//	It retains all fields of the original unit that are not overridden here 
+	"npc_dota_hero_storm_bro"
+	{
+	 	"override_hero" 	"npc_dota_hero_storm_spirit"
+	 	"ModelScale"        "0.4"
+	}
+
+	
+
+}

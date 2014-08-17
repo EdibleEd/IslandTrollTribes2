@@ -1,0 +1,10 @@
+// This file controls which heroes are pickable in the addon, and how many are allowed
+"CustomHeroList"
+{
+	//"npc_dota_HERONAME" 			"[Number allowed, -1 meaning any number]"
+
+	// You refer to heroes by the name they usually have
+	// Not the name you gave them on override
+	"npc_dota_hero_storm_spirit" "1"
+	//"npc_dota_hero_axe" "1"
+}

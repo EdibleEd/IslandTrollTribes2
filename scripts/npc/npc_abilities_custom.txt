@@ -1,0 +1,8 @@
+// This file details customised abilities for your addon
+// Abilities are complicated, so heres an example
+// Parts that are not self-explanatory are commented
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+}
