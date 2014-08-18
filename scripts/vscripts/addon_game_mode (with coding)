@@ -1,0 +1,301 @@
+-- Generated from template
+
+--helps find file that makes items dropping on death work
+require( "itemfunctions" )
+------------------------------------------------------------------------------
+-- sets up recipes to work
+allowed_item_combos_two = {}
+allowed_item_combos_three = {}
+
+
+
+if TrollTribesMapGameMode == nil then
+        TrollTribesMapGameMode = class({})
+end
+--Precache Custom Resources that will be spawned
+function Precache(context)
+	PrecacheItemByNameSync( "item_tinder", context )
+	PrecacheItemByNameSync( "item_raw_meat", context )
+	PrecacheItemByNameSync( "item_bone", context )
+	PrecacheModel( "Elk", context )
+	PrecacheUnitByNameAsync( "Elk", context )
+	PrecacheModel( "Hawk", context )
+	PrecacheUnitByNameAsync( "Hawk", context )
+end
+--------------------------------------------------------------------------------
+-- Evaluate the state of the game
+function TrollTribesMapGameMode:OnThink()
+        if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+                print( "TrollTribes addon script is running." )
+                self.SpawnElks1() -- Runs SpawnElks1 Script
+				self.SpawnElks2() -- Runs SpawnElks2 Script
+				self.SpawnElks3() -- Runs SpawnElks3 Script
+				self.SpawnElks4() -- Runs SpawnElks4 Script
+				self.SpawnHawks1() -- Runs SpawnHawks1 Script
+				self.SpawnHawks2() -- Runs SpawnHawks2 Script
+				self.SpawnHawks3() -- Runs SpawnHawks3 Script
+				self.SpawnHawks4() -- Runs SpawnHawks4 Script
+
+        elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+                return nil
+        end
+        return 10 -- This is how many seconds it will wait to retrigger the spawn mechanic
+end
+--------------------------------------------------------------------------------
+-- Elk Spawner 1
+
+ElkSpawner1 = "wildlife_elk_spawner1"
+ElkWaypoint1 = "elk_wp1"
+
+function TrollTribesMapGameMode:SpawnElks1()
+        local spawnLocation = Entities:FindByName( nil, ElkSpawner1 )
+        local waypointlocation = Entities:FindByName ( nil, ElkWaypoint1 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Elk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create elk1 has run")
+                --Sets the waypath to follow. "elk_wp1"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Elk Spawner 2
+
+ElkSpawner2 = "wildlife_elk_spawner2"
+ElkWaypoint2 = "elk_wp2"
+
+function TrollTribesMapGameMode:SpawnElks2()
+        local spawnLocation = Entities:FindByName( nil, ElkSpawner2 )
+        local waypointlocation = Entities:FindByName ( nil, ElkWaypoint2 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Elk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create elk2 has run")
+                --Sets the waypath to follow. "elk_wp2"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Elk Spawner 3
+
+ElkSpawner3 = "wildlife_elk_spawner3"
+ElkWaypoint3 = "elk_wp3"
+
+function TrollTribesMapGameMode:SpawnElks3()
+        local spawnLocation = Entities:FindByName( nil, ElkSpawner3 )
+        local waypointlocation = Entities:FindByName ( nil, ElkWaypoint3 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Elk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create elk3 has run")
+                --Sets the waypath to follow. "elk_wp3"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Elk Spawner 4
+
+ElkSpawner4 = "wildlife_elk_spawner4"
+ElkWaypoint4 = "elk_wp4"
+
+function TrollTribesMapGameMode:SpawnElks4()
+        local spawnLocation = Entities:FindByName( nil, ElkSpawner4 )
+        local waypointlocation = Entities:FindByName ( nil, ElkWaypoint4 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Elk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create elk4 has run")
+                --Sets the waypath to follow. "elk_wp4"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Hawk Spawner 1
+
+HawkSpawner1 = "wildlife_hawk_spawner1"
+HawkWaypoint1 = "hawk_wp1"
+
+function TrollTribesMapGameMode:SpawnHawks1()
+        local spawnLocation = Entities:FindByName( nil, HawkSpawner1 )
+        local waypointlocation = Entities:FindByName ( nil, HawkWaypoint1 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Hawk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create hawk1 has run")
+                --Sets the waypath to follow. "hawk_wp1"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Hawk Spawner 2
+
+HawkSpawner2 = "wildlife_hawk_spawner2"
+HawkWaypoint1 = "hawk_wp2"
+
+function TrollTribesMapGameMode:SpawnHawks2()
+        local spawnLocation = Entities:FindByName( nil, HawkSpawner2 )
+        local waypointlocation = Entities:FindByName ( nil, HawkWaypoint2 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Hawk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create hawk2 has run")
+                --Sets the waypath to follow. "hawk_wp2"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Hawk Spawner 3
+
+HawkSpawner3 = "wildlife_hawk_spawner3"
+HawkWaypoint3 = "hawk_wp3"
+
+function TrollTribesMapGameMode:SpawnHawks3()
+        local spawnLocation = Entities:FindByName( nil, HawkSpawner3 )
+        local waypointlocation = Entities:FindByName ( nil, HawkWaypoint3 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Hawk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create hawk3 has run")
+                --Sets the waypath to follow. "hawk_wp3"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Hawk Spawner 4
+
+HawkSpawner4 = "wildlife_hawk_spawner4"
+HawkWaypoint4 = "hawk_wp4"
+
+function TrollTribesMapGameMode:SpawnHawks4()
+        local spawnLocation = Entities:FindByName( nil, HawkSpawner4 )
+        local waypointlocation = Entities:FindByName ( nil, HawkWaypoint4 )
+        local spawnerActive = 1
+        while spawnerActive>=1 do
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+                local creature = CreateUnitByName( "Hawk" , spawnLocation:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+                print ("create hawk4 has run")
+                --Sets the waypath to follow. "hawk_wp4"
+                creature:SetInitialGoalEntity( waypointlocation )
+
+                                spawnerActive = 0
+        end
+end
+--------------------------------------------------------------------------------
+-- Create the game mode when we activate
+function Activate()
+        GameRules.TrollTribesMapGameMode = TrollTribesMapGameMode()
+        GameRules.TrollTribesMapGameMode:InitGameMode()
+
+end
+--------------------------------------------------------------------------------
+-- The Game Rules
+function TrollTribesMapGameMode:InitGameMode()
+        print( "TrollTribes addon is loaded." )
+
+        --self:_ReadGameConfiguration()
+        GameRules:SetTimeOfDay( 0.75 )
+        GameRules:SetHeroRespawnEnabled( false )
+        GameRules:SetHeroSelectionTime( 30.0 )
+        GameRules:SetPreGameTime( 10.0 )
+        GameRules:SetPostGameTime( 60.0 )
+        GameRules:SetTreeRegrowTime( 60.0 )
+        GameRules:SetHeroMinimapIconSize( 400 )
+        GameRules:SetCreepMinimapIconScale( 0.7 )
+        GameRules:SetRuneMinimapIconScale( 0.7 )
+        GameRules:SetGoldTickTime( 60.0 )
+        GameRules:SetGoldPerTick( 0 )
+        GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+		-- Listen to item events
+-- syntax here is ([event to listen for], [handle of function to call], [context])
+ListenToGameEvent("dota_item_picked_up", Dynamic_Wrap(TrollTribesMapGameMode, 'OnItemUpdate'), self)
+-- This one is broken!
+ListenToGameEvent("dota_inventory_changed", Dynamic_Wrap(TrollTribesMapGameMode, 'OnItemUpdate'), self)
+ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(TrollTribesMapGameMode, 'OnItemUpdate'), self)
+ListenToGameEvent("dota_item_gifted", Dynamic_Wrap(TrollTribesMapGameMode, 'OnItemUpdate'), self)
+-- Item recipes
+allowed_item_combos_two["item_flint"]  = {"item_raw_meat", "item_bone"}
+allowed_item_combos_three["item_stone"] = {"item_bone", "item_raw_meat", "item_bone"}
+end
+-----------------------------------------------------------------------------------
+-- Function for keeping track of what items are being put in what slot for a recipe
+function TrollTribesMapGameMode:OnItemUpdate(keys)
+
+-- Lets find the hero we want to work with
+player = PlayerInstanceFromIndex(keys.PlayerID+1)
+hero =   player:GetAssignedHero()
+
+-- lua uses an interesting sytax for for loops. for [start], [finish], [increment]
+-- we want to run over the 6 inventory slots,, starting at index 0
+for i=0,5,1 do
+    -- If there is no item here, then we cannot do anything!
+    if  hero:GetItemInSlot(i) ~= nil then
+        -- Lets grab the item name, since we'll need it for print statements
+        local item1 = hero:GetItemInSlot(i):GetName()
+
+        -- No point trying to combine three items after position 4
+        if i < 4 then
+            if hero:GetItemInSlot(i+1) == nil or hero:GetItemInSlot(i+2) == nil then
+                -- One of the two items after our current one is nil, so we can't use it
+                print("No three-part combination possible using " .. item1 .. " as the first item")
+            else
+                -- There are items there!
+                local item2 = hero:GetItemInSlot(i+1):GetName()
+                local item3 = hero:GetItemInSlot(i+2):GetName()
+                print("combination of " .. item1 .. ", "  .. item2 .. " and " .. item3 .." possible")
+
+                -- Finally, lets check to see if this pair is in our list of items that can be combined
+                for result, components in pairs(allowed_item_combos_three) do
+                    if components[1] == item1 and components[2] == item2 and components[3] == item3 then
+                        -- It is!
+                        print(result .. " can be made!")
+                        -- Lets remove the old items
+                        hero:GetItemInSlot(i):Kill()
+                        hero:GetItemInSlot(i+1):Kill()
+                        hero:GetItemInSlot(i+2):Kill()
+                        -- And add the new one!
+                        hero:AddItem(CreateItem(result, hero, hero))
+                    end
+                end
+            end
+        end
+
+        if i < 5 then
+            if hero:GetItemInSlot(i+1) == nil then
+                print("No two-part combination possible using " .. item1 .. " as the first item")
+            else
+
+                local item2 = hero:GetItemInSlot(i+1):GetName()
+                print("combination of " .. item1 .. " and "  .. item2 .. " possible")
+                for result, components in pairs(allowed_item_combos_two) do
+                    if components[1] == item1 and components[2] == item2 then
+                        print(result .. " can be made!")
+                    end
+                end
+            end
+        end
+    end
+end
+end
+--------------------------------------------------------------------------------
