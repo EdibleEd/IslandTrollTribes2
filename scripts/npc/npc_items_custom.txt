@@ -1,55 +1,2174 @@
 "DOTAAbilities"
 {
 
-	// An example item
-	"item_arcane_boots2"
+//Remember to remove stacking from buildings
+//All items drop upon death by default. They also play the gem drop sound (can be changed).
+//===========================================================================================
+
+======================
+// Custom: Tinder
+//===========================================================================================
+
+======================
+	"item_tinder"
 	{
-		"ID"							"1006"
+		"ID"							"1001"
 
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"						"item_arcane_boots"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"55.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25"
-		"ItemCost"						"2450"
-		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
-		"ItemQuality"					"rare"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemDisassembleRule"			"0"
-		"ItemAlertable"					"1"
-		"ItemAliases"					"mana;mb"
 		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"tinder"
+		"Model"					"models/props_gameplay/tango.vmdl"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"75"
+				"buff_duration"			"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"replenish_radius"		"600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"replenish_amount"		"250"
+				"total_health"			"400"
 			}
 		}
 	}
+
+//===========================================================================================
+
+======================
+// Custom: Flint
+//===========================================================================================
+
+======================
+	"item_flint"
+	{
+		"ID"							"1002"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"item_ultimate_orb"
+		"Model"					
+
+"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+//===========================================================================================
+
+======================
+// Custom: Stone
+//===========================================================================================
+
+======================
+	"item_stone"
+	{
+		"ID"							"1003"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"stone"
+		"Model"					
+
+"models/props_rock/riveredge_rocks_small003.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Stick
+//===========================================================================================
+
+======================
+	"item_stick"
+	{
+		"ID"							"1004"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"item_branches"
+		"Model"					"models/props_gameplay/branch.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Bone
+//===========================================================================================
+
+======================
+	"item_bone"
+	{
+		"ID"							"1005"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"bone"
+		"Model"					"models/props_bones/bone002.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Raw Meat
+//===========================================================================================
+
+======================
+	"item_raw_meat"
+	{
+		"ID"							"1006"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"raw_meat"
+		"Model"					
+
+"models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Bee Hive
+//===========================================================================================
+
+======================
+	"item_bee_hive"
+	{
+		"ID"							"1007"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"item_aegis"
+		"Model"					"models/props_winter/nest_01.vmdl"
+		"Effect"				
+
+"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_casca
+
+de.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+//===========================================================================================
+
+======================
+// Custom: Mana Crystal
+//===========================================================================================
+
+======================
+	"item_mana_crystal"
+	{
+		"ID"							"1008"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"item_aegis"
+		"Model"					"models/props_rock/crystal_02.vmdl"
+		"Effect"				
+
+"particles/units/heroes/hero_puck/puck_dreamcoil_magic.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Steel Ingot
+//===========================================================================================
+
+======================
+	"item_steel_ingot"
+	{
+		"ID"							"1009"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"ingot_steel"
+		"Model"					
+
+"models/props_magic/bad_crystals002.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Iron Ingot
+//===========================================================================================
+
+======================
+	"item_iron_ingot"
+	{
+		"ID"							"1010"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"ingot_iron"
+		"Model"					
+
+"models/props_magic/bad_crystals001.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+
+//===========================================================================================
+
+======================
+// Custom: Clayball
+//===========================================================================================
+
+======================
+	"item_clay_ball"
+	{
+		"ID"							"1011"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"clayball"
+		"Model"					"models/particle/snowball.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+//===========================================================================================
+
+======================
+// Custom: River Root
+//===========================================================================================
+
+======================
+	"item_river_root"
+	{
+		"ID"							"1012"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"river_root"
+		"Model"					
+
+"models/heroes/treant_protector/treant_ground_root.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+//===========================================================================================
+
+======================
+// Custom: River Stem
+//===========================================================================================
+
+======================
+	"item_river_stem"
+	{
+		"ID"							"1013"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"river_stem"
+		"Model"					
+
+"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Thistles
+//===========================================================================================
+
+======================
+	"item_thistles"
+	{
+		"ID"							"1014"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"thistles"
+		"Model"					
+
+"models/props_nature/cattails001.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Dark Thistles
+//===========================================================================================
+
+======================
+	"item_thistles_dark"
+	{
+		"ID"							"1015"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"thistles"
+		"Model"					
+
+"models/props_nature/cattails001.vmdl"
+		"Effect"				
+
+"particles/units/heroes/hero_dark_seer/dark_seer_surge_h.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+
+
+//===========================================================================================
+
+======================
+// Custom: Blow Gun
+//===========================================================================================
+
+======================
+	"item_blow_gun"
+	{
+		"ID"							"1016"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"blow_gun"
+		"Model"					
+
+"models/courier/greevil/greevil_tail1.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+//===========================================================================================
+
+======================
+// Custom: Butsu
+//===========================================================================================
+
+======================
+	"item_herb_butsu"
+	{
+		"ID"							"1017"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_butsu"
+		"Model"					
+
+"models/props_nature/mushroom_wild_00.vmdl"
+		"Effect"				""
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Blue Herb
+//===========================================================================================
+
+======================
+	"item_herb_blue"
+	{
+		"ID"							"1018"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_blue"
+		"Model"					
+
+"models/props_nature/grass_clump_00c.vmdl"
+		"Effect"				
+
+"particles/newplayer_fx/npx_splash_water3.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Yellow Herb
+//===========================================================================================
+
+======================
+	"item_herb_yellow"
+	{
+		"ID"							"1019"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_yellow"
+		"Model"					
+
+"models/props_nature/grass_clump_00c.vmdl"
+		"Effect"				
+
+"particles/econ/courier/courier_eye_glow_01/courier_eye_glow_01c.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+//===========================================================================================
+
+======================
+// Custom: Purple Herb
+//===========================================================================================
+
+======================
+	"item_herb_purple"
+	{
+		"ID"							"1020"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_purple"
+		"Model"					
+
+"models/props_nature/grass_clump_00c.vmdl"
+		"Effect"				
+
+"particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm_moth_g
+
+low.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+//===========================================================================================
+
+======================
+// Custom: Orange Herb
+//===========================================================================================
+
+======================
+	"item_herb_orange"
+	{
+		"ID"							"1021"
+
+		// General
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | 
+
+DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_purple"
+		"Model"					
+
+"models/props_nature/grass_clump_00c.vmdl"
+		"Effect"				
+
+"particles/base_attacks/ranged_tower_bad_glow.vpcf"
+		
+		// Stats
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				
+
+"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               			"1"
+		"ItemInitialCharges"				"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  		"1"
+		"ItemSellable"                  		"0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			
+
+"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_health"			"400"
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+//===========================================================================================
+
+======================
+	// Recipe: XXXXXX
+	
+
+//===========================================================================================
+
+======================
+	"item_recipe_XXXXXXXX"
+	{
+		"ID"							"1005"
+
+		"BaseClass"						
+
+"item_recipe_arcane_boots"
+
+		// Item Info
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"						""
+		
+		// Recipe
+		
+
+//-------------------------------------------------------------------------------------------
+
+------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_NEWITEM"
+		"ItemRequirements"
+		{
+			"01"						"item_1;item_2"
+		}
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
