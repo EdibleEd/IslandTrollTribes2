@@ -1,17 +1,3 @@
-function Precache(context)
-	PrecacheModel( "item_tinder", context )
-	PrecacheItemByNameSync( "item_tinder", context )
-	PrecacheModel( "item_raw_meat", context )
-	PrecacheItemByNameSync( "item_raw_meat", context )
-	PrecacheModel( "item_bone", context )
-	PrecacheItemByNameSync( "item_bone", context )
-	PrecacheModel( "Elk", context )
-	PrecacheUnitByNameAsync( "Elk", context )
-	PrecacheModel( "Hawk", context )
-	PrecacheUnitByNameAsync( "Hawk", context )
-end
-
-
 if itemFunctions == nil then
 	print ( '[ItemFunctions] creating itemFunctions' )
 	itemFunctions = {} -- Creates an array to let us beable to index itemFunctions when creating new functions
