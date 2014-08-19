@@ -89,7 +89,7 @@ function ITT_GameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetThink( "OnCreatureThink", self, "CreatureThink", 2 )
 
     -- This is the troll thinker. All logic on the player's heros should be checked here
-    GameRules:GetGameModeEntity():SetThink( "OnTrollThink", self, "TrollThink", 1 )
+    GameRules:GetGameModeEntity():SetThink( "OnTrollThink", self, "TrollThink", 0 )
 
     GameRules:GetGameModeEntity():ClientLoadGridNav()
     GameRules:SetTimeOfDay( 0.75 )
@@ -115,11 +115,12 @@ end
 function ITT_GameMode:OnTrollThink()
 
     if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        -- Will not run until pregame ends
         return 1
     end
 
     for i=1, maxPlayerID, 1 do
-        ITT_TrollController:HeatLoss(i)
+        ITT_TrollController:Hunger(i)
         ITT_TrollController:InventoryCheck(i)
     end
 

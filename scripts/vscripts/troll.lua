@@ -3,12 +3,12 @@
 --
 -- Code from: Amanite, and http://www.reddit.com/r/Dota2Modding/comments/2dc0xm/guide_to_change_gold_over_time_to_reliable_gold/
 
-HEAT_LOSS_PER_UNIT = 3
-TICKS_PER_HEAT_UNIT = 6
+HUNGER_LOSS_PER_UNIT = 3
+TICKS_PER_HUNGER_UNIT = 6
 
 allowed_item_combos_two     = {}
 allowed_item_combos_three   = {}
-heatTicks = 0
+hungerTicks = 0
 
 if ITT_TrollController == nil then
     print("Troll class created")
@@ -20,9 +20,9 @@ end
 -- This reduces each players health by 3, every 3 seconds
 -- The return values ensure it closes when the game ends
 -- Possibly need to detect only living heroes, will test that with more players
-function ITT_TrollController:HeatLoss(playerID)
-    heatTicks = heatTicks + 1
-    if heatTicks % 6 == 0 then
+function ITT_TrollController:Hunger(playerID)
+    hungerTicks = hungerTicks + 1
+    if hungerTicks % 6 == 0 then
         local player = PlayerInstanceFromIndex(playerID)
         local hero = player:GetAssignedHero()
         hero:ModifyHealth(hero:GetHealth()-3, hero,true,-3)
@@ -30,7 +30,7 @@ function ITT_TrollController:HeatLoss(playerID)
 end
 
 function ITT_TrollController:InventoryCheck(playerID)
-    print("Inv testing player " .. playerID)
+    -- print("Inv testing player " .. playerID)
     -- Lets find the hero we want to work with
     player = PlayerInstanceFromIndex(playerID)
     hero =   player:GetAssignedHero()
