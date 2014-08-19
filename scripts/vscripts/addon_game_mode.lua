@@ -47,12 +47,10 @@ function Precache( context )
     PrecacheItemByNameSync( "item_tinder", context )
     PrecacheItemByNameSync( "item_raw_meat", context )
     PrecacheItemByNameSync( "item_bone", context )
-    PrecacheModel( "Elk", context )
-    PrecacheUnitByNameAsync( "Elk", context )
-    PrecacheModel( "Hawk", context )
-    PrecacheUnitByNameAsync( "Hawk", context )
-    -- testing if stuff works regardless of custom units
-    PrecacheUnitByNameAsync( "npc_dota_hero_axe", context )
+
+    PrecacheUnitByNameAsync( "npc_dota_creature_elk", context )
+    PrecacheUnitByNameAsync( "npc_dota_creature_hawk", context )
+
     print("Precache Finish")
 end
 
