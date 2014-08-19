@@ -15,6 +15,7 @@ require( 'troll' )
 GAME_TICK_TIME              = 0.1  -- The game should update every half second
 GAME_CREATURE_TICK_TIME     = 10
 GAME_TROLL_TICK_TIME        = 0.5  -- Its really like its wc3!
+GAME_ITEM_TICK_TIME         = 30  -- Spawn items every 30?
 playerList = {}
 maxPlayerID = 0
 
@@ -83,12 +84,15 @@ function ITT_GameMode:InitGameMode()
     -- This is the global thinker. It should only manage game state
     GameRules:GetGameModeEntity():SetThink( "OnStateThink", self, "StateThink", 2 )
 
-    -- This is the creature thinker. All spawn logic goes here
+    -- This is the creature thinker. All neutral creature spawn logic goes here
     GameRules:GetGameModeEntity():SetThink( "OnCreatureThink", self, "CreatureThink", 2 )
 
     -- This is the troll thinker. All logic on the player's heros should be checked here
     GameRules:GetGameModeEntity():SetThink( "OnTrollThink", self, "TrollThink", 0 )
 
+    -- This is the item thinker. All random item spawn logic goes here
+    GameRules:GetGameModeEntity():SetThink( "OnItemThink", self, "ItemThink", 0 )
+    
     GameRules:GetGameModeEntity():ClientLoadGridNav()
     GameRules:SetTimeOfDay( 0.75 )
     GameRules:SetHeroRespawnEnabled( false )
@@ -109,14 +113,17 @@ function ITT_GameMode:InitGameMode()
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self)
     
 end
-
+-- This updates state on each troll
+-- Every half second it updates heat, checks inventory for items, etc
+-- Add anything you want to run regularly on each troll to this
 function ITT_GameMode:OnTrollThink()
 
     if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         -- Will not run until pregame ends
         return 1
     end
-
+    
+    -- This will run on every player, do stuff here
     for i=1, maxPlayerID, 1 do
         ITT_TrollController:Hunger(i)
         ITT_TrollController:InventoryCheck(i)
@@ -125,6 +132,7 @@ function ITT_GameMode:OnTrollThink()
     return GAME_TROLL_TICK_TIME
 end
 
+-- This is similar, but handles spawning creatures
 function ITT_GameMode:OnCreatureThink()
     for i=1, 4, 1 do
         ITT_AnimalSpawner:SpawnCreature("elk", i)
@@ -133,11 +141,18 @@ function ITT_GameMode:OnCreatureThink()
     return GAME_CREATURE_TICK_TIME
 end
 
+-- This will handle item spawns when they are implemented
+function ITT_GameMode:OnItemThink()
+    return GAME_ITEM_TICK_TIME
+end
+
+-- This will handle anything gamestate related that is not covered under other thinkers
 function ITT_GameMode:OnStateThink()
     --print(GameRules:State_Get())
     return GAME_TICK_TIME
 end
 
+-- When players connect, add them to the players list and begin operations on them
 function ITT_GameMode:OnPlayerConnectFull(keys)
     local playerID = keys.index + 1
     --local player = PlayerInstanceFromIndex(playerID)
@@ -147,6 +162,7 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
     maxPlayerID = maxPlayerID + 1
 end
 
+-- Prints recursively contents of a table
 function checkKeys(keys)
     for key, value in pairs(keys) do
         print (key,value)
@@ -154,6 +170,7 @@ function checkKeys(keys)
     end
 end    
 
+-- helper function for checkKeys
 function checkType(stuff)
     if (type(stuff)=="table") then
             for k, v in pairs(stuff) do
