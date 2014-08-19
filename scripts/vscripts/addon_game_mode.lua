@@ -5,6 +5,7 @@
 --helps find file that makes items dropping on death work
 require( "itemfunctions" )
 require( 'spawnanimals' )
+require( 'troll' )
 
 
 --[[
@@ -13,8 +14,9 @@ require( 'spawnanimals' )
 
 GAME_TICK_TIME              = 0.1  -- The game should update every half second
 GAME_CREATURE_TICK_TIME     = 10
-allowed_item_combos_two     = {}
-allowed_item_combos_three   = {}
+GAME_TROLL_TICK_TIME        = 0.5  -- Its really like its wc3!
+playerList = {}
+maxPlayerID = 0
 
 --[[
     Default cruft to set everything up
@@ -64,6 +66,7 @@ function Activate()
     GameRules.AddonTemplate:InitGameMode()
 
     ITT_AnimalSpawner = ITT_AnimalSpawner()
+    ITT_TrollController = ITT_TrollController()
 end
 
 --[[
@@ -85,24 +88,48 @@ function ITT_GameMode:InitGameMode()
     -- This is the creature thinker. All spawn logic goes here
     GameRules:GetGameModeEntity():SetThink( "OnCreatureThink", self, "CreatureThink", 2 )
 
+    -- This is the troll thinker. All logic on the player's heros should be checked here
+    GameRules:GetGameModeEntity():SetThink( "OnTrollThink", self, "TrollThink", 1 )
 
     GameRules:GetGameModeEntity():ClientLoadGridNav()
-    GameRules:SetPreGameTime(0.0)
-
-    GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+    GameRules:SetTimeOfDay( 0.75 )
+    GameRules:SetHeroRespawnEnabled( false )
+    GameRules:SetHeroSelectionTime( 30.0 )
+    GameRules:SetPreGameTime( 10.0 )
+    GameRules:SetPostGameTime( 60.0 )
+    GameRules:SetTreeRegrowTime( 60.0 )
+    GameRules:SetHeroMinimapIconSize( 400 )
+    GameRules:SetCreepMinimapIconScale( 0.7 )
+    GameRules:SetRuneMinimapIconScale( 0.7 )
+    GameRules:SetGoldTickTime( 60.0 )
+    GameRules:SetGoldPerTick( 0 )
 
     -- Listen for a game event.
     -- A list of events is findable here: https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/Built-In_Engine_Events
     -- A bunch of those are broken, so be warned
     -- Custom events can be made in /scripts/custom_events.txt
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self)
-    -- cvar_setf("dota_hide_cursor", 0.0)
+    
+end
+
+function ITT_GameMode:OnTrollThink()
+
+    if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        return 1
+    end
+
+    for i=1, maxPlayerID, 1 do
+        ITT_TrollController:HeatLoss(i)
+        ITT_TrollController:InventoryCheck(i)
+    end
+
+    return GAME_TROLL_TICK_TIME
 end
 
 function ITT_GameMode:OnCreatureThink()
     for i=1, 4, 1 do
-        ITT_AnimalSpawner:spawn("elk", i)
-        ITT_AnimalSpawner:spawn("hawk", i)
+        ITT_AnimalSpawner:SpawnCreature("elk", i)
+        ITT_AnimalSpawner:SpawnCreature("hawk", i)
     end
     return GAME_CREATURE_TICK_TIME
 end
@@ -114,9 +141,11 @@ end
 
 function ITT_GameMode:OnPlayerConnectFull(keys)
     local playerID = keys.index + 1
-    local player = PlayerInstanceFromIndex(playerID)
+    --local player = PlayerInstanceFromIndex(playerID)
     print( "Player " .. playerID .. " connected")
-    --DebugDrawBox(PlayerInstanceFromIndex(playerID):GetCursorPosition(), Vector(50,50), Vector(150,150), 100, 100, 100, 255, 10.0) 
+
+    playerList[playerID] = playerID
+    maxPlayerID = maxPlayerID + 1
 end
 
 function checkKeys(keys)
