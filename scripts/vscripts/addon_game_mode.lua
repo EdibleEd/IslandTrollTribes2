@@ -2,13 +2,19 @@
     Imported files
 ]]
 
---require()
+--helps find file that makes items dropping on death work
+require( "itemfunctions" )
+require( 'spawnanimals' )
+
 
 --[[
     Global variables
-]]
+]]--
 
-GAME_TICK_TIME = 0.1  -- The game should update every half second
+GAME_TICK_TIME              = 0.1  -- The game should update every half second
+GAME_CREATURE_TICK_TIME     = 10
+allowed_item_combos_two     = {}
+allowed_item_combos_three   = {}
 
 --[[
     Default cruft to set everything up
@@ -19,7 +25,7 @@ GAME_TICK_TIME = 0.1  -- The game should update every half second
         Precaching
         CL:  CWaitForGameServerStartupPrerequisite - this is where the sever signals it is ready to be connected to
         CL:  CCreateGameClientJob - this creates the creating client connection to server
-]]
+]]--
 if ITT_GameMode == nil then
     print("Script execution begin")
     ITT_GameMode = class({})
@@ -33,20 +39,31 @@ end
         PrecacheResource( "particle", "*.vpcf", context )
         PrecacheResource( "particle_folder", "particles/folder", context )
     This is called before the game is activated, but after the "cruft" has run.
-]]
+]]--
 function Precache( context )
-    print("Precache called")
-    --PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
+    print("Precache Begin")
+    PrecacheItemByNameSync( "item_tinder", context )
+    PrecacheItemByNameSync( "item_raw_meat", context )
+    PrecacheItemByNameSync( "item_bone", context )
+    PrecacheModel( "Elk", context )
+    PrecacheUnitByNameAsync( "Elk", context )
+    PrecacheModel( "Hawk", context )
+    PrecacheUnitByNameAsync( "Hawk", context )
+    -- testing if stuff works regardless of custom units
+    PrecacheUnitByNameAsync( "npc_dota_hero_axe", context )
+    print("Precache Finish")
 end
 
 --[[
     Create the game mode and our custom rules
     This is run once the engine has launched
-]]
+]]--
 function Activate()
     print("Activate Called")
     GameRules.AddonTemplate = ITT_GameMode()
     GameRules.AddonTemplate:InitGameMode()
+
+    ITT_AnimalSpawner = ITT_AnimalSpawner()
 end
 
 --[[
@@ -57,12 +74,17 @@ end
 
     Set the hero selection time. Make this 0.0 if you have you rown hero selection system (like wc3 taverns)
         GameRules:SetHeroSelectionTime( [time] )
-]]
+]]--
 function ITT_GameMode:InitGameMode()
     print( "Game mode setup." )
-    -- Set the game's thinker up
-    -- SetThink( [script function to run], [target to run thinker on], [thinker slot],  [delay before thinking occurs] )
-    GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+    -- Set the game's thinkers up
+
+    -- This is the global thinker. It should only manage game state
+    GameRules:GetGameModeEntity():SetThink( "OnStateThink", self, "StateThink", 2 )
+
+    -- This is the creature thinker. All spawn logic goes here
+    GameRules:GetGameModeEntity():SetThink( "OnCreatureThink", self, "CreatureThink", 2 )
+
 
     GameRules:GetGameModeEntity():ClientLoadGridNav()
     GameRules:SetPreGameTime(0.0)
@@ -74,23 +96,18 @@ function ITT_GameMode:InitGameMode()
     -- A bunch of those are broken, so be warned
     -- Custom events can be made in /scripts/custom_events.txt
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self)
-
     -- cvar_setf("dota_hide_cursor", 0.0)
 end
 
---[[
-    This is the game's thinker.
-    It will run every "tick"
+function ITT_GameMode:OnCreatureThink()
+    for i=1, 4, 1 do
+        ITT_AnimalSpawner:spawn("elk", i)
+        ITT_AnimalSpawner:spawn("hawk", i)
+    end
+    return GAME_CREATURE_TICK_TIME
+end
 
-    If this doesn't return a value it will not continue to be called
-    If this returns a value, it will return the time (in seconds) until it needs to be called again
-
-    GameRules:State_Get() returns the current game state
-        2   Hero select
-        4   Hero selected
-        5   Battle has begun
-]]
-function ITT_GameMode:OnThink()
+function ITT_GameMode:OnStateThink()
     --print(GameRules:State_Get())
     return GAME_TICK_TIME
 end

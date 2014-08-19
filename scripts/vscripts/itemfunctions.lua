@@ -1,6 +1,7 @@
+--[[
 if itemFunctions == nil then
 	print ( '[ItemFunctions] creating itemFunctions' )
-	itemFunctions = {} -- Creates an array to let us beable to index itemFunctions when creating new functions
+	itemFunctions = {} -- Creates an array to let us be able to index itemFunctions when creating new functions
 	itemFunctions.__index = itemFunctions
 end
 
@@ -14,7 +15,7 @@ end
 function itemFunctions:start() -- Runs whenever the itemFunctions.lua is ran
 	print('[ItemFunctions] itemFunctions started!')
 end
-
+]]--
 function DropItemOnDeath(keys) -- keys is the information sent by the ability
 	print( '[ItemFunctions] DropItemOnDeath Called' )
 	local killedUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
