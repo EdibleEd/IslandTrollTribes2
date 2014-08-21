@@ -1,5 +1,29 @@
 "DOTAAbilities"
 {
+	"item_trolltype1"
+	{
+		"ID"					"2001"
+		"BaseClass"				"item_datadriven"
+		"ItemCost"				"1"
+	}
+	"item_trolltype2"
+	{
+		"ID"					"2002"
+		"BaseClass"				"item_datadriven"
+		"ItemCost"				"1"
+	}
+	"item_trolltype3"
+	{
+		"ID"					"2003"
+		"BaseClass"				"item_datadriven"
+		"ItemCost"				"1"
+	}
+	"item_trolltype3"
+	{
+		"ID"					"2004"
+		"BaseClass"				"item_datadriven"
+		"ItemCost"				"1"
+	}
 
 //Remember to remove stacking from buildings
 //I used item_rapier for recipies so it turns the line into a placeholder for recipies (still being worked on). I did this so the item would have a recipie ready to go as well as an ID number for it.

@@ -32,6 +32,7 @@ maxPlayerID = 0
 if ITT_GameMode == nil then
     print("Script execution begin")
     ITT_GameMode = class({})
+    -- LoadKeyValues(filename a) 
 end
 
 --[[
@@ -49,8 +50,13 @@ function Precache( context )
     PrecacheItemByNameSync( "item_raw_meat", context )
     PrecacheItemByNameSync( "item_bone", context )
 
-    PrecacheUnitByNameAsync( "npc_dota_creature_elk", context )
-    PrecacheUnitByNameAsync( "npc_dota_creature_hawk", context )
+    PrecacheUnitByNameSync( "npc_dota_creature_elk", context )
+    PrecacheUnitByNameSync( "npc_dota_creature_hawk", context )
+
+    PrecacheUnitByNameSync( "npc_dota_hero_huskar", context )
+    PrecacheUnitByNameSync( "npc_dota_hero_witch_doctor", context )
+    PrecacheUnitByNameSync( "npc_dota_hero_dazzle", context )
+    PrecacheUnitByNameSync( "npc_dota_hero_troll_warlord", context )
 
     print("Precache Finish")
 end
@@ -149,8 +155,67 @@ end
 -- This will handle anything gamestate related that is not covered under other thinkers
 function ITT_GameMode:OnStateThink()
     --print(GameRules:State_Get())
+
+    for _,heroEntity in ipairs( HeroList:GetAllHeroes() ) do
+        local name = heroEntity:GetUnitName()
+        local playerEntity = heroEntity:GetPlayerOwner()
+
+        if heroEntity:GetItemInSlot(0) ~= nil then
+            local item = heroEntity:GetItemInSlot(0):GetName() 
+            local troll = ""
+
+            if item == "item_trolltype1" then
+                troll = "npc_dota_hero_huskar"
+            end
+            if item == "item_trolltype2" then
+                troll = "npc_dota_hero_witch_doctor"
+            end
+            if item == "item_trolltype3" then
+                troll = "npc_dota_hero_dazzle"
+            end
+            if item == "item_trolltype4" then
+                troll = "npc_dota_hero_troll_warlord"
+            end
+
+
+            if name == "npc_dota_hero_axe" then
+                playerEntity:SetTeam(1)
+                print(playerEntity:GetTeam())
+
+                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+                print("Team 1 joined")
+            end
+            if name == "npc_dota_hero_tidehunter" then
+                playerEntity:SetTeam(2)
+                print(playerEntity:GetTeam())
+
+                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+                print("Team 2 joined")
+            end
+            if name == "npc_dota_hero_storm_spirit" then
+                playerEntity:SetTeam(3)
+                print(playerEntity:GetTeam())
+
+                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+                print("Team 3 joined")
+            end
+        end
+    end
+
+    --GameRules:MakeTeamLose(3)
+    -- GameRules:SetGameWinner(1)
+    --local player = PlayerInstanceFromIndex(1)
+    --print(player:GetAssignedHero())
+    --player:SetTeam(2)
+    --print(player:GetTeam())
+
+
+
+
+
     return GAME_TICK_TIME
 end
+
 
 -- When players connect, add them to the players list and begin operations on them
 function ITT_GameMode:OnPlayerConnectFull(keys)
@@ -160,6 +225,8 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
 
     playerList[playerID] = playerID
     maxPlayerID = maxPlayerID + 1
+
+    local creature = CreateUnitByName("npc_dota_creature_elk", RandomVector(RandomFloat(0,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
 end
 
 -- Prints recursively contents of a table
