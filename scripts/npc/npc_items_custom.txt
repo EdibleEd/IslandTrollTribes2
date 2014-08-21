@@ -1,29 +1,5 @@
 "DOTAAbilities"
 {
-	"item_trolltype1"
-	{
-		"ID"					"2001"
-		"BaseClass"				"item_datadriven"
-		"ItemCost"				"1"
-	}
-	"item_trolltype2"
-	{
-		"ID"					"2002"
-		"BaseClass"				"item_datadriven"
-		"ItemCost"				"1"
-	}
-	"item_trolltype3"
-	{
-		"ID"					"2003"
-		"BaseClass"				"item_datadriven"
-		"ItemCost"				"1"
-	}
-	"item_trolltype3"
-	{
-		"ID"					"2004"
-		"BaseClass"				"item_datadriven"
-		"ItemCost"				"1"
-	}
 
 //Remember to remove stacking from buildings
 //I used item_rapier for recipies so it turns the line into a placeholder for recipies (still being worked on). I did this so the item would have a recipie ready to go as well as an ID number for it.
@@ -88,8 +64,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -119,20 +95,7 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
+
 	}
 
 
@@ -146,7 +109,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"stone"
@@ -155,9 +118,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"1.0"
-		"AbilityChannelTime"			"1"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -188,39 +150,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"precache"
+		"OnSpellStart"
 		{
-			"particle_folder"				"particles/econ/events/snowball/"
-			"particle_folder"				"particles/econ/generic/generic_aoe_shockwave_1"
-			"soundfile"					"soundevents/game_sounds/ability_catapult_attack.vsndevts"
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
 		}
-		
-"OnSpellStart"
-                {
-                        "TrackingProjectile"
-                        {
-                                "EffectName"    "particles/econ/events/snowball/snowball_projectile.vpcf"
-								"EffectColorA" "255 255 255"
-								"EffectColorB" "255 255 255"
-                                "EffectAttachType"      "follow_origin"
-                                "Dodgeable"				"0"
-                                "ProvidesVision"        "0"
-                                "MoveSpeed"             "900"
-                                "Target"                "TARGET"
-                                "StartPosition"         "attach_attack1"
-                                "TargetTeams"           "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                                "TargetTypes"           "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-                                "TargetFlags"           "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-                                "HasFrontalCone"        "0"
-                                "ProvidesVision"        "0"
-                        }
-                }
                 "OnProjectileHitUnit"
                 {
 					"RunScript"
 					{
 					"ScriptFile" "scripts/vscripts/abilities.lua"
-					"Function" "ability_stone_throw"
+					"Function" "ability_spear_poison_ultra_throw"
 					}
 				}
 			"FireSound"
@@ -228,8 +175,6 @@
 				"EffectName"			"Catapult.Attack"
 				"Target"				"TARGET"
 			}
-		}
-
 		"OnProjectileFinish"
 		{
 			"FireSound"
@@ -239,6 +184,14 @@
 			}
 
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
+			}
+		}	
 	}
 
 //=================================================================================================================
@@ -257,8 +210,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -288,20 +241,7 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
+
 	}
 
 //=================================================================================================================
@@ -404,6 +344,7 @@
 		{
 			"Duration" "%buff_duration"
 			"Properties"
+			"AbilityTexture" "meat_raw"
 			{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%hp_per_tick"
 			}
@@ -505,8 +446,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -551,7 +492,69 @@
 	}
 
 	}
+//=================================================================================================================
+// Custom: Mushroom
+//=================================================================================================================
+	"item_mushroom"
+	{
+		"ID"							"2009"
 
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName"			"herb_mushroom"
+		"Model"					"models/props_nature/mushroom_wild_00.vmdl"
+		"Effect"				""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	//-------------------------------------------------------------------------------------------------------------
+	// Modifiers
+	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"Heal"
+		{
+			"Target" "CASTER"
+			"HealAmount"	"120"
+		}
+		"SpendCharge"
+		{
+		}
+	}
+
+	}
 //=================================================================================================================
 // Custom: Mana Crystal
 //=================================================================================================================
@@ -957,8 +960,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1004,7 +1007,7 @@
 
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"herb_butsu"
-		"Model"					"models/props_nature/mushroom_wild_00.vmdl"
+		"Model"					"models/props_nature/fern003.vmdl"
 		"Effect"				""
 		
 		// Stats
@@ -1258,7 +1261,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
 		"BaseClass"				"item_datadriven"
@@ -1338,7 +1341,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
 		"BaseClass"				"item_datadriven"
@@ -1417,8 +1420,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
+		"AbilityChannelTime"            "0.1"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"axe_iron"
 		"Model"					"models/items/axe/blacksmith_weapon.vmdl"
@@ -1496,8 +1500,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
+		"AbilityChannelTime"            "0.1"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"axe_steel"
 		"Model"					"models/props_items/ogre_axe01.vmdl"
@@ -1581,7 +1586,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1662,7 +1667,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1744,21 +1749,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
 		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1774,13 +1780,33 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+	
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_basic_throw"
+					}
+				}		
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
 		}
 	}
@@ -1795,7 +1821,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"spear_iron"
@@ -1804,8 +1830,9 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1815,12 +1842,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1836,13 +1863,47 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+	
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_iron_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			""
+				"Target"				""
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			""
+				"Target"				""
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
 		}
 	}
@@ -1856,7 +1917,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_heavens_halberd"
@@ -1865,8 +1926,9 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"8.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1876,12 +1938,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1897,13 +1959,47 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_steel_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"TARGET"
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
 		}
 	}
@@ -1918,7 +2014,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"spear_dark"
@@ -1927,8 +2023,9 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1938,12 +2035,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1959,15 +2056,49 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_dark_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"TARGET"
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
 		}
+
 	}
 
 //=================================================================================================================
@@ -1980,7 +2111,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"spear_poison"
@@ -1989,8 +2120,9 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2021,15 +2153,48 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_poison_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"TARGET"
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
-		}
+		}	
 	}
 
 //=================================================================================================================
@@ -2042,7 +2207,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"spear_poison_refined"
@@ -2051,8 +2216,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2083,15 +2248,50 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+	
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_poison_refined_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"TARGET"
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
-		}
+		}	
+		
 	}
 //=================================================================================================================
 // Custom: Ultra Poison Spear
@@ -2103,7 +2303,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"spear_poison_ultra"
@@ -2112,8 +2312,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2144,15 +2344,50 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+
+		"OnSpellStart"
+		{
+			   "TrackingProjectile"
+			   {
+			    "Target"    "TARGET"
+			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			    "MoveSpeed"    "%projectile_speed"
+			   }
+				"SpendCharge"
+						{
+						}				   
+		}
+                "OnProjectileHitUnit"
+                {
+					"RunScript"
+					{
+					"ScriptFile" "scripts/vscripts/abilities.lua"
+					"Function" "ability_spear_poison_ultra_throw"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"TARGET"
+			}
+
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"500"
 			}
-		}
+		}	
+
 	}
 //=================================================================================================================
 // Custom: Spirit of Wind
@@ -2173,8 +2408,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2205,13 +2440,27 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+		"modifier_spirit_wind_stats"
+			{
+			//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsHidden" "1"
+			"Passive" "1"
+			"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLIGENCE_BONUS" 		"%all_stats"
+				}
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"all_stats"			"1"
 			}
 		}
 	}
@@ -2235,8 +2484,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2267,13 +2516,27 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+		"modifier_spirit_water_stats"
+			{
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsHidden" "1"
+			"Passive" "1"
+			"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLIGENCE_BONUS" 		"%all_stats"
+				}
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
+				"all_stats"			"1"
 			}
 		}
 	}
@@ -2297,8 +2560,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2329,15 +2591,43 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+	"OnSpellStart"
+	{
+		"ApplyModifier"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"6"
-			}
+			"Target" "CASTER"
+			"ModifierName" "modifier_anabolic_potion"
 		}
+		"SpendCharge"
+		{
+		}
+	}
+			
+	"Modifiers"
+	{
+		"modifier_anabolic_potion"
+		{
+			"Duration"	 	"%buff_duration"
+			"Properties"
+			"TextureName"	"holdout_guardian_angel"
+			{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "999999"
+			}
+			
+		}
+	}
+
+	//Ability Special
+	//-------------------------------------------------------------------------------------------------------------
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"buff_duration"                 		"20"
+		}
+	}
 	}
 
 //=================================================================================================================
@@ -2349,33 +2639,30 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"potion_healingi"
+		"AbilityTextureName"	"potion_healingi"
 		"Model"					"models/items/brewmaster/offhand_jug/offhand_jug.vmdl"
 		"Effect"				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2391,18 +2678,15 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+	"OnSpellStart"
 		{
-			"01"
+			"Heal"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
+				"Target" "CASTER"
+				"HealAmount"	"80"
 			}
-			"02"
+			"SpendCharge"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
 			}
 		}
 	}
@@ -2415,9 +2699,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_salve"
 		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
@@ -2425,8 +2707,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2457,151 +2738,15 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+	"OnSpellStart"
 		{
-			"01"
+			"Heal"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
+				"Target" "CASTER"
+				"HealAmount"	"160"
 			}
-			"02"
+			"SpendCharge"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
-	}
-//=================================================================================================================
-// Custom: Healing Potion III
-//=================================================================================================================
-	"item_potion_healingiii"
-	{
-		"ID"							"1039"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_salve"
-		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
-		"Effect"				""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
-		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
-			}
-		}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
-	}
-
-//=================================================================================================================
-// Custom: Healing Potion III
-//=================================================================================================================
-	"item_potion_healingiii"
-	{
-		"ID"							"1040"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_salve"
-		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
-		"Effect"				""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
-		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
-			}
-		}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
 			}
 		}
 	}
@@ -2610,22 +2755,19 @@
 //=================================================================================================================
 	"item_potion_healingiv"
 	{
-		"ID"							"1041"
+		"ID"							"1039"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_bottle_regeneration"
+		"AbilityTextureName"	"item_bottle_regeneration"
 		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
 		"Effect"				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2656,43 +2798,36 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+	"OnSpellStart"
 		{
-			"01"
+			"Heal"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
+				"Target" "CASTER"
+				"HealAmount"	"200"
 			}
-			"02"
+			"SpendCharge"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
 			}
 		}
 	}
-
 //=================================================================================================================
 // Custom: Mana Potion I
 //=================================================================================================================
 	"item_potion_manai"
 	{
-		"ID"							"1042"
+		"ID"							"1040"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_potion_manai"
+		"AbilityTextureName"	"potion_manai"
 		"Model"					"models/props_gameplay/bottle_blue.vmdl_c"
 		"Effect"				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2702,12 +2837,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2723,20 +2858,47 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+		"OnSpellStart"
+	{
+		"ApplyModifier"
 		{
-			"01"
+			"Target" "CASTER"
+			"ModifierName" "modifier_item_meat_raw"
+		}
+		"SpendCharge"
+		{
+		}
+	}
+			
+	"Modifiers"
+	{
+		"modifier_item_potion_mana_i"
+		{
+			"Duration" "%buff_duration"
+			"Properties"
+			"AbilityTexture" "potion_manai"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mp_per_tick"
 			}
 		}
+	}
+
+	//Ability Special
+	//-------------------------------------------------------------------------------------------------------------
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"buff_duration"                 		"0.1"
+		}
+		"02"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"mp_per_tick"                  			 "3"  //
+		}
+	}
 	}
 
 //=================================================================================================================
@@ -2744,22 +2906,19 @@
 //=================================================================================================================
 	"item_potion_manaiii"
 	{
-		"ID"							"1043"
+		"ID"							"1041"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_clarity"
+		"AbilityTextureName"	"item_clarity"
 		"Model"					"models/props_gameplay/bottle_blue.vmdl_c"
 		"Effect"				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2769,12 +2928,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2790,20 +2949,47 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+		"OnSpellStart"
+	{
+		"ApplyModifier"
 		{
-			"01"
+			"Target" "CASTER"
+			"ModifierName" "modifier_item_meat_raw"
+		}
+		"SpendCharge"
+		{
+		}
+	}
+			
+	"Modifiers"
+	{
+		"modifier_item_potion_mana_i"
+		{
+			"Duration" "%buff_duration"
+			"Properties"
+			"AbilityTexture" "item_clarity"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mp_per_tick"
 			}
 		}
+	}
+
+	//Ability Special
+	//-------------------------------------------------------------------------------------------------------------
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"buff_duration"                 		"0.1"
+		}
+		"02"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"mp_per_tick"                  			 "1000"  //
+		}
+	}
 	}
 
 //=================================================================================================================
@@ -2811,22 +2997,19 @@
 //=================================================================================================================
 	"item_potion_manaiv"
 	{
-		"ID"							"1044"
+		"ID"							"1042"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"potion_mana_iv"
+		"AbilityTextureName"	"potion_manaiv"
 		"Model"					"models/props_gameplay/bottle_blue.vmdl_c"
 		"Effect"				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2857,20 +3040,17 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
+		"OnSpellStart"
+	{
+		"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"potion_mana_i_use"
+			}
+		"SpendCharge"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
 		}
+	}
 	}
 
 //=================================================================================================================
@@ -2925,19 +3105,17 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		
-		"AbilitySpecial"
-		{
-			"01"
+			"OnSpellStart"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"			"potion_mana_i_use"
+				}
+			"SpendCharge"
+				{
+				}
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
 	}
 //=================================================================================================================
 // Custom: Disease Potion
@@ -2958,8 +3136,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3024,8 +3202,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3091,8 +3269,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3159,8 +3337,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3226,8 +3404,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3293,8 +3471,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3360,8 +3538,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3427,8 +3605,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3483,9 +3661,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"potion_poison"
 		"Model"					"models/items/shadowshaman/vagabond_drink/vagabond_drink.vmdl"
@@ -3493,8 +3668,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3550,9 +3725,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_refresher"
 		"Model"					"models/props_items/bloodstone.vmdl"
@@ -3560,8 +3732,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3617,9 +3789,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_gloves_of_haste"
 		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
@@ -3627,9 +3796,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
@@ -3658,16 +3824,42 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_elk"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "10"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
+	}
 	}
 //=================================================================================================================
 // Custom: Wolf Skin Gloves
@@ -3678,9 +3870,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_gloves_of_haste"
 		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
@@ -3688,8 +3877,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3719,18 +3906,42 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_wolf"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "2"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "15"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
-
 //=================================================================================================================
 // Custom: Bear Skin Gloves
 //=================================================================================================================
@@ -3740,9 +3951,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_gloves_of_haste"
 		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
@@ -3750,9 +3958,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
@@ -3781,14 +3986,39 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_bear"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "3"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "20"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
@@ -3802,9 +4032,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gloves_bone"
 		"Model"					"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
@@ -3812,8 +4039,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3843,18 +4068,42 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_bone"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "20"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
-
 //=================================================================================================================
 // Custom: Iron Gloves
 //=================================================================================================================
@@ -3864,9 +4113,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_gauntlets"
 		"Model"					"models/items/blood_seeker/war_gloves.vmdl"
@@ -3874,9 +4120,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
@@ -3905,14 +4148,39 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_iron"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "25"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
@@ -3926,9 +4194,6 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gloves_steel"
 		"Model"					"models/heroes/clinkz/clinkz_gloves.vmdl"
@@ -3936,9 +4201,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
@@ -3967,18 +4229,42 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_steel"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "6"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "35"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
-
 //=================================================================================================================
 // Custom: Battle Gloves
 //=================================================================================================================
@@ -3998,8 +4284,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4029,14 +4315,42 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Modifiers"
+		{
+			"modifier_gloves_battle"
+			{
+				"Passive" "1"
+				"Properties"
+				 {
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "6"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "35"
+				   "MODIFIER_PROPERTY_STATS_INTELLIGENCE_BONUS" "2"
+				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "2"
+				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "2"
+				 }
+				"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"heat"
+						"Heat"			"%heat"
+					}
+				}	
+			}
+		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"heat"				"2"
 			}
 			"02"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"35"
 			}
 		}
 	}
@@ -4060,8 +4374,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4122,8 +4436,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4184,8 +4498,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4245,8 +4559,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4307,8 +4621,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4369,8 +4683,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4431,8 +4745,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4493,8 +4807,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4555,8 +4869,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4617,8 +4931,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4679,8 +4993,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4741,8 +5055,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4803,8 +5117,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4865,8 +5179,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4927,8 +5241,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4990,8 +5304,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5052,8 +5366,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5114,8 +5428,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5175,8 +5489,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5237,8 +5551,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5298,8 +5612,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5360,8 +5674,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5427,8 +5741,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5494,8 +5808,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5561,8 +5875,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5628,8 +5942,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5695,8 +6009,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5761,8 +6075,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5827,8 +6141,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5894,8 +6208,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5961,8 +6275,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6028,8 +6342,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6095,8 +6409,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6162,8 +6476,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6229,8 +6543,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6296,8 +6610,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6363,8 +6677,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6430,8 +6744,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6497,8 +6811,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6563,8 +6877,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6629,8 +6943,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6695,8 +7009,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6761,8 +7075,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6827,8 +7141,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6893,8 +7207,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6960,8 +7274,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7027,8 +7341,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7089,8 +7403,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7156,8 +7470,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7224,8 +7538,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7292,8 +7606,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7361,8 +7675,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7430,8 +7744,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7498,8 +7812,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7566,8 +7880,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7633,8 +7947,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+ 
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7697,8 +8011,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+ 
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7761,8 +8075,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+ 
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7780,14 +8094,15 @@
 		"ItemSellable"                  		"0"
  		"OnSpellStart"
   		{
-      			"SpendCharge"
-            		{}
 			"SpawnUnit"
-			{
+				{
 			"Target"            "POINT"
 			"UnitName"              "npc_building_tent_basic"
 			"UnitCount"             "1"
         		}
+				"SpendCharge"
+            		{
+					}
     		}
 		"OnOwnerDied"
 		{
@@ -7825,8 +8140,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7889,8 +8204,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7953,8 +8268,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8017,8 +8332,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8081,8 +8396,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8145,8 +8460,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8209,8 +8523,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8273,8 +8586,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8340,8 +8652,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8404,8 +8715,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8468,8 +8778,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8532,8 +8841,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8596,8 +8904,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8660,8 +8967,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"            			"0"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8725,8 +9031,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8786,8 +9092,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8848,8 +9154,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8910,8 +9216,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
