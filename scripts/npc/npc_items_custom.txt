@@ -184,10 +184,20 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stun_troll"				"1"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stun_creep"				"7"
 			}
 		}	
 	}
@@ -420,12 +430,25 @@
 		"Heal"
 		{
 			"Target" "CASTER"
-			"HealAmount"	"30"
+			"HealAmount"	"%heal_amount"
 		}
 		"SpendCharge"
 		{
 		}
 	}
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"					"30"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"			"10"
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: Magic Acorn
@@ -481,12 +504,25 @@
 		"Heal"
 		{
 			"Target" "CASTER"
-			"HealAmount"	"120"
+			"HealAmount"	"%heal_amount"
 		}
 		"SpendCharge"
 		{
 		}
 	}
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"					"120"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"			"10"
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: Mushroom
@@ -554,7 +590,7 @@
 //=================================================================================================================
 // Custom: Mana Crystal
 //=================================================================================================================
-	"item_mana_crystal"
+	"item_crystal_mana"
 	{
 		"ID"							"1008"
 
@@ -1571,6 +1607,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"5.0"
+		"AbilityChannelTime"            "0.1"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"axe_mage_masher"
 		"Model"					"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
@@ -1609,8 +1652,14 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-      		"OnAttackLanded"
+		                "OnChannelFinish"
+                {
+                        "DestroyTrees"
+                        {
+                                "Target"                        "POINT"
+                        }
+                }
+						"OnAttackLanded"
        			{
             			"ScriptFile"       "scripts/vscripts/itemabilities.lua"
             			"Function"         "MageMasherMash"
@@ -1630,12 +1679,37 @@
 		}
 				"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"9"
 			}
-			
+				"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mage_masher_silent_strike_chance"			"21"
+			}
+				"03"
+			{			
+				"var_type"				"FIELD_INTEGER"
+				"mage_masher_silent_strike_dot"			"2"
+			}
+				"04"
+			{			
+				"var_type"				"FIELD_INTEGER"
+				"mage_masher_silent_strike_duration"		"5"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mage_masher_mana_burn_chance"				"29"
+			}
+
+				"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mage_masher_mana_burn_damage"				"29"
+			}
 		}
 	}
 
@@ -1791,10 +1865,20 @@
 				}		
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"			"6"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
 			}
 		}
 	}
@@ -1888,10 +1972,20 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"3"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"70"
 			}
 		}
 	}
@@ -1984,10 +2078,20 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"100"
 			}
 		}
 	}
@@ -2080,10 +2184,30 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"			"6"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_zap_min"					"20"
+			}
+				"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_zap_max"					"75"
 			}
 		}
 
@@ -2177,10 +2301,30 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"			"5"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_damage"				"2"
+			}
+				"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_duration"			"60"
 			}
 		}	
 	}
@@ -2273,13 +2417,32 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
 			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_damage"				"4"
+			}
+				"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_duration"			"60"
+			}
 		}	
-		
 	}
 //=================================================================================================================
 // Custom: Ultra Poison Spear
@@ -2369,13 +2532,32 @@
 		}
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"projectile_speed"			"500"
 			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_damage"				"16"
+			}
+				"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_duration"			"60"
+			}
 		}	
-
 	}
 //=================================================================================================================
 // Custom: Spirit of Wind
@@ -2843,6 +3025,7 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
 	{
 		"RunScript"
 			{
@@ -2903,6 +3086,7 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
 	{
 		"RunScript"
 			{
@@ -2974,7 +3158,15 @@
 		{
 		}
 	}
+		"AbilitySpecial"
+		{
+		"01"
+		{
+		"var_type" 				"FIELD_INTEGER"
+		"mana_restored"			"6"
+		}
 	}
+}
 
 //=================================================================================================================
 // Custom: Fervor Potion
@@ -3809,7 +4001,6 @@
 				"tick_rate"				"35"
 			}
 		}
-	}
 	}
 //=================================================================================================================
 // Custom: Wolf Skin Gloves
@@ -5018,25 +5209,15 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_cloak_protection"
-			{
-				"Passive" "1"
-				"Properties"
-				 {
-				 }
-			"OnAttacked"
-			{
-				"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-						"Function"			"cloak_protection_proc"
-					}
-			}
-		}
+				"OnAttacked"
+				{
+					"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+							"Function"			"cloak_protection_proc"
+						}
+				}
 	}
-
 //=================================================================================================================
 // Custom: Cloak of Frost
 //=================================================================================================================
@@ -5083,23 +5264,14 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_cloak_frost"
-			{
-				"Passive" "1"
-				"Properties"
-				 {
-				 }
-			"OnAttacked"
-			{
-				"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"cloak_frost_proc"
-					}
-			}
-		}
+				"OnAttacked"
+				{
+					"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+							"Function"			"cloak_frost_proc"
+						}
+				}
 	}
 
 //=================================================================================================================
@@ -5149,29 +5321,34 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		
-		"Modifiers"
-		{
-			"modifier_cloak_fire"
-			{
-				"Passive" "1"
-				"Properties"
-				 {
-				 }
-			"OnAttacked"
-			{
-				"RunScript"
+			"ThinkInterval" "%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"cloak_fire_damageaoe"
+						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
+						"Function"			"cloak_fire"
+						"Heat"			"%immolation_damage"
 					}
+				}	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"immolation_damage"		"7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"1"
 			}
 		}
 	}
-
 //=================================================================================================================
 // Custom: Shield
 //=================================================================================================================
-	"item_shield"
+	"item_shield_basic"
 	{
 		"ID"							"1074"
 
@@ -5221,7 +5398,6 @@
 				"Properties"
 				 {
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"
-					"MODIFIER_ATTRIBUTE_MULTIPLE
 				 }	
 			"OnTakeDamage"
 				{
@@ -6147,7 +6323,7 @@
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"		"scroll_fireball"
 		"Model"						"models/props_gameplay/recipe.vmdl"
-		"Effect"					""
+		"Effect"					"particles/units/heroes/hero_clinkz/clinkz_body_arm_fire.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6463,7 +6639,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET""
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"meat_diseased"
 		"Model"					"models/particle/green_rocks.vmdl"
@@ -6475,7 +6651,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -6502,16 +6678,28 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-			"OnSpellStart"
+		"OnSpellStart"
+		{
+			"Heal"
 			{
-			"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-					"Function"				"meat_diseased_use"
-				}
+				"Target" "CASTER"
+				"HealAmount"	"%heal_amount"
+			}
 			"SpendCharge"
+			{
+			}
+		}
+				"AbilitySpecial"
+			{
+				"01"
 				{
+					"var_type"				"FIELD_INTEGER"
+					"heal_amount"					"20"
+				}
+							"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"max_stacks"			"10"
 				}
 			}
 	}
@@ -6532,7 +6720,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
@@ -6564,17 +6751,30 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-	"OnSpellStart"
-	{
-		"Heal"
+		"OnSpellStart"
 		{
-			"Target" "CASTER"
-			"HealAmount"	"50"
+			"Heal"
+			{
+				"Target" "CASTER"
+				"HealAmount"	"%heal_amount"
+			}
+			"SpendCharge"
+			{
+			}
 		}
-		"SpendCharge"
-		{
-		}
-	}
+				"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"heal_amount"					"50"
+				}
+							"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"max_stacks"			"10"
+				}
+			}
 	}
 
 //=================================================================================================================
@@ -8893,7 +9093,8 @@
  		"OnSpellStart"
   		{
       			"SpendCharge"
-            		{}
+            		{
+					}
 			"SpawnUnit"
 			{
 			"Target"            "POINT"
