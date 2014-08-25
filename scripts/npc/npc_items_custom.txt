@@ -976,56 +976,6 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 	}
-//=================================================================================================================
-// Custom: Blow Gun
-//=================================================================================================================
-	"item_blow_gun"
-	{
-		"ID"							"1016"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"blow_gun"
-		"Model"					"models/courier/greevil/greevil_tail1.vmdl"
-		"Effect"				""
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemStackable"					"0"
-		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
-		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
-			}
-		}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		
-	}
-
 
 //=================================================================================================================
 // Custom: Butsu
@@ -1199,18 +1149,17 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1256,11 +1205,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2444,121 +2393,7 @@
 			}
 		}	
 	}
-//=================================================================================================================
-// Custom: Ultra Poison Spear
-//=================================================================================================================
-	"item_spear_poison_ultra"
-	{
-		"ID"							"1033"
 
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"spear_poison_ultra"
-		"Model"					"models/items/enchantress/anuxi_summer_spear/anuxi_summer_spear.vmdl"
-		"Effect"				""
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
-		"ItemDroppable"               	"1"
-		"ItemInitialCharges"			"1"
-		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "0"
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
-			}
-		}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-
-		"OnSpellStart"
-		{
-			   "TrackingProjectile"
-			   {
-			    "Target"    "TARGET"
-			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-			    "MoveSpeed"    "%projectile_speed"
-			   }
-				"SpendCharge"
-						{
-						}				   
-		}
-                "OnProjectileHitUnit"
-                {
-					"RunScript"
-					{
-					"ScriptFile" "scripts/vscripts/abilities.lua"
-					"Function" "ability_spear_poison_ultra_throw"
-					}
-				}
-			"FireSound"
-			{
-				"EffectName"			"Catapult.Attack"
-				"Target"				"TARGET"
-			}
-		"OnProjectileFinish"
-		{
-			"FireSound"
-			{
-				"EffectName"			"Catapult.Impact"
-				"Target"				"TARGET"
-			}
-
-		}
-		"AbilitySpecial"
-		{
-				"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"500"
-			}
-				"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"2"
-			}
-				"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hurl_damage"				"40"
-			}
-				"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"poison_damage"				"16"
-			}
-				"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"poison_duration"			"60"
-			}
-		}	
-	}
 //=================================================================================================================
 // Custom: Spirit of Wind
 //=================================================================================================================
@@ -2568,18 +2403,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spirit_wind"
-		"Model"					"models/heroes/batrider/batrider_weapon.vmdl"
-		"Effect"				"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
+		"Model"							"models/heroes/batrider/batrider_weapon.vmdl"
+		"Effect"						"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2621,7 +2451,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 		"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 			"%all_stats"
 				}
 			}
 		}
@@ -2644,33 +2474,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_sphere"
+		"AbilityTextureName"	"item_sphere"
 		"Model"					"models/props_gameplay/rune_doubledamage01.vmdl"
 		"Effect"				"particles/newplayer_fx/npx_splash_water3c.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2779,6 +2604,7 @@
 			"Properties"
 			{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "999999"
+					
 			}
 			
 		}
@@ -2793,6 +2619,11 @@
 		{
 				"var_type"                              "FIELD_INTEGER"
 				"buff_duration"                 		"20"
+		}
+				"01"
+		{
+				"var_type"                              "FIELD_INTEGER"
+				"max_stacks"                 			"2"
 		}
 	}
 	}
@@ -2850,10 +2681,23 @@
 			"Heal"
 			{
 				"Target" "CASTER"
-				"HealAmount"	"80"
+				"HealAmount"	"%heal_amount"
 			}
 			"SpendCharge"
 			{
+			}
+		}
+					"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"					"80"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
 			}
 		}
 	}
@@ -2910,10 +2754,23 @@
 			"Heal"
 			{
 				"Target" "CASTER"
-				"HealAmount"	"160"
+				"HealAmount"	"%heal_amount"
 			}
 			"SpendCharge"
 			{
+			}
+		}
+							"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"					"160"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
 			}
 		}
 	}
@@ -2970,10 +2827,23 @@
 			"Heal"
 			{
 				"Target" "CASTER"
-				"HealAmount"	"200"
+				"HealAmount"	"%heal_amount"
 			}
 			"SpendCharge"
 			{
+			}
+		}
+							"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"					"200"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
 			}
 		}
 	}
@@ -3026,16 +2896,29 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
-	{
-		"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"potion_mana_i_use"
-			}
-		"SpendCharge"
 		{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"			"potion_mana_i_use"
+				}
+			"SpendCharge"
+			{
+			}
 		}
-	}
+							"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy_restore"		"60"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3097,6 +2980,19 @@
 		{
 		}
 	}
+								"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy_restore"		"100"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3148,24 +3044,29 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
-	{
-		"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"potion_mana_iv_use"
+				"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"potion_mana_iv_use"
+					}
+				"SpendCharge"
+				{
+				}
 			}
-		"SpendCharge"
-		{
-		}
-	}
 		"AbilitySpecial"
 		{
-		"01"
-		{
-		"var_type" 				"FIELD_INTEGER"
-		"mana_restored"			"6"
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy_restore"		"120"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"4"
+			}
 		}
-	}
 }
 
 //=================================================================================================================
@@ -3229,6 +3130,19 @@
 				{
 				}
 			}
+					"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy_restore"		"120"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: Disease Potion
@@ -3312,6 +3226,19 @@
 			{
 				"EffectName"			"Catapult.Impact"
 				"Target"				"TARGET"
+			}
+		}
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"		"33"
+			}
+						"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"2"
 			}
 		}
 	}
@@ -3599,7 +3526,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_bottle_doubledamage"
+		"AbilityTextureName"			"potion_cureall"
 		"Model"					"models/projectiles/projectile_jar.vmdl"
 		"Effect"				""
 
@@ -3658,9 +3585,9 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_bottle_illusion"
+		"AbilityTextureName"	"potion_twin_island"
 		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
 		"Effect"				""
 
@@ -9440,7 +9367,7 @@
 //=================================================================================================================
 	"item_gun_blow_empty"
 	{
-		"ID"							"1133"
+		"ID"							"1016"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -9595,7 +9522,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"gun_blow"
+		"AbilityTextureName"			"gun_blow_thistles"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
 		"Effect"				""
 
@@ -9690,7 +9617,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"gun_blow"
+		"AbilityTextureName"			"gun_blow_thistles_dark"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
 		"Effect"				""
 
