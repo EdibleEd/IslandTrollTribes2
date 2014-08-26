@@ -1,8 +1,355 @@
-// This file details customised abilities for your addon
-// Abilities are complicated, so heres an example
-// Parts that are not self-explanatory are commented
+// Dota Heroes File
 "DOTAAbilities"
 {
-	"Version"		"1"
+	"Version"	"1"
 
+	//=================================================================================
+	// Cook Food
+	//=================================================================================
+	"Ability_Cook_Food"
+	{
+	// General
+	"BaseClass"			"ability_datadriven"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"	"Cook_Food"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1.0"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"		
+			"ScriptFile"	"scripts/vscripts/abilities.lua"
+			"Function"				"Cook_food"
+		}
+	}
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+	{
+		"var_type"		"FIELD_INTEGER"
+		"radius"		"600"
+	}
+	}
+	}
+	//=================================================================================
+	// Pack Up
+	//=================================================================================
+	"Ability_Pack_up"
+	{
+	// General
+	"BaseClass"			"ability_datadriven"
+	"AbilityBehavior"	""
+	"AbilityTextureName"	"Pack_Up"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"		
+			"ScriptFile"	"scripts/vscripts/abilities.lua"
+			"Function"				"Pack_Up"
+		}
+	}
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	}
+	//=================================================================================
+	// Restore Heat
+	//=================================================================================
+	"Ability_Restore_Heat"
+	{
+	// General
+	"BaseClass"			"ability_datadriven"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | "
+	"AbilityTextureName"	"Restore_Heat"
+	}
+	//=================================================================================
+	// Burn Building
+	//=================================================================================
+	"Ability_Burn_Building"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Burn_Building"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"		"aura_burn"
+			"Target"
+			{
+				"Center"		"CASTER"
+				"Radius"		"%burn_radius"
+				"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Types"			"DOTA_UNIT_TARGET_BUILDING"
+			}
+		}
+	}
+	"Modifiers"
+	{
+		"aura_burn"
+			{
+				"IsHidden"				"0"
+				"Passive"				"1"
+				
+				"Aura"					"Burn"
+				"Aura_Radius"			"%burn_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BUILDING"
+				"Aura_ApplyToCaster"	"0"
+			}
+			"Burn"
+			{
+				"Properties"
+				{
+					"modifier_warlock_golem_permanent_immolation_debuff"	"%aura_damage"	
+				}
+			}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"burn_radius"		"125"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_damage"					"7.0"
+		}
+	}
+	}
+	//=================================================================================
+	// Burn Building(Magic)
+	//=================================================================================
+	"Ability_Burn_Building_Magic"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Burn_Building_Magic"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"		"aura_burn"
+			"Target"
+			{
+				"Center"		"CASTER"
+				"Radius"		"%burn_radius"
+				"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Types"			"DOTA_UNIT_TARGET_BUILDING"
+			}
+		}
+	}
+	"Modifiers"
+	{
+		"aura_burn"
+			{
+				"IsHidden"				"0"
+				"Passive"				"1"
+				
+				"Aura"					"Burn"
+				"Aura_Radius"			"%burn_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BUILDING"
+				"Aura_ApplyToCaster"	"0"
+			}
+			"Burn"
+			{
+				"Properties"
+				{
+					"modifier_warlock_golem_permanent_immolation_debuff"
+				}
+			}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"burn_radius"		"360"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_damage"			"20"
+		}
+	}
+	}
+	//=================================================================================
+	// Restore Heat(Magic)
+	//=================================================================================
+	"Ability_Restore_Heat_Magic"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Restore_Heat"
+	}
+	//=================================================================================
+	// Rest(Small)
+	//=================================================================================
+	"Ability_Rest_Small"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Rest"
+	}
+	//=================================================================================
+	// Rest(Big)
+	//=================================================================================
+	"Ability_Rest_Big"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Rest"
+	}
+	//=================================================================================
+	// Get Corpse
+	//=================================================================================
+	"Ability_Get_Corpse"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Get_Corpse"
+	}
+	//=================================================================================
+	// Smoke Meat
+	//=================================================================================
+	"Ability_Smoke_Meat"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Smoke_Meat"
+	}
+	//=================================================================================
+	// Quick Build(Armory)
+	//=================================================================================
+	"Ability_Quick_Build_Armory"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Quick_Build"
+	}
+	//=================================================================================
+	// Quick Build(WD_Hut)
+	//=================================================================================
+	"Ability_Quick_Build_WD_Hut"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Quick_Build"
+	}
+	//=================================================================================
+	// Quick Build(Workshop)
+	//=================================================================================
+	"Ability_Quick_Build_Workshop"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Quick_Build"
+	}
+	//=================================================================================
+	// Quick Drop
+	//=================================================================================
+	"Ability_Quick_Drop"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Quick_Drop"
+	}
+	//=================================================================================
+	// Mix
+	//=================================================================================
+	"Ability_Mix"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Mix"
+	}
+	//=================================================================================
+	// Enemy Targetting
+	//=================================================================================
+	"Ability_Enemy_Target"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Enemy_Target"
+	}
+	//=================================================================================
+	// Make Gloves
+	//=================================================================================
+	"Ability_Make_Gloves"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Make_Gloves"
+	}
+	//=================================================================================
+	// Make Coat
+	//=================================================================================
+	"Ability_Make_Coat"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Make_Coat"
+	}
+	//=================================================================================
+	// Make Boots
+	//=================================================================================
+	"Ability_Make_Boots"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Make_Boots"
+	}
+	//=================================================================================
+	// Ensnare
+	//=================================================================================
+	"Ability_Ensnare"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Ensnare"
+	}
+	//=================================================================================
+	// Revive
+	//=================================================================================
+	"Ability_Revive"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Revive"
+	}
+	//=================================================================================
+	// Teleport
+	//=================================================================================
+	"Ability_Teleport"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Teleport"
+	}
+	//=================================================================================
+	// Hatch Egg
+	//=================================================================================
+	"Ability_Hatch_Egg"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Hatch_Egg"
+	}
+	//=================================================================================
+	// Hawks(Evolution)
+	//=================================================================================
+	"Ability_Hawks_Evolution"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Hawks_Evolution"
+	}
+	//=================================================================================
+	// Duel
+	//=================================================================================
+	"Ability_Duel"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Duel"
+	}
 }
+

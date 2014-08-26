@@ -3,10 +3,10 @@
 ]]
 
 --helps find file that makes items dropping on death work
-require( "itemfunctions" )
+require( 'itemfunctions' )
 require( 'spawnanimals' )
 require( 'troll' )
-
+require('buildinghelper')
 
 --[[
     Global variables
@@ -58,7 +58,24 @@ function Precache( context )
     PrecacheUnitByNameSync( "npc_dota_hero_dazzle", context )
     PrecacheUnitByNameSync( "npc_dota_hero_troll_warlord", context )
 
-    print("Precache Finish")
+	
+	PrecacheResource("model", "models/props_debris/camp_fire001.vmdl",context)
+	PrecacheResource("model", "models/props_structures/tent_dk_small.vmdl",context)
+	PrecacheResource("model", "models/props_structures/sniper_hut.vmdl",context)
+	PrecacheResource("model", "models/props_debris/secret_shop001.vmdl",context)
+	PrecacheResource("model", "models/props_structures/tent_dk_large.vmdl",context)
+	PrecacheResource("model", "models/props_structures/good_shop001.vmdl",context)
+	PrecacheResource("model", "models/props_structures/tent_dk_med.vmdl",context)
+	PrecacheResource("model", "models/props_structures/shop_newplayerexperience_01.vmdl",context)
+	PrecacheResource("model", "models/props_structures/sideshop_radiant002.vmdl",context)
+	PrecacheResource("model", "models/props_tree/stump001",context)
+	PrecacheResource("model", "models/props_structures/wooden_sentry_tower001.vmdl",context)
+	PrecacheResource("model", "models/items/lone_druid/bear_trap/bear_trap.vmdl",context)
+	PrecacheResource("model", "models/heroes/witchdoctor/witchdoctor_ward.vmdl",context)
+	PrecacheResource("model", "models/items/wards/nexon_sotdaeward/nexon_sotdaeward.vmdl",context)
+	PrecacheResource("model", "models/items/furion/staff_eagle_1.vmdl",context)
+	PrecacheResource("particle","particles/dire_fx/fire_barracks_glow_b.vpcf",context)
+		print("Precache Finish")
 end
 
 --[[
@@ -85,6 +102,7 @@ end
 ]]--
 function ITT_GameMode:InitGameMode()
     print( "Game mode setup." )
+	BuildingHelper:BlockGridNavSquares(16384)
     -- Set the game's thinkers up
 
     -- This is the global thinker. It should only manage game state
