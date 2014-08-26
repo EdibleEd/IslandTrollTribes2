@@ -2618,12 +2618,12 @@
 		"01"
 		{
 				"var_type"                              "FIELD_INTEGER"
-				"buff_duration"                 		"20"
+				"max_stacks"                 			"2"
 		}
 				"01"
 		{
 				"var_type"                              "FIELD_INTEGER"
-				"max_stacks"                 			"2"
+				"buff_duration"                 		"20"
 		}
 	}
 	}
@@ -2692,12 +2692,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"					"80"
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				
+				"heal_amount"					"80"
 			}
 		}
 	}
@@ -2765,12 +2766,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"					"160"
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"heal_amount"					"160"
 			}
 		}
 	}
@@ -2838,12 +2839,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"					"200"
+				
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"heal_amount"					"200"
 			}
 		}
 	}
@@ -2911,12 +2913,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"energy_restore"		"60"
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"energy_restore"		"60"
 			}
 		}
 	}
@@ -2980,17 +2982,18 @@
 		{
 		}
 	}
-								"AbilitySpecial"
+		 "AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"energy_restore"		"100"
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				
+				"energy_restore"		"100"
 			}
 		}
 	}
@@ -3059,12 +3062,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"energy_restore"		"120"
+				"max_stacks"				"4"
 			}
 						"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"energy_restore"		"120"
+
 			}
 		}
 }
@@ -3264,18 +3268,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"2"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3303,6 +3307,24 @@
 				{
 				}
 			}
+			"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"charges"				   "2"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"nether_duration"			"5"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3319,7 +3341,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"potion_drunk"
-		"Model"					"models/items/brewmaster/barrel_vice.vmdl_c"
+		"Model"					"models/items/brewmaster/barrel_vice.vmdl"
 		"Effect"				"particles/econ/items/luna/luna_lucent_rider/luna_mount_lucent_rider_eye_glow_a.vpcf"
 
 		// Stats
@@ -3389,6 +3411,29 @@
 				"Target"				"TARGET"
 			}
 		}
+					"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"3"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"drunk_miss"				"50"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"drunk_speed"				"-10"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"drunk_charges"				"3"
+			}
+		}
 	}
 
 
@@ -3451,6 +3496,35 @@
 				{
 				}
 			}
+			"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"3"
+
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_charges"			"3"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_damage"			"7"
+			}
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_radius"				"160"
+			}
+				"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_duration"		"20"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3513,6 +3587,24 @@
 				{
 				}
 			}
+			"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"anti_magic_duration"		"15"
+			}
+				"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"anti_magic_charges"		"20"
+			}
+				"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"3"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3574,6 +3666,14 @@
 				{
 				}
 			}
+				"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"6"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3603,12 +3703,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3636,6 +3736,14 @@
 				{
 				}
 			}
+							"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -3659,6 +3767,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"			 	"10"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3722,6 +3831,24 @@
 				"Target"				"TARGET"
 			}
 		}
+			"AbilitySpecial"
+		{
+				"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"acid_damage"			   "150"
+			}
+				"02"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"acid_reduction"				"-6"
+			}
+							"02"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"acid_duration"			   "5"
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: Poison Potion
@@ -3771,20 +3898,17 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilitySpecial"
-		{
-			"01"
+					"OnSpellStart"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"			"potion_poisonultra_use"
+				}
+			"SpendCharge"
+				{
+				}
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_health"			"400"
-			}
-		}
 	}
 
 //=================================================================================================================
@@ -3898,10 +4022,11 @@
 			"modifier_gloves_elk"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "10"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -3926,6 +4051,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"1"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"10"
 			}
 		}
 	}
@@ -3979,10 +4114,11 @@
 			"modifier_gloves_wolf"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "2"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "15"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4007,6 +4143,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"2"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"15"
 			}
 		}
 	}
@@ -4059,10 +4205,11 @@
 			"modifier_gloves_bear"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "3"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "20"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4087,6 +4234,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"3"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"20"
 			}
 		}
 	}
@@ -4141,10 +4298,11 @@
 			"modifier_gloves_bone"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "20"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4169,6 +4327,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"4"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"20"
 			}
 		}
 	}
@@ -4221,10 +4389,11 @@
 			"modifier_gloves_iron"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "25"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4249,6 +4418,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"5"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"25"
 			}
 		}
 	}
@@ -4302,10 +4481,11 @@
 			"modifier_gloves_steel"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "6"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "35"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4330,6 +4510,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+				"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"6"
+			}
+				"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"				"35"
 			}
 		}
 	}
@@ -4383,13 +4573,14 @@
 			"modifier_gloves_battle"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "6"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "35"
-				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "2"
-				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "2"
-				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "2"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "%all_stats"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4414,6 +4605,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+					"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_stats"				"2"
 			}
 		}
 	}
@@ -4471,9 +4667,10 @@
 			"modifier_coat_elk"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "3"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4498,6 +4695,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"3"
 			}
 		}
 	}
@@ -4554,9 +4756,10 @@
 			"modifier_coat_wolf"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4581,6 +4784,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"4"
 			}
 		}
 	}
@@ -4635,9 +4843,10 @@
 			"modifier_coat_bear"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4662,6 +4871,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"5"
 			}
 		}
 	}
@@ -4716,9 +4930,10 @@
 			"modifier_coat_bone"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "6"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4743,6 +4958,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"6"
 			}
 		}
 	}
@@ -4799,9 +5019,10 @@
 			"modifier_coat_iron"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "9"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4826,6 +5047,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"9"
 			}
 		}
 	}
@@ -4882,9 +5108,10 @@
 			"modifier_coat_wolf"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "9"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4910,13 +5137,18 @@
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"10"
+			}
 		}
 	}
 
 //=================================================================================================================
 // Custom: Battle Armour
 //=================================================================================================================
-	"item_armour_battle"
+	"item_armor_battle"
 	{
 		"ID"							"1069"
 
@@ -4924,7 +5156,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"armour_battle"
+		"AbilityTextureName"			"armor_battle"
 		"Model"					"models/items/alchemist/armor/armor.vmdl"
 		"Effect"				""
 
@@ -4962,12 +5194,17 @@
 		
 		"Modifiers"
 		{
-			"modifier_armour_battle"
+			"modifier_armor_battle"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "10"
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"  "%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"   "%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resist"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4992,6 +5229,21 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_stats"				"2"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_resist"				"20"
 			}
 		}
 	}
@@ -5056,12 +5308,13 @@
 			"modifier_coat_camouflage"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "8"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"  "2"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"   "2"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "2"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"  "%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"   "%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -5086,6 +5339,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_stats"				"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"8"
 			}
 		}
 	}
@@ -5144,6 +5407,25 @@
 							"Function"			"cloak_protection_proc"
 						}
 				}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"					"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"6"
+				
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"					"1"
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: Cloak of Frost
@@ -5199,6 +5481,25 @@
 							"Function"			"cloak_frost_proc"
 						}
 				}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"					"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"35"
+				
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"16"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -5255,7 +5556,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"cloak_fire"
-						"Heat"			"%immolation_damage"
+						"Immolation"			"%immolation_damage"
 					}
 				}	
 		"AbilitySpecial"
@@ -5319,12 +5620,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-		"modifier_shield_block"
+		"modifier_shield_basic_block"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 				 }	
 			"OnTakeDamage"
 				{
@@ -5349,12 +5651,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_amount"				"20"
+				"block_amount"				"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"spell_block"				"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"2"
 			}
 		}
 	}
@@ -5422,12 +5729,13 @@
 		"modifier_shield_battle_block"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"					
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "2"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "1"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "1"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_str"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi"
 				 }	
 			"OnTakeDamage"
 				{
@@ -5458,6 +5766,26 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"spell_block"				"1"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_int"				"1"
+			}						
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_agi"				"1"
+			}						
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_str"				"2"
 			}
 		}
 	}
@@ -5513,9 +5841,10 @@
 		"modifier_shield_bone_block"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "5"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 				 }	
 			"OnTakeDamage"
 				{
@@ -5546,6 +5875,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"spell_block"				"0"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"5"
 			}
 		}
 	}
@@ -5602,9 +5936,10 @@
 		"modifier_shield_iron_block"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "8"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 				 }	
 			"OnTakeDamage"
 				{
@@ -5636,9 +5971,14 @@
 				"var_type"				"FIELD_FLOAT"
 				"spell_block"				"0"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"8"
+			}
 		}
 	}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Steel Shield
 //=================================================================================================================
 	"item_shield_steel"
@@ -5691,9 +6031,10 @@
 		"modifier_shield_steel_block"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 				 }	
 			"OnTakeDamage"
 				{
@@ -5723,7 +6064,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spell_block"				"0"
+				"spell_block"				"1"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"				"10"
 			}
 		}
 	}
@@ -5775,14 +6121,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_elk"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "60"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"60"
 			}
 		}
 	}
@@ -5840,14 +6200,28 @@
 		
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_wolf"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "2"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "60"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"60"
 			}
 		}
 	}
@@ -5905,14 +6279,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_bear"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "3"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "60"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"60"
 			}
 		}
 	}
@@ -5970,14 +6358,28 @@
 		
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_bone"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "3"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "70"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"70"
 			}
 		}
 	}
@@ -6034,14 +6436,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_iron"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "80"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"80"
 			}
 		}
 	}
@@ -6097,14 +6513,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_steel"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "100"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
 				 }
+			}
+		}
+				"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"60"
 			}
 		}
 	}
@@ -6158,20 +6588,38 @@
 		
 	"Modifiers"
 		{
-			"modifier_gloves_battle"
+			"modifier_boots_anabolic"
 			{
 				"Passive" "1"
+				"IsHidden" "1"
 				"Properties"
 				 {
-				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "100"
-				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "2"
-				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "2"
-				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "2"
+				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "%all_stats"
 				 }
 			}
 		}
-		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"				"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_stats"				"2"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -6233,6 +6681,14 @@
 				{
 				}
 			}
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"SELF"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -6298,6 +6754,14 @@
 				{
 				}
 			}
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -6363,6 +6827,14 @@
 				{
 				}
 			}
+						"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"450"
+			}
+		}
 	}
 
 //=================================================================================================================
@@ -6427,7 +6899,15 @@
 			"SpendCharge"
 				{
 				}
+			}					
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"450"
 			}
+		}
 	}
 
 //=================================================================================================================
@@ -6853,9 +7333,8 @@
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
+		"ItemPermanent"					"1"
 		"ItemDroppable"               	"1"
-		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
@@ -6903,7 +7382,6 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
-		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
@@ -8725,7 +9203,7 @@
 	}
 
 //=================================================================================================================
-// Custom: Armory
+// Custom: armory
 //=================================================================================================================
 
 	"item_building_armory"
