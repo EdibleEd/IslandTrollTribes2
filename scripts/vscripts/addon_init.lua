@@ -71,6 +71,9 @@ end
 function ITT_GameMode:InitGameMode()
     print( "Game mode setup." )
 	BuildingHelper:BlockGridNavSquares(16384)
+
+	Convars:RegisterConvar('itt_set_game_mode', nil, 'Set to the game mode', FCVAR_PROTECTED)
+
     -- Set the game's thinkers up
 
     -- This is the global thinker. It should only manage game state
@@ -158,39 +161,37 @@ function ITT_GameMode:OnStateThink()
 
             if item == "item_trolltype1" then
                 troll = "npc_dota_hero_huskar"
-            end
-            if item == "item_trolltype2" then
+            elseif item == "item_trolltype2" then
                 troll = "npc_dota_hero_witch_doctor"
-            end
-            if item == "item_trolltype3" then
+            elseif item == "item_trolltype3" then
                 troll = "npc_dota_hero_dazzle"
-            end
-            if item == "item_trolltype4" then
+            elseif item == "item_trolltype4" then
                 troll = "npc_dota_hero_troll_warlord"
             end
 
+            if troll ~= "" then
+	            if name == "npc_dota_hero_axe" then
+	                playerEntity:SetTeam(1)
+	                print(playerEntity:GetTeam())
 
-            if name == "npc_dota_hero_axe" then
-                playerEntity:SetTeam(1)
-                print(playerEntity:GetTeam())
+	                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+	                print("Team 1 joined")
+	            end
+	            if name == "npc_dota_hero_tidehunter" then
+	                playerEntity:SetTeam(2)
+	                print(playerEntity:GetTeam())
 
-                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
-                print("Team 1 joined")
-            end
-            if name == "npc_dota_hero_tidehunter" then
-                playerEntity:SetTeam(2)
-                print(playerEntity:GetTeam())
+	                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+	                print("Team 2 joined")
+	            end
+	            if name == "npc_dota_hero_storm_spirit" then
+	                playerEntity:SetTeam(3)
+	                print(playerEntity:GetTeam())
 
-                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
-                print("Team 2 joined")
-            end
-            if name == "npc_dota_hero_storm_spirit" then
-                playerEntity:SetTeam(3)
-                print(playerEntity:GetTeam())
-
-                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
-                print("Team 3 joined")
-            end
+	                PlayerResource:ReplaceHeroWith( playerEntity:GetPlayerID(), troll, 100, 0 )
+	                print("Team 3 joined")
+	            end
+	        end
         end
     end
 
