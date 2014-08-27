@@ -2,7 +2,7 @@
 Building Helper for RTS-style and tower defense maps in Dota 2.
 Developed by Myll
 Credits to Ash47 and BMD for the timer code.
-Please give credit in your work if you use this. Thanks, and happy modding!
+Thanks also to Cyborgmatt, who the above authors didn't credit when they copied his code.
 ]]
 
 BUILDINGHELPER_THINK = 0.03
@@ -13,75 +13,79 @@ FORCE_UNITS_AWAY = false
 FIRE_GAME_EVENTS = false
 BH_Z=129
 
+
 if BuildingHelper == nil then
-	print('[BUILDING HELPER] Creating Building Helper')
-	BuildingHelper = {}
-	BuildingHelper.__index = BuildingHelper
+    print("Troll class created")
+    BuildingHelper = class({})
+    BuildingHelper.timers = {}
 end
 
-function BuildingHelper:new(o)
-	o = o or {}
-	setmetatable(o, BuildingHelper)
-	return o
-end
+-- if BuildingHelper == nil then
+-- 	print('[BUILDING HELPER] Creating Building Helper')
+-- 	BuildingHelper = {}
+-- 	BuildingHelper.__index = BuildingHelper
+-- end
 
-function BuildingHelper:start()
-	BuildingHelper = self
-	self.timers = {}
+-- function BuildingHelper:new(o)
+-- 	o = o or {}
+-- 	setmetatable(o, BuildingHelper)
+-- 	return o
+-- end
+
+-- function BuildingHelper:start()
+-- 	BuildingHelper = self
+-- 	self.timers = {}
 	
-	local wspawn = Entities:First()
-	wspawn:SetThink("Think", self, "buildinghelper", BUILDINGHELPER_THINK)
-end
+-- 	local wspawn = Entities:First()
+-- 	wspawn:SetThink("Think", self, "buildinghelper", BUILDINGHELPER_THINK)
+-- end
 
 function BuildingHelper:Think()
 	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return
 	end
 	
+	-- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
+	local now = GameRules:GetGameTime()
+	--print("now: " .. now)
+	if BuildingHelper.t0 == nil then
+		BuildingHelper.t0 = now
+	end
 	
-	
-	 -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
-  local now = GameRules:GetGameTime()
-  --print("now: " .. now)
-  if BuildingHelper.t0 == nil then
-    BuildingHelper.t0 = now
-  end
-  local dt = now - BuildingHelper.t0
-  BuildingHelper.t0 = now
+	local dt = now - BuildingHelper.t0
+	BuildingHelper.t0 = now
 
-  -- Process timers
-  for k,v in pairs(BuildingHelper.timers) do
-    local bUseGameTime = false
-    if v.useGameTime and v.useGameTime == true then
-      bUseGameTime = true;
-    end
-    -- Check if the timer has finished
-    if (bUseGameTime and GameRules:GetGameTime() > v.endTime) or (not bUseGameTime and Time() > v.endTime) then
-      -- Remove from timers list
-      BuildingHelper.timers[k] = nil
-      
-      -- Run the callback
-      local status, nextCall = pcall(v.callback, BuildingHelper, v)
+	-- Process timers
+	for k,v in pairs(BuildingHelper.timers) do
+	  	local bUseGameTime = false
+	  	if v.useGameTime and v.useGameTime == true then
+	    	bUseGameTime = true;
+	  	end
+	  	-- Check if the timer has finished
+	  	if (bUseGameTime and GameRules:GetGameTime() > v.endTime) or (not bUseGameTime and Time() > v.endTime) then
+	    	-- Remove from timers list
+	    	BuildingHelper.timers[k] = nil
+	    
+	    	-- Run the callback
+	    	local status, nextCall = pcall(v.callback, BuildingHelper, v)
+      		-- Make sure it worked
+     		if status then
+      		-- Check if it needs to loop
+       			if nextCall then
+         			-- Change it's end time
+         			v.endTime = nextCall
+         			BuildingHelper.timers[k] = v
+       			end
+        	-- Update timer data
+       		--self:UpdateTimerData()
+     		else
+       			-- Nope, handle the error
+       			BuildingHelper:HandleEventError('Timer', k, nextCall)
+     		end
+   		end
+	end
 
-      -- Make sure it worked
-      if status then
-        -- Check if it needs to loop
-        if nextCall then
-          -- Change it's end time
-          v.endTime = nextCall
-          BuildingHelper.timers[k] = v
-        end
-
-        -- Update timer data
-        --self:UpdateTimerData()
-      else
-        -- Nope, handle the error
-        BuildingHelper:HandleEventError('Timer', k, nextCall)
-      end
-    end
-  end
-
-  return BUILDINGHELPER_THINK
+	return BUILDINGHELPER_THINK
 end
 
 function BuildingHelper:HandleEventError(name, event, err)
@@ -495,5 +499,3 @@ function YourGameMode:DisplayBuildingGrids()
   end
   print( '*********************************************' )
 end]]
-
-BuildingHelper:start()

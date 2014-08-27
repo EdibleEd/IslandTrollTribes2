@@ -1,10 +1,5 @@
-if ITT_AnimalSpawner == nil then
-    print("Animal Spawn class created")
-    ITT_AnimalSpawner = class({})
-end
-
-function ITT_AnimalSpawner:SpawnCreature(t, index)
-    --print(a)
+function SpawnCreature(t, index)
+    print("spawn")
     
     for i=1, 4, 1 do
         local spawnLocation = Entities:FindByName( nil, ("wildlife_".. t .. "_spawner" .. i))

@@ -5,7 +5,7 @@
 	Put BuildingHelper:BlockGridNavSquares(nMapLength) in your InitGameMode function.
 	If units are getting stuck put "BoundsHullName"   "DOTA_HULL_SIZE_TOWER" for buildings in npc_units_custom.txt
 ]]
-require('buildinghelper')
+
 BUILD_TIME_10 = 10.0
 BUILD_TIME_7 = 7.0
 BUILD_TIME_12 = 12.0

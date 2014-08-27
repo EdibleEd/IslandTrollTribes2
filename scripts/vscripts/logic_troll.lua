@@ -10,17 +10,13 @@ allowed_item_combos_two     = {}
 allowed_item_combos_three   = {}
 hungerTicks = 0
 
-if ITT_TrollController == nil then
-    print("Troll class created")
-    ITT_TrollController = class({})
-    
-    allowed_item_combos_two["item_ward_observer"]  = {"item_clarity", "item_tango"}
-end
+
+allowed_item_combos_two["item_ward_observer"]  = {"item_clarity", "item_tango"}
 
 -- This reduces each players health by 3, every 3 seconds
 -- The return values ensure it closes when the game ends
 -- Possibly need to detect only living heroes, will test that with more players
-function ITT_TrollController:Hunger(playerID)
+function Hunger(playerID)
     hungerTicks = hungerTicks + 1
     if hungerTicks % 6 == 0 then
         local player = PlayerInstanceFromIndex(playerID)
@@ -29,7 +25,7 @@ function ITT_TrollController:Hunger(playerID)
     end
 end
 
-function ITT_TrollController:InventoryCheck(playerID)
+function InventoryCheck(playerID)
     -- print("Inv testing player " .. playerID)
     -- Lets find the hero we want to work with
     player = PlayerInstanceFromIndex(playerID)
