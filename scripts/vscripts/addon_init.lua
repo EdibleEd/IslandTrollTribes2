@@ -109,8 +109,12 @@ function ITT_GameMode:InitGameMode()
     -- A list of events is findable here: https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/Built-In_Engine_Events
     -- A bunch of those are broken, so be warned
     -- Custom events can be made in /scripts/custom_events.txt
-    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self)
-    
+    -- BROKEN:
+    -- dota_item_drag_end dota_item_drag_begin dota_inventory_changed dota_inventory_item_changed dota_inventory_item_added 
+    -- dota_inventory_changed_query_unit
+    -- WORK:
+    -- dota_item_picked_up dota_item_purchased
+    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
 end
 
 -- This updates state on each troll
@@ -127,7 +131,7 @@ function ITT_GameMode:OnTrollThink()
     for i=1, maxPlayerID, 1 do
         Hunger(i)
         InventoryCheck(i)
-        print("burn")
+        --print("burn")
     end
 
     return GAME_TROLL_TICK_TIME

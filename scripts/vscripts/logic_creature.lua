@@ -1,5 +1,5 @@
 function SpawnCreature(t, index)
-    print("spawn")
+    --print("spawn")
     
     for i=1, 4, 1 do
         local spawnLocation = Entities:FindByName( nil, ("wildlife_".. t .. "_spawner" .. i))
