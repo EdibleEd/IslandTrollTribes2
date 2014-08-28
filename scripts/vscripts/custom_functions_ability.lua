@@ -7,7 +7,7 @@ function PingItemInRange(keys)
     local itemTable = keys.ItemTable
     
     for itemName,itemColor in pairs(itemTable) do
-        if itemColor = nil then
+        if itemColor == nil then
             itemColor = "255 255 255"
         end
         
