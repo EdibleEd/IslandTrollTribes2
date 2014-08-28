@@ -351,5 +351,78 @@
 	"BaseClass"			"ability_datadriven"
 	"AbilityTextureName"	"Duel"
 	}
+    
+//=================================================================================
+//Gatherer Abilities
+//=================================================================================
+    //=================================================================================================================
+    // Gatherer Item Radar
+    //=================================================================================================================
+    "Ability_Gatherer_Item_Radar"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "bloodseeker_rupture"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_flint"            "255 0 0"       //flint - red
+                    "item_clay_ball"        "100 100 100"   //clay - grey
+                    "item_stick"            "50 100 100"    //stick - dark green
+                    "item_tinder"           "0 255 0"       //tinder - green
+                    "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
+                }
+            }
+        }
+        
+        // Modifiers
+        //-------------------------------------------------------------------------------------------------------------    
+        "Modifiers"
+        {
+            
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "300"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "1700"
+            }
+            
+        }
+    }
 }
 
