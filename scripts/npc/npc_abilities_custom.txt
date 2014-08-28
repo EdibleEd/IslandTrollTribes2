@@ -364,11 +364,13 @@
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "bloodseeker_rupture"
+        "AbilityTextureName"            "ability_gatherer_itemradar"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "I" //changed from T because overlap with Find Mushroom, stick, tinder
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        "AbilityCastPoint"              "0.1"                         // Time before spell goes off when cast
 
         // Time        
         //-------------------------------------------------------------------------------------------------------------
@@ -396,15 +398,9 @@
                     "item_stick"            "50 100 100"    //stick - dark green
                     "item_tinder"           "0 255 0"       //tinder - green
                     "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
+                    "item_stone"            "0 0 255"
                 }
             }
-        }
-        
-        // Modifiers
-        //-------------------------------------------------------------------------------------------------------------    
-        "Modifiers"
-        {
-            
         }
         
         // Special
@@ -414,12 +410,383 @@
             "01"
             {
                 "var_type"          "FIELD_INTEGER"
-                "cooldown"          "300"
+                "cooldown"          "30"
             }
             "02"
             {
                 "var_type"          "FIELD_INTEGER"
                 "range"             "1700"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Gatherer Find Mushroom, Stick, or Tinder
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Mushroom_Stick_Or_Tinder"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findmushroomstickortinder"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "T"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_mushroom"         "200 0 200"     //mushroom - don't know color, assuming purple
+                    "item_stick"            "50 100 100"    //stick - dark green
+                    "item_tinder"           "0 255 0"       //tinder - green
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "45"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Gatherer Find Hide
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Hide"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findhide"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "H"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_hide"             "165 42 42"     //hide - don't know color, assuming brown
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "45"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Gatherer Find Clay Ball, Cooked Meat, or Bone
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Clay_Ball_Cooked_Meat_Or_Bone"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findclayballcookedmeatorbone"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "C"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_clay_ball"        "100 100 100"   //clay - grey
+                    "item_meat_cooked"      "178 34 34"     //cooked meat - dark red
+                    "item_bone"             "255 255 255"   //bone - white
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "45"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Gatherer Find Mana Crystal or Stone
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Mana_Crystal_Or_Stone"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findmanacrystalorstone"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "M"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
+                    "item_stone"            "0 0 255"
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "45"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Radar Telegatherer Find Flint
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Flint"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findflint"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "F"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_flint"            "255 0 0"       //flint - red
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "40"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
+            }
+            
+        }
+    }
+    
+    //=================================================================================================================
+    // Radar Telegatherer Find Magic
+    //=================================================================================================================
+    "Ability_Gatherer_Find_Magic"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_findmagic"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "D"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "%cooldown"
+
+        "precache"
+        {
+            "soundfile"                  "sounds/ui/ping.vsnd"
+            "particle_folder"            "particles/ui_mouseactions"
+        }
+        
+        "OnSpellStart"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "PingItemInRange"
+                "Target"        "CASTER"
+                "Range"         "%range"
+                "ItemTable"
+                {
+                    //Colors are from 0 to 255, all punctuation is ignored
+                    "item_magic_raw"            "255 0 255"       //magic - magenta
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cooldown"          "60"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "range"             "2500"
             }
             
         }
