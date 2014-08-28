@@ -5,12 +5,12 @@
 
 "CustomHeroList"
 {
-	"npc_dota_hero_axe"				"3"
-	"npc_dota_hero_tidehunter"		"3"
-	"npc_dota_hero_storm_spirit"	"3"
+	//"npc_dota_hero_axe"				"3"
+	//"npc_dota_hero_tidehunter"		"3"
+	//"npc_dota_hero_storm_spirit"	"3"
 	
-	//"npc_dota_hero_huskar"				"1"
-	//"npc_dota_hero_witch_doctor"		"1"
-	//"npc_dota_hero_dazzle"				"1"
-	//"npc_dota_hero_troll_warlord"		"1"
+	"npc_dota_hero_huskar"				"1"
+	"npc_dota_hero_witch_doctor"		"1"
+	"npc_dota_hero_dazzle"				"1"
+	"npc_dota_hero_troll_warlord"		"1"
 }

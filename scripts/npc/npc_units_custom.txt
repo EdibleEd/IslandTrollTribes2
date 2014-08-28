@@ -1036,7 +1036,8 @@
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 	}
-		//=================================================================================
+	
+	//=================================================================================
 	// Building: Craftmaster
 	//=================================================================================
 	"npc_building_craftmaster"
@@ -1087,7 +1088,7 @@
 
 		// Team
 		"TeamName"				"DOTA_TEAM_GOODGUYS"
-		"CombatClassDefend"			
+		"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"	
 
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		

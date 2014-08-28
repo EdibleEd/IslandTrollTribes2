@@ -15,7 +15,7 @@ BH_Z=129
 
 
 if BuildingHelper == nil then
-    print("Troll class created")
+    print("Building helper created")
     BuildingHelper = class({})
     BuildingHelper.timers = {}
 end

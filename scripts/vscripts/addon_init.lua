@@ -6,12 +6,6 @@
 print("addon_init invoked")
 
 require( 'util' )
-require( 'custom_functions_item' )
-require( 'custom_functions_ability' )
-require( 'logic_creature' )
-require( 'logic_troll' )
-
-require( 'buildinghelper' )
 
 --[[
     Global variables
@@ -52,6 +46,15 @@ end
 ]]--
 function Activate()
     print("Activate Called")
+
+	require( 'custom_functions_item' )
+	require( 'custom_functions_ability' )
+	require( 'logic_creature' )
+	require( 'logic_troll' )
+
+	require( 'buildinghelper' )
+
+
     GameRules.AddonTemplate = ITT_GameMode()
     GameRules.AddonTemplate:InitGameMode()
 
@@ -74,22 +77,24 @@ function ITT_GameMode:InitGameMode()
 
 	Convars:RegisterConvar('itt_set_game_mode', nil, 'Set to the game mode', FCVAR_PROTECTED)
 
+	GameMode = GameRules:GetGameModeEntity()
+
     -- Set the game's thinkers up
 
     -- This is the global thinker. It should only manage game state
-    GameRules:GetGameModeEntity():SetThink( "OnStateThink", ITT_GameMode, "StateThink", 2 )
+    GameMode:SetThink( "OnStateThink", ITT_GameMode, "StateThink", 2 )
 
     -- This is the creature thinker. All neutral creature spawn logic goes here
-    GameRules:GetGameModeEntity():SetThink( "OnCreatureThink", ITT_GameMode, "CreatureThink", 2 )
+    GameMode:SetThink( "OnCreatureThink", ITT_GameMode, "CreatureThink", 2 )
 
     -- This is the troll thinker. All logic on the player's heros should be checked here
-    GameRules:GetGameModeEntity():SetThink( "OnTrollThink", ITT_GameMode, "TrollThink", 0 )
+    GameMode:SetThink( "OnTrollThink", ITT_GameMode, "TrollThink", 0 )
 
     -- This is the item thinker. All random item spawn logic goes here
-    GameRules:GetGameModeEntity():SetThink( "OnItemThink", ITT_GameMode, "ItemThink", 0 )
+    GameMode:SetThink( "OnItemThink", ITT_GameMode, "ItemThink", 0 )
 
     -- This is the thinker that checks building placement
-    GameRules:GetGameModeEntity():SetThink("Think", BuildingHelper, "buildinghelper", 0)
+    GameMode:SetThink("Think", BuildingHelper, "buildinghelper", 0)
 
     
     GameRules:GetGameModeEntity():ClientLoadGridNav()
@@ -110,12 +115,19 @@ function ITT_GameMode:InitGameMode()
     -- A bunch of those are broken, so be warned
     -- Custom events can be made in /scripts/custom_events.txt
     -- BROKEN:
-    -- dota_item_drag_end dota_item_drag_begin dota_inventory_changed dota_inventory_item_changed dota_inventory_item_added 
-    -- dota_inventory_changed_query_unit
+    -- dota_item_drag_end dota_item_drag_begin dota_inventory_changed dota_inventory_item_changed  
+    -- dota_inventory_changed_query_unit dota_inventory_item_added
     -- WORK:
     -- dota_item_picked_up dota_item_purchased
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
+
 end
+
+
+
+
+
+
 
 -- This updates state on each troll
 -- Every half second it updates heat, checks inventory for items, etc
