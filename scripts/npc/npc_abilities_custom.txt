@@ -522,7 +522,9 @@
                 "ItemTable"
                 {
                     //Colors are from 0 to 255, all punctuation is ignored
-                    "item_hide"             "165 42 42"     //hide - don't know color, assuming brown
+                    "item_hide_elk"             "165 42 42"     //hide - don't know color, assuming brown
+                    "item_hide_jungle_bear"     "165 42 42"
+                    "item_hide_wolf"            "165 42 42"
                 }
             }
         }
