@@ -40,38 +40,40 @@ function PingItemInRange(keys)
 end
 
 --[[Checks unit inventory for matching recipes. If there's a match, remove all items and add the corresponding potion
-    Matches must have the exact number of each ingredient]]
+    Matches must have the exact number of each ingredient
+    Used for both the Mixing Pot and the Herb Telegatherer]]
 function MixHerbs(keys)
     print("MixHerbs")
     local caster = keys.caster
     --Table to identify ingredients
     local herbTable = {"item_river_stem", "item_river_root", "item_herb_butsu", "item_herb_orange", "item_herb_purple", "item_herb_yellow", "item_herb_blue"}
     --Table used to look up herb recipes, can move this if other functions need it
-    local recipeTable = {}
-    recipeTable["item_spirit_wind"] = {item_river_stem = 2}
-    recipeTable["item_spirit_water"] = {item_river_root = 2}
-    recipeTable["item_potion_anabolic"] = {item_river_stem = 6}
-    recipeTable["item_potion_cure_all"] = {item_herb_butsu = 6}
-    recipeTable["item_potion_drunk"] = {item_river_stem = 2, item_herb_butsu = 2}
-    recipeTable["item_potion_healingi"] = {item_river_root = 1, item_herb_butsu = 1}
-    recipeTable["item_potion_healingiii"] = {item_river_root = 2, item_herb_butsu = 2}
-    recipeTable["item_potion_healingiv"] = {item_river_root = 3, item_herb_butsu = 3}
-    recipeTable["item_potion_manai"] = {item_river_stem = 1, item_herb_butsu = 1}
-    recipeTable["item_potion_manaiii"] = {item_river_stem = 2, item_herb_butsu = 2}
-    recipeTable["item_potion_manaiv"] = {item_river_stem = 3, item_herb_butsu = 3}
-    recipeTable["item_rock_dark"] = {item_river_root = 2, item_river_stem = 2, item_herb_butsu = 2}
+    local recipeTable = {
+        {"item_spirit_wind", {item_river_stem = 2}},
+        {"item_spirit_water", {item_river_root = 2}},
+        {"item_potion_anabolic", {item_river_stem = 6}},
+        {"item_potion_cure_all", {item_herb_butsu = 6}},
+        {"item_potion_drunk", {item_river_stem = 2, item_herb_butsu = 2}},
+        {"item_potion_healingi", {item_river_root = 1, item_herb_butsu = 1}},
+        {"item_potion_healingiii", {item_river_root = 2, item_herb_butsu = 2}},
+        {"item_potion_healingiv", {item_river_root = 3, item_herb_butsu = 3}},
+        {"item_potion_manai", {item_river_stem = 1, item_herb_butsu = 1}},
+        {"item_potion_manaiii", {item_river_stem = 2, item_herb_butsu = 2}},
+        {"item_potion_manaiv", {item_river_stem = 3, item_herb_butsu = 3}},
+        {"item_rock_dark", {item_river_root = 2, item_river_stem = 2, item_herb_butsu = 2}}
+    }
     
     --recipes that use special herbs. A bit more complicated
     --[[
-    recipeTable["item_potion_anti_magic"] = {special_1 = 6}
-    recipeTable["item_potion_fervor"] = {special_1 = 3, item_herb_butsu = 1}
-    recipeTable["item_potion_elemental"] = {special_1 = 1, item_river_stem = 3, item_river_root = 1}  
-    recipeTable["item_potion_disease"] = {special_1 = 2,special_2 = 2, item_river_root = 1}
-    recipeTable["item_potion_nether"] = {special_1 = 1, item_river_stem = 2, item_herb_butsu = 2}
-    recipeTable["item_gem_of_knowledge"] = {item_herb_blue = 1, item_herb_orange = 3, yellow or purple}
-    recipeTable["item_essence_bees"] = {item_herb_orange = 1, item_herb_purple = 1, item_herb_yellow = 1, item_herb_blue = 1} --or special_1 = 2, special_2, special_3
-    recipeTable["item_potion_twin_island"] = {item_herb_orange = 3, item_herb_purple = 3 or item_herb_yellow = 3, item_herb_blue = 3}
-    recipeTable["item_potion_acid"] = {special_1 = 2, special_2 = 2, item_river_stem = 2}
+    {"item_potion_anti_magic", {special_1 = 6}},
+    {"item_potion_fervor", {special_1 = 3, item_herb_butsu = 1}},
+    {"item_potion_elemental", {special_1 = 1, item_river_stem = 3, item_river_root = 1}  },
+    {"item_potion_disease", {special_1 = 2,special_2 = 2, item_river_root = 1}},
+    {"item_potion_nether", {special_1 = 1, item_river_stem = 2, item_herb_butsu = 2}},
+    {"item_gem_of_knowledge", {item_herb_blue = 1, item_herb_orange = 3, yellow or purple}},
+    {"item_essence_bees", {item_herb_orange = 1, item_herb_purple = 1, item_herb_yellow = 1, item_herb_blue = 1}}, --or special_1 = 2, special_2, special_3
+    {"item_potion_twin_island", {item_herb_orange = 3, item_herb_purple = 3 or item_herb_yellow = 3, item_herb_blue = 3}},
+    {"item_potion_acid", {special_1 = 2, special_2 = 2, item_river_stem = 2}},
     --]]
     
     local myMaterials = {}
@@ -101,10 +103,12 @@ function MixHerbs(keys)
     
     print("Check for match")
     --check if player materials matches any recipes
-    for key,value in pairs(recipeTable) do  --loop through the recipe table
-        if CompareTables(recipeTable[key], myMaterials) then    --if a recipe matches
-            print("Match!", key)
-            local newItem = CreateItem(key, nil, nil)   --create the resulting item
+    for i,value in pairs(recipeTable) do  --loop through the recipe table
+        local recipeName = recipeTable[i][1]    --get the name of the recipe
+        local recipeIngredients = recipeTable[i][2] --get the items needed for the recipe
+        if CompareTables(recipeIngredients, myMaterials) then    --if a recipe matches
+            print("Match!", i)
+            local newItem = CreateItem(recipeName, nil, nil)   --create the resulting item
             for i,removeMe in pairs(itemTable) do   --delete the materials
                 caster:RemoveItem(removeMe)
             end
