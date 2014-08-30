@@ -366,7 +366,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityTextureName"            "ability_gatherer_itemradar"
         "MaxLevel"						"1"
-        "HotKeyOverride"                "I" //changed from T because overlap with Find Mushroom, stick, tinder
+        "HotKeyOverride"                "T" //Overlaps, but is replaced when Radar Manipulations is used
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -418,6 +418,35 @@
                 "range"             "1700"
             }
             
+        }
+    }
+    
+    //=================================================================================================================
+    // Gatherer Radar Manipulations
+    //=================================================================================================================
+    "ability_gatherer_radarmanipulations"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | "
+        "AbilityTextureName"            "ability_gatherer_radarmanipulations"
+        "MaxLevel"						"1"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        
+        "OnSpellStart"
+        {            
+            //do some swapping shenanigans
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+
         }
     }
     
@@ -819,6 +848,57 @@
                 "Function"      "MixHerbs"
                 "Target"        "CASTER"
             }
+        }
+    }
+    
+    //=================================================================================================================
+    // Telegatherer Telegather
+    //=================================================================================================================
+    "ability_gatherer_telegather"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_telegather"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "T"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        
+        "OnSpellStart"
+        {            
+            //telegather buff and lua code
+        }
+    }
+    
+    //=================================================================================================================
+    // Remote Telegatherer Item Warp
+    //=================================================================================================================
+    "ability_gatherer_itemwarp"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "ability_gatherer_itemwarp"
+        "MaxLevel"						"1"
+        "HotKeyOverride"                "X"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        
+        "OnSpellStart"
+        {            
+            // "RunScript"
+            // {
+                // "ScriptFile"    "custom_scripted_abilities.lua"
+                // "Function"      "MixHerbs"
+                // "Target"        "CASTER"
+            // }
         }
     }
 }
