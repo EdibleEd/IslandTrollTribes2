@@ -60,7 +60,9 @@ function MixHerbs(keys)
         {"item_potion_manai", {item_river_stem = 1, item_herb_butsu = 1}},
         {"item_potion_manaiii", {item_river_stem = 2, item_herb_butsu = 2}},
         {"item_potion_manaiv", {item_river_stem = 3, item_herb_butsu = 3}},
-        {"item_rock_dark", {item_river_root = 2, item_river_stem = 2, item_herb_butsu = 2}}
+        {"item_rock_dark", {item_river_root = 2, item_river_stem = 2, item_herb_butsu = 2}},
+        {"item_potion_twin_island", {item_herb_orange = 3, item_herb_purple = 3}},
+        {"item_potion_twin_island", {item_herb_yellow = 3, item_herb_blue = 3}}
     }
     
     --recipes that use special herbs. A bit more complicated
@@ -72,7 +74,7 @@ function MixHerbs(keys)
     {"item_potion_nether", {special_1 = 1, item_river_stem = 2, item_herb_butsu = 2}},
     {"item_gem_of_knowledge", {item_herb_blue = 1, item_herb_orange = 3, yellow or purple}},
     {"item_essence_bees", {item_herb_orange = 1, item_herb_purple = 1, item_herb_yellow = 1, item_herb_blue = 1}}, --or special_1 = 2, special_2, special_3
-    {"item_potion_twin_island", {item_herb_orange = 3, item_herb_purple = 3 or item_herb_yellow = 3, item_herb_blue = 3}},
+    
     {"item_potion_acid", {special_1 = 2, special_2 = 2, item_river_stem = 2}},
     --]]
     
