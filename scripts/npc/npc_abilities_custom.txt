@@ -458,7 +458,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "AbilityTextureName"            "ability_gatherer_findmushroomstickortinder"
         "MaxLevel"						"1"
         "HotKeyOverride"                "T"
@@ -521,7 +521,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "AbilityTextureName"            "ability_gatherer_findhide"
         "MaxLevel"						"1"
         "HotKeyOverride"                "H"
@@ -584,7 +584,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "AbilityTextureName"            "ability_gatherer_findclayballcookedmeatorbone"
         "MaxLevel"						"1"
         "HotKeyOverride"                "C"
@@ -647,7 +647,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "AbilityTextureName"            "ability_gatherer_findmanacrystalorstone"
         "MaxLevel"						"1"
         "HotKeyOverride"                "M"
