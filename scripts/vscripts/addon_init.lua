@@ -134,12 +134,16 @@ function ITT_GameMode:FixDropModels(dt)
             v.OriginalOrigin = v:GetOrigin()
             v.OriginalAngles = v:GetAngles()
             local custom = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom 
-            if custom and custom.ModelOffsets then
-                print("initing.. " .. v:GetContainedItem():GetAbilityName())
-                local offsets = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom.ModelOffsets          
-                v:SetOrigin( v.OriginalOrigin - Vector(offsets.Origin.x, offsets.Origin.y, offsets.Origin.z))
-                v:SetAngles( v.OriginalAngles.x - offsets.Angles.x, v.OriginalAngles.y - offsets.Angles.y, v.OriginalAngles.z - offsets.Angles.z)
+            if custom then
+                if custom.ModelOffsets then
+                    print("initing.. " .. v:GetContainedItem():GetAbilityName())
+                    local offsets = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom.ModelOffsets          
+                    v:SetOrigin( v.OriginalOrigin - Vector(offsets.Origin.x, offsets.Origin.y, offsets.Origin.z))
+                    v:SetAngles( v.OriginalAngles.x - offsets.Angles.x, v.OriginalAngles.y - offsets.Angles.y, v.OriginalAngles.z - offsets.Angles.z)
+                end
+                if custom.ModelScale then v:SetModelScale(custom.ModelScale) end
             end
+
         end
     end
     return DROPMODEL_TICK_TIME

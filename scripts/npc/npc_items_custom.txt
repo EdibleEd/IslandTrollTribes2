@@ -1278,7 +1278,7 @@
 				{
 					"x" "0"
 					"y" "0"
-					"z" "5"
+					"z" "-7"
 				}
 				"Angles"
 				{
@@ -1888,7 +1888,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "0"
 
-		"ModelScale"	"5.0"
+		
 
 		"OnOwnerDied"
 		{
@@ -2800,6 +2800,7 @@
 
 				  "Custom"
 		  {
+		  	  "ModelScale" "5.0"
 		      "ModelOffsets"
 		      {
 		          "Origin"
