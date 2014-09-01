@@ -551,9 +551,10 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | "
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityTextureName"            "ability_gatherer_radarmanipulations"
-        "MaxLevel"						"1"
+        "RequiredLevel"                 "2"
+        "MaxLevel"						"4"
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -562,13 +563,12 @@
         "OnSpellStart"
         {            
             //do some swapping shenanigans
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "true"
+            }
         }
     }
     
