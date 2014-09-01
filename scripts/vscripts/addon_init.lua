@@ -20,7 +20,9 @@ GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
 
 BUILDING_TICK_TIME 			= 0.03
+DROPMODEL_TICK_TIME         = 0.03
 
+itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 
 --[[
     Default cruft to set everything up
@@ -96,6 +98,8 @@ function ITT_GameMode:InitGameMode()
     -- This is the thinker that checks building placement
     GameMode:SetThink("Think", BuildingHelper, "buildinghelper", 0)
 
+    GameMode:SetThink("FixDropModels", ITT_GameMode, "FixDropModels", 0)
+
     
     GameRules:GetGameModeEntity():ClientLoadGridNav()
     GameRules:SetTimeOfDay( 0.75 )
@@ -104,7 +108,7 @@ function ITT_GameMode:InitGameMode()
     GameRules:SetPreGameTime( 10.0 )
     GameRules:SetPostGameTime( 60.0 )
     GameRules:SetTreeRegrowTime( 60.0 )
-    GameRules:SetHeroMinimapIconSize( 400 )
+--    GameRules:SetHeroMinimapIconSize( 400 )
     GameRules:SetCreepMinimapIconScale( 0.7 )
     GameRules:SetRuneMinimapIconScale( 0.7 )
     GameRules:SetGoldTickTime( 60.0 )
@@ -123,15 +127,29 @@ function ITT_GameMode:InitGameMode()
 
 end
 
-
-
-
-
-
+function ITT_GameMode:FixDropModels(dt)
+    for _,v in pairs(Entities:FindAllByClassname("dota_item_drop")) do
+        if not v.ModelFixInit then
+            v.ModelFixInit = true
+            v.OriginalOrigin = v:GetOrigin()
+            v.OriginalAngles = v:GetAngles()
+            local custom = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom 
+            if custom and custom.ModelOffsets then
+                print("initing.. " .. v:GetContainedItem():GetAbilityName())
+                local offsets = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom.ModelOffsets          
+                v:SetOrigin( v.OriginalOrigin - Vector(offsets.Origin.x, offsets.Origin.y, offsets.Origin.z))
+                v:SetAngles( v.OriginalAngles.x - offsets.Angles.x, v.OriginalAngles.y - offsets.Angles.y, v.OriginalAngles.z - offsets.Angles.z)
+            end
+        end
+    end
+    return DROPMODEL_TICK_TIME
+end
 
 -- This updates state on each troll
 -- Every half second it updates heat, checks inventory for items, etc
 -- Add anything you want to run regularly on each troll to this
+
+
 function ITT_GameMode:OnTrollThink()
 
     if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -218,38 +236,8 @@ function ITT_GameMode:OnStateThink()
     --player:SetTeam(2)
     --print(player:GetTeam())
 
-
-
-
-
     return GAME_TICK_TIME
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- When players connect, add them to the players list and begin operations on them
 function ITT_GameMode:OnPlayerConnectFull(keys)
@@ -262,3 +250,55 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
 
     local creature = CreateUnitByName("npc_dota_creature_elk", RandomVector(RandomFloat(0,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
 end
+
+function give_item(cmdname, itemname)
+    local hero = Convars:GetCommandClient():GetAssignedHero()
+    hero:AddItem(CreateItem(itemname, hero, hero))
+end
+
+function print_dropped_vecs(cmdname)
+    local items = Entities:FindAllByClassname("dota_item_drop")
+    for _,v in pairs(items) do
+        print(v:GetClassname())
+        local now = v:GetOrigin()
+        v:SetOrigin(Vector(now.x, now.y, now.z - 146))
+        v:SetModelScale(1.8)
+    end
+end
+
+function print_fix_diffs(cmdname)
+    local items = Entities:FindAllByClassname("dota_item_drop")
+    for _,v in pairs(items) do
+        local angs = v:GetAngles()
+        local difforig = v.OriginalOrigin - v:GetOrigin()
+        local diffangs = {x = v.OriginalAngles.x - angs.x, y = v.OriginalAngles.y - angs.y, z = v.OriginalAngles.z - angs.z} --i dunno either, exception w/o :__sub just for this
+        print(v:GetContainedItem():GetAbilityName() .. " Offsets: ")
+        print("\"Custom\"")
+        print("{")
+        print("    \"ModelOffsets\"")
+        print("    {")
+        print("        \"Origin\"")
+        print("        {")
+        print("            \"x\" \"" .. difforig.x .. "\"")
+        print("            \"y\" \"" .. difforig.x .. "\"")
+        print("            \"z\" \"" .. difforig.z .. "\"")
+        print("        }")
+        print("        \"Angles\"")
+        print("        {")
+        print("            \"x\" \"" .. diffangs.x .. "\"")
+        print("            \"y\" \"" .. diffangs.x .. "\"")
+        print("            \"z\" \"" .. diffangs.z .. "\"")
+        print("        }")
+        print("    }")
+        print("}")
+    end
+end
+
+function reload_ikv(cmdname)
+    itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
+end
+
+Convars:RegisterCommand("reload_ikv", function(cmdname) reload_ikv(cmdname) end, "Give any item", 0)
+Convars:RegisterCommand("print_fix_diffs", function(cmdname) print_fix_diffs(cmdname) end, "Give any item", 0)
+Convars:RegisterCommand("print_dropped_vecs", function(cmdname) print_dropped_vecs(cmdname) end, "Give any item", 0)
+Convars:RegisterCommand("give_item", function(cmdname, itemname) give_item(cmdname, itemname) end, "Give any item", 0)

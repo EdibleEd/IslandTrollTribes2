@@ -1268,6 +1268,26 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+		//Custom Data, to be read by Lua
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin" 
+				{
+					"x" "0"
+					"y" "0"
+					"z" "5"
+				}
+				"Angles"
+				{
+					"x"	"0"
+					"y" "0"
+					"z" "80"
+				}
+			}
+		}
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1348,6 +1368,26 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin" 
+				{
+					"x" "0"
+					"y" "0"
+					"z" "5"
+				}
+				"Angles"
+				{
+					"x"	"83"
+					"y" "0"
+					"z" "40"
+				}
+			}
+		}
+
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1427,6 +1467,26 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+		  "Custom"
+		  {
+		      "ModelOffsets"
+		      {
+		          "Origin"
+		          {
+		              "x" "0"
+		              "y" "0"
+		              "z" "0"
+		          }
+		          "Angles"
+		          {
+		              "x" "90"
+		              "y" "90"
+		              "z" "0"
+		          }
+		      }
+		  }
+
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1507,6 +1567,26 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+		  "Custom"
+		  {
+		      "ModelOffsets"
+		      {
+		          "Origin"
+		          {
+		              "x" "0"
+		              "y" "0"
+		              "z" "17"
+		          }
+		          "Angles"
+		          {
+		              "x" "89"
+		              "y" "89"
+		              "z" "70"
+		          }
+		      }
+		  }
+
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1591,6 +1671,26 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+		  "Custom"
+		  {
+		      "ModelOffsets"
+		      {
+		          "Origin"
+		          {
+		              "x" "0"
+		              "y" "0"
+		              "z" "62"
+		          }
+		          "Angles"
+		          {
+		              "x" "0"
+		              "y" "0"
+		              "z" "0"
+		          }
+		      }
+		  }
+
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1787,6 +1887,9 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "0"
+
+		"ModelScale"	"5.0"
+
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2694,6 +2797,27 @@
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
 		"ItemSellable"                  		"0"
+
+				  "Custom"
+		  {
+		      "ModelOffsets"
+		      {
+		          "Origin"
+		          {
+		              "x" "2"
+		              "y" "2"
+		              "z" "-42"
+		          }
+		          "Angles"
+		          {
+		              "x" "80"
+		              "y" "80"
+		              "z" "0"
+		          }
+		      }
+		  }
+
+
 		"OnOwnerDied"
 		{
 			"RunScript"

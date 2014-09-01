@@ -6,6 +6,128 @@
 	//=================================================================================
 	// Cook Food
 	//=================================================================================
+
+	"tool_rot_x"
+	{
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"			"ability_datadriven"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"x"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"x"
+			}
+		}
+	}
+
+	"tool_rot_y"
+	{
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"			"ability_datadriven"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"y"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"y"
+			}
+		}
+	}
+
+	"tool_rot_z"
+	{
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"			"ability_datadriven"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"z"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"rotate"
+				"Element"	"z"
+			}
+		}
+	}
+
+	"tool_toggle_rot"
+	{
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"			"ability_datadriven"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"set_type"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"set_type"
+			}
+		}
+	}
+
+	"tool_reverse"
+	{
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"			"ability_datadriven"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"reverse"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/toolhero.lua"
+				"Function"		"reverse"
+			}
+		}
+	}
+
 	"Ability_Cook_Food"
 	{
 	// General
