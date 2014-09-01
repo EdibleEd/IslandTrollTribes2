@@ -11,24 +11,25 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"tinder"
-		"Model"					"models/props_gameplay/tango.vmdl"
-		
+		"Model"							"models/props_gameplay/tango.vmdl"
+		"Effect" 						""
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -56,14 +57,12 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_ultimate_orb"
-		"Model"					"models/props_destruction/lion_groundspikes.vmdl"
+		"Model"							"models/props_destruction/lion_groundspikes.vmdl"
 		"Effect"					""
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"					"1"
@@ -72,11 +71,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -92,7 +91,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
+			"Custom"
+			{
+		  	  "ModelScale" "2.0"
+			}
 	}
 
 
@@ -105,13 +107,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"stone"
-		"Model"					"models/particle/tiny_rocks.vmdl"
-		
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"stone"
+		"Model"								"models/particle/tiny_rocks.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -120,18 +122,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -147,6 +149,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+					"Custom"
+			{
+		  	  "ModelScale" "2.5"
+			}
 		"OnSpellStart"
 		{
 			   "TrackingProjectile"
@@ -215,15 +221,14 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_branches"
-		"Model"					"models/props_gameplay/branch.vmdl"
-		
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -233,11 +238,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -265,11 +270,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"bone"
 		"Model"					"models/props_bones/bone002.vmdl"
-		
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -303,8 +308,25 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Custom"
+	{
+    "ModelOffsets"
+		{
+			"Origin"
+			{
+				"x" "-51"
+				"y" "-51"
+				"z" "-30"
+			}
+			"Angles"
+			{
+				"x" "74"
+				"y" "74"
+				"z" "293"
+			}
+		}
 	}
+}
 
 //=================================================================================================================
 // Custom: Raw Meat
@@ -319,6 +341,7 @@
 	"BaseClass"                             "item_datadriven"
 	"AbilityTextureName"                    "meat_raw"
 	"Model"                                 "models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
+	"Effect" 								""
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"                                      "1"
@@ -349,7 +372,24 @@
 		{
 		}
 	}
-			
+			"Custom"
+	{
+    "ModelOffsets"
+    {
+        "Origin"
+        {
+            "x" "-68"
+            "y" "-68"
+            "z" "97"
+        }
+        "Angles"
+        {
+            "x" "0"
+            "y" "0"
+            "z" "0"
+        }
+    }
+	}
 	"Modifiers"
 	{
 		"modifier_item_meat_raw"
@@ -395,9 +435,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"acorn"
-		"Model"					"models/heroes/crystal_maiden/crystal_maiden_ice_debris_01.vmdl"
+		"Model"							"models/heroes/crystal_maiden/crystal_maiden_ice_debris_01.vmdl"
+		"Effect" 						""
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -407,12 +448,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -426,9 +467,14 @@
 		"UIPickupSound"					"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
-	//-------------------------------------------------------------------------------------------------------------
-	// Modifiers
-	//-------------------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------------------
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+	"Custom"
+		  {
+		  	  "ModelScale" "20.0"
+		  }
+	
 	"OnSpellStart"
 	{
 		"Heal"
@@ -459,7 +505,7 @@
 //=================================================================================================================
 	"item_acorn_magic"
 	{
-		"ID"							"2008"
+		"ID"							"1142"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -533,15 +579,15 @@
 //=================================================================================================================
 	"item_mushroom"
 	{
-		"ID"							"2009"
+		"ID"							"1141"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"herb_mushroom"
-		"Model"					"models/props_nature/mushroom_wild_00.vmdl"
-		
+		"AbilityTextureName"			"item_winter_mushroom"
+		"Model"							"models/props_nature/mushroom_wild_00.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -601,6 +647,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"crystal_mana"
 		"Model"					"models/particle/ice_shards.vmdl"
@@ -646,10 +693,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"ingot_steel"
-		"Model"					"models/props_magic/bad_crystals002.vmdl"
-		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"ingot_steel"
+		"Model"								"models/props_magic/bad_crystals002.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -662,11 +710,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -694,10 +742,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"ingot_iron"
-		"Model"					"models/props_magic/bad_crystals001.vmdl"
-		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"ingot_iron"
+		"Model"								"models/props_magic/bad_crystals001.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -737,16 +786,17 @@
 //=================================================================================================================
 // Custom: Clayball
 //=================================================================================================================
-	"item_clay_ball"
+	"item_ball_clay"
 	{
 		"ID"							"1011"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"					"item_datadriven"
-		"AbilityTextureName"		"item_clayball"
+		"AbilityTextureName"		"ball_clay"
 		"Model"						"models/heroes/phoenix/phoenix_egg.vmdl"
-		
+		"Effect" 					""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -779,8 +829,6 @@
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
 		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		
 	}
 //=================================================================================================================
@@ -793,10 +841,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"river_root"
-		"Model"					"models/heroes/treant_protector/treant_ground_root.vmdl"
-		
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"river_root"
+		"Model"								"models/heroes/treant_protector/treant_ground_root.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -804,17 +852,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -842,10 +890,10 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"river_stem"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"river_stem"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -893,10 +941,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"thistles"
-		"Model"					"models/props_nature/cattails001.vmdl"
-		
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"thistles"
+		"Model"								"models/props_nature/cattails001.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -992,10 +1040,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_butsu"
-		"Model"					"models/props_nature/fern003.vmdl"
-		
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_butsu"
+		"Model"								"models/props_nature/fern003.vmdl"
+		"Effect" 							""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1009,11 +1057,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1059,11 +1107,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1250,10 +1298,10 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_flint"
-		"Model"					"models/items/tuskarr/ancestors_frozen_axe/ancestors_frozen_axe.vmdl"
-		
+		"Model"							"models/items/tuskarr/ancestors_frozen_axe/ancestors_frozen_axe.vmdl"
+		"Effect" 							""
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1350,9 +1398,10 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_stone"
-		"Model"					"models/items/axe/axe_executioner.vmdl"
+		"Model"							"models/items/axe/axe_executioner.vmdl"
+		"Effect" 						""
 		
 				
 		// Item Info
@@ -1449,10 +1498,10 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_iron"
-		"Model"					"models/items/axe/blacksmith_weapon.vmdl"
-		
+		"Model"							"models/items/axe/blacksmith_weapon.vmdl"
+		"Effect" 						""
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1462,11 +1511,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 		  "Custom"
 		  {
@@ -1549,10 +1598,10 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_steel"
-		"Model"					"models/props_items/ogre_axe01.vmdl"
-		
+		"Model"							"models/props_items/ogre_axe01.vmdl"
+		"Effect" 						""
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1651,7 +1700,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"axe_mage_masher"
 		"Model"					"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
-		
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1666,7 +1715,6 @@
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
@@ -1777,10 +1825,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_battle"
-		"Model"					"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
-		
+		"Model"							"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1793,8 +1841,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  		"1"
@@ -2512,7 +2559,7 @@
 //=================================================================================================================
 	"item_spear_poison_ultra"
 	{
-		"ID"							"2033"
+		"ID"							"1140"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -4505,15 +4552,15 @@
 //=================================================================================================================
 // Custom: Bone Gloves
 //=================================================================================================================
-	"item_gloves_Bone"
+	"item_gloves_bone"
 	{
 		"ID"							"1059"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"gloves_bone"
-		"Model"					"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
+		"Model"							"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
 		
 
 		// Stats
@@ -4985,7 +5032,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
 		"Model"					"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5073,7 +5120,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
 		"Model"					"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5160,7 +5207,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"coat_bone"
 		"Model"					"models/items/witchdoctor/stormcrowcloak/stormcrowcloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5248,7 +5295,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_chainmail"
 		"Model"					"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5337,7 +5384,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_platemail"
 		"Model"					"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5426,7 +5473,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"armor_battle"
 		"Model"					"models/items/alchemist/armor/armor.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5529,7 +5576,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_hood_of_defiance"
 		"Model"					"models/items/alchemist/armor/armor.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5634,7 +5681,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"cloak_protection"
 		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5708,7 +5755,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_shivas_guard"
 		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5782,7 +5829,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"cloak_fire"
 		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5853,7 +5900,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_stout_shield"
 		"Model"					"models/props_gameplay/stout_shield.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5949,7 +5996,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"shield_battle"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6062,14 +6109,14 @@
 //=================================================================================================================
 	"item_shield_bone"
 	{
-		"ID"							"2076"
+		"ID"							"1139"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"			"item_skadi"
 		"Model"					"models/items/dragon_knight/shield_of_the_drake/shield_of_the_drake.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6156,7 +6203,7 @@
 //=================================================================================================================
 	"item_shield_iron"
 	{
-		"ID"							"2077"
+		"ID"							"1138"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -6164,7 +6211,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_stout_shield"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6251,7 +6298,7 @@
 //=================================================================================================================
 	"item_shield_steel"
 	{
-		"ID"							"2078"
+		"ID"							"1137"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -6259,7 +6306,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_buckler"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6353,7 +6400,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_boots"
 		"Model"					"models/props_gameplay/boots_of_speed.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6430,7 +6477,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_tranquil_boots"
 		"Model"					"models/props_items/powertreads.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6510,7 +6557,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"boots_bear"
 		"Model"					"models/props_items/powertreads.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6588,7 +6635,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"boots_bone"
 		"Model"					"models/items/kunkka/black_boots_of_the_voyager/black_boots_of_the_voyager.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6667,7 +6714,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"boots_iron"
 		"Model"					"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6744,7 +6791,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"boots_steel"
 		"Model"					"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6819,7 +6866,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_travel_boots"
 		"Model"					"models/items/tinker/boots_of_travel.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6904,7 +6951,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"scroll_living_dead"
 		"Model"					"models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7121,7 +7168,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"scroll_stoneskin"
 		"Model"					"models/props_gameplay/recipe.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7319,7 +7366,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"meat_diseased"
 		"Model"					"models/particle/green_rocks.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7392,7 +7439,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"meat_cooked"
 		"Model"					"models/particle/green_rocks.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7528,7 +7575,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"seed_magic"
 		"Model"					"models/props_gameplay/rune_regeneration01.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7598,7 +7645,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"egg_hawk"
 		"Model"					"models/props_winter/egg.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7646,7 +7693,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_shadow_amulet"
 		"Model"					"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7692,7 +7739,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_gem_of_true_sight"
 		"Model"					"models/props_gameplay/gem01.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7841,7 +7888,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"clay_living"
 		"Model"					"models/particle/lion_attack_sphere.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7912,7 +7959,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"meat_smoked"
 		"Model"					"models/particle/green_rocks.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7972,7 +8019,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"hide_wolf"
 		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8021,7 +8068,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"hide_elk"
 		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8070,7 +8117,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"hide_jungle_bear"
 		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8121,7 +8168,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"compass_sonar"
 		"Model"					"models/items/rattletrap/cog_tesla/cog_tesla.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8184,7 +8231,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"net_basic"
 		"Model"					"models/particle/net.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8410,7 +8457,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"ship_transport"
 		"Model"					"models/items/courier/corsair_ship/corsair_ship_flying.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8473,7 +8520,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"weapon_emp"
 		"Model"							"models/heroes/juggernaut/jugg_healing_ward.vmdl"
-		
+		"Effect" 				""
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
@@ -8537,7 +8584,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_medallion_of_courage"
 		"Model"					"models/props_gameplay/status_shield.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8605,7 +8652,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"bow_blood_god"
 		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8674,7 +8721,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"scales_hydra"
 		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8743,7 +8790,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"pinion_shadow"
 		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8811,7 +8858,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"pinion_fire"
 		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8879,7 +8926,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"pinion_fire"
 		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8946,7 +8993,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gun_blow_empty"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8998,7 +9045,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gun_blow_bones"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9098,7 +9145,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gun_blow_thistles"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9198,7 +9245,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"gun_blow_thistles_dark"
 		"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-		
+		"Effect" 				""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9297,7 +9344,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_dagon_5"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
@@ -9365,7 +9412,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_fire_mage"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
@@ -9434,7 +9481,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_tent_basic"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9503,7 +9550,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_hut_basic"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9572,7 +9619,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_hut_mud"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9641,7 +9688,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_chest_storage"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9710,7 +9757,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_smoke_house"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9779,7 +9826,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_sange_and_yasha"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9848,7 +9895,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_tannery"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9916,7 +9963,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_workshop"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9984,7 +10031,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_witch_doctor_hut"
 		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10052,7 +10099,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_mixing_pot"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10120,7 +10167,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_tower_omni"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10324,7 +10371,8 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_teleport_beacon"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
+
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10392,7 +10440,8 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"building_hatchery"
 		"Model"					"models/props_debris/battle_debris2.vmdl"
-		
+		"Effect" 				""
+
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10445,5 +10494,46 @@
 			"build_duration"	"10.0"
 			}
 		}
+	}
+//=================================================================================================================
+// Custom: Locked Slot
+//=================================================================================================================
+	"item_slot_locked"
+	{
+		"ID"							"1151"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"slot_locked"
+		"Effect" 						""
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"				"WorkDamnYou"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
 	}
 }
