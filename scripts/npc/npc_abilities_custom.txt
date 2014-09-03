@@ -508,7 +508,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -565,7 +565,7 @@
             //do some swapping shenanigans
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "RadarManipulations"
                 "isOpening"     "true"
             }
@@ -603,7 +603,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -666,7 +666,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -729,7 +729,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -792,7 +792,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -854,7 +854,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -915,7 +915,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -966,7 +966,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "MixHerbs"
                 "Target"        "CASTER"
             }
@@ -981,7 +981,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityTextureName"            "ability_gatherer_telegather"
         "MaxLevel"						"1"
         "HotKeyOverride"                "T"
@@ -1017,7 +1017,7 @@
         {            
             // "RunScript"
             // {
-                // "ScriptFile"    "custom_scripted_abilities.lua"
+                // "ScriptFile"    "custom_functions_abilities.lua"
                 // "Function"      "MixHerbs"
                 // "Target"        "CASTER"
             // }
