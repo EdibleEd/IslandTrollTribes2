@@ -130,13 +130,14 @@ end
 function ITT_GameMode:FixDropModels(dt)
     for _,v in pairs(Entities:FindAllByClassname("dota_item_drop")) do
         if not v.ModelFixInit then
+            print("initing.. " .. v:GetContainedItem():GetAbilityName())
             v.ModelFixInit = true
             v.OriginalOrigin = v:GetOrigin()
             v.OriginalAngles = v:GetAngles()
             local custom = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom 
             if custom then
+                print("found custom")
                 if custom.ModelOffsets then
-                    print("initing.. " .. v:GetContainedItem():GetAbilityName())
                     local offsets = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom.ModelOffsets          
                     v:SetOrigin( v.OriginalOrigin - Vector(offsets.Origin.x, offsets.Origin.y, offsets.Origin.z))
                     v:SetAngles( v.OriginalAngles.x - offsets.Angles.x, v.OriginalAngles.y - offsets.Angles.y, v.OriginalAngles.z - offsets.Angles.z)
