@@ -982,6 +982,8 @@
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"	        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"		    "DOTA_UNIT_TARGET_ALL"
         "AbilityTextureName"            "ability_gatherer_telegather"
         "MaxLevel"						"1"
         "HotKeyOverride"                "T"
@@ -993,6 +995,39 @@
         "OnSpellStart"
         {            
             //telegather buff and lua code
+            "ApplyModifier"
+            {
+                "ModifierName" "modifier_telegather"
+                "Target"    "CASTER"
+                "Duration"  "30"
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_scripted_abilities.lua"
+                "Function"      "RadarTelegatherInit"
+                "Target"        "TARGET"
+            }
+        }
+        
+        // Modifiers
+        //-------------------------------------------------------------------------------------------------------------    
+        "Modifiers"
+        {
+            "modifier_telegather"
+            {
+                "OnCreated"
+                {
+                    "AttachEffect"
+                    {
+                        "Target" "CASTER"
+                        "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                        "EffectAttachType" "follow_overhead"
+                        "EffectLifeDurationScale" "1"
+                        "EffectColorA" "255 255 0"
+                    }
+                }
+            }
         }
     }
     
