@@ -6,6 +6,7 @@
 print("addon_init invoked")
 
 require( 'util' )
+require( 'custom_functions_ability' )
 
 --[[
     Global variables
@@ -124,6 +125,9 @@ function ITT_GameMode:InitGameMode()
     -- WORK:
     -- dota_item_picked_up dota_item_purchased
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
+    
+    --Listener for items picked up, used for telegather abilities
+    ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(ITT_GameMode, 'OnItemPickedUp'), self)
 
 end
 
@@ -254,6 +258,16 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
     maxPlayerID = maxPlayerID + 1
 
     local creature = CreateUnitByName("npc_dota_creature_elk", RandomVector(RandomFloat(0,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
+end
+
+--Listener to handle telegather events
+function ITT_GameMode:OnItemPickedUp(event)
+        local hero = EntIndexToHScript( event.HeroEntityIndex )
+        local hasTelegather = hero:HasModifier("modifier_telegather")
+        
+        if hasTelegather then
+            RadarTelegather(event)
+        end
 end
 
 function give_item(cmdname, itemname)
