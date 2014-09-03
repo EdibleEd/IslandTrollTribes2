@@ -472,7 +472,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 	"Custom"
 		  {
-		  	  "ModelScale" "20.0"
+		  	  "ModelScale" "2.5"
 		  }
 	
 	"OnSpellStart"
@@ -509,7 +509,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"acorn_magic"
 		"Model"					"models/heroes/crystal_maiden/crystal_maiden_ice_debris_01.vmdl"
@@ -546,9 +546,16 @@
 		"UIPickupSound"					"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
+		
+		
 	//-------------------------------------------------------------------------------------------------------------
 	// Modifiers
 	//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		  {
+		  	  "ModelScale" "2.5"
+		  }
+		  
 	"OnSpellStart"
 	{
 		"Heal"
@@ -647,11 +654,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"crystal_mana"
 		"Model"					"models/particle/ice_shards.vmdl"
-		"Effect"				"particles/units/heroes/hero_puck/puck_dreamcoil_magic.vpcf"
+		"Effect"				"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/crystal_maiden_cowl_ambient_b.vpcf"
 		
 		
 		// Item Info
@@ -681,6 +688,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		  {
+		  	  "ModelScale" "2.5"
+		  }
 	
 	}
 
@@ -730,7 +741,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
+		"Custom"
+		  {
+		  	  "ModelScale" "0.5"
+		  }
 	}
 
 //=================================================================================================================
@@ -780,7 +794,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
+		"Custom"
+		  {
+		  	  "ModelScale" "0.5"
+		  }
 	}
 
 //=================================================================================================================
@@ -795,7 +812,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"		"ball_clay"
-		"Model"						"models/heroes/phoenix/phoenix_egg.vmdl"
+		"Model"						"models/particle/tiny_simrocks.vmdl"
 		"Effect" 					""
 		
 		// Stats
@@ -878,8 +895,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
-
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "-15"
+					"y" "-15"
+					"z" "-31"
+				}
+				"Angles"
+				{
+					"x" "-433"
+					"y" "-433"
+					"z" "0"
+				}
+			}
+		}
 	}
 //=================================================================================================================
 // Custom: River Stem
@@ -978,7 +1011,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+				"Custom"
+		  {
+		  	  "ModelScale" "0.35"
+		  }
 		
 	}
 
@@ -1028,6 +1064,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				"Custom"
+		  {
+		  	  "ModelScale" "0.35"
+		  }
 	}
 
 //=================================================================================================================
@@ -1281,7 +1321,6 @@
 
 	}
 
-
 //=================================================================================================================
 // Custom: Flint Axe
 //=================================================================================================================
@@ -1420,6 +1459,7 @@
 
 		"Custom"
 		{
+			"ModelScale"		 "0.6"
 			"ModelOffsets"
 			{
 				"Origin" 
@@ -1519,6 +1559,7 @@
 
 		  "Custom"
 		  {
+			  "ModelScale"		 "0.6"
 		      "ModelOffsets"
 		      {
 		          "Origin"
@@ -1618,7 +1659,8 @@
 		"ItemSellable"                  		"0"
 
 		  "Custom"
-		  {
+		  {			  
+			  "ModelScale"		 "0.6"
 		      "ModelOffsets"
 		      {
 		          "Origin"
@@ -1896,7 +1938,6 @@
 		}
 	
 	}
-
 //=================================================================================================================
 // Custom: Basic Spear
 //=================================================================================================================
@@ -1909,9 +1950,9 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_basic"
-		"Model"					"models/particle/legion_arrow.vmdl"
+		"Model"							"models/particle/legion_arrow.vmdl"
 		
 		
 		// Stats
@@ -1952,7 +1993,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-	
+			  "Custom"
+		  {			  
+			  "ModelScale"		 "1.5"
+		  }
 		"OnSpellStart"
 		{
 			   "TrackingProjectile"
@@ -2258,6 +2302,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				  "Custom"
+		  {			  
+			  "ModelScale"		 "0.6"
+		  }
 		"OnSpellStart"
 		{
 			   "TrackingProjectile"
@@ -2605,7 +2653,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
+		  "Custom"
+		  {			  
+			  "ModelScale"		 "0.6"
+		  }
 		"OnSpellStart"
 		{
 			   "TrackingProjectile"
@@ -2695,7 +2746,6 @@
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
-		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
@@ -2715,6 +2765,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				  "Custom"
+		  {			  
+			  "ModelScale"		 "1.3"
+		  }
 		"Modifiers"
 		{
 		"modifier_spirit_wind_stats"
@@ -2786,6 +2840,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				  "Custom"
+		  {			  
+			  "ModelScale"		 "0.7"
+		  }
 		"Modifiers"
 		{
 		"modifier_spirit_water_stats"
@@ -2847,7 +2905,7 @@
 
 				  "Custom"
 		  {
-		  	  "ModelScale" "5.0"
+		  	  "ModelScale" "0.6"
 		      "ModelOffsets"
 		      {
 		          "Origin"
@@ -2937,7 +2995,7 @@
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"potion_healingi"
-		"Model"					"models/items/brewmaster/offhand_jug/offhand_jug.vmdl"
+		"Model"					"models/props_gameplay/salve.vmdl"
 		
 
 		// Stats
@@ -3011,7 +3069,7 @@
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"			"item_salve"
-		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
+		"Model"					"models/props_gameplay/salve.vmdl"
 		
 
 		// Stats
@@ -3084,7 +3142,7 @@
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_bottle_regeneration"
-		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
+		"Model"					"models/props_gameplay/salve.vmdl"
 		
 
 		// Stats
@@ -3494,6 +3552,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+			"Custom"
+		  {
+		  	  "ModelScale" "2.5"
+		  }	
 				"OnSpellStart"
 		{
 			   "TrackingProjectile"
@@ -3745,7 +3807,7 @@
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"		"potion_elemental"
 		"Model"						"models/items/alchemist/alchemeyerflask/alchemeyerflask.vmdl"
-		
+		"Effect"					""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3780,6 +3842,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+			"Custom"
+		  {
+		  	  "ModelScale" "2.5"
+		  }
 			"OnSpellStart"
 			{
 			"RunScript"
@@ -3870,7 +3936,10 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+					"Custom"
+		  {
+		  	  "ModelScale" "2.5"
+		  }
 			"OnSpellStart"
 			{
 			"RunScript"
@@ -3950,6 +4019,7 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		
 			"OnSpellStart"
 			{
 			"RunScript"
@@ -4312,6 +4382,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "-81"
+					"y" "-81"
+					"z" "31"
+				}
+				"Angles"
+				{
+					"x" "59"
+					"y" "59"
+					"z" "-14"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_gloves_elk"
@@ -4406,6 +4494,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "-81"
+					"y" "-81"
+					"z" "31"
+				}
+				"Angles"
+				{
+					"x" "59"
+					"y" "59"
+					"z" "-14"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_gloves_wolf"
@@ -4499,6 +4605,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "-81"
+					"y" "-81"
+					"z" "31"
+				}
+				"Angles"
+				{
+					"x" "59"
+					"y" "59"
+					"z" "-14"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_gloves_bear"
@@ -9298,7 +9422,7 @@
 					"RunScript"
 					{
 					"ScriptFile" "scripts/vscripts/abilities.lua"
-					"Function" "ability_spear_poison_ultra_throw"
+					"Function" "ability_gun_blow_thistles_dark_blow"
 					}
 				}
 			"FireSound"
@@ -10536,4 +10660,6 @@
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
 	}
+}
+
 }
