@@ -704,7 +704,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"              		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"ingot_steel"
 		"Model"								"models/props_magic/bad_crystals002.vmdl"
@@ -756,7 +756,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"ingot_iron"
 		"Model"								"models/props_magic/bad_crystals001.vmdl"
@@ -809,7 +809,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"		"ball_clay"
 		"Model"						"models/particle/tiny_simrocks.vmdl"
@@ -857,7 +857,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"river_root"
 		"Model"								"models/heroes/treant_protector/treant_ground_root.vmdl"
@@ -923,6 +923,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"river_stem"
 		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
@@ -973,7 +974,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"thistles"
 		"Model"								"models/props_nature/cattails001.vmdl"
@@ -1027,8 +1028,9 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"      	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"thistles_dark"
+		"AbilityTextureName"	"thistles_dark"
 		"Model"					"models/props_nature/cattails001.vmdl"
 		"Effect"				"particles/units/heroes/hero_dark_seer/dark_seer_surge_h.vpcf"
 		
@@ -1079,7 +1081,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"herb_butsu"
 		"Model"								"models/props_nature/fern003.vmdl"
@@ -1129,11 +1131,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_blue"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_blue"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1179,11 +1181,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_yellow"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/econ/items/juggernaut/nomad_sword_grand_claive/jugg_weapon_glow_variation_grand_claive_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_yellow"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/econ/items/juggernaut/nomad_sword_grand_claive/jugg_weapon_glow_variation_grand_claive_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1231,11 +1233,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_purple"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/econ/items/kunkka/kunkka_weapon_shadow/kunkka_weapon_tidebringer_shadow_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_purple"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/econ/items/kunkka/kunkka_weapon_shadow/kunkka_weapon_tidebringer_shadow_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1280,11 +1282,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_orange"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/dire_fx/fire_barracks_glow_d.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_orange"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/dire_fx/fire_barracks_glow_d.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2728,10 +2730,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"spirit_wind"
-		"Model"							"models/heroes/batrider/batrider_weapon.vmdl"
-		"Effect"						"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"spirit_wind"
+		"Model"								"models/heroes/batrider/batrider_weapon.vmdl"
+		"Effect"							"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2802,10 +2805,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_sphere"
-		"Model"					"models/props_gameplay/rune_doubledamage01.vmdl"
-		"Effect"				"particles/newplayer_fx/npx_splash_water3c.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_sphere"
+		"Model"								"models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"							"particles/newplayer_fx/npx_splash_water3c.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4342,10 +4346,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_gloves_of_haste"
-		"Model"							"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
-		"Effect" 						""
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_gloves_of_haste"
+		"Model"								"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4453,6 +4458,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_gloves_of_haste"
 		"Model"							"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
@@ -4565,10 +4571,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_gloves_of_haste"
-		"Model"							"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
-		"Effect" 						""
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_gloves_of_haste"
+		"Model"								"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4584,7 +4591,7 @@
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
-		"ItemSellable"                  		"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4677,10 +4684,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"gloves_bone"
-		"Model"							"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
-		"Effect" 						""
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"gloves_bone"
+		"Model"								"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4788,6 +4796,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"gloves_iron"
 		"Model"							"models/items/blood_seeker/war_gloves.vmdl"
@@ -4881,6 +4890,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"            	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"gloves_steel"
 		"Model"							"models/heroes/clinkz/clinkz_gloves.vmdl"
@@ -4900,7 +4910,7 @@
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
-		"ItemSellable"                  		"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4920,14 +4930,14 @@
 		{
 			"modifier_gloves_steel"
 			{
-				"Passive" "1"
-				"IsHidden" "1"
+				"Passive" 	"1"
+				"IsHidden" 	"1"
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
 				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
-				"ThinkInterval" "%tick_rate"
+				"ThinkInterval"	"%tick_rate"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -4972,7 +4982,8 @@
 		"ID"							"1062"
 
 		// General
-		//-------------------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------------------.
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_blades_of_attack"
 		"Model"							"models/items/rikimaru/bladearmorgloves/bladearmorgloves.vmdl"
@@ -5075,7 +5086,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
 		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
@@ -5097,7 +5108,7 @@
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
-		"ItemSellable"                  		"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -5182,7 +5193,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
 		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
@@ -5288,6 +5299,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
 		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
@@ -5392,7 +5404,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"coat_bone"
 		"Model"							"models/items/witchdoctor/stormcrowcloak/stormcrowcloak.vmdl"
@@ -5464,7 +5476,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5498,7 +5510,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_chainmail"
 		"Model"							"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
@@ -5563,7 +5575,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"				"9"
+				"armor"					"9"
 			}
 			"02"
 			{
@@ -5587,7 +5599,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_platemail"
 		"Model"							"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
@@ -5676,7 +5688,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"armor_battle"
 		"Model"							"models/items/alchemist/armor/armor.vmdl"
@@ -5884,7 +5896,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"cloak_protection"
 		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
@@ -5939,13 +5951,13 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"					"20"
+				"chance"				"20"
 				
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"					"1"
+				"bonus_damage"			"1"
 			}
 		}
 	}
@@ -5958,7 +5970,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_shivas_guard"
 		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
@@ -6008,7 +6020,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"					"30"
+				"chance"				"30"
 			}
 			"02"
 			{
@@ -6019,7 +6031,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"16"
+				"damage"				"16"
 			}
 		}
 	}
@@ -6033,6 +6045,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"cloak_fire"
 		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
@@ -6104,6 +6117,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_stout_shield"
 		"Model"							"models/props_gameplay/stout_shield.vmdl"
@@ -6178,12 +6192,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amount"				"5"
+				"block_amount"			"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_block"				"0"
+				"spell_block"			"0"
 			}
 		}
 	}
@@ -6277,22 +6291,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"				"10"
+				"armor"					"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"					"10"
+				"block_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amount"				"20"
+				"block_amount"			"20"
 			}			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_block"				"1"
+				"spell_block"			"1"
 			}
 			"05"
 			{
@@ -6320,6 +6334,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_skadi"
 		"Model"							"models/items/dragon_knight/shield_of_the_drake/shield_of_the_drake.vmdl"
@@ -6414,7 +6429,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"     	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_stout_shield"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -6509,7 +6524,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_buckler"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -6563,7 +6578,7 @@
 				"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"shield_block"
+						"Function"				"shield_block"
 						"Block Chance"			"%block_chance"
 						"Block Amount"			"%block_amount"
 						"Spell Block"			"%spell_block"
@@ -6604,6 +6619,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_boots"
 		"Model"							"models/props_gameplay/boots_of_speed.vmdl"
@@ -6678,9 +6694,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tranquil_boots"
 		"Model"							"models/props_items/powertreads.vmdl"
@@ -6758,9 +6772,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_bear"
 		"Model"							"models/props_items/powertreads.vmdl"
@@ -6768,8 +6780,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6836,18 +6846,14 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_bone"
 		"Model"							"models/items/kunkka/black_boots_of_the_voyager/black_boots_of_the_voyager.vmdl"
 		"Effect" 						""
 
 		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
+		//------------------------------------------------------------------------------------------------------------- 
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6915,9 +6921,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_iron"
 		"Model"							"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
@@ -6925,8 +6929,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6992,9 +6994,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_steel"
 		"Model"							"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
@@ -7002,8 +7002,6 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7070,6 +7068,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_travel_boots"
 		"Model"							"models/items/tinker/boots_of_travel.vmdl"
@@ -7777,7 +7776,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"seed_magic"
 		"Model"					"models/props_gameplay/rune_regeneration01.vmdl"
@@ -7848,6 +7847,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"egg_hawk"
 		"Model"							"models/props_winter/egg.vmdl"
@@ -7896,10 +7896,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_shadow_amulet"
-		"Model"					"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"item_shadow_amulet"
+		"Model"						"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
+		"Effect" 					""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8218,6 +8219,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"hide_wolf"
 		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
@@ -8267,15 +8269,14 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"hide_elk"
-		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"hide_elk"
+		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8316,15 +8317,14 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"hide_jungle_bear"
-		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"hide_jungle_bear"
+		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -8571,13 +8571,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_aegis"
-		"Model"					"models/props_winter/nest_01.vmdl"
-		"Effect"				"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_cascade.vpcf"
+		"Model"							"models/props_winter/nest_01.vmdl"
+		"Effect"						"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_cascade.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8778,25 +8778,21 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_medallion_of_courage"
-		"Model"					"models/props_gameplay/status_shield.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
 		"ItemDroppable"       			"1"
@@ -8819,7 +8815,17 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+					"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_medallion_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
 		"AbilitySpecial"
 		{
 			"01"
@@ -8834,7 +8840,124 @@
 			}
 		}
 	}
+//=================================================================================================================
+// Custom: Horn of the Mammoth
+//=================================================================================================================
+//God help us all.
+	"item_horn_mammoth"
+	{
+		"ID"							"1152"
 
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"horn_mammoth"
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+			"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_horn_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
+	}
+//=================================================================================================================
+// Custom: Medallion of the Thief
+//=================================================================================================================
+//God help us all.
+	"item_medallion_theif"
+	{
+		"ID"							"1153"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"medallion_theif"
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+			"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_medallion_theif_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
+	}
 //=================================================================================================================
 // Custom: Bow of the Blood God
 //=================================================================================================================
@@ -8845,13 +8968,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"bow_blood_god"
-		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8913,13 +9036,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"scales_hydra"
-		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10713,6 +10836,4 @@
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
 	}
-}
-
 }
