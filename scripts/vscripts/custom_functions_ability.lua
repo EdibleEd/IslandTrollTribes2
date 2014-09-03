@@ -281,3 +281,23 @@ function RadarManipulations(keys)
     end
 
 end
+
+function RadarTelegatherInit(keys)
+    local caster = keys.caster
+    local target = keys.target
+    
+    keys.caster.targetFire = target
+    
+end
+
+function RadarTelegather (keys)
+        local hero = EntIndexToHScript( keys.HeroEntityIndex )
+        local hasTelegather = hero:HasModifier("modifier_telegather")
+        local targetFire = hero.targetFire
+        
+        local originalItem = EntIndexToHScript(keys.ItemEntityIndex)
+        local newItem = CreateItem(originalItem:GetName(), nil, nil)
+        print( "Teleporting Item", originalItem:GetName())
+        hero:RemoveItem(originalItem)
+        CreateItemOnPositionSync(targetFire:GetAbsOrigin() + RandomVector(RandomInt(100,150)),newItem)      
+end
