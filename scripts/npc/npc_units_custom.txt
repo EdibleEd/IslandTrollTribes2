@@ -105,10 +105,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
 		"Ability2"						"ability_gatherer_radarmanipulations"						// Ability 2
-		"Ability3"						""															// Ability 3
-		"Ability4"						""															// Ability 4
-		"Ability5"						""															// Ability 5
-		"Ability6" 						""															// Ability 6
+		"Ability3"						"ability_empty3"											// Ability 3
+		"Ability4"						"ability_empty4"											// Ability 4
+		"Ability5"						"ability_empty5"											// Ability 5
+		"Ability6" 						"ability_empty6"											// Ability 6
 		"Ability7" 						""										
 		"Ability8" 						""							
 		"Ability9"  					""		
