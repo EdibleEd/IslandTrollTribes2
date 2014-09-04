@@ -1,6 +1,6 @@
 --[[
 	This is where the meat of the addon is defined and modified
-	This file exists mostly because addon_game_mode can't be dynaimcally reloaded
+	This file exists mostly because addon_game_mode can't be dynamically reloaded
 ]]--
 
 print("addon_init invoked")
@@ -266,7 +266,9 @@ function ITT_SpawnItem(island)
     --print(itemSpawned)
     local item = CreateItem(itemSpawned, nil, nil)
     --item:SetPurchaseTime(Time)
-    CreateItemOnPositionSync(GetRandomVectorGivenBounds(island[1], island[2], island[3], island[4]), item)
+    local randomVector = GetRandomVectorGivenBounds(island[1], island[2], island[3], island[4])
+    CreateItemOnPositionSync(randomVector, item)
+    item:SetOrigin(randomVector)
 end
 
 

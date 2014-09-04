@@ -299,5 +299,7 @@ function RadarTelegather (keys)
         local newItem = CreateItem(originalItem:GetName(), nil, nil)
         print( "Teleporting Item", originalItem:GetName())
         hero:RemoveItem(originalItem)
-        CreateItemOnPositionSync(targetFire:GetAbsOrigin() + RandomVector(RandomInt(100,150)),newItem)      
+        local itemPosition = targetFire:GetAbsOrigin() + RandomVector(RandomInt(100,150))
+        CreateItemOnPositionSync(itemPosition,newItem)   
+        newItem:SetOrigin(itemPosition)        
 end
