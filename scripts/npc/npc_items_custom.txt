@@ -65,7 +65,7 @@
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -232,7 +232,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -271,10 +271,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"bone"
-		"Model"					"models/props_bones/bone002.vmdl"
-		"Effect" 							""
+		"Model"							"models/props_bones/bone002.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -282,17 +282,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -442,7 +442,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -521,7 +521,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -601,7 +601,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -663,16 +663,16 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -704,7 +704,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"              		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"ingot_steel"
 		"Model"								"models/props_magic/bad_crystals002.vmdl"
@@ -715,7 +715,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -756,7 +756,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"ingot_iron"
 		"Model"								"models/props_magic/bad_crystals001.vmdl"
@@ -768,17 +768,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -809,7 +809,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"		"ball_clay"
 		"Model"						"models/particle/tiny_simrocks.vmdl"
@@ -821,17 +821,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -857,7 +857,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"river_root"
 		"Model"								"models/heroes/treant_protector/treant_ground_root.vmdl"
@@ -923,6 +923,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"river_stem"
 		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
@@ -934,17 +935,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -973,7 +974,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"thistles"
 		"Model"								"models/props_nature/cattails001.vmdl"
@@ -985,17 +986,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1027,8 +1028,9 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"      	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"thistles_dark"
+		"AbilityTextureName"	"thistles_dark"
 		"Model"					"models/props_nature/cattails001.vmdl"
 		"Effect"				"particles/units/heroes/hero_dark_seer/dark_seer_surge_h.vpcf"
 		
@@ -1038,17 +1040,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1079,7 +1081,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"herb_butsu"
 		"Model"								"models/props_nature/fern003.vmdl"
@@ -1091,7 +1093,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1129,11 +1131,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_blue"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_blue"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1141,7 +1143,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1179,11 +1181,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_yellow"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/econ/items/juggernaut/nomad_sword_grand_claive/jugg_weapon_glow_variation_grand_claive_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_yellow"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/econ/items/juggernaut/nomad_sword_grand_claive/jugg_weapon_glow_variation_grand_claive_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1191,17 +1193,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1231,11 +1233,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_purple"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/econ/items/kunkka/kunkka_weapon_shadow/kunkka_weapon_tidebringer_shadow_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_purple"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/econ/items/kunkka/kunkka_weapon_shadow/kunkka_weapon_tidebringer_shadow_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1280,11 +1282,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"herb_orange"
-		"Model"					"models/props_nature/mushroom_wild_02.vmdl"
-		"Effect"				"particles/dire_fx/fire_barracks_glow_d.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"herb_orange"
+		"Model"								"models/props_nature/mushroom_wild_02.vmdl"
+		"Effect"							"particles/dire_fx/fire_barracks_glow_d.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1292,7 +1294,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1340,21 +1342,21 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_flint"
 		"Model"							"models/items/tuskarr/ancestors_frozen_axe/ancestors_frozen_axe.vmdl"
-		"Effect" 							""
+		"Effect" 						""
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 		//Custom Data, to be read by Lua
 		"Custom"
@@ -1445,17 +1447,17 @@
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 		"Custom"
 		{
@@ -1545,7 +1547,7 @@
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1646,17 +1648,17 @@
 				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 		  "Custom"
 		  {			  
@@ -1739,9 +1741,9 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"5.0"
 		"AbilityChannelTime"            "0.1"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"axe_mage_masher"
-		"Model"					"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
+		"Model"							"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
 		"Effect" 						""
 		
 		// Stats
@@ -1750,17 +1752,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 		  "Custom"
 		  {
@@ -1877,7 +1879,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1885,9 +1887,9 @@
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1919,7 +1921,7 @@
 			"Properties"
 				{
 			"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-			"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+			"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				}
 			}
 		}
@@ -1953,7 +1955,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_basic"
 		"Model"							"models/particle/legion_arrow.vmdl"
-		
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2046,13 +2048,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_iron"
-		"Model"					"models/items/huskar/sacred_bones_spear/sacred_bones_spear.vmdl"
-		
+		"Model"							"models/items/huskar/sacred_bones_spear/sacred_bones_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2062,7 +2064,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2152,13 +2154,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_heavens_halberd"
-		"Model"					"models/items/huskar/sacred_bones_spear/sacred_bones_spear.vmdl"
-		
+		"Model"							"models/items/huskar/sacred_bones_spear/sacred_bones_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2168,7 +2170,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2259,13 +2261,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_dark"
-		"Model"					"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
-		
+		"Model"							"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2275,7 +2277,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2380,13 +2382,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_poison"
-		"Model"					"models/heroes/enchantress/enchantress_spear.vmdl"
-		
+		"Model"							"models/heroes/enchantress/enchantress_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2396,18 +2398,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2496,13 +2498,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_poison_refined"
-		"Model"					"models/heroes/enchantress/enchantress_spear.vmdl"
-		
+		"Model"							"models/heroes/enchantress/enchantress_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2511,18 +2513,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -2611,13 +2612,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"spear_poison_ultra"
-		"Model"					"models/items/enchantress/anuxi_summer_spear/anuxi_summer_spear.vmdl"
-		
+		"Model"							"models/items/enchantress/anuxi_summer_spear/anuxi_summer_spear.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2626,7 +2627,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2729,22 +2730,23 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"spirit_wind"
-		"Model"							"models/heroes/batrider/batrider_weapon.vmdl"
-		"Effect"						"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"spirit_wind"
+		"Model"								"models/heroes/batrider/batrider_weapon.vmdl"
+		"Effect"							"particles/units/heroes/hero_razor/razor_plasmafield_glow.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
-		"ItemPermanent"					"0"
+		"ItemPermanent"					"1"
 		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -2754,7 +2756,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2803,22 +2805,23 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_sphere"
-		"Model"					"models/props_gameplay/rune_doubledamage01.vmdl"
-		"Effect"				"particles/newplayer_fx/npx_splash_water3c.vpcf"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_sphere"
+		"Model"								"models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"							"particles/newplayer_fx/npx_splash_water3c.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
+		"ItemPermanent"					"1"
 		"ItemDroppable"               	"1"
 		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
@@ -2855,7 +2858,7 @@
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 		"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 			"%all_stats"
 				}
 			}
 		}
@@ -2878,11 +2881,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"     		    "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_bottle_illusion"
-		"Model"					"models/items/brewmaster/offhand_jug/offhand_jug.vmdl"
-		
+		"Model"							"models/items/brewmaster/offhand_jug/offhand_jug.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2890,18 +2893,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 
 				  "Custom"
 		  {
@@ -2992,11 +2995,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"potion_healingi"
-		"Model"					"models/props_gameplay/salve.vmdl"
-		
+		"AbilityBehavior"      			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_healingi"
+		"Model"							"models/props_gameplay/salve.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3066,11 +3069,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"    	        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_salve"
-		"Model"					"models/props_gameplay/salve.vmdl"
-		
+		"Model"							"models/props_gameplay/salve.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3078,18 +3081,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3105,27 +3108,27 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-	"OnSpellStart"
+		"OnSpellStart"
 		{
 			"Heal"
 			{
-				"Target" "CASTER"
+				"Target" 		"CASTER"
 				"HealAmount"	"%heal_amount"
 			}
 			"SpendCharge"
 			{
 			}
 		}
-							"AbilitySpecial"
+		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"max_stacks"				"4"
 			}
 						"02"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"						"FIELD_INTEGER"
 				"heal_amount"					"160"
 			}
 		}
@@ -3139,11 +3142,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_bottle_regeneration"
-		"Model"					"models/props_gameplay/salve.vmdl"
-		
+		"AbilityBehavior"      			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_bottle_regeneration"
+		"Model"							"models/props_gameplay/salve.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3151,18 +3154,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3212,11 +3215,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"potion_manai"
-		"Model"					"models/props_gameplay/bottle_blue.vmdl"
-		
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_manai"
+		"Model"							"models/props_gameplay/bottle_blue.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3224,7 +3227,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3267,7 +3270,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"max_stacks"			"4"
 			}
 						"02"
 			{
@@ -3286,11 +3289,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET |  DOTA_ABILITY_BEHAVIOR_ITEM"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_clarity"
-		"Model"					"models/props_gameplay/bottle_blue.vmdl"
-		
+		"AbilityBehavior"      		 	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET |  DOTA_ABILITY_BEHAVIOR_ITEM"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_clarity"
+		"Model"							"models/props_gameplay/bottle_blue.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3298,7 +3301,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3360,11 +3363,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"potion_manaiv"
-		"Model"					"models/props_gameplay/bottle_blue.vmdl"
-		
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_manaiv"
+		"Model"							"models/props_gameplay/bottle_blue.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3372,18 +3375,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3448,18 +3450,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3525,7 +3526,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3612,11 +3613,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"       		 "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_smoke_of_deceit"
-		"Model"					"models/props_gameplay/smoke.vmdl"
-		
+		"Model"							"models/props_gameplay/smoke.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3693,13 +3694,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_drunk"
-		"Model"					"models/items/brewmaster/barrel_vice.vmdl"
-		"Effect"				"particles/econ/items/luna/luna_lucent_rider/luna_mount_lucent_rider_eye_glow_a.vpcf"
+		"Model"							"models/items/brewmaster/barrel_vice.vmdl"
+		"Effect"						"particles/econ/items/luna/luna_lucent_rider/luna_mount_lucent_rider_eye_glow_a.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3708,18 +3709,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3815,18 +3816,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3897,11 +3897,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"potion_anti_magic"
-		"Model"					"models/items/alchemist/flask/flask.vmdl"
-		
+		"AbilityBehavior"     		    "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_anti_magic"
+		"Model"							"models/items/alchemist/flask/flask.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3909,18 +3909,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -3980,11 +3979,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"potion_cureall"
-		"Model"					"models/projectiles/projectile_jar.vmdl"
-		
+		"AbilityBehavior"      			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_cureall"
+		"Model"							"models/projectiles/projectile_jar.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3992,18 +3991,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4054,7 +4053,7 @@
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"potion_twin_island"
 		"Model"					"models/heroes/alchemist/alchemist_leftbottle.vmdl"
-		
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4062,7 +4061,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4120,13 +4119,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_acid"
-		"Model"					"models/items/alchemist/toxic_siege_corrosive_flasks/toxic_siege_corrosive_flasks.vmdl"
-		"Effect"				"/units/heroes/hero_alchemist/alchemist_unstableconc_bottlesright.vpcf"
+		"Model"							"models/items/alchemist/toxic_siege_corrosive_flasks/toxic_siege_corrosive_flasks.vmdl"
+		"Effect"						"units/heroes/hero_alchemist/alchemist_unstableconc_bottlesright.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4136,24 +4135,24 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -4180,7 +4179,7 @@
 					"RunScript"
 					{
 					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-					"Function"			"potion_acid_use"
+					"Function"				"potion_acid_use"
 					}
 				}
 			"FireSound"
@@ -4224,11 +4223,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_poison"
-		"Model"					"models/items/shadowshaman/vagabond_drink/vagabond_drink.vmdl"
-		
+		"Model"							"models/items/shadowshaman/vagabond_drink/vagabond_drink.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4236,18 +4235,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4268,7 +4267,7 @@
 			"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-					"Function"			"potion_poisonultra_use"
+					"Function"				"potion_poison_use"
 				}
 			"SpendCharge"
 				{
@@ -4285,11 +4284,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_refresher"
-		"Model"					"models/props_items/bloodstone.vmdl"
-		
+		"Model"							"models/props_items/bloodstone.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4297,7 +4296,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4330,7 +4329,7 @@
 			"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-					"Function"			"potion_poisonultra_use"
+					"Function"				"potion_poison_ultra_use"
 				}
 			"SpendCharge"
 				{
@@ -4347,26 +4346,27 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_gloves_of_haste"
-		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
-		
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_gloves_of_haste"
+		"Model"								"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4409,7 +4409,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4433,17 +4433,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"10"
 			}
 				"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 				"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4458,27 +4458,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_gloves_of_haste"
-		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
-		
+		"Model"							"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4521,7 +4522,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4545,17 +4546,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"15"
 			}
 				"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 				"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4570,26 +4571,27 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"item_gloves_of_haste"
-		"Model"					"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
-		
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"item_gloves_of_haste"
+		"Model"								"models/items/kunkka/singsingkunkkaset_gloves/singsingkunkkaset_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4632,7 +4634,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4656,17 +4658,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"20"
 			}
 				"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 				"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4682,27 +4684,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"gloves_bone"
-		"Model"							"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
-		
+		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"item_datadriven"
+		"AbilityTextureName"				"gloves_bone"
+		"Model"								"models/items/meepo/riftshadow_roamer_gloves/riftshadow_roamer_gloves.vmdl"
+		"Effect" 							""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4718,6 +4721,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "20"
+				}
+				"Angles"
+				{
+					"x" "30"
+					"y" "30"
+					"z" "5"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_gloves_bone"
@@ -4727,7 +4748,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4750,17 +4771,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"20"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4775,26 +4796,27 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"gloves_iron"
-		"Model"					"models/items/blood_seeker/war_gloves.vmdl"
-		
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"gloves_iron"
+		"Model"							"models/items/blood_seeker/war_gloves.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4819,7 +4841,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -4842,17 +4864,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"25"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4862,32 +4884,33 @@
 //=================================================================================================================
 // Custom: Steel Gloves
 //=================================================================================================================
-	"item_gloves_iron"
+	"item_gloves_steel"
 	{
 		"ID"							"1061"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"            	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"gloves_steel"
-		"Model"					"models/heroes/clinkz/clinkz_gloves.vmdl"
-		
+		"Model"							"models/heroes/clinkz/clinkz_gloves.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -4907,14 +4930,14 @@
 		{
 			"modifier_gloves_steel"
 			{
-				"Passive" "1"
-				"IsHidden" "1"
+				"Passive" 	"1"
+				"IsHidden" 	"1"
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				 }
-				"ThinkInterval" "%tick_rate"
+				"ThinkInterval"	"%tick_rate"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -4935,17 +4958,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"35"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -4959,27 +4982,28 @@
 		"ID"							"1062"
 
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		//-------------------------------------------------------------------------------------------------------------.
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_blades_of_attack"
-		"Model"					"models/items/rikimaru/bladearmorgloves/bladearmorgloves.vmdl"
-		
+		"Model"							"models/items/rikimaru/bladearmorgloves/bladearmorgloves.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
 		"ItemSellable"                  		"1"
 		"OnOwnerDied"
 		{
@@ -5005,10 +5029,10 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_PERCENTAGE" "%attack_speed"
+				   "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
 				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
-				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "%all_stats"
-				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%all_stats"
 				 }
 				"ThinkInterval" "%tick_rate"
 				"OnIntervalThink"
@@ -5031,22 +5055,22 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"attack_speed"			"25"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"all_stats"				"2"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"2"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 
 			}
@@ -5062,11 +5086,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
-		"Model"					"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
-		
+		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5074,17 +5098,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -5100,7 +5124,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "68"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_coat_elk"
@@ -5132,12 +5173,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5152,28 +5193,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
-		"Model"					"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -5189,7 +5230,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+				"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "68"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_coat_wolf"
@@ -5221,12 +5279,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5241,33 +5299,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cloak"
-		"Model"					"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/sniper/sharpshooter_cloak/sharpshooter_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5277,6 +5336,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+				"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "68"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_coat_bear"
@@ -5294,7 +5371,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5308,12 +5385,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}			
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5327,34 +5404,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"coat_bone"
-		"Model"					"models/items/witchdoctor/stormcrowcloak/stormcrowcloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/witchdoctor/stormcrowcloak/stormcrowcloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5364,6 +5441,24 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-50"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-201"
+				}
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_coat_bone"
@@ -5381,7 +5476,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5395,12 +5490,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}			
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5415,34 +5510,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_chainmail"
-		"Model"					"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5470,7 +5565,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5480,16 +5575,16 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"				"9"
+				"armor"					"9"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}			
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5504,11 +5599,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_platemail"
-		"Model"					"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5516,23 +5611,23 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5559,7 +5654,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5573,12 +5668,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5593,34 +5688,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"armor_battle"
-		"Model"					"models/items/alchemist/armor/armor.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/alchemist/armor/armor.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5652,7 +5747,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/itemabilities.lua"
 						"Function"			"heat"
-						"Heat"			"%heat"
+						"Heat"				"%heat"
 					}
 				}	
 			}
@@ -5666,22 +5761,22 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"all_stats"				"2"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"magic_resist"			"20"
 			}			
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 		}
@@ -5696,11 +5791,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_hood_of_defiance"
-		"Model"					"models/items/alchemist/armor/armor.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/alchemist/armor/armor.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5708,17 +5803,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -5739,7 +5834,7 @@
 			"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_camouflage_invis"
+					"Function"				"cloak_camouflage_invis"
 				}
 		}
 		"Modifiers"
@@ -5776,17 +5871,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"all_stats"				"2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"heat"					"8"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"35"
 			}
 		}
@@ -5801,34 +5896,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"cloak_protection"
-		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -5856,13 +5951,13 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"					"20"
+				"chance"				"20"
 				
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"					"1"
+				"bonus_damage"			"1"
 			}
 		}
 	}
@@ -5875,28 +5970,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_shivas_guard"
-		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -5925,7 +6020,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"					"30"
+				"chance"				"30"
 			}
 			"02"
 			{
@@ -5936,7 +6031,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"16"
+				"damage"				"16"
 			}
 		}
 	}
@@ -5950,10 +6045,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"cloak_fire"
-		"Model"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/windrunner/falconcloak/falconcloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5961,17 +6057,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6007,7 +6103,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"tick_rate"				"1"
 			}
 		}
@@ -6021,27 +6117,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_stout_shield"
-		"Model"					"models/props_gameplay/stout_shield.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_gameplay/stout_shield.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6089,18 +6186,18 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"block_chance"			"10"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"block_amount"				"5"
+				"var_type"				"FIELD_INTEGER"
+				"block_amount"			"5"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_block"				"0"
+				"var_type"				"FIELD_INTEGER"
+				"spell_block"			"0"
 			}
 		}
 	}
@@ -6114,13 +6211,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"shield_battle"
-		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
-		"Effect" 				""
+		"Model"							"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6129,17 +6226,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6181,7 +6278,7 @@
 				"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"shield_block"
+						"Function"				"shield_block"
 						"Block Chance"			"%block_chance"
 						"Block Amount"			"%block_amount"
 						"Spell Block"			"%spell_block"
@@ -6194,36 +6291,36 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"				"10"
+				"armor"					"10"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"block_chance"					"10"
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"10"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"block_amount"				"20"
+				"var_type"				"FIELD_INTEGER"
+				"block_amount"			"20"
 			}			
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_block"				"1"
+				"var_type"				"FIELD_INTEGER"
+				"spell_block"			"1"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_int"				"1"
 			}						
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_agi"				"1"
 			}						
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_str"				"2"
 			}
 		}
@@ -6237,10 +6334,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_skadi"
-		"Model"					"models/items/dragon_knight/shield_of_the_drake/shield_of_the_drake.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/dragon_knight/shield_of_the_drake/shield_of_the_drake.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6248,23 +6346,23 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"              	"1"
+		"ItemSellable"              	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -6307,17 +6405,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"block_chance"					"10"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"block_amount"				"10"
 			}			
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"spell_block"				"0"
 			}
 		}
@@ -6331,7 +6429,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"     	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_stout_shield"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -6343,17 +6441,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6385,7 +6483,7 @@
 				"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"shield_block"
+						"Function"				"shield_block"
 						"Block Chance"			"%block_chance"
 						"Block Amount"			"%block_amount"
 						"Spell Block"			"%spell_block"
@@ -6398,22 +6496,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"				"8"
+				"armor"					"8"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"block_chance"					"10"
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"10"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"block_amount"				"15"
+				"var_type"				"FIELD_INTEGER"
+				"block_amount"			"15"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_block"				"0"
+				"var_type"				"FIELD_INTEGER"
+				"spell_block"			"0"
 			}
 		}
 	}
@@ -6426,7 +6524,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"item_buckler"
 		"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -6438,17 +6536,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6480,7 +6578,7 @@
 				"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"			"shield_block"
+						"Function"				"shield_block"
 						"Block Chance"			"%block_chance"
 						"Block Amount"			"%block_amount"
 						"Spell Block"			"%spell_block"
@@ -6497,17 +6595,17 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"block_chance"			"20"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"block_amount"			"20"
 			}			
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"spell_block"			"1"
 			}
 		}
@@ -6521,10 +6619,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_boots"
-		"Model"					"models/props_gameplay/boots_of_speed.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_gameplay/boots_of_speed.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6532,23 +6631,23 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                  "1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -6567,7 +6666,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6580,7 +6679,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"60"
 			}
 		}
@@ -6595,13 +6694,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tranquil_boots"
-		"Model"					"models/props_items/powertreads.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_items/powertreads.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6610,16 +6707,16 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
 		"ItemSellable"                  		"1"
 		"OnOwnerDied"
 		{
@@ -6646,7 +6743,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6659,7 +6756,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"60"
 			}
 		}
@@ -6675,38 +6772,34 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_bear"
-		"Model"					"models/props_items/powertreads.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_items/powertreads.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"              	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -6725,7 +6818,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6738,7 +6831,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"60"
 			}
 		}
@@ -6753,32 +6846,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_bone"
-		"Model"					"models/items/kunkka/black_boots_of_the_voyager/black_boots_of_the_voyager.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/kunkka/black_boots_of_the_voyager/black_boots_of_the_voyager.vmdl"
+		"Effect" 						""
 
 		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
+		//------------------------------------------------------------------------------------------------------------- 
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6804,7 +6893,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6817,7 +6906,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"70"
 			}
 		}
@@ -6832,32 +6921,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_iron"
-		"Model"					"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6882,7 +6967,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6895,8 +6980,8 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"move_speed"				"80"
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"80"
 			}
 		}
 	}
@@ -6909,32 +6994,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"boots_steel"
-		"Model"					"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/kunkka/singsingkunkkaset_boots/singsingkunkkaset_boots.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"               	"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                 	"1"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -6959,7 +7040,7 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				 }
 			}
 		}
@@ -6972,7 +7053,7 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"100"
 			}
 		}
@@ -6987,10 +7068,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_travel_boots"
-		"Model"					"models/items/tinker/boots_of_travel.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/tinker/boots_of_travel.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6998,7 +7080,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7034,10 +7116,10 @@
 				"Properties"
 				 {
 				   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_speed"
+				   "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
 				   "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%all_stats"
-				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_BONUS" "%all_stats"
-				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%all_stats"
+				   "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%all_stats"
 				 }
 			}
 		}
@@ -7050,12 +7132,12 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"all_stats"				"2"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"move_speed"				"100"
 			}
 
@@ -7072,10 +7154,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"scroll_living_dead"
-		"Model"					"models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7083,7 +7165,7 @@
 		"AbilityCooldown"				"60"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7156,18 +7238,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7229,18 +7311,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7289,10 +7371,10 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"scroll_stoneskin"
-		"Model"					"models/props_gameplay/recipe.vmdl"
-		"Effect" 				""
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_stoneskin"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		"Effect" 					""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7302,18 +7384,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7362,10 +7444,10 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"			"scroll_cyclone"
-		"Model"					"models/props_gameplay/tpscroll01.vmdl"
-		"Effect"				"particles/items_fx/cyclone_d.vpcf"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_cyclone"
+		"Model"						"models/props_gameplay/tpscroll01.vmdl"
+		"Effect"					"particles/items_fx/cyclone_d.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7375,18 +7457,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7424,11 +7506,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"scroll_tsunami"
-		"Model"					"models/props_gameplay/tpscroll01.vmdl"
-		"Effect"				"particles/econ/items/kunkka/kunkka_weapon_whaleblade/kunkka_tidebringer_whaleblade_glow.vpcf"
+		"Model"							"models/props_gameplay/tpscroll01.vmdl"
+		"Effect"						"particles/econ/items/kunkka/kunkka_weapon_whaleblade/kunkka_tidebringer_whaleblade_glow.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7438,18 +7520,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7504,12 +7586,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7559,11 +7641,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"       		 "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"meat_cooked"
-		"Model"					"models/particle/green_rocks.vmdl"
-		"Effect" 				""
+		"Model"							"models/particle/green_rocks.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7571,18 +7653,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7645,7 +7726,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7695,7 +7776,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"seed_magic"
 		"Model"					"models/props_gameplay/rune_regeneration01.vmdl"
@@ -7766,17 +7847,18 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"egg_hawk"
-		"Model"					"models/props_winter/egg.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_winter/egg.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -7814,10 +7896,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"item_shadow_amulet"
-		"Model"					"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"item_shadow_amulet"
+		"Model"						"models/items/earthshaker/egset_particlerocks/egset_particlerocks.vmdl"
+		"Effect" 					""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7871,18 +7954,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -7937,11 +8019,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"essence_bees"
-		"Model"					"models/particle/sphere.vmdl"
-		"Effect"				"models/props_magic/bad_sigil_ancient001.vmdl"
+		"Model"							"models/particle/sphere.vmdl"
+		"Effect"						"models/props_magic/bad_sigil_ancient001.vmdl"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7950,24 +8032,23 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -8008,11 +8089,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"clay_living"
-		"Model"					"models/particle/lion_attack_sphere.vmdl"
-		"Effect" 				""
+		"Model"							"models/particle/lion_attack_sphere.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8021,18 +8102,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8079,11 +8159,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"meat_smoked"
-		"Model"					"models/particle/green_rocks.vmdl"
-		"Effect" 				""
+		"Model"							"models/particle/green_rocks.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8091,18 +8171,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8140,27 +8219,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"hide_wolf"
-		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8189,29 +8269,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"hide_elk"
-		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"hide_elk"
+		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8238,29 +8317,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"item_datadriven"
-		"AbilityTextureName"	"hide_jungle_bear"
-		"Model"					"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
-		"Effect" 				""
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"hide_jungle_bear"
+		"Model"							"models/items/wraith_king/sk_dreadknight_cloak.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8288,7 +8366,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName"	"compass_sonar"
 		"Model"					"models/items/rattletrap/cog_tesla/cog_tesla.vmdl"
@@ -8301,7 +8379,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -8349,13 +8427,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"net_basic"
-		"Model"					"models/particle/net.vmdl"
-		"Effect" 				""
+		"Model"							"models/particle/net.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8364,17 +8442,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8421,13 +8499,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"bomb_smoke"
-		"Model"					"models/props_gameplay/smoke.vmdl"
-		"Effect"				"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_ambient_smokestack.vpcf"
+		"Model"							"models/props_gameplay/smoke.vmdl"
+		"Effect"						"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_ambient_smokestack.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8436,23 +8514,24 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -8492,13 +8571,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_aegis"
-		"Model"					"models/props_winter/nest_01.vmdl"
-		"Effect"				"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_cascade.vpcf"
+		"Model"							"models/props_winter/nest_01.vmdl"
+		"Effect"						"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_cascade.vpcf"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8507,18 +8586,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8590,18 +8668,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8652,18 +8729,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8702,33 +8778,28 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_medallion_of_courage"
-		"Model"					"models/props_gameplay/status_shield.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8744,7 +8815,17 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		
+					"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_medallion_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
 		"AbilitySpecial"
 		{
 			"01"
@@ -8759,7 +8840,124 @@
 			}
 		}
 	}
+//=================================================================================================================
+// Custom: Horn of the Mammoth
+//=================================================================================================================
+//God help us all.
+	"item_horn_mammoth"
+	{
+		"ID"							"1152"
 
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"horn_mammoth"
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+			"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_horn_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
+	}
+//=================================================================================================================
+// Custom: Medallion of the Thief
+//=================================================================================================================
+//God help us all.
+	"item_medallion_theif"
+	{
+		"ID"							"1153"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"medallion_theif"
+		"Model"							"models/props_gameplay/status_shield.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+			"OnSpellStart"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"				"item_medallion_theif_use"
+				}
+			"SpendCharge"
+				{
+				}
+			}
+	}
 //=================================================================================================================
 // Custom: Bow of the Blood God
 //=================================================================================================================
@@ -8770,13 +8968,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"bow_blood_god"
-		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8785,18 +8983,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8839,13 +9036,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"				"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"scales_hydra"
-		"Model"					"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
-		"Effect" 				""
+		"Model"							"models/items/clinkz/runic_bow_of_corruption/runic_bow_of_corruption.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8854,18 +9051,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8923,18 +9119,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -8991,18 +9186,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -9059,18 +9253,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -9126,17 +9319,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -9186,7 +9379,6 @@
 		"ItemPermanent"						"0"
 		"ItemDroppable"               		"1"
 		"ItemAliases"						"quicktype"
-		"ItemInitialCharges"				"1"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemKillable"                  	"1"
 		"ItemSellable"                  	"0"
@@ -9278,7 +9470,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9378,18 +9570,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
+		"ItemDroppable"       			"1"
 		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -9453,7 +9645,7 @@
 			}
 		}
 	}
-	
+
 //=================================================================================================================
 // Custom: Camp Fire
 //=================================================================================================================
@@ -9483,12 +9675,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9551,12 +9742,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9615,18 +9805,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9684,18 +9873,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9753,18 +9941,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9822,18 +10009,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9877,11 +10063,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-   		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"BaseClass"				"item_datadriven"
+   		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"building_smoke_house"
-		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_debris/creep_camp001j.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9891,18 +10077,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -9946,11 +10131,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-   		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"BaseClass"				"item_datadriven"
+   		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sange_and_yasha"
-		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_debris/creep_camp001j.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9960,18 +10145,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -10015,11 +10199,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-   		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"BaseClass"				"item_datadriven"
+   		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"building_tannery"
-		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_debris/creep_camp001j.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10028,18 +10212,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnSpellStart"
   		{
 			"RunScript"
@@ -10073,7 +10256,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Workshop
 //=================================================================================================================
 
@@ -10083,11 +10266,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-   		"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"BaseClass"				"item_datadriven"
+   		"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"building_workshop"
-		"Model"					"models/props_debris/creep_camp001j.vmdl"
-		"Effect" 				""
+		"Model"							"models/props_debris/creep_camp001j.vmdl"
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10096,18 +10279,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnSpellStart"
   		{
 			"RunScript"
@@ -10164,18 +10346,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
 		"OnSpellStart"
   		{
 			"RunScript"
@@ -10209,7 +10390,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Mixing Pot
 //=================================================================================================================
 
@@ -10232,19 +10413,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
- "OnSpellStart"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnSpellStart"
   		{
 			"RunScript"
 			{
@@ -10300,18 +10480,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -10345,7 +10524,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Ensnare Trap
 //=================================================================================================================
 
@@ -10368,19 +10547,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-"OnSpellStart"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnSpellStart"
   		{
 			"RunScript"
 			{
@@ -10436,19 +10614,18 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-"OnSpellStart"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnSpellStart"
   		{
 			"RunScript"
 			{
@@ -10505,19 +10682,19 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
-"OnSpellStart"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		
+		"OnSpellStart"
   		{
 			"RunScript"
 			{
@@ -10574,18 +10751,17 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemDroppable"               			"1"
-		"ItemInitialCharges"				"1"
+		"ItemDroppable"       			"1"
 		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  		"1"
-		"ItemSellable"                  		"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
  		"OnSpellStart"
   		{
 			"RunScript"
@@ -10618,7 +10794,7 @@
 			"build_duration"	"10.0"
 			}
 		}
-	}
+	}	
 //=================================================================================================================
 // Custom: Locked Slot
 //=================================================================================================================
@@ -10660,6 +10836,4 @@
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
 	}
-}
-
 }

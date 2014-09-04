@@ -21,5 +21,71 @@
 	 	"Ability5"			"tool_reverse"
 	 	"AbilityLayout"	"5"
 	}
+    
+    //=================================================================================================================
+    //Dav's Test Hero
+    //=================================================================================================================
+    "npc_dota_hero_test"
+    {
+        "override_hero"         "npc_dota_hero_sniper"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Sniper"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "6"        
+
+        "Ability1"              "ability_gatherer_itemradar"
+        "Ability2"              "ability_gatherer_radarmanipulations"
+        "Ability3"              "ability_gatherer_telegather"
+        "Ability4"              "ability_empty4"
+        "Ability5"              "ability_empty5"
+        "Ability6"              "ability_empty6"
+        "Ability7"              "ability_gatherer_findmushroomstickortinder"
+        "Ability8"              "ability_gatherer_findhide"
+        "Ability9"              "ability_gatherer_findclayballcookedmeatorbone"
+        "Ability10"             "ability_gatherer_findmanacrystalorstone"
+        //ability_gatherer_mixherbs
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "25"    // Physical protection.
+        "ArmorResistance"       "30"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"           "50"        // Damage range min.
+        "AttackDamageMax"           "50"        // Damage range max.
+        "AttackRate"                "1.7"       // Speed of attack.
+        "AttackAnimationPoint"      "0.5"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "600"       // Range within a target can be acquired.
+        "AttackRange"               "600"       // Range within a target can be attacked.
+
+        // Attributes
+        //-------------------------------------------------------------------------------------------------------------
+        "AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "25"    // Base strength
+        "AttributeStrengthGain"         "2.5"   // Strength bonus per level.
+        "AttributeBaseIntelligence"     "18"    // Base intelligence
+        "AttributeIntelligenceGain"     "1.6"   // Intelligence bonus per level.
+        "AttributeBaseAgility"          "20"    // Base agility
+        "AttributeAgilityGain"          "2.2"   // Agility bonus per level.
+
+        // Status
+        //-------------------------------------------------------------------------------------------------------------
+        "StatusHealth"                  "420"   // Base health.
+        "StatusHealthRegen"             "7"     // Health regeneration rate.
+        "StatusMana"                    "255"   // Base mana.
+        "StatusManaRegen"               "7"     // Mana regeneration rate.
+
+        // Movement
+        //-------------------------------------------------------------------------------------------------------------
+        "MovementCapabilities"          "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"                 "335"   // Speed.
+        "MovementTurnRate"              "1.0"   // Turning rate.
+    }
 
 }

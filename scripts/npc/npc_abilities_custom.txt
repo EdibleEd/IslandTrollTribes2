@@ -508,7 +508,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -565,14 +565,14 @@
             //do some swapping shenanigans
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "RadarManipulations"
                 "isOpening"     "true"
             }
         }
     }
     
-    //=================================================================================================================
+   //=================================================================================================================
     // Gatherer Find Mushroom, Stick, or Tinder
     //=================================================================================================================
     "ability_gatherer_findmushroomstickortinder"
@@ -603,7 +603,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -614,6 +614,13 @@
                     "item_stick"            "50 100 100"    //stick - dark green
                     "item_tinder"           "0 255 0"       //tinder - green
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -666,7 +673,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -677,6 +684,13 @@
                     "item_hide_jungle_bear"     "165 42 42"
                     "item_hide_wolf"            "165 42 42"
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -729,7 +743,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -740,6 +754,13 @@
                     "item_meat_cooked"      "178 34 34"     //cooked meat - dark red
                     "item_bone"             "255 255 255"   //bone - white
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -792,7 +813,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -802,6 +823,13 @@
                     "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
                     "item_stone"            "0 0 255"
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -854,7 +882,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -863,6 +891,13 @@
                     //Colors are from 0 to 255, all punctuation is ignored
                     "item_flint"            "255 0 0"       //flint - red
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -915,7 +950,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "PingItemInRange"
                 "Target"        "CASTER"
                 "Range"         "%range"
@@ -924,6 +959,13 @@
                     //Colors are from 0 to 255, all punctuation is ignored
                     "item_magic_raw"            "255 0 255"       //magic - magenta
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -966,7 +1008,7 @@
         {            
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "MixHerbs"
                 "Target"        "CASTER"
             }
@@ -981,18 +1023,73 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"	        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"		    "DOTA_UNIT_TARGET_ALL"
         "AbilityTextureName"            "ability_gatherer_telegather"
-        "MaxLevel"						"1"
+        "MaxLevel"						"3"
         "HotKeyOverride"                "T"
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        "AbilityCastRange"              "300"
+        
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "120 120 120"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "20 25 30"
         
         "OnSpellStart"
         {            
             //telegather buff and lua code
+            "ApplyModifier"
+            {
+                "ModifierName" "modifier_telegather"
+                "Target"    "CASTER"
+                "Duration"  "%duration"
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarTelegatherInit"
+                "Target"        "TARGET"
+            }
+        }
+        
+        // Modifiers
+        //-------------------------------------------------------------------------------------------------------------    
+        "Modifiers"
+        {
+            "modifier_telegather"
+            {
+                "OnCreated"
+                {
+                    "AttachEffect"
+                    {
+                        "Target" "CASTER"
+                        "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                        "EffectAttachType" "follow_overhead"
+                        "EffectLifeDurationScale" "1"
+                        "EffectColorA" "255 255 0"
+                    }
+                }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "duration"              "50.0 70.0 90.0"
+            }
         }
     }
     
@@ -1017,7 +1114,7 @@
         {            
             // "RunScript"
             // {
-                // "ScriptFile"    "custom_scripted_abilities.lua"
+                // "ScriptFile"    "custom_functions_abilities.lua"
                 // "Function"      "MixHerbs"
                 // "Target"        "CASTER"
             // }
