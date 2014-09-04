@@ -25,5 +25,11 @@
 		"example_parameter"					"short"
 	}
 
+	"fl_level_6"
+	{
+		"pid" "short"
+		"class"	"string"
+		"id"	"string"
+	}
 }
 

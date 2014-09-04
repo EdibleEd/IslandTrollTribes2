@@ -18,6 +18,7 @@ GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
 GAME_CREATURE_TICK_TIME     = 10
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
+FLASH_ACK_THINK             = 2
 
 BUILDING_TICK_TIME 			= 0.03
 DROPMODEL_TICK_TIME         = 0.03
@@ -100,6 +101,8 @@ function ITT_GameMode:InitGameMode()
 
     GameMode:SetThink("FixDropModels", ITT_GameMode, "FixDropModels", 0)
 
+    GameMode:SetThink("FlashAckThink", ITT_GameMode, "FlashAckThink", 0)
+
     
     GameRules:GetGameModeEntity():ClientLoadGridNav()
     GameRules:SetTimeOfDay( 0.75 )
@@ -123,8 +126,9 @@ function ITT_GameMode:InitGameMode()
     -- dota_inventory_changed_query_unit dota_inventory_item_added
     -- WORK:
     -- dota_item_picked_up dota_item_purchased
-    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
 
+    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
+    ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(ITT_GameMode, 'OnPlayerGainedLevel'), self) 
 end
 
 function ITT_GameMode:FixDropModels(dt)
@@ -144,7 +148,6 @@ function ITT_GameMode:FixDropModels(dt)
                 end
                 if custom.ModelScale then v:SetModelScale(custom.ModelScale) end
             end
-
         end
     end
     return DROPMODEL_TICK_TIME
@@ -184,6 +187,58 @@ end
 -- This will handle item spawns when they are implemented
 function ITT_GameMode:OnItemThink()
     return GAME_ITEM_TICK_TIME
+end
+
+-- The only real way of triggering code in Scaleform, events, are not reliable. Require acknowledgement of all events fired for this purpose.
+function ITT_GameMode:FlashAckThink()
+    print("ackthink!")
+    for i=0,9 do
+        local player = PlayerResource:GetPlayer(i)
+        if player and player.eventQueue then
+            for k,v in pairs(player.eventQueue) do
+
+                if v then 
+                    print(k)
+                    self:HandleFlashMessage(v.eventname, v.data, i, v.id)
+                end
+            end
+        end
+    end
+    return FLASH_ACK_THINK
+end
+
+-- pid and id optional
+function ITT_GameMode:HandleFlashMessage(eventname, data, pid, id)
+    local id = id or DoUniqueString("")
+    print("Setting ID to .." .. id)
+    data.id = id
+    if pid then
+        print("Forcing ACK for only.. " .. pid) 
+        local player = PlayerResource:GetPlayer(pid)
+        self:PrepFlashMessage(player, eventname, data, id)
+    else 
+        data.pid = -1
+        for i=0,9 do
+            local player = PlayerResource:GetPlayer(i)
+            if player then self:PrepFlashMessage(player, eventname, data, id) end
+        end
+    end
+    FireGameEvent(eventname, data)
+end
+
+function ITT_GameMode:PrepFlashMessage(player, eventname, data, id)
+    if not player.eventQueue then player.eventQueue = {} end
+    player.eventQueue[id] = {eventname = eventname, data = data, id = id}
+end
+
+function acknowledge_flash_event(cmdname, eventname, pid, id)
+    print("Got an ack from .." .. pid)
+    local player = PlayerResource:GetPlayer(tonumber(pid))
+    if player.eventQueue then 
+        print("nilling then.." .. id)
+        print(player.eventQueue[id])
+        player.eventQueue[id] = nil 
+    end
 end
 
 -- This will handle anything gamestate related that is not covered under other thinkers
@@ -303,6 +358,24 @@ function reload_ikv(cmdname)
     itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 end
 
+function test_ack(cmdname)
+    ITT_GameMode:HandleFlashMessage("fl_level_6", {pid = -1})
+end
+
+function test_ack_sec(cmdname)
+    ITT_GameMode:HandleFlashMessage("fl_level_6", {pid = Convars:GetCommandClient():GetPlayerID()})
+end
+
+function make(cmdname, unitname)
+    local player = Convars:GetCommandClient()
+    local hero = player:GetAssignedHero()
+    CreateUnitByName(unitname, hero:GetOrigin(), true, hero, hero, 2)
+end
+
+Convars:RegisterCommand("make", function(cmdname, unitname) make(cmdname, unitname) end, "Give any item", 0)
+Convars:RegisterCommand("test_ack_sec", function(cmdname) test_ack_sec(cmdname) end, "Give any item", 0)
+Convars:RegisterCommand("test_ack", function(cmdname) test_ack(cmdname) end, "Give any item", 0)
+Convars:RegisterCommand("acknowledge_flash_event", function(cmdname, eventname, pid, id) acknowledge_flash_event(cmdname, eventname, pid, id) end, "Give any item", 0)
 Convars:RegisterCommand("reload_ikv", function(cmdname) reload_ikv(cmdname) end, "Give any item", 0)
 Convars:RegisterCommand("print_fix_diffs", function(cmdname) print_fix_diffs(cmdname) end, "Give any item", 0)
 Convars:RegisterCommand("print_dropped_vecs", function(cmdname) print_dropped_vecs(cmdname) end, "Give any item", 0)
