@@ -985,12 +985,21 @@
         "AbilityUnitTargetTeam"	        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"		    "DOTA_UNIT_TARGET_ALL"
         "AbilityTextureName"            "ability_gatherer_telegather"
-        "MaxLevel"						"1"
+        "MaxLevel"						"3"
         "HotKeyOverride"                "T"
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+        "AbilityCastRange"              "300"
+        
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "120 120 120"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "20 25 30"
         
         "OnSpellStart"
         {            
@@ -999,7 +1008,7 @@
             {
                 "ModifierName" "modifier_telegather"
                 "Target"    "CASTER"
-                "Duration"  "30"
+                "Duration"  "%duration"
             }
             
             "RunScript"
@@ -1027,6 +1036,17 @@
                         "EffectColorA" "255 255 0"
                     }
                 }
+            }
+        }
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "duration"              "50.0 70.0 90.0"
             }
         }
     }
