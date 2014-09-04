@@ -572,7 +572,7 @@
         }
     }
     
-    //=================================================================================================================
+   //=================================================================================================================
     // Gatherer Find Mushroom, Stick, or Tinder
     //=================================================================================================================
     "ability_gatherer_findmushroomstickortinder"
@@ -614,6 +614,13 @@
                     "item_stick"            "50 100 100"    //stick - dark green
                     "item_tinder"           "0 255 0"       //tinder - green
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -678,6 +685,13 @@
                     "item_hide_wolf"            "165 42 42"
                 }
             }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
+            }
         }
         
         // Special
@@ -741,6 +755,13 @@
                     "item_bone"             "255 255 255"   //bone - white
                 }
             }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
+            }
         }
         
         // Special
@@ -803,6 +824,13 @@
                     "item_stone"            "0 0 255"
                 }
             }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
+            }
         }
         
         // Special
@@ -864,6 +892,13 @@
                     "item_flint"            "255 0 0"       //flint - red
                 }
             }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
+            }
         }
         
         // Special
@@ -924,6 +959,13 @@
                     //Colors are from 0 to 255, all punctuation is ignored
                     "item_magic_raw"            "255 0 255"       //magic - magenta
                 }
+            }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "RadarManipulations"
+                "isOpening"     "false"
             }
         }
         
@@ -1013,7 +1055,7 @@
             
             "RunScript"
             {
-                "ScriptFile"    "custom_scripted_abilities.lua"
+                "ScriptFile"    "custom_functions_abilities.lua"
                 "Function"      "RadarTelegatherInit"
                 "Target"        "TARGET"
             }
