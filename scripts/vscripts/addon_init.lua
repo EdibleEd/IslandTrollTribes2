@@ -264,7 +264,6 @@ function ITT_GameMode:OnItemThink()
     return GAME_ITEM_TICK_TIME
 end
 
-<<<<<<< HEAD
 -- The only real way of triggering code in Scaleform, events, are not reliable. Require acknowledgement of all events fired for this purpose.
 function ITT_GameMode:FlashAckThink()
     print("ackthink!")
@@ -317,7 +316,6 @@ function acknowledge_flash_event(cmdname, eventname, pid, id)
     end
 end
 
-=======
 function ITT_SpawnItem(island)
     local itemSpawned = ITT_GetItemFromPool()
     --print(itemSpawned)
@@ -327,7 +325,6 @@ function ITT_SpawnItem(island)
     CreateItemOnPositionSync(randomVector, item)
     item:SetOrigin(randomVector)
 end
-
 
 -- Updates the relative probabilties, called only when the actual probabilties are changed
 -- They from the point in which they are generated, sum to 1
@@ -418,7 +415,6 @@ end
 -- END OF ITEM SPAWNING
 --
 
->>>>>>> 2f9c183ceb51391917ebfd09b1fa6fcfc775ba5f
 -- This will handle anything gamestate related that is not covered under other thinkers
 function ITT_GameMode:OnStateThink()
     --print(GameRules:State_Get())
