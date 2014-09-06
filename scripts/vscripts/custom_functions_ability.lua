@@ -297,9 +297,57 @@ function RadarTelegather (keys)
         
         local originalItem = EntIndexToHScript(keys.ItemEntityIndex)
         local newItem = CreateItem(originalItem:GetName(), nil, nil)
-        print( "Teleporting Item", originalItem:GetName())
-        hero:RemoveItem(originalItem)
-        local itemPosition = targetFire:GetAbsOrigin() + RandomVector(RandomInt(100,150))
-        CreateItemOnPositionSync(itemPosition,newItem)   
-        newItem:SetOrigin(itemPosition)        
+        
+        local itemList = {"item_tinder", "item_flint", "item_stone", "item_stick", "item_bone", "item_meat_raw", "item_crystal_mana", "item_clay_ball", "item_river_root", "item_river_stem", "item_thistles", "item_acorn", "item_acorn_magic", "item_mushroom"}
+        for key,value in pairs(itemList) do
+            if value == originalItem:GetName() then
+                print( "Teleporting Item", originalItem:GetName())
+                hero:RemoveItem(originalItem)
+                local itemPosition = targetFire:GetAbsOrigin() + RandomVector(RandomInt(100,150))
+                CreateItemOnPositionSync(itemPosition,newItem)   
+                newItem:SetOrigin(itemPosition)
+            end
+        end
+end
+
+function EnsnareUnit(keys)
+    local caster = keys.caster
+    local target = keys.target
+    local targetName = target:GetName()
+    local dur = 8.0
+    if (string.find(targetName,"hero") ~= nil) then --if the target's name includes "hero"
+        dur = 3.5
+    end
+    print("Ensnare!")
+    target:AddNewModifier(caster, nil, "modifier_meepo_earthbind", { duration = dur})
+    --target:AddNewModifier(caster, nil, "modifier_ensnare", { duration = dur})   --I could call a modifier applier, but Valve should fix this soon   
+end
+
+function TrackUnit(keys)
+    local caster = keys.caster
+    local target = keys.target
+    local targetName = target:GetName()
+    local dur = tonumber(keys.Duration)
+    if (string.find(targetName,"hero") == nil) then --if the target's name does not include "hero", ie an animal
+        dur = 30.0
+    end
+    
+    target:AddNewModifier(caster, nil, "modifier_bounty_hunter_track", { duration = dur, radius = 200})
+    --callModApplier(target, modifier_hunter_track_hero, 1)
+end
+
+function callModApplier( caster, modName, abilityLevel)
+    if abilityLevel == nil then
+        abilityLevel = 1
+    end
+    local applier = modName .. "_applier"
+    local ab = caster:FindAbilityByName(applier)
+    if ab == nil then
+        caster:AddAbility(applier)
+        ab = caster:FindAbilityByName( applier )
+        ab:SetLevel(abilityLevel)
+        print("trying to cast ability ", applier, "level", ab:GetLevel())
+    end
+    caster:CastAbilityNoTarget(ab, -1)
+    caster:RemoveAbility(applier)
 end
