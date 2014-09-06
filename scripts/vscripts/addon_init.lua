@@ -543,7 +543,7 @@ function reload_ikv(cmdname)
 end
 
 function test_ack(cmdname)
-    ITT_GameMode:HandleFlashMessage("fl_level_6", {pid = -1})
+    ITT_GameMode:HandleFlashMessage("fl_level_6", {pid = -1, gameclass = "gatherer"})
 end
 
 function test_ack_sec(cmdname)
@@ -556,6 +556,13 @@ function make(cmdname, unitname)
     CreateUnitByName(unitname, hero:GetOrigin(), true, hero, hero, 2)
 end
 
+function sub_select(cmdname, choice)
+    local player = Convars:GetCommandClient()
+    local hero = player:GetAssignedHero() --danger
+    print(player:GetPlayerID() .. " chose " .. choice)
+end
+
+Convars:RegisterCommand("sub_select", function(cmdname, choice) sub_select(cmdname, choice) end, "Give any item", 0)
 Convars:RegisterCommand("make", function(cmdname, unitname) make(cmdname, unitname) end, "Give any item", 0)
 Convars:RegisterCommand("test_ack_sec", function(cmdname) test_ack_sec(cmdname) end, "Give any item", 0)
 Convars:RegisterCommand("test_ack", function(cmdname) test_ack(cmdname) end, "Give any item", 0)

@@ -7,6 +7,7 @@
     import ValveLib.ResizeManager;
     import scaleform.clik.events.ButtonEvent;
     import scaleform.clik.events.*;
+    import flash.display.DisplayObject;
     import flash.events.MouseEvent;
 
     import flash.geom.ColorTransform;
@@ -82,11 +83,17 @@
 
 		private var itemsCustomKV;
 		private var resourceCustomKV;
+
+		private var dotaButtonClass;
+
+		private var subclip:MovieClip;
+		
 		
 		public function  trolltribes() {
 			// constructor code
 			// Note this DOES run for some reason.
 			trace("## trolltribes Hello World from the Constructor. 2222");
+	//		SFTest_showSubclassMenu();
 		}
 				
 		public function onItemClick(item:String){
@@ -162,19 +169,160 @@
 
 			gameAPI.SubscribeToGameEvent("fl_level_6", this.showSubclassMenu);
 
+			dotaButtonClass = getDefinitionByName("button_big");
+			subclip = new subSelect();
 			//Resizing is blitz
+			Globals.instance.resizeManager.AddListener(this);
 			trace("###DONE");
+			
 		}
 
 		public function showSubclassMenu(keys:Object){
-			PrintTable(keys);
+	//		PrintTable(keys);
 			if (globals.Players.GetLocalPlayer() == keys.pid || keys.pid == -1)
 			{
-				trace("Got my thing!\n\n\n");
+				trace("Got my thing!");
 				gameAPI.SendServerCommand("acknowledge_flash_event " + "fl_level_6" + " " + globals.Players.GetLocalPlayer() + " " + keys.id);
+				trace("Sent server cmd!\n\n\n");
+				var gameclass:String = keys.gameclass;
+				trace("Got gameclass");
+				//Class is in the event. Class select movieclip is filled with assets for all classes. Find any not for this class and invis them.
+				for(var i = 0; i < subclip.numChildren; i++)
+				{
+					var child = subclip.getChildAt(i);
+					trace("Child: " + child);
+					if(child == null){
+						continue;
+					}
+					var childName:String = child.name
+					trace("Name: +" + childName);
+					if(childName != null && childName != "" && childName.indexOf("expbox") == -1 && childName.indexOf(gameclass) == -1 ){
+						child.visible = false;
+					}
+				}
+				trace("Making buttons..");
+		//		makeButton("1", subclip.getChildByName(gameclass + "1") as MovieClip, subclip.getChildByName("selectsub1") as MovieClip);
+		//		makeButton("2", subclip.getChildByName(gameclass + "2") as MovieClip, subclip.getChildByName("selectsub2") as MovieClip);
+		//		makeButton("3", subclip.getChildByName(gameclass + "3") as MovieClip, subclip.getChildByName("selectsub3") as MovieClip);
+				var txt1 = subclip.getChildByName(gameclass + "1");
+				var txt2 = subclip.getChildByName(gameclass + "2");
+				var txt3 = subclip.getChildByName(gameclass + "3");
+				txt1.visible = true;
+				txt2.visible = true;
+				txt3.visible = true;
+				txt1.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				txt2.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				txt3.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				txt1.choice = "1";
+				txt2.choice = "2";
+				txt3.choice = "3";
+				txt1.buttonMode = true;
+				txt2.buttonMode = true;
+				txt3.buttonMode = true;
+				subclip.getChildByName("clip_headerText").visible = true;
+				subclip.getChildByName("clip_baseClip").visible = true;
+				subclip.getChildByName("clip_headerClip").visible = true;
+				subclip.getChildByName("clip_picframe1").visible = true;
+				subclip.getChildByName("clip_picframe2").visible = true;
+				subclip.getChildByName("clip_picframe3").visible = true;
+				subclip.getChildByName("clip_divider1").visible = true;
+				subclip.getChildByName("clip_divider2").visible = true;
+				subclip.getChildByName("clip_divider3").visible = true;
+				var btn1:MovieClip = subclip.getChildByName("clip_btn1") as MovieClip;
+				var btn2:MovieClip = subclip.getChildByName("clip_btn2") as MovieClip;
+				var btn3:MovieClip = subclip.getChildByName("clip_btn3") as MovieClip;
+				btn1.buttonMode = true;
+				btn2.buttonMode = true;
+				btn3.buttonMode = true;
+				btn1.visible = true;
+				btn1.choice = "1";
+				btn1.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				btn2.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				btn2.visible = true;
+				btn2.choice = "2";
+				btn3.addEventListener(MouseEvent.CLICK, subSelectButtonClick);
+				btn3.visible = true;
+				btn3.choice = "3";
+				subclip.getChildByName("clip_patch").visible = true;
+				subclip.visible = true;
+				addChild(subclip);
 			}
 		}
+
+		public function makeButton(pname:String, textclip:MovieClip, anchor:MovieClip){
+			trace("Makebutton!");
+			var button:MovieClip = new dotaButtonClass();
+			trace("Adding..!");
+			subclip.addChild(button);
+			trace("Added!");
+			button.name = pname;
+			button.x = anchor.x;
+			button.text = "";
+			button.y = anchor.y;
+			trace("Aligned!");
+			button.addEventListener(ButtonEvent.CLICK, subSelectButtonClick);	
+			button.visible = true;
+			trace("Swapping..");
+			if(textclip == null){
+				trace("null textchilp?");
+			}
+			subclip.swapChildren(textclip, button);
+		//	button.addChild(textclip);
+		}
 		
+		public function subSelectButtonClick(e:MouseEvent){
+			trace("BEV!")
+			gameAPI.SendServerCommand("select_sub " + e.target.choice);
+			
+			subclip.visible = false;
+		}
+
+		public function SFTest_showSubclassMenu(){
+			subclip = new subSelect();
+			trace("Got my thing!\n\n\n");
+			var gameclass:String = "gatherer";
+			//Class is in the event. Class select movieclip is filled with assets for all classes. Find any not for this class and invis them.
+			trace("Entering loop..");
+			trace("Num children? " + subclip.numChildren);
+			for(var i = 0; i < subclip.numChildren; i++)
+			{
+				trace("Loop " + i);
+				var child:MovieClip = subclip.getChildAt(i) as MovieClip;
+				trace("Got child! " + child);
+				if(child == null){
+					continue;
+				}
+				var childName:String = child.name
+				trace("Got child: " + childName);
+				if(childName != null && childName != "" && childName.indexOf("expbox") == -1 && childName.indexOf(gameclass) == -1){
+					child.visible = false;
+				}
+			}
+			subclip.visible = true;
+			addChild(subclip);
+			trace("Done with loop..");
+			SFTest_makeButton("1", subclip.getChildByName(gameclass + "1") as MovieClip, subclip.getChildByName("selectsub1") as MovieClip);
+			SFTest_makeButton("2", subclip.getChildByName(gameclass + "1") as MovieClip, subclip.getChildByName("selectsub2") as MovieClip);
+			SFTest_makeButton("3", subclip.getChildByName(gameclass + "1") as MovieClip, subclip.getChildByName("selectsub3") as MovieClip);
+
+			trace("INVISME vis? " + subclip.clip_invisme.visible);
+			trace("gathererthing vis? " + subclip.clip_gatherersub2_exp.visible);
+		}
+
+		public function SFTest_makeButton(pname:String,  textclip:MovieClip, anchor:MovieClip){
+			trace("Making!");
+			var button:MovieClip = new MovieClip();
+			subclip.addChild(button);
+			trace("Added!");
+			button.name = pname;
+			button.x = anchor.x;
+			button.y = anchor.y;
+			trace("X: " + button.x + " Y: " + button.y);
+		//	button.addEventListener(ButtonEvent.CLICK, subSelectButtonClick);	
+			button.visible = true;
+			subclip.swapChildren(button, textclip);
+		}
+
 		public function onResize(re:ResizeManager) : * {
 			// Update the stage width
 
@@ -185,14 +333,31 @@
 
 			scalingFactor = re.ScreenHeight/myStageHeight;
 
-			this.scaleX = scalingFactor;
-			this.scaleY = scalingFactor;
+		//	this.scaleX = scalingFactor;
+		//	this.scaleY = scalingFactor;
 
 			realScreenWidth = re.ScreenWidth;
 			realScreenHeight = re.ScreenHeight;
 
 			var workingWidth:Number = myStageHeight*4/3;
 
+			
+			trace("STAGE X: " + realScreenWidth);
+			var subSelectXFill:Number = subclip.width / realScreenWidth;
+			var subSelectYFill:Number = subclip.height / realScreenHeight;
+			trace("Sub select is taking up percent X: " + subSelectXFill);
+			trace("Sub select is taking up percent Y: " + subSelectYFill);
+			if(subSelectXFill > 0.75) {
+				trace("Changing X Scale..");
+				var diffX = subSelectXFill - 0.75
+				subclip.scaleX = 1 - diffX;
+			}
+
+			trace("Aligning with unitname..");
+
+			subclip.x = (Globals.instance.Loader_actionpanel.movieClip.middle.unitName as DisplayObject).localToGlobal(new Point()).x;
+			subclip.y += 100;
+			subclip.x -= 200;
 			trace("### Resizing");
 			if (re.IsWidescreen()) {
 				trace("### Widescreen detected!");
@@ -235,8 +400,8 @@
 			maxStageHeight = re.ScreenHeight / re.ScreenWidth * resWidth;
 			maxStageWidth = re.ScreenWidth / re.ScreenHeight * resHeight;
             //Scale hud to screen
-            this.scaleX = re.ScreenWidth/maxStageWidth;
-            this.scaleY = re.ScreenHeight/maxStageHeight;
+      //      this.scaleX = re.ScreenWidth/maxStageWidth;
+     //       this.scaleY = re.ScreenHeight/maxStageHeight;
 		}
 		
 		// Shamelessly stolen from Frota
