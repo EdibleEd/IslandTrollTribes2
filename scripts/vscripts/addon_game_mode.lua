@@ -45,6 +45,11 @@ function Precache( context )
 	PrecacheResource("model", "models/items/wards/nexon_sotdaeward/nexon_sotdaeward.vmdl",context)
 	PrecacheResource("model", "models/items/furion/staff_eagle_1.vmdl",context)
 	PrecacheResource("particle","particles/dire_fx/fire_barracks_glow_b.vpcf",context)
+    
+    PrecacheResource("model", 'models/props_destruction/lion_groundspikes.vmdl',context)
+    PrecacheResource("model", 'models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon_fx.vmdl',context)
+    PrecacheResource("model", 'models/particle/tiny_simrocks.vmdl',context)
+    PrecacheResource("model", 'models/particle/ice_shards.vmdl',context)
 	
     print("Precache Finish")
 end
