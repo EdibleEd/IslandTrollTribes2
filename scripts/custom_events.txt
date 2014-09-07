@@ -28,7 +28,7 @@
 	"fl_level_6"
 	{
 		"pid" "short"
-		"class"	"string"
+		"gameclass"	"string"
 		"id"	"string"
 	}
 }
