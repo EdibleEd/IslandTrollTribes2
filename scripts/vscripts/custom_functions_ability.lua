@@ -332,8 +332,12 @@ function TrackUnit(keys)
         dur = 30.0
     end
     
-    target:AddNewModifier(caster, nil, "modifier_bounty_hunter_track", { duration = dur, radius = 200})
+    --target:AddNewModifier(caster, nil, "modifier_bounty_hunter_track", { duration = dur, radius = 200})
     --callModApplier(target, modifier_hunter_track_hero, 1)
+end
+
+function TrackMoveSpotter(keys)
+    local target
 end
 
 function callModApplier( caster, modName, abilityLevel)

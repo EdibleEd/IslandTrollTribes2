@@ -1215,10 +1215,11 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "AbilityTextureName"            "ability_hunter_track"
+        "AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -1227,7 +1228,7 @@
         // Time        
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "10"
-        "AbilityCastRange"				"700"
+        "AbilityCastRange"				"3000"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -1240,6 +1241,7 @@
         "precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
+            "particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
         
@@ -1248,33 +1250,95 @@
             "TrackingProjectile"
             {
                 "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_cast.vpcf"
+                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
                 "Dodgeable"         "false"
                 "ProvidesVision"    "false"
-                "MoveSpeed"         "600"
+                "MoveSpeed"         "1000"
                 //"SourceAttachment"
             }
         }
         
         "OnProjectileHitUnit"
-        {            
-            "RunScript"
+        {
+            "ApplyModifier"
             {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "TrackUnit"
+                "ModifierName"  "modifier_track_hero"
                 "Target"        "TARGET"
                 "Duration"      "%duration"
-            }            
+            }
+            
+            "SpawnUnit"
+            {
+                "UnitName"          "dummy_spotter"
+				"UnitCount"			"1"
+				"UnitLimit"			"64"
+				"SpawnRadius"		"0"
+				"Duration"			"%duration"
+				"Target"			"TARGET"
+                
+                "OnSpawn"
+                {
+                    "RunScript"
+                    {
+                       "ScriptFile"    "custom_functions_abilities.lua"
+                        "Function"      "TrackUnit"
+                        "Target"        "TARGET"
+                        "Duration"      "%duration"
+                    }
+                
+                    "ApplyModifier"
+                    {
+                        "Target"				"TARGET"
+                        "Duration"				"%duration"
+                        "ModifierName"			"dummy_spotter_modifier"
+                    }
+                }
+            }
         }
         
         "Modifiers"
         {
             "modifier_track_hero"
-            {
-                "Duration"  "3.5"
-                "States"
+            {   
+                "IsDebuff"      "true"
+                "OnCreated"
                 {
-                    "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+                    "AttachEffect"
+                    {
+                        "Target" "TARGET"
+                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+                        "EffectAttachType" "follow_overhead"
+                    }
+                    "AttachEffect"
+                    {
+                        "Target" "TARGET"
+                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+                        "EffectAttachType" "follow_origin"
+                    }
+                }
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%minus_armor"
+                }
+            }
+            
+            "dummy_spotter_modifier"
+            {
+                "Target"				"TARGET"
+				"IsHidden"              "1"    
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
+				}
+                
+                "Properties"
+                {
+                    //By default the spotter has 600
+                    "MODIFIER_PROPERTY_BONUS_DAY_VISION"        "-400"
+                    "MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "-400"
                 }
             }
         }
