@@ -2,110 +2,130 @@
 "DOTAUnits"
 {
 	"Version"	"1"   
-	//=================================================================================	
-	// Building: Basic Tree
-	//=================================================================================
-	"npc_treetag_building_basic_tree"	
-	{
+//=================================================================================================================
+// HERO: Herb Master Telegatherer
+//=================================================================================================================
+	"npc_hero_herbmaster_tele_gatherer_itt"
+	{																		
 		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/treant_protector/treant_protector.vmdl"
-		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"Hero_Treant"
-		"Level"						"1"
-		"ModelScale" 				"0.6"
-
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
+		"AbilityLayout"         			"4"		
+		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
+		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
+	
 		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-		"Ability5"					""			// Ability 5
-		"Ability6"					""			// Ability 6
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
+		"Ability2"						"ability_gatherer_radarmanipulations"						// Ability 2
+		"Ability3"						"ability_gatherer_mixherbs"									// Ability 3
+		"Ability4"						"ability_gatherer_telegather_herb"							// Ability 4
+		"Ability5"						"ability_empty5"											// Ability 5
+		"Ability6" 						"ability_empty6"											// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					"ability_gatherer_findhide"												//Hidden ability for radar manipulation usage
+		"Ability12"  					"ability_gatherer_findclayballcookedmeatorbone"							//Hidden ability for radar manipulation usage
+		"Ability13"  					"ability_gatherer_findmushroomstickortinder"							//Hidden ability for radar manipulation usage
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
 
 		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14"									// Damage range min.
+		"AttackDamageMax"			"14"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
 
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"40"
-		"BoundsHullName"      		"DOTA_HULL_SIZE_HERO" 	
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"0"		// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
-		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"200"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"
-		"MagicalResistance"       	"0"		
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
 		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"900"		// Range of vision at night time.
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
 
-		// Attached the sub-models (A requirement when using a hero as a unit)
-		//-----------------------------------------------------------------
+	    // Wearables
+        //----------------------------------------------------------------
+		
 		"Creature"
 		{			
 			"AttachWearables"
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"227"
+					"ItemDef"			"4412"
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"228"
+					"ItemDef"			"4416"
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"229"
-				}
+					"ItemDef"			"4417"
+				}				
 				"Wearable4"
 				{
-					"ItemDef"			"230"
-				}
+					"ItemDef"			"4419"
+				}				
 			}
-		}
 	}
-
 //=================================================================================================================
-// HERO: Gatherer
+// HERO: Radar Telegatherer
 //=================================================================================================================
-	"npc_hero_gatherer_itt"
+	"npc_hero_radar_tele_gatherer_itt"
 	{																		
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"npc_dota_creature"
+		"BaseClass"							"npc_dota_creature"
 		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
 		"AbilityLayout"         			"4"		
-		"Portrait"		"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
-		"IdleExpression"	"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
-		"SoundSet"			"Hero_ShadowShaman"									// Name of sound set.
+		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
+		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
-		"Ability2"						"ability_gatherer_radarmanipulations"						// Ability 2
-		"Ability3"						"ability_empty3"											// Ability 3
+		"Ability2"						"ability_gatherer_radarmanipulations_radar"						// Ability 2
+		"Ability3"						"ability_gatherer_telegather_radar"							// Ability 3
 		"Ability4"						"ability_empty4"											// Ability 4
 		"Ability5"						"ability_empty5"											// Ability 5
 		"Ability6" 						"ability_empty6"											// Ability 6
@@ -128,9 +148,9 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"11"									// Damage range min.
-		"AttackDamageMax"			"11"									// Damage range max.	
-		"AttackRate"				"2.0"									// Speed of attack.
+		"AttackDamageMin"			"14"									// Damage range min.
+		"AttackDamageMax"			"14"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
 		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
 		"AttackRange"				"100"									// Range within a target can be attacked.
@@ -150,7 +170,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"									// Speed.
+		"MovementSpeed"				"325"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
@@ -165,7 +185,7 @@
         // Vision
         //----------------------------------------------------------------
         "VisionDaytimeRange"            "1800"           // Range of vision during day light.
-        "VisionNighttimeRange"          "900"           // Range of vision at night time. 
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
 
 	    // Wearables
         //----------------------------------------------------------------
@@ -176,23 +196,133 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"246"
+					"ItemDef"			"5548"
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"247"
+					"ItemDef"			"5500"
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"248"
+					"ItemDef"			"5501"
 				}				
 				"Wearable4"
 				{
-					"ItemDef"			"249"
+					"ItemDef"			"5503"
 				}				
 				"Wearable5"
 				{
-					"ItemDef"			"250"
+					"ItemDef"			"5504"
+				}
+			}
+		}
+	}
+//=================================================================================================================
+// HERO: Omnigatherer/Remote Telegatherer
+//=================================================================================================================
+	"npc_hero_remote_tele_gatherer_itt"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
+		"AbilityLayout"         			"4"		
+		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
+		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
+	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
+		"Ability2"						"ability_gatherer_radarmanipulations_omni"					// Ability 2
+		"Ability3"						"ability_gatherer_telegather_omni"							// Ability 3
+		"Ability4"						"ability_gatherer_itemwarp"									// Ability 4
+		"Ability5"						"ability_empty5"											// Ability 5
+		"Ability6" 						"ability_empty6"											// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					"ability_gatherer_findhide"												//Hidden ability for radar manipulation usage
+		"Ability12"  					"ability_gatherer_findclayballcookedmeatorbone"							//Hidden ability for radar manipulation usage
+		"Ability13"  					"ability_gatherer_findmushroomstickortinder"							//Hidden ability for radar manipulation usage
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14"									// Damage range min.
+		"AttackDamageMax"			"14"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"5548"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"5500"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"5501"
+				}				
+				"Wearable4"
+				{
+					"ItemDef"			"5503"
+				}				
+				"Wearable5"
+				{
+					"ItemDef"			"5504"
 				}
 				"Wearable6"
 				{
@@ -200,9 +330,529 @@
 				}
 			}
 		}
-
 	}
+//=================================================================================================================
+// HERO: Hunter Tracker
+//=================================================================================================================
+	"npc_hero_hunter_tracker"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
+		"AbilityLayout"         			"6"		
+		"SoundSet"							"Hero_Huskar"										// Name of sound set.
 	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_hunter_ensnare"								// Ability 1
+		"Ability2"						"ability_hunter_greatertrack"							// Ability 2
+		"Ability3"						"ability_hunter_dysenterytrack"							// Ability 3
+		"Ability4"						"ability_hunter_sniff"									// Ability 4
+		"Ability5"						"ability_hunter_hidetrackingbeacon"						// Ability 5
+		"Ability6" 						"ability_hunter_querybeacon"							// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""												//Hidden ability for radar manipulation usage
+		"Ability12"  					""												//Hidden ability for radar manipulation usage
+		"Ability13"  					""												//Hidden ability for radar manipulation usage
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"18"									// Damage range min.
+		"AttackDamageMax"			"18"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1500"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1100"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"5548"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"5500"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"5501"
+				}				
+			}
+		}
+	}
+//=================================================================================================================
+// HERO: Hunter Warrior
+//=================================================================================================================
+	"npc_hero_hunter_warrior"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
+		"AbilityLayout"         			"3"		
+		"SoundSet"							"Hero_TrollWarlord"									// Name of sound set.
+	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_hunter_ensnare"								// Ability 1
+		"Ability2"						"ability_hunter_endurance"								// Ability 2
+		"Ability3"						"ability_hunter_gaintswing"								// Ability 3
+		"Ability4"						"ability_blank"									 		// Ability 4
+		"Ability5"						"ability_blank"											// Ability 5
+		"Ability6" 						"ability_blank"											// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""												
+		"Ability12"  					""												
+		"Ability13"  					""												
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"18"									// Damage range min.
+		"AttackDamageMax"			"18"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1500"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1100"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"5548"
+				}
+			}
+		}
+	}
+//=================================================================================================================
+// HERO: Hunter Juggernaught 
+//=================================================================================================================
+	"npc_hero_hunter_juggernaught"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
+		"AbilityLayout"         			"3"		
+		"SoundSet"							"Hero_Huskar"										// Name of sound set.
+	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_hunter_ensnare"								// Ability 1
+		"Ability2"						"ability_hunter_endurance"								// Ability 2
+		"Ability3"						"ability_hunter_gaintswing"								// Ability 3
+		"Ability4"						"ability_hunter_demoralizingwarcry"						// Ability 4
+		"Ability5"						"ability_hunter_stayingpower"							// Ability 5
+		"Ability6" 						"ability_blank"											// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""												
+		"Ability12"  					""												
+		"Ability13"  					""												
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"23"									// Damage range min.
+		"AttackDamageMax"			"23"									// Damage range max.	
+		"AttackRate"				"1.65"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1700"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1400"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"4906"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"4907"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"4908"
+				}				
+				"Wearable4"
+				{
+					"ItemDef"			"4909"
+				}				
+				"Wearable5"
+				{
+					"ItemDef"			"4910"
+				}
+			}
+		}
+	}
+//=================================================================================================================
+// HERO: Mage Elementalist 
+//=================================================================================================================
+	"npc_hero_mage_elementalist"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
+		"AbilityLayout"         			"3"		
+		"SoundSet"							"Hero_witchdoctor"								// Name of sound set.
+	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_mage_nulldamage"									// Ability 1
+		"Ability2"						"ability_mage_negativeblast"								// Ability 2
+		"Ability3"						"ability_mage_pumpup"										// Ability 3
+		"Ability4"						"ability_mage_reducefood"									// Ability 4
+		"Ability5"						"ability_mage_magefire"										// Ability 5
+		"Ability6" 						"ability_mage_spellbook"									// Ability 6
+		"Ability7" 						"ability_mage_eruption"										
+		"Ability8" 						"ability_mage_splittingfire"							
+		"Ability9"  					"ability_mage_defenderenergy"		
+		"Ability10" 					"ability_mage_electromagnet"		
+		"Ability11"  					"ability_mage_chainlightning"												
+		"Ability12"  					"ability_mage_freezingblast"												
+		"Ability13"  					"ability_mage_stormearthfire"												
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"									// Damage range min.
+		"AttackDamageMax"			"15"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1250"           // Range of vision during day light.
+        "VisionNighttimeRange"          "800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"4906"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"4907"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"4908"
+				}				
+				"Wearable4"
+				{
+					"ItemDef"			"4909"
+				}				
+				"Wearable5"
+				{
+					"ItemDef"			"4910"
+				}
+			}
+		}
+	}
+//=================================================================================================================
+// HERO: Mage Elementalist
+//=================================================================================================================
+	"npc_hero_mage_elementalist"
+	{																		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
+		"AbilityLayout"         			"4"		
+		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
+		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
+	
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""								// Ability 1
+		"Ability2"						""					// Ability 2
+		"Ability3"						""							// Ability 3
+		"Ability4"						""									// Ability 4
+		"Ability5"						""											// Ability 5
+		"Ability6" 						""											// Ability 6
+		"Ability7" 						""										
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					"ability_gatherer_findhide"												//Hidden ability for radar manipulation usage
+		"Ability12"  					"ability_gatherer_findclayballcookedmeatorbone"							//Hidden ability for radar manipulation usage
+		"Ability13"  					"ability_gatherer_findmushroomstickortinder"							//Hidden ability for radar manipulation usage
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14"									// Damage range min.
+		"AttackDamageMax"			"14"									// Damage range max.	
+		"AttackRate"				"1.75"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		"Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"5548"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"5500"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"5501"
+				}				
+				"Wearable4"
+				{
+					"ItemDef"			"5503"
+				}				
+				"Wearable5"
+				{
+					"ItemDef"			"5504"
+				}
+				"Wearable6"
+				{
+					"ItemDef"			"251"
+				}
+			}
+		}
+	}
 	//=================================================================================
 	// Building: Fire (basic)
 	//=================================================================================
