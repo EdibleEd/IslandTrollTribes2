@@ -1364,6 +1364,328 @@
 			}
 		}
     }
+
+//=====================================================================================================================
+//NPC Abilities
+//=====================================================================================================================
+
+    //=================================================================================================================
+	// Ability: The One Critical Strike
+	//=================================================================================================================
+	"ability_the_one_criticalstike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName" 			"slardar_bash"	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"the_one_criticalstrike_passive"
+			{
+				"Passive" "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "%crit_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"	   "CASTER"
+								"ModifierName" "the_one_critical"
+							}		
+						}
+					}
+				}
+			}
+
+			"the_one_critical"
+			{
+                "Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%crit_bonus"
+				}
+                
+                "OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	 "follow_origin"
+						"Target"			 "TARGET"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"		"the_one_critical"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_bonus"		    "200"
+			}
+		}
+	}
+    
+    //=================================================================================================================
+	// Ability: The One Pulverize
+	//=================================================================================================================
+	"ability_the_one_pulverize"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName" 			"lone_druid_rabid"	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+            "particle_folder"           "particles/units/heroes/hero_magnataur"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+		}
+        
+        "Modifiers"
+		{
+			"the_one_pulverize_passive"
+			{
+				"Passive" "1"
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance" "%pulverize_chance"
+						"OnSuccess"
+						{
+							"CleaveAttack"
+                            {
+                                "CleavePercent"		"%cleave_damage"
+                                "CleaveRadius"      "%cleave_radius"                                
+                                "CleaveEffect"      "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf"
+                            }
+						}
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulverize_chance"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage"		    "200"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_radius"		    "500"
+			}
+		}
+	}
+    
+    //=================================================================================================================
+	// Ability: The One True Sight
+	//=================================================================================================================
+	"ability_the_one_truesight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"life_stealer_rage"	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"the_one_truesight_passive"
+			{
+				"Passive" "1"
+                "OnCreated"
+                {
+                    "ApplyModifier"
+                    {
+                        "Target"        "CASTER"
+                        "ModifierName"  "modifier_greevil_truesight"
+                    }
+                }
+			}
+		}
+	}
+    
+    //=================================================================================================================
+    // The One Ensnare
+    //=================================================================================================================
+    "ability_the_one_ensnare"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityTextureName"            "ability_hunter_ensnare"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0.0"
+
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "10"
+        "AbilityCastRange"				"700"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "MaxLevel"                      "1"
+        
+        "precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_meepo"
+			//"soundfile"					"soundevents/game_sounds_heroes/"
+		}
+        
+        "OnSpellStart"
+        {
+            "TrackingProjectile"
+            {
+                "Target"            "TARGET"
+                "EffectName"        "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf"
+                "Dodgeable"         "false"
+                "ProvidesVision"    "false"
+                "MoveSpeed"         "600"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_NONE"
+            }
+        }
+        
+        "OnProjectileHitUnit"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"    "custom_functions_abilities.lua"
+                "Function"      "EnsnareUnit"
+                "Target"        "TARGET"
+            }            
+        }
+    }
+    
+    //=================================================================================================================
+	// Ability: The One Orb of Lightning
+	//=================================================================================================================
+	"ability_the_one_orboflightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName" 			"razor_plasma_field"	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+        "precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_razor"
+            "particle_folder"           "particles/units/heroes/hero_disruptor"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+		}
+        
+        "Modifiers"
+		{
+			"the_one_orboflightning_passive"
+			{
+				"Passive" "1"
+                
+                "Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
+				}
+                
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"    "%chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+                                "Target"        "TARGET"
+                                "Duration"      "%purge_duration"
+								"ModifierName"  "modifier_satyr_trickster_purge"
+							}
+                            
+                            "FireEffect"
+                            {
+                                "Target"            "TARGET"
+                                "EffectName"        "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+                                "EffectAttachType"  "follow_origin"
+                            }
+						}
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"		    "5"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"purge_duration"		"3.5"
+			}
+		}
+	}
     
 //=====================================================================================================================
 //Modifier Applier  -- Used to apply modifiers from Lua using the callModApplier() function
@@ -1430,6 +1752,8 @@
 			}
 		}
     }
+    
+
     
 //=================================================================================
 //Placeholder Abilities
