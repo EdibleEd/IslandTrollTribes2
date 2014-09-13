@@ -838,31 +838,31 @@
 				{
 					"ItemDef"			"94"	// Witch Doctor's Head
 				}
-				"Wearable1"
+				"Wearable2"
 				{
 					"ItemDef"			"95"	// Witch Doctor's Bag
 				}
-				"Wearable1"
+				"Wearable3"
 				{
 					"ItemDef"			"96"	// Witch Doctor's Belt
 				}				
-				"Wearable1"
+				"Wearable4"
 				{
 					"ItemDef"			"97"	// Witch Doctor's Staff
 				}
-				"Wearable1"
+				"Wearable5"
 				{
 					"ItemDef"			"4251" 	// Sacral Apparel Skirt
 				}
-				"Wearable2"
+				"Wearable6"
 				{
 					"ItemDef"			"4252"	// Drum of Tales
 				}
-				"Wearable3"
+				"Wearable7"
 				{
 					"ItemDef"			"4253"	//	Mantle of Mysteries
 				}			
-				"Wearable4"
+				"Wearable8"
 				{
 					"ItemDef"			"4254"	//	Veil of Fables
 				}					
@@ -2082,7 +2082,7 @@
 				{
 					"ItemDef"			"4684"
 				}				
-				"Wearable4"
+				"Wearable5"
 				{
 					"ItemDef"			"4685"
 				}		
@@ -3461,7 +3461,31 @@
         // Vision
         //----------------------------------------------------------------
         "VisionDaytimeRange"            "1800"           // Range of vision during day light.
-        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time.
+        
+        "Creature"
+		{			
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"6056"	// Mask of the Wandering Demon
+				}
+                "Wearable2"
+				{
+					"ItemDef"			"62"	//	Jugg Legs
+				}
+                "Wearable3"
+				{
+					"ItemDef"			"6072"	//	Blade of the New Year
+				}	
+                "Wearable4"
+				{
+					"ItemDef"			"5440"	//	Vestments of the Exiled Ronin
+				}
+                
+			}
+		}
     }
     
     // Dummy Spotter - used for vision providing abilities
