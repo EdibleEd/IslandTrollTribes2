@@ -618,7 +618,7 @@
 				{
 					"ItemDef"			"380"		//Troll Warlord offhand
 				}
-				Wearable3"
+				"Wearable3"
 				{
 					"ItemDef"			"410"		// Troll Warlord Shoulders
 				}
@@ -765,7 +765,7 @@
 // HERO: Mage Elementalist 
 //=================================================================================================================
 	"npc_hero_mage_elementalist"
-	{																		
+	{												
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
@@ -885,7 +885,7 @@
 // HERO: Mage Hypnotist 
 //=================================================================================================================
 	"npc_hero_mage_hypnotist"
-	{																		
+	{																	
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
@@ -2289,7 +2289,7 @@
 		"Ability10" 					"ability_priest_mixenergy"		
 		"Ability11"  					"ability_priest_mixheat"
 		"Ability12"  					"ability_priest_selfpreservation"
-		"Ability13"  					"ability_priest_trollbattlecall
+		"Ability13"  					"ability_priest_trollbattlecall"
 		"Ability14"  					"ability_priest_increasemetabolism"
 		"Ability15"  					"ability_priest_maximumfervor"
 		"Ability16"  					"ability_priest_lightgate"		
@@ -3466,7 +3466,7 @@
 //=================================================================================================================
 // Boss: The One
 //=================================================================================================================
-	"npc_boss_the_one_itt"
+	"npc_boss_the_one"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
