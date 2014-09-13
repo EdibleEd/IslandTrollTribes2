@@ -509,19 +509,7 @@
 				"Wearable5"
 				{
 					"ItemDef"			"272"	// Huskar Bracer
-				}			
-				"Wearable6"
-				{
-					"ItemDef"			"5548"
-				}
-				"Wearable7"
-				{
-					"ItemDef"			"5500"
-				}
-				"Wearable8"
-				{
-					"ItemDef"			"5501"
-				}				
+				}					
 			}
 		}
 	}
@@ -769,7 +757,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/heroes/witch_doctor/witch_doctor.mdl"		// Model
+		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
 		"AbilityLayout"         			"3"		
 		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
 	
@@ -1100,6 +1088,7 @@
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
+		"ModelScale"						"0.75"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1206,6 +1195,7 @@
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
+		"ModelScale"						"0.75"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1296,7 +1286,7 @@
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			""
+					"ItemDef"			"369"
 				}				
 			}
 		}
@@ -1312,6 +1302,7 @@
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
+		"ModelScale"						"0.75"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1415,7 +1406,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/heroes/riki/riki.mdl"			// Model
+		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
 	
@@ -1521,7 +1512,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/heroes/riki/riki.mdl"			// Model
+		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
 	
@@ -1631,7 +1622,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/heroes/riki/riki.mdl"			// Model
+		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
 	
@@ -1816,26 +1807,6 @@
 		{			
 			"AttachWearables"
 			{
-				"Wearable1"
-				{
-					"ItemDef"			"4707"
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"4708"
-				}
-				"Wearable3"
-				{
-					"ItemDef"			"4709"
-				}	
-				"Wearable4"
-				{
-					"ItemDef"			"4710"
-				}	
-				"Wearable5"
-				{
-					"ItemDef"			"4711"
-				}				
 			}
 		}
 	}		
@@ -1847,7 +1818,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/items/lycan/ultimate/alpha_trueform9/alpha_trueform9.vmdl"			// Model
+		"Model"								"models/items/courier/mighty_chicken/mighty_chicken.vmdl"			// Model
 		"SoundSet"							"Hero_Lycan"																// Name of sound set.
 		"AbilityLayout"         			"6"		
 	
@@ -1921,27 +1892,7 @@
 		"Creature"
 		{			
 			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"			"4707"
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"4708"
-				}
-				"Wearable3"
-				{
-					"ItemDef"			"4709"
-				}	
-				"Wearable4"
-				{
-					"ItemDef"			"4710"
-				}	
-				"Wearable5"
-				{
-					"ItemDef"			"4711"
-				}				
+			{			
 			}
 		}
 	}
@@ -1953,10 +1904,11 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
-		"Model"								"models/rabid_black_bear.vmdl"					// Model
+		"Model"								"models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"					// Model
 		"SoundSet"							"Hero_Lycan"									// Name of sound set.
 		"AbilityLayout"         			"6"		
-	
+		"ModelScale"						"0.6"
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_beastmaster_normalform"										// Ability 1
@@ -2028,26 +1980,6 @@
 		{			
 			"AttachWearables"
 			{
-				"Wearable1"
-				{
-					"ItemDef"			"4707"
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"4708"
-				}
-				"Wearable3"
-				{
-					"ItemDef"			"4709"
-				}	
-				"Wearable4"
-				{
-					"ItemDef"			"4710"
-				}	
-				"Wearable5"
-				{
-					"ItemDef"			"4711"
-				}				
 			}
 		}
 	}
