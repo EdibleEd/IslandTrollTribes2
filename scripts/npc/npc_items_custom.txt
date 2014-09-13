@@ -34,7 +34,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -80,7 +80,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -138,7 +138,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -149,35 +149,35 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-					"Custom"
-			{
-		  	  "ModelScale" "2.5"
-			}
+		"Custom"
+		{
+			"ModelScale" "2.5"
+		}
 		"OnSpellStart"
 		{
-			   "TrackingProjectile"
-			   {
-			    "Target"    "TARGET"
-			    "EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
-			    "MoveSpeed"    "%projectile_speed"
-			   }
-				"SpendCharge"
-						{
-						}				   
-		}
-                "OnProjectileHitUnit"
-                {
-					"RunScript"
-					{
-					"ScriptFile" "scripts/vscripts/abilities.lua"
-					"Function" "ability_spear_poison_ultra_throw"
-					}
-				}
-			"FireSound"
+			"TrackingProjectile"
 			{
-				"EffectName"			"Catapult.Attack"
-				"Target"				"TARGET"
+				"Target"    "TARGET"
+				"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
+				"MoveSpeed"    "%projectile_speed"
 			}
+			"SpendCharge"
+			{
+			}		   
+		}		
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+			"ScriptFile" "scripts/vscripts/custom_functions_items.lua"
+			"Function" "ability_spear_poison_ultra_throw"
+			}
+		}		
+		"FireSound"
+		{
+			"EffectName"			"Catapult.Attack"
+			"Target"				"TARGET"
+		}
 		"OnProjectileFinish"
 		{
 			"FireSound"
@@ -247,7 +247,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -297,8 +297,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"DropItemOnDeath"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
 		// Sound
@@ -458,7 +458,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -537,7 +537,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -617,7 +617,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -635,7 +635,7 @@
 		{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"mushroom_use"
 				}
 		}
@@ -677,7 +677,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -730,7 +730,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -783,7 +783,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -836,7 +836,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -884,7 +884,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -950,7 +950,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1001,7 +1001,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1055,7 +1055,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1108,7 +1108,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1158,7 +1158,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1208,7 +1208,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1259,7 +1259,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1309,7 +1309,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1381,7 +1381,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1483,7 +1483,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1583,7 +1583,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1684,7 +1684,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1787,7 +1787,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1894,7 +1894,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1984,7 +1984,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2080,7 +2080,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2186,7 +2186,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2293,7 +2293,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2414,7 +2414,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2528,7 +2528,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2643,7 +2643,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2756,7 +2756,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2832,7 +2832,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -2931,7 +2931,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3023,7 +3023,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3097,7 +3097,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3170,7 +3170,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3243,7 +3243,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3258,7 +3258,7 @@
 		{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_mana_i_use"
 				}
 			"SpendCharge"
@@ -3317,7 +3317,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3332,7 +3332,7 @@
 	{
 		"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"potion_mana_iii_use"
 			}
 		"SpendCharge"
@@ -3390,7 +3390,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3405,7 +3405,7 @@
 			{
 				"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 						"Function"			"potion_mana_iv_use"
 					}
 				"SpendCharge"
@@ -3465,7 +3465,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3481,7 +3481,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_fervor_use"
 				}
 			"SpendCharge"
@@ -3542,7 +3542,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3573,7 +3573,7 @@
                 {
 					"RunScript"
 					{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_disease_use"
 					}
 				}
@@ -3642,7 +3642,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3658,7 +3658,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_nether_use"
 				}
 			"SpendCharge"
@@ -3725,7 +3725,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3752,7 +3752,7 @@
                 {
 					"RunScript"
 					{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_drunk_use"
 					}
 				}
@@ -3831,7 +3831,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3850,7 +3850,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"potion_elemental_use"
 				}
 			"SpendCharge"
@@ -3924,7 +3924,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -3943,7 +3943,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_antimagic_use"
 				}
 			"SpendCharge"
@@ -4007,7 +4007,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4023,7 +4023,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_cureall_use"
 				}
 			"SpendCharge"
@@ -4077,7 +4077,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4093,7 +4093,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_twin_use"
 				}
 			"SpendCharge"
@@ -4151,7 +4151,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -4178,7 +4178,7 @@
                 {
 					"RunScript"
 					{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_acid_use"
 					}
 				}
@@ -4251,7 +4251,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4266,7 +4266,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_poison_use"
 				}
 			"SpendCharge"
@@ -4312,7 +4312,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4328,7 +4328,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"potion_poison_ultra_use"
 				}
 			"SpendCharge"
@@ -4371,7 +4371,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4484,7 +4484,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4596,7 +4596,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4710,7 +4710,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4821,7 +4821,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -4915,7 +4915,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -5009,7 +5009,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -5113,7 +5113,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -5219,7 +5219,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -5325,7 +5325,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5430,7 +5430,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5536,7 +5536,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5626,7 +5626,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5714,7 +5714,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5818,7 +5818,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -5922,7 +5922,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -5996,7 +5996,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6072,7 +6072,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6143,7 +6143,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6241,7 +6241,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6361,7 +6361,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -6456,7 +6456,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6551,7 +6551,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6646,7 +6646,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -6722,7 +6722,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6798,7 +6798,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -6872,7 +6872,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -6947,7 +6947,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7020,7 +7020,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7095,7 +7095,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7181,7 +7181,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7196,7 +7196,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"scroll_dead_use"
 				}
 			"SpendCharge"
@@ -7254,7 +7254,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7269,7 +7269,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"scroll_fireball_use"
 				}
 			"SpendCharge"
@@ -7327,7 +7327,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7342,7 +7342,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"scroll_entangling_use"
 				}
 			"SpendCharge"
@@ -7400,7 +7400,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7415,7 +7415,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"scroll_stoneskin_use"
 				}
 			"SpendCharge"
@@ -7473,7 +7473,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7488,7 +7488,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"scroll_cyclone_use"
 				}
 			"SpendCharge"
@@ -7536,7 +7536,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7551,7 +7551,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"scroll_tsunami_use"
 				}
 			"SpendCharge"
@@ -7596,7 +7596,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7668,7 +7668,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7742,7 +7742,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7758,7 +7758,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_rawmagic_use"
 				}
 			"SpendCharge"
@@ -7805,7 +7805,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7873,7 +7873,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7921,7 +7921,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7969,7 +7969,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -7995,7 +7995,7 @@
 				}
 			"RunScript"
 			{
-			"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+			"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 			"Function"			"item_gem_knowledge"
 			}
 			}
@@ -8047,7 +8047,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -8117,7 +8117,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8186,7 +8186,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8245,7 +8245,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -8295,7 +8295,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8343,7 +8343,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8394,7 +8394,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8410,7 +8410,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_sonarcompass_use"
 				}
 			"SpendCharge"
@@ -8457,7 +8457,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8473,7 +8473,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_net_use"
 				}
 			"SpendCharge"
@@ -8530,7 +8530,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"DropItemOnDeath"
 			}
 		}
@@ -8545,7 +8545,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_bomb_smoke_use"
 				}
 			"SpendCharge"
@@ -8601,7 +8601,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8628,7 +8628,7 @@
                 {
 					"RunScript"
 					{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"			"item_beehive_throw"
 					}
 				}
@@ -8683,7 +8683,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8744,7 +8744,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8759,7 +8759,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_emp_use"
 				}
 			"SpendCharge"
@@ -8804,7 +8804,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8819,7 +8819,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_medallion_use"
 				}
 			"SpendCharge"
@@ -8876,7 +8876,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8891,7 +8891,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_horn_use"
 				}
 			"SpendCharge"
@@ -8935,7 +8935,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -8950,7 +8950,7 @@
 			{
 			"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 					"Function"				"item_medallion_theif_use"
 				}
 			"SpendCharge"
@@ -8998,7 +8998,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9066,7 +9066,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9134,7 +9134,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9201,7 +9201,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9268,7 +9268,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9334,7 +9334,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9386,7 +9386,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9486,7 +9486,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9586,7 +9586,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9693,7 +9693,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9760,7 +9760,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9829,7 +9829,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9897,7 +9897,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -9965,7 +9965,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10033,7 +10033,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10101,7 +10101,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10169,7 +10169,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10236,7 +10236,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10303,7 +10303,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10370,7 +10370,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10437,7 +10437,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10504,7 +10504,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10571,7 +10571,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10638,7 +10638,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10707,7 +10707,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10775,7 +10775,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -10826,7 +10826,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/custom_functions_items.lua"
 				"Function"				"WorkDamnYou"
 			}
 		}
