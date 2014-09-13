@@ -310,13 +310,15 @@ function RadarTelegather (keys)
         end
 end
 
+--Hunter Ability Functions
+
 function EnsnareUnit(keys)
     local caster = keys.caster
     local target = keys.target
     local targetName = target:GetName()
-    local dur = 8.0
+    local dur = 8.0	--default duration for anything besides heros
     if (string.find(targetName,"hero") ~= nil) then --if the target's name includes "hero"
-        dur = 3.5
+        dur = 3.5	--then we use the hero only duration
     end
     print("Ensnare!")
     target:AddNewModifier(caster, nil, "modifier_meepo_earthbind", { duration = dur})
@@ -340,6 +342,7 @@ function TrackMoveSpotter(keys)
     local target
 end
 
+--utility functions
 function callModApplier( caster, modName, abilityLevel)
     if abilityLevel == nil then
         abilityLevel = 1
