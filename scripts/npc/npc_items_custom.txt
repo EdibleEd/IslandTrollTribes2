@@ -1836,30 +1836,30 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "0"
 
-		  "Custom"
-		  {
-		      "ModelOffsets"
-		      {
-		          "Origin"
-		          {
-		              "x" "0"
-		              "y" "0"
-		              "z" "62"
-		          }
-		          "Angles"
-		          {
-		              "x" "0"
-		              "y" "0"
-		              "z" "0"
-		          }
-		      }
-		  }
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "62"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0"
+				}
+			}
+		}
 
 		"OnOwnerDied"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
 				"Function"			"DropItemOnDeath"
 			}
 		}
@@ -1870,60 +1870,112 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		                "OnChannelFinish"
-                {
-                        "DestroyTrees"
-                        {
-                                "Target"                        "POINT"
-                        }
-                }
-						"OnAttackLanded"
-       			{
-            			"ScriptFile"       "scripts/vscripts/itemabilities.lua"
-            			"Function"         "MageMasherMash"
-        		}
-		"Modifiers"
-		{				
-		"modifier_axe_mage_masher_damage"
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_nyx_assassin"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		}
+		
+		"OnChannelFinish"
+		{
+			"DestroyTrees"
 			{
-			//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-			"IsHidden" "1"
-			"Passive" "1"
-			"Properties"
-				{
-			"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-				}
+				"Target"		"POINT"
 			}
 		}
-				"AbilitySpecial"
+		
+		"Modifiers"
 		{
-				"01"
+			"modifier_axe_mage_masher_damage"
+			{
+				"IsHidden" "1"
+				"Passive" "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+			"modifier_axe_mage_masher_passive"
+			{
+				"IsHidden" "1"
+				"Passive" "1"
+				"OnAttackLanded"
+				{			
+					"Random"
+					{
+						"Chance" "%mage_masher_silent_strike_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"	   	"TARGET"
+								"ModifierName" 	"modifier_axe_mage_masher_silent_strike"
+								"Duration"		"%mage_masher_silent_strike_duration"
+							}
+						}
+					}
+					
+					"Random"
+					{
+						"Chance" 	"%mage_masher_mana_burn_chance"
+						"OnSuccess"
+						{				
+							"RunScript"
+							{
+								"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+								"Function"			"MageMasherManaBurn"
+								"Target"			"TARGET"
+								"Damage"			"%mage_masher_mana_burn_damage"
+							}
+						}
+					}
+				}
+			}
+			
+			"modifier_axe_mage_masher_silent_strike"
+			{
+				"IsDebuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%mage_masher_silent_strike_dot"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"EffectName"		"particles/generic_gameplay/generic_silence.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"9"
 			}
-				"02"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mage_masher_silent_strike_chance"			"21"
 			}
-				"03"
+			"03"
 			{			
 				"var_type"				"FIELD_INTEGER"
-				"mage_masher_silent_strike_dot"			"2"
+				"mage_masher_silent_strike_dot"			"-2"
 			}
-				"04"
+			"04"
 			{			
 				"var_type"				"FIELD_INTEGER"
 				"mage_masher_silent_strike_duration"		"5"
 			}
-				"04"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mage_masher_mana_burn_chance"				"29"
 			}
-
-				"05"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mage_masher_mana_burn_damage"				"29"
