@@ -118,7 +118,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"1.0"
 		
 		// Item Info
@@ -176,10 +176,11 @@
 			{
 				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
 				"Function" 		"StoneStun"
+				"Target"		"TARGET"
 			}			
 			"SpendCharge"
 			{
-			}	
+			}
 		}
 		"OnProjectileFinish"
 		{
@@ -339,98 +340,161 @@
 //=================================================================================================================
     "item_meat_raw"
     {
-	"ID"                                                    "1006"
+		"ID"                                                    "1006"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityBehavior"                       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"BaseClass"                             "item_datadriven"
-	"AbilityTextureName"                    "meat_raw"
-	"Model"                                 "models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
-	"Effect" 								""
-	// Item Info
-	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"                                      "1"
-	"ItemShopTags"                                  "consumable"
-	"ItemQuality"                                   "consumable"
-	"ItemShareability"                              "ITEM_FULLY_SHAREABLE_STACKING"
-	"ItemStackable"                                 "1"
-	"ItemPermanent"                                 "0"
-	"ItemDroppable"                                 "1"
-	"ItemInitialCharges"                            "1"
-	"ItemAliases"                                   "quicktype"
-	"ItemDisassembleRule"                           "DOTA_ITEM_DISASSEMBLE_NEVER"
-	"ItemKillable"                                  "1"
-	"ItemSellable"                                  "0"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"                       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"                             "item_datadriven"
+		"AbilityTextureName"                    "meat_raw"
+		"Model"                                 "models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
+		"Effect" 								""
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                                      "1"
+		"ItemShopTags"                                  "consumable"
+		"ItemQuality"                                   "consumable"
+		"ItemShareability"                              "ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"                                 "1"
+		"ItemPermanent"                                 "0"
+		"ItemDroppable"                                 "1"
+		"ItemInitialCharges"                            "1"
+		"ItemAliases"                                   "quicktype"
+		"ItemDisassembleRule"                           "DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                                  "1"
+		"ItemSellable"                                  "0"
 
-	// Special     
-	//-------------------------------------------------------------------------------------------------------------
-	// Modifiers
-	//-------------------------------------------------------------------------------------------------------------
-	"OnSpellStart"
-	{
-		"ApplyModifier"
+		// Special     
+		//-------------------------------------------------------------------------------------------------------------
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
 		{
-			"Target" "CASTER"
-			"ModifierName" "modifier_item_meat_raw"
-		}
-		"SpendCharge"
-		{
-		}
-	}
-			"Custom"
-	{
-    "ModelOffsets"
-    {
-        "Origin"
-        {
-            "x" "-68"
-            "y" "-68"
-            "z" "97"
-        }
-        "Angles"
-        {
-            "x" "0"
-            "y" "0"
-            "z" "0"
-        }
-    }
-	}
-	"Modifiers"
-	{
-		"modifier_item_meat_raw"
-		{
-			"Duration" "%buff_duration"
-			"Properties"
-			"AbilityTexture" "meat_raw"
+			"RunScript"
 			{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%hp_per_tick"
+				"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
+				"Function"		"EatMeatRaw"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"Custom"
+		{
+			"ModelOffsets"
+			{
+				"Origin"
+				{
+					"x" "-68"
+					"y" "-68"
+					"z" "97"
+				}
+				"Angles"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0"
+				}
+			}
+		}
+		//Ability Special
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                              "FIELD_INTEGER"
+					"buff_duration"                 		"2"
+			}
+			"02"
+			{
+					"var_type"                              "FIELD_INTEGER"
+					"total_hp"                              "15"
+			}
+			"03"
+			{
+					"var_type"                              "FIELD_INTEGER"
+					"hp_per_tick"                  			 "1"  // %total_mana / %buff_duration
 			}
 		}
 	}
+		//raw meat eating channel - use this ability when eating raw meat
+		"ability_item_eat_meat_raw"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+			"AbilityTextureName"			"life_stealer_open_wounds"
+			
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastPoint"				"0.0"
+			"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
 
-	//Ability Special
-	//-------------------------------------------------------------------------------------------------------------
-	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-				"var_type"                              "FIELD_INTEGER"
-				"buff_duration"                 		"3"
+			// Time		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityChannelTime"			"2.0"
+			"AbilityCooldown"				"0"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"0"
+			
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_eat_meat_raw"
+				}
+			}
+			
+			"OnAbilityEndChannel"
+			{
+				"RemoveModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_eat_meat_raw"
+				}
+				"RemoveAbility"
+				{
+					"Target"			"CASTER"
+					"AbilityName"		"ability_item_eat_meat_raw"
+				}
+			}
+			"OnChannelFinish"
+			{
+				"RemoveModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_eat_meat_raw"
+				}				
+				"RemoveAbility"
+				{
+					"Target"			"CASTER"
+					"AbilityName"		"ability_item_eat_meat_raw"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_eat_meat_raw"
+				{					
+					"ThinkInterval"			".2"
+					"OnIntervalThink"
+					{
+						"Heal"
+						{
+							"Target"		"CASTER"
+							"HealAmount"	"1"
+						}
+					}
+				}
+			}
 		}
-		"02"
-		{
-				"var_type"                              "FIELD_INTEGER"
-				"total_hp"                              "15"
-		}
-		"03"
-		{
-				"var_type"                              "FIELD_INTEGER"
-				"hp_per_tick"                  			 "3"  // %total_mana / %buff_duration
-		}
-	}
-	}
+
 //=================================================================================================================
 // Custom: Acorn
 //=================================================================================================================
@@ -506,6 +570,8 @@
 			}
 		}
 	}
+	
+	
 //=================================================================================================================
 // Custom: Magic Acorn
 //=================================================================================================================

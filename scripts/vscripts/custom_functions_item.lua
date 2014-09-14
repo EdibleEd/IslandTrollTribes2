@@ -45,3 +45,20 @@ function StoneStun(keys)
     print("Stone Stunned!")
     target:AddNewModifier(caster, nil, "modifier_stunned", { duration = dur})
 end
+
+function EatMeatRaw(keys)	--triggers the meat eating channel ability
+	---[[
+	local caster = keys.caster
+	local abilityName = "ability_item_eat_meat_raw"
+	local ability = caster:FindAbilityByName(abilityName)
+    if ability == nil then
+        caster:AddAbility(abilityName)
+        ability = caster:FindAbilityByName( abilityName )
+        ability:SetLevel(1)
+        
+    end
+	print("trying to cast ability ", abilityName)
+    caster:CastAbilityNoTarget(ability, -1)
+    --caster:RemoveAbility(abilityName)
+	--]]
+end
