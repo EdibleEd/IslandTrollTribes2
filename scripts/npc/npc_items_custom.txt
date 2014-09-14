@@ -107,9 +107,9 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"BaseClass"							"item_datadriven"
 		"AbilityTextureName"				"stone"
 		"Model"								"models/particle/tiny_rocks.vmdl"
@@ -119,6 +119,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -160,23 +161,25 @@
 				"Target"    "TARGET"
 				"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
 				"MoveSpeed"    "%projectile_speed"
-			}
-			"SpendCharge"
+				"Dodgeable"         "true"
+				"ProvidesVision"	"0"
+			}					
+			"FireSound"
 			{
-			}		   
+				"EffectName"			"Catapult.Attack"
+				"Target"				"TARGET"
+			}	   
 		}		
 		"OnProjectileHitUnit"
 		{
 			"RunScript"
 			{
-				"ScriptFile" "scripts/vscripts/custom_functions_item.lua"
-				"Function" "ability_spear_poison_ultra_throw"
-			}
-		}		
-		"FireSound"
-		{
-			"EffectName"			"Catapult.Attack"
-			"Target"				"TARGET"
+				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
+				"Function" 		"StoneStun"
+			}			
+			"SpendCharge"
+			{
+			}	
 		}
 		"OnProjectileFinish"
 		{
@@ -185,13 +188,17 @@
 				"EffectName"			"Catapult.Impact"
 				"Target"				"TARGET"
 			}
+			
+			"SpendCharge"
+			{
+			}	
 		}
 		"AbilitySpecial"
 		{
 				"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"500"
+				"projectile_speed"			"1000"
 			}				
 				"02"
 			{
