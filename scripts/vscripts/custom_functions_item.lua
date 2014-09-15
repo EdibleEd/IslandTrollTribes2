@@ -113,4 +113,5 @@ function SpearDarkThrow(keys)
 
 	ApplyDamage(damageTable)
     target:AddNewModifier(caster, nil, "modifier_stunned", { duration = dur})
+	print("Spear hit! Burning " .. randomDamage .. " mana")
 end

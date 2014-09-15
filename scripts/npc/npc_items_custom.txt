@@ -2423,9 +2423,14 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds/ability_catapult_attack.vsndevts"
+		}
+		
 		"Custom"
 		{			  
-			"ModelScale"		 "0.6"
+			"ModelScale"		"0.6"
 		}
 		"OnSpellStart"
 		{
@@ -2437,7 +2442,7 @@
 			}			
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 		}
@@ -2446,13 +2451,13 @@
 			"RunScript"
 			{
 				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
-				"Function" 		"ThrowSpearDark"
+				"Function" 		"SpearDarkThrow"
 				"DamageMin"		"%mana_zap_min"
 				"DamageMax"		"%mana_zap_max"
 			}			
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Impact"
+				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 				"Target"				"TARGET"
 			}
 			"Random"

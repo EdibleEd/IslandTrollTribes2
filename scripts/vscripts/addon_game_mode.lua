@@ -53,6 +53,7 @@ function Precache( context )
 	
 	PrecacheResource("particle_folder", 'particles/units/heroes/hero_nyx_assassin',context)
     PrecacheResource("soundfile", 'soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts',context)
+	PrecacheResource("soundfile", 'soundevents/game_sounds/ability_catapult_attack.vsndevts',context)
 	
     print("Precache Finish")
 end
