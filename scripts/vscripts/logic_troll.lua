@@ -6,10 +6,13 @@
 HUNGER_LOSS_PER_UNIT = 3
 TICKS_PER_HUNGER_UNIT = 6
 
+ENERGY_LOSS_PER_UNIT = 3
+TICKS_PER_ENERGY_UNIT = 6
+
 allowed_item_combos_two     = {}
 allowed_item_combos_three   = {}
 hungerTicks = 0
-
+energyTicks = 0
 
 allowed_item_combos_two["item_ward_observer"]  = {"item_clarity", "item_tango"}
 
@@ -25,6 +28,14 @@ function Hunger(playerID)
     end
 end
 
+function Energy(playerID)
+    energyTicks = energyTicks + 1
+    if energyTicks % 6 == 0 then
+        local player = PlayerInstanceFromIndex(playerID)
+        local hero = player:GetAssignedHero()
+        hero:ReduceMana(3)
+    end
+end
 function InventoryCheck(playerID)
     -- print("Inv testing player " .. playerID)
     -- Lets find the hero we want to work with
