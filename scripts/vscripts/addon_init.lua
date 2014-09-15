@@ -485,7 +485,7 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
     local creature = CreateUnitByName("npc_dota_creature_elk", RandomVector(RandomFloat(0,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
 end
 
---Listener to handle telegather events
+--Listener to handle telegather events from item pickup
 function ITT_GameMode:OnItemPickedUp(event)
         local hero = EntIndexToHScript( event.HeroEntityIndex )
         local hasTelegather = hero:HasModifier("modifier_telegather")
@@ -493,6 +493,11 @@ function ITT_GameMode:OnItemPickedUp(event)
         if hasTelegather then
             RadarTelegather(event)
         end
+end
+
+--Listener to handle level up
+function ITT_GameMode:OnPlayerGainedLevel(event)
+	print("PlayerGainedLevel")
 end
 
 function give_item(cmdname, itemname)
