@@ -11,12 +11,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
-		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
 		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
-	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_shadowshaman.txt"
+		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
+		"ModelScale"						"0.91"	
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
@@ -143,12 +145,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
-		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
 		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
-	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_shadowshaman.txt"
+		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
+		"ModelScale"						"0.91"	
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
@@ -278,12 +282,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
-		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
 		"IdleExpression"					"scenes/shadowshaman/shadowshaman_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_ShadowShaman"									// Name of sound set.
-	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_shadowshaman.txt"
+		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
+		"ModelScale"						"0.91"	
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_gatherer_itemradar"								// Ability 1
@@ -357,51 +363,51 @@
 		{			
 			"AttachWearables"
 			{
+				//"Wearable1"
+				//{
+				//	"ItemDef"			"246"	// Shadow Shaman's Weapon
+				//}
+				//"Wearable2"
+				//{
+				//	"ItemDef"			"247"	// Shadow Shaman's Off-hand Weapon
+				//}
+				//"Wearable3"
+				//{
+				//	"ItemDef"			"248"	// Shadow Shaman's Headdress
+				//}
 				"Wearable1"
-				{
-					"ItemDef"			"246"	// Shadow Shaman's Weapon
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"247"	// Shadow Shaman's Off-hand Weapon
-				}
-				"Wearable3"
-				{
-					"ItemDef"			"248"	// Shadow Shaman's Headdress
-				}
-				"Wearable4"
 				{
 					"ItemDef"			"249" 	// Shadow Shaman's Armor
 				}
-				"Wearable5"
-				{
-					"ItemDef"			"250" 	// Shadow Shaman's Stuff (Belt)
-				}
-				"Wearable6"
+				//"Wearable5"
+				//{
+				//	"ItemDef"			"250" 	// Shadow Shaman's Stuff (Belt)
+				//}
+				"Wearable2"
 				{
 					"ItemDef"			"251" 	// Shadow Shaman's Head					
 				}
-				"Wearable7"
+				"Wearable3"
 				{
 					"ItemDef"			"6814"	// Tang-Ki Scepter Off-Hand
 				}
-				"Wearable8"
+				"Wearable4"
 				{
 					"ItemDef"			"6815"	// Serpent Ward of Tang-Ki
 				}
-				"Wearable9"
+				"Wearable5"
 				{
 					"ItemDef"			"6816"	// Tang-Ki Scepter
 				}				
-				"Wearable10"
+				"Wearable6"
 				{
 					"ItemDef"			"6817"	// Accursed Scrolls of Tang-Ki
 				}
-				"Wearable11"
+				"Wearable7"
 				{
 					"ItemDef"			"6818"	// Possessed Shrine of Tang-Ki
 				}
-				"Wearable12"
+				"Wearable8"
 				{
 					"ItemDef"			"6819"	// Ornate Headdress of Tang-Ki
 				}
@@ -417,10 +423,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/huskar/huskar.mdl"		// Model
-		"AbilityLayout"         			"6"		
-		"SoundSet"							"Hero_Huskar"										// Name of sound set.
-	
+		"Model"								"models/heroes/troll_warlord/troll_warlord.mdl"				// Model.
+		"SoundSet"							"Hero_TrollWarlord"											// Name of sound set.
+		"IdleExpression"					"scenes/troll_warlord/troll_warlord_exp_idle_01.vcd"		// custom facial animation idle
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
+		"ParticleFile"						"particles/units/heroes/hero_troll_warlord.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
+		"VoiceFile" 						"scripts/voscripts/game_sounds_vo_troll_warlord.txt"
+		"ModelScale" 						"0.9"
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_hunter_ensnare"								// Ability 1
@@ -526,10 +537,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/troll_warlord/troll_warlord.mdl"		// Model
-		"AbilityLayout"         			"3"		
-		"SoundSet"							"Hero_TrollWarlord"									// Name of sound set.
-	
+		"Model"								"models/heroes/troll_warlord/troll_warlord.mdl"				// Model.
+		"SoundSet"							"Hero_TrollWarlord"											// Name of sound set.
+		"IdleExpression"					"scenes/troll_warlord/troll_warlord_exp_idle_01.vcd"		// custom facial animation idle
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
+		"ParticleFile"						"particles/units/heroes/hero_troll_warlord.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
+		"VoiceFile" 						"scripts/voscripts/game_sounds_vo_troll_warlord.txt"
+		"ModelScale" 						"0.9"
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_hunter_ensnare"								// Ability 1
@@ -635,9 +651,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/huskar/huskar.mdl"				// Model
-		"AbilityLayout"         			"3"		
-		"SoundSet"							"Hero_Huskar"										// Name of sound set.
+		"Model"			"models/heroes/huskar/huskar.mdl"		// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_huskar"	// Small image for hero selection
+		"IdleExpression"					"scenes/huskar/huskar_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_Huskar"		
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_huskar.txt"
+		"ParticleFile"						"particles/units/heroes/hero_huskar.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_huskar.txt"
+		"ModelScale"						"0.79"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -764,11 +785,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
-		"AbilityLayout"         			"3"		
-		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
-		"ModelScale"						"0.75"
-	
+		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"					// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_witch_doctor"				// Small image for hero selection
+		"IdleExpression"					"scenes/witchdoctor/witchdoctor_exp_idle_01.vcd"			// custom facial animation idle
+		"SoundSet"							"Hero_WitchDoctor"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_witchdoctor.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_witchdoctor.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_witchdoctor.txt"
+		"ModelScale"						".84"
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_mage_nulldamage"									// Ability 1
@@ -886,11 +911,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
-		"AbilityLayout"         			"6"		
-		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
-		"ModelScale"						"0.75"
-		"GameSoundsFile" 					"soundevents/voscripts/game_sounds_vo_witchdoctor.vsndevts"
+		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"					// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_witch_doctor"				// Small image for hero selection
+		"IdleExpression"					"scenes/witchdoctor/witchdoctor_exp_idle_01.vcd"			// custom facial animation idle
+		"SoundSet"							"Hero_WitchDoctor"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_witchdoctor.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_witchdoctor.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_witchdoctor.txt"
+		"ModelScale"						".84"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -965,19 +993,19 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4220"
+					"ItemDef"			"4220"		// Juju o' Wicked Badness
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"4221"
+					"ItemDef"			"4221"		// Staff o' Wicked Badness
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4222"
+					"ItemDef"			"4222"		// Mask o' Wicked Badness
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4096"
+					"ItemDef"			"4096"		// Belt o' Wicked Badness
 				}					
 			}
 		}
@@ -991,20 +1019,23 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
-		"AbilityLayout"         			"6"		
-		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
-		"ModelScale"						"0.84"
-		"GameSoundsFile" 					"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"					// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_witch_doctor"				// Small image for hero selection
+		"IdleExpression"					"scenes/witchdoctor/witchdoctor_exp_idle_01.vcd"			// custom facial animation idle
+		"SoundSet"							"Hero_WitchDoctor"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_witchdoctor.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_witchdoctor.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_witchdoctor.txt"
+		"ModelScale"						".84"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						"ability_mage_magefire"									// Ability 1
+		"Ability1"						"ability_mage_magefire"											// Ability 1
 		"Ability2"						"ability_mage_quantumnulldamage"								// Ability 2
 		"Ability3"						"ability_mage_reducefood"										// Ability 3
-		"Ability4"						"ability_mage_reducefood"									// Ability 4
-		"Ability5"						"ability_mage_giganegativeblast"										// Ability 5
-		"Ability6" 						"ability_mage_metronome"									// Ability 6
+		"Ability4"						"ability_mage_reducefood"										// Ability 4
+		"Ability5"						"ability_mage_giganegativeblast"								// Ability 5
+		"Ability6" 						"ability_mage_metronome"										// Ability 6
 		"Ability7" 						"ability_mage_maddeningdischarge"										
 		"Ability8" 						"ability_mage_depressionorb"							
 		"Ability9"  					"ability_mage_dementiarunes"		
@@ -1014,7 +1045,7 @@
 		"Ability13"  					"ability_mage_stormearthfire"												
 		"Ability14"  					"ability_mage_stupefyingfield"
 		"Ability15"  					"ability_mage_dementiasummoning"
-		"Ability16"  					"ability_mage_summon_runes"			//I cant fit the rest of the runes so I combind it into one ability that hopefully we can make it work like radar gathering.
+		"Ability16"  					"ability_mage_summon_runes"			//I cant fit the rest of the runes so I combined it into one ability that hopefully we can make it work like radar gathering.
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"0"										// Physical protection.
@@ -1070,23 +1101,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4707"
-				}
+					"ItemDef"			"4707"		// Egg of the Stormcrow_Description
+	}
 				"Wearable2"
 				{
-					"ItemDef"			"4708"
+					"ItemDef"			"4708"		// Beak of the Stormcrow
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4709"
+					"ItemDef"			"4709"		// Cloak of the Stormcrow
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4710"
+					"ItemDef"			"4710"		// Tail of the Stormcrow
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"4711"
+					"ItemDef"			"4711"		// Sigil of the Stormcrow
 				}				
 			}
 		}
@@ -1100,10 +1131,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/lion/lion.mdl"			// Model
-		"SoundSet"							"Hero_Lion"								// Name of sound set.
-		"AbilityLayout"         			"6"		
-		"ModelScale"						"0.75"
+		"Model"								"models/heroes/lion/lion.mdl"	// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_lion"		// Small image for hero selection
+		"IdleExpression"					"scenes/lion/lion_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_Lion"									// Name of sound set.	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lion.txt"
+		"ParticleFile"						"particles/units/heroes/hero_lion.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lion.txt"
+		"ModelScale" 						"0.70"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1178,19 +1213,19 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"5459"
+					"ItemDef"			"5459"		// Hand of Hell's Ambassador
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"5460"
+					"ItemDef"			"5460"		// Mantle of Hell's Ambassador
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"5461"
+					"ItemDef"			"5461"		// Epaulets of Hell's Ambassador
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"5462"
+					"ItemDef"			"5462"		// Strifemaul of Hell's Ambassador
 				}	
 				"Wearable5"
 				{
@@ -1208,10 +1243,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/lion/lion.mdl"			// Model
-		"SoundSet"							"Hero_Lion"								// Name of sound set.
-		"AbilityLayout"         			"6"		
-		"ModelScale"						"0.75"
+		"Model"								"models/heroes/lion/lion.mdl"	// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_lion"		// Small image for hero selection
+		"IdleExpression"					"scenes/lion/lion_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_Lion"									// Name of sound set.	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lion.txt"
+		"ParticleFile"						"particles/units/heroes/hero_lion.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lion.txt"
+		"ModelScale" 						"0.70"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1286,23 +1325,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"6141"
+					"ItemDef"			"6141"		// Cowl of the Malignant Corruption
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"6142"
+					"ItemDef"			"6142"		// Horns of the Malignant Corruption
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"6143"
+					"ItemDef"			"6143"		// Shards of the Malignant Corruption
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"6144"
+					"ItemDef"			"6144"		// Scepter of Corrupted Amber
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"369"
+					"ItemDef"			"369"		// Lion's Default Demon Arm
 				}				
 			}
 		}
@@ -1316,10 +1355,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/lion/lion.mdl"			// Model
-		"SoundSet"							"Hero_Lion"								// Name of sound set.
-		"AbilityLayout"         			"6"		
-		"ModelScale"						"0.75"
+		"Model"								"models/heroes/lion/lion.mdl"	// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_lion"		// Small image for hero selection
+		"IdleExpression"					"scenes/lion/lion_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_Lion"									// Name of sound set.	
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lion.txt"
+		"ParticleFile"						"particles/units/heroes/hero_lion.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lion.txt"
+		"ModelScale" 						"0.70"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1394,23 +1437,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4546"
+					"ItemDef"			"4546"		// Ruby Ring of Rak-noth Rak-nul
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"4585"
+					"ItemDef"			"4585"		// Shroud of the Shattered Sect
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4544"
+					"ItemDef"			"4544"		// Gazing Eye of the Demon Witch
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4545"
+					"ItemDef"			"4545"		// Scepter of the Sable Void
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"4582"
+					"ItemDef"			"4582"		// Skins of the Incubus
 				}				
 			}
 		}
@@ -1424,10 +1467,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
-		"SoundSet"							"Hero_Riki"								// Name of sound set.
-		"AbilityLayout"         			"6"		
-	
+		"Model"								"models/heroes/rikimaru/rikimaru.mdl"				// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_riki"				// Small image for hero selection
+		"IdleExpression"					"scenes/riki/riki_exp_idle_01.vcd"					// custom facial animation idle
+		"SoundSet"							"Hero_Riki"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_riki.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_riki.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_riki.txt"
+		"ModelScale"						"0.87"		
+						
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_thief_teleport"								// Ability 1
@@ -1501,24 +1549,20 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"5327"
+					"ItemDef"			"5274"		// Tahlin Occult Dagger
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"5276"
+					"ItemDef"			"5275"		// Tahlin Occult Dagger - Off-Hand
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"5275"
+					"ItemDef"			"5276"		// Tahlin Occult Shoulder Sigil
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"5274"
+					"ItemDef"			"5327"		// Tahlin Occult Hood
 				}	
-				"Wearable5"
-				{
-					"ItemDef"			""
-				}				
 			}
 		}
 	}
@@ -1531,9 +1575,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
-		"SoundSet"							"Hero_Riki"								// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"Model"								"models/heroes/rikimaru/rikimaru.mdl"				// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_riki"				// Small image for hero selection
+		"IdleExpression"					"scenes/riki/riki_exp_idle_01.vcd"					// custom facial animation idle
+		"SoundSet"							"Hero_Riki"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_riki.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_riki.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_riki.txt"
+		"ModelScale"						"0.87"		
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1591,7 +1640,7 @@
        //----------------------------------------------------------------
         "StatusHealth"                          "192"           // Base health.
         "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
-        "StatusMana"                            "200"              // Base mana.
+        "StatusMana"                            "200"             // Base mana.
         "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
                
         // Vision
@@ -1608,27 +1657,27 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4874"
+					"ItemDef"			"4874"		// Blade of the Subtle Demon
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"4876"
+					"ItemDef"			"4875"		// Blade of the Subtle Demon - Off-Hand
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4877"
+					"ItemDef"			"4876"		// Veil of the Subtle Demon
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4878"
+					"ItemDef"			"4877"		// Wraps of the Subtle Demon
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"4879"
+					"ItemDef"			"4878"		// Whip of the Subtle Demon
 				}				
 				"Wearable6"
 				{
-					"ItemDef"			"4875"
+					"ItemDef"			"4879"		// Mark of the Subtle Demon
 				}				
 			}
 		}
@@ -1642,9 +1691,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
-		"SoundSet"							"Hero_Riki"								// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"Model"								"models/heroes/rikimaru/rikimaru.mdl"				// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_riki"				// Small image for hero selection
+		"IdleExpression"					"scenes/riki/riki_exp_idle_01.vcd"					// custom facial animation idle
+		"SoundSet"							"Hero_Riki"											// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_riki.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_riki.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_riki.txt"
+		"ModelScale"						"0.87"		
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1719,27 +1773,27 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"6365"
+					"ItemDef"			"6365"		// Bracers of the Frozen Blood
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"6366"
+					"ItemDef"			"6366"		// Dagger of the Frozen Blood
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"6367"
+					"ItemDef"			"6367"		// Dagger of the Frozen Blood Off-Han
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"6368"
+					"ItemDef"			"6368"		// Horns of the Frozen Blood
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"6369"
+					"ItemDef"			"6369"		// Armor of the Frozen Blood
 				}						
 				"Wearable5"
 				{
-					"ItemDef"			"6370"
+					"ItemDef"			"6370"		// Tail of the Frozen Blood
 				}						
 			}
 		}
@@ -1753,9 +1807,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/items/lycan/ultimate/alpha_trueform9/alpha_trueform9.vmdl"			// Model
-		"SoundSet"							"Hero_Lycan"																// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"Model"								"models/heroes/lycan/lycan.mdl"									// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_lycan"							// Small image for hero selection
+		"SoundSet"							"Hero_Lycan"													// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_lycan.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lycan.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lycan.txt"
+		"ModelScale" 						".85"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1841,8 +1899,12 @@
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
 		"Model"								"models/items/courier/mighty_chicken/mighty_chicken.vmdl"			// Model
-		"SoundSet"							"Hero_Lycan"																// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"Portrait"							"vgui/hud/heroportraits/portrait_lycan"							// Small image for hero selection
+		"SoundSet"							"Hero_Lycan"													// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_lycan.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lycan.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lycan.txt"
+		"ModelScale" 						".85"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -1928,9 +1990,12 @@
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
 		"Model"								"models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"					// Model
-		"SoundSet"							"Hero_Lycan"									// Name of sound set.
-		"AbilityLayout"         			"6"		
-		"ModelScale"						"0.6"
+		"Portrait"							"vgui/hud/heroportraits/portrait_lycan"							// Small image for hero selection
+		"SoundSet"							"Hero_Lycan"													// Name of sound set.
+		"ParticleFile"						"particles/units/heroes/hero_lycan.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_lycan.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_lycan.txt"
+		"ModelScale" 						"0.6"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -2015,10 +2080,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
+		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
+		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
-		"AbilityLayout"         			"6"		
-	
+		"ParticleFile"						"particles/units/heroes/hero_dazzle.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_dazzle.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_dazzle.txt"
+		"ModelScale"						"0.79"	
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_priest_theglow"											// Ability 1
@@ -2092,23 +2161,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4681"
+					"ItemDef"			"4681"		// Ancestral Headdress
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"4682"
+					"ItemDef"			"4682"		// Ancestral Cloak
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4683"
+					"ItemDef"			"4683"		// Ancestral Arm Wrap
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4684"
+					"ItemDef"			"4684"		// Ancestral Dress
 				}				
 				"Wearable5"
 				{
-					"ItemDef"			"4685"
+					"ItemDef"			"4685"		// Ancestral Medicine Stick
 				}		
 			}
 		}
@@ -2122,9 +2191,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
+		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
+		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"ParticleFile"						"particles/units/heroes/hero_dazzle.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_dazzle.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_dazzle.txt"
+		"ModelScale"						"0.79"	
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -2199,23 +2272,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"6353"
+					"ItemDef"			"6353"		// Shadow Flame Dress
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"6354"
+					"ItemDef"			"6354"		// Shadow Flame Arms
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"6355"
+					"ItemDef"			"6355"		// Shadow Flame Guards
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"6356"
+					"ItemDef"			"6356"		// Shadow Flame Headdress
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"6359"
+					"ItemDef"			"6359"		// Dazolator
 				}				
 			}
 		}
@@ -2229,9 +2302,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
+		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
+		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
-		"AbilityLayout"         			"6"		
+		"ParticleFile"						"particles/units/heroes/hero_dazzle.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_dazzle.txt"
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_dazzle.txt"
+		"ModelScale"						"0.79"	
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -2306,23 +2383,23 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4707"
+					"ItemDef"			"4707"		// Egg of the Stormcrow
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"4708"
+					"ItemDef"			"4708"		// Beak of the Stormcrow
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"4709"
+					"ItemDef"			"4709"		// Cloak of the Stormcrow
 				}	
 				"Wearable4"
 				{
-					"ItemDef"			"4710"
+					"ItemDef"			"4710"		// Tail of the Stormcrow
 				}	
 				"Wearable5"
 				{
-					"ItemDef"			"4711"
+					"ItemDef"			"4711"		// Sigil of the Stormcrow
 				}				
 			}
 		}
@@ -3575,5 +3652,346 @@
         //Inventory
         "HasInventory"                  "0"
     }
-	"npc_precache_npc_dota_hero_antimage" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_antimage" "soundfile" "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"}} "npc_precache_npc_dota_hero_axe" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_axe" "soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"}} "npc_precache_npc_dota_hero_bane" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_bane" "soundfile" "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"}} "npc_precache_npc_dota_hero_bloodseeker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_bloodseeker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"}} "npc_precache_npc_dota_hero_crystal_maiden" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_crystalmaiden" "soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"}} "npc_precache_npc_dota_hero_drow_ranger" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_drow" "soundfile" "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"}} "npc_precache_npc_dota_hero_earthshaker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_earthshaker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"}} "npc_precache_npc_dota_hero_juggernaut" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_juggernaut" "soundfile" "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts" "model" "models/heroes/juggernaut/jugg_healing_ward.vmdl"}} "npc_precache_npc_dota_hero_mirana" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_mirana" "soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"}} "npc_precache_npc_dota_hero_nevermore" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_nevermore" "soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"}} "npc_precache_npc_dota_hero_morphling" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_morphling" "soundfile" "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"}} "npc_precache_npc_dota_hero_phantom_lancer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_phantom_lancer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"}} "npc_precache_npc_dota_hero_puck" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_puck" "soundfile" "soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"}} "npc_precache_npc_dota_hero_pudge" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_pudge" "soundfile" "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"}} "npc_precache_npc_dota_hero_razor" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_razor" "soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"}} "npc_precache_npc_dota_hero_sand_king" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_sandking" "soundfile" "soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"}} "npc_precache_npc_dota_hero_storm_spirit" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_stormspirit" "soundfile" "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"}} "npc_precache_npc_dota_hero_sven" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_sven" "soundfile" "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"}} "npc_precache_npc_dota_hero_tiny" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_tiny" "soundfile" "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts" "model" "models/heroes/tiny_01/tiny_01_tree.vmdl"}} "npc_precache_npc_dota_hero_vengefulspirit" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_vengeful" "soundfile" "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"}} "npc_precache_npc_dota_hero_windrunner" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_windrunner" "soundfile" "soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"}} "npc_precache_npc_dota_hero_zuus" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_zuus" "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"}} "npc_precache_npc_dota_hero_kunkka" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_kunkka" "soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"}} "npc_precache_npc_dota_hero_lina" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_lina" "soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"}} "npc_precache_npc_dota_hero_lich" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_lich" "soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"}} "npc_precache_npc_dota_hero_lion" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_lion" "soundfile" "soundevents/game_sounds_heroes/game_sounds_lion.vsndevts" "model" "models/props_gameplay/frog.vmdl"}} "npc_precache_npc_dota_hero_shadow_shaman" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_shadowshaman" "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts" "model" "models/heroes/shadowshaman/shadowshaman_totem.vmdl"}} "npc_precache_npc_dota_hero_slardar" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_slardar" "soundfile" "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"}} "npc_precache_npc_dota_hero_tidehunter" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_tidehunter" "soundfile" "soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"}} "npc_precache_npc_dota_hero_witch_doctor" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_witchdoctor" "soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts" "model" "models/heroes/witchdoctor/witchdoctor_ward.vmdl"}} "npc_precache_npc_dota_hero_riki" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_riki" "soundfile" "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"}} "npc_precache_npc_dota_hero_enigma" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_enigma" "soundfile" "soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts" "model" "models/heroes/enigma/eidelon.vmdl"}} "npc_precache_npc_dota_hero_tinker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_tinker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"}} "npc_precache_npc_dota_hero_sniper" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_sniper" "soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"}} "npc_precache_npc_dota_hero_necrolyte" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_necrolyte" "soundfile" "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"}} "npc_precache_npc_dota_hero_warlock" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_warlock" "soundfile" "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts" "model" "models/heroes/warlock/warlock_demon.vmdl"}} "npc_precache_npc_dota_hero_beastmaster" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_beastmaster" "soundfile" "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts" "model" "models/heroes/beastmaster/beastmaster_beast.vmdl"}} "npc_precache_npc_dota_hero_queenofpain" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_queenofpain" "soundfile" "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"}} "npc_precache_npc_dota_hero_venomancer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_venomancer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts" "model" "models/heroes/venomancer/venomancer_ward.vmdl"}} "npc_precache_npc_dota_hero_faceless_void" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_faceless_void" "soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"}} "npc_precache_npc_dota_hero_skeleton_king" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_skeletonking" "soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"}} "npc_precache_npc_dota_hero_death_prophet" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_death_prophet" "soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts" "model" "models/heroes/death_prophet/death_prophet_ghost.vmdl"}} "npc_precache_npc_dota_hero_phantom_assassin" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_phantom_assassin" "soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"}} "npc_precache_npc_dota_hero_pugna" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_pugna" "soundfile" "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts" "model" "models/heroes/pugna/pugna_ward.vmdl"}} "npc_precache_npc_dota_hero_templar_assassin" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_templar_assassin" "soundfile" "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts" "model" "models/heroes/witchdoctor/witchdoctor_ward.vmdl"}} "npc_precache_npc_dota_hero_viper" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_viper" "soundfile" "soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"}} "npc_precache_npc_dota_hero_luna" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_luna" "soundfile" "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"}} "npc_precache_npc_dota_hero_dragon_knight" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_dragon_knight" "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts" "model" "models/heroes/dragon_knight/dragon_knight_dragon.vmdl" "particle" "particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf"}} "npc_precache_npc_dota_hero_dazzle" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_dazzle" "soundfile" "soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"}} "npc_precache_npc_dota_hero_rattletrap" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_rattletrap" "soundfile" "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts" "model" "models/heroes/rattletrap/rattletrap_cog.vmdl"}} "npc_precache_npc_dota_hero_leshrac" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_leshrac" "soundfile" "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"}} "npc_precache_npc_dota_hero_furion" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_furion" "soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts" "model" "models/heroes/furion/treant.vmdl"}} "npc_precache_npc_dota_hero_life_stealer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_life_stealer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"}} "npc_precache_npc_dota_hero_dark_seer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_dark_seer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"}} "npc_precache_npc_dota_hero_clinkz" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_clinkz" "soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"}} "npc_precache_npc_dota_hero_omniknight" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_omniknight" "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"}} "npc_precache_npc_dota_hero_enchantress" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_enchantress" "soundfile" "soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"}} "npc_precache_npc_dota_hero_huskar" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_huskar" "soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"}} "npc_precache_npc_dota_hero_night_stalker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_night_stalker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts" "model" "models/heroes/nightstalker/nightstalker_night.vmdl"}} "npc_precache_npc_dota_hero_broodmother" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_broodmother" "soundfile" "soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts" "model" "models/heroes/broodmother/spiderling.vmdl"}} "npc_precache_npc_dota_hero_bounty_hunter" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_bounty_hunter" "soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"}} "npc_precache_npc_dota_hero_weaver" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_weaver" "soundfile" "soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts" "model" "models/heroes/weaver/weaver_bug.vmdl"}} "npc_precache_npc_dota_hero_jakiro" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_jakiro" "soundfile" "soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"}} "npc_precache_npc_dota_hero_batrider" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_batrider" "soundfile" "soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"}} "npc_precache_npc_dota_hero_chen" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_chen" "soundfile" "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"}} "npc_precache_npc_dota_hero_spectre" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_spectre" "soundfile" "soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"}} "npc_precache_npc_dota_hero_doom_bringer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_doom_bringer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"}} "npc_precache_npc_dota_hero_ancient_apparition" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_ancient_apparition" "soundfile" "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"}} "npc_precache_npc_dota_hero_ursa" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_ursa" "soundfile" "soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"}} "npc_precache_npc_dota_hero_spirit_breaker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_spirit_breaker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"}} "npc_precache_npc_dota_hero_gyrocopter" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_gyrocopter" "soundfile" "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts" "model" "models/heroes/gyro/gyro_missile.vmdl"}} "npc_precache_npc_dota_hero_alchemist" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_alchemist" "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"}} "npc_precache_npc_dota_hero_invoker" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_invoker" "soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts" "model" "models/heroes/invoker/forge_spirit.vmdl"}} "npc_precache_npc_dota_hero_silencer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_silencer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"}} "npc_precache_npc_dota_hero_obsidian_destroyer" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_obsidian_destroyer" "soundfile" "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"}} "npc_precache_npc_dota_hero_lycan" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_lycan" "soundfile" "soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts" "model" "models/heroes/lycan/lycan_wolf.vmdl"}} "npc_precache_npc_dota_hero_brewmaster" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_brewmaster" "soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"}} "npc_precache_npc_dota_hero_shadow_demon" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_shadow_demon" "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"}} "npc_precache_npc_dota_hero_lone_druid" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_lone_druid" "soundfile" "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts" "model" "models/heroes/lone_druid/true_form.vmdl"}} "npc_precache_npc_dota_hero_chaos_knight" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_chaos_knight" "soundfile" "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"}} "npc_precache_npc_dota_hero_meepo" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_meepo" "soundfile" "soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"}} "npc_precache_npc_dota_hero_treant" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_treant" "soundfile" "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"}} "npc_precache_npc_dota_hero_ogre_magi" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_ogre_magi" "soundfile" "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"}} "npc_precache_npc_dota_hero_undying" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_undying" "soundfile" "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts" "model" "models/heroes/undying/undying_flesh_golem.vmdl"}} "npc_precache_npc_dota_hero_rubick" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_rubick" "soundfile" "soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"}} "npc_precache_npc_dota_hero_disruptor" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_disruptor" "soundfile" "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"}} "npc_precache_npc_dota_hero_nyx_assassin" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_nyx_assassin" "soundfile" "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"}} "npc_precache_npc_dota_hero_naga_siren" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_siren" "soundfile" "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"}} "npc_precache_npc_dota_hero_keeper_of_the_light" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_keeper_of_the_light" "soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"}} "npc_precache_npc_dota_hero_wisp" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_wisp" "soundfile" "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts" "model" "models/development/invisiblebox.vmdl"}} "npc_precache_npc_dota_hero_visage" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_visage" "soundfile" "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts" "model" "models/heroes/visage/visage_familiar.vmdl"}} "npc_precache_npc_dota_hero_slark" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_slark" "soundfile" "soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"}} "npc_precache_npc_dota_hero_medusa" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_medusa" "soundfile" "soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"}} "npc_precache_npc_dota_hero_troll_warlord" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_troll_warlord" "soundfile" "soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"}} "npc_precache_npc_dota_hero_centaur" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_centaur" "soundfile" "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"}} "npc_precache_npc_dota_hero_magnataur" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_magnataur" "soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"}} "npc_precache_npc_dota_hero_shredder" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_shredder" "soundfile" "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"}} "npc_precache_npc_dota_hero_bristleback" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_bristleback" "soundfile" "soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"}} "npc_precache_npc_dota_hero_tusk" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_tusk" "soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"}} "npc_precache_npc_dota_hero_skywrath_mage" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_skywrath_mage" "soundfile" "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"}} "npc_precache_npc_dota_hero_abaddon" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_abaddon" "soundfile" "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"}} "npc_precache_npc_dota_hero_elder_titan" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_elder_titan" "soundfile" "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"}} "npc_precache_npc_dota_hero_legion_commander" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_legion_commander" "soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"}} "npc_precache_npc_dota_hero_ember_spirit" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_ember_spirit" "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"}} "npc_precache_npc_dota_hero_earth_spirit" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_earth_spirit" "soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"}} "npc_precache_npc_dota_hero_abyssal_underlord" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_abyssal_underlord" "soundfile" "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"}} "npc_precache_npc_dota_hero_terrorblade" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_terrorblade" "soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts" "model" "models/heroes/terrorblade/demon.vmdl"}} "npc_precache_npc_dota_hero_phoenix" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_phoenix" "soundfile" "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"}} "npc_precache_npc_dota_hero_oracle" {"BaseClass" "npc_dota_creep" "precache" {"particle_folder" "particles/units/heroes/hero_oracle" "soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"}}
+//=================================================================================================================
+// "Precache Everything"
+//=================================================================================================================
+		"npc_precache_everything"
+	{
+		"BaseClass"					"npc_dota_creep"
+
+		"precache"
+		{
+			//"model"			"models/heroes/juggernaut/jugg_healing_ward.mdl"
+
+			//"particle_folder"				"particles/units/heroes/hero_abaddon"
+			//"particle_folder"				"particles/units/heroes/hero_abyssal_underlord"
+			//"particle_folder"				"particles/units/heroes/hero_alchemist"
+			//"particle_folder"				"particles/units/heroes/hero_ancient_apparition"
+			//"particle_folder"				"particles/units/heroes/hero_antimage"
+			//"particle_folder"				"particles/units/heroes/hero_axe"
+			//"particle_folder"				"particles/units/heroes/hero_bane"
+			//"particle_folder"				"particles/units/heroes/hero_batrider"
+			//"particle_folder"				"particles/units/heroes/hero_bloodseeker"
+			//"particle_folder"				"particles/units/heroes/hero_bounty_hunter"
+			//"particle_folder"				"particles/units/heroes/hero_brewmaster"
+			//"particle_folder"				"particles/units/heroes/hero_bristleback"
+			//"particle_folder"				"particles/units/heroes/hero_broodmother"
+			//"particle_folder"				"particles/units/heroes/hero_centaur"
+			//"particle_folder"				"particles/units/heroes/hero_chaos_knight"
+			//"particle_folder"				"particles/units/heroes/hero_chen"
+			//"particle_folder"				"particles/units/heroes/hero_clinkz"
+			//"particle_folder"				"particles/units/heroes/hero_crystalmaiden"
+			"particle_folder"				"particles/units/heroes/hero_dark_seer"
+			"particle_folder"				"particles/units/heroes/hero_dazzle"
+			//"particle_folder"				"particles/units/heroes/hero_death_prophet"
+			//"particle_folder"				"particles/units/heroes/hero_disruptor"
+			//"particle_folder"				"particles/units/heroes/hero_doom_bringer"
+			//"particle_folder"				"particles/units/heroes/hero_dragon_knight"
+			//"particle_folder"				"particles/units/heroes/hero_drow"
+			//"particle_folder"				"particles/units/heroes/hero_earth_spirit"
+			//"particle_folder"				"particles/units/heroes/hero_earthshaker"
+			//"particle_folder"				"particles/units/heroes/hero_elder_titan"
+			//"particle_folder"				"particles/units/heroes/hero_ember_spirit"
+			//"particle_folder"				"particles/units/heroes/hero_enchantress"
+			//"particle_folder"				"particles/units/heroes/hero_enigma"
+			//"particle_folder"				"particles/units/heroes/hero_faceless_void"
+			//"particle_folder"				"particles/units/heroes/hero_furion"
+			//"particle_folder"				"particles/units/heroes/hero_gyrocopter"
+			"particle_folder"				"particles/units/heroes/hero_huskar"
+			//"particle_folder"				"particles/units/heroes/hero_invoker"
+			//"particle_folder"				"particles/units/heroes/hero_jakiro"
+			//"particle_folder"				"particles/units/heroes/hero_juggernaut"
+			//"particle_folder"				"particles/units/heroes/hero_keeper_of_the_light"
+			//"particle_folder"				"particles/units/heroes/hero_kunkka"
+			//"particle_folder"				"particles/units/heroes/hero_legion_commander"
+			//"particle_folder"				"particles/units/heroes/hero_leshrac"
+			//"particle_folder"				"particles/units/heroes/hero_lich"
+			//"particle_folder"				"particles/units/heroes/hero_life_stealer"
+			//"particle_folder"				"particles/units/heroes/hero_lina"
+			"particle_folder"				"particles/units/heroes/hero_lion"
+			"particle_folder"				"particles/units/heroes/hero_lone_druid"
+			//"particle_folder"				"particles/units/heroes/hero_luna"
+			//"particle_folder"				"particles/units/heroes/hero_lycan"
+			//"particle_folder"				"particles/units/heroes/hero_magnataur"
+			//"particle_folder"				"particles/units/heroes/hero_medusa"
+			//"particle_folder"				"particles/units/heroes/hero_meepo"
+			//"particle_folder"				"particles/units/heroes/hero_mirana"
+			//"particle_folder"				"particles/units/heroes/hero_morphling"
+			//"particle_folder"				"particles/units/heroes/hero_necrolyte"
+			//"particle_folder"				"particles/units/heroes/hero_nevermore"
+			//"particle_folder"				"particles/units/heroes/hero_night_stalker"
+			//"particle_folder"				"particles/units/heroes/hero_nyx_assassin"
+			//"particle_folder"				"particles/units/heroes/hero_obsidian_destroyer"
+			//"particle_folder"				"particles/units/heroes/hero_ogre_magi"
+			//"particle_folder"				"particles/units/heroes/hero_omniknight"
+			//"particle_folder"				"particles/units/heroes/hero_phantom_assassin"
+			//"particle_folder"				"particles/units/heroes/hero_phantom_lancer"
+			//"particle_folder"				"particles/units/heroes/hero_phoenix"
+			//"particle_folder"				"particles/units/heroes/hero_puck"
+			//"particle_folder"				"particles/units/heroes/hero_pudge"
+			//"particle_folder"				"particles/units/heroes/hero_pugna"
+			//"particle_folder"				"particles/units/heroes/hero_queenofpain"
+			//"particle_folder"				"particles/units/heroes/hero_rattletrap"
+			//"particle_folder"				"particles/units/heroes/hero_razor"
+			"particle_folder"				"particles/units/heroes/hero_riki"
+			//"particle_folder"				"particles/units/heroes/hero_rubick"
+			//"particle_folder"				"particles/units/heroes/hero_sandking"
+			//"particle_folder"				"particles/units/heroes/hero_shadow_demon"
+			"particle_folder"				"particles/units/heroes/hero_shadowshaman"
+			//"particle_folder"				"particles/units/heroes/hero_shredder"
+			//"particle_folder"				"particles/units/heroes/hero_silencer"
+			//"particle_folder"				"particles/units/heroes/hero_siren"
+			//"particle_folder"				"particles/units/heroes/hero_skeletonking"
+			//"particle_folder"				"particles/units/heroes/hero_skywrath_mage"
+			//"particle_folder"				"particles/units/heroes/hero_slardar"
+			//"particle_folder"				"particles/units/heroes/hero_slark"
+			//"particle_folder"				"particles/units/heroes/hero_sniper"
+			//"particle_folder"				"particles/units/heroes/hero_spectre"
+			//"particle_folder"				"particles/units/heroes/hero_spirit_breaker"
+			//"particle_folder"				"particles/units/heroes/hero_stormspirit"
+			//"particle_folder"				"particles/units/heroes/hero_sven"
+			//"particle_folder"				"particles/units/heroes/hero_templar_assassin"
+			//"particle_folder"				"particles/units/heroes/hero_terrorblade"
+			//"particle_folder"				"particles/units/heroes/hero_tidehunter"
+			//"particle_folder"				"particles/units/heroes/hero_tinker"
+			//"particle_folder"				"particles/units/heroes/hero_tiny"
+			//"particle_folder"				"particles/units/heroes/hero_treant"
+			"particle_folder"				"particles/units/heroes/hero_troll_warlord"
+			//"particle_folder"				"particles/units/heroes/hero_tusk"
+			//"particle_folder"				"particles/units/heroes/hero_undying"
+			//"particle_folder"				"particles/units/heroes/hero_ursa"
+			//"particle_folder"				"particles/units/heroes/hero_vengeful"
+			//"particle_folder"				"particles/units/heroes/hero_venomancer"
+			//"particle_folder"				"particles/units/heroes/hero_viper"
+			//"particle_folder"				"particles/units/heroes/hero_visage"
+			//"particle_folder"				"particles/units/heroes/hero_warlock"
+			//"particle_folder"				"particles/units/heroes/hero_weaver"
+			//"particle_folder"				"particles/units/heroes/hero_windrunner"
+			//"particle_folder"				"particles/units/heroes/hero_wisp"
+			"particle_folder"				"particles/units/heroes/hero_witchdoctor"
+			//"particle_folder"				"particles/units/heroes/hero_zuus"
+			//"particle_folder"				"particles/frostivus_herofx"
+			//"particle_folder"				"particles/frostivus_gameplay"
+			//"particle_folder"				"particles/test_particle"
+			
+			
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_abaddon.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_abyssal_underlord.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_alchemist.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_ancient_apparition.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_antimage.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_axe.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_bane.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_batrider.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_bloodseeker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_bounty_hunter.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_brewmaster.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_bristleback.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_broodmother.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_centaur.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_chaos_knight.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_chen.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_clinkz.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_crystalmaiden.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_dark_seer.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_death_prophet.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_disruptor.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_doombringer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_dragon_knight.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_drowranger.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_earthshaker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_elder_titan.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_enchantress.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_enigma.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_faceless_void.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_furion.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_gyrocopter.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_huskar.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_invoker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_jakiro.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_juggernaut.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_kunkka.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_legion_commander.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_leshrac.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_lich.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_life_stealer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_lina.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_lion.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_lone_druid.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_luna.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_lycan.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_magnataur.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_medusa.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_meepo.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_mirana.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_morphling.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_naga_siren.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_necrolyte.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_nevermore.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_nightstalker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_nyx_assassin.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_obsidian_destroyer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_ogre_magi.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_omniknight.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_phantom_assassin.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_phantom_lancer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_phoenix.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_puck.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_pudge.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_pugna.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_queenofpain.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_rattletrap.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_razor.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_riki.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_rubick.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_sandking.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_shadow_demon.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_shadowshaman.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_shredder.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_silencer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_skeletonking.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_skywrath_mage.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_slardar.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_slark.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_sniper.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_spectre.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_spirit_breaker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevtss"
+			//"soundfile"				vsoundevents/voscripts/game_sounds_vo_sven.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_templar_assassin.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_tidehunter.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_tinker.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_tiny.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_treant.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_troll_warlord.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_tusk.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_undying.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_ursa.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_vengefulspirit.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_venomancer.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_viper.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_visage.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_warlock.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_weaver.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_windrunner.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_wisp.vsndevtss"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_witchdoctor.vsndevtss"
+			//"soundfile"				"soundevents/voscripts/game_sounds_vo_zuus.vsndevtss"
+			
+			
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_abaddon.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_abyssal_underlord.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_alchemist.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_ancient_apparition.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_antimage.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_axe.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_bane.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_batrider.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_bloodseeker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_bounty_hunter.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_brewmaster.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_bristleback.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_broodmother.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_centaur.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_chaos_knight.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_chen.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_clinkz.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_crystalmaiden.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_dark_seer.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_dazzle.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_death_prophet.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_disruptor.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_doombringer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_dragon_knight.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_drowranger.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_earth_spirit.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_earthshaker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_elder_titan.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_ember_spirit.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_enchantress.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_enigma.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_faceless_void.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_furion.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_gyrocopter.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_huskar.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_invoker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_jakiro.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_juggernaut.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_keeper_of_the_light.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_kunkka.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_legion_commander.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_leshrac.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_lich.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_life_stealer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_lina.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_lion.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_lone_druid.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_luna.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_lycan.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_magnataur.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_medusa.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_meepo.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_mirana.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_morphling.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_naga_siren.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_necrolyte.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_nevermore.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_nightstalker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_nyx_assassin.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_obsidian_destroyer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_ogre_magi.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_omniknight.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_phantom_assassin.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_phantom_lancer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_phoenix.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_puck.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_pudge.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_pugna.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_queenofpain.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_rattletrap.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_razor.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_riki.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_rubick.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_sandking.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_shadow_demon.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_shredder.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_silencer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_skeletonking.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_skywrath_mage.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_slardar.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_slark.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_sniper.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_spectre.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_spirit_breaker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_stormspirit.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_sven.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_templar_assassin.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_terrorblade.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_tidehunter.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_tinker.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_tiny.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_treant.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_tusk.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_undying.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_ursa.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_vengefulspirit.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_venomancer.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_viper.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_visage.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_warlock.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_weaver.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_windrunner.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_wisp.txt"
+			"soundfile"					"scripts/game_sounds_heroes/game_sounds_witchdoctor.txt"
+			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_zuus.txt"
+			//"soundfile"				"scripts/game_sounds_custom.txt"
+		}
+	}
 }
