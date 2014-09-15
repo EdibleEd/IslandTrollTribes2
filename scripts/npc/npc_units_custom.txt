@@ -10,6 +10,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
 		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
@@ -141,6 +142,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"	// Model
 		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
@@ -275,6 +277,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/shadowshaman/shadowshaman.mdl"		// Model
 		"AbilityLayout"         			"4"		
 		"Portrait"							"vgui/hud/heroportraits/portrait_shadow_shaman"		// Small image for hero selection
@@ -413,6 +416,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/huskar/huskar.mdl"		// Model
 		"AbilityLayout"         			"6"		
 		"SoundSet"							"Hero_Huskar"										// Name of sound set.
@@ -521,6 +525,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/troll_warlord/troll_warlord.mdl"		// Model
 		"AbilityLayout"         			"3"		
 		"SoundSet"							"Hero_TrollWarlord"									// Name of sound set.
@@ -629,6 +634,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/huskar/huskar.mdl"				// Model
 		"AbilityLayout"         			"3"		
 		"SoundSet"							"Hero_Huskar"										// Name of sound set.
@@ -757,9 +763,11 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
 		"AbilityLayout"         			"3"		
 		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
+		"ModelScale"						"0.75"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -877,9 +885,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
 		"AbilityLayout"         			"6"		
 		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
+		"ModelScale"						"0.75"
+		"GameSoundsFile" 					"soundevents/voscripts/game_sounds_vo_witchdoctor.vsndevts"
 	
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -979,10 +990,13 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/witchdoctor/witchdoctor.mdl"		// Model
 		"AbilityLayout"         			"6"		
 		"SoundSet"							"Hero_WitchDoctor"								// Name of sound set.
-	
+		"ModelScale"						"0.84"
+		"GameSoundsFile" 					"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_mage_magefire"									// Ability 1
@@ -1085,6 +1099,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1192,6 +1207,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1299,6 +1315,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/lion/lion.mdl"			// Model
 		"SoundSet"							"Hero_Lion"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1406,6 +1423,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1512,6 +1530,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1622,6 +1641,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/rikimaru/rikimaru.vmdl"			// Model
 		"SoundSet"							"Hero_Riki"								// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1732,6 +1752,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/items/lycan/ultimate/alpha_trueform9/alpha_trueform9.vmdl"			// Model
 		"SoundSet"							"Hero_Lycan"																// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1818,6 +1839,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/items/courier/mighty_chicken/mighty_chicken.vmdl"			// Model
 		"SoundSet"							"Hero_Lycan"																// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1904,6 +1926,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"					// Model
 		"SoundSet"							"Hero_Lycan"									// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -1991,6 +2014,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -2097,6 +2121,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
 		"AbilityLayout"         			"6"		
@@ -2203,6 +2228,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"1"
 		"Model"								"models/heroes/dazzle/dazzle.mdl"					// Model
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
 		"AbilityLayout"         			"6"		
