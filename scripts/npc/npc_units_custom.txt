@@ -2080,9 +2080,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
-		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
-		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
+		"Model"								"models/heroes/dazzle/dazzle.mdl"									// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"							// Small image for hero selection
+		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"								// custom facial animation idle
+		"SoundSet"							"Hero_Dazzle"														// Name of sound set.
 		"ParticleFile"						"particles/units/heroes/hero_dazzle.pcf"
 		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_dazzle.txt"
 		"VoiceFile"							"scripts/voscripts/game_sounds_vo_dazzle.txt"
@@ -2191,6 +2192,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
+		"Model"								"models/heroes/dazzle/dazzle.mdl"									// Model.
 		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
 		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
@@ -2302,6 +2304,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
+		"Model"								"models/heroes/dazzle/dazzle.mdl"									// Model.
 		"Portrait"							"vgui/hud/heroportraits/portrait_dazzle"		// Small image for hero selection
 		"IdleExpression"					"scenes/dazzle/dazzle_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"							"Hero_Dazzle"									// Name of sound set.
