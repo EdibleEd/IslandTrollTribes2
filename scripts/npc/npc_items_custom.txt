@@ -1870,11 +1870,6 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"particle_folder"			"particles/units/heroes/hero_nyx_assassin"
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-		}
 		
 		"OnChannelFinish"
 		{
@@ -2428,70 +2423,85 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-				  "Custom"
-		  {			  
-			  "ModelScale"		 "0.6"
-		  }
+		"Custom"
+		{			  
+			"ModelScale"		 "0.6"
+		}
 		"OnSpellStart"
 		{
-			   "TrackingProjectile"
-			   {
-			    "Target"    "TARGET"
-			    "EffectName"   "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-			    "MoveSpeed"    "%projectile_speed"
-			   }
-				"SpendCharge"
-						{
-						}				   
-		}
-                "OnProjectileHitUnit"
-                {
-					"RunScript"
-					{
-					"ScriptFile" "scripts/vscripts/abilities.lua"
-					"Function" "ability_spear_dark_throw"
-					}
-				}
+			"TrackingProjectile"
+			{
+				"Target"    	"TARGET"
+				"EffectName"   	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+				"MoveSpeed"    	"%projectile_speed"
+			}			
 			"FireSound"
 			{
 				"EffectName"			"Catapult.Attack"
 				"Target"				"TARGET"
 			}
-		"OnProjectileFinish"
+		}
+		"OnProjectileHitUnit"
 		{
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
+				"Function" 		"ThrowSpearDark"
+				"DamageMin"		"%mana_zap_min"
+				"DamageMax"		"%mana_zap_max"
+			}			
 			"FireSound"
 			{
 				"EffectName"			"Catapult.Impact"
 				"Target"				"TARGET"
 			}
+			"Random"
+			{
+				"Chance" "%recover_chance"
+				"OnFailure"
+				{
+					"SpendCharge"
+					{}
+				}
+			}
 
+		}
+		"OnProjectileFinish"
+		{	
+			"SpendCharge"
+			{}
 		}
 		"AbilitySpecial"
 		{
-				"01"
+			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"500"
+				"projectile_speed"			"1000"
 			}
-				"02"
+			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"			"6"
+				"max_stacks"				"6"
 			}
-				"03"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"hurl_damage"				"40"
 			}
-				"04"
+			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_zap_min"					"20"
+				"mana_zap_min"				"20"
 			}
-				"05"
+			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_zap_max"					"75"
+				"mana_zap_max"				"75"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"recover_chance"			"60"
 			}
 		}
 

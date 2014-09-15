@@ -69,7 +69,7 @@ function MageMasherManaBurn(keys)
 	local damage = keys.Damage
 	local targetName = target:GetUnitName()
 	--look for mage and priests only
-    if ((string.find(targetName,"mage") ~= nil) or (string.find(targetName,"priest")~= nil)) then
+    if ((string.find(targetName,"mage") ~= nil) or (string.find(targetName,"priest")~= nil) or (string.find(targetName,"dazzle")~= nil) or (string.find(targetName,"witch")~= nil)) then
         --print("Burning " .. damage .. " mana")
 		local startingMana = target:GetMana()
 		target:SetMana(startingMana - damage)
@@ -89,4 +89,18 @@ function MageMasherManaBurn(keys)
 	else
 		print(targetName .. " is not Mage or Priest")
     end	
+end
+
+function SpearDarkThrow(keys)
+	local caster = keys.caster
+    local target = keys.target
+	local damageMin = keys.DamageMin
+	local damageMax = keys.DamageMax
+	local randomDamage = RandomInt(damageMin, damageMax)
+	-- damage energy here
+	local dur = 2.0
+    if (target:IsHero()) then --if the target's name includes "hero"
+        dur = 0.5	--then we use the hero only duration
+    end
+    target:AddNewModifier(caster, nil, "modifier_stunned", { duration = dur})
 end
