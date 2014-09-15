@@ -5,6 +5,153 @@
 {
 	// 	This is an example of an overridden hero
 	//	It retains all fields of the original unit that are not overridden here 
+	
+//=================================================================================================================
+// Base Class: Gatherer
+//=================================================================================================================
+    "npc_dota_hero_gatherer"
+    {
+        "override_hero"         "npc_dota_hero_shadow_shaman"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Shadow Shaman"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "2"        
+        "Ability1"              "ability_gatherer_itemradar"
+        "Ability2"              "ability_gatherer_radarmanipulations"
+        "Ability3"              "ability_empty3"
+        "Ability4"              "ability_empty4"
+        "Ability5"              "ability_empty5"
+        "Ability6"              "ability_empty6"
+        "Ability7"              "ability_gatherer_findmushroomstickortinder"
+        "Ability8"              "ability_gatherer_findhide"
+        "Ability9"              "ability_gatherer_findclayballcookedmeatorbone"
+        "Ability10"             "ability_gatherer_findmanacrystalorstone"
+        //ability_gatherer_mixherbs
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"11"									// Damage range min.
+		"AttackDamageMax"			"11"									// Damage range max.	
+		"AttackRate"				"2.0"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "900"           // Range of vision at night time. 
+    }	
+//=================================================================================================================
+// Base Class: Hunter
+//=================================================================================================================
+    "npc_dota_hero_hunter"
+    {
+        "override_hero"         "npc_dota_hero_huskar"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Huskar"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "2"        
+        "Ability1"              "ability_hunter_ensnare"
+        "Ability2"              "ability_hunter_track"
+        "Ability3"              "ability_empty3"
+        "Ability4"              "ability_empty4"
+        "Ability5"              "ability_empty5"
+        "Ability6"              "ability_empty6"
+		//"Ability7"              ""
+		//"Ability8"              ""
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"									// Damage range min.
+		"AttackDamageMax"			"15"									// Damage range max.	
+		"AttackRate"				"1.77"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1000"           // Range of vision during day light.
+        "VisionNighttimeRange"          "500"           // Range of vision at night time. 
+    }
+	
 	"npc_dota_hero_storm_bro"
 	{
 	 	"override_hero" 	"npc_dota_hero_storm_spirit"
@@ -21,7 +168,369 @@
 	 	"Ability5"			"tool_reverse"
 	 	"AbilityLayout"	"5"
 	}
-    
+//=================================================================================================================
+// Base Class: Mage
+//=================================================================================================================
+    "npc_dota_hero_mage"
+    {
+        "override_hero"         "npc_dota_hero_witch_doctor"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Witch Doctor"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "2"        
+		"Ability1"						"ability_mage_nulldamage"									// Ability 1
+		"Ability2"						"ability_mage_negativeblast"								// Ability 2
+		"Ability3"						"ability_mage_pumpup"										// Ability 3
+		"Ability4"						"ability_mage_reducefood"									// Ability 4
+		"Ability5"						"ability_mage_magefire"										// Ability 5
+        "Ability6"             			"ability_mage_flamespray"
+		"Ability7"             			"ability_mage_depress"
+		"Ability8"             			"ability_mage_metronome"
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"12"									// Damage range min.
+		"AttackDamageMax"			"12"									// Damage range max.	
+		"AttackRate"				"1.77"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "950"           // Range of vision during day light.
+        "VisionNighttimeRange"          "500"           // Range of vision at night time. 
+    }
+//=================================================================================================================
+// Base Class: Scout
+//=================================================================================================================
+    "npc_dota_hero_scout"
+    {
+        "override_hero"         "npc_dota_hero_lion"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Witch Doctor"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "2"        
+		"Ability1"						"ability_scout_enemyradar"									// Ability 1
+		"Ability2"						"ability_scout_reveal"										// Ability 2
+		"Ability3"						""										// Ability 3
+		"Ability4"						""									// Ability 4
+		"Ability5"						""										// Ability 5
+        "Ability6"             			""
+		"Ability7"             			""
+		"Ability8"             			""
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"11"									// Damage range min.
+		"AttackDamageMax"			"11"									// Damage range max.	
+		"AttackRate"				"2.00"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"290"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1300"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1300"           // Range of vision at night time. 
+    }
+//=================================================================================================================
+// Base Class: Theif
+//=================================================================================================================
+    "npc_dota_hero_theif"
+    {
+        "override_hero"         "npc_dota_hero_riki"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Rikimaru"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         "2"        
+		"Ability1"						"ability_theif_teleport"									// Ability 1
+		"Ability2"						"ability_theif_cloak"										// Ability 2
+		"Ability3"						""															// Ability 3
+		"Ability4"						""															// Ability 4
+		"Ability5"						""															// Ability 5
+        "Ability6"             			""
+		"Ability7"             			""
+		"Ability8"             			""
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"11"									// Damage range min.
+		"AttackDamageMax"			"11"									// Damage range max.	
+		"AttackRate"				"2.00"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+    }
+//=================================================================================================================
+// Base Class: Beast Master
+//=================================================================================================================
+    "npc_dota_hero_beastmaster"
+    {
+        "override_hero"         "npc_dota_hero_lycan"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Lycan"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         		"2"        
+		"Ability1"						"ability_beastmaster_spiritofthebeast"									// Ability 1
+		"Ability2"						"ability_beastmaster_tamepet"										// Ability 2
+		"Ability3"						""															// Ability 3
+		"Ability4"						""															// Ability 4
+		"Ability5"						""															// Ability 5
+        "Ability6"             			""
+		"Ability7"             			""
+		"Ability8"             			""
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14"									// Damage range min.
+		"AttackDamageMax"			"14"									// Damage range max.	
+		"AttackRate"				"1.77"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1400"           // Range of vision during day light.
+        "VisionNighttimeRange"          "675"           // Range of vision at night time. 
+    }
+//=================================================================================================================
+// Base Class: Priest
+//=================================================================================================================
+    "npc_dota_hero_priest"
+    {
+        "override_hero"         "npc_dota_hero_dazzle"    
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------    
+        "url"                   "Dazzle"
+        
+        // Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityLayout"         		"6"        
+		"Ability1"						"ability_priest_theglow"											// Ability 1
+		"Ability2"						"ability_priest_resistall"											// Ability 2
+		"Ability3"						"ability_priest_cureall"											// Ability 3
+		"Ability4"						"ability_priest_sprayhealing"											// Ability 4
+		"Ability5"						"ability_priest_pumpup"												// Ability 5
+		"Ability6" 						"ability_priest_magicmist"									// Ability 6
+		"Ability7" 						"ability_priest_mixhealth"										
+		"Ability8" 						"ability_priest_mixmana"							
+		"Ability9"  					"ability_priest_mixheat"		
+		//"Ability10" 					""		
+		//"Ability11"  					""
+        //"Ability9"              ""
+        //"Ability10"             ""
+        
+        // Armor
+        //-------------------------------------------------------------------------------------------------------------
+        "ArmorPhysical"         "0"    // Physical protection.
+        "ArmorResistance"       "0"    // Magical protection (percentage).
+
+        // Attack
+        //-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"11"									// Damage range min.
+		"AttackDamageMax"			"11"									// Damage range max.	
+		"AttackRate"				"1.77"									// Speed of attack.
+		"AttackAnimationPoint"		"0.840"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"100"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeStrengthGain"		"1"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "192"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "200"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "950"           // Range of vision during day light.
+        "VisionNighttimeRange"          "500"           // Range of vision at night time. 
+    }   
     //=================================================================================================================
     //Dav's Test Hero
     //=================================================================================================================
