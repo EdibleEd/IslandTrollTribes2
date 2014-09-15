@@ -225,6 +225,7 @@ function ITT_GameMode:OnTrollThink()
     -- This will run on every player, do stuff here
     for i=1, maxPlayerID, 1 do
         Hunger(i)
+		Energy(i)
         InventoryCheck(i)
         --print("burn")
     end
