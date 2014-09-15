@@ -102,5 +102,15 @@ function SpearDarkThrow(keys)
     if (target:IsHero()) then --if the target's name includes "hero"
         dur = 0.5	--then we use the hero only duration
     end
+	local startingMana = target:GetMana()
+	target:SetMana(startingMana - randomDamage)
+	
+	local damageTable = {
+	victim = target,
+	attacker = caster,
+	damage = randomDamage,
+	damage_type = DAMAGE_TYPE_MAGICAL}						
+
+	ApplyDamage(damageTable)
     target:AddNewModifier(caster, nil, "modifier_stunned", { duration = dur})
 end
