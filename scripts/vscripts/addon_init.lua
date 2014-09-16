@@ -242,29 +242,6 @@ function ITT_GameMode:OnCreatureThink()
     return GAME_CREATURE_TICK_TIME
 end
 
---
--- This handles spawning items
---
--- Code by Till Elton
---
-function ITT_GameMode:OnItemThink()
-    --print("Item think tick started")
-    if REL_TINDER_RATE == 0 then
-        ITT_UpdateRelativePool()
-    else
-        ITT_AdjustItemSpawns()
-    end
-    --print("hit mid of spawn items")
-    for i=1, table.getn(REGIONS), 1 do
-        for ii=1, math.floor(ITEM_BASE * REGIONS[i][5]), 1 do
-            --print("Spawning an item on island" .. i)
-            item = ITT_SpawnItem(REGIONS[i])
-        end
-    end
-    --print("Item think tick ended")
-    return GAME_ITEM_TICK_TIME
-end
-
 -- The only real way of triggering code in Scaleform, events, are not reliable. Require acknowledgement of all events fired for this purpose.
 function ITT_GameMode:FlashAckThink()
     print("ackthink!")
@@ -316,6 +293,30 @@ function acknowledge_flash_event(cmdname, eventname, pid, id)
         player.eventQueue[id] = nil 
     end
 end
+
+--
+-- This handles spawning items
+--
+-- Code by Till Elton
+--
+function ITT_GameMode:OnItemThink()
+    --print("Item think tick started")
+    if REL_TINDER_RATE == 0 then
+        ITT_UpdateRelativePool()
+    else
+        ITT_AdjustItemSpawns()
+    end
+    --print("hit mid of spawn items")
+    for i=1, table.getn(REGIONS), 1 do
+        for ii=1, math.floor(ITEM_BASE * REGIONS[i][5]), 1 do
+            --print("Spawning an item on island" .. i)
+            item = ITT_SpawnItem(REGIONS[i])
+        end
+    end
+    --print("Item think tick ended")
+    return GAME_ITEM_TICK_TIME
+end
+
 
 function ITT_SpawnItem(island)
     local itemSpawned = ITT_GetItemFromPool()
