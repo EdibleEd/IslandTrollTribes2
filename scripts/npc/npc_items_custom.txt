@@ -45,7 +45,6 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -96,7 +95,6 @@
 			"ModelScale" "2.0"
 		}
 	}
-
 
 //=================================================================================================================
 // Custom: Stone
@@ -265,7 +263,6 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -340,29 +337,29 @@
 //=================================================================================================================
 	"item_meat_raw"
 	{
-		"ID"                                                    "1006"
+		"ID"									"1006"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"                       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"                             "item_datadriven"
-		"AbilityTextureName"                    "meat_raw"
-		"Model"                                 "models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"								"item_datadriven"
+		"AbilityTextureName"					"meat_raw"
+		"Model"									"models/items/lifestealer/transmuted_armaments_back/transmuted_armaments_back.vmdl"
 		"Effect" 								""
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"                                      "1"
-		"ItemShopTags"                                  "consumable"
-		"ItemQuality"                                   "consumable"
-		"ItemShareability"                              "ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"                                 "1"
-		"ItemPermanent"                                 "0"
-		"ItemDroppable"                                 "1"
-		"ItemInitialCharges"                            "1"
-		"ItemAliases"                                   "quicktype"
-		"ItemDisassembleRule"                           "DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                                  "1"
-		"ItemSellable"                                  "0"
+		"ItemCost"								"1"
+		"ItemShopTags"							"consumable"
+		"ItemQuality"							"consumable"
+		"ItemShareability"						"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"							"1"
+		"ItemPermanent"							"0"
+		"ItemDroppable"							"1"
+		"ItemInitialCharges"					"1"
+		"ItemAliases"							"quicktype"
+		"ItemDisassembleRule"					"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"							"1"
+		"ItemSellable"							"0"
 
 		// Special     
 		//-------------------------------------------------------------------------------------------------------------
@@ -376,8 +373,7 @@
 				"Function"		"EatMeatRaw"
 			}
 			"SpendCharge"
-			{
-			}
+			{}
 		}
 		"Custom"
 		{
@@ -416,91 +412,92 @@
 			{
 				"var_type"                              "FIELD_INTEGER"
 					"hp_per_tick"                  			 "1"  // %total_mana / %buff_duration
-				}
 			}
 		}
-		//raw meat eating channel - use this ability when eating raw meat
-		"ability_item_eat_meat_raw"
+	}
+
+	//raw meat eating channel - use this ability when eating raw meat
+	"ability_item_eat_meat_raw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName"			"life_stealer_open_wounds"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"2.0"
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnSpellStart"
 		{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"						"ability_datadriven"
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-			"AbilityTextureName"			"life_stealer_open_wounds"
-			
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.0"
-			"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
-
-			// Time		
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityChannelTime"			"2.0"
-			"AbilityCooldown"				"0"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"0"
-			
-			"OnSpellStart"
+			"ApplyModifier"
 			{
-				"ApplyModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_eat_meat_raw"
-				}
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_eat_meat_raw"
 			}
-			
-			"OnAbilityEndChannel"
+		}
+		
+		"OnAbilityEndChannel"
+		{
+			"RemoveModifier"
 			{
-				"RemoveModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_eat_meat_raw"
-				}
-				"RemoveAbility"
-				{
-					"Target"			"CASTER"
-					"AbilityName"		"ability_item_eat_meat_raw"
-				}
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_eat_meat_raw"
 			}
-			"OnChannelFinish"
+			"RemoveAbility"
 			{
-				"RemoveModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_eat_meat_raw"
-				}				
-				"RemoveAbility"
-				{
-					"Target"			"CASTER"
-					"AbilityName"		"ability_item_eat_meat_raw"
-				}
+				"Target"			"CASTER"
+				"AbilityName"		"ability_item_eat_meat_raw"
 			}
-			
-			"Modifiers"
+		}
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
 			{
-				"modifier_eat_meat_raw"
-				{					
-					"ThinkInterval"			".2"
-					"OnIntervalThink"
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_eat_meat_raw"
+			}				
+			"RemoveAbility"
+			{
+				"Target"			"CASTER"
+				"AbilityName"		"ability_item_eat_meat_raw"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_eat_meat_raw"
+			{					
+				"ThinkInterval"			".2"
+				"OnIntervalThink"
+				{
+					"Heal"
 					{
-						"Heal"
-						{
-							"Target"		"CASTER"
-							"HealAmount"	"1"
-						}
+						"Target"		"CASTER"
+						"HealAmount"	"1"
 					}
 				}
 			}
 		}
+	}
 
 //=================================================================================================================
 // Custom: Acorn
 //=================================================================================================================
-		"item_acorn"
-		{
-			"ID"							"1007"
+	"item_acorn"
+	{
+		"ID"							"1007"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -529,7 +526,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -549,12 +546,11 @@
 			{
 				"Heal"
 				{
-					"Target" "CASTER"
+					"Target" 		"CASTER"
 					"HealAmount"	"%heal_amount"
 				}
 				"SpendCharge"
-				{
-				}
+				{}
 			}
 			"AbilitySpecial"
 			{
@@ -569,15 +565,14 @@
 					"heal_amount"					"30"
 				}
 			}
-		}
-
+	}
 
 //=================================================================================================================
 // Custom: Magic Acorn
 //=================================================================================================================
-		"item_acorn_magic"
-		{
-			"ID"							"1142"
+	"item_acorn_magic"
+	{
+		"ID"							"1142"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -613,16 +608,16 @@
 					"Function"			"DropItemOnDeath"
 				}
 			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
+			// Sound
+			//-------------------------------------------------------------------------------------------------------------			
 			"UIPickupSound"					"Item.PickUpGemShop"
 			"UIDropSound"					"Item.DropGemShop"
 			"WorldDropSound"				"Item.DropGemWorld"
 
 
-	//-------------------------------------------------------------------------------------------------------------
-	// Modifiers
-	//-------------------------------------------------------------------------------------------------------------
+			//-------------------------------------------------------------------------------------------------------------
+			// Modifiers
+			//-------------------------------------------------------------------------------------------------------------
 			"Custom"
 			{
 				"ModelScale" "2.5"
@@ -652,77 +647,76 @@
 					"heal_amount"					"120"
 				}
 			}
-		}
+	}
 //=================================================================================================================
 // Custom: Mushroom
 //=================================================================================================================
-		"item_mushroom"
-		{
-			"ID"							"1141"
+	"item_mushroom"
+	{
+		"ID"							"1141"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"item_winter_mushroom"
-			"Model"							"models/props_nature/mushroom_wild_00.vmdl"
-			"Effect" 						""
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_winter_mushroom"
+		"Model"							"models/props_nature/mushroom_wild_00.vmdl"
+		"Effect" 						""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		//-------------------------------------------------------------------------------------------------------------
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"OnSpellStart"
 			{
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"			"mushroom_use"
 				}
 			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-	//-------------------------------------------------------------------------------------------------------------
-	// Modifiers
-	//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
+			"SpendCharge"
 			{
-				"OnSpellStart"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-						"Function"			"mushroom_use"
-					}
-				}
-				"SpendCharge"
-				{
-				}
 			}
-
 		}
+	}
 //=================================================================================================================
 // Custom: Mana Crystal
 //=================================================================================================================
-		"item_crystal_mana"
-		{
-			"ID"							"1008"
+	"item_crystal_mana"
+	{
+		"ID"							"1008"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -765,14 +759,14 @@
 				"ModelScale" "2.5"
 			}
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Steel Ingot
 //=================================================================================================================
-		"item_ingot_steel"
-		{
-			"ID"							"1009"
+	"item_ingot_steel"
+	{
+		"ID"							"1009"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -817,14 +811,14 @@
 			{
 				"ModelScale" "0.5"
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Iron Ingot
 //=================================================================================================================
-		"item_ingot_iron"
-		{
-			"ID"							"1010"
+	"item_ingot_iron"
+	{
+		"ID"							"1010"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -870,14 +864,14 @@
 			{
 				"ModelScale" "0.5"
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Clayball
 //=================================================================================================================
-		"item_ball_clay"
-		{
-			"ID"							"1011"
+	"item_ball_clay"
+	{
+		"ID"							"1011"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -914,18 +908,19 @@
 			}
 		// Sound
 		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
 
 
-		}
+	}
+
 //=================================================================================================================
 // Custom: River Root
 //=================================================================================================================
-		"item_river_root"
-		{
-			"ID"							"1012"
+	"item_river_root"
+	{
+		"ID"							"1012"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -985,13 +980,14 @@
 					}
 				}
 			}
-		}
+	}
+
 //=================================================================================================================
 // Custom: River Stem
 //=================================================================================================================
-		"item_river_stem"
-		{
-			"ID"							"1013"
+	"item_river_stem"
+	{
+		"ID"							"1013"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1035,14 +1031,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Thistles
 //=================================================================================================================
-		"item_thistles"
-		{
-			"ID"							"1014"
+	"item_thistles"
+	{
+		"ID"							"1014"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1089,14 +1085,14 @@
 				"ModelScale" "0.35"
 			}
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Dark Thistles
 //=================================================================================================================
-		"item_thistles_dark"
-		{
-			"ID"							"1015"
+	"item_thistles_dark"
+	{
+		"ID"							"1015"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1142,14 +1138,14 @@
 			{
 				"ModelScale" "0.35"
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Butsu
 //=================================================================================================================
-		"item_herb_butsu"
-		{
-			"ID"							"1017"
+	"item_herb_butsu"
+	{
+		"ID"							"1017"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1192,14 +1188,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Blue Herb
 //=================================================================================================================
-		"item_herb_blue"
-		{
-			"ID"							"1018"
+	"item_herb_blue"
+	{
+		"ID"							"1018"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1242,14 +1238,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Yellow Herb
 //=================================================================================================================
-		"item_herb_yellow"
-		{
-			"ID"							"1019"
+	"item_herb_yellow"
+	{
+		"ID"							"1019"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1293,15 +1289,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 
-		}
-
+	}
 
 //=================================================================================================================
 // Custom: Purple Herb
 //=================================================================================================================
-		"item_herb_purple"
-		{
-			"ID"							"1020"
+	"item_herb_purple"
+	{
+		"ID"							"1020"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1343,14 +1338,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Orange Herb
 //=================================================================================================================
-		"item_herb_orange"
-		{
-			"ID"							"1021"
+	"item_herb_orange"
+	{
+		"ID"							"1021"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1393,14 +1388,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-		}
+	}
 
 //=================================================================================================================
 // Custom: Flint Axe
 //=================================================================================================================
-		"item_axe_flint"
-		{
-			"ID"							"1022"
+	"item_axe_flint"
+	{
+		"ID"							"1022"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1492,15 +1487,14 @@
 					"bonus_damage"			"3"
 				}
 			}
-		}
-
+	}
 
 //=================================================================================================================
 // Custom: Stone Axe
 //=================================================================================================================
-		"item_axe_stone"
-		{
-			"ID"							"1023"
+	"item_axe_stone"
+	{
+		"ID"							"1023"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1566,42 +1560,43 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------        
-			"OnChannelFinish"
+		"OnChannelFinish"
+		{
+			"DestroyTrees"
 			{
-				"DestroyTrees"
-				{
-					"Target"                        "POINT"
-				}
+				"Target"                        "POINT"
 			}
+		}
 
-			"Modifiers"
+		"Modifiers"
+		{
+			"modifier_axe_stone_damage"
 			{
-				"modifier_axe_stone_damage"
+		//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden" "1"
+				"Passive" "1"
+				"Properties"
 				{
-			//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-					"IsHidden" "1"
-					"Passive" "1"
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-					}
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_damage"			"6"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
 				}
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"6"
+			}
+		}
+	}
+
 //=================================================================================================================
 // Custom: Iron Axe
 //=================================================================================================================
-		"item_axe_iron"
-		{
-			"ID"							"1024"
+	"item_axe_iron"
+	{
+		"ID"							"1024"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1666,43 +1661,43 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------        
-			"OnChannelFinish"
+		"OnChannelFinish"
+		{
+			"DestroyTrees"
 			{
-				"DestroyTrees"
-				{
-					"Target"                        "POINT"
-				}
+				"Target"                        "POINT"
 			}
+		}
 
-			"Modifiers"
+		"Modifiers"
+		{
+			"modifier_axe_iron_damage"
 			{
-				"modifier_axe_iron_damage"
+		//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden" "1"
+				"Passive" "1"
+				"Properties"
 				{
-			//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-					"IsHidden" "1"
-					"Passive" "1"
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-					}
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_damage"			"9"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
 				}
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Steel Axe
 //=================================================================================================================
-		"item_axe_steel"
-		{
-			"ID"							"1025"
+	"item_axe_steel"
+	{
+		"ID"							"1025"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1767,42 +1762,43 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------        
-			"OnChannelFinish"
+		"OnChannelFinish"
+		{
+			"DestroyTrees"
 			{
-				"DestroyTrees"
-				{
-					"Target"                        "POINT"
-				}
+				"Target"                        "POINT"
 			}
+		}
 
-			"Modifiers"
+		"Modifiers"
+		{
+			"modifier_axe_steel_damage"
 			{
-				"modifier_axe_steel_damage"
+		//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden" "1"
+				"Passive" "1"
+				"Properties"
 				{
-			//"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-					"IsHidden" "1"
-					"Passive" "1"
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-					}
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_damage"			"12"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
 				}
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"12"
+			}
+		}
+	}
+
 //=================================================================================================================
 // Custom: Mage Masher
 //=================================================================================================================
-		"item_axe_mage_masher"
-		{
-			"ID"							"1026"
+	"item_axe_mage_masher"
+	{
+		"ID"							"1026"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1926,7 +1922,6 @@
 						}
 					}
 				}
-
 				"modifier_axe_mage_masher_silent_strike"
 				{
 					"IsDebuff"	"1"
@@ -1940,7 +1935,6 @@
 					}
 					"EffectName"		"particles/generic_gameplay/generic_silence.vpcf"
 					"EffectAttachType"	"follow_overhead"
-
 				}
 			}
 			"AbilitySpecial"
@@ -1958,7 +1952,7 @@
 				"03"
 				{			
 					"var_type"				"FIELD_INTEGER"
-					"mage_masher_silent_strike_dot"			"-2"
+					"mage_masher_silent_strike_dot"				"-2"
 				}
 				"04"
 				{			
@@ -1976,14 +1970,14 @@
 					"mage_masher_mana_burn_damage"				"29"
 				}
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Battle Axe
 //=================================================================================================================
-		"item_axe_battle"
-		{
-			"ID"							"1027"
+	"item_axe_battle"
+	{
+		"ID"							"1027"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2058,13 +2052,14 @@
 				}	
 			}
 
-		}
+	}
+
 //=================================================================================================================
 // Custom: Basic Spear
 //=================================================================================================================
-		"item_spear_basic"
-		{
-			"ID"							"1028"
+	"item_spear_basic"
+	{
+		"ID"							"1028"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2156,14 +2151,14 @@
 					"hurl_damage"				"40"
 				}
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Iron Spear
 //=================================================================================================================
-		"item_spear_iron"
-		{
-			"ID"							"1029"
+	"item_spear_iron"
+	{
+		"ID"							"1029"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2263,13 +2258,14 @@
 					"hurl_damage"				"70"
 				}
 			}
-		}
+	}
+
 //=================================================================================================================
 // Custom: Steel Spear
 //=================================================================================================================
-		"item_spear_steel"
-		{
-			"ID"							"1030"
+	"item_spear_steel"
+	{
+		"ID"							"1030"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2306,7 +2302,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -2369,155 +2365,155 @@
 					"hurl_damage"				"100"
 				}
 			}
-		}
+	}
 
 //=================================================================================================================
 // Custom: Dark Spear
 //=================================================================================================================
-		"item_spear_dark"
+	"item_spear_dark"
+	{
+		"ID"							"1031"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"spear_dark"
+		"Model"							"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
+		"Effect" 						""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1031"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"spear_dark"
-			"Model"							"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
-			"Effect" 						""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"				"2"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
 			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"precache"
-			{
-				"soundfile"			"soundevents/game_sounds/ability_catapult_attack.vsndevts"
-			}
+		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds/ability_catapult_attack.vsndevts"
+		}
 
-			"Custom"
-			{			  
-				"ModelScale"		"0.6"
-			}
-			"OnSpellStart"
+		"Custom"
+		{			  
+			"ModelScale"		"0.6"
+		}
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
 			{
-				"TrackingProjectile"
-				{
-					"Target"    	"TARGET"
-					"EffectName"   	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-					"MoveSpeed"    	"%projectile_speed"
-				}			
-				"FireSound"
-				{
-					"EffectName"			"Creep_Bad_Engine.Attack"
-					"Target"				"TARGET"
-				}
-			}
-			"OnProjectileHitUnit"
+				"Target"    	"TARGET"
+				"EffectName"   	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+				"MoveSpeed"    	"%projectile_speed"
+			}			
+			"FireSound"
 			{
-				"RunScript"
-				{
-					"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
-					"Function" 		"SpearDarkThrow"
-					"DamageMin"		"%mana_zap_min"
-					"DamageMax"		"%mana_zap_max"
-				}			
-				"FireSound"
-				{
-					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-					"Target"				"TARGET"
-				}
-				"Random"
-				{
-					"Chance" "%recover_chance"
-					"OnFailure"
-					{
-						"SpendCharge"
-						{}
-					}
-				}
-
+				"EffectName"			"Creep_Bad_Engine.Attack"
+				"Target"				"TARGET"
 			}
-			"OnProjectileFinish"
-			{	
-				"SpendCharge"
-				{}
-			}
-			"AbilitySpecial"
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
 			{
-				"01"
+				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
+				"Function" 		"SpearDarkThrow"
+				"DamageMin"		"%mana_zap_min"
+				"DamageMax"		"%mana_zap_max"
+			}			
+			"FireSound"
+			{
+				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
+				"Target"				"TARGET"
+			}
+			"Random"
+			{
+				"Chance" "%recover_chance"
+				"OnFailure"
 				{
-					"var_type"					"FIELD_INTEGER"
-					"projectile_speed"			"1000"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"max_stacks"				"6"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"hurl_damage"				"40"
-				}
-				"04"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"mana_zap_min"				"20"
-				}
-				"05"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"mana_zap_max"				"75"
-				}
-				"06"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"recover_chance"			"60"
+					"SpendCharge"
+					{}
 				}
 			}
 
 		}
+		"OnProjectileFinish"
+		{	
+			"SpendCharge"
+			{}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"1000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hurl_damage"				"40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_zap_min"				"20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_zap_max"				"75"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"recover_chance"			"60"
+			}
+		}
+
+	}
 
 //=================================================================================================================
 // Custom: Poison Spear
 //=================================================================================================================
-		"item_spear_poison"
-		{
-			"ID"							"1032"
+	"item_spear_poison"
+	{
+		"ID"							"1032"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2574,9 +2570,10 @@
 			{
 				"TrackingProjectile"
 				{
-					"Target"		"TARGET"
-					"EffectName"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-					"MoveSpeed"		"%projectile_speed"
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+					"MoveSpeed"			"%projectile_speed"
+					"ProvidesVision"	"0"
 				}
 				"FireSound"
 				{
@@ -2726,8 +2723,8 @@
 					"var_type"					"FIELD_FLOAT"
 					"slow_tick_time"			"0.5"
 				}
-			}	
-		}
+			}
+	}
 
 //=================================================================================================================
 // Custom: Refined Poison Spear
@@ -2750,6 +2747,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"800"
 			"AbilityCastPoint"				"0.5"
+			"AbilityCooldown"				"1.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3598,77 +3596,77 @@
 //=================================================================================================================
 // Custom: Mana Potion IV
 //=================================================================================================================
-		"item_potion_manaiv"
+	"item_potion_manaiv"
+	{
+		"ID"							"1042"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_manaiv"
+		"Model"							"models/props_gameplay/bottle_blue.vmdl"
+		"Effect" 						""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1042"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"potion_manaiv"
-			"Model"							"models/props_gameplay/bottle_blue.vmdl"
-			"Effect" 						""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"       			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"PotionManaUse"
-					"ManaRestored"			"%energy_restore"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"max_stacks"				"4"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"energy_restore"		"120"
-
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"PotionManaUse"
+				"ManaRestored"			"%energy_restore"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"				"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"energy_restore"		"120"
+
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Fervor Potion
@@ -3849,480 +3847,479 @@
 //=================================================================================================================
 // Custom: Nether Potion
 //=================================================================================================================
-		"item_potion_nether"
+	"item_potion_nether"
+	{
+		"ID"							"1047"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_smoke_of_deceit"
+		"Model"							"models/props_gameplay/smoke.vmdl"
+		"Effect"						""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"2"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1047"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"item_smoke_of_deceit"
-			"Model"							"models/props_gameplay/smoke.vmdl"
-			"Effect"						""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"2"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-
-			"OnSpellStart"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"potion_nether_use"
-				}
-				"ApplyModifier"
-				{
-					"Target"		"CASTER"
-					"Duration"		"%nether_duration"
-					"ModifierName"	"modifier_pugna_decrepify"
-					"bonus_movement_speed"	"0"
-					"bonus_spell_damage_pct_allies"	"-50"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				   "FIELD_INTEGER"
-					"max_stacks"				"2"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"charges"				   "2"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"nether_duration"			"5"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"potion_nether_use"
+			}
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"Duration"		"%nether_duration"
+				"ModifierName"	"modifier_pugna_decrepify"
+				"bonus_movement_speed"	"0"
+				"bonus_spell_damage_pct_allies"	"-50"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charges"				   "2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"nether_duration"			"5"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Drunk Potion
 //=================================================================================================================
-		"item_potion_drunk"
+	"item_potion_drunk"
+	{
+		"ID"							"1048"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_drunk"
+		"Model"							"models/items/brewmaster/barrel_vice.vmdl"
+		"Effect"						"particles/econ/items/luna/luna_lucent_rider/luna_mount_lucent_rider_eye_glow_a.vpcf"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1048"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"potion_drunk"
-			"Model"							"models/items/brewmaster/barrel_vice.vmdl"
-			"Effect"						"particles/econ/items/luna/luna_lucent_rider/luna_mount_lucent_rider_eye_glow_a.vpcf"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"TrackingProjectile"
-				{
-					"Target"    	"TARGET"
-					"EffectName"   	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
-					"MoveSpeed"    	"3000"
-				}
-				"FireSound"
-				{
-					"EffectName"	"Creep_Bad_Engine.Attack"
-					"Target"		"TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
-					"Function"		"PotionDrunkUse"
-				}
-				"SpendCharge"
-				{
-				}				   
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"		"FIELD_INTEGER"
-					"max_stacks"	"3"
-				}
-				"02"
-				{
-					"var_type"		"FIELD_INTEGER"
-					"drunk_miss"	"50"
-				}
-				"03"
-				{
-					"var_type"		"FIELD_INTEGER"
-					"drunk_speed"	"-10"
-				}
-				"04"
-				{
-					"var_type"		"FIELD_INTEGER"
-					"drunk_charges"	"3"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
-
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"    	"TARGET"
+				"EffectName"   	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
+				"MoveSpeed"    	"3000"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Creep_Bad_Engine.Attack"
+				"Target"		"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
+				"Function"		"PotionDrunkUse"
+			}
+			"SpendCharge"
+			{
+			}				   
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"max_stacks"	"3"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"drunk_miss"	"50"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"drunk_speed"	"-10"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"drunk_charges"	"3"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Elemental Shield Potion
 //=================================================================================================================
-		"item_potion_elemental"
+	"item_potion_elemental"
+	{
+		"ID"							"1049"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"potion_elemental"
+		"Model"						"models/items/alchemist/alchemeyerflask/alchemeyerflask.vmdl"
+		"Effect"					""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1049"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"					"item_datadriven"
-			"AbilityTextureName"		"potion_elemental"
-			"Model"						"models/items/alchemist/alchemeyerflask/alchemeyerflask.vmdl"
-			"Effect"					""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"       			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"Custom"
-			{
-				"ModelScale" "2.5"
-			}
-			"OnSpellStart"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"		"modifier_elemental_shield_damage_aura"
-					"Duration"			"%elemental_duration"
-					"Target"			"CASTER"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-
-			"Modifiers"
-			{
-				"modifier_elemental_shield_damage_aura"
-				{
-					"ThinkInterval"		"elemental_think_time"
-					"OnIntervalThink"
-					{
-						"Damage"
-						{
-							"Damage"	"elemental_damage_per_tick"
-							"Type"		"DAMAGE_TYPE_MAGICAL"
-							"Target"
-							{
-								"Center" "CASTER"
-								"Radius" "%elemental_radius"
-								"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-							}
-						}
-					}
-					"EffectName" 		"//insert static shield here"
-					"EffectAttachType" 	"follow_origin"
-				}
-			}
-
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				   "FIELD_INTEGER"
-					"max_stacks"				"3"
-
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"elemental_charges"			"3"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"elemental_damage"			"7"
-				}
-				"04"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"elemental_radius"			"160"
-				}
-				"05"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"elemental_duration"		"20"
-				}
-				"06"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"elemental_think_time"		"0.5"
-				}
-				"07"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"elemental_damage_per_tick"	"3.5"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		{
+			"ModelScale" "2.5"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_elemental_shield_damage_aura"
+				"Duration"			"%elemental_duration"
+				"Target"			"CASTER"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_elemental_shield_damage_aura"
+			{
+				"ThinkInterval"		"elemental_think_time"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Damage"	"elemental_damage_per_tick"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "%elemental_radius"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+					}
+				}
+				"EffectName" 		"//insert static shield here"
+				"EffectAttachType" 	"follow_origin"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"3"
+
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_charges"			"3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_damage"			"7"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"elemental_radius"			"160"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"elemental_duration"		"20"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"elemental_think_time"		"0.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"elemental_damage_per_tick"	"3.5"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Anti Magic Potion
 //=================================================================================================================
-		"item_potion_anti_magic"
+	"item_potion_anti_magic"
+	{
+		"ID"							"1050"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"     		    "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_anti_magic"
+		"Model"							"models/items/alchemist/flask/flask.vmdl"
+		"Effect" 						""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"       			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1050"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"     		    "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"potion_anti_magic"
-			"Model"							"models/items/alchemist/flask/flask.vmdl"
-			"Effect" 						""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"       			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"Custom"
-			{
-				"ModelScale" "2.5"
-			}
-			"OnSpellStart"
-			{
-				"ApplyModifier"
-				{
-					"Target"				"CASTER"
-					"ModifierName"			"modifier_omniknight_repel"
-					"Duration"				"anti_magic_duration"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				   "FIELD_INTEGER"
-					"max_stacks"				"3"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"anti_magic_charges"		"20"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"anti_magic_duration"		"15"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"Custom"
+		{
+			"ModelScale" "2.5"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_omniknight_repel"
+				"Duration"				"anti_magic_duration"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"anti_magic_charges"		"20"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"anti_magic_duration"		"15"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Cure All
 //=================================================================================================================
-		"item_potion_cure_all"
+	"item_potion_cure_all"
+	{
+		"ID"							"1051"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"      			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_cureall"
+		"Model"							"models/projectiles/projectile_jar.vmdl"
+		"Effect" 						""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1051"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"      			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"potion_cureall"
-			"Model"							"models/projectiles/projectile_jar.vmdl"
-			"Effect" 						""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-
-			"OnSpellStart"
-			{
-				// "RunScript"
-				// {
-				// 	"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-				// 	"Function"				"PotionCureallUse"
-				// }
-				"ApplyModifier"
-				{
-					"IsHidden"		"1"
-					"Target"		"CASTER"
-					"ModifierName"	"satyr_trickster_purge"
-					"Duration"		"0.01"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				   "FIELD_INTEGER"
-					"max_stacks"				"6"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+
+		"OnSpellStart"
+		{
+			// "RunScript"
+			// {
+			// 	"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+			// 	"Function"				"PotionCureallUse"
+			// }
+			"ApplyModifier"
+			{
+				"IsHidden"		"1"
+				"Target"		"CASTER"
+				"ModifierName"	"satyr_trickster_purge"
+				"Duration"		"0.01"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"max_stacks"				"6"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Twin Island Potion
@@ -4397,132 +4394,132 @@
 //=================================================================================================================
 // Custom: Acid Potion
 //=================================================================================================================
-		"item_potion_acid"
+	"item_potion_acid"
+	{
+		"ID"							"1053"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_acid"
+		"Model"							"models/items/alchemist/toxic_siege_corrosive_flasks/toxic_siege_corrosive_flasks.vmdl"
+		"Effect"						"units/heroes/hero_alchemist/alchemist_unstableconc_bottlesright.vpcf"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"			 	"10"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1053"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"potion_acid"
-			"Model"							"models/items/alchemist/toxic_siege_corrosive_flasks/toxic_siege_corrosive_flasks.vmdl"
-			"Effect"						"units/heroes/hero_alchemist/alchemist_unstableconc_bottlesright.vpcf"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"			 	"10"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
+			}
+		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"    	"TARGET"
+				"EffectName"   	"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
+				"MoveSpeed"    	"2000"
+			}		   
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"Duration"				"%acid_duration"
+				"ModifierName"			"modifier_potion_acid_debuff"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
+				"Target"				"TARGET"
+			}
+			"SpendCharge"
+			{}
+		}
+		"OnProjectileFinish"
+		{
+			"SpendCharge"
+			{}
+		}
+
+		"Modifiers"
+		{
+			"modifier_potion_acid_debuff"
+			{
+				"IsDebuff"			"1"
+				"Properties"
 				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"DropItemOnDeath"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%acid_reduction"
 				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"TrackingProjectile"
+				"ThinkInterval"		"%acid_think_time"
+				"OnIntervalThink"
 				{
-					"Target"    	"TARGET"
-					"EffectName"   	"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
-					"MoveSpeed"    	"2000"
-				}		   
-			}
-			"OnProjectileHitUnit"
-			{
-				"ApplyModifier"
-				{
-					"Target"				"TARGET"
-					"Duration"				"%acid_duration"
-					"ModifierName"			"modifier_potion_acid_debuff"
-				}
-				"FireSound"
-				{
-					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-					"Target"				"TARGET"
-				}
-				"SpendCharge"
-				{}
-			}
-			"OnProjectileFinish"
-			{
-				"SpendCharge"
-				{}
-			}
-
-			"Modifiers"
-			{
-				"modifier_potion_acid_debuff"
-				{
-					"IsDebuff"			"1"
-					"Properties"
+					"Damage"
 					{
-						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%acid_reduction"
+						"Damage"	"15"
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_PHYSICAL"
 					}
-					"ThinkInterval"		"%acid_think_time"
-					"OnIntervalThink"
-					{
-						"Damage"
-						{
-							"Damage"	"15"
-							"Target"	"TARGET"
-							"Type"		"DAMAGE_TYPE_PHYSICAL"
-						}
-					}
-				}
-			}
-
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"acid_damage"				"150"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"acid_reduction"			"-6"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"acid_duration"				"5"
-				}
-				"04"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"acid_think_time"			".5"
 				}
 			}
 		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"acid_damage"				"150"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"acid_reduction"			"-6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"acid_duration"				"5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"acid_think_time"			".5"
+			}
+		}
+	}
 //=================================================================================================================
 // Custom: Poison Potion
 //=================================================================================================================
@@ -11145,4 +11142,4 @@
 			"UIDropSound"					"Item.DropGemShop"
 			"WorldDropSound"				"Item.DropGemWorld"
 		}
-	}
+}
