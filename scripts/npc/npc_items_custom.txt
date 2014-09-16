@@ -2594,6 +2594,7 @@
 				{
 					"Target"		"TARGET"
 					"Damage"		"%hurl_damage"
+					"Type"			"DAMAGE_TYPE_PHYSICAL"
 				}
 				"ApplyModifier"
 				{
@@ -2640,6 +2641,7 @@
 						{
 							"Target"		"TARGET"
 							"Damage"		"%poison_damage"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
 						}
 					}
 				}
@@ -2688,6 +2690,7 @@
 				{
 					"var_type"					"FIELD_INTEGER"
 					"hurl_damage"				"40"
+					"Type"						"DAMAGE_TYPE_PHYSICAL"
 				}
 				"04"
 				{
@@ -2818,6 +2821,7 @@
 				{
 					"Target"		"TARGET"
 					"Damage"		"%hurl_damage"
+					"Type"			"DAMAGE_TYPE_PHYSICAL"
 				}
 				"ApplyModifier"
 				{
@@ -2864,6 +2868,7 @@
 						{
 							"Target"		"TARGET"
 							"Damage"		"%poison_damage"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
 						}
 					}
 				}
@@ -3011,6 +3016,11 @@
 				"soundfile"					"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
 			}
 
+			"Custom"
+			{			  
+				"ModelScale"		 "0.6"
+			}
+
 			"OnSpellStart"
 			{
 				"TrackingProjectile"
@@ -3085,6 +3095,7 @@
 						{
 							"Target"		"TARGET"
 							"Damage"		"%poison_damage"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
 						}
 					}
 				}
