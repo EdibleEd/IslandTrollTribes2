@@ -2826,7 +2826,7 @@
 				"ApplyModifier"
 				{
 					"Target"		"TARGET"
-					"ModifierName"	"modifier_poison_spear_dot_debuff"
+					"ModifierName"	"modifier_poison_spear_refined_dot_debuff"
 					"Duration"		"%poison_duration"
 				}
 				"ApplyModifier"
@@ -2858,7 +2858,7 @@
 
 			"Modifiers"
 			{
-				"modifier_poison_spear_dot_debuff"
+				"modifier_poison_spear_refined_dot_debuff"
 				{
 					"IsDebuff"		"1"
 					"ThinkInterval"	"%poison_tick_time"
@@ -3049,11 +3049,12 @@
 				{
 					"Target"		"TARGET"
 					"Damage"		"%hurl_damage"
+					"Type"			"DAMAGE_TYPE_PHYSICAL"
 				}
 				"ApplyModifier"
 				{
 					"Target"		"TARGET"
-					"ModifierName"	"modifier_poison_spear_dot_debuff"
+					"ModifierName"	"modifier_poison_spear_ultra_dot_debuff"
 					"Duration"		"%poison_duration"
 				}
 				"ApplyModifier"
@@ -3085,7 +3086,7 @@
 
 			"Modifiers"
 			{
-				"modifier_poison_spear_dot_debuff"
+				"modifier_poison_spear_ultra_dot_debuff"
 				{
 					"IsDebuff"		"1"
 					"ThinkInterval"	"%poison_tick_time"
