@@ -166,7 +166,7 @@
 			}					
 			"FireSound"
 			{
-				"EffectName"		"Catapult.Attack"
+				"EffectName"		"Creep_Bad_Engine.Attack"
 				"Target"			"TARGET"
 			}	   
 		}		
@@ -186,7 +186,7 @@
 		{
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Impact"
+				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 				"Target"				"TARGET"
 			}
 			
@@ -2339,14 +2339,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
@@ -2521,7 +2521,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			"BaseClass"						"item_datadriven"
@@ -2533,7 +2533,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"800"
 			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"				"2.0"
+			"AbilityCooldown"				"2"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2580,7 +2580,7 @@
 				}
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Attack"
+					"EffectName"			"Creep_Bad_Engine.Attack"
 					"Target"				"TARGET"
 				}
 			}
@@ -2606,7 +2606,7 @@
 				}
 				"FireSound"
 				{
-					"EffectName"	"Catapult.Impact"
+					"EffectName"	"Creep_Bad_Engine.ProjectileImpact"
 					"Target"		"TARGET"
 				}
 				"Random"
@@ -2654,7 +2654,7 @@
 							"Function"		"SpearPoisonThrowTick"
 						}
 					}
-					"EffectName"		"venomancer gale debuff"
+					"EffectName"		"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
 					"EffectAttachType"	"follow_origin"
 
 					"OnDestroy"
@@ -2802,14 +2802,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
@@ -2920,14 +2920,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
@@ -3821,14 +3821,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 			}
@@ -3996,7 +3996,7 @@
 				}
 				"FireSound"
 				{
-					"EffectName"	"Catapult.Attack"
+					"EffectName"	"Creep_Bad_Engine.Attack"
 					"Target"		"TARGET"
 				}
 				"RunScript"
@@ -4465,7 +4465,7 @@
 				}
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 				"SpendCharge"
@@ -8943,14 +8943,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 			}
@@ -9728,14 +9728,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
@@ -9828,14 +9828,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
@@ -9928,14 +9928,14 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Catapult.Attack"
+				"EffectName"			"Creep_Bad_Engine.Attack"
 				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
 				"FireSound"
 				{
-					"EffectName"			"Catapult.Impact"
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
 
