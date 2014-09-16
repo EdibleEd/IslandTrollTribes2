@@ -1531,10 +1531,13 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ACTIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_hunter_demoralizingwarcry"	
 		"HotKeyOverride"				"D"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
 		
 		// Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -1681,10 +1684,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ACTIVE"
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_nulldamage"
 		"HotKeyOverride"				"D"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -1813,10 +1819,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ACTIVE"
-		"AbilityTextureName" 			"ability_mage_quantumnulldamage"	
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_quantumnulldamage"
 		"HotKeyOverride"				"D"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -1945,11 +1954,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ACTIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName" 			"ability_mage_negativeblast"	
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_negativeblast"
 		"HotKeyOverride"				"D"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -2038,7 +2049,9 @@
 			}
 			"negativeblast_aura"
 			{
-			"IsDebuff" 			"true"
+			"IsDebuff" 			"false"
+			"AOE"				"1"
+			"Radius"			"200"
 			"IsPurgable" 		"1"
 			"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"                
 			"ThinkInterval" 	"1.0"
@@ -2080,7 +2093,9 @@
 			}
 			"negativeblast_aura"
 			{
-			"IsDebuff" 			"true"
+			"IsDebuff" 			"false"
+			"AOE"				"1"
+			"Radius"			"200"
 			"IsPurgable" 		"1"
 			"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"                
 			"ThinkInterval" 	"1.0"
