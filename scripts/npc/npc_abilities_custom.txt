@@ -473,728 +473,728 @@
 	"BaseClass"			"ability_datadriven"
 	"AbilityTextureName"	"Duel"
 	}
-    
+	
 //=================================================================================
 //Gatherer Abilities
 //=================================================================================
-    //=================================================================================================================
-    // Gatherer Item Radar
-    //=================================================================================================================
-    "ability_gatherer_itemradar"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_itemradar"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "T" //Overlaps, but is replaced when Radar Manipulations is used
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.1"                         // Time before spell goes off when cast
+	//=================================================================================================================
+	// Gatherer Item Radar
+	//=================================================================================================================
+	"ability_gatherer_itemradar"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_itemradar"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "T" //Overlaps, but is replaced when Radar Manipulations is used
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.1"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_flint"            "255 0 0"       //flint - red
-                    "item_clay_ball"        "100 100 100"   //clay - grey
-                    "item_stick"            "50 100 100"    //stick - dark green
-                    "item_tinder"           "0 255 0"       //tinder - green
-                    "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
-                    "item_stone"            "0 0 255"
-                }
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "30"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "1700"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Gatherer Radar Manipulations
-    //=================================================================================================================
-    "ability_gatherer_radarmanipulations"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_radarmanipulations"
-        "RequiredLevel"                 "2"
-        "MaxLevel"						"4"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
-        
-        "OnSpellStart"
-        {            
-            //do some swapping shenanigans
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "true"
-            }
-        }
-    }
-    
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_flint"            "255 0 0"       //flint - red
+					"item_clay_ball"        "100 100 100"   //clay - grey
+					"item_stick"            "50 100 100"    //stick - dark green
+					"item_tinder"           "0 255 0"       //tinder - green
+					"item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
+					"item_stone"            "0 0 255"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "30"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "1700"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Gatherer Radar Manipulations
+	//=================================================================================================================
+	"ability_gatherer_radarmanipulations"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_radarmanipulations"
+		"RequiredLevel"                 "2"
+		"MaxLevel"						"4"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		
+		"OnSpellStart"
+		{            
+			//do some swapping shenanigans
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "true"
+			}
+		}
+	}
+	
    //=================================================================================================================
-    // Gatherer Find Mushroom, Stick, or Tinder
-    //=================================================================================================================
-    "ability_gatherer_findmushroomstickortinder"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "ability_gatherer_findmushroomstickortinder"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "T"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+	// Gatherer Find Mushroom, Stick, or Tinder
+	//=================================================================================================================
+	"ability_gatherer_findmushroomstickortinder"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "ability_gatherer_findmushroomstickortinder"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "T"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_mushroom"         "200 0 200"     //mushroom - don't know color, assuming purple
-                    "item_stick"            "50 100 100"    //stick - dark green
-                    "item_tinder"           "0 255 0"       //tinder - green
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "45"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Gatherer Find Hide
-    //=================================================================================================================
-    "ability_gatherer_findhide"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "ability_gatherer_findhide"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "H"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_mushroom"         "200 0 200"     //mushroom - don't know color, assuming purple
+					"item_stick"            "50 100 100"    //stick - dark green
+					"item_tinder"           "0 255 0"       //tinder - green
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "45"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Gatherer Find Hide
+	//=================================================================================================================
+	"ability_gatherer_findhide"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "ability_gatherer_findhide"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "H"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_hide_elk"             "165 42 42"     //hide - don't know color, assuming brown
-                    "item_hide_jungle_bear"     "165 42 42"
-                    "item_hide_wolf"            "165 42 42"
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "45"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Gatherer Find Clay Ball, Cooked Meat, or Bone
-    //=================================================================================================================
-    "ability_gatherer_findclayballcookedmeatorbone"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "ability_gatherer_findclayballcookedmeatorbone"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "C"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_hide_elk"             "165 42 42"     //hide - don't know color, assuming brown
+					"item_hide_jungle_bear"     "165 42 42"
+					"item_hide_wolf"            "165 42 42"
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "45"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Gatherer Find Clay Ball, Cooked Meat, or Bone
+	//=================================================================================================================
+	"ability_gatherer_findclayballcookedmeatorbone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "ability_gatherer_findclayballcookedmeatorbone"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "C"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_clay_ball"        "100 100 100"   //clay - grey
-                    "item_meat_cooked"      "178 34 34"     //cooked meat - dark red
-                    "item_bone"             "255 255 255"   //bone - white
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "45"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Gatherer Find Mana Crystal or Stone
-    //=================================================================================================================
-    "ability_gatherer_findmanacrystalorstone"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "ability_gatherer_findmanacrystalorstone"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "M"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_clay_ball"        "100 100 100"   //clay - grey
+					"item_meat_cooked"      "178 34 34"     //cooked meat - dark red
+					"item_bone"             "255 255 255"   //bone - white
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "45"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Gatherer Find Mana Crystal or Stone
+	//=================================================================================================================
+	"ability_gatherer_findmanacrystalorstone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "ability_gatherer_findmanacrystalorstone"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "M"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
-                    "item_stone"            "0 0 255"
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "45"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Radar Telegatherer Find Flint
-    //=================================================================================================================
-    "ability_gatherer_findflint"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_findflint"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "F"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_crystal_mana"     "0 0 255"       //stone/mana crystal - blue
+					"item_stone"            "0 0 255"
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "45"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Radar Telegatherer Find Flint
+	//=================================================================================================================
+	"ability_gatherer_findflint"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_findflint"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "F"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_flint"            "255 0 0"       //flint - red
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "40"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Radar Telegatherer Find Magic
-    //=================================================================================================================
-    "ability_gatherer_findmagic"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_findmagic"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "D"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_flint"            "255 0 0"       //flint - red
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "40"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Radar Telegatherer Find Magic
+	//=================================================================================================================
+	"ability_gatherer_findmagic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_findmagic"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "D"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "%cooldown"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
 
-        "precache"
-        {
-            "soundfile"                  "sounds/ui/ping.vsnd"
-            "particle_folder"            "particles/ui_mouseactions"
-        }
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "PingItemInRange"
-                "Target"        "CASTER"
-                "Range"         "%range"
-                "ItemTable"
-                {
-                    //Colors are from 0 to 255, all punctuation is ignored
-                    "item_magic_raw"            "255 0 255"       //magic - magenta
-                }
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarManipulations"
-                "isOpening"     "false"
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "cooldown"          "60"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "range"             "2500"
-            }
-            
-        }
-    }
-    
-    //=================================================================================================================
-    // Herb Master Telegatherer Mix Herbs
-    //=================================================================================================================
-    "ability_gatherer_mixherbs"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_mixherbs"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "X"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
-        
-        "OnSpellStart"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "MixHerbs"
-                "Target"        "CASTER"
-            }
-        }
-    }
-    
-    //=================================================================================================================
-    // Telegatherer Telegather
-    //=================================================================================================================
-    "ability_gatherer_telegather"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-        "AbilityUnitTargetTeam"	        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"precache"
+		{
+			"soundfile"                  "sounds/ui/ping.vsnd"
+			"particle_folder"            "particles/ui_mouseactions"
+		}
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PingItemInRange"
+				"Target"        "CASTER"
+				"Range"         "%range"
+				"ItemTable"
+				{
+					//Colors are from 0 to 255, all punctuation is ignored
+					"item_magic_raw"            "255 0 255"       //magic - magenta
+				}
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarManipulations"
+				"isOpening"     "false"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"cooldown"          "60"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"range"             "2500"
+			}
+			
+		}
+	}
+	
+	//=================================================================================================================
+	// Herb Master Telegatherer Mix Herbs
+	//=================================================================================================================
+	"ability_gatherer_mixherbs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_mixherbs"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "X"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "MixHerbs"
+				"Target"        "CASTER"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Telegatherer Telegather
+	//=================================================================================================================
+	"ability_gatherer_telegather"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"	        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"		    "DOTA_UNIT_TARGET_ALL"
-        "AbilityTextureName"            "ability_gatherer_telegather"
-        "MaxLevel"						"3"
-        "HotKeyOverride"                "T"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
-        "AbilityCastRange"              "300"
-        
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "120 120 120"
+		"AbilityTextureName"            "ability_gatherer_telegather"
+		"MaxLevel"						"3"
+		"HotKeyOverride"                "T"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		"AbilityCastRange"              "300"
+		
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "120 120 120"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "20 25 30"
-        
-        "OnSpellStart"
-        {            
-            //telegather buff and lua code
-            "ApplyModifier"
-            {
-                "ModifierName" "modifier_telegather"
-                "Target"    "CASTER"
-                "Duration"  "%duration"
-            }
-            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "RadarTelegatherInit"
-                "Target"        "TARGET"
-            }
-        }
-        
-        // Modifiers
-        //-------------------------------------------------------------------------------------------------------------    
-        "Modifiers"
-        {
-            "modifier_telegather"
-            {
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "CASTER"
-                        "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                        "EffectLifeDurationScale" "1"
-                        "EffectColorA" "255 255 0"
-                    }
-                }
-            }
-        }
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "duration"              "50.0 70.0 90.0"
-            }
-        }
-    }
-    
-    //=================================================================================================================
-    // Remote Telegatherer Item Warp
-    //=================================================================================================================
-    "ability_gatherer_itemwarp"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityTextureName"            "ability_gatherer_itemwarp"
-        "MaxLevel"						"1"
-        "HotKeyOverride"                "X"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"                         // Time before spell goes off when cast
-        
-        "OnSpellStart"
-        {            
-            // "RunScript"
-            // {
-                // "ScriptFile"    "custom_functions_abilities.lua"
-                // "Function"      "MixHerbs"
-                // "Target"        "CASTER"
-            // }
-        }
-    }
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20 25 30"
+		
+		"OnSpellStart"
+		{            
+			//telegather buff and lua code
+			"ApplyModifier"
+			{
+				"ModifierName" "modifier_telegather"
+				"Target"    "CASTER"
+				"Duration"  "%duration"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "RadarTelegatherInit"
+				"Target"        "TARGET"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------    
+		"Modifiers"
+		{
+			"modifier_telegather"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+						"EffectAttachType" "follow_overhead"
+						"EffectLifeDurationScale" "1"
+						"EffectColorA" "255 255 0"
+					}
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"duration"              "50.0 70.0 90.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Remote Telegatherer Item Warp
+	//=================================================================================================================
+	"ability_gatherer_itemwarp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            "ability_gatherer_itemwarp"
+		"MaxLevel"						"1"
+		"HotKeyOverride"                "X"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"                         // Time before spell goes off when cast
+		
+		"OnSpellStart"
+		{            
+			// "RunScript"
+			// {
+				// "ScriptFile"    "custom_functions_abilities.lua"
+				// "Function"      "MixHerbs"
+				// "Target"        "CASTER"
+			// }
+		}
+	}
 
 //=================================================================================
 //Hunter Abilities
 //=================================================================================
-    //=================================================================================================================
-    // Ensnare
-    //=================================================================================================================
-    "ability_hunter_ensnare"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityTextureName"            "ability_hunter_ensnare"
+	//=================================================================================================================
+	// Ensnare
+	//=================================================================================================================
+	"ability_hunter_ensnare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"            "ability_hunter_ensnare"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0 0.0"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "10"
-        "AbilityCastRange"				"700"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "10"
+		"AbilityCastRange"				"700"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
-        
-        "precache"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_meepo"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "600"
-                //"SourceAttachment"
-            }
-        }
-        
-        "OnProjectileHitUnit"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "EnsnareUnit"
-                "Target"        "TARGET"
-            }            
-        }
-        
-        "Modifiers"
-        {
-            "modifier_ensnare"
-            {
-                "IsHidden"	"1"
-                "Duration"  "3.5"
-                "States"
-                {
-                    "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
-                }
-                
-                "OnCreated"
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "600"
+				//"SourceAttachment"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "EnsnareUnit"
+				"Target"        "TARGET"
+			}            
+		}
+		
+		"Modifiers"
+		{
+			"modifier_ensnare"
+			{
+				"IsHidden"	"1"
+				"Duration"  "3.5"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"OnCreated"
 				{
 					"AttachEffect"
 					{
@@ -1203,128 +1203,128 @@
 						"EffectAttachType"			"follow_origin"
 					}
 				}
-            }            
-        }
-    }
-    
-    //=================================================================================================================
-    // Track
-    //=================================================================================================================
-    "ability_hunter_track"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityTextureName"            "ability_hunter_track"
-        "AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+			}            
+		}
+	}
+	
+	//=================================================================================================================
+	// Track
+	//=================================================================================================================
+	"ability_hunter_track"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"            "ability_hunter_track"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "10"
-        "AbilityCastRange"				"3000"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "10"
+		"AbilityCastRange"				"3000"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "4"
-        
-        "precache"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "4"
+		
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "1000"
-                //"SourceAttachment"
-            }
-        }
-        
-        "OnProjectileHitUnit"
-        {
-            "ApplyModifier"
-            {
-                "ModifierName"  "modifier_track_hero"
-                "Target"        "TARGET"
-                "Duration"      "%duration"
-            }
-            
-            "SpawnUnit"
-            {
-                "UnitName"          "dummy_spotter"
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_track_hero"
+				"Target"        "TARGET"
+				"Duration"      "%duration"
+			}
+			
+			"SpawnUnit"
+			{
+				"UnitName"          "dummy_spotter"
 				"UnitCount"			"1"
 				"UnitLimit"			"64"
 				"SpawnRadius"		"0"
 				"Duration"			"%duration"
 				"Target"			"TARGET"
-                
-                "OnSpawn"
-                {
-                    "RunScript"
-                    {
-                       "ScriptFile"    "custom_functions_abilities.lua"
-                        "Function"      "TrackUnit"
-                        "Target"        "TARGET"
-                        "Duration"      "%duration"
-                    }
-                
-                    "ApplyModifier"
-                    {
-                        "Target"				"TARGET"
-                        "Duration"				"%duration"
-                        "ModifierName"			"dummy_spotter_modifier"
-                    }
-                }
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_track_hero"
-            {   
-                "IsDebuff"      "true"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-                        "EffectAttachType" "follow_origin"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%minus_armor"
-                }
-            }
-            
-            "dummy_spotter_modifier"
-            {
-                "Target"				"TARGET"
+				
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+					   "ScriptFile"    "custom_functions_abilities.lua"
+						"Function"      "TrackUnit"
+						"Target"        "TARGET"
+						"Duration"      "%duration"
+					}
+				
+					"ApplyModifier"
+					{
+						"Target"				"TARGET"
+						"Duration"				"%duration"
+						"ModifierName"			"dummy_spotter_modifier"
+					}
+				}
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_track_hero"
+			{   
+				"IsDebuff"      "true"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%minus_armor"
+				}
+			}
+			
+			"dummy_spotter_modifier"
+			{
+				"Target"				"TARGET"
 				"IsHidden"              "1"    
 				"States"
 				{
@@ -1333,17 +1333,17 @@
 					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
 				}
-                
-                "Properties"
-                {
-                    //By default the spotter has 600
-                    "MODIFIER_PROPERTY_BONUS_DAY_VISION"        "-400"
-                    "MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "-400"
-                }
-            }
-        }
-        
-        // Special
+				
+				"Properties"
+				{
+					//By default the spotter has 600
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"        "-400"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "-400"
+				}
+			}
+		}
+		
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -1352,137 +1352,137 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"15.0 20.0 25.0"
 			}
-            "02"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cooldown"				"45.0 40.0 35.0"
 			}
-            "02"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"minus_armor"			"-1 -2 -3"
 			}
 		}
-    }
+	}
 	
-    //=================================================================================================================
-    // Greater Track
-    //=================================================================================================================
-    "ability_hunter_greatertrack"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityTextureName"            "ability_hunter_greatertrack"
-        "AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	//=================================================================================================================
+	// Greater Track
+	//=================================================================================================================
+	"ability_hunter_greatertrack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"            "ability_hunter_greatertrack"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "35"
-        "AbilityCastRange"				"700"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "35"
+		"AbilityCastRange"				"700"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "4"
-        
-        "precache"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "4"
+		
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "1000"
-                //"SourceAttachment"
-            }
-        }
-        
-        "OnProjectileHitUnit"
-        {
-            "ApplyModifier"
-            {
-                "ModifierName"  "modifier_track_hero"
-                "Target"        "TARGET"
-                "Duration"      "%duration"
-            }
-            
-            "SpawnUnit"
-            {
-                "UnitName"          "dummy_spotter"
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_track_hero"
+				"Target"        "TARGET"
+				"Duration"      "%duration"
+			}
+			
+			"SpawnUnit"
+			{
+				"UnitName"          "dummy_spotter"
 				"UnitCount"			"1"
 				"UnitLimit"			"64"
 				"SpawnRadius"		"0"
 				"Duration"			"%duration"
 				"Target"			"TARGET"
-                
-                "OnSpawn"
-                {
-                    "RunScript"
-                    {
-                       "ScriptFile"    "custom_functions_abilities.lua"
-                        "Function"      "TrackUnit"
-                        "Target"        "TARGET"
-                        "Duration"      "%duration"
-                    }
-                
-                    "ApplyModifier"
-                    {
-                        "Target"				"TARGET"
-                        "Duration"				"%duration"
-                        "ModifierName"			"dummy_spotter_modifier"
-                    }
-                }
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_track_hero"
-            {   
-                "IsDebuff"      "true"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-                        "EffectAttachType" "follow_origin"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%minus_armor"
-                }
-            }
-            
-            "dummy_spotter_modifier"
-            {
-                "Target"				"TARGET"
+				
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+					   "ScriptFile"    "custom_functions_abilities.lua"
+						"Function"      "TrackUnit"
+						"Target"        "TARGET"
+						"Duration"      "%duration"
+					}
+				
+					"ApplyModifier"
+					{
+						"Target"				"TARGET"
+						"Duration"				"%duration"
+						"ModifierName"			"dummy_spotter_modifier"
+					}
+				}
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_track_hero"
+			{   
+				"IsDebuff"      "true"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%minus_armor"
+				}
+			}
+			
+			"dummy_spotter_modifier"
+			{
+				"Target"				"TARGET"
 				"IsHidden"              "1"    
 				"States"
 				{
@@ -1491,17 +1491,17 @@
 					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
 				}
-                
-                "Properties"
-                {
-                    //By default the spotter has 600
-                    "MODIFIER_PROPERTY_BONUS_DAY_VISION"        "-400"
-                    "MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "-400"
-                }
-            }
-        }
-        
-        // Special
+				
+				"Properties"
+				{
+					//By default the spotter has 600
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"        "-400"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "-400"
+				}
+			}
+		}
+		
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -1510,18 +1510,18 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"30"
 			}
-            "02"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cooldown"				"35.0"
 			}
-            "02"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"minus_armor"			"-4"
 			}
 		}
-    }
+	}
 	
 	//=================================================================================================================
 	// Ability: Hunter - Demoralizing Warcry
@@ -1532,118 +1532,118 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_hunter_demoralizingwarcry"	
 		"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		
 		// Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "40"
-        "AbilityCastRange"				"450"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "40"
+		"AbilityCastRange"				"450"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "4"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	       
-        "precache"
+		"MaxLevel"                      "4"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "1000"
-                //"SourceAttachment"
-            }
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}
 			 "FireEffect"
 			{
 				"EffectName" "axe_counterhelix_unused2"
 				"EffectAttachType" "follow_origin"
 				"Target"      "CASTER"
 			}
-        }
-        "OnProjectileHitUnit"
-        {
-            "ApplyModifier"
-            {
-                "ModifierName"  "modifier_demoralizing_warcry1"
-                "Target"        "TARGET"
-                "Duration"      "%disarm_duration"
-            }            
+		}
+		"OnProjectileHitUnit"
+		{
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_demoralizing_warcry2"
-                "Target"        "TARGET"
-                "Duration"      "%disarm_duration"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_demoralizing_warcry1"
-            {   
-                "IsDebuff"     		"true"
+			{
+				"ModifierName"  "modifier_demoralizing_warcry1"
+				"Target"        "TARGET"
+				"Duration"      "%disarm_duration"
+			}            
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_demoralizing_warcry2"
+				"Target"        "TARGET"
+				"Duration"      "%disarm_duration"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_demoralizing_warcry1"
+			{   
+				"IsDebuff"     		"true"
 				"Duration"           "2"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-                        "EffectAttachType" "follow_origin"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_STATE_DISARMED"           "MODIFIER_STATE_VALUE_ENABLED"
-                }
-            }
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_STATE_DISARMED"           "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 			
 			"modifier_demoralizing_warcry2"
-            {   
-                "IsDebuff"     		 "true"
+			{   
+				"IsDebuff"     		 "true"
 				"Duration"           "10"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                }
-                "Properties"
-                {
-                   "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%minus_damage"
-                }
-            }
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"Properties"
+				{
+				   "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%minus_damage"
+				}
+			}
 		}
 		
 		// Special
@@ -1660,7 +1660,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"damage_duration"		"8"
 			}
-            "03"
+			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"minus_armor"			"-4"
@@ -1686,114 +1686,114 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_nulldamage"
 		"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "30"
-        "AbilityCastRange"				"600"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30"
+		"AbilityCastRange"				"600"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "30"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	       
-        "precache"
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "1000"
-                //"SourceAttachment"
-            }   
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}   
 		}	
-        "OnProjectileHitUnit"
-        {
+		"OnProjectileHitUnit"
+		{
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_nulldamage_troll"
-                "Target"        "TARGET"					
+			{
+				"ModifierName"  "modifier_nulldamage_troll"
+				"Target"        "TARGET"					
 				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 		"DOTA_UNIT_TARGET_HERO"
-                "Duration"      "%null_duration_troll"
-            }			
+				"Duration"      "%null_duration_troll"
+			}			
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_nulldamage_creep"
-                "Target"        "TARGET"				
+			{
+				"ModifierName"  "modifier_nulldamage_creep"
+				"Target"        "TARGET"				
 				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 		"DOTA_UNIT_TARGET_CREEP"
-                "Duration"      "%null_duration_creep"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "null_duration_troll"
-            {   
-                "IsDebuff"     		"true"
+				"Duration"      "%null_duration_creep"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"null_duration_troll"
+			{   
+				"IsDebuff"     		"true"
 				"Duration"           "15"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-10"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-25"
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-55"
-                }
-            }
-		    "null_duration_creep"
-            {   
-                "IsDebuff"     		"true"
+				}
+			}
+			"null_duration_creep"
+			{   
+				"IsDebuff"     		"true"
 				"Duration"           "20"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-10"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-25"
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-55"
-                }
-            }
+				}
+			}
 		}
 		
 		// Special
@@ -1821,114 +1821,114 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_quantumnulldamage"
 		"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "30"
-        "AbilityCastRange"				"600"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30"
+		"AbilityCastRange"				"600"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "30"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	       
-        "precache"
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "1000"
-                //"SourceAttachment"
-            }
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}
 		}	
-        "OnProjectileHitUnit"
-        {
+		"OnProjectileHitUnit"
+		{
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_quantum_nulldamage_troll"
-                "Target"        "TARGET"					
+			{
+				"ModifierName"  "modifier_quantum_nulldamage_troll"
+				"Target"        "TARGET"					
 				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 		"DOTA_UNIT_TARGET_HERO"
-                "Duration"      "%quantum_null_duration_troll"
-            }			
+				"Duration"      "%quantum_null_duration_troll"
+			}			
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_quantum_nulldamage_creep"
-                "Target"        "TARGET"				
+			{
+				"ModifierName"  "modifier_quantum_nulldamage_creep"
+				"Target"        "TARGET"				
 				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 		"DOTA_UNIT_TARGET_CREEP"
-                "Duration"      "%quantum_null_duration_creep"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "quantum_null_duration_troll"
-            {   
-                "IsDebuff"     		"true"
+				"Duration"      "%quantum_null_duration_creep"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"quantum_null_duration_troll"
+			{   
+				"IsDebuff"     		"true"
 				"Duration"           "15"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-15"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-35"
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-60"
-                }
-            }
-		    "quantum_null_duration_creep"
-            {   
-                "IsDebuff"     		"true"
+				}
+			}
+			"quantum_null_duration_creep"
+			{   
+				"IsDebuff"     		"true"
 				"Duration"           "20"
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "Target" "TARGET"
-                        "EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-                        "EffectAttachType" "follow_overhead"
-                    }
-                }
-                "Properties"
-                {
-                    "MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_STATE_DISARMED"           			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-15"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-35"
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-60"
-                }
-            }
+				}
+			}
 		}
 		
 		// Special
@@ -1956,107 +1956,101 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_negativeblast"
 		"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "20"
-        "AbilityCastRange"				"800"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"800"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "10"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	       
-        "precache"
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"           "particles/units/heroes/hero_tinker"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "400"
-                //"SourceAttachment"
-            }
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "400"
+				//"SourceAttachment"
+			}
 		}			
-        "OnProjectileHitUnit"
-        {
+		"OnProjectileHitUnit"
+		{
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_negativeblast_troll"
-                "Target"        "TARGET"					
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_HERO"
-                "Duration"      "%quantum_null_duration_troll"
-            }			
+			{
+				"ModifierName"  "modifier_negativeblast_troll"
+				"Target"        
+				{
+					"Center"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO"
+				}
+				"Duration"      "%quantum_null_duration_troll"
+			}	
 			"ApplyModifier"
-            {
-                "ModifierName"  "modifier_negativeblast_creep"
-                "Target"        "TARGET"				
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_CREEP"
-                "Duration"      "%quantum_null_duration_creep"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_negativeblast_troll"
-            {   
-                "IsDebuff"     		"true"
-				"Duration"           "3"
+			{
+				"ModifierName"  "modifier_negativeblast_creep"
+				"Target"        
+				{
+					"Center"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_CREEP"
+				}
+				"Duration"      "%quantum_null_duration_creep"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_negativeblast_troll"
+			{
+				"IsDebuff"     		"1"
 				"Aura" 				"negativeblast_aura"
 				"Aura_Radius" 		"200"
-                "OnCreated"
-                {
-					"CreateThinker"
-					{
-						"ModifierName"	"negativeblast_aura"
-						"Target" 		"CASTER"
-					}
-						"Damage"
-					  {
-						"Type" "DAMAGE_TYPE_MAGICAL"
-						"Damage" "35"
-						"Target" "TARGET"
-					  }
-					  "Properties"
-					{
-						"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-10"
-					}
-				}
+				"Aura_Teams"      	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"      	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+			"modifier_negativeblast_creep"
+			{   
+				"IsDebuff"			"1"
+				"Aura"				"negativeblast_aura"
+				"Aura_Radius"		"200"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			}
 			"negativeblast_aura"
 			{
-			"IsDebuff" 			"false"
-			"AOE"				"1"
-			"Radius"			"200"
-			"IsPurgable" 		"1"
-			"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"                
-			"ThinkInterval" 	"1.0"
-			"Duration"			"3"
-			"OnIntervalThink"
+				"IsDebuff" 			"1"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"                
+				"ThinkInterval" 	"1.0"
+				"OnIntervalThink"
 				{
 					"Damage"
 					{
@@ -2065,53 +2059,12 @@
 						"Target" "TARGET"
 					}
 				}
-            }
-            "modifier_negativeblast_creep"
-            {   
-                "IsDebuff"     		"true"
-				"Duration"           "5"
-				"Aura" 				"negativeblast_aura"
-				"Aura_Radius" 		"200"
-                "OnCreated"
-                {
-					"CreateThinker"
-					{
-						"ModifierName"	"negativeblast_aura"
-						"Target" 		"CASTER"
-					}
-						"Damage"
-					  {
-						"Type" "DAMAGE_TYPE_MAGICAL"
-						"Damage" "35"
-						"Target" "TARGET"
-					  }
-					  "Properties"
-					{
-						"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-10"
-					}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-10"
 				}
 			}
-			"negativeblast_aura"
-			{
-			"IsDebuff" 			"false"
-			"AOE"				"1"
-			"Radius"			"200"
-			"IsPurgable" 		"1"
-			"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"                
-			"ThinkInterval" 	"1.0"
-			"Duration"			"3"
-			"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Type"   "DAMAGE_TYPE_MAGICAL"
-						"Damage" "5"
-						"Target" "TARGET"
-					}
-				}
-            }
-        }
-	}
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2128,12 +2081,11 @@
 			}
 		}
 	}
-	}
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Ability: The One Critical Strike
 	//=================================================================================================================
 	"ability_the_one_criticalstike"
@@ -2171,12 +2123,12 @@
 
 			"the_one_critical"
 			{
-                "Properties"
+				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%crit_bonus"
 				}
-                
-                "OnAttackLanded"
+				
+				"OnAttackLanded"
 				{
 					"FireEffect"
 					{
@@ -2209,8 +2161,8 @@
 			}
 		}
 	}
-    
-    //=================================================================================================================
+	
+	//=================================================================================================================
 	// Ability: The One Pulverize
 	//=================================================================================================================
 	"ability_the_one_pulverize"
@@ -2219,7 +2171,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName" 			"lone_druid_rabid"	
@@ -2228,11 +2180,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-            "particle_folder"           "particles/units/heroes/hero_magnataur"
+			"particle_folder"           "particles/units/heroes/hero_magnataur"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
 		}
-        
-        "Modifiers"
+		
+		"Modifiers"
 		{
 			"the_one_pulverize_passive"
 			{
@@ -2245,11 +2197,11 @@
 						"OnSuccess"
 						{
 							"CleaveAttack"
-                            {
-                                "CleavePercent"		"%cleave_damage"
-                                "CleaveRadius"      "%cleave_radius"                                
-                                "CleaveEffect"      "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf"
-                            }
+							{
+								"CleavePercent"		"%cleave_damage"
+								"CleaveRadius"      "%cleave_radius"                                
+								"CleaveEffect"      "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf"
+							}
 						}
 					}
 				}
@@ -2270,15 +2222,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"cleave_damage"		    "200"
 			}
-            "03"
+			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cleave_radius"		    "500"
 			}
 		}
 	}
-    
-    //=================================================================================================================
+	
+	//=================================================================================================================
 	// Ability: The One True Sight
 	//=================================================================================================================
 	"ability_the_one_truesight"
@@ -2296,79 +2248,79 @@
 			"the_one_truesight_passive"
 			{
 				"Passive" "1"
-                "OnCreated"
-                {
-                    "ApplyModifier"
-                    {
-                        "Target"        "CASTER"
-                        "ModifierName"  "modifier_greevil_truesight"
-                    }
-                }
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"Target"        "CASTER"
+						"ModifierName"  "modifier_greevil_truesight"
+					}
+				}
 			}
 		}
 	}
-    
-    //=================================================================================================================
-    // The One Ensnare
-    //=================================================================================================================
-    "ability_the_one_ensnare"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	
+	//=================================================================================================================
+	// The One Ensnare
+	//=================================================================================================================
+	"ability_the_one_ensnare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityTextureName"            "ability_hunter_ensnare"
+		"AbilityTextureName"            "ability_hunter_ensnare"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.0"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
 
-        // Time        
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "10"
-        "AbilityCastRange"				"700"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "10"
+		"AbilityCastRange"				"700"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
-        
-        "precache"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_meepo"
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
-        
-        "OnSpellStart"
-        {
-            "TrackingProjectile"
-            {
-                "Target"            "TARGET"
-                "EffectName"        "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf"
-                "Dodgeable"         "false"
-                "ProvidesVision"    "false"
-                "MoveSpeed"         "600"
-                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_NONE"
-            }
-        }
-        
-        "OnProjectileHitUnit"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"    "custom_functions_abilities.lua"
-                "Function"      "EnsnareUnit"
-                "Target"        "TARGET"
-            }            
-        }
-    }
-    
-    //=================================================================================================================
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_meepo/meepo_earthbind_projectile_fx.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "600"
+				"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_NONE"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "EnsnareUnit"
+				"Target"        "TARGET"
+			}            
+		}
+	}
+	
+	//=================================================================================================================
 	// Ability: The One Orb of Lightning
 	//=================================================================================================================
 	"ability_the_one_orboflightning"
@@ -2377,7 +2329,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName" 			"razor_plasma_field"	
@@ -2385,24 +2337,24 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
-        "precache"
+		"precache"
 		{
 			"particle_folder"			"particles/units/heroes/hero_razor"
-            "particle_folder"           "particles/units/heroes/hero_disruptor"
+			"particle_folder"           "particles/units/heroes/hero_disruptor"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
 		}
-        
-        "Modifiers"
+		
+		"Modifiers"
 		{
 			"the_one_orboflightning_passive"
 			{
 				"Passive" "1"
-                
-                "Properties"
+				
+				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
 				}
-                
+				
 				"OnAttackLanded"
 				{
 					"Random"
@@ -2412,17 +2364,17 @@
 						{
 							"ApplyModifier"
 							{
-                                "Target"        "TARGET"
-                                "Duration"      "%purge_duration"
+								"Target"        "TARGET"
+								"Duration"      "%purge_duration"
 								"ModifierName"  "modifier_satyr_trickster_purge"
 							}
-                            
-                            "FireEffect"
-                            {
-                                "Target"            "TARGET"
-                                "EffectName"        "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
-                                "EffectAttachType"  "follow_origin"
-                            }
+							
+							"FireEffect"
+							{
+								"Target"            "TARGET"
+								"EffectName"        "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+								"EffectAttachType"  "follow_origin"
+							}
 						}
 					}
 				}
@@ -2443,64 +2395,64 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"		    "5"
 			}
-            "03"
+			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_duration"		"3.5"
 			}
 		}
 	}
-    
+	
 //=====================================================================================================================
 //Modifier Applier  -- Used to apply modifiers from Lua using the callModApplier() function
 //=====================================================================================================================
 
-    //=================================================================================================================
-    // Hunter Track Applier
-    //=================================================================================================================
-    "modifier_hunter_track_applier"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-        "AbilityTextureName"            ""
+	//=================================================================================================================
+	// Hunter Track Applier
+	//=================================================================================================================
+	"modifier_hunter_track_applier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"            ""
 
-        "precache"
-        {
-            "particle_folder"            "particles/units/heroes/hero_bounty_hunter"
-            "particle_folder"            "particles/generic_gameplay"
-        }
-        
-        "OnSpellStart"
-        {
-            "ApplyModifier"
-                    {
-                        "ModifierName"  "modifier_track_hero"
-                        "Target"        "CASTER"
-                    }
-        }
-        
-        // Modifiers
-        //-------------------------------------------------------------------------------------------------------------    
-        "Modifiers"
-        {
-            "modifier_track_hero"
-            {
-                "IsDebuff"  "true"
-                "Duration"  "%duration"
-                "States"
-                {
-                    "MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
-                }
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%armor_reduction"
-                }
-            }
-        }
-        
-        // Special
+		"precache"
+		{
+			"particle_folder"            "particles/units/heroes/hero_bounty_hunter"
+			"particle_folder"            "particles/generic_gameplay"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+					{
+						"ModifierName"  "modifier_track_hero"
+						"Target"        "CASTER"
+					}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------    
+		"Modifiers"
+		{
+			"modifier_track_hero"
+			{
+				"IsDebuff"  "true"
+				"Duration"  "%duration"
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%armor_reduction"
+				}
+			}
+		}
+		
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -2509,119 +2461,119 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"15 20 25"
 			}
-            "02"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"armor_reduction"		"-1 -2 -3"
 			}
 		}
-    }
-    
+	}
+	
 
-    
+	
 //=================================================================================
 //Placeholder Abilities
 //=================================================================================
-    //=================================================================================================================
-    // Empty Slot 1
-    //=================================================================================================================
-    "ability_empty1"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "rubick_empty1"
-        "MaxLevel"						"0"
+	//=================================================================================================================
+	// Empty Slot 1
+	//=================================================================================================================
+	"ability_empty1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "rubick_empty1"
+		"MaxLevel"						"0"
 
-    }
-    
-    //=================================================================================================================
-    // Empty Slot 2
-    //=================================================================================================================
-    "ability_empty2"
-    {
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
-		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "rubick_empty1"
 	}
-    
-    //=================================================================================================================
-    // Empty Slot 3
-    //=================================================================================================================
-    "ability_empty3"
-    {
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
-		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "rubick_empty1"
-	}
-    
-    	"reflex_empty2"
+	
+	//=================================================================================================================
+	// Empty Slot 2
+	//=================================================================================================================
+	"ability_empty2"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
+		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
-    
-    //=================================================================================================================
-    // Empty Slot 4
-    //=================================================================================================================
-    "ability_empty4"
-    {
+	
+	//=================================================================================================================
+	// Empty Slot 3
+	//=================================================================================================================
+	"ability_empty3"
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
+		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
-    
-    //=================================================================================================================
-    // Empty Slot 5
-    //=================================================================================================================
-    "ability_empty5"
-    {
+	
+		"reflex_empty2"
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
+		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
-    
-    //=================================================================================================================
-    // Empty Slot 6
-    //=================================================================================================================
-    "ability_empty6"
-    {
+	
+	//=================================================================================================================
+	// Empty Slot 4
+	//=================================================================================================================
+	"ability_empty4"
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
+		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
-    
-    //=================================================================================================================
-    // Empty Slot 7
-    //=================================================================================================================
-    "ability_empty7"
-    {
+	
+	//=================================================================================================================
+	// Empty Slot 5
+	//=================================================================================================================
+	"ability_empty5"
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"						"0"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	//=================================================================================================================
+	// Empty Slot 6
+	//=================================================================================================================
+	"ability_empty6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	//=================================================================================================================
+	// Empty Slot 7
+	//=================================================================================================================
+	"ability_empty7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
