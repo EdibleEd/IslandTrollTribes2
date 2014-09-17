@@ -56,7 +56,10 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds/ability_catapult_attack.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_venomancer",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts",context)
-	
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_invoker",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_gyrocopter",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts",context)
 				
 	print("Precache Finish")
 end
