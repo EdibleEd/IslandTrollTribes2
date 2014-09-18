@@ -209,10 +209,9 @@ end
 
 function RawMagicUse(keys)
 	local caster = keys.caster
-	local dieRoll = 75--RandomInt(0, 100)
+	local dieRoll = RandomInt(0, 100)
 
 	print("Test your luck! " .. dieRoll)
-	print("Time of Day " .. GameRules:GetTimeOfDay())
 	if dieRoll <= 30 then -- 30% lose % hp
 		local percentHealth = RandomFloat(0.10, 0.99)
 		local damageTable = {
@@ -277,15 +276,15 @@ function RawMagicMeteor(keys)
 	ParticleManager:SetParticleControl(particle, 2, duration)
 	
 	caster:SetContextThink(DoUniqueString('meteor_timer'),
-            function()
-            	local endMeteor = ParticleManager:CreateParticle('particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf', PATTACH_CUSTOMORIGIN, dummy_unit)
-        		ParticleManager:SetParticleControl(endMeteor, 0, endPoint)
-        		ParticleManager:DestroyParticle(endMeteor, false)
-        		ParticleManager:ReleaseParticleIndex(endMeteor)
-        		ParticleManager:DestroyParticle(particle, true)
-        		ParticleManager:ReleaseParticleIndex(particle)
-        	end,
-        	0.75)
+			function()
+				local endMeteor = ParticleManager:CreateParticle('particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf', PATTACH_CUSTOMORIGIN, dummy_unit)
+				ParticleManager:SetParticleControl(endMeteor, 0, endPoint)
+				ParticleManager:DestroyParticle(endMeteor, false)
+				ParticleManager:ReleaseParticleIndex(endMeteor)
+				ParticleManager:DestroyParticle(particle, true)
+				ParticleManager:ReleaseParticleIndex(particle)
+			end,
+			0.75)
 
 end
 

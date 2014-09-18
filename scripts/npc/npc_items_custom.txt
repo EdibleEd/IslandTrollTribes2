@@ -758,7 +758,6 @@
 			{
 				"ModelScale" "2.5"
 			}
-
 	}
 
 //=================================================================================================================
@@ -911,8 +910,6 @@
 		"UIPickupSound"					"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
-
-
 	}
 
 //=================================================================================================================
@@ -1029,8 +1026,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
-
 	}
 
 //=================================================================================================================
@@ -1084,7 +1079,6 @@
 			{
 				"ModelScale" "0.35"
 			}
-
 	}
 
 //=================================================================================================================
@@ -1187,7 +1181,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -1237,7 +1230,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -1287,8 +1279,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
-
 	}
 
 //=================================================================================================================
@@ -1337,7 +1327,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -1387,7 +1376,6 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-
 	}
 
 //=================================================================================================================
@@ -2051,7 +2039,6 @@
 					"attack_speed"			"15"
 				}	
 			}
-
 	}
 
 //=================================================================================================================
@@ -2373,139 +2360,137 @@
 	"item_spear_dark"
 	{
 		"ID"							"1031"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName"			"spear_dark"
+			"Model"							"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
+			"Effect" 						""
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"spear_dark"
-		"Model"							"models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"
-		"Effect" 						""
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"800"
+			"AbilityCastPoint"				"0.5"
+			"AbilityCooldown"				"2"
 
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"2"
-
-	// Item Info
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
-		"ItemPermanent"					"0"
-		"ItemDroppable"               	"1"
-		"ItemInitialCharges"			"1"
-		"ItemAliases"					"quicktype"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "0"
-		"OnOwnerDied"
-		{
-			"RunScript"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemDroppable"               	"1"
+			"ItemInitialCharges"			"1"
+			"ItemAliases"					"quicktype"
+			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "0"
+			"OnOwnerDied"
 			{
-				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-				"Function"			"DropItemOnDeath"
-			}
-		}
-	// Sound
-	//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-	// Special	
-	//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds/ability_catapult_attack.vsndevts"
-		}
-
-		"Custom"
-		{			  
-			"ModelScale"		"0.6"
-		}
-		"OnSpellStart"
-		{
-			"TrackingProjectile"
-			{
-				"Target"    	"TARGET"
-				"EffectName"   	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-				"MoveSpeed"    	"%projectile_speed"
-			}			
-			"FireSound"
-			{
-				"EffectName"			"Creep_Bad_Engine.Attack"
-				"Target"				"TARGET"
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
-				"Function" 		"SpearDarkThrow"
-				"DamageMin"		"%mana_zap_min"
-				"DamageMax"		"%mana_zap_max"
-			}			
-			"FireSound"
-			{
-				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-				"Target"				"TARGET"
-			}
-			"Random"
-			{
-				"Chance" "%recover_chance"
-				"OnFailure"
+				"RunScript"
 				{
-					"SpendCharge"
-					{}
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"			"DropItemOnDeath"
 				}
 			}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+			"precache"
+			{
+				"soundfile"			"soundevents/game_sounds/ability_catapult_attack.vsndevts"
+			}
 
-		}
-		"OnProjectileFinish"
-		{	
-			"SpendCharge"
-			{}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"1000"
+			"Custom"
+			{			  
+				"ModelScale"		"0.6"
 			}
-			"02"
+			"OnSpellStart"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"6"
+				"TrackingProjectile"
+				{
+					"Target"    	"TARGET"
+					"EffectName"   	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+					"MoveSpeed"    	"%projectile_speed"
+				}			
+				"FireSound"
+				{
+					"EffectName"			"Creep_Bad_Engine.Attack"
+					"Target"				"TARGET"
+				}
 			}
-			"03"
+			"OnProjectileHitUnit"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"hurl_damage"				"40"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_zap_min"				"20"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_zap_max"				"75"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"recover_chance"			"60"
-			}
-		}
+				"RunScript"
+				{
+					"ScriptFile" 	"scripts/vscripts/custom_functions_item.lua"
+					"Function" 		"SpearDarkThrow"
+					"DamageMin"		"%mana_zap_min"
+					"DamageMax"		"%mana_zap_max"
+				}			
+				"FireSound"
+				{
+					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
+					"Target"				"TARGET"
+				}
+				"Random"
+				{
+					"Chance" "%recover_chance"
+					"OnFailure"
+					{
+						"SpendCharge"
+						{}
+					}
+				}
 
+			}
+			"OnProjectileFinish"
+			{	
+				"SpendCharge"
+				{}
+			}
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"projectile_speed"			"1000"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"max_stacks"				"6"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"hurl_damage"				"40"
+				}
+				"04"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"mana_zap_min"				"20"
+				}
+				"05"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"mana_zap_max"				"75"
+				}
+				"06"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"recover_chance"			"60"
+				}
+			}
 	}
 
 //=================================================================================================================
@@ -3185,8 +3170,8 @@
 					"var_type"					"FIELD_FLOAT"
 					"slow_tick_time"			"0.5"
 				}
-			}	
-		}
+			}
+	}
 //=================================================================================================================
 // Custom: Spirit of Wind
 //=================================================================================================================
@@ -3863,7 +3848,7 @@
 			}
 		}
 	// Sound
-	//-------------------------------------------------------------------------------------------------------------			
+	//-------------------------------------------------------------------------------------------------------------
 		"UIPickupSound"					"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
@@ -4115,7 +4100,7 @@
 			}
 		}
 	// Sound
-	//-------------------------------------------------------------------------------------------------------------			
+	//-------------------------------------------------------------------------------------------------------------
 		"UIPickupSound"					"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
@@ -8341,24 +8326,6 @@
 
 		"Modifiers"
 		{
-			"modifier_magic_raw_meteor_debuff"
-			{
-				"IsDebuff"				"1"
-				"Duration"				"5.0"
-				"ThinkInterval"			"0.50"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Type"          "DAMAGE_TYPE_COMPOSITE"
-                		"Damage"        "40"
-                		"Target"		"TARGET"
-					}
-				}
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_chaos_meteor_burn_debuff.vpcf"
-				"EffectAttachType" 		"follow_origin"
-			}
-
 			"meteor_thinker"
 			{
 				"Duration"				"1"
@@ -8397,6 +8364,24 @@
 						}
 					}
 				}
+			}
+
+			"modifier_magic_raw_meteor_debuff"
+			{
+				"IsDebuff"				"1"
+				"Duration"				"5.0"
+				"ThinkInterval"			"0.50"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_COMPOSITE"
+                		"Damage"        "40"
+                		"Target"		"TARGET"
+					}
+				}
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_chaos_meteor_burn_debuff.vpcf"
+				"EffectAttachType" 		"follow_origin"
 			}
 		}
 
@@ -11261,7 +11246,7 @@
 				}
 			}
 		}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Spirit Ward
 //=================================================================================================================
 
@@ -11328,7 +11313,7 @@
 				}
 			}
 		}
-	//=================================================================================================================
+//=================================================================================================================
 // Custom: Teleport Beacon
 //=================================================================================================================
 
