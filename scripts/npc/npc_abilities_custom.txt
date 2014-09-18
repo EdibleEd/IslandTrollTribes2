@@ -2404,8 +2404,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_pumpup"
 		"HotKeyOverride"				"D"
@@ -2450,7 +2450,7 @@
 			}
 			"FireSound"
 			{
-			"EffectName" 		"Hero_Nightstalker.Void"
+			"EffectName" 		"Hero_OgreMagi.Bloodlust.Cast"
 			"Target" 			"CASTER"
 			}	
 		}			
@@ -2466,6 +2466,11 @@
 					"Types" 	"DOTA_UNIT_TARGET_HERO"
 				}
 				"Duration"      "%pumpup_duration"
+				"FireSound"
+				{
+				"EffectName" 		"Hero_OgreMagi.Bloodlust.Target"
+				"Target" 			"TARGET"
+				}
 			}	
 		}
 		
@@ -2513,6 +2518,244 @@
 			}
 			"04"
 			{
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Depress
+	//=================================================================================================================
+	"ability_mage_depress"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_depress"
+		"HotKeyOverride"				"G"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"700"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+			"soundfile"					"sounds/weapons/hero/nightstalker/dota_nightstalker_void.vsnd"
+		}
+		
+		"OnSpellStart"
+		{		
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "1000"
+				//"SourceAttachment"
+			}
+			"FireEffect"
+			{
+				"EffectName" "axe_counterhelix_unused2"
+				"EffectAttachType" "follow_origin"
+				"Target"      "CASTER"
+			}
+			"FireSound"
+			{
+			"EffectName" 		"Hero_Silencer.LastWord.Cast"
+			"Target" 			"CASTER"
+			}	
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "DepressInitial"
+				"Target"        "TARGET"
+			}  
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_depress"
+				"Target"        
+				{
+					"Center"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+				"Duration"      "%depress_duration"
+			}
+		}					
+		"Modifiers"
+		{
+			"modifier_depress"
+			{
+				"IsDebuff"     		"1"
+				"Aura" 				"negativeblast_aura"
+				"Aura_Radius" 		"600"
+				"Aura_Teams"      	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"      	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+			"depress_aura"
+			{
+				"IsDebuff" 			"1"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"ThinkInterval" 	"1"
+				"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Type"   "DAMAGE_TYPE_MAGICAL"
+							"Damage" "1"
+							"Target" "TARGET"
+						}
+						"FireSound"
+						{
+							"EffectName" 		"Hero_Silencer.Curse_Tick"
+							"Target" 			"TARGET"
+						}		
+					}			
+					"DelayedAction"
+						{
+							"Delay"  "0.1"
+							"Action"
+							{
+								"RunScript"
+								{
+									"ScriptFile"    "custom_functions_abilities.lua"
+									"Function"      "DepressInitial"
+									"Target"        "SELF"
+								}  
+							}
+						}
+					"DelayedAction"
+						{
+							"Delay"  "3"
+							"Action"
+							{
+								"RunScript"
+								{
+									"ScriptFile"    "custom_functions_abilities.lua"
+									"Function"      "Depress2"
+									"Target"        "SELF"
+								}  
+							}
+						}
+					"DelayedAction"
+					{
+						"Delay"  "6"
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"    "custom_functions_abilities.lua"
+								"Function"      "DepressRemainder"
+								"Target"        "SELF"
+							}  
+						}
+					}	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-20"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-10"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"depress_duration"		"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"depress_energyloss"		"5"
+			}
+		}
+	}	
+	//=================================================================================================================
+	// Ability: Mage - Eruption
+	//=================================================================================================================
+	"ability_mage_eruption"
+	{
+	"BaseClass"			"ability_datadriven"
+	"AbilityTextureName"	"Burn_Building_Magic"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+		  {
+			"Target"
+			{
+			  "Center"  "CASTER"
+			  "Radius"  "%eruption_radius"
+			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			  "Types"   "DOTA_UNIT_TARGET_HERO"
+			}
+			"Action"
+			{
+			  "Damage"
+			  {
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%damage"
+				"Target" "TARGET"
+			  }          
+			}
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" "POINT"
+			"EffectName" "generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" "follow_origin"
+			"EffectRadius" "260"
+			"EffectDurationScale" "1"
+			"EffectLifeDurationScale" "1"
+			"EffectColorA" "25 50 200"
+			"EffectColorB" "25 50 200"
+		  }
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"eruption_radius"		"315"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"40"
 			}
 		}
 	}
