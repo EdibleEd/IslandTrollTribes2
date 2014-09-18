@@ -209,7 +209,7 @@ end
 
 function RawMagicUse(keys)
 	local caster = keys.caster
-	local dieRoll = RandomInt(0, 100)
+	local dieRoll = 75--RandomInt(0, 100)
 
 	print("Test your luck! " .. dieRoll)
 	print("Time of Day " .. GameRules:GetTimeOfDay())
@@ -230,7 +230,7 @@ function RawMagicUse(keys)
 		caster:Kill(nil, caster)
 		print("Unlucky! Death!")
 	elseif dieRoll <= 60 then -- 10% time = midnight
-		GameRules:SetTimeOfDay(0.50)
+		GameRules:SetTimeOfDay(0.00)
 		print("Lucky? Midnight")
 	elseif dieRoll <= 70 then -- 10% meteor
 		local abilityName = "ability_magic_raw_meteor"
@@ -250,7 +250,13 @@ function RawMagicUse(keys)
 		CreateItemOnPositionSync(caster:GetOrigin() + RandomVector(RandomInt(20,100)), item2)
 		print("Lucky! Crystals!")
 	else -- 20% disco duck
-		print("AN ANCIENT EVIL AWAKENS")
+		if (duckBoss == nil) then
+			duckBoss = CreateUnitByName("npc_boss_disco_duck", Vector(0,0,0), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			print(duckBoss:GetClassname())
+			print(duckBoss:GetUnitName())
+			print("AN ANCIENT EVIL HAS AWOKEN")
+			ShowCustomHeaderMessage("#DiscoDuckSpawnMessage", -1, -1, 5)
+		end
 	end
 end
 
