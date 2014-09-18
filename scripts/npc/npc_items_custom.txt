@@ -8329,7 +8329,7 @@
 			"meteor_thinker"
 			{
 				"Duration"				"1"
-				"ThinkInterval"			"0.70"
+				"ThinkInterval"			"0.65"
 				"OnIntervalThink"
 				{
 					"DestroyTrees"
