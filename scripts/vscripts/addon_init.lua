@@ -92,32 +92,9 @@ ITEM_BASE                   = 1
 ]]--
 
 if ITT_GameMode == nil then
-    print("Script execution begin")
+    print("ITT Script execution begin")
     ITT_GameMode = class({})
     -- LoadKeyValues(filename a) 
-end
-
-
---[[
-    Create the game mode and our custom rules
-    This is run once the engine has launched
-]]--
-function Activate()
-    print("Activate Called")
-
-	require( 'custom_functions_item' )
-	require( 'custom_functions_ability' )
-	require( 'logic_creature' )
-	require( 'logic_troll' )
-
-	require( 'buildinghelper' )
-
-
-    GameRules.AddonTemplate = ITT_GameMode()
-    GameRules.AddonTemplate:InitGameMode()
-
-    BuildingHelper = BuildingHelper()
-
 end
 
 --[[

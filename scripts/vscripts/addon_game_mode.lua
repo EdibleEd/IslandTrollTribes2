@@ -2,7 +2,6 @@
 	The purpose of this file is mostly to exist because it is required.
 	Deal with all precaching here, to keep it out of the way.
 ]]--
-
 print("addon_game_mode invoked")
 
 --[[
@@ -63,6 +62,27 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts",context)
 				
 	print("Precache Finish")
+end
+
+--[[
+    Create the game mode and our custom rules
+    This is run once the engine has launched
+]]--
+function Activate()
+    print("Activate Called")
+
+	require( 'custom_functions_item' )
+	require( 'custom_functions_ability' )
+	require( 'logic_creature' )
+	require( 'logic_troll' )
+
+	require( 'buildinghelper' )
+
+
+    GameRules.AddonTemplate = ITT_GameMode()
+    GameRules.AddonTemplate:InitGameMode()
+
+    BuildingHelper = BuildingHelper()
 end
 
 
