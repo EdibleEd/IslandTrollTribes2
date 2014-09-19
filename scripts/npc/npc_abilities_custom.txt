@@ -2516,9 +2516,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"attack_speed_bonus"		"30"
 			}
-			"04"
-			{
-			}
 		}
 	}
 	//=================================================================================================================
@@ -2585,12 +2582,6 @@
 			"EffectName" 		"Hero_Silencer.LastWord.Cast"
 			"Target" 			"CASTER"
 			}	
-			"RunScript"
-			{
-				"ScriptFile"    "custom_functions_abilities.lua"
-				"Function"      "DepressInitial"
-				"Target"        "TARGET"
-			}  
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_depress"
@@ -2607,11 +2598,12 @@
 		{
 			"modifier_depress"
 			{
-				"IsDebuff"     		"1"
-				"Aura" 				"negativeblast_aura"
-				"Aura_Radius" 		"600"
-				"Aura_Teams"      	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"      	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"IsDebuff"     				"1"
+				"Aura" 						"depress_aura"
+				"Aura_Radius" 				"600"
+				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"		"1"
 			}
 			"depress_aura"
 			{
@@ -2709,9 +2701,9 @@
 	//=================================================================================================================
 	"ability_mage_eruption"
 	{
-	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Burn_Building_Magic"
-	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"				"ability_datadriven"
+	"AbilityTextureName"	"ability_mage_eruption"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -2756,6 +2748,771 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage"			"40"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Storm, Earth & Fire
+	//=================================================================================================================
+	"ability_mage_stormearthfire"
+	{
+	"BaseClass"				"ability_datadriven"
+	"AbilityTextureName"	"ability_mage_stormearthfire"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+		  {
+			"Target"
+			{
+			  "Center"  "CASTER"
+			  "Radius"  "%ewf_radius"
+			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			  "Types"   "DOTA_UNIT_TARGET_HERO"
+			}
+			"Action"
+			{
+			  "Damage"
+			  {
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%damage"
+				"Target" "TARGET"
+			  }          
+			}
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" "POINT"
+			"EffectName" "generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" "follow_origin"
+			"EffectRadius" "320"
+			"EffectDurationScale" "1"
+			"EffectLifeDurationScale" "1"
+			"EffectColorA" "25 50 200"
+			"EffectColorB" "25 50 200"
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" "POINT"
+			"EffectName" "generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" "follow_origin"
+			"EffectRadius" "320"
+			"EffectDurationScale" "1"
+			"EffectLifeDurationScale" "1"
+			"EffectColorA" "205 50 200"
+			"EffectColorB" "205 50 200"
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" "POINT"
+			"EffectName" "generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" "follow_origin"
+			"EffectRadius" "320"
+			"EffectDurationScale" "1"
+			"EffectLifeDurationScale" "1"
+			"EffectColorA" "255 0 0"
+			"EffectColorB" "255 0 0"
+		  }
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ewf_radius"		"315"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"40"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Anger
+	//=================================================================================================================
+	"ability_mage_pumpup"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_anger"
+		"HotKeyOverride"				"A"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "12"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+			"soundfile"					"sounds/weapons/hero/nightstalker/dota_nightstalker_void.vsnd"
+		}
+		
+		"OnSpellStart"
+		{		
+			ApplyModifier"
+			{
+				"ModifierName"  "modifier_anger"
+				"Duration"      "%anger_duration"
+				"Target"        
+				{
+					"Target"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}   
+			"FireSound"
+			{
+			"EffectName" 		"Hero_TrollWarlord.BattleTrance.Cast"
+			"Target" 			"TARGET"
+			}	
+		}			
+		"Modifiers"
+		{
+			"modifier_anger"
+			{
+				"IsDebuff" 			"0"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//ogre magi bloodlust
+						"EffectAttachType" "follow_overhead"
+					}
+					"ThinkInterval" 	"1"
+					"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Type"   "DAMAGE_TYPE_MAGICAL"
+							"Damage" "10"
+							"Target" "TARGET"
+						}
+					}
+					"Properties" 
+					{ 
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_speed_bonus"
+					} 		
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anger_duration"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed_bonus"		"75"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Depression Aura
+	//=================================================================================================================
+	"ability_mage_depressionaura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_depressionaura"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+			"soundfile"					"sounds/weapons/hero/nightstalker/dota_nightstalker_void.vsnd"
+		}
+							
+		"Modifiers"
+		{
+			"modifier_depress"
+			{
+				"IsDebuff"     				"1"
+				"Aura" 						"depression_aura"
+				"Aura_Radius" 				"600"
+				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"		"1"
+			}
+			"depression_aura"
+			{
+				"IsDebuff" 			"1"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+				"ThinkInterval" 	"3"
+				"OnIntervalThink"
+					{
+						"FireSound"
+						{
+							"EffectName" 		"Hero_Silencer.Curse_Tick"
+							"Target" 			"TARGET"
+						}
+						"RunScript"
+						{
+							"ScriptFile"    "custom_functions_abilities.lua"
+							"Function"      "DepressionAura"
+							"Target"        "SELF"
+						}  					
+					}	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%move_slow"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_slow"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"depress_energyloss"		"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Seizures
+	//=================================================================================================================
+	"ability_mage_maddeningdischarge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_mage_seizures"
+		"HotKeyOverride"				"S"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "1"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "8"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_enigma"
+			"sound_folder"				"sounds/weapons/hero/enigma/"
+		}
+		
+		"OnSpellStart"
+		{	
+			ApplyModifier"
+			{
+				"ModifierName"  "modifier_seizures"
+				"Duration"      "%seizure_duration"
+				"Target"        
+				{
+					"Target"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}   
+			"FireSound"
+			{
+			"EffectName" 		"Hero_Shredder.Chakram.Tree"
+			"Target" 			"TARGET"
+			}			
+		}
+		"Modifiers"
+		{
+			"modifier_seizures"
+			{
+				"IsDebuff" 			"1"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}				
+				"ThinkInterval" 	"0.5"
+				"OnIntervalThink"
+					{
+					"Random"
+						{
+							"Chance"    "45"
+							"OnSuccess"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"  "modifier_seizure"
+									"Target"        "TARGET"
+									"Duration"      "0.1"
+								}
+								"FireSound"
+								{
+								"EffectName" 		"Hero_Enigma.MaleficeTick"
+								"Target" 			"TARGET"
+								}
+							}					
+						}
+					}
+			}
+				"modifier_seizure"
+				{
+						 "Duration" "0.1"
+						 "EffectName" "generic_stunned"
+						 "EffectAttachType" "follow_overhead"
+						 "Duration"  "0.1"
+						 "OverrideAnimation" "ACT_DOTA_DISABLED"
+						 "States"
+						 {
+						   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+						 }			
+				}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"seizure_duration"		"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"seizure_ministun"		"0.1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Stupefying Field
+	//=================================================================================================================
+	"ability_mage_stupefyingfield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName" 			"ability_mage_stupefyingfield"
+		"HotKeyOverride"				"S"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.5"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityChannelTime" 			"8" 
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		"RequiredLevel"					"4"
+				
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_stupefy"
+				"Duration"      "%stupefy_duration"
+				"Target"        
+				{
+					"Target"	"CASTER"
+					"Center"	"CASTER"
+				}			
+			}			
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_stupefyself"
+				"Duration"      "%stupefy_duration"
+				"Target"        
+				{
+					"Target"	"CASTER"
+				}			
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Fire"
+				"Target"			"CASTER"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefy"
+			}
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefyself"
+			}
+		}
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefy"
+			}
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefyself"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefy"
+			}
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_stupefyself"
+			}
+		}
+		"Modifiers"
+		{
+		"modifier_stupefy"
+	   		{
+	    		"Passive" "1"
+	    		"IsHidden" "0"
+	    		"Aura" 			"stupefy_aura"
+	    		"Aura_Radius" 	"%stupefy_radius"
+	    		"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
+	    		"Aura_Types" 	"DOTA_UNIT_TARGET_ALL"
+			}
+	   		"stupefy_aura"
+	   		{	    	
+		    	"IsDebuffBuff" 	"1"
+		    	"IsPurgable" 	"0"
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed_reduction"					
+		     		"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_reduction"
+		    	}
+		    }
+			"modifier_stupefyself"
+			{
+				 "Duration" "8"
+				 "States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	 "MODIFIER_STATE_VALUE_ENABLED"
+				}			
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stupefy_duration"				"8"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed_reduction"			"-300"
+			}
+		 	"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed_reduction"		"-300"
+			}
+		}
+	}
+	
+
+//=================================================================================
+//Scout Abilities
+//=================================================================================	
+	
+	
+	//=================================================================================================================
+	// Ability: Scout - Reveal
+	//=================================================================================================================
+	"ability_scout_reveal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" 			"ability_scout_reveal"
+		"HotKeyOverride"				"V"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.5"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "3"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+		}
+		"OnSpellStart"
+		{
+					"ApplyModifier"
+					{
+						"Target"				"CASTER"
+						"Duration"				"%reveal_duration"
+						"ModifierName"			"dummy_spotter_modifier"
+					}
+					"ApplyModifier"
+					{
+						"Target"				"CASTER"
+						"Duration"				"%reveal_duration"
+						"ModifierName"			"dummy_spotter_modifier"
+					}
+		}
+		"Modifiers"
+		{
+			"dummy_spotter_modifier"
+			{
+				"Target"				"TARGET"
+				"IsHidden"              "1"    
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"		 "MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"Properties"
+				{
+					//By default the spotter has 600
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"        "%reveal_radius"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "%reveal_radius"
+				}
+			}
+			"modifier_revealtruesight"
+			{
+				"IsDebuff"     				"1"
+				"Aura" 						"reveal_aura"
+				"Aura_Radius" 				"%revealaura_radius"
+				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"		"0"
+			}
+			"reveal_aura"
+			{
+				"IsDebuff" 			"1"
+				"IsPurgable" 		"0"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}				
+				"States"
+				{
+				"MODIFIER_STATE_INVISIBLE"  	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"reveal_radius"						"400	1000	1800"
+			}			
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"reveal_duration"					"8"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"reveal_radius2"					"1000	1600	2400"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Scout - Shadow Sight
+	//=================================================================================================================
+	"ability_scout_shadowsight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_scout_shadowsight"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+		}
+							
+		"Modifiers"
+		{
+			"modifier_shadowsight"
+			{
+				"IsDebuff"     				"1"
+				"Aura" 						"shadowsight_aura"
+				"Aura_Radius" 				"%shadowsight_radius"
+				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"		"0"
+			}
+			"shadowsight_aura"
+			{
+				"IsDebuff" 			"1"
+				"IsHidden"			"1"
+				"IsPurgable" 		"0"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+				}				
+				"States"
+				{
+				"MODIFIER_STATE_INVISIBLE"  	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"shadowsight_radius"				"200"
 			}
 		}
 	}
