@@ -51,6 +51,7 @@ function Precache( context )
 	PrecacheResource("model", "models/particle/tiny_simrocks.vmdl",context)
 	PrecacheResource("model", "models/particle/ice_shards.vmdl",context)
 	
+	PrecacheResource("particle_folder", "particles/items_fx",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_nyx_assassin",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds/ability_catapult_attack.vsndevts",context)
@@ -60,7 +61,9 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_gyrocopter",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts",context)
-				
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_pugna",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts",context)
+
 	print("Precache Finish")
 end
 

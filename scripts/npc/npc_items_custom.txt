@@ -4114,16 +4114,53 @@
 				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 				"Function"				"potion_nether_use"
 			}
+			// "ApplyModifier"
+			// {	//use this to apply decrepify modifier
+			// 	"Target"						"CASTER"
+			// 	"Duration"						"%nether_duration"
+			// 	"ModifierName"					"modifier_pugna_decrepify"
+			// 	"bonus_movement_speed"			"0"
+			// 	"bonus_spell_damage_pct_allies"	"-50"
+			// 	"IsHidden"						"1"
+			// }
 			"ApplyModifier"
-			{
-				"Target"		"CASTER"
-				"Duration"		"%nether_duration"
-				"ModifierName"	"modifier_pugna_decrepify"
-				"bonus_movement_speed"	"0"
-				"bonus_spell_damage_pct_allies"	"-50"
+			{	//use this for tooltip and displayed buff
+				"Target"						"CASTER"
+				"Duration"						"%nether_duration"
+				"ModifierName"					"modifier_potion_nether"
 			}
 			"SpendCharge"
 			{
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_potion_nether"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_Pugna.Decrepify"
+						"Target"				"TARGET"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"-50"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
 			}
 		}
 		"AbilitySpecial"
