@@ -7738,7 +7738,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -7753,10 +7753,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"scroll_dead_use"
-				}
-				"SpendCharge"
-				{
+					"Function"				"scroll_dead_use"
 				}
 			}
 			"AbilitySpecial"
@@ -7798,7 +7795,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
+		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
 		"ItemInitialCharges"			"1"
@@ -7836,9 +7833,6 @@
 			{
 				"EffectName"    "Hero_DragonKnight.ElderDragonShoot2.Attack"
                 "Target"        "CASTER"
-			}
-			"SpendCharge"
-			{
 			}
 		}
 		"OnProjectileHitUnit"
@@ -7918,7 +7912,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
+		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
 		"ItemInitialCharges"			"1"
@@ -7964,9 +7958,6 @@
 					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types"		"DOTA_UNIT_TARGET_CREEP"
 				}
-			}
-			"SpendCharge"
-			{
 			}
 		}
 		"Modifiers"
@@ -8065,7 +8056,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"					"1"
+		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"ItemDroppable"               	"1"
 		"ItemInitialCharges"			"1"
@@ -8090,10 +8081,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{
-			}
-
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_scroll_stoneskin_buff"
@@ -8217,7 +8204,7 @@
 		"ItemShopTags"				"consumable"
 		"ItemQuality"				"consumable"
 		"ItemShareability"			"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemStackable"				"1"
+		"ItemStackable"				"0"
 		"ItemPermanent"				"0"
 		"ItemDroppable"       		"1"
 		"ItemInitialCharges"		"1"
@@ -8269,9 +8256,6 @@
 				}
 				"ModifierName"	"modifier_brewmaster_storm_cyclone"
 			}
-			"SpendCharge"
-			{
-			}
 		}
 		"AbilitySpecial"
 		{
@@ -8320,7 +8304,7 @@
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
+			"ItemStackable"					"0"
 			"ItemPermanent"					"0"
 			"ItemDroppable"               	"1"
 			"ItemInitialCharges"			"1"
@@ -8333,7 +8317,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -8349,9 +8333,6 @@
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"scroll_tsunami_use"
-				}
-				"SpendCharge"
-				{
 				}
 			}
 		}
