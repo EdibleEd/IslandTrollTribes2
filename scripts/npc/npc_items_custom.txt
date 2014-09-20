@@ -7789,8 +7789,8 @@
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"%range"
-		"AbilityCooldown"				"%cooldown"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"32.0"
+		"AbilityCastPoint"				"0.2"
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -7827,10 +7827,15 @@
 			{
 				"Target"			"TARGET"
 				"Dodgeable"			"1"
-				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire.vpcf"
 				"ProvidesVision"	"1"
 				"VisionRadius"		"100"
 				"MoveSpeed"			"1000"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Hero_DragonKnight.ElderDragonShoot2.Attack"
+                "Target"        "CASTER"
 			}
 			"SpendCharge"
 			{
@@ -7855,8 +7860,13 @@
 			"FireEffect"
 			{
 				"Target"			"POINT"
-				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_explosion.vpcf"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire_explosion.vpcf"
 				"EffectAttachType"	"follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Hero_DragonKnight.ProjectileImpact"
+                "Target"        "TARGET"
 			}
 		}
 		"AbilitySpecial"
@@ -7875,11 +7885,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"stun_duration"			"1.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"32"
 			}
 		}
 	}
@@ -7905,7 +7910,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"%range"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"%cooldown"
+		"AbilityCooldown"				"60.0"
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -7982,9 +7987,23 @@
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Target"	"TARGET"
 					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_Treant.Overgrowth.Target"
+						"Target"		"TARGET"
+					}
 				}
-				"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+				"EffectName"		"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
 				"EffectAttachType"	"follow_origin"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Treant.Overgrowth.Cast"
+						"Target"		"TARGET"
+					}
+				}
+				
 			}
 		}
 		"AbilitySpecial"
@@ -8012,12 +8031,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_duration"			"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"60"
+				"tick_duration"			"1.0"
 			}
 		}
 	}
@@ -8043,7 +8057,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"%range"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"%cooldown"
+		"AbilityCooldown"				"60.0"
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -8110,9 +8124,16 @@
 				{
 					"AttachEffect"
 					{
+						"Target" "CASTER"
+                        "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                        "EffectAttachType" "follow_overhead"
+                        "EffectLifeDurationScale" "1"
+                        "EffectColorA" "100 100 100"
+					}
+					"FireSound"
+					{
 						"Target"			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_stone.vpcf"
-						"EffectAttachType"	"follow_absorigin"
+						"EffectName"		"Hero_EarthSpirit.StoneRemnant.Impact"
 					}
 				}
 			}
@@ -8123,6 +8144,18 @@
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
 				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+						"EffectAttachType"	"follow_overhead"
+						"EffectLifeDurationScale" "1"
+                        "EffectColorA" "200 100 100"
+					}
+				}
+				
 			}
 		}
 		"AbilitySpecial"
@@ -8152,11 +8185,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"slow_debuff_duration"	"2.0"
 			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"60"
-			}
 		}
 	}
 
@@ -8181,7 +8209,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"			"%range"
 		"AbilityCastPoint"			"0.5"
-		"AbilityCooldown"			"%cooldown"
+		"AbilityCooldown"			"30.0"
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -8214,6 +8242,11 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"Brewmaster_Storm.Cyclone"
+			}
 			"ApplyModifier"
 			{
 				"Duration"	"%duration_hero"
@@ -8246,11 +8279,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range"					"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"30"
 			}
 			"02"
 			{
