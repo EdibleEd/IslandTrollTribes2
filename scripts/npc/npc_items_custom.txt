@@ -7772,286 +7772,498 @@
 //=================================================================================================================
 // Custom: Scroll of Fireball
 //=================================================================================================================
-		"item_scroll_fireball"
+	"item_scroll_fireball"
+	{
+		"ID"							"1085"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_fireball"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		"Effect"					"particles/units/heroes/hero_clinkz/clinkz_body_arm_fire.vpcf"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%range"
+		"AbilityCooldown"				"%cooldown"
+		"AbilityCastPoint"				"0.1"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1085"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY "
-			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"BaseClass"					"item_datadriven"
-			"AbilityTextureName"		"scroll_fireball"
-			"Model"						"models/props_gameplay/recipe.vmdl"
-			"Effect"					"particles/units/heroes/hero_clinkz/clinkz_body_arm_fire.vpcf"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"600"
-			"AbilityCooldown"				"32"
-			"AbilityCastPoint"				"0.5"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"scroll_fireball_use"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"range"					"800"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"			"TARGET"
+				"Dodgeable"			"1"
+				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+				"ProvidesVision"	"1"
+				"VisionRadius"		"100"
+				"MoveSpeed"			"1000"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"			"TARGET"
+				"Damage"			"%damage"
+				"Type"				"DAMAGE_TYPE_MAGICAL"
+			}
+			"ApplyModifier"
+			{
+				"Duration"			"%stun_duration"
+				"Target"			"TARGET"
+				"ModifierName"		"modifier_stunned"
+				// "EffectName"		""
+				// "EffectAttachType"	"follow_origin"
+			}
+			"FireEffect"
+			{
+				"Target"			"POINT"
+				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_explosion.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"32"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Scroll of Entangling Roots
 //=================================================================================================================
-		"item_scroll_entangling"
+	"item_scroll_entangling"
+	{
+		"ID"							"1086"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_entangling"
+		"Model"						"models/props_gameplay/tpscroll01.vmdl"
+		"Effect"					"particles/units/heroes/hero_enchantress/enchantress_enchant_slow_grass_long.vpcf"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%range"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"%cooldown"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                 	"1"
+		"ItemSellable"                 	"0"
+		"OnOwnerDied"
 		{
-			"ID"							"1086"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY "
-			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"BaseClass"					"item_datadriven"
-			"AbilityTextureName"		"scroll_entangling"
-			"Model"						"models/props_gameplay/tpscroll01.vmdl"
-			"Effect"					"particles/units/heroes/hero_enchantress/enchantress_enchant_slow_grass_long.vpcf"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"450"
-			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"				"60"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                 	"1"
-			"ItemSellable"                 	"0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"scroll_entangling_use"
-				}
-				"SpendCharge"
-				{
-				}
-			}
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"range"					"450"
-				}
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Duration"		"%duration_hero"
+				"ModifierName"	"modifier_scroll_entanglingroots"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO"
+				}
+			}
+			"ApplyModifier"
+			{
+				"Duration"		"%duration_creep"
+				"ModifierName"	"modifier_scroll_entanglingroots"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scroll_entanglingroots"
+			{
+				
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"		"%tick_duration"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Damage"	"%damage_per_second"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"	"TARGET"
+					}
+				}
+				"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_hero"			"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_duration"			"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"60"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Scroll of Stone Skin
 //=================================================================================================================
-		"item_scroll_stoneskin"
+	"item_scroll_stoneskin"
+	{
+		"ID"							"1087"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_stoneskin"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		//"Effect" 					""
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%range"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"%cooldown"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemDroppable"               	"1"
+		"ItemInitialCharges"			"1"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1087"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
-			"BaseClass"					"item_datadriven"
-			"AbilityTextureName"		"scroll_stoneskin"
-			"Model"						"models/props_gameplay/recipe.vmdl"
-			"Effect" 					""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"450"
-			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"				"60"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"               	"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"DropItemOnDeath"
+			}
+		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_scroll_stoneskin_buff"
+				"Target"		"TARGET"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_scroll_stoneskin_buff"
+			{
+				"Properties"
 				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+				}
+
+				"OnAttacked"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_scroll_stoneskin_debuff"
+						"Target"		"ATTACKER"
+						"Duration"		"%slow_debuff_duration"
+					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_stone.vpcf"
+						"EffectAttachType"	"follow_absorigin"
+					}
 				}
 			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
+			"modifier_scroll_stoneskin_debuff"
 			{
-				"RunScript"
+				"IsDebuff"	"1"
+				"Properties"
 				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"scroll_stoneskin_use"
-				}
-				"SpendCharge"
-				{
-				}
-			}					
-			"AbilitySpecial"
-			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"range"					"450"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
 				}
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"45.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"-10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_debuff_duration"	"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"60"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Scroll of Cyclone
 //=================================================================================================================
-		"item_scroll_cyclone"
+	"item_scroll_cyclone"
+	{
+		"ID"							"1088"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"		"scroll_cyclone"
+		"Model"						"models/props_gameplay/tpscroll01.vmdl"
+		"Effect"					"particles/items_fx/cyclone_d.vpcf"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"			"%range"
+		"AbilityCastPoint"			"0.5"
+		"AbilityCooldown"			"%cooldown"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					"1"
+		"ItemShopTags"				"consumable"
+		"ItemQuality"				"consumable"
+		"ItemShareability"			"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"				"1"
+		"ItemPermanent"				"0"
+		"ItemDroppable"       		"1"
+		"ItemInitialCharges"		"1"
+		"ItemAliases"				"quicktype"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"              "1"
+		"ItemSellable"              "0"
+		"OnOwnerDied"
 		{
-			"ID"							"1088"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
-			"BaseClass"					"item_datadriven"
-			"AbilityTextureName"		"scroll_cyclone"
-			"Model"						"models/props_gameplay/tpscroll01.vmdl"
-			"Effect"					"particles/items_fx/cyclone_d.vpcf"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"500"
-			"AbilityCastPoint"				"0.5"
-			"AbilityCooldown"				"30"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
-			"ItemShopTags"					"consumable"
-			"ItemQuality"					"consumable"
-			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-			"ItemStackable"					"1"
-			"ItemPermanent"					"0"
-			"ItemDroppable"       			"1"
-			"ItemInitialCharges"			"1"
-			"ItemAliases"					"quicktype"
-			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-			"ItemKillable"                  "1"
-			"ItemSellable"                  "0"
-			"OnOwnerDied"
+			"RunScript"
 			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
-				}
-			}
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-			"UIPickupSound"					"Item.PickUpGemShop"
-			"UIDropSound"					"Item.DropGemShop"
-			"WorldDropSound"				"Item.DropGemWorld"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-			"OnSpellStart"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"scroll_cyclone_use"
-				}
-				"SpendCharge"
-				{
-				}
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Duration"	"%duration_hero"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"		"DOTA_UNIT_TARGET_HERO"
+				}
+				"ModifierName"	"modifier_brewmaster_storm_cyclone"
+			}
+			"ApplyModifier"
+			{
+				"Duration"	"%duration_creep"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"		"DOTA_UNIT_TARGET_CREEP"
+				}
+				"ModifierName"	"modifier_brewmaster_storm_cyclone"
+			}
+			"SpendCharge"
+			{
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_hero"			"6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"10.0"
+			}
+		}
+	}
 
 //=================================================================================================================
 // Custom: Scroll of Tsunami

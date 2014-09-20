@@ -63,6 +63,13 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_pugna",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_skeletonking",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_lone_druid",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_templar_assassin",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_brewmaster",context)
 
 	print("Precache Finish")
 end
