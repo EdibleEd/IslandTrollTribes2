@@ -8349,6 +8349,11 @@
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"TsunamiProjectiles"
 				}
+				"FireSound"
+				{
+					"Target"		"CASTER"
+					"EffectName"	"Hero_Morphling.Waveform"
+				}
 			}
 			"OnProjectileHitUnit"
 			{
