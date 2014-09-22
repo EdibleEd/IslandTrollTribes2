@@ -205,8 +205,14 @@
 	"Ability_Burn_Building"
 	{
 	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Burn_Building"
+	"AbilityTextureName"	"ability_building_burnbuilding"
 	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	"precache"
+	{
+		"particle_folder"           "particles/dire_fx"
+	}
+
 	"OnSpellStart"
 	{
 		"ApplyModifier"
@@ -219,6 +225,14 @@
 				"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Types"			"DOTA_UNIT_TARGET_BUILDING"
 			}
+			"EffectName"		"particles/dire_fx/fire_barracks_glow_b.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+		"AttachEffect"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"particles/dire_fx/fire_barracks.vpcf"
+			"EffectAttachType"	"follow_overhead"
 		}
 	}
 	"Modifiers"
