@@ -74,6 +74,8 @@ function Precache( context )
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_treant",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/econ/generic/generic_buff_1/",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_morphling",context)
+	PrecacheResource("particle_folder", "particles/econ/generic/generic_projectile_linear_1",context)
 	print("Precache Finish")
 end
 
