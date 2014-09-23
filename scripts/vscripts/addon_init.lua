@@ -140,7 +140,7 @@ function ITT_GameMode:InitGameMode()
     GameRules:SetTimeOfDay( 0.75 )
     GameRules:SetHeroRespawnEnabled( false )
     GameRules:SetHeroSelectionTime( 30.0 )
-    GameRules:SetPreGameTime( 10.0 )
+    GameRules:SetPreGameTime( 60.0 )
     GameRules:SetPostGameTime( 60.0 )
     GameRules:SetTreeRegrowTime( 60.0 )
 --    GameRules:SetHeroMinimapIconSize( 400 )
@@ -160,11 +160,86 @@ function ITT_GameMode:InitGameMode()
     -- dota_item_picked_up dota_item_purchased
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ITT_GameMode, 'OnPlayerConnectFull'), self) 
    
+	-- Use this for assigning items to heroes initially once they pick their hero.
+	ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( ITT_GameMode, "OnPlayerPicked" ), self )
+	
+	-- Use this for dealing with subclass spawning
+   	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( ITT_GameMode, "OnNPCSpawned" ), self )
+	
+
     --Listener for items picked up, used for telegather abilities
     ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(ITT_GameMode, 'OnItemPickedUp'), self)
 
     ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(ITT_GameMode, 'OnPlayerGainedLevel'), self) 
+	
+	--Listener for storing hero information and revive
+	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'On_dota_player_killed'), self)
 end
+
+-- This code is written by Internet Veteran, handle with care.
+--Distribute slot locked item based off of the class.
+function ITT_GameMode:OnPlayerPicked( keys ) 
+local spawnedUnit = EntIndexToHScript( keys.HeroEntityIndex )
+local itemslotlock = CreateItem("item_slot_locked", hero, hero)
+
+ 	if spawnedUnit:GetClassname() == "npc_dota_hero_witch_doctor" then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_huskar" then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))	
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lion" then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_shadow_shaman" then
+		print(targetName .. " is a gatherer")
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_dazzle" then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_riki" then
+  		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lycan" then
+  		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	else
+	print(" is a non baseclass")
+	end
+	end
+	
+-- This code is written by Internet Veteran, handle with care.
+--Do the same now for the subclasses
+function ITT_GameMode:OnNPCSpawned( keys ) 
+local spawnedUnit = EntIndexToHScript( keys.HeroEntityIndex )
+local itemslotlock = CreateItem("item_slot_locked", hero, hero)
+	if string.find(spawnedUnit:GetUnitName(), "mage") then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	 --	if spawnedUnit:GetClassname() == "hunter" then
+	elseif string.find(spawnedUnit:GetUnitName(), "hunter") then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	 --	if spawnedUnit:GetClassname() == "scout" then
+	elseif string.find(spawnedUnit:GetUnitName(), "scout") then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	 --	if spawnedUnit:GetClassname() == "priest" then
+	 -- if spawnedUnit:(string.find(targetName,"priest") ~= nil) then 
+	elseif string.find(spawnedUnit:GetUnitName(), "priest") then
+ 		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	 --	if spawnedUnit:GetClassname() == "theif" then
+	 -- if spawnedUnit:(string.find(targetName,"thief") ~= nil) then 
+	 elseif string.find(spawnedUnit:GetUnitName(), "thief") then
+  		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	 --	if spawnedUnit:GetClassname() == "beastmaster" then
+	 -- if spawnedUnit:(string.find(targetName,"beastmaster") ~= nil) then 
+	elseif string.find(spawnedUnit:GetUnitName(), "beastmaster") then
+  		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+		hero:AddItem(CreateItem(itemslotlock, hero, hero))
+	else  
+	print(" is a baseclass")
+ 	end 
+	end
 
 function ITT_GameMode:FixDropModels(dt)
     for _,v in pairs(Entities:FindAllByClassname("dota_item_drop")) do
