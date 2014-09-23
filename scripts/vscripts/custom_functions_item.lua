@@ -295,7 +295,7 @@ function TsunamiProjectiles(keys)
 	{
 		--Ability = keys.ability,
         EffectName = "particles/units/heroes/hero_morphling/morphling_waveform.vpcf",
-        iMoveSpeed = 615,
+        iMoveSpeed = 1215,
         vSpawnOrigin = caster:GetAbsOrigin(),
         fDistance = 615,
         fStartRadius = 0,

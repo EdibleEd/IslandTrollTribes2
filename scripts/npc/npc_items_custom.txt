@@ -8332,7 +8332,7 @@
 				"LinearProjectile"
 				{
 					"EffectName"			""
-					"MoveSpeed"				"300"
+					"MoveSpeed"				"600"
 					"StartPosition"			"attach_attack1"
 					"FixedDistance"			"300"
 					"StartRadius"			"100"
