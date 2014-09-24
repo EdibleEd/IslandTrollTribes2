@@ -203,9 +203,6 @@ local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lycan" then
   		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
-    elseif spawnedUnit:GetClassname() == "npc_dota_hero_troll_warlord" then
-        spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
 	else
 	print(" is a non baseclass")
 	end

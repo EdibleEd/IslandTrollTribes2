@@ -3514,6 +3514,7 @@
         "GameSoundsFile"		"soundevents/game_sounds_creeps.vsndevts"
         "Level"					"1"
         "ModelScale"			"1.25"
+        "vscript"				"scroll_skeleton_ai.lua"
 
         // Abilities
         //----------------------------------------------------------------
