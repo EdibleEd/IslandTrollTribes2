@@ -7755,6 +7755,11 @@
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"SummonSkeleton"
 				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_TrollWarlord.BattleTrance.Cast"
+					"Target"		"CASTER"
+				}
 			}
 		}
 
