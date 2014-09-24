@@ -54,6 +54,7 @@ function Precache( context )
 	PrecacheResource("model", "models/particle/ice_shards.vmdl",context)
 	
 	PrecacheResource("particle_folder", "particles/items_fx",context)
+	PrecacheResource("particle_folder", "particles/items2_fx",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_nyx_assassin",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts",context)

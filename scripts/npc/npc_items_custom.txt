@@ -4365,6 +4365,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
 		"ItemDroppable"       			"1"
+		"ItemInitialCharges"			"1"
 		"ItemAliases"					"quicktype"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemKillable"                  "1"
@@ -4396,6 +4397,11 @@
 				"Duration"			"%elemental_duration"
 				"Target"			"CASTER"
 			}
+			"FireSound"
+			{
+				"Target"	"TARGET"
+				"FireSound"	"DOTA_Item.Mjollnir.Activate"
+			}
 			"SpendCharge"
 			{
 			}
@@ -4405,12 +4411,12 @@
 		{
 			"modifier_elemental_shield_damage_aura"
 			{
-				"ThinkInterval"		"elemental_think_time"
+				"ThinkInterval"		"%elemental_think_time"
 				"OnIntervalThink"
 				{
 					"Damage"
 					{
-						"Damage"	"elemental_damage_per_tick"
+						"Damage"	"%elemental_damage"
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Target"
 						{
@@ -4421,7 +4427,7 @@
 						}
 					}
 				}
-				"EffectName" 		"//insert static shield here"
+				"EffectName" 		"particles/items2_fx/mjollnir_shield.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
 		}
@@ -4457,12 +4463,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"elemental_think_time"		"0.5"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"elemental_damage_per_tick"	"3.5"
+				"elemental_think_time"		"1"
 			}
 		}
 	}
@@ -4544,8 +4545,8 @@
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"anti_magic_duration"		"15"
+				"var_type"					"FIELD_FLOAT"
+				"anti_magic_duration"		"15.0"
 			}
 		}
 	}
