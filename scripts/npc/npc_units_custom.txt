@@ -17,7 +17,8 @@
 		"VoiceFile"							"scripts/voscripts/game_sounds_vo_shadowshaman.txt"
 		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
 		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
-		"ModelScale"						"0.91"	
+		"ModelScale"						"0.91"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.vmdl"	
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -151,7 +152,8 @@
 		"VoiceFile"							"scripts/voscripts/game_sounds_vo_shadowshaman.txt"
 		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
 		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
-		"ModelScale"						"0.91"	
+		"ModelScale"						"0.91"
+		"Model"								"models/heroes/shadowshaman/shadowshaman.vmdl"	
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -289,6 +291,7 @@
 		"ParticleFile"						"particles/units/heroes/hero_shadowshaman.pcf"
 		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_shadowshaman.txt"
 		"ModelScale"						"0.91"	
+		"Model"								"models/heroes/shadowshaman/shadowshaman.vmdl"	
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
