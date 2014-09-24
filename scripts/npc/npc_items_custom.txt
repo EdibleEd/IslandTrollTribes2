@@ -4193,7 +4193,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_drunk"
@@ -4204,6 +4204,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1.0"
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -4239,22 +4240,67 @@
 			"TrackingProjectile"
 			{
 				"Target"    	"TARGET"
-				"EffectName"   	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
-				"MoveSpeed"    	"3000"
+				"EffectName"   	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze.vpcf"
+				"MoveSpeed"    	"1500"
 			}
 			"FireSound"
 			{
-				"EffectName"	"Creep_Bad_Engine.Attack"
+				"EffectName"	"Hero_Brewmaster.DrunkenHaze.Cast"
 				"Target"		"TARGET"
-			}
-			"RunScript"
+			}	   
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
 			{
-				"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
-				"Function"		"PotionDrunkUse"
+				"Duration"		"%drunk_duration_hero"
+				"ModifierName"	"modifier_potion_drunk"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO"
+				}
+			}
+			"ApplyModifier"
+			{
+				"Duration"		"%drunk_duration_creep"
+				"ModifierName"	"modifier_potion_drunk"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+			"FireSound"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"Hero_Brewmaster.DrunkenHaze.Target"
 			}
 			"SpendCharge"
 			{
-			}				   
+			}	
+		}
+		"OnProjectileFinish"
+		{
+			"SpendCharge"
+			{
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_potion_drunk"
+			{
+				"IsDebuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-50"
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"				"50"
+				}
+				"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
+			}
 		}
 		"AbilitySpecial"
 		{
@@ -4277,6 +4323,16 @@
 			{
 				"var_type"		"FIELD_INTEGER"
 				"drunk_charges"	"3"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"drunk_duration_hero"	"9"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"drunk_duration_creep"	"13"
 			}
 		}
 	}
