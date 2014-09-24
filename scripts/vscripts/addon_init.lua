@@ -194,7 +194,7 @@ local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lion" then
  		spawnedUnit:AddItem(itemslotlock1)
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_shadow_shaman" then
-		print(targetName .. " is a gatherer")
+		print(spawnedUnit:GetClassname() .. " is a gatherer")
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_dazzle" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
@@ -204,7 +204,7 @@ local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
   		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
 	else
-	print(" is a non baseclass")
+	print(spawnedUnit:GetUnitName() .. " is a non baseclass")
 	end
 end
 	
@@ -242,7 +242,7 @@ local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
   		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
 	else  
-	print(" is a baseclass")
+	print(spawnedUnit:GetUnitName() .. " is not a subclass")
  	end 
 end
 
