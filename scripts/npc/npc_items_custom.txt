@@ -4650,8 +4650,8 @@
 
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_acid"
@@ -4661,7 +4661,7 @@
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.25"
 		"AbilityCooldown"			 	"10"
 
 	// Item Info
@@ -4699,7 +4699,7 @@
 			{
 				"Target"    	"TARGET"
 				"EffectName"   	"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
-				"MoveSpeed"    	"2000"
+				"MoveSpeed"    	"1500"
 			}		   
 		}
 		"OnProjectileHitUnit"
@@ -4712,7 +4712,7 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
+				"EffectName"			"Hero_Alchemist.AcidSpray.Damage"
 				"Target"				"TARGET"
 			}
 			"SpendCharge"
@@ -4738,7 +4738,7 @@
 				{
 					"Damage"
 					{
-						"Damage"	"15"
+						"Damage"	"16"
 						"Target"	"TARGET"
 						"Type"		"DAMAGE_TYPE_PHYSICAL"
 					}

@@ -44,6 +44,8 @@ function Precache( context )
 	PrecacheResource("model", "models/items/wards/nexon_sotdaeward/nexon_sotdaeward.vmdl",context)
 	PrecacheResource("model", "models/items/furion/staff_eagle_1.vmdl",context)
 	PrecacheResource("model", "models/courier/drodo/drodo.vmdl",context)
+	PrecacheResource("model", "models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl",context)
+	
 	PrecacheResource("particle","particles/dire_fx/fire_barracks_glow_b.vpcf",context)
 	
 	PrecacheResource("model", "models/props_destruction/lion_groundspikes.vmdl",context)
@@ -78,6 +80,8 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/econ/generic/generic_projectile_linear_1",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_tinker",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_bristleback",context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",context)
 
 	print("Precache Finish")
 end
