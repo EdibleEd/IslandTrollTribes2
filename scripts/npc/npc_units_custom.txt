@@ -1102,7 +1102,7 @@
 				"Wearable1"
 				{
 					"ItemDef"			"4707"		// Egg of the Stormcrow_Description
-	}
+				}
 				"Wearable2"
 				{
 					"ItemDef"			"4708"		// Beak of the Stormcrow
@@ -1226,11 +1226,7 @@
 				"Wearable4"
 				{
 					"ItemDef"			"5462"		// Strifemaul of Hell's Ambassador
-				}	
-				"Wearable5"
-				{
-					"ItemDef"			""
-				}				
+				}		
 			}
 		}
 	}	
@@ -1459,9 +1455,9 @@
 		}
 	}	
 //=================================================================================================================
-// HERO: Theif Escape Artist
+// HERO: Thief Escape Artist
 //=================================================================================================================
-	"npc_hero_theif_escape_artist"
+	"npc_hero_thief_escape_artist"
 	{																		
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1567,9 +1563,9 @@
 		}
 	}
 //=================================================================================================================
-// HERO: Theif Contortionist
+// HERO: Thief Contortionist
 //=================================================================================================================
-	"npc_hero_theif_contortionist"
+	"npc_hero_thief_contortionist"
 	{																		
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1683,9 +1679,9 @@
 		}
 	}	
 //=================================================================================================================
-// HERO: Theif Assassin
+// HERO: Thief Assassin
 //=================================================================================================================
-	"npc_hero_theif_assassin"
+	"npc_hero_thief_assassin"
 	{																		
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3514,14 +3510,15 @@
         "GameSoundsFile"		"soundevents/game_sounds_creeps.vsndevts"
         "Level"					"1"
         "ModelScale"			"1.25"
-        "vscript"				"scroll_skeleton_ai.lua"
+        "vscripts"				"scroll_skeleton_ai.lua"
+        "AbilityLayout"         "4"	
 
         // Abilities
         //----------------------------------------------------------------
-        "Ability1"				""            // Ability 1
-        "Ability2"				""            // Ability 2
-        "Ability3"				""            // Ability 3
-        "Ability4"				""            // Ability 4
+        "Ability1"				"ability_skeleton_passive"      // Ability 1
+        "Ability2"				""								// Ability 2
+        "Ability3"				""            					// Ability 3
+        "Ability4"				""            					// Ability 4
 
         // Armor
         //----------------------------------------------------------------

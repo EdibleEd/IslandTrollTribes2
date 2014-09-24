@@ -77,6 +77,8 @@ function Precache( context )
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_morphling",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/econ/generic/generic_projectile_linear_1",context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_tinker",context)
+
 	print("Precache Finish")
 end
 

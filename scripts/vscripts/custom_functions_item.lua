@@ -207,6 +207,16 @@ function PotionCureallUse(keys)
 	end
 end
 
+function SummonSkeleton(keys)
+	local caster = keys.caster
+
+	local skeleton1 = CreateUnitByName("npc_creature_scroll_skeleton", caster:GetOrigin(), true, nil, caster, keys.caster:GetTeam())
+	skeleton1.position = 90
+	local skeleton2 = CreateUnitByName("npc_creature_scroll_skeleton", caster:GetOrigin(), true, nil, caster, keys.caster:GetTeam())
+	skeleton2.position = -90
+
+end
+
 function RawMagicUse(keys)
 	local caster = keys.caster
 	local dieRoll = RandomInt(0, 100)
