@@ -24,7 +24,7 @@ function DropItemOnDeath(keys) -- keys is the information sent by the ability
 		for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 			if killedUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
 				local Item = killedUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-				if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+				if Item ~= nil and Item:GetName() == itemName and Item:GetName() ~= "item_slot_locked" then -- makes sure that the item exists and making sure it is the correct item
 					local newItem = CreateItem(itemName, nil, nil) -- creates a new variable which recreates the item we want to drop and then sets it to have no owner
 					CreateItemOnPositionSync(killedUnit:GetOrigin() + RandomVector(RandomInt(20,100)), newItem) -- takes the newItem variable and creates the physical item at the killed unit's location
 					killedUnit:RemoveItem(Item) -- finally, the item is removed from the original units inventory.
