@@ -196,15 +196,21 @@ function PotionDrunkUse(keys)
 	target:AddNewModifier(caster, nil, "modifier_brewmaster_drunken_haze", {duration = dur, movement_slow = 10, miss_chance = 50})    
 end
 
-function PotionCureallUse(keys)
+function CastPurge(keys)
+	print("PURGE")
 	local caster = keys.caster
-
-	local numModifiers = caster:GetModifierCount()
-
-	for i = 0, numModifiers do
-		local modName = caster:GetModifierNameByIndex()
-		caster:RemoveModifierByName(modName)
+	local target = keys.target
+	if target == nil then
+		target = caster
 	end
+	local abilityName = "ability_custom_purge"
+    caster:AddAbility(abilityName)
+    ab = caster:FindAbilityByName(abilityName)
+    ab:SetLevel(1)
+    print("trying to cast ability ", abilityName, "level", ab:GetLevel(), "on")
+    caster:CastAbilityOnTarget(target, ab, -1)
+    caster:RemoveAbility(abilityName)
+    --dummy_caster:ForceKill(true)
 end
 
 function SummonSkeleton(keys)

@@ -3821,6 +3821,13 @@
 								"Duration"      "%purge_duration"
 								"ModifierName"  "modifier_satyr_trickster_purge"
 							}
+
+							"RunScript"
+							{
+								"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
+								"Function"		"CastPurge"
+								"Target"		"TARGET"
+							}
 							
 							"FireEffect"
 							{
