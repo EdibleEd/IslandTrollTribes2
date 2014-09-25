@@ -1694,7 +1694,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_hunter_giantswing"	
@@ -1704,16 +1704,12 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "40"
-		"AbilityCastRange"				"450"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1729,7 +1725,7 @@
 			//"soundfile"					"soundevents/game_sounds_heroes/"
 		}
 		
-		"OnSpellStart"
+		"OnAttackLanded"
 		{
 			"Random"
 			{
