@@ -334,9 +334,29 @@ function TsunamiDestroyFire(keys)
 	if (string.find(targetName,"fire") ~= nil) then
 		target:ForceKill(true)
 		print(targetName)
+		--Should spawn a firekit at that position
 	end
 end
 
+--The following code written by Internet Veteran, handle with care.
+--It is suppose to do one of three different things after a 33% chance has succeded. Once suceeded it calls this function.
+function PotionDiseaseUse(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local dieRoll = RandomInt(0, 2)
+	local dur1 = 100.00
+	local dur2 = 300.00
+	local dur3 = 150.00
+	print("Test your luck! " .. dieRoll)
+	
+	if dieRoll == 0 then -- random effect 1
+	target:AddNewModifier(caster, nil, "modifier_disease1", { duration = dur1})
+	elseif dieRoll == 1 then -- random effect 2
+	target:AddNewModifier(caster, nil, "modifier_disease2", { duration = dur2})
+	elseif dieRoll == 2 then -- random effect 3
+	target:AddNewModifier(caster, nil, "modifier_disease3", { duration = dur3})
+	end
+end
 function PrintTest(keys)
 	print("Test ")
 
