@@ -394,3 +394,46 @@ function PrintTest(keys)
 	print("Test ")
 
 end
+
+function DebugSpawnAll(keys)
+	local caster = keys.caster
+	local unitTable = {		
+		"npc_dota_hero_shadow_shaman",
+		"npc_hero_herbmaster_tele_gatherer",
+		"npc_hero_radar_tele_gatherer",
+		"npc_hero_remote_tele_gatherer",
+		"npc_dota_hero_huskar",
+		"npc_hero_hunter_tracker",
+		"npc_hero_hunter_warrior",
+		"npc_hero_hunter_juggernaught",
+		"npc_dota_hero_witch_doctor",
+		"npc_hero_mage_elementalist",
+		"npc_hero_mage_hypnotist",
+		"npc_hero_mage_dementia_master",
+		"npc_dota_hero_lion",
+		"npc_hero_scout_observer",
+		"npc_hero_scout_radar",
+		"npc_hero_scout_spy",
+		"npc_dota_hero_riki",
+		"npc_hero_thief_escape_artist",
+		"npc_hero_thief_contortionist",
+		"npc_hero_thief_assassin",
+		"npc_dota_hero_lycan",
+		"npc_hero_beastmaster_packleader",
+		"npc_hero_beastmaster_form_chicken",
+		"npc_hero_beastmaster_shapeshifter",
+		"npc_dota_hero_dazzle",
+		"npc_hero_priest_booster",
+		"npc_hero_priest_master_healer",
+		"npc_hero_priest_sage"}
+
+	for key,value in pairs(unitTable) do
+		local spawnLocationX = (key-1)%4
+		spawnLocationY = math.floor((key-1)/4)
+		spawnLocation = Vector(1,0,0)*spawnLocationX*200 + Vector(0,-1,0)*spawnLocationY*300 + Vector(1,0,0)*200
+		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, nil, nil, caster:GetTeam())
+		unit.vOwner = caster:GetOwner()
+		unit:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true )
+		unit:SetForwardVector(Vector(0,-1,0))
+	end
+end

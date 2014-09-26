@@ -24,11 +24,6 @@ function Precache( context )
 	PrecacheUnitByNameSync( "npc_dota_creature_elk", context )
 	PrecacheUnitByNameSync( "npc_dota_creature_hawk", context )
 
-	PrecacheUnitByNameSync( "npc_dota_hero_huskar", context )
-	PrecacheUnitByNameSync( "npc_dota_hero_witch_doctor", context )
-	PrecacheUnitByNameSync( "npc_dota_hero_dazzle", context )
-	PrecacheUnitByNameSync( "npc_dota_hero_troll_warlord", context )
-
 	PrecacheResource("model", "models/props_debris/camp_fire001.vmdl",context)
 	PrecacheResource("model", "models/props_structures/tent_dk_small.vmdl",context)
 	PrecacheResource("model", "models/props_structures/sniper_hut.vmdl",context)
@@ -87,6 +82,40 @@ function Precache( context )
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_tinker",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_bristleback",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",context)
+
+		local unitTable = {		
+		"npc_dota_hero_shadow_shaman",
+		"npc_hero_herbmaster_tele_gatherer",
+		"npc_hero_radar_tele_gatherer",
+		"npc_hero_remote_tele_gatherer",
+		"npc_dota_hero_huskar",
+		"npc_hero_hunter_tracker",
+		"npc_hero_hunter_warrior",
+		"npc_hero_hunter_juggernaught",
+		"npc_dota_hero_witch_doctor",
+		"npc_hero_mage_elementalist",
+		"npc_hero_mage_hypnotist",
+		"npc_hero_mage_dementia_master",
+		"npc_dota_hero_lion",
+		"npc_hero_scout_observer",
+		"npc_hero_scout_radar",
+		"npc_hero_scout_spy",
+		"npc_dota_hero_riki",
+		"npc_hero_thief_escape_artist",
+		"npc_hero_thief_contortionist",
+		"npc_hero_thief_assassin",
+		"npc_dota_hero_lycan",
+		"npc_hero_beastmaster_packleader",
+		"npc_hero_beastmaster_form_chicken",
+		"npc_hero_beastmaster_shapeshifter",
+		"npc_dota_hero_dazzle",
+		"npc_hero_priest_booster",
+		"npc_hero_priest_master_healer",
+		"npc_hero_priest_sage"}
+
+	for key,value in pairs(unitTable) do
+		PrecacheUnitByNameSync(value, context)
+	end
 
 	print("Precache Finish")
 end
