@@ -3,6 +3,7 @@
 	Deal with all precaching here, to keep it out of the way.
 ]]--
 print("addon_game_mode invoked")
+require('timers')
 
 --[[
 	We want to precache resources we want to use, so they are ready for loading when the engine requires
@@ -52,7 +53,9 @@ function Precache( context )
 	PrecacheResource("model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon_fx.vmdl",context)
 	PrecacheResource("model", "models/particle/tiny_simrocks.vmdl",context)
 	PrecacheResource("model", "models/particle/ice_shards.vmdl",context)
-	PrecacheResource("model", "models/projectiles/projectile_jar.vmdl",context)	
+	PrecacheResource("model", "models/projectiles/projectile_jar.vmdl",context)
+	PrecacheResource("model", "models/items/brewmaster/offhand_jug/offhand_jug.vmdl",context)
+	
 	
 	PrecacheResource("particle_folder", "particles/items_fx",context)
 	PrecacheResource("particle_folder", "particles/items2_fx",context)

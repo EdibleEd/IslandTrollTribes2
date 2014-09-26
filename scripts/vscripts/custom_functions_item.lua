@@ -196,6 +196,33 @@ function PotionDrunkUse(keys)
 	target:AddNewModifier(caster, nil, "modifier_brewmaster_drunken_haze", {duration = dur, movement_slow = 10, miss_chance = 50})    
 end
 
+function PotionFervorUse(keys)
+	local caster = keys.caster
+	local target = keys.target
+
+	local pumpUpDur = 20.0
+	local stoneSkin = CreateItem( "item_scroll_stoneskin", caster, caster)
+    stoneSkin:ApplyDataDrivenModifier( caster, caster, "modifier_scroll_stoneskin_buff", {duration=45})
+
+    local dummyCaster = CreateUnitByName("dummy_caster", caster:GetOrigin(), false, caster, caster, caster:GetTeamNumber())
+    dummyCaster:AddAbility("ability_mage_pumpup")
+    local ability = dummyCaster:FindAbilityByName("ability_mage_pumpup")
+    ability:SetLevel(1)
+    --need a delay before casting and killing the dummy due to cast points
+    Timers:CreateTimer(0.1, function()
+            dummyCaster:CastAbilityOnTarget(caster, ability, caster:GetPlayerID())
+            return
+        	end
+    		)
+    Timers:CreateTimer(0.2, function()
+            dummyCaster:ForceKill(true)
+            return
+        	end
+    		)
+    
+
+end
+
 function CastPurge(keys)
 	print("PURGE")
 	local caster = keys.caster

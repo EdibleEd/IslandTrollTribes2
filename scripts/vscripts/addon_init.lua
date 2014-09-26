@@ -6,7 +6,6 @@
 print("addon_init invoked")
 
 require( 'util' )
-require( 'custom_functions_ability' )
 
 --[[
     Global variables

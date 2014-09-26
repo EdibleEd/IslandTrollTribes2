@@ -3910,6 +3910,7 @@
 			"ItemStackable"					"1"
 			"ItemPermanent"					"0"
 			"ItemDroppable"       			"1"
+			"ItemInitialCharges"			"1"
 			"ItemAliases"					"quicktype"
 			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 			"ItemKillable"                  "1"
@@ -3919,7 +3920,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -3935,7 +3936,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"potion_fervor_use"
+					"Function"				"PotionFervorUse"
 				}
 				"SpendCharge"
 				{
@@ -3946,11 +3947,11 @@
 				"01"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"max_stacks"				"2"
+					"max_stacks"			"2"
 				}
 				"02"
 				{
-					"var_type"					"FIELD_INTEGER"
+					"var_type"				"FIELD_INTEGER"
 					"energy_restore"		"120"
 				}
 			}
@@ -4564,7 +4565,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"cureall"
+		"AbilityTextureName"			"item_sphere"
 		"Model"							"models/projectiles/projectile_jar.vmdl"
 		"Effect" 						""
 
