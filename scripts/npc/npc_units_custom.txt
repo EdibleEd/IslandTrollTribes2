@@ -426,13 +426,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/troll_warlord/troll_warlord.mdl"				// Model.
-		"SoundSet"							"Hero_TrollWarlord"											// Name of sound set.
-		"IdleExpression"					"scenes/troll_warlord/troll_warlord_exp_idle_01.vcd"		// custom facial animation idle
-		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
-		"ParticleFile"						"particles/units/heroes/hero_troll_warlord.pcf"
-		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_troll_warlord.txt"
-		"VoiceFile" 						"scripts/voscripts/game_sounds_vo_troll_warlord.txt"
+		"Model"								"models/heroes/huskar/huskar.mdl"		// Model.
+		"Portrait"							"vgui/hud/heroportraits/portrait_huskar"	// Small image for hero selection
+		"IdleExpression"					"scenes/huskar/huskar_exp_idle_01.vcd"		// custom facial animation idle
+		"SoundSet"							"Hero_Huskar"		
+		"VoiceFile"							"scripts/voscripts/game_sounds_vo_huskar.txt"
+		"ParticleFile"						"particles/units/heroes/hero_huskar.pcf"
+		"GameSoundsFile"					"scripts/game_sounds_heroes/game_sounds_huskar.txt"
 		"ModelScale" 						"0.9"
 		
 		// Abilities
@@ -510,24 +510,24 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"268"	// Huskar Spear
+					"ItemDef"			"4748"	// Obsidian Spear
 				}
 				"Wearable2"
 				{
-					"ItemDef"			"269"	// Huskar Dagger
+					"ItemDef"			"4749"	// Obsidian Dagger
 				}
 				"Wearable3"
 				{
-					"ItemDef"			"270"	// Huskar Helmet
+					"ItemDef"			"4300"	// Obsidian Helmet
 				}
 				"Wearable4"
 				{
-					"ItemDef"			"271"	// Huskar Shoulder
+					"ItemDef"			"4301"	// Obsidian Shoulder
 				}				
 				"Wearable5"
 				{
-					"ItemDef"			"272"	// Huskar Bracer
-				}					
+					"ItemDef"			"4299"	// Obsidian Bracer
+				}
 			}
 		}
 	}
@@ -1806,7 +1806,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"1"
-		"Model"								"models/heroes/lycan/lycan.mdl"									// Model.
+		"Model"								"models/items/lycan/ultimate/alpha_trueform9/alpha_trueform9.vmdl"									// Model.
 		"Portrait"							"vgui/hud/heroportraits/portrait_lycan"							// Small image for hero selection
 		"SoundSet"							"Hero_Lycan"													// Name of sound set.
 		"ParticleFile"						"particles/units/heroes/hero_lycan.pcf"

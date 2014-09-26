@@ -431,7 +431,7 @@ function DebugSpawnAll(keys)
 		local spawnLocationX = (key-1)%4
 		spawnLocationY = math.floor((key-1)/4)
 		spawnLocation = Vector(1,0,0)*spawnLocationX*200 + Vector(0,-1,0)*spawnLocationY*300 + Vector(1,0,0)*200
-		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, nil, nil, caster:GetTeam())
+		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, caster:GetOwner(), caster:GetOwner(), caster:GetTeam())
 		unit.vOwner = caster:GetOwner()
 		unit:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true )
 		unit:SetForwardVector(Vector(0,-1,0))
