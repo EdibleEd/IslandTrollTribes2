@@ -6715,20 +6715,15 @@
 				"Chance"    "%chance"
 				"OnSuccess"
 				{
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-						"Function"				"cloak_camouflage_invis"
-					}
 					"ApplyModifier"
 					{
 						"ModifierName"  "modifier_cloakprotect"
 						"Target"        "SELF"
 						"Duration"      "%protect_duration"
 					}
-					"modifier_cloakprotect_block"
+					"ApplyModifier"
 					{
-						"ModifierName"  "modifier_cloakprotect"
+						"ModifierName"  "modifier_cloakprotect_block"
 						"Target"        "SELF"
 						"Duration"      "5"
 					}
