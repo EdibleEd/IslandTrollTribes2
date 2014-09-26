@@ -1686,6 +1686,114 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Hunter - Giant Swing
+	//=================================================================================================================
+	"ability_hunter_giantswing"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_hunter_giantswing"	
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "3"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_bounty_hunter"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
+			//"soundfile"					"soundevents/game_sounds_heroes/"
+		}
+		
+		"OnAttackLanded"
+		{
+			"Random"
+			{
+				"Chance"    "%chance"
+				"OnSuccess"
+				{
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%damage"
+						"Target"
+						{
+							"Center"    "TARGET"
+							"Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Type"      "DOTA_UNIT_TARGET_ALL"
+							"Radius"    "%radius"
+						}
+					}
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%damagehalf"
+						"Target"
+						{
+							"Center"    "TARGET"
+							"Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Type"      "DOTA_UNIT_TARGET_ALL"
+							"Radius"    "%radiushalf"
+						}
+					}
+					"FireSound"
+					{
+					"EffectName" 		"Roshan.Slam"
+					"Target" 			"TARGET"
+					}
+				}					
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200 225 250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radiushalf"			"400 450 500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"5 7.5 10"
+			}          
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damagehalf"			"5 7.5 10"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chance"				"20 22.5 25"
+			}
+		}
+	}
 //=================================================================================
 //Mage Abilities
 //=================================================================================
@@ -3325,7 +3433,236 @@
 			}
 		}
 	}
-	
+		
+	//=================================================================================================================
+	// Ability: Mage - Lez Rune
+	//=================================================================================================================
+	"ability_mage_lezrune"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" 			"ability_mage_lezrune"
+		"HotKeyOverride"				"E"
+		"AbilityCastAnimation"			""
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "1"
+		"AbilityChannelTime" 			"0" 
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		"RequiredLevel"					"4"
+				
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_lezrune"
+				"Duration"      "0"
+				"Target"        
+				{
+					"Target"	"CASTER"
+				}			
+			}			
+			"FireSound"
+			{
+				"EffectName"		"Hero_ElderTitan.AncestralSpirit.Damage"
+				"Target"			"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "LezRune"
+				"Target"        "SELF"
+			}  	
+		}
+		"Modifiers"
+		{
+		"modifier_lezrune"
+	   		{
+				"Duration"		"0"
+	    		"Passive" 		"1"
+	    		"IsHidden"	 	"0"
+				"IsBuff"		"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"lez_damage"				"35"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"lez_seconds"			"7"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Nel Rune
+	//=================================================================================================================
+	"ability_mage_nelrune"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" 			"ability_mage_nelrune"
+		"HotKeyOverride"				"E"
+		"AbilityCastAnimation"			""
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "1"
+		"AbilityChannelTime" 			"0" 
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		"RequiredLevel"					"4"
+				
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_nelrune"
+				"Duration"      "0"
+				"Target"        
+				{
+					"Target"	"CASTER"
+				}			
+			}			
+			"FireSound"
+			{
+				"EffectName"		"Hero_ElderTitan.AncestralSpirit.Damage"
+				"Target"			"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "NelRune"
+				"Target"        "SELF"
+			}
+		}
+		"Modifiers"
+		{
+		"modifier_nelrune"
+	   		{
+				"Duration"		"0"
+	    		"Passive" 		"1"
+	    		"IsHidden"	 	"0"
+				"IsBuff"		"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"nel_slow"				"+15"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"nel_seconds"			"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Ka Rune
+	//=================================================================================================================
+	"ability_mage_karune"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" 			"ability_mage_karune"
+		"HotKeyOverride"				"E"
+		"AbilityCastAnimation"			""
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "1"
+		"AbilityChankaTime" 			"0" 
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		"RequiredLevel"					"4"
+				
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_karune"
+				"Duration"      "0"
+				"Target"        
+				{
+					"Target"	"CASTER"
+				}			
+			}			
+			"FireSound"
+			{
+				"EffectName"		"Hero_ElderTitan.AncestralSpirit.Damage"
+				"Target"			"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "KaRune"
+				"Target"        "SELF"
+			}
+		}
+		"Modifiers"
+		{
+		"modifier_karune"
+	   		{
+				"Duration"		"0"
+	    		"Passive" 		"1"
+	    		"IsHidden"	 	"0"
+				"IsBuff"		"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"ka_damage"				"25"
+			}
+		}
+	}
 
 //=================================================================================
 //Scout Abilities
