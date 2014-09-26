@@ -6707,14 +6707,77 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-			"OnAttacked"
+			
+		"OnAttacked"
+		{
+			"Random"
 			{
-				"RunScript"
+				"Chance"    "%chance"
+				"OnSuccess"
 				{
-					"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_protection_proc"
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemabilities.lua"
+						"Function"				"cloak_camouflage_invis"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"  "modifier_cloakprotect"
+						"Target"        "SELF"
+						"Duration"      "%protect_duration"
+					}
+					"modifier_cloakprotect_block"
+					{
+						"ModifierName"  "modifier_cloakprotect"
+						"Target"        "SELF"
+						"Duration"      "5"
+					}
+					"FireSound"
+					{
+					"EffectName" 		"Roshan.Slam"
+					"Target" 			"TARGET"
+					}
+				}					
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cloakprotect"
+			{   
+				"IsDebuff"     		"false"
+				"Duration"           "4"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "omniknight_guardian_angel_ally"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 	 "%armor"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	 "%bonus_damage"
 				}
 			}
+			    "modifier_cloakprotect_block"
+                {
+                  "Properties"
+                    {
+                        "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "10000"
+					}
+                    "OnAttacked"
+					{
+						"RemoveModifier"
+                            {
+								"ModifierName"          "modifier_cloakprotect_block"
+								"Target"                        "CASTER"        
+                            }
+                    }        
+                }
+
+		}
 			"AbilitySpecial"
 			{
 				"01"
@@ -6732,6 +6795,11 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"bonus_damage"			"1"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"protect_duration"		"4"
 				}
 			}
 		}
