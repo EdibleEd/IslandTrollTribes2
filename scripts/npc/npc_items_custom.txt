@@ -6871,12 +6871,44 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"OnAttacked"
 			{
-				"RunScript"
+				"Random"
+					{
+					"Chance"    "%chance"
+					"OnSuccess"
+						{
+							"Damage"
+							{
+								"Target"			"TARGET"
+								"Damage"			"%damage"
+								"Type"				"DAMAGE_TYPE_MAGICAL"
+							}
+						}
+						"ApplyModifier"
+						"ModifierName"	"cloak_frost"
+						{
+							"Target"
+							"Duration"		"1"
+							{
+								"Center"	"TARGET"
+								"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+							}
+						}
+					}
+				}
+		"Modifiers"
+		{
+			"cloak_frost"
+			{
+				"IsDebuff"		"1" 
+				"Duration"		"1"
+				"Properties"
 				{
-					"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_frost_proc"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
 				}
 			}
+		}
 			"AbilitySpecial"
 			{
 				"01"
@@ -6887,7 +6919,7 @@
 				"02"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"slow"					"35"
+					"slow"					"20"
 
 				}
 				"03"
@@ -6946,16 +6978,30 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-			"ThinkInterval" "%tick_rate"
-			"OnIntervalThink"
+		"Modifiers"
+		{
+			"cloak_fire_aura"
 			{
-				"RunScript"
+				"ThinkInterval"		"%tick_rate"
+				"OnIntervalThink"
 				{
-					"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_fire"
-					"Immolation"			"%immolation_damage"
+					"Damage"
+					{
+						"Damage"	"%immolation_damage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+					}
 				}
-			}	
+				"EffectName" 		"particles/econ/courier/courier_trail_international_2013_se/courier_international_2013_se_b.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+		}
 			"AbilitySpecial"
 			{
 				"01"
@@ -6969,7 +7015,7 @@
 					"tick_rate"				"1"
 				}
 			}
-		}
+	}
 //=================================================================================================================
 // Custom: Shield
 //=================================================================================================================
