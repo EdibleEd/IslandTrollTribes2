@@ -6980,6 +6980,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"item_stout_shield"
 			"Model"							"models/props_gameplay/stout_shield.vmdl"
@@ -7025,16 +7027,13 @@
 					"Properties"
 					{
 						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
-					}	
-					"OnTakeDamage"
+					}
+					"OnCreated"
 					{
-						"RunScript"
+						"ApplyModifier"
 						{
-							"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-							"Function"			"shield_block"
-							"Block Chance"			"%block_chance"
-							"Block Amount"			"%block_amount"
-							"Spell Block"			"%spell_block"
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_vanguard"
 						}
 					}
 				}
@@ -7060,6 +7059,21 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"spell_block"			"0"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_chance"			"10"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_melee"	"5"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_ranged"	"5"
 				}
 			}
 		}
@@ -7146,6 +7160,14 @@
 							"Spell Block"			"%spell_block"
 						}
 					}
+					"OnCreated"
+					{
+						"ApplyModifier"
+						{
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_vanguard"
+						}
+					}
 				}
 			}
 			"AbilitySpecial"
@@ -7185,6 +7207,21 @@
 					"var_type"				"FIELD_INTEGER"
 					"bonus_str"				"2"
 				}
+				"08"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_chance"			"10"
+				}
+				"09"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_melee"	"20"
+				}
+				"10"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_ranged"	"20"
+				}
 			}
 		}
 //=================================================================================================================
@@ -7197,6 +7234,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"item_skadi"
 			"Model"							"models/items/dragon_knight/shield_of_the_drake/shield_of_the_drake.vmdl"
@@ -7245,15 +7284,12 @@
 					{
 						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 					}	
-					"OnTakeDamage"
+					"OnCreated"
 					{
-						"RunScript"
+						"ApplyModifier"
 						{
-							"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-							"Function"			"shield_block"
-							"Block Chance"			"%block_chance"
-							"Block Amount"			"%block_amount"
-							"Spell Block"			"%spell_block"
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_vanguard"
 						}
 					}
 				}
@@ -7280,6 +7316,21 @@
 					"var_type"				"FIELD_INTEGER"
 					"spell_block"				"0"
 				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_chance"			"10"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_melee"	"10"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_ranged"	"10"
+				}
 			}
 		}
 //=================================================================================================================
@@ -7292,6 +7343,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"     	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 			"BaseClass"				"item_datadriven"
 			"AbilityTextureName"	"item_stout_shield"
 			"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -7340,17 +7393,15 @@
 					{
 						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 					}	
-					"OnTakeDamage"
+					"OnCreated"
 					{
-						"RunScript"
+						"ApplyModifier"
 						{
-							"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-							"Function"				"shield_block"
-							"Block Chance"			"%block_chance"
-							"Block Amount"			"%block_amount"
-							"Spell Block"			"%spell_block"
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_vanguard"
 						}
 					}
+					
 				}
 			}
 			"AbilitySpecial"
@@ -7375,6 +7426,21 @@
 					"var_type"				"FIELD_INTEGER"
 					"spell_block"			"0"
 				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_chance"			"10"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_melee"	"15"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_ranged"	"15"
+				}
 			}
 		}
 //=================================================================================================================
@@ -7387,6 +7453,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 			"BaseClass"				"item_datadriven"
 			"AbilityTextureName"	"item_buckler"
 			"Model"					"models/heroes/chaos_knight/chaos_knight_shield.vmdl"
@@ -7435,15 +7503,12 @@
 					{
 						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor"
 					}	
-					"OnTakeDamage"
+					"OnCreated"
 					{
-						"RunScript"
+						"ApplyModifier"
 						{
-							"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-							"Function"				"shield_block"
-							"Block Chance"			"%block_chance"
-							"Block Amount"			"%block_amount"
-							"Spell Block"			"%spell_block"
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_vanguard"
 						}
 					}
 				}
@@ -7469,6 +7534,21 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"spell_block"			"1"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_chance"			"10"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_melee"	"5"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_damage_ranged"	"5"
 				}
 			}
 		}
