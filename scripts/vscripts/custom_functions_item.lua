@@ -390,9 +390,23 @@ function PotionDiseaseUse(keys)
 	target:AddNewModifier(caster, nil, "modifier_disease3", { duration = dur3})
 	end
 end
+
+function CloakProtectFail(keys)
+	local caster = keys.caster
+	local attackingUnit = keys.attacker
+	print(attackingUnit:GetName(), attackingUnit:GetAverageTrueAttackDamage())
+
+	local damageTable = {
+		victim = caster,
+		attacker = attackingUnit,
+		damage = attackingUnit:GetAverageTrueAttackDamage(),
+		damage_type = DAMAGE_TYPE_PHYSICAL}						
+
+		ApplyDamage(damageTable)
+end
+
 function PrintTest(keys)
 	print("Test ")
-
 end
 
 function DebugSpawnAll(keys)
