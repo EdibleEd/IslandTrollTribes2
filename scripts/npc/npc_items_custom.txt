@@ -5848,9 +5848,46 @@
 						{
 							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
 							"Function"			"AddHeat"
-							"Heat"			"%heat"
+							"Heat"				"%heat"
 						}
-					}	
+					}
+					"OnAttackStart"
+					{
+					"Random"
+						{
+							"Chance" "%crit_chance"
+							"OnSuccess"
+							{
+								"ApplyModifier"
+								{
+									"Target"	   "CASTER"
+									"ModifierName" "critical_strike"
+								}		
+							}
+						}
+					}
+				}
+				"critical_strike"
+				{
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%crit_bonus"
+					}
+					
+					"OnAttackLanded"
+					{
+						"FireEffect"
+						{
+							"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+							"EffectAttachType"	 "follow_origin"
+							"Target"			 "TARGET"
+						}
+						"RemoveModifier"
+						{
+							"ModifierName"		"critical_strike"
+							"Target"			"CASTER"	
+						}
+					}
 				}
 			}
 			"AbilitySpecial"
@@ -5879,7 +5916,16 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"tick_rate"				"35"
-
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"crit_chance"				"20"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"crit_bonus"				"150"
 				}
 			}
 		}
