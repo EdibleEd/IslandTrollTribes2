@@ -163,8 +163,7 @@ function ITT_GameMode:InitGameMode()
 	ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( ITT_GameMode, "OnPlayerPicked" ), self )
 	
 	-- Use this for dealing with subclass spawning
-   	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( ITT_GameMode, "OnNPCSpawned" ), self )
-	
+   	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( ITT_GameMode, "OnNPCSpawned" ), self )	
 
     --Listener for items picked up, used for telegather abilities
     ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(ITT_GameMode, 'OnItemPickedUp'), self)
@@ -205,6 +204,16 @@ local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
 	else
 	print(spawnedUnit:GetUnitName() .. " is a non baseclass")
 	end
+
+--heat handling
+if string.find(spawnedUnit:GetClassname(), "hero") then
+    print("HEAT1!")
+    spawnedUnit:RemoveModifierByName("modifier_heat_passive")
+    local heatApplier = CreateItem("item_heat_modifier_applier", spawnedUnit, spawnedUnit)
+    heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
+    spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
+end
+--heatApplier:RemoveSelf()
 end
 	
 -- This code is written by Internet Veteran, handle with care.
@@ -214,35 +223,45 @@ local spawnedUnit = EntIndexToHScript( keys.entindex )
 local itemslotlock1 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
 local itemslotlock2 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
 local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
-    print("spawned unit: ", spawnedUnit:GetUnitName(), spawnedUnit:GetClassname(), spawnedUnit:GetName(), spawnedUnit:GetEntityIndex())
-	if string.find(spawnedUnit:GetUnitName(), "mage") then
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:AddItem(itemslotlock2)
-	 --	if spawnedUnit:GetClassname() == "hunter" then
-	elseif string.find(spawnedUnit:GetUnitName(), "hunter") then
- 		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
-		spawnedUnit:AddItem(itemslotlock3)
-	 --	if spawnedUnit:GetClassname() == "scout" then
-	elseif string.find(spawnedUnit:GetUnitName(), "scout") then
- 		spawnedUnit:AddItem(itemslotlock1)
-	 --	if spawnedUnit:GetClassname() == "priest" then
-	 -- if spawnedUnit:(string.find(targetName,"priest") ~= nil) then 
-	elseif string.find(spawnedUnit:GetUnitName(), "priest") then
- 		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
-	 --	if spawnedUnit:GetClassname() == "theif" then
-	 -- if spawnedUnit:(string.find(targetName,"thief") ~= nil) then 
-	 elseif string.find(spawnedUnit:GetUnitName(), "thief") then
-  		spawnedUnit:AddItem(itemslotlock1)
-	 --	if spawnedUnit:GetClassname() == "beastmaster" then
-	 -- if spawnedUnit:(string.find(targetName,"beastmaster") ~= nil) then 
-	elseif string.find(spawnedUnit:GetUnitName(), "beastmaster") then
-  		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
-	else  
-	print(spawnedUnit:GetUnitName() .. " is not a subclass")
- 	end 
+print("spawned unit: ", spawnedUnit:GetUnitName(), spawnedUnit:GetClassname(), spawnedUnit:GetName(), spawnedUnit:GetEntityIndex())
+if string.find(spawnedUnit:GetUnitName(), "mage") then
+		spawnedUnit:AddItem(itemslotlock1)
+	spawnedUnit:AddItem(itemslotlock2)
+ --	if spawnedUnit:GetClassname() == "hunter" then
+elseif string.find(spawnedUnit:GetUnitName(), "hunter") then
+		spawnedUnit:AddItem(itemslotlock1)
+    spawnedUnit:AddItem(itemslotlock2)
+	spawnedUnit:AddItem(itemslotlock3)
+ --	if spawnedUnit:GetClassname() == "scout" then
+elseif string.find(spawnedUnit:GetUnitName(), "scout") then
+		spawnedUnit:AddItem(itemslotlock1)
+ --	if spawnedUnit:GetClassname() == "priest" then
+ -- if spawnedUnit:(string.find(targetName,"priest") ~= nil) then 
+elseif string.find(spawnedUnit:GetUnitName(), "priest") then
+		spawnedUnit:AddItem(itemslotlock1)
+    spawnedUnit:AddItem(itemslotlock2)
+ --	if spawnedUnit:GetClassname() == "theif" then
+ -- if spawnedUnit:(string.find(targetName,"thief") ~= nil) then 
+ elseif string.find(spawnedUnit:GetUnitName(), "thief") then
+		spawnedUnit:AddItem(itemslotlock1)
+ --	if spawnedUnit:GetClassname() == "beastmaster" then
+ -- if spawnedUnit:(string.find(targetName,"beastmaster") ~= nil) then 
+elseif string.find(spawnedUnit:GetUnitName(), "beastmaster") then
+		spawnedUnit:AddItem(itemslotlock1)
+    spawnedUnit:AddItem(itemslotlock2)
+else  
+print(spawnedUnit:GetUnitName() .. " is not a subclass")
+	end 
+
+--heat handling
+if string.find(spawnedUnit:GetUnitName(), "hero") then
+    print("HEAT2!")
+    spawnedUnit:RemoveModifierByName("modifier_heat_passive") 
+    local heatApplier = CreateItem("item_heat_modifier_applier", spawnedUnit, spawnedUnit)
+    heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
+    spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
+    --heatApplier:RemoveSelf()
+end
 end
 
 function ITT_GameMode:FixDropModels(dt)
@@ -282,10 +301,10 @@ function ITT_GameMode:OnTrollThink()
     for i=1, maxPlayerID, 1 do
         Hunger(i)
 		Energy(i)
+        Heat(i)
         InventoryCheck(i)
         --print("burn")
     end
-
     return GAME_TROLL_TICK_TIME
 end
 

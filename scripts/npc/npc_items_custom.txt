@@ -1,6 +1,37 @@
 "DOTAAbilities"
 {
 
+//=================================================================================================================
+// Custom: Heat Modifier Applier
+//=================================================================================================================
+		"item_heat_modifier_applier"
+		{
+			"ID"							"6666"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"BaseClass"                     "item_datadriven"
+			"AbilityTextureName"			"heat_modifier_applier"
+		    "ItemBaseLevel"                 "1"
+
+		    // Stats
+		    //-------------------------------------------------------------------------------------------------------------
+		    "AbilityCastRange"              "9999"
+		    "AbilityCastPoint"              "0.0"
+		
+			"Modifiers"
+			{
+				"modifier_heat_passive"
+				{
+					"Passive"					"1"
+					"IsHidden"					"0"
+					"IsDebuff"					"0"
+					"TextureName"				"item_heat_modifier_applier"
+				}				
+			}
+		}
+
 //All items drop upon death by default. They also play the gem drop sound (can be changed).
 //=================================================================================================================
 // Custom: Tinder
@@ -4690,7 +4721,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sphere"
+		"AbilityTextureName"			"potion_cure_all"
 		"Model"							"models/projectiles/projectile_jar.vmdl"
 		"Effect" 						""
 
@@ -7149,23 +7180,33 @@
 						"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
 						"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi"
 					}	
-					"OnTakeDamage"
-					{
-						"RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemabilities.lua"
-							"Function"				"shield_block"
-							"Block Chance"			"%block_chance"
-							"Block Amount"			"%block_amount"
-							"Spell Block"			"%spell_block"
-						}
-					}
+					// "OnTakeDamage"
+					// {
+					// 	"RunScript"
+					// 	{
+					// 		"ScriptFile"			"scripts/vscripts/itemabilities.lua"
+					// 		"Function"				"shield_block"
+					// 		"Block Chance"			"%block_chance"
+					// 		"Block Amount"			"%block_amount"
+					// 		"Spell Block"			"%spell_block"
+					// 	}
+					// }
 					"OnCreated"
 					{
 						"ApplyModifier"
 						{
 							"Target"		"CASTER"
 							"ModifierName"	"modifier_item_vanguard"
+						}
+						"ApplyModifier"
+						{
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_sphere"
+						}
+						"ApplyModifier"
+						{
+							"Target"		"CASTER"
+							"ModifierName"	"modifier_item_sphere_target"
 						}
 					}
 				}
@@ -7221,6 +7262,11 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"block_damage_ranged"	"20"
+				}
+				"11"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"block_cooldown"		"10.0"
 				}
 			}
 		}
@@ -12159,6 +12205,46 @@
 			"UIPickupSound"					"Item.PickUpGemShop"
 			"UIDropSound"					"Item.DropGemShop"
 			"WorldDropSound"				"Item.DropGemWorld"
+		}
+
+//=================================================================================================================
+// Custom: Heat Modifier Applier
+//=================================================================================================================
+		"item_heat_modifier_applier"
+		{
+			"ID"							"1152"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"                     "item_datadriven"
+			"AbilityTextureName"			"item_sphere"
+		    "ItemBaseLevel"                 "1"
+
+		    // Stats
+		    //-------------------------------------------------------------------------------------------------------------
+		    "AbilityCastRange"              "9999"
+		    "AbilityCastPoint"              "0.0"
+		
+			"Modifiers"
+			{
+				"modifier_heat_passive"
+				{
+					"Passive"			"1"
+					"IsHidden"			"0"
+					"IsDebuff"			"0"
+					"OnCreated"
+					{
+						"AttachEffect"
+						{
+							"Target"		"CASTER"
+							"EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+							"EffectAttachType" "follow_overhead"
+							"EffectLifeDurationScale" "1"
+							"EffectColorA" "100 100 100"
+						}
+					}
+				}				
+			}
 		}
 
 //=================================================================================================================
