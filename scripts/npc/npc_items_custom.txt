@@ -50,7 +50,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"2"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -95,7 +95,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"2"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -152,7 +152,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"6"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -261,14 +261,14 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_branches"
 		"Model"							"models/props_gameplay/branch.vmdl"
-		"Effect" 							""
+		"Effect" 						""
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"2"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -317,7 +317,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"2"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -540,7 +540,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -619,7 +619,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -700,6 +700,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
+		"ItemSellable"					"0"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -760,7 +761,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"6"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -811,7 +812,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"28"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -864,7 +865,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -917,7 +918,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -964,7 +965,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1032,6 +1033,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 			"ItemCost"						"1"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1080,7 +1082,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1186,7 +1188,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1235,7 +1237,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1284,7 +1286,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1332,7 +1334,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1381,7 +1383,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1432,7 +1434,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1532,7 +1534,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1633,7 +1635,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"32"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1734,7 +1736,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"62"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -1839,7 +1841,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"52"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2011,7 +2013,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2097,7 +2099,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2196,7 +2198,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2303,7 +2305,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"28"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2409,7 +2411,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"26"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2549,7 +2551,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2776,7 +2778,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"18"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2999,7 +3001,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"24"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3223,7 +3225,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"6"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -3298,7 +3300,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"6"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -3375,7 +3377,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"22"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3488,7 +3490,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"6"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3562,7 +3564,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3635,7 +3637,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3708,7 +3710,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"6"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3783,7 +3785,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"12"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3858,7 +3860,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"14"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -3934,7 +3936,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"32"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4011,7 +4013,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"58"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4236,7 +4238,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"8"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4365,7 +4367,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"4"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4515,7 +4517,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"8"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4646,7 +4648,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"6"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4731,7 +4733,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"6"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4841,7 +4843,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -4915,7 +4917,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"38"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5040,7 +5042,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -5101,7 +5103,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"20"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -5161,7 +5163,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"38"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5274,7 +5276,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"52"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5386,7 +5388,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"62"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5500,7 +5502,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"54"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5611,7 +5613,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"70"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5705,7 +5707,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5799,7 +5801,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"106"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -5903,7 +5905,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"56"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6009,7 +6011,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6115,7 +6117,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"92"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6220,7 +6222,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"74"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6326,7 +6328,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"80"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6416,7 +6418,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"88"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6504,7 +6506,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"104"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6608,7 +6610,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"104"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6714,7 +6716,7 @@
 
 // Item Info
 //-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"1"
+	"ItemCost"						"88"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6746,6 +6748,7 @@
 		"modifier_cloakprotect_passive"
 		{
 			"Passive"	"1"
+			"IsHidden"	"1"
 			"OnAttacked"
 			{
 				"Random"
@@ -6794,10 +6797,19 @@
 					"ModifierName"	"modifier_item_vanguard"
 				}
 			}
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_item_vanguard"
+				}
+			}
 		}
 		"modifier_cloakprotect"
 		{   
 			"IsDebuff"     		"0"
+			"TextureName" 		"cloak_protection"
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -6874,7 +6886,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"96"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6900,12 +6912,48 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-			"OnAttacked"
+			"Modifiers"
 			{
-				"RunScript"
+				"cloak_frost_buff"
 				{
-					"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_frost_proc"
+					"Passive"	"1"
+					"OnAttacked"
+					{
+						"Random"
+						{
+							"Chance"    "%chance"
+							"OnSuccess"
+							{
+								"Damage"
+								{
+									"Target"			"ATTACKER"
+									"Damage"			"%damage"
+									"Type"				"DAMAGE_TYPE_MAGICAL"
+								}
+								"ApplyModifier"
+								{
+									"ModifierName"	"cloak_frost_debuff"						
+									"Duration"		"1.5"
+									"Target"
+									{
+										"Center"	"ATTACKER"
+										"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+										"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+									}
+								}
+							}							
+						}
+					}
+				}
+				"cloak_frost_debuff"
+				{
+					"IsDebuff"		"1" 
+					"Duration"		"1.5"
+					"TextureName"	"item_shivas_guard"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
+					}
 				}
 			}
 			"AbilitySpecial"
@@ -6918,7 +6966,7 @@
 				"02"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"slow"					"35"
+					"slow"					"20"
 
 				}
 				"03"
@@ -6950,7 +6998,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"88"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -6977,16 +7025,31 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 
-			"ThinkInterval" "%tick_rate"
-			"OnIntervalThink"
+		"Modifiers"
+		{
+			"cloak_fire_aura_aura"
 			{
-				"RunScript"
+				"Passive"			"1"
+				"ThinkInterval"		"%tick_rate"
+				"OnIntervalThink"
 				{
-					"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-					"Function"			"cloak_fire"
-					"Immolation"			"%immolation_damage"
+					"Damage"
+					{
+						"Damage"	"%immolation_damage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+					}
 				}
-			}	
+				"EffectName" 		"particles/econ/courier/courier_trail_international_2013_se/courier_international_2013_se_b.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+		}
 			"AbilitySpecial"
 			{
 				"01"
@@ -7000,7 +7063,7 @@
 					"tick_rate"				"1"
 				}
 			}
-		}
+	}
 //=================================================================================================================
 // Custom: Shield
 //=================================================================================================================
@@ -7023,7 +7086,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"40"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7133,7 +7196,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"106"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7294,6 +7357,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 			"ItemCost"						"1"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7403,6 +7467,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 			"ItemCost"						"1"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7512,7 +7577,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"84"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7619,7 +7684,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"38"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7695,7 +7760,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"52"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7771,7 +7836,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"62"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7845,7 +7910,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"54"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7920,7 +7985,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"70"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -7993,7 +8058,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -8068,7 +8133,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"110"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -8153,7 +8218,7 @@
 			"AbilityCooldown"				"60"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"8"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -8220,7 +8285,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"8"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8337,7 +8402,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"6"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8481,7 +8546,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"10"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8629,7 +8694,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"1"
+		"ItemCost"					"10"
 		"ItemShopTags"				"consumable"
 		"ItemQuality"				"consumable"
 		"ItemShareability"			"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8729,7 +8794,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8895,7 +8960,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -8968,7 +9033,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1"
+		"ItemCost"						"8"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9167,7 +9232,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"4"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9201,9 +9266,14 @@
 				}
 				"SpawnUnit"
 				{
-					"Target"            "POINT"
+					"Target"            	"POINT"
 					"UnitName"              "npc_magicseed_tree"
 					"UnitCount"             "1"
+				}
+				"FireSound"
+				{
+					"EffectName"			"Hero_Treant.Overgrowth.Cast"
+					"Target"				"POINT"
 				}
 			}
 			"AbilitySpecial"
@@ -9236,7 +9306,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"44"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9284,7 +9354,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"32"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9332,7 +9402,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"52s"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9410,7 +9480,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"78"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9480,7 +9550,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"4"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9549,7 +9619,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -9608,7 +9678,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"18"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9658,7 +9728,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"26"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9706,7 +9776,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"30"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9757,7 +9827,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"18"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9820,7 +9890,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9892,7 +9962,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"2"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -9964,7 +10034,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -10046,7 +10116,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"52"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -10107,7 +10177,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -10167,7 +10237,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -10239,7 +10309,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -10298,7 +10368,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -10361,7 +10431,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -10429,7 +10499,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -11047,7 +11117,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"					"5"
+			"ItemCost"						"5"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11114,7 +11185,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"					"10"
+			"ItemCost"						"10"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11183,7 +11255,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11251,7 +11323,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11319,7 +11391,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11387,7 +11459,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"9"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11455,7 +11527,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11523,7 +11595,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"22"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11590,7 +11662,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"20"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11657,7 +11729,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"24"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11724,7 +11796,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"30"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11791,7 +11863,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"14"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11858,7 +11930,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"18"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11925,7 +11997,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"10"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -11993,6 +12065,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 			"ItemCost"						"1"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -12060,7 +12133,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"1"
+			"ItemCost"						"26"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -12130,6 +12203,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 			"ItemCost"						"1"
+			"ItemSellable"					"0"
 			"ItemShopTags"					"consumable"
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
