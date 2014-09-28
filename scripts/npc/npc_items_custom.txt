@@ -6715,6 +6715,7 @@
 		"modifier_cloakprotect_passive"
 		{
 			"Passive"	"1"
+			"IsHidden"	"1"
 			"OnAttacked"
 			{
 				"Random"
@@ -6758,6 +6759,14 @@
 			"OnCreated"
 			{
 				"ApplyModifier"
+				{
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_item_vanguard"
+				}
+			}
+			"OnDestroy"
+			{
+				"RemoveModifier"
 				{
 					"Target"		"CASTER"
 					"ModifierName"	"modifier_item_vanguard"
