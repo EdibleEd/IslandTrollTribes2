@@ -2042,7 +2042,7 @@
 
 			"OnAttackLanded"
 			{
-				"ScriptFile"       "scripts/vscripts/itemabilities.lua"
+				"ScriptFile"       "scripts/vscripts/custom_functions_item.lua"
 				"Function"         "MageMasherMash"
 			}
 			"Modifiers"
@@ -5223,9 +5223,9 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
-							"Heat"			"%heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
+							"Heat"				"%heat"
 						}
 					}	
 				}
@@ -5336,8 +5336,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -5448,8 +5448,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -5562,8 +5562,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -5655,8 +5655,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -5749,8 +5749,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -5846,8 +5846,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -5964,8 +5964,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -6070,8 +6070,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -6176,8 +6176,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -6281,8 +6281,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -6370,8 +6370,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -6459,8 +6459,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -6552,8 +6552,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"				"%heat"
 						}
 					}	
@@ -6640,7 +6640,7 @@
 			{
 				"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemabilities.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"cloak_camouflage_invis"
 				}
 			}
@@ -6662,8 +6662,8 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile"		"scripts/vscripts/itemabilities.lua"
-							"Function"			"heat"
+							"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+							"Function"			"AddHeat"
 							"Heat"			"%heat"
 						}
 					}	
@@ -7226,7 +7226,7 @@
 			{
 				"RunScript"
 				{
-					"ScriptFile"			"scripts/vscripts/itemabilities.lua"
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"shield_battle_active"
 				}
 			}
@@ -7247,7 +7247,7 @@
 					// {
 					// 	"RunScript"
 					// 	{
-					// 		"ScriptFile"			"scripts/vscripts/itemabilities.lua"
+					// 		"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					// 		"Function"				"shield_block"
 					// 		"Block Chance"			"%block_chance"
 					// 		"Block Amount"			"%block_amount"

@@ -405,6 +405,13 @@ function CloakProtectFail(keys)
 		ApplyDamage(damageTable)
 end
 
+function AddHeat(keys)
+	local caster = keys.caster
+	local heatToAdd = keys.Heat
+	local heatStackCount = caster:GetModifierStackCount("modifier_heat_passive", nil) + heatToAdd
+    caster:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
+end
+
 function PrintTest(keys)
 	print("Test ")
 end
