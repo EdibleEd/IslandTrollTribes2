@@ -6,7 +6,7 @@
 //=================================================================================================================
 		"item_heat_modifier_applier"
 		{
-			"ID"							"6666"
+			"ID"							"1900"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -5252,7 +5252,6 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"tick_rate"				"35"
-
 				}
 			}
 		}
@@ -11143,7 +11142,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -12281,52 +12280,13 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		}
 
-//=================================================================================================================
-// Custom: Heat Modifier Applier
-//=================================================================================================================
-		"item_heat_modifier_applier"
-		{
-			"ID"							"1152"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"                     "item_datadriven"
-			"AbilityTextureName"			"item_sphere"
-		    "ItemBaseLevel"                 "1"
-
-		    // Stats
-		    //-------------------------------------------------------------------------------------------------------------
-		    "AbilityCastRange"              "9999"
-		    "AbilityCastPoint"              "0.0"
-		
-			"Modifiers"
-			{
-				"modifier_heat_passive"
-				{
-					"Passive"			"1"
-					"IsHidden"			"0"
-					"IsDebuff"			"0"
-					"OnCreated"
-					{
-						"AttachEffect"
-						{
-							"Target"		"CASTER"
-							"EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
-							"EffectAttachType" "follow_overhead"
-							"EffectLifeDurationScale" "1"
-							"EffectColorA" "100 100 100"
-						}
-					}
-				}				
-			}
-		}
 
 //=================================================================================================================
 // Debug: Spawn All
 //=================================================================================================================
 	"item_debug_spawn_all"
 	{
-		"ID"							"5555"
+		"ID"							"1901"
 
 	// General
 	//-------------------------------------------------------------------------------------------------------------

@@ -407,9 +407,17 @@ end
 
 function AddHeat(keys)
 	local caster = keys.caster
+	local target = keys.target
+
+	if target == nil then
+		target = caster
+	end
 	local heatToAdd = keys.Heat
-	local heatStackCount = caster:GetModifierStackCount("modifier_heat_passive", nil) + heatToAdd
-    caster:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
+	local heatStackCount = target:GetModifierStackCount("modifier_heat_passive", nil) + heatToAdd
+	if heatStackCount > 100 then
+		heatStackCount = 100
+	end
+    target:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
 end
 
 function PrintTest(keys)

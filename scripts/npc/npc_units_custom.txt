@@ -2433,7 +2433,7 @@
 		// Abilities	
 		"Ability1"				"Ability_Cook_Food"	
 		"Ability2"				"Ability_Pack_up"
-		"Ability3"				"Ability_Restore_Heat"
+		"Ability3"				"ability_building_restoreheat"
 		"Ability4"				"Ability_Burn_Building"
 
 		// Armor
