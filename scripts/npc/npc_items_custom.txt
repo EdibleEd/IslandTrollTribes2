@@ -6881,47 +6881,50 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"OnAttacked"
+			"Modifiers"
 			{
-				"Random"
+				"cloak_frost_buff"
+				{
+					"Passive"	"1"
+					"OnAttacked"
 					{
-					"Chance"    "%chance"
-					"OnSuccess"
+						"Random"
 						{
-							"Damage"
+							"Chance"    "%chance"
+							"OnSuccess"
 							{
-								"Target"			"TARGET"
-								"Damage"			"%damage"
-								"Type"				"DAMAGE_TYPE_MAGICAL"
-							}
-						}
-						"ApplyModifier"
-						"ModifierName"	"cloak_frost"
-						{
-							"Target"
-							"Duration"		"1"
-							{
-								"Center"	"TARGET"
-								"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-							}
+								"Damage"
+								{
+									"Target"			"ATTACKER"
+									"Damage"			"%damage"
+									"Type"				"DAMAGE_TYPE_MAGICAL"
+								}
+								"ApplyModifier"
+								{
+									"ModifierName"	"cloak_frost_debuff"						
+									"Duration"		"1.5"
+									"Target"
+									{
+										"Center"	"ATTACKER"
+										"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+										"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+									}
+								}
+							}							
 						}
 					}
-			}
-			"cloak_frost"
-			{
-				"IsDebuff"		"1" 
-				"Duration"		"1"
-				"TextureName"	"cloak_frost"
-				"Properties"
+				}
+				"cloak_frost_debuff"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
+					"IsDebuff"		"1" 
+					"Duration"		"1.5"
+					"TextureName"	"item_shivas_guard"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
+					}
 				}
 			}
-		}
 			"AbilitySpecial"
 			{
 				"01"
@@ -6995,6 +6998,7 @@
 		{
 			"cloak_fire_aura_aura"
 			{
+				"Passive"			"1"
 				"ThinkInterval"		"%tick_rate"
 				"OnIntervalThink"
 				{
