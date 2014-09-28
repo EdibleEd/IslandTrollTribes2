@@ -4692,7 +4692,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sphere"
+		"AbilityTextureName"			"potion_cure_all"
 		"Model"							"models/projectiles/projectile_jar.vmdl"
 		"Effect" 						""
 
@@ -6769,6 +6769,7 @@
 		"modifier_cloakprotect"
 		{   
 			"IsDebuff"     		"0"
+			"TextureName" 		"cloak_protection"
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -6871,6 +6872,8 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
 			"OnAttacked"
 			{
 				"Random"
@@ -6897,13 +6900,12 @@
 							}
 						}
 					}
-				}
-		"Modifiers"
-		{
+			}
 			"cloak_frost"
 			{
 				"IsDebuff"		"1" 
 				"Duration"		"1"
+				"TextureName"	"cloak_frost"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
@@ -6982,7 +6984,7 @@
 
 		"Modifiers"
 		{
-			"cloak_fire_aura"
+			"cloak_fire_aura_aura"
 			{
 				"ThinkInterval"		"%tick_rate"
 				"OnIntervalThink"
@@ -6994,7 +6996,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "200"
+							"Radius" "300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 						}
