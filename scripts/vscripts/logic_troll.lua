@@ -3,10 +3,10 @@
 --
 -- Code from: Amanite, and http://www.reddit.com/r/Dota2Modding/comments/2dc0xm/guide_to_change_gold_over_time_to_reliable_gold/
 
-HUNGER_LOSS_PER_UNIT = 3
+HUNGER_LOSS_PER_UNIT = 1
 TICKS_PER_HUNGER_UNIT = 6
 
-ENERGY_LOSS_PER_UNIT = 3
+ENERGY_LOSS_PER_UNIT = 1
 TICKS_PER_ENERGY_UNIT = 6
 
 HEAT_LOSS_PER_UNIT = 1

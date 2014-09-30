@@ -2417,7 +2417,7 @@
 		"SoundSet"				"Creep_Good_Melee"		
 
 		"MinimapIconSize"		"250"
-		"HealthBarOffset"		"400"
+		"HealthBarOffset"		"100"
 
 		"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
 		"RingRadius"			"100"	
@@ -2476,7 +2476,7 @@
 	"npc_building_fire_mage"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_debris/camp_fire001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
