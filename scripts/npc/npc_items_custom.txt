@@ -1,37 +1,6 @@
 "DOTAAbilities"
 {
 
-//=================================================================================================================
-// Custom: Heat Modifier Applier
-//=================================================================================================================
-		"item_heat_modifier_applier"
-		{
-			"ID"							"1900"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			"BaseClass"                     "item_datadriven"
-			"AbilityTextureName"			"heat_modifier_applier"
-		    "ItemBaseLevel"                 "1"
-
-		    // Stats
-		    //-------------------------------------------------------------------------------------------------------------
-		    "AbilityCastRange"              "9999"
-		    "AbilityCastPoint"              "0.0"
-		
-			"Modifiers"
-			{
-				"modifier_heat_passive"
-				{
-					"Passive"					"1"
-					"IsHidden"					"0"
-					"IsDebuff"					"0"
-					"TextureName"				"item_heat_modifier_applier"
-				}				
-			}
-		}
-
 //All items drop upon death by default. They also play the gem drop sound (can be changed).
 //=================================================================================================================
 // Custom: Tinder
@@ -3971,8 +3940,54 @@
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
 					"Function"				"PotionFervorUse"
 				}
+				"ApplyModifier"
+				{
+					"ModifierName"			"modifier_potion_fervor_stun"
+					"Target"
+					{
+						"Center"			"CASTER"
+						"Radius"			"200"
+						"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					}
+					"Duration"				"1"
+				}
+				"Random"
+				{
+					"Chance"		"50"
+					"OnSuccess"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+							"Function"				"PotionFervorSecondary"
+						}
+					}
+				}
 				"SpendCharge"
 				{
+				}
+			}
+			"Modifiers"
+			{
+				"modifier_potion_fervor_stun"
+				{
+					"EffectName" "particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType" "follow_overhead"
+					"OverrideAnimation" "ACT_DOTA_DISABLED"
+					"States"
+					{
+						"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+					"OnCreated"
+					{
+						"Damage"
+						{
+							"Target"	"TARGET"
+							"Damage"	"25"
+							"Type"		"DAMAGE_TYPE_PHYSICAL"
+						}
+					}
 				}
 			}
 			"AbilitySpecial"
@@ -3986,6 +4001,11 @@
 				{
 					"var_type"				"FIELD_INTEGER"
 					"energy_restore"		"120"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"chance"				"50"
 				}
 			}
 		}
@@ -9911,6 +9931,7 @@
 				}
 			}
 		}
+
 //=================================================================================================================
 // Custom: Net
 //=================================================================================================================
@@ -10214,7 +10235,7 @@
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"weapon_emp"
 			"Model"							"models/heroes/juggernaut/jugg_healing_ward.vmdl"
-			"Effect" 				""
+			"Effect" 						""
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"300"
@@ -10238,7 +10259,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -10265,7 +10286,7 @@
 // Custom: Medallion of Courage
 //=================================================================================================================
 //God help us all.
-		"item_medallion_of_courage"
+		"item_itt_medallion_of_courage"
 		{
 			"ID"							"1111"
 
@@ -10298,7 +10319,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -10948,18 +10969,19 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"gun_blow_thistles"
-			"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-			"Effect" 				""
+			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			"BaseClass"					"item_datadriven"
+			"AbilityTextureName"		"item_gun_blow_thistles"
+			"Model"						"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
+			"Effect" 					""
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"650"
-			"AbilityCastPoint"				"0.5"
+			"AbilityCastRange"				"450"
+			"AbilityCastPoint"				"0.1"
+			"AbilityCooldown"				"6.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -10980,7 +11002,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -10990,30 +11012,56 @@
 			"WorldDropSound"				"Item.DropGemWorld"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+			"precache"
+			{
+				"particle_folder"				"particles/units/heroes/hero_viper"
+			}
+
 			"OnSpellStart"
 			{
 				"TrackingProjectile"
 				{
-					"Target"    "TARGET"
-					"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
-					"MoveSpeed"    "%projectile_speed"
-				}
-				"SpendCharge"
+					"Target"			"TARGET"
+					"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
+					"MoveSpeed"			"%projectile_speed"
+					"Dodgeable"			"true"
+					"ProvidesVision"	"0"
+				}					
+				"FireSound"
 				{
-				}				   
+					"EffectName"		"Creep_Bad_Engine.Attack"			   
+				}
 			}
 			"OnProjectileHitUnit"
 			{
-				"RunScript"
+				"ApplyModifier"
 				{
-					"ScriptFile" "scripts/vscripts/custom_functions_item.lua"
-					"Function" "item_gun_blow_thistles_use"
+					"Duration"		"7.5"
+					"ModifierName"	"modifier_gun_blow_thistles"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
 				}
-			}
-			"FireSound"
-			{
-				"EffectName"			"Creep_Bad_Engine.Attack"
-				"Target"				"TARGET"
+				"ApplyModifier"
+				{
+					"Duration"		"12"
+					"ModifierName"	"modifier_gun_blow_thistles"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_CREEP"
+					}
+				}
+				"Damage"
+				{
+					"Damage"	"10"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Target"	"TARGET"
+				}
 			}
 			"OnProjectileFinish"
 			{
@@ -11022,7 +11070,46 @@
 					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
 					"Target"				"TARGET"
 				}
-
+			}
+			"Modifiers"
+			{
+				"modifier_gun_blow_thistles"
+				{
+					"IsHidden"		"0"
+					"IsPurgable"	"0"
+					"IsDebuff"		"1"
+					"TextureName"	"item_gun_blow_thistles"
+					//10 strike damage, 1 damage every 3 seconds, slows attack speed by 30% and movement speed by 40%
+					"OnCreated"
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_Venomancer.VenomousGaleImpact"
+							"Target"		"TARGET"
+						}
+					}
+					"ThinkInterval"		"3"
+					"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Damage"	"1"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+					}
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-40"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-30"
+					}
+				}
 			}
 			"AbilitySpecial"
 			{
@@ -12364,5 +12451,35 @@
 		}
 	}
 
+//=================================================================================================================
+// Custom: Heat Modifier Applier
+//=================================================================================================================
+	"item_heat_modifier_applier"
+	{
+		"ID"							"1900"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"			"heat_modifier_applier"
+	    "ItemBaseLevel"                 "1"
+
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "9999"
+	    "AbilityCastPoint"              "0.0"
+	
+		"Modifiers"
+		{
+			"modifier_heat_passive"
+			{
+				"Passive"					"1"
+				"IsHidden"					"0"
+				"IsDebuff"					"0"
+				"TextureName"				"item_heat_modifier_applier"
+			}				
+		}
+	}
 
 }
