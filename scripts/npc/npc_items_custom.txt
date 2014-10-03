@@ -159,7 +159,7 @@
 				"Target"			"TARGET"
 				"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
 				"MoveSpeed"			"%projectile_speed"
-				"Dodgeable"			"true"
+				"Dodgeable"			"1"
 				"ProvidesVision"	"0"
 			}					
 			"FireSound"
@@ -10856,18 +10856,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"gun_blow_empty"
-			"Model"					"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
-			"Effect" 				""
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
+			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"BaseClass"					"item_datadriven"
+			"AbilityTextureName"		"gun_blow_empty"
+			"Model"						"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
+			"Effect" 					""
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -10908,9 +10901,9 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"gun_blow_bones"
 			"Model"							"models/items/sniper/machine_gun_charlie/machine_gun_charlie_bullet.vmdl"
@@ -10918,8 +10911,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"650"
-			"AbilityCastPoint"				"0.5"
+			"AbilityCastRange"				"450"
+			"AbilityCastPoint"				"0.1"
+			"AbilityCooldown"				"6.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -10928,7 +10922,7 @@
 			"ItemQuality"						"consumable"
 			"ItemShareability"					"ITEM_FULLY_SHAREABLE"
 			"ItemStackable"						"1"
-			"ItemPermanent"						"0"
+			"ItemPermanent"						"1"
 			"ItemInitialCharges"				"1"
 			"ItemDroppable"               		"1"
 			"ItemAliases"						"quicktype"
@@ -10954,42 +10948,66 @@
 			{
 				"TrackingProjectile"
 				{
-					"Target"    "TARGET"
-					"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
-					"MoveSpeed"    "%projectile_speed"
-				}
-				"SpendCharge"
+					"Target"			"TARGET"
+					"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
+					"MoveSpeed"			"%projectile_speed"
+					"Dodgeable"			"1"
+					"ProvidesVision"	"0"
+				}					
+				"FireSound"
 				{
-				}				   
+					"EffectName"		"Creep_Bad_Engine.Attack"			   
+				}
 			}
 			"OnProjectileHitUnit"
 			{
+				"ApplyModifier"
+				{
+					"Duration"		"0.75"
+					"ModifierName"	"modifier_stunned"
+					"TextureName"	"item_gun_blow_bones"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+				}
+				"ApplyModifier"
+				{
+					"Duration"		"3"
+					"ModifierName"	"modifier_stunned"
+					"TextureName"	"item_gun_blow_bones"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_CREEP"
+					}
+				}
+				"Damage"
+				{
+					"Damage"	"30"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Target"	"TARGET"
+				}
+				"SpendCharge"{}
 				"RunScript"
 				{
-					"ScriptFile" "scripts/vscripts/custom_functions_item.lua"
-					"Function" "item_gun_blow_bones_use"
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"				"GunBlowCheckEmpty"
 				}
-			}
-			"FireSound"
-			{
-				"EffectName"			"Creep_Bad_Engine.Attack"
-				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
-				"FireSound"
-				{
-					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-					"Target"				"TARGET"
-				}
-
+				"SpendCharge"{}
 			}
 			"AbilitySpecial"
 			{
 				"01"
 				{
 					"var_type"					"FIELD_INTEGER"
-					"projectile_speed"			"500"
+					"projectile_speed"			"1000"
 				}
 				"02"
 				{
@@ -11029,7 +11047,7 @@
 			"ItemQuality"					"consumable"
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 			"ItemStackable"					"0"
-			"ItemPermanent"					"0"
+			"ItemPermanent"					"1"
 			"ItemDroppable"               	"1"
 			"ItemAliases"					"quicktype"
 			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -11063,7 +11081,7 @@
 					"Target"			"TARGET"
 					"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
 					"MoveSpeed"			"%projectile_speed"
-					"Dodgeable"			"true"
+					"Dodgeable"			"1"
 					"ProvidesVision"	"0"
 				}					
 				"FireSound"
@@ -11101,13 +11119,19 @@
 					"Type"		"DAMAGE_TYPE_PHYSICAL"
 					"Target"	"TARGET"
 				}
+				"SpendCharge"
+				{
+				}
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"				"GunBlowCheckEmpty"
+				}
 			}
 			"OnProjectileFinish"
 			{
-				"FireSound"
+				"SpendCharge"
 				{
-					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-					"Target"				"TARGET"
 				}
 			}
 			"Modifiers"
@@ -11155,7 +11179,7 @@
 				"01"
 				{
 					"var_type"					"FIELD_INTEGER"
-					"projectile_speed"			"500"
+					"projectile_speed"			"1000"
 				}
 				"02"
 				{
@@ -11174,7 +11198,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 			"BaseClass"						"item_datadriven"
@@ -11184,8 +11208,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"800"
-			"AbilityCastPoint"				"0.5"
+			"AbilityCastRange"				"450"
+			"AbilityCastPoint"				"0.1"
+			"AbilityCooldown"				"6.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -11220,42 +11245,123 @@
 			{
 				"TrackingProjectile"
 				{
-					"Target"    "TARGET"
-					"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
-					"MoveSpeed"    "%projectile_speed"
-				}
-				"SpendCharge"
+					"Target"			"TARGET"
+					"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
+					"MoveSpeed"			"%projectile_speed"
+					"Dodgeable"			"1"
+					"ProvidesVision"	"0"
+				}					
+				"FireSound"
 				{
-				}				   
+					"EffectName"		"Creep_Bad_Engine.Attack"			   
+				}
 			}
 			"OnProjectileHitUnit"
 			{
+				"ApplyModifier"
+				{
+					"Duration"		"10"
+					"ModifierName"	"modifier_gun_blow_thistles_dark"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+				}
+				"ApplyModifier"
+				{
+					"Duration"		"15"
+					"ModifierName"	"modifier_gun_blow_thistles_dark"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_CREEP"
+					}
+				}
+				"Damage"
+				{
+					"Damage"	"20"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+				}
+				"Damage"
+				{
+					"Damage"	"30"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_CREEP"
+					}
+				}
+				"SpendCharge"
+				{
+				}
 				"RunScript"
 				{
-					"ScriptFile" "scripts/vscripts/custom_functions_item.lua"
-					"Function" "ability_gun_blow_thistles_dark_blow"
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"				"GunBlowCheckEmpty"
 				}
-			}
-			"FireSound"
-			{
-				"EffectName"			"Creep_Bad_Engine.Attack"
-				"Target"				"TARGET"
 			}
 			"OnProjectileFinish"
 			{
-				"FireSound"
+				"SpendCharge"
 				{
-					"EffectName"			"Creep_Bad_Engine.ProjectileImpact"
-					"Target"				"TARGET"
 				}
-
+			}
+			"Modifiers"
+			{
+				"modifier_gun_blow_thistles_dark"
+				{
+					"IsHidden"		"0"
+					"IsPurgable"	"0"
+					"IsDebuff"		"1"
+					"TextureName"	"item_gun_blow_thistles_dark"
+					"OnCreated"
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_Venomancer.VenomousGaleImpact"
+							"Target"		"TARGET"
+						}
+					}
+					"ThinkInterval"		"3"
+					"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Damage"	"1"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+					}
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-20"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-20"
+					}
+				}
 			}
 			"AbilitySpecial"
 			{
 				"01"
 				{
 					"var_type"					"FIELD_INTEGER"
-					"projectile_speed"			"500"
+					"projectile_speed"			"1000"
 				}
 				"02"
 				{
