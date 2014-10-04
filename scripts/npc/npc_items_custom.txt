@@ -9975,10 +9975,15 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"				"item_sonarcompass_use"
-				}
-				"SpendCharge"
-				{
+					"Function"				"SonarCompassUse"
+					"UnitTable"
+					{
+						//Colors are from 0 to 255, all punctuation is ignored
+						"npc_ship_merchant_1"           "255 255 255"	//all merchants - white
+						"npc_ship_merchant_2"        	"255 255 255"
+						"npc_ship_merchant_3"			"255 255 255"
+						"npc_ship_transport"           	"255 0   0"		//transport ships -red
+					}
 				}
 			}
 		}
