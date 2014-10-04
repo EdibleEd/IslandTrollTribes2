@@ -11393,7 +11393,7 @@
 // Custom: Camp Fire
 //=================================================================================================================
 
-		"item_building_fire_basic"
+		"item_building_kit_fire_basic"
 		{
 			"ID"							"1117"
 
@@ -11461,7 +11461,7 @@
 // Custom: Mage Fire
 //=================================================================================================================
 
-		"item_building_fire_mage"
+		"item_building_kit_fire_mage"
 		{
 			"ID"							"1118"
 
@@ -11469,7 +11469,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_fire_mage"
+			"AbilityTextureName"			"building_kit_fire_mage"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect" 				""
 		// Stats
@@ -11530,7 +11530,7 @@
 // Custom: Tent
 //=================================================================================================================
 
-		"item_building_tent_basic"
+		"item_building_kit_tent_basic"
 		{
 			"ID"							"1119"
 
@@ -11538,7 +11538,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_tent_basic"
+			"AbilityTextureName"			"building_kit_tent_basic"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 
@@ -11598,7 +11598,7 @@
 // Custom: Troll Hut
 //=================================================================================================================
 
-		"item_building_hut_basic"
+		"item_building_kit_hut_basic"
 		{
 			"ID"							"1120"
 
@@ -11606,7 +11606,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_hut_basic"
+			"AbilityTextureName"			"building_kit_hut_basic"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 
@@ -11666,7 +11666,7 @@
 // Custom: Mud Hut
 //=================================================================================================================
 
-		"item_building_hut_mud"
+		"item_building_kit_hut_mud"
 		{
 			"ID"							"1121"
 
@@ -11674,7 +11674,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_hut_mud"
+			"AbilityTextureName"			"building_kit_hut_mud"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 
@@ -11734,7 +11734,7 @@
 // Custom: Storage Chest
 //=================================================================================================================
 
-		"item_building_chest_storage"
+		"item_building_kit_chest_storage"
 		{
 			"ID"							"1122"
 
@@ -11742,7 +11742,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_chest_storage"
+			"AbilityTextureName"			"building_kit_chest_storage"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 
@@ -11802,7 +11802,7 @@
 // Custom: Smoke House
 //=================================================================================================================
 
-		"item_building_smoke_house"
+		"item_building_kit_smoke_house"
 		{
 			"ID"							"1123"
 
@@ -11810,7 +11810,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"building_smoke_house"
+			"AbilityTextureName"			"building_kit_smoke_house"
 			"Model"							"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 						""
 
@@ -11867,10 +11867,10 @@
 			}
 		}
 //=================================================================================================================
-// Custom: Armory
+// Custom: Armory Kit
 //=================================================================================================================
 
-		"item_building_armory"
+		"item_building_kit_armory"
 		{
 			"ID"							"1124"
 
@@ -11938,7 +11938,7 @@
 // Custom: Tannery
 //=================================================================================================================
 
-		"item_building_tannery"
+		"item_building_kit_tannery"
 		{
 			"ID"							"1125"
 
@@ -11946,7 +11946,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"building_tannery"
+			"AbilityTextureName"			"building_kit_tannery"
 			"Model"							"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 						""
 
@@ -12005,7 +12005,7 @@
 // Custom: Workshop
 //=================================================================================================================
 
-		"item_building_workshop"
+		"item_building_kit_workshop"
 		{
 			"ID"							"1126"
 
@@ -12013,7 +12013,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             	"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"						"item_datadriven"
-			"AbilityTextureName"			"building_workshop"
+			"AbilityTextureName"			"building_kit_workshop"
 			"Model"							"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 						""
 
@@ -12072,7 +12072,7 @@
 // Custom: Witch Doctor's Hut
 //=================================================================================================================
 
-		"item_building_hut_witch_doctor"
+		"item_building_kit_hut_witch_doctor"
 		{
 			"ID"							"1127"
 
@@ -12080,7 +12080,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_witch_doctor_hut"
+			"AbilityTextureName"			"building_kit_witch_doctor_hut"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 
@@ -12139,7 +12139,7 @@
 // Custom: Mixing Pot
 //=================================================================================================================
 
-		"item_building_mixing_pot"
+		"item_building_kit_mixing_pot"
 		{
 			"ID"							"1128"
 
@@ -12147,7 +12147,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_mixing_pot"
+			"AbilityTextureName"			"building_kit_mixing_pot"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect" 				""
 
@@ -12206,7 +12206,7 @@
 // Custom: Omni Tower
 //=================================================================================================================
 
-		"item_building_tower_omni"
+		"item_building_kit_tower_omni"
 		{
 			"ID"							"1129"
 
@@ -12214,7 +12214,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_tower_omni"
+			"AbilityTextureName"			"building_kit_tower_omni"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect" 				""
 
@@ -12273,7 +12273,7 @@
 // Custom: Ensnare Trap
 //=================================================================================================================
 
-		"item_building_trap_ensnare"
+		"item_building_kit_trap_ensnare"
 		{
 			"ID"							"1130"
 
@@ -12281,7 +12281,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_trap_ensnare"
+			"AbilityTextureName"			"building_kit_trap_ensnare"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect"				"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_core_arc.vpcf"
 
@@ -12340,7 +12340,7 @@
 // Custom: Spirit Ward
 //=================================================================================================================
 
-		"item_building_spirit_ward"
+		"item_building_kit_spirit_ward"
 		{
 			"ID"							"1131"
 
@@ -12348,7 +12348,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_Spirit_Ward"
+			"AbilityTextureName"			"building_kit_Spirit_Ward"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect"				"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_cast_staff_fire_d.vpcf"
 
@@ -12408,7 +12408,7 @@
 // Custom: Teleport Beacon
 //=================================================================================================================
 
-		"item_building_teleport_beacon"
+		"item_building_kit_teleport_beacon"
 		{
 			"ID"							"1132"
 
@@ -12416,7 +12416,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_teleport_beacon"
+			"AbilityTextureName"			"building_kit_teleport_beacon"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect" 				""
 
@@ -12477,7 +12477,7 @@
 // Custom: Hatchery
 //=================================================================================================================
 
-		"item_building_hatchery"
+		"item_building_kit_hatchery"
 		{
 			"ID"							"1133"
 
@@ -12485,7 +12485,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_hatchery"
+			"AbilityTextureName"			"building_kit_hatchery"
 			"Model"					"models/props_debris/battle_debris2.vmdl"
 			"Effect" 				""
 
@@ -12577,6 +12577,2223 @@
 		}
 
 
+//=================================================================================================================
+// Boat Item: Armory Kit 
+//=================================================================================================================
+	"item_boat_kit_armory"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Basic Shield 
+//=================================================================================================================
+	"item_boat_shield_basic"
+	{
+		"ID"							"1202"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Bone
+//=================================================================================================================
+	"item_boat_bone"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Camp Fire Kit 
+//=================================================================================================================
+	"item_boat_kit_camp_fire"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Clay Ball
+//=================================================================================================================
+	"item_boat_ball_clay"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Cooked Meat 
+//=================================================================================================================
+	"item_boat_meat_cooked"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Dark Rock 
+//=================================================================================================================
+	"item_boat_rock_dark"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Dark Rock 
+//=================================================================================================================
+	"item_boat_rock_dark"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Ensnare Trap Kit 
+//=================================================================================================================
+	"item_boat_kit_trap_ensnare"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Flint 
+//=================================================================================================================
+	"item_boat_flint"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Healing Potion IV 
+//=================================================================================================================
+	"item_boat_potion_healing_iv"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Axe 
+//=================================================================================================================
+	"item_boat_axe_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Boots 
+//=================================================================================================================
+	"item_boat_boots_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Coat
+//=================================================================================================================
+	"item_boat_coat_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Gloves 
+//=================================================================================================================
+	"item_boat_gloves_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Ingot 
+//=================================================================================================================
+	"item_boat_ingot_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Iron Spear 
+//=================================================================================================================
+	"item_boat_spear_iron"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Living Clay
+//=================================================================================================================
+	"item_boat_clay_living"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Mage Fire Kit 
+//=================================================================================================================
+	"item_boat_kit_fire_mage"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Magic Seed
+//=================================================================================================================
+	"item_boat_seed_magic"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Mana Crystal
+//=================================================================================================================
+	"item_boat_crystal_mana"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Mana Potion IV 
+//=================================================================================================================
+	"item_boat_potion_mana_iv"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Mud Hut Kit
+//=================================================================================================================
+	"item_boat_kit_mud_hut"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Mushroom 
+//=================================================================================================================
+	"item_boat_mushroom"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Nets 
+//=================================================================================================================
+	"item_boat_mushroom"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Omnidefender Kit 
+//=================================================================================================================
+	"item_boat_kit_omnidefender"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Poison Spear 
+//=================================================================================================================
+	"item_boat_spear_poison"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Scroll of Cyclone 
+//=================================================================================================================
+	"item_boat_scroll_cyclone"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Scroll of Entangling Roots 
+//=================================================================================================================
+	"item_boat_scroll_entangling"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Scroll of Fireball 
+//=================================================================================================================
+	"item_boat_scroll_fireball"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Scroll of Living Dead 
+//=================================================================================================================
+	"item_boat_scroll_living_dead"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+//=================================================================================================================
+// Boat Item: Scroll of Stone Skin 
+//=================================================================================================================
+	"item_boat_scroll_stoneskin"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	
+//=================================================================================================================
+// Boat Item: Smoke House Kit 
+//=================================================================================================================
+	"item_boat_kit_smokehouse"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+//=================================================================================================================
+// Boat Item: Basic Spear
+//=================================================================================================================
+	"item_boat_spear_basic"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+	
+//=================================================================================================================
+// Boat Item: Spirit of Water
+//=================================================================================================================
+	"item_boat_spirit_water"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+	
+//=================================================================================================================
+// Boat Item: Steel Axe
+//=================================================================================================================
+	"item_boat_axe_steel"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Steel Ingot 
+//=================================================================================================================
+	"item_boat_ingot_steel"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Steel Shield
+//=================================================================================================================
+	"item_boat_shield_steel"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Stick
+//=================================================================================================================
+	"item_boat_stick"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Stone 
+//=================================================================================================================
+	"item_boat_stone"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Storage Hut Kit 
+//=================================================================================================================
+	"item_boat_kit_storage"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Tannery Kit 
+//=================================================================================================================
+	"item_boat_kit_tannery"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Teleport Beacon 
+//=================================================================================================================
+	"item_boat_beacon_teleport"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Tent Kit 
+//=================================================================================================================
+	"item_boat_kit_tent"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Tinder 
+//=================================================================================================================
+	"item_boat_tinder"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Troll Hut Kit 
+//=================================================================================================================
+	"item_boat_kit_hut_troll"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
+//=================================================================================================================
+// Boat Item: Workshop Kit
+//=================================================================================================================
+	"item_boat_kit_workshop"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sange_and_yasha"
+		"Model"							"models/props_gameplay/branch.vmdl"
+		"Effect" 						""
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDroppable"               	"0"
+		"ItemAliases"					"quicktype"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "0"
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+	}	
 //=================================================================================================================
 // Debug: Spawn All
 //=================================================================================================================
