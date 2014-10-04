@@ -85,6 +85,7 @@ function Precache( context )
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_bristleback",context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_omniknight",context)
+	PrecacheResource("particle_folder", "particles/status_fx",context)
 
 		local unitTable = {		
 		"npc_dota_hero_shadow_shaman",
