@@ -358,3 +358,10 @@ function callModApplier( caster, modName, abilityLevel)
     caster:CastAbilityNoTarget(ab, -1)
     caster:RemoveAbility(applier)
 end
+
+--General Functions
+
+function RestoreMana(keys)
+	local target = keys.target
+	target:GiveMana(keys.ManaRestored) 
+end

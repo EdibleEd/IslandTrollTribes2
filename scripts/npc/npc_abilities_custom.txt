@@ -447,17 +447,222 @@
 	//=================================================================================
 	"Ability_Rest_Small"
 	{
-	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Rest"
-	}
+		// General				
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO" 
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityTextureName"		"ability_building_rest"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
+		"AbilityCastRange"		"%cast_range"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle_folder"			"particles/newplayer_fx"
+		}	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart" 
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_ability.lua"
+				"Function"      "RestoreMana"
+				"ManaRestored" 	"%mana_restored"
+				"Target"        "TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" "modifier_sleep"
+				"Duration"	"%rest_duration"
+				"Target" 	"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sleep" 
+			{
+				"IsDebuff"	"0"
+				"IsPurgable" 	"0"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"  
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName" 		"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 	"follow_overhead"
+ 						"EffectLifeDurationScale" "1"
+							
+					}	
+				}
+				"OnAttacked" 
+				{
+					"RemoveModifier" 
+					{
+						"ModifierName" "modifier_sleep" 
+						"Target" "TARGET" 
+					}
+				}
+			}
+		}
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"				"FIELD_FLOAT"
+				"rest_duration"				"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"				"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restored"				"80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"0.0"
+			}
+		}
+	}	
 	//=================================================================================
 	// Rest(Big)
 	//=================================================================================
 	"Ability_Rest_Big"
 	{
-	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Rest"
-	}
+		// General				
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO" 
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityTextureName"		"ability_building_rest"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "%cooldown"
+		"AbilityCastRange"		"%cast_range"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle_folder"			"particles/newplayer_fx"
+		}	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart" 
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_ability.lua"
+				"Function"      "RestoreMana"
+				"ManaRestored" 	"%mana_restored"
+				"Target"        "TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" "modifier_sleep"
+				"Duration"	"%rest_duration"
+				"Target" 	"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sleep" 
+			{
+				"IsDebuff"	"0"
+				"IsPurgable" 	"0"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"  
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName" 		"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 	"follow_overhead"
+ 						"EffectLifeDurationScale" "1"
+							
+					}	
+				}
+				"OnAttacked" 
+				{
+					"RemoveModifier" 
+					{
+						"ModifierName" "modifier_sleep" 
+						"Target" "TARGET" 
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"				"FIELD_FLOAT"
+				"rest_duration"				"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"				"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restored"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"0.0"
+			}
+		}
+	}	
 	//=================================================================================
 	// Get Corpse
 	//=================================================================================
@@ -1964,24 +2169,30 @@
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_nulldamage_troll"
-				"Target"        "TARGET"					
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_HERO"
+				"Target"
+				{
+			        	"Center"		"TARGET"					
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO"
+				}
 				"Duration"      "%null_duration_troll"
 			}			
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_nulldamage_creep"
-				"Target"        "TARGET"				
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_CREEP"
+				"Target"
+				{
+			        	"Center"		"TARGET"					
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_CREEP"
+				}
 				"Duration"      "%null_duration_creep"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"null_duration_troll"
+			"modifier_nulldamage_troll"
 			{   
 				"IsDebuff"     		"true"
 				"Duration"           "15"
@@ -2002,7 +2213,7 @@
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-55"
 				}
 			}
-			"null_duration_creep"
+			"modifier_nulldamage_creep"
 			{   
 				"IsDebuff"     		"true"
 				"Duration"           "20"
@@ -2044,7 +2255,7 @@
 	//=================================================================================================================
 	// Ability: Mage - Quantum Null Damage
 	//=================================================================================================================
-	"ability_mage_nulldamage"
+	"ability_mage_quantum_nulldamage"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2099,24 +2310,30 @@
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_quantum_nulldamage_troll"
-				"Target"        "TARGET"					
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_HERO"
+				"Target"
+				{
+			        	"Center"		"TARGET"					
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO"
+				}
 				"Duration"      "%quantum_null_duration_troll"
 			}			
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_quantum_nulldamage_creep"
-				"Target"        "TARGET"				
-				"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 		"DOTA_UNIT_TARGET_CREEP"
+				"Target"
+				{
+			        	"Center"		"TARGET"					
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_CREEP"
+				}
 				"Duration"      "%quantum_null_duration_creep"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"quantum_null_duration_troll"
+			"modifier_quantum_nulldamage_troll"
 			{   
 				"IsDebuff"     		"true"
 				"Duration"           "15"
@@ -2137,7 +2354,7 @@
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-60"
 				}
 			}
-			"quantum_null_duration_creep"
+			"modifier_quantum_nulldamage_creep"
 			{   
 				"IsDebuff"     		"true"
 				"Duration"           "20"
@@ -2701,24 +2918,25 @@
 		{
 			"modifier_pumpup"
 			{
-				"IsDebuff" 			"0"
+				"IsDebuff" 		"0"
 				"IsPurgable" 		"1"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
-				"OnCreated"
+    				"Properties"
+    				{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_speed_bonus"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_speed_bonus"
+						"MODIFIER_PROPERTY_MODEL_SCALE"						"0.30"
+				} 						
+        			"OnCreated"
 				{
 					"AttachEffect"
 					{
+						"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"
 						"Target" "TARGET"
 						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//ogre magi bloodlust
 						"EffectAttachType" "follow_overhead"
 					}
-					"Properties" 
-					{ 
-						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_speed_bonus"
-						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_speed_bonus"
-						"MODIFIER_PROPERTY_MODEL_SCALE"								"0.30"
-					} 		
 				}
+
 			}
 		}
 		// Special
