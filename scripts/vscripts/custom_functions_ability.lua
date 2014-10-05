@@ -359,6 +359,14 @@ function callModApplier( caster, modName, abilityLevel)
     caster:RemoveAbility(applier)
 end
 
+-- Thief Ability Functions
+
+function Teleport(keys)
+	local caster = keys.caster
+	local point = keys.target_points[1]
+	caster:SetAbsOrigin(point)
+end
+
 --General Functions
 
 function RestoreMana(keys)

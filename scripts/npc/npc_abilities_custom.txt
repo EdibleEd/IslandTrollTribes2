@@ -449,31 +449,31 @@
 	{
 		// General				
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO" 
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO" 
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityTextureName"		"ability_building_rest"	
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0"
+		"AbilityCastPoint"          "0.0"
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "%cooldown"
-		"AbilityCastRange"		"%cast_range"
+		"AbilityCooldown"           "%cooldown"
+		"AbilityCastRange"			"%cast_range"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"           "0"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"Precache"
 		{
-			"particle_folder"			"particles/newplayer_fx"
+			"particle_folder"		"particles/newplayer_fx"
 		}	
 		
 		// Stats
@@ -482,46 +482,58 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_ability.lua"
-				"Function"      "RestoreMana"
-				"ManaRestored" 	"%mana_restored"
-				"Target"        "TARGET"
+				"ScriptFile"    	"custom_functions_ability.lua"
+				"Function"      	"RestoreMana"
+				"ManaRestored" 		"%mana_restored"
+				"Target"        	"TARGET"
 			}
 			"ApplyModifier"
 			{
-				"ModifierName" "modifier_sleep"
-				"Duration"	"%rest_duration"
-				"Target" 	"TARGET"
+				"ModifierName" 		"modifier_sleep"
+				"Duration"			"%rest_duration"
+				"Target" 			"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_invuln"
+				"Duration"			"%invuln_duration"
+				"Target"			"TARGET"
 			}
 		}
 		"Modifiers"
 		{
 			"modifier_sleep" 
 			{
-				"IsDebuff"	"0"
-				"IsPurgable" 	"0"
+				"IsDebuff"			"0"
+				"IsPurgable" 		"0"
 				"States"
 				{
-					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"  
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"  
 				}
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
-						"Target"		"TARGET"
-						"EffectName" 		"particles/newplayer_fx/npx_sleeping.vpcf"
-						"EffectAttachType" 	"follow_overhead"
- 						"EffectLifeDurationScale" "1"
-							
+						"Target"					"TARGET"
+						"EffectName" 				"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 			"follow_overhead"
+ 						"EffectLifeDurationScale" 	"1"							
 					}	
 				}
 				"OnAttacked" 
 				{
 					"RemoveModifier" 
 					{
-						"ModifierName" "modifier_sleep" 
-						"Target" "TARGET" 
+						"ModifierName" 				"modifier_sleep" 
+						"Target" 					"TARGET" 
 					}
+				}
+			}
+			"modifier_invuln" 
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -534,22 +546,27 @@
 			"01"
 			{ 
 				"var_type"				"FIELD_FLOAT"
-				"rest_duration"				"4"
+				"rest_duration"			"6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"				"250"
+				"cast_range"			"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restored"				"80"
+				"mana_restored"			"80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cooldown"				"0.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"1.0"
 			}
 		}
 	}	
@@ -560,31 +577,31 @@
 	{
 		// General				
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO" 
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO" 
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityTextureName"		"ability_building_rest"	
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0"
+		"AbilityCastPoint"          "0.0"
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "%cooldown"
-		"AbilityCastRange"		"%cast_range"
+		"AbilityCooldown"           "%cooldown"
+		"AbilityCastRange"			"%cast_range"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"           "0"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"Precache"
 		{
-			"particle_folder"			"particles/newplayer_fx"
+			"particle_folder"		"particles/newplayer_fx"
 		}	
 		
 		// Stats
@@ -593,49 +610,62 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_ability.lua"
-				"Function"      "RestoreMana"
-				"ManaRestored" 	"%mana_restored"
-				"Target"        "TARGET"
+				"ScriptFile"    	"custom_functions_ability.lua"
+				"Function"      	"RestoreMana"
+				"ManaRestored" 		"%mana_restored"
+				"Target"        	"TARGET"
 			}
 			"ApplyModifier"
 			{
-				"ModifierName" "modifier_sleep"
-				"Duration"	"%rest_duration"
-				"Target" 	"TARGET"
+				"ModifierName" 		"modifier_sleep"
+				"Duration"			"%rest_duration"
+				"Target" 			"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_invuln"
+				"Duration"			"%invuln_duration"
+				"Target"			"TARGET"
 			}
 		}
 		"Modifiers"
 		{
 			"modifier_sleep" 
 			{
-				"IsDebuff"	"0"
-				"IsPurgable" 	"0"
+				"IsDebuff"			"0"
+				"IsPurgable" 		"0"
 				"States"
 				{
-					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"  
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"  
 				}
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
-						"Target"		"TARGET"
-						"EffectName" 		"particles/newplayer_fx/npx_sleeping.vpcf"
-						"EffectAttachType" 	"follow_overhead"
- 						"EffectLifeDurationScale" "1"
-							
+						"Target"					"TARGET"
+						"EffectName" 				"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 			"follow_overhead"
+ 						"EffectLifeDurationScale" 	"1"							
 					}	
 				}
 				"OnAttacked" 
 				{
 					"RemoveModifier" 
 					{
-						"ModifierName" "modifier_sleep" 
-						"Target" "TARGET" 
+						"ModifierName" 				"modifier_sleep" 
+						"Target" 					"TARGET" 
 					}
 				}
 			}
+			"modifier_invuln" 
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 		}
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -644,25 +674,164 @@
 			"01"
 			{ 
 				"var_type"				"FIELD_FLOAT"
-				"rest_duration"				"4"
+				"rest_duration"			"6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"				"250"
+				"cast_range"			"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restored"				"200"
+				"mana_restored"			"200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cooldown"				"0.0"
 			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"1.0"
+			}
 		}
 	}	
+	//=================================================================================
+	// Rest(Troll)
+	//=================================================================================
+	"Ability_Rest_Troll" 
+	{
+		// General				
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityTextureName"		"ability_building_rest"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"          "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"           "%cooldown"
+		"AbilityCastRange"			"%cast_range"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"           "0"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle_folder"		"particles/newplayer_fx"
+		}	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart" 
+		{
+			"RunScript"
+			{
+				"Target"        	"CASTER"
+				"ScriptFile"    	"custom_functions_ability.lua"
+				"Function"      	"RestoreMana"
+				"ManaRestored" 		"%mana_restored"
+			}
+			"RunScript"
+			{
+				"Target"        	"CASTER"
+				"ScriptFile"    	"custom_functions_item.lua"
+				"Function"      	"AddHeat"
+				"Heat" 				"-20"
+			}
+			"Damage"
+			{	
+				"Damage"			"20"
+				"Type"				"DAMAGE_TYPE_PURE"
+				"Target"			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 		"modifier_sleep"
+				"Duration"			"%rest_duration"
+				"Target" 			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 		"modifier_invuln"
+				"Duration"			"%invuln_duration"
+				"Target" 			"CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sleep" 
+			{
+				"IsDebuff"			"0"
+				"IsPurgable" 		"0"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"  
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"					"TARGET"
+						"EffectName" 				"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 			"follow_overhead"
+ 						"EffectLifeDurationScale" 	"1"							
+					}	
+				}
+				"OnAttacked" 
+				{
+					"RemoveModifier" 
+					{
+						"ModifierName" 				"modifier_sleep" 
+						"Target" 					"TARGET" 
+					}
+				}
+			}
+			"modifier_invuln" 
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"				"FIELD_FLOAT"
+				"rest_duration"			"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restored"			"80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"12.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"1.0"
+			}
+		}			
+	}
 	//=================================================================================
 	// Get Corpse
 	//=================================================================================
@@ -1690,7 +1859,7 @@
 			}
 		}
 	}
-	
+		
 	//=================================================================================================================
 	// Greater Track
 	//=================================================================================================================
@@ -4189,6 +4358,140 @@
 			}
 		}
 	}
+//=================================================================================
+//Thief Abilities
+//=================================================================================		
+	//=================================================================================================================
+	// Ability: Thief - Teleport
+	//=================================================================================================================	
+	"ability_thief_teleport"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"              			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"HotKeyOverride"						"T"
+		"AbilityTextureName"					"ability_thief_teleport"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"						"600"
+		"AbilityCastPoint"						"0.4"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"30.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"15"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"								"1"
+		
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"UnitName"          			"dummy_spotter"
+				"UnitCount"						"1"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"0.01"
+				"Target"						"POINT"
+				
+				"OnSpawn"
+				{
+						"Blink"
+						{
+							"Target"	"TARGET"
+						}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Thief - Cloak
+	//=================================================================================================================
+	"ability_thief_cloak"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"HotKeyOverride"						"w"
+		"AbilityTextureName"					"ability_thief_cloak"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"						"0.4 0.4 0.4"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"60.0 60.0 60.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"0 0 0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"								"3"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"						"CASTER"
+				"ModifierName"					"modifier_cloak_fade"
+			}
+			"SpawnUnit"
+			{
+				"UnitName"          			"dummy_cloak_vision"
+				"UnitCount"						"1"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"4.0"
+				"Target"						"CASTER"				
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_cloak_fade"
+			{
+				"Duration"						"%fade_time"
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"Target"				"CASTER"
+						"Duration"				"%duration"
+						"ModifierName"			"modifier_invisible"
+					}
+				}
+			}	
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+				"01"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"4.0 5.5 7.0"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"fade_time"					"0.6 0.5 0.4"
+				}
+		}
+	}
+	
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
@@ -4724,5 +5027,29 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
 	}
-}
 
+//=================================================================================
+//Dummy Unit Abilities
+//=================================================================================	
+	"dummy_passive"
+	{
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+		{
+			"dummy_modifier"
+			{
+				"Passive"   "1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"  	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"   	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+}
