@@ -1757,45 +1757,43 @@
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_track_hero"
-				"Target"        "TARGET"
+				"ModifierName"  "modifier_track"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO"
+				}
 				"Duration"      "%duration"
 			}
-			
-			"SpawnUnit"
+			"ApplyModifier"
 			{
-				"UnitName"          "dummy_spotter"
-				"UnitCount"			"1"
-				"UnitLimit"			"64"
-				"SpawnRadius"		"0"
-				"Duration"			"%duration"
-				"Target"			"TARGET"
-				
-				"OnSpawn"
+				"ModifierName"  "modifier_track"
+				"Target"
 				{
-					"RunScript"
-					{
-					   "ScriptFile"    "custom_functions_abilities.lua"
-						"Function"      "TrackUnit"
-						"Target"        "TARGET"
-						"Duration"      "%duration"
-					}
-				
-					"ApplyModifier"
-					{
-						"Target"				"TARGET"
-						"Duration"				"%duration"
-						"ModifierName"			"dummy_spotter_modifier"
-					}
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_CREEP"
 				}
+				"Duration"      "%duration_creep"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_ability.lua"
+				"Function"      "TrackUnit"
+				"Target"        "TARGET"
+				"Duration"      "%duration"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_track_hero"
+			"modifier_track"
 			{   
-				"IsDebuff"      "true"
+				"IsDebuff"		"1"
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -1850,9 +1848,14 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"30.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
 				"cooldown"				"45.0 40.0 35.0"
 			}
-			"02"
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"minus_armor"			"-1 -2 -3"

@@ -3809,7 +3809,7 @@
     {
         // General
         //----------------------------------------------------------------
-        "BaseClass"                 "npc_dota_base_additive"    // Class of entity of link to.
+        "BaseClass"                 "npc_dota_creature"    // Class of entity of link to.
         "Model"                     "models/development/invisiblebox.mdl"    // Model.
         "SoundSet"                  "0"                    // Name of sound set.
         "Level"                     "1"
@@ -3818,7 +3818,7 @@
 
         // Abilities
         //----------------------------------------------------------------
-        "Ability1"                    ""            // Ability 1.
+        "Ability1"                    "ability_skeleton_passive"            // Ability 1.
         "Ability2"                    ""            // Ability 2.
         "Ability3"                    ""            // Ability 3.
         "Ability4"                    ""            // Ability 4.
@@ -3841,7 +3841,7 @@
         // Movement
         //----------------------------------------------------------------
         "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"            // Type of locomotion - ground, air
-        "MovementSpeed"				"0"
+        "MovementSpeed"				"1000"
 
         // Status
         //----------------------------------------------------------------

@@ -333,13 +333,24 @@ function TrackUnit(keys)
     if (string.find(targetName,"hero") == nil) then --if the target's name does not include "hero", ie an animal
         dur = 30.0
     end
-    
-    --target:AddNewModifier(caster, nil, "modifier_bounty_hunter_track", { duration = dur, radius = 200})
-    --callModApplier(target, modifier_hunter_track_hero, 1)
+
+    local dummySpotter = CreateUnitByName("dummy_spotter", target:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
+    dummySpotter:SetDayTimeVisionRange(200)
+    dummySpotter:SetNightTimeVisionRange(200)
+    dummySpotter.startTime = GameRules:GetGameTime()
+    dummySpotter.duration = dur
+    dummySpotter.target = target
+    dummySpotter:SetContextThink("dummy_spotter_thinker"..dummySpotter:GetEntityIndex(), MoveDummySpotter, 0.1)
 end
 
-function TrackMoveSpotter(keys)
-    local target
+function MoveDummySpotter(dummySpotter)
+    dummySpotter:MoveToPosition(dummySpotter.target:GetAbsOrigin())
+    if (GameRules:GetGameTime() - dummySpotter.startTime) >= dummySpotter.duration then
+        dummySpotter:ForceKill(true)
+        --print("spotter is kill")
+        return nil
+    end
+    return 0.1
 end
 
 --utility functions
