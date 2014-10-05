@@ -4492,6 +4492,325 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Ability: Thief - Cloak - Advanced
+	//=================================================================================================================
+
+		"ability_thief_cloak_advanced"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"HotKeyOverride"						"w"
+		"AbilityTextureName"					"ability_thief_cloak"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"						"0.4"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"60.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"								"1"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"						"CASTER"
+				"ModifierName"					"modifier_cloak_fade"
+			}
+			"SpawnUnit"
+			{
+				"UnitName"          			"dummy_cloak_vision"
+				"UnitCount"						"1"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"4.0"
+				"Target"						"CASTER"				
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_cloak_fade"
+			{
+				"Duration"						"%fade_time"
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"Target"				"CASTER"
+						"Duration"				"%duration"
+						"ModifierName"			"modifier_invisible"
+					}
+					"ApplyModifier"
+					{
+						"Target"				"CASTER"
+						"Duration"				"%duration"
+						"ModifierName"			"modifier_cloak_speed"
+					}
+				}
+			}
+			"modifier_cloak_speed"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"10" 
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+				"01"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"10.0"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"fade_time"					"0.4"
+				}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Escape Artist - Jump
+	//=================================================================================================================
+
+	"ability_thief_jump"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_jump"
+	}
+	
+	//=================================================================================================================
+	// Ability: Escape Artist - Camouflage
+	//=================================================================================================================
+
+	"ability_thief_camouflage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_camouflage"
+
+	}
+	
+	//=================================================================================================================
+	// Ability: Escape Artist - Blur
+	//=================================================================================================================
+
+	"ability_thief_blur"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_blur"
+
+	}
+	
+	//=================================================================================================================
+	// Ability: Contortionist - Smoke Stream
+	//=================================================================================================================
+
+	"ability_thief_smoke_stream"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_smokestream"
+
+	}
+	
+	//=================================================================================================================
+	// Ability: Contortionist - Tele-thief
+	//=================================================================================================================
+
+	"ability_thief_tele_thief"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_tele-thief"
+	}
+	
+	//=================================================================================================================
+	// Ability: Contortionist - Nether Fade
+	//=================================================================================================================
+
+	"ability_thief_nether_fade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_netherfade"
+	}
+	
+	//=================================================================================================================
+	// Ability: Assassin - Throwing Knife
+	//=================================================================================================================
+
+	"ability_thief_throwing_knife"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType" 			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"				"ability_thief_throwingknife"
+		"HotKeyOVerride"					"x"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"					"0.4"
+		"AbilityCastRange"					"800"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"30.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"10"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle"           			"particles\econ\items\mirana\mirana_crescent_arrow\mirana_spell_crescent_arrow.vpcf"
+		}
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"							"1"
+		
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"EffectName"				"particles\econ\items\mirana\mirana_crescent_arrow\mirana_spell_crescent_arrow.vpcf"
+				"Target"					"POINT"
+				"StartRadius"				"50"
+				"EndRadius"					"50"
+				"TargetTeams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"TargetFlags" 				"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone" 			"0"
+				"StartPosition"				"attach_attack"
+				"FixedDistance"				"%projectile_distance"
+				"MoveSpeed"					"%projectile_speed"
+				"ProvidesVision"			"false"			
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"					"1"
+			"Damage"
+			{
+				"Target"					"TARGET"
+				"Damage"		 			"%damage"
+				"Type" 						"DAMAGE_TYPE_PHYSICAL"			
+			}
+			"ApplyModifier"
+			{
+				"Target"					"TARGET"
+				"ModifierName"				"modifier_knife_slow"
+				"Duration"					"%slow_duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_knife_slow"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percent"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"castrange"					"800"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"30.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_distance"		"800"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"1000"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"25"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"4.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_percent"				"-50"
+			}
+		}		
+	}
+	
+	//=================================================================================================================
+	// Ability: Assassin - Planning Phase
+	//=================================================================================================================
+
+	"ability_thief_planning_phase"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_planningphase"
+	}
+	
+	//=================================================================================================================
+	// Ability: Assassin - Assassinate
+	//=================================================================================================================
+
+	"ability_thief_assassinate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityTextureName"				"ability_thief_assassinate"
+	}	
+	
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
