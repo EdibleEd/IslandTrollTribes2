@@ -53,7 +53,7 @@ function Heat(playerID)
         if hero ~= nil then
             local heatStackCount = hero:GetModifierStackCount("modifier_heat_passive", nil) - HEAT_LOSS_PER_UNIT
             hero:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
-                if heatStackCount == 0 then
+                if heatStackCount <= 0 then
                     hero:ForceKill(true)
                 end
         end

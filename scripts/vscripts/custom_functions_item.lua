@@ -616,6 +616,9 @@ function AddHeat(keys)
 	if heatStackCount > 100 then
 		heatStackCount = 100
 	end
+	if heatStackCount <= 0 then
+		heatStackCount = 1
+	end
     target:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
 end
 
