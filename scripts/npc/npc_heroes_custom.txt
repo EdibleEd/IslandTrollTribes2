@@ -313,9 +313,9 @@
         "VisionNighttimeRange"          "1300"           // Range of vision at night time. 
     }
 //=================================================================================================================
-// Base Class: Theif
+// Base Class: Thief
 //=================================================================================================================
-    "npc_dota_hero_theif"
+    "npc_dota_hero_thief"
     {
         "override_hero"         "npc_dota_hero_riki"    
         
@@ -326,8 +326,8 @@
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         "2"        
-		"Ability1"						"ability_theif_teleport"									// Ability 1
-		"Ability2"						"ability_theif_cloak"										// Ability 2
+		"Ability1"						"ability_thief_teleport"									// Ability 1
+		"Ability2"						"ability_thief_cloak"										// Ability 2
 		"Ability3"						""															// Ability 3
 		"Ability4"						""															// Ability 4
 		"Ability5"						""															// Ability 5
