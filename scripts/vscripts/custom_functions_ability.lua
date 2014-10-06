@@ -326,6 +326,8 @@ function EnsnareUnit(keys)
 end
 
 function TrackUnit(keys)
+    local ability = keys.ability
+    --print("level required to upgrade: "..ability:GetHeroLevelRequiredToUpgrade())
     local caster = keys.caster
     local target = keys.target
     local targetName = target:GetName()
@@ -351,6 +353,19 @@ function MoveDummySpotter(dummySpotter)
         return nil
     end
     return 0.1
+end
+
+function EnduranceSuccess(keys)
+    attacker = keys.attacker
+    caster = keys.caster
+
+    local damage = attacker:GetAverageTrueAttackDamage()
+    local block = 8
+    if damage - block < 3 then
+        block = damage - 3
+    end
+
+    caster:SetHealth(caster:GetHealth() + block)
 end
 
 --utility functions
