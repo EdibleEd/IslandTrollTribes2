@@ -411,6 +411,19 @@ function EnduranceSuccess(keys)
     caster:SetHealth(caster:GetHealth() + block)
 end
 
+-- Thief Ability Functions
+
+function Teleport(keys)
+	local caster = keys.caster
+	local point = keys.target_points[1]
+	caster:SetAbsOrigin(point)
+end
+
+function CreateSmokeStream(keys)
+	local caster = keys.caster
+	
+end
+
 --utility functions
 function callModApplier( caster, modName, abilityLevel)
     if abilityLevel == nil then
@@ -427,16 +440,6 @@ function callModApplier( caster, modName, abilityLevel)
     caster:CastAbilityNoTarget(ab, -1)
     caster:RemoveAbility(applier)
 end
-
--- Thief Ability Functions
-
-function Teleport(keys)
-	local caster = keys.caster
-	local point = keys.target_points[1]
-	caster:SetAbsOrigin(point)
-end
-
---General Functions
 
 function RestoreMana(keys)
 	local target = keys.target
