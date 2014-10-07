@@ -4783,10 +4783,137 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------	
 		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"				"ability_thief_smokestream"
-
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"					"0.1"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"1.0" 	
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"							"1"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_smoketrail"
+				"Duration"					"7.0"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_smoketrail"
+			{
+				"OnUnitMoved"
+				{		
+					"ApplyModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_moving"
+						"Duration"			"0.4"
+					}
+				}
+			}
+			"modifier_moving"
+			{
+				"IsHidden"					"1"
+				"ThinkInterval"				"0.4"
+				"OnIntervalThink"
+				{
+					"SpawnUnit"
+					{
+						"Target"			"CASTER"
+						"UnitName"          "dummy_caster_smokestream"
+						"UnitCount"			"1"
+						"UnitLimit"			"64"
+						"SpawnRadius"		"0"
+						"Duration"			"2"				
+					}
+				}
+			}
+		}	
 	}
 	
+	"ability_thief_smokecombatprevention"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"         	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"         	"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"				"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityUnitTargetExcludeFlag"		"DOTA_UNIT_TARGET_FLAGMAGIC_IMMUNE_ENEMIES"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle"           			"particles/units/heroes/hero_riki/riki_smokebomb_b.vpcf"
+		}
+
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"							"1"
+		
+		"Modifiers"
+		{
+			"modifier_smokeeffect"
+			{
+				"Passive"					"1"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"CASTER"
+						"EffectName"		"particles/units/heroes/hero_riki/riki_smokebomb_b.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_smokecombatprevention"
+			{
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"Aura" 				"aura_combatprevention"
+				"Aura_Radius" 		"250"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				"Aura_ExcludeFlag"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				
+			}
+			"aura_combatprevention"
+			{				
+				"IsHidden" 			"1"
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}		
+	}
+		
 	//=================================================================================================================
 	// Ability: Contortionist - Tele-thief
 	//=================================================================================================================
@@ -4862,6 +4989,9 @@
 				}
 			}
 		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
