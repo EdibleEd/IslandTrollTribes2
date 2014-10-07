@@ -4937,6 +4937,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"					"0.0"
 		"AbilityChannelTime" 				"10.0"
+		"AbilityCastAnimation"				"ACT_DOTA_LOOK_AROUND"
 	
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -4948,7 +4949,10 @@
 		
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
-		
+		"Precache"
+		{
+			"Particle"						"particles\units\heroes\hero_ogre_magi\ogre_magi_bloodlust_buff.vpcf"
+		}
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4963,12 +4967,12 @@
 			}
 			"SpawnUnit"
 			{
-				"Target"						"CASTER"
-				"UnitName"          			"dummy_planningphase_vision"
-				"UnitCount"						"1"
-				"UnitLimit"						"10"
-				"SpawnRadius"					"0"
-				"Duration"						"10"				
+				"Target"					"CASTER"
+				"UnitName"          		"dummy_planningphase_vision"
+				"UnitCount"					"1"
+				"UnitLimit"					"10"
+				"SpawnRadius"				"0"
+				"Duration"					"10"				
 			}
 		}
 		"OnChannelInterrupted"
@@ -5055,6 +5059,8 @@
 				"IsHidden"					"1"
 				"IsPurgable"				"0"
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"EffectName"				"particles\units\heroes\hero_ogre_magi\ogre_magi_bloodlust_buff.vpcf"
+				"EffectAttachType"			"follow_overhead"				
 				"Properties"	
 				{
 					 "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"5" 
