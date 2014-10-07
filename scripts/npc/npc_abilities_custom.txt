@@ -4808,7 +4808,68 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------	
 		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"				"ability_thief_netherfade"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"					"0.1"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"90.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"15"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle"           			"particles\units\heroes\hero_pugna\pugna_decrepify.vpcf"
+		}
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"							"1"		
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"Duration"					"%duration"
+				"ModifierName"				"modifier_netherfade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_netherfade"
+			{
+				"EffectName"				"particles\units\heroes\hero_pugna\pugna_decrepify.vpcf"	
+				"EffectAttachType"			"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE"						"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"							"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"					"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE"	"-55"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"			"1"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"15.0"
+			}
+		}
 	}
 	
 	//=================================================================================================================
@@ -4859,7 +4920,7 @@
 				"EndRadius"					"50"
 				"TargetTeams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"TargetTypes"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				"TargetFlags" 				"DOTA_UNIT_TARGET_FLAG_NONE"
+				"TargetFlags" 				"DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 				"HasFrontalCone" 			"0"
 				"StartPosition"				"attach_attack"
 				"FixedDistance"				"%projectile_distance"
