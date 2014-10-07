@@ -1749,7 +1749,7 @@
 				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 				"Dodgeable"         "false"
 				"ProvidesVision"    "false"
-				"MoveSpeed"         "1000"
+				"MoveSpeed"         "2000"
 				//"SourceAttachment"
 			}
 		}
@@ -1895,7 +1895,7 @@
 				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 				"Dodgeable"         "false"
 				"ProvidesVision"    "false"
-				"MoveSpeed"         "1000"
+				"MoveSpeed"         "2000"
 				//"SourceAttachment"
 			}
 		}
@@ -2316,6 +2316,95 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"chance"				"20 22.5 25"
+			}
+		}
+	}
+
+//=================================================================================================================
+// Dysentery Track
+//=================================================================================================================
+	"ability_hunter_dysenterytrack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"            "ability_hunter_dysenterytrack"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "35"
+		"AbilityCastRange"				"700"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		"precache"
+		{
+			"particle_folder"			"particles/econ/courier/courier_trail_fungal"
+			"particle_folder"           "particles/units/heroes/hero_tinker"
+			//"soundfile"					"soundevents/game_sounds_heroes/"
+		}
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				"Dodgeable"         "false"
+				"ProvidesVision"    "false"
+				"MoveSpeed"         "2000"
+				//"SourceAttachment"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{			
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_ability.lua"
+				"Function"      "DysenteryTrackUnit"
+				"Target"        "TARGET"
+				"Duration"      "%duration"
+				"TrailFadeTime"	"%trail_fade_time"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_BountyHunter.Track"
+				"Target"				"CASTER"
+			}
+		}		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"trail_fade_time"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"35.0"
 			}
 		}
 	}
