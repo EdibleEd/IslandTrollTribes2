@@ -7,11 +7,13 @@
 ]]
 
 BUILD_TIME_10 = 10.0
+BUILD_TIME_5 = 5.0
 BUILD_TIME_7 = 7.0
 BUILD_TIME_12 = 12.0
 BUILD_TIME_13 = 13.0
 BUILD_TIME_30 = 30.0
 function getCampFirePoint(keys)
+	print("making fire")
 	local itemName = tostring(keys.ability:GetAbilityName())
 	local caster = keys.caster
 	local point = BuildingHelper:AddBuildingToGrid(keys.target_points[1], 2, caster)
