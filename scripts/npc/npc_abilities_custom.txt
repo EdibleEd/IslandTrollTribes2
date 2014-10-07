@@ -1682,8 +1682,9 @@
 		{
 			"modifier_ensnare"
 			{
-				"IsHidden"	"1"
-				"Duration"  "3.5"
+				"IsHidden"		"1"
+				"Duration"  	"3.5"
+				"IsPurgable"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
@@ -1794,7 +1795,7 @@
 			{   
 				"IsDebuff"		"1"
 				"IsHidden"		"1"
-				"IsPurgable"	"0"
+				"IsPurgable"	"1"
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -1940,7 +1941,7 @@
 			{   
 				"IsDebuff"		"1"
 				"IsHidden"		"1"
-				"IsPurgable"	"0"
+				"IsPurgable"	"1"
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -2142,8 +2143,9 @@
 		{
 			"modifier_demoralizing_warcry1"
 			{   
-				"IsDebuff"     		"true"
-				"Duration"           "2"
+				"IsDebuff"     		"1"
+				"Duration"          "2"
+				"IsPurgable"		"1"
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -2167,8 +2169,9 @@
 			
 			"modifier_demoralizing_warcry2"
 			{   
-				"IsDebuff"     		 "true"
-				"Duration"           "10"
+				"IsDebuff"     		"1"
+				"Duration"          "10"
+				"IsPurgable"		"1"
 				"OnCreated"
 				{
 					"AttachEffect"
