@@ -445,3 +445,39 @@ function RestoreMana(keys)
     end
 	target:GiveMana(keys.ManaRestored) 
 end
+
+function ToggleAbility(keys)
+	local caster = keys.caster
+	
+	if caster:HasAbility(keys.Ability) then
+		local ability = caster:FindAbilityByName(keys.Ability)
+		if ability:IsActivated() == true then
+			ability:SetActivated(false)
+		else			
+			ability:SetActivated(true)	
+		end
+	end
+end
+
+function KillDummyUnit(keys)
+	local unitName = keys.UnitName
+	local caster = keys.caster
+	local teamnumber = caster:GetTeamNumber()
+	local casterPosition = caster:GetAbsOrigin()
+	
+	local units = FindUnitsInRadius(teamnumber,
+									casterPosition,
+									nil,
+									0,
+									DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+									DOTA_UNIT_TARGET_ALL,
+									DOTA_UNIT_TARGET_FLAG_NONE,
+									FIND_ANY_ORDER,
+									false)
+ 
+	for _,unit in pairs(units) do
+		if unit:GetName() == unitName then
+			unit:ForceKill(true)
+		end
+	end
+end
