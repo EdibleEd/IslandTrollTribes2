@@ -5180,7 +5180,7 @@
 				"UnitCount"					"1"
 				"UnitLimit"					"10"
 				"SpawnRadius"				"0"
-				"Duration"					"10"				
+				"Duration"					"11"				
 			}
 		}
 		"OnChannelInterrupted"
