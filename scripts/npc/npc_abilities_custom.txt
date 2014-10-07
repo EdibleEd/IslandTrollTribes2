@@ -5524,7 +5524,6 @@
 					}
 				}
 			}
-
 			"wolf_crit"
 			{
 				"Properties"
@@ -5568,7 +5567,7 @@
 	//=================================================================================================================
 	// Ability: Beast Master - Shapeshift to Bear Form
 	//=================================================================================================================
-	"ability_beastmaster_bearform""
+	"ability_beastmaster_bearform"
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -5622,7 +5621,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE     		"%move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"	
 					"MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS"					"%health_bonus"
 					//"MODIFIER_PROPERTY_MODEL_CHANGE"
@@ -5659,7 +5658,7 @@
 	//=================================================================================================================
 	// Ability: Beast Master - Shapeshift to Wolf Form
 	//=================================================================================================================
-	"ability_beastmaster_bearform""
+	"ability_beastmaster_bearform"
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -5713,7 +5712,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE     		"%move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"				
 					//"MODIFIER_PROPERTY_MODEL_CHANGE"
 				}
@@ -5743,7 +5742,7 @@
 	//=================================================================================================================
 	// Ability: Beast Master - Shapeshift to Elk Form
 	//=================================================================================================================
-	"ability_beastmaster_bearform""
+	"ability_beastmaster_bearform"
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -5797,7 +5796,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE     		"%move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"			
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%magic_resist"
 					//"MODIFIER_PROPERTY_MODEL_CHANGE"
