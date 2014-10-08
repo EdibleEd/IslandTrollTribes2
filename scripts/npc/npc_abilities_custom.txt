@@ -173,7 +173,7 @@
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"0.0"
-	"AbilityCastPoint"				"0,5"
+	"AbilityCastPoint"				"0.5"
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0"
@@ -4774,13 +4774,162 @@
 	//=================================================================================================================
 	// Ability: Escape Artist - Blur
 	//=================================================================================================================
-
 	"ability_thief_blur"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------	
 		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"				"ability_thief_blur"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"					"0.1"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"60.0" 	
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"							"1"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_blur"
+				"Duration"					"%duration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_blur"
+			{
+				"OnUnitMoved"
+				{		
+					"ApplyModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_blur_illusion"
+						"Duration"			"%illusion_interval"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"200"
+				}
+			}
+			"modifier_blur_illusion"
+			{
+				"IsHidden"					"1"
+				"ThinkInterval"				"%illusion_interval"
+				"OnIntervalThink"
+				{
+					"SpawnUnit"
+					{
+						"Target"			"CASTER"
+						"UnitName"          "blur_illusion"
+						"UnitCount"			"1"
+						"UnitLimit"			"64"
+						"SpawnRadius"		"0"
+						"Duration"			"1.5"			
+					}
+				}
+			}
+		}
+		
+		// Special 
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_interval"		"0.75"
+			}
+		}
+	}
+	
+	"ability_thief_blur_collision"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"TargetTeams"						"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"TargetTypes"						"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"				"ability_thief_blur"
+		
+		"Precache"
+		{
+			"particle"           			"particles/units/heroes/hero_riki/riki_smokebomb_b.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_collision_check"
+			{
+				"Passive"					"1"
+				"ThinkInterval"				"0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"custom_functions_ability.lua"
+						"Function"			"BlurCollisionCheck"
+					}
+				}
+				"OnDeath"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_blur_miss"
+						"Target"
+						{
+							"Center"		"CASTER"
+							"Radius"		"100"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+					}					
+				}
+			}
+			"modifier_blur_miss"
+			{
+				"Duration"					"%miss_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"%miss_chance" 
+				}
+			}
+		}
+		
+		// Special 
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"miss_duration"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"miss_chance"			"20"
+			}
+		}
 
 	}
 	
@@ -4864,7 +5013,7 @@
 		"AbilityUnitTargetTeam"         	"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"         	"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetFlag"				"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-		"AbilityUnitTargetExcludeFlag"		"DOTA_UNIT_TARGET_FLAGMAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetExcludeFlag"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -5316,7 +5465,108 @@
 			}
 		}
 	}
+	
+	//=================================================================================================================
+	// Ability: Assassin - Assassinate
+	//=================================================================================================================
+	"ability_thief_assassinate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"HotKeyOverride"						"w"
+		"AbilityTextureName"					"ability_thief_assassinate"
 		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"						"0.4"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"60.0" 						
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"								"1"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"				"CASTER"
+				"Duration"				"%duration"
+				"ModifierName"			"modifier_assassinate"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"CASTER"
+				"Duration"				"%duration"
+				"ModifierName"			"modifier_invisible"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_assassinate"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"50" 
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"65"
+				}
+				"OnAbilityExecuted"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_assassinate"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_assassinate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_invisible"
+					}
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+				"01"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"4.0"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"speed_bonus"				"50"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"damage_bonus"				"65"
+				}
+		}
+	}		
 	
 //=====================================================================================================================
 // Beast Master Abilities
@@ -5849,111 +6099,6 @@
 //=====================================================================================================================
 	
 	
-	
-	
-	
-	//=================================================================================================================
-	// Ability: Assassin - Assassinate
-	//=================================================================================================================
-
-		"ability_thief_assassinate"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"								"ability_datadriven"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"HotKeyOverride"						"w"
-		"AbilityTextureName"					"ability_thief_assassinate"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"						"0.4"
-	
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"60.0" 						
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"						"30"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"								"1"
-		
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"Target"				"CASTER"
-				"Duration"				"%duration"
-				"ModifierName"			"modifier_assassinate"
-			}
-			"ApplyModifier"
-			{
-				"Target"				"CASTER"
-				"Duration"				"%duration"
-				"ModifierName"			"modifier_invisible"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_assassinate"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"50" 
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"65"
-				}
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"Target"		"CASTER"
-						"ModifierName"	"modifier_assassinate"
-					}
-				}
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"Target"		"CASTER"
-						"ModifierName"	"modifier_assassinate"
-					}
-				}
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"Target"		"CASTER"
-						"ModifierName"	"modifier_invisible"
-					}
-				}
-			}
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"duration"					"4.0"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"speed_bonus"				"50"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"damage_bonus"				"65"
-				}
-		}
-	}
 	
 //=====================================================================================================================
 //NPC Abilities
