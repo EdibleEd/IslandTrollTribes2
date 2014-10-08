@@ -3350,7 +3350,7 @@
 					}
 					"ApplyModifier"
 					{
-						"ModifierName"	 "modifier_depress_mana_1"
+						"ModifierName"	 "modifier_depress_mana_loss"
 						"Target"		 "TARGET"
 						"Duration"		 "2"
 					}
