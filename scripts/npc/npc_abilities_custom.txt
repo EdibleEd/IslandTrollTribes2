@@ -6611,7 +6611,7 @@
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"	"elk_immunity"
+				"ModifierName"	"modifier_priest_resistall"
 				"Target"
 				{
 					"Center"	"TARGET"
@@ -6627,7 +6627,7 @@
 		}
 		"Modifiers"
 		{
-			"elk_immunity"
+			"modifier_priest_resistall"
 			{
 				"Duration"			"%duration"
 				"EffectName" 		"particles/items_fx/black_king_bar_avatar.vpcf"
