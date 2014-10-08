@@ -2483,7 +2483,7 @@
 				"ModifierName"  "modifier_nulldamage_troll"
 				"Target"
 				{
-			        	"Center"		"TARGET"					
+			        "Center"		"TARGET"					
 					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 		"DOTA_UNIT_TARGET_HERO"
 				}
@@ -2494,7 +2494,7 @@
 				"ModifierName"  "modifier_nulldamage_creep"
 				"Target"
 				{
-			        	"Center"		"TARGET"					
+			        "Center"		"TARGET"					
 					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 		"DOTA_UNIT_TARGET_CREEP"
 				}
@@ -2624,7 +2624,7 @@
 				"ModifierName"  "modifier_quantum_nulldamage_troll"
 				"Target"
 				{
-			        	"Center"		"TARGET"					
+			        "Center"		"TARGET"					
 					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 		"DOTA_UNIT_TARGET_HERO"
 				}
@@ -2635,7 +2635,7 @@
 				"ModifierName"  "modifier_quantum_nulldamage_creep"
 				"Target"
 				{
-			        	"Center"		"TARGET"					
+			        "Center"		"TARGET"					
 					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 		"DOTA_UNIT_TARGET_CREEP"
 				}
@@ -2737,6 +2737,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		   
@@ -2750,92 +2751,79 @@
 		"OnSpellStart"
 		{		
 			"TrackingProjectile"
-			{
-				"Target"            "TARGET"
-				"EffectName"        "particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
-				"Dodgeable"         "false"
-				"ProvidesVision"    "false"
-				"MoveSpeed"         "400"
+			{	
+				"Target"            	"TARGET"
+				"EffectName"        	"particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
+				"Dodgeable"         	"false"
+				"ProvidesVision"    	"false"
+				"MoveSpeed"         	"400"
 				//"SourceAttachment"
 			}
 			"FireSound"
 			{
-			"EffectName" 		"Hero_Nightstalker.Void"
-			"Target" 			"CASTER"
+			"EffectName" 				"Hero_Nightstalker.Void"
+			"Target" 					"CASTER"
 			}	
 		}			
 		"OnProjectileHitUnit"
 		{
+			"Damage"
+			{
+				"Type"   				"DAMAGE_TYPE_MAGICAL"
+				"Damage" 				"30"
+				"Target" 				"TARGET"
+			}
+			"Damage"
+			{
+				"Type"					"DAMAGE_TYPE_MAGICAL"
+				"Damage"				"5"
+				"Target"
+				{
+					"Center"			"TARGET"
+					"Radius"			"200"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_negativeblast"
+				"ModifierName"  		"modifier_negativeblast"
 				"Target"        
 				{
-					"Center"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO"
+					"Center"			"TARGET"
+					"Radius"			"200"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_HERO"
 				}
-				"Duration"      "%negative_blast_duration_troll"
+				"Duration"      		"%negative_blast_duration_troll"
 			}	
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_negativeblast"
+				"ModifierName"  		"modifier_negativeblast"
 				"Target"        
 				{
-					"Center"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_CREEP"
+					"Center"			"TARGET"
+					"Radius"			"200"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_CREEP"
 				}
-				"Duration"      "%negative_blast_duration_creep"
+				"Duration"      		"%negative_blast_duration_creep"
 			}
-			 "Damage"
-				{
-					"Type"   "DAMAGE_TYPE_MAGICAL"
-					"Damage" "35"
-					"Target" "TARGET"
-				}
 		}
 		
 		"Modifiers"
 		{
 			"modifier_negativeblast"
 			{
-				"IsDebuff"     		"1"
-				"Aura" 				"negativeblast_aura"
-				"Aura_Radius" 		"200"
-				"Aura_Teams"      	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"      	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			}
-			"negativeblast_aura"
-			{
-				"IsDebuff" 			"1"
-				"IsPurgable" 		"1"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" "TARGET"
-						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
-						"EffectAttachType" "follow_overhead"
-					}
-				}				
-				"ThinkInterval" 	"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Type"   "DAMAGE_TYPE_MAGICAL"
-						"Damage" "5"
-						"Target" "TARGET"
-					}
-				}
+				"IsDebuff"     			"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-10"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-10"
 				}
 			}
 		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2865,6 +2853,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_giganegativeblast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
@@ -2884,6 +2873,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		   
@@ -2897,100 +2887,79 @@
 		"OnSpellStart"
 		{		
 			"TrackingProjectile"
-			{
-				"Target"            "TARGET"
-				"EffectName"        "particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
-				"Dodgeable"         "false"
-				"ProvidesVision"    "false"
-				"MoveSpeed"         "400"
+			{	
+				"Target"            	"TARGET"
+				"EffectName"        	"particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
+				"Dodgeable"         	"false"
+				"ProvidesVision"    	"false"
+				"MoveSpeed"         	"400"
 				//"SourceAttachment"
 			}
 			"FireSound"
 			{
-			"EffectName" 		"Hero_Nightstalker.Void"
-			"Target" 			"CASTER"
+			"EffectName" 				"Hero_Nightstalker.Void"
+			"Target" 					"CASTER"
 			}	
 		}			
 		"OnProjectileHitUnit"
 		{
+			"Damage"
+			{
+				"Type"   				"DAMAGE_TYPE_MAGICAL"
+				"Damage" 				"45"
+				"Target" 				"TARGET"
+			}
+			"Damage"
+			{
+				"Type"					"DAMAGE_TYPE_MAGICAL"
+				"Damage"				"15"
+				"Target"
+				{
+					"Center"			"TARGET"
+					"Radius"			"250"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_giganegativeblast_troll"
+				"ModifierName"  		"modifier_giga_negativeblast"
 				"Target"        
 				{
-					"Center"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO"
+					"Center"			"TARGET"
+					"Radius"			"250"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_HERO"
 				}
-				"Duration"      "%giga_negativeblast_duration_troll"
+				"Duration"      		"%giga_negative_blast_duration_troll"
 			}	
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_giganegativeblast_creep"
+				"ModifierName"  		"modifier_giga_negativeblast"
 				"Target"        
 				{
-					"Center"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_CREEP"
+					"Center"			"TARGET"
+					"Radius"			"250"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_CREEP"
 				}
-				"Duration"      "%giga_negativeblast_duration_creep"
-			}			 
-			"Damage"
-			{
-					"Type"   	"DAMAGE_TYPE_MAGICAL"
-					"Damage" 	"35"
-					"Target" 	"TARGET"
+				"Duration"      		"%giga_negative_blast_duration_creep"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_giganegativeblast_troll"
+			"modifier_giga_negativeblast"
 			{
-				"IsDebuff"     		"1"
-				"Aura" 				"giganegativeblast_aura"
-				"Aura_Radius" 		"250"
-				"Aura_Teams"      	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"      	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			}
-			"modifier_giganegativeblast_creep"
-			{   
-				"IsDebuff"			"1"
-				"Aura"				"giganegativeblast_aura"
-				"Aura_Radius"		"250"
-				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			}
-			"giganegativeblast_aura"
-			{
-				"IsDebuff" 			"1"
-				"IsPurgable" 		"1"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" "TARGET"
-						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
-						"EffectAttachType" "follow_overhead"
-					}
-				}				
-				"ThinkInterval" 	"1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Type"   "DAMAGE_TYPE_MAGICAL"
-						"Damage" "15"
-						"Target" "TARGET"
-					}
-				}
+				"IsDebuff"     			"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-15"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-15"
 				}
 			}
 		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2998,12 +2967,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"giga_negativeblast_duration_troll"		"3"
+				"giga_negative_blast_duration_troll"		"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"giga_negativeblast_duration_creep"		"5"
+				"giga_negative_blast_duration_creep"		"5"
 			}
 		}
 	}
