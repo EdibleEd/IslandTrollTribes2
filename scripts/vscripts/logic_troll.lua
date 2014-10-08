@@ -60,6 +60,24 @@ function Heat(playerID)
     end
 end
 
+TROLL_RECIPE_TABLE = {
+        {"item_building_kit_fire_basic",        {"item_tinder", "item_flint", "item_stick"}},
+        {"item_building_kit_tent_basic",        {"item_stick", "item_hide_any", "item_stick"}},
+        {"item_building_kit_hut_basic",         {"item_ball_clay", "item_stick", "item_stick", "item_hide_any", "item_hide_any"}},
+        {"item_building_kit_hut_mud",           {"item_ball_clay", "item_ball_clay", "item_ball_clay", "item_ball_clay"}},
+        {"item_building_kit_chest_storage",     {"item_hide_any", "item_stick", "item_tinder", "item_ball_clay"}},
+        {"item_building_kit_smoke_house",       {"item_stick", "item_hide_any", "item_ball_clay"}},
+        {"item_building_kit_armory",            {"item_flint", "item_stone", "item_stone", "item_stone"}},
+        {"item_building_kit_tannery",           {"item_stick", "item_stick", "item_stone", "item_stone"}},
+        {"item_building_kit_workshop",          {"item_stick", "item_ingot_iron", "item_ingot_iron"}},
+        {"item_building_kit_hut_witch_doctor",  {"item_stick", "item_crystal_mana", "item_stick", "item_crystal_mana","item_stick", "item_crystal_mana"}},
+        {"item_building_kit_mixing_pot",        {"item_stickick", "item_ball_clay", "item_ball_clay", "item_ball_clay"}},
+        {"item_building_kit_tower_omni",        {"item_stone", "item_stick", "item_stick", "item_stick"}},
+        {"item_building_kit_teleport_beacon",   {"item_stone", "item_stone", "item_crystal_mana", "item_crystal_mana"}},
+        {"item_building_kit_hatchery",          {"item_stone", "item_stone", "item_stone", "item_stick", "item_stick", "item_stick"}}
+    }
+HIDE_TABLE = {"item_hide_wolf", "item_hide_elk", "item_hide_jungle_bear"}
+
 function InventoryCheck(playerID)
     -- print("Inv testing player " .. playerID)
     -- Lets find the hero we want to work with
@@ -68,40 +86,90 @@ function InventoryCheck(playerID)
     if hero == nil then
         print("hero " .. playerID .. " doesn't exist!")
     else
+        local heroInventoryList = {}
         -- lua uses an interesting sytax for for loops. for [start], [finish], [increment]
         -- we want to run over the 6 inventory slots,, starting at index 0
         for j=0,5,1 do
             if hero:GetItemInSlot(j) ~= nil then
-                local item1 = hero:GetItemInSlot(j):GetName()              
-                
-                if j < 4 then
-                    if not (hero:GetItemInSlot(j+1) == nil or hero:GetItemInSlot(j+2) == nil) then
-                        local item2 = hero:GetItemInSlot(j+1):GetName()
-                        local item3 = hero:GetItemInSlot(j+2):GetName() 
-                        for result, components in pairs(allowed_item_combos_three) do
-                            if components[1] == item1 and components[2] == item2 and components[3] == item3 then
-                                hero:GetItemInSlot(j):Kill()
-                                hero:GetItemInSlot(j+1):Kill()
-                                hero:GetItemInSlot(j+2):Kill()
-                                hero:AddItem(CreateItem(result, hero, hero))
-                            end
-                        end
-                    end
-                end
+                local itemInSlot = hero:GetItemInSlot(j):GetName()
+                heroInventoryList[j] = itemInSlot
+            else
+                heroInventoryList[j] = "empty_slot_" .. j
+            end
+        end
 
-                if j < 5 then
-                    if hero:GetItemInSlot(j+1) ~= nil then
-                        local item2 = hero:GetItemInSlot(j+1):GetName()
-                        for result, components in pairs(allowed_item_combos_two) do
-                            if components[1] == item1 and components[2] == item2 then
-                                hero:GetItemInSlot(j):Kill()
-                                hero:GetItemInSlot(j+1):Kill()
-                                hero:AddItem(CreateItem(result, hero, hero))
-                            end
-                        end
-                    end
+        for k,v in pairs(TROLL_RECIPE_TABLE) do
+            subtable =  table_slice(heroInventoryList,0,(#v[2])-1)
+            if CompareTables(v[2], subtable) then
+                print("match", v[1])
+                for slot,itemName in pairs(subtable) do
+                    local removeMe = hero:GetItemInSlot(slot-1)
+                    hero:RemoveItem(removeMe)
                 end
+                local newItem = CreateItem(v[1], hero, hero)
+                hero:AddItem(newItem)
             end
         end
     end
+end
+
+function table_slice (values,i1,i2)
+    local res = {}
+    local n = #values
+    -- default values for range
+    i1 = i1 or 1
+    i2 = i2 or n
+
+    if i2 < 0 then
+        i2 = n + i2 + 1
+    elseif i2 > n then
+        i2 = n
+    end
+
+    if i1 < 0 or i1 > n then
+        return {}
+    end
+
+    local k = 1
+    for i = i1,i2 do
+        res[k] = values[i]
+        k = k + 1
+    end
+
+    return res
+end
+
+--Compares two tables to see if they have the same values
+function CompareTables(table1, table2)
+    --print("Comparing tables")
+    if type(table1) ~= "table" or type(table2) ~= "table" then
+        return false
+    end
+
+    if #table1 ~= #table1 then
+        return false
+    end
+    
+    for key,value in pairs(table1) do
+        --print(key, table1[key], table2[key])
+        if table2[key] == nil then
+            return false
+        elseif table2[key] ~= table1[key] then
+            return false
+        end
+    end
+    
+    --print("check other table, just in case")    
+
+    for key,value in pairs(table2) do
+        --print(key, table2[key], table1[key])
+        if table1[key] == nil then
+            return false
+        elseif table1[key] ~= table2[key] then
+            return false
+        end
+    end
+    
+    --print("Match!")
+    return true
 end
