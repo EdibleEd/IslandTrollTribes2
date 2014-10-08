@@ -2976,6 +2976,7 @@
 			}
 		}
 	}
+	
 	//=================================================================================================================
 	// Ability: Mage - Maddening Discharge
 	//=================================================================================================================
@@ -3117,6 +3118,7 @@
 			}
 		}
 	}
+	
 	//=================================================================================================================
 	// Ability: Mage - Pump Up
 	//=================================================================================================================
@@ -3287,138 +3289,131 @@
 		"OnSpellStart"
 		{		
 			"TrackingProjectile"
-			{
-				"Target"            "TARGET"
-				"EffectName"        "particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
-				"Dodgeable"         "false"
-				"ProvidesVision"    "false"
-				"MoveSpeed"         "1000"
-				//"SourceAttachment"
+			{	
+				"Target"           		 "TARGET"
+				"EffectName"        	 "particles/units/heroes/hero_bane/bane_fiendsgrip_hand_holes.vpcf"
+				"Dodgeable"         	 "false"
+				"ProvidesVision"    	 "false"
+				"MoveSpeed"         	 "1000"
 			}
 			"FireEffect"
 			{
-				"EffectName" "axe_counterhelix_unused2"
-				"EffectAttachType" "follow_origin"
-				"Target"      "CASTER"
+				"EffectName" 			 "axe_counterhelix_unused2"
+				"EffectAttachType" 		 "follow_origin"
+				"Target"      			 "CASTER"
 			}
 			"FireSound"
 			{
-			"EffectName" 		"Hero_Silencer.LastWord.Cast"
-			"Target" 			"CASTER"
+			"EffectName" 				 "Hero_Silencer.LastWord.Cast"
+			"Target" 					 "CASTER"
 			}	
+		}
+		"OnProjectileHitUnit"
+		{
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_depress"
+				"ModifierName"  		 "modifier_depress"
 				"Target"        
 				{
-					"Center"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Center"			 "TARGET"
+					"Teams" 			 "DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			 "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 				}
-				"Duration"      "%depress_duration"
+				"Duration"      		 "20"
 			}
 		}				
 		"Modifiers"
 		{
 			"modifier_depress"
 			{
-				"IsDebuff"     				"1"
-				"Aura" 						"depress_aura"
-				"Aura_Radius" 				"600"
-				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				"Aura_ApplyToCaster"		"1"
-			}
-			"depress_aura"
-			{
-				"IsDebuff" 			"1"
-				"IsPurgable" 		"1"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" "TARGET"
-						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
-						"EffectAttachType" "follow_overhead"
-					}
-				}
-				"ThinkInterval" 	"1"
-				"OnIntervalThink"
-					{
-						"Damage"
-						{
-							"Type"   "DAMAGE_TYPE_MAGICAL"
-							"Damage" "1"
-							"Target" "TARGET"
-						}
-						"FireSound"
-						{
-							"EffectName" 		"Hero_Silencer.Curse_Tick"
-							"Target" 			"TARGET"
-						}		
-					}			
-					"DelayedAction"
-						{
-							"Delay"  "0.1"
-							"Action"
-							{
-								"RunScript"
-								{
-									"ScriptFile"    "custom_functions_abilities.lua"
-									"Function"      "DepressInitial"
-									"Target"        "SELF"
-								}  
-							}
-						}
-					"DelayedAction"
-						{
-							"Delay"  "3"
-							"Action"
-							{
-								"RunScript"
-								{
-									"ScriptFile"    "custom_functions_abilities.lua"
-									"Function"      "Depress2"
-									"Target"        "SELF"
-								}  
-							}
-						}
-					"DelayedAction"
-					{
-						"Delay"  "6"
-						"Action"
-						{
-							"RunScript"
-							{
-								"ScriptFile"    "custom_functions_abilities.lua"
-								"Function"      "DepressRemainder"
-								"Target"        "SELF"
-							}  
-						}
-					}	
+				"IsDebuff"     			 "1"
+				"Aura" 					 "depression_aura"
+				"Aura_Radius" 			 "600"
+				"Aura_Teams"      		 "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"      		 "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"EffectName" 			 "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+				"EffectAttachType"	 	 "follow_overhead"
+
+
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "-20"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-10"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-20"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-10"
+				}				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	 "custom_functions_ability.lua"
+						"Function"		 "RemoveMana"
+						"ManaRemoved"	 "10"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	 "modifier_depress_mana_loss"
+						"Target"		 "TARGET"
+						"Duration"		 "2"
+					}
+				}
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_depress_aura"
+						"Target"		"TARGET"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_depress_mana_loss"
+						"Target"		"TARGET"
+					}
+				}
+				"ThinkInterval"			"1"
+				"OnIntervalThink"	
+				{
+					"Damage"
+					{
+						"Damage"		"1"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Target"		"TARGET"
+					}
+				}
+			}
+			"depression_aura"
+			{
+				"IsDebuff"				 "1"
+				"IsPurgable"			 "0"
+				"ThinkInterval"			 "3"
+				"EffectName"			 "particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	 "custom_functions_ability.lua"
+						"Function"		 "RemoveMana"
+						"ManaRemoved"	 "5"
+					}
+				}
+			}
+			"modifier_depress_mana_loss"
+			{
+				"IsDebuff"				 "1"
+				"IsHidden"				 "1"
+				"ThinkInterval"			 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"custom_functions_ability.lua"
+						"Function"		"RemoveMana"
+						"ManaRemoved"	"5"
+					}
 				}
 			}
 		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"depress_duration"		"20"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"depress_energyloss"		"5"
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -5537,10 +5532,153 @@
 		}
 	}		
 	
+	
 //=====================================================================================================================
 // Beast Master Abilities
 //=====================================================================================================================
+	//=================================================================================================================
+	// Ability: Beastmaster - Tame Pet 
+	//=================================================================================================================
+	"ability_beastmaster_tamepet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"ability_beastmaster_tamepet"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "1.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "10"
+		"AbilityCastRange"				"600"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+		}		
+		"OnSpellStart"
+		{		
+		"RunScript"
+			{
+				"ScriptFile"		"custom_functions_ability.lua"
+				"Function"			"TamePet"
+				//"Ability"			"ability_beastmaster_tamepet"
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Ability: Beast Master - Call to Battle
+	//=================================================================================================================
+	//Boosts stats to the beastmaster's units.
+	"ability_beastmaster_calltobattle"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_calltobattle"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.2"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
 	
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+					{
+						"ModifierName"  "modifier_calltobattle"
+						"Duration"      "%duration"
+						"Radius"		"GLOBAL"
+						"Target"
+						{
+							"Center"		"CASTER"					
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" 		"DOTA_UNIT_TARGET_CREEP"							
+							"Flags"			"DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}						
+					}			
+				"FireSound"
+				{
+					"EffectName"		"Hero_LoneDruid.BattleCry"
+					"Target"			"TARGET"
+				}
+			}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_calltobattle"
+			{
+				"EffectName"									 "shadowshaman_voodoo"
+				"Duration"										 "%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%move_speed"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"      	"%attack_damage"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      		"%armor_bonus"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"6"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_damage"				"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed"				"25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_bonus"				"2"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ability: Beast Master - Fowl Play
 	//=================================================================================================================
@@ -5636,7 +5774,59 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Ability: Beastmaster - Shortness
+	//=================================================================================================================
+	"ability_beastmaster_shortness"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"ability_beastmaster_shortness"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"           "particles/units/heroes/hero_phantom_assassin"
+		}
+		"Modifiers"
+		{
+			"modifier_beastmaster_shortness_evasion"
+			{
+				"Passive" "1"
+				"States"
+				{
+				"MODIFIER_PROPERTY_AVOID_CONSTANT"	"%chance"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chance"					"18"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ability: Beast Master - (Wolf) Howl
 	//=================================================================================================================
@@ -5673,6 +5863,7 @@
 					"Target"
 					{
 						"Center"			"CASTER"
+						"Radius"			"500"
 					}
 				}
 				"FireSound"
@@ -5802,7 +5993,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED| DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -5883,7 +6074,172 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Beastmaster - Bear (Bash)
+	//=================================================================================================================
+	"ability_beastmaster_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"ability_beastmaster_bash"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_bear_bash_passive"
+			{
+				"Passive" "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "%bash_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"	   "CASTER"
+								"ModifierName" "modifier_bear_bash"
+							}		
+						}
+					}
+				}
+			}
+		"modifier_bear_bash"
+				{
+						 "EffectName" "generic_stunned"
+						 "EffectAttachType" "follow_overhead"
+						 "Duration"  "1.0"
+						 "OverrideAnimation" "ACT_DOTA_DISABLED"
+						 "States"
+						 {
+						   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+						 }			
+				}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bash_chance"					"20"
+			}
+		}
+	}
 	
+	//=================================================================================================================
+	// Ability: Beastmaster - Bear (Slam)
+	//=================================================================================================================
+	"ability_beastmaster_slam"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"ability_beastmaster_slam"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"		"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" 			"0.5"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+		  {
+			"Target"
+			{
+			  "Center"  "CASTER"
+			  "Radius"  "%slam_radius"
+			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			  "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+			"Action"
+			{
+			  "Damage"
+			  {
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%damage"
+				"Target" "TARGET"
+			  }          
+			}
+			"ApplyModifier"
+			{
+			"Target"				    "POINT"
+			"Radius"  					"%slam_radius"
+			"Teams"   					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Types"  					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			"ModifierName" 				"bear_slammed"
+			}	
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" 			"POINT"
+			"EffectName" 			"generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" 		"follow_origin"
+			"EffectRadius"		 	"%slam_radius"
+		  }
+		}
+		"Modifiers"
+		{
+			"bear_slammed"
+			{
+				"Duration"      "%slow_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%slow"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slam_radius"		"315"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"65"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"-50"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ability: Beast Master - Shapeshift to Wolf Form
 	//=================================================================================================================
@@ -6059,16 +6415,608 @@
 		}
 	}
 	
-	
-	
-	
-	
+	//=================================================================================================================
+	// Ability: Beastmaster - (Elk) Magic Immunity
+	//=================================================================================================================
+	"ability_beastmaster_magicimmunity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" 			"ability_beastmaster_magicimmunity"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" 			"0.3"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			"40"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"10"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                  "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"           "particles/items_fx"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"elk_immunity"
+				"Target"
+				{
+					"Center"	"CASTER"
+				}
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/items2_fx/smoke_of_deceit.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				"EffectRadius"		"%radius"
+			}
+		}
+		"Modifiers"
+		{
+			"elk_immunity"
+			{
+				"Duration"			"%duration"
+				"EffectName" 		"particles/items_fx/black_king_bar_avatar.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.0"
+			}
+		}
+	}
 //=====================================================================================================================
 // Priest Abilities
 //=====================================================================================================================
+	//=================================================================================
+	//  Ability Priest - The Glow
+	//=================================================================================
+	"ability_priest_theglow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"ability_priest_theglow"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_priestglow"
+			{
+				"Passive"				"1"
+				"Aura"					"modifier_glow_restore"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"1"
+			}
+			"modifier_glow_restore"
+			{
+				"IsHidden"		"0"
+				"TextureName" 	"ability_priest_theglow"
+				"IsPurgable"	"0"
+				"ThinkInterval"	"%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+						"Function"				"AddHeat"
+						"Heat"					"%heat"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	"%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%attack_speed"
+				}				
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed"					"5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed"					"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heat"							"5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"tick_rate"						"8"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"500"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Resist All
+	//=================================================================================================================
+	"ability_priest_resistall"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName" 			"ability_priest_resistall"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" 			"0.1"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			"40"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"40"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                  "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"           "particles/items_fx"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"elk_immunity"
+				"Target"
+				{
+					"Center"	"CASTER"
+				}
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/items2_fx/smoke_of_deceit.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				"EffectRadius"		"%radius"
+			}
+		}
+		"Modifiers"
+		{
+			"elk_immunity"
+			{
+				"Duration"			"%duration"
+				"EffectName" 		"particles/items_fx/black_king_bar_avatar.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Pump Up
+	//=================================================================================================================
+	"ability_priest_pumpup"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_priest_pumpup"
+		"HotKeyOverride"				"D"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30"
+		"AbilityCastRange"				"1000"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_night_stalker"
+			"particle_folder"           "particles/units/heroes/hero_bane"
+			"soundfile"					"sounds/weapons/hero/nightstalker/dota_nightstalker_void.vsnd"
+		}
+		
+		"OnSpellStart"
+		{		
+			"FireSound"
+			{
+			"EffectName" 		"Hero_OgreMagi.Bloodlust.Cast"
+			"Target" 			"CASTER"
+			}		
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_pumpup"
+				"Target"        
+				{
+					"Target"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+			"FireSound"
+			{
+				"EffectName" 		"Hero_OgreMagi.Bloodlust.Target"
+				"Target" 			"TARGET"
+			}	
+		}
+		
+		"Modifiers"
+		{
+			"modifier_pumpup"
+			{
+				"IsDebuff" 			"0"
+				"IsPurgable" 		"1"				
+				"Duration"      	"%pumpup_duration"
+    				"Properties"
+    				{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_speed_bonus"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_speed_bonus"
+						"MODIFIER_PROPERTY_MODEL_SCALE"								"1.30"
+				} 						
+        			"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//ogre magi bloodlust
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pumpup_duration"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed_bonus"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed_bonus"		"30"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Spray Healing
+	//=================================================================================================================
+	"ability_priest_sprayhealing"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_priest_sprayhealing"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.3"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"200"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
 	
-	
-	
+			"OnSpellStart"
+			{
+				"Heal"
+				{
+					"Target" "CASTER"
+					"HealAmount"	"%heal_amount"
+					"Radius"		"%radius"
+					"Target"
+						{
+							"Center"		"CASTER"					
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"							
+						}						
+					}			
+				"FireSound"
+				{
+					"EffectName"		"Hero_Dazzle.Shallow_Grave"
+					"Target"			"TARGET"
+				}
+			}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal_ammount"					"50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"400"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Lightning Shield
+	//=================================================================================================================
+	"ability_priest_lightningshield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"ability_priest_lightningshield"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.2"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30"
+		"AbilityCastRange"				"300"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   "OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_lightning_shield_damage_aura"
+				"Duration"			"%lightning_duration"
+				"Target"			"TARGET"
+			}
+			"FireSound"
+			{
+				"Target"	"TARGET"
+				"FireSound"	"Hero_Zuus.GodsWrath.PreCast"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Modifiers"
+		{
+			"modifier_lightning_shield_damage_aura"
+			{
+				"ThinkInterval"		"%lightning_think_time"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Damage"	"%lightning_damage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "%lightning_radius"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+					}
+				}
+				"EffectName" 		"particles/items2_fx/mjollnir_shield.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilitySpecial"
+		{
+
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lightning_damage"			"7"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lightning_radius"			"160"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"lightning_duration"		"20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"lightning_think_time"		"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Self Preservation
+	//=================================================================================================================
+	"ability_priest_selfpreservation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" 			"ability_priest_selfpreservation"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" 			"0.0"
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			"40"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"10"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                  "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+			"particle_folder"           "particles/items_fx"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_preservation"
+				"Target"
+				{
+					"Center"	"CASTER"
+				}
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/items2_fx/smoke_of_deceit.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				"EffectRadius"		"200"
+			}
+			"FireSound"
+			{
+				"Target"		"TARGET"
+				"FireSound"		"Hero_Dazzle.Shallow_Grave"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Modifiers"
+		{
+			"modifier_preservation"
+			{
+				"EffectName" 		"particles/items_fx/black_king_bar_avatar.vpcf" //make it something like flames idk
+				"EffectAttachType"	"follow_origin"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"custom_functions_ability.lua"
+						"Function"			"Preservation"
+						"Ability"			"ability_priest_selfpreservation"
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus"					"50.0"
+			}
+		}
+	}	
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
