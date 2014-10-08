@@ -2467,8 +2467,8 @@
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
-		"VisionDaytimeRange"	"0"
-		"VisionNighttimeRange"	"0"
+		"VisionDaytimeRange"	"1200"
+		"VisionNighttimeRange"	"800"
 	}
 //=================================================================================
 // Building: Fire (magic)
@@ -2530,8 +2530,8 @@
 		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
-		"VisionDaytimeRange"	"0"
-		"VisionNighttimeRange"	"0"
+		"VisionDaytimeRange"	"1200"
+		"VisionNighttimeRange"	"800"
 	}
 //=================================================================================
 // Building: Tent
