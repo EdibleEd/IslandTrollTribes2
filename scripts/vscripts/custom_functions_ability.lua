@@ -484,3 +484,24 @@ function KillDummyUnit(keys)
 		end
 	end
 end
+
+function PackUp(keys)
+    local caster = keys.caster
+    local buildingName = caster:GetUnitName()
+    print(buildingName)
+
+    local stringParse = string.gmatch(buildingName, "%a+")
+    local itemName = "item"
+    local str = stringParse()
+    while str ~= nil do
+        print(str)
+        if str ~= npc then
+            itemName = itemName .. "_" .. str
+        end
+        if str == "building" then
+            itemName = itemName .. "_kit"
+        end
+        str = stringParse()
+        print(itemName)
+    end
+end

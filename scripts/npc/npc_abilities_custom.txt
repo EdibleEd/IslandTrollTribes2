@@ -167,12 +167,13 @@
 	"Ability_Pack_up"
 	{
 	// General
-	"BaseClass"			"ability_datadriven"
-	"AbilityBehavior"	""
-	"AbilityTextureName"	"Pack_Up"
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"	"ability_building_packup"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"0.0"
+	"AbilityCastPoint"				"0,5"
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0"
@@ -181,9 +182,9 @@
 	{
 		"RunScript"
 		{
-			"Target"		
-			"ScriptFile"	"scripts/vscripts/abilities.lua"
-			"Function"				"Pack_Up"
+			"Target"		"CASTER"
+			"ScriptFile"	"scripts/vscripts/custom_functions_ability.lua"
+			"Function"		"PackUp"
 		}
 	}
 	// Special	
@@ -6352,6 +6353,7 @@
 				//"Passive" 		"1"
 				"IsPurgable"	"0"
 				"IsDebuff"		"1"
+				"IsHidden"		"0"
 				"States"
 				{
 					"MODIFIER_STATE_PASSIVES_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -6361,74 +6363,6 @@
 			}
 		}
 	}
-	
-//=====================================================================================================================
-//Modifier Applier  -- Used to apply modifiers from Lua using the callModApplier() function
-//=====================================================================================================================
-
-	//=================================================================================================================
-	// Hunter Track Applier
-	//=================================================================================================================
-	"modifier_hunter_track_applier"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName"            ""
-
-		"precache"
-		{
-			"particle_folder"            "particles/units/heroes/hero_bounty_hunter"
-			"particle_folder"            "particles/generic_gameplay"
-		}
-		
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-					{
-						"ModifierName"  "modifier_track_hero"
-						"Target"        "CASTER"
-					}
-		}
-		
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------    
-		"Modifiers"
-		{
-			"modifier_track_hero"
-			{
-				"IsDebuff"  "true"
-				"Duration"  "%duration"
-				"States"
-				{
-					"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%armor_reduction"
-				}
-			}
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15 20 25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-1 -2 -3"
-			}
-		}
-	}
-	
-
 	
 //=================================================================================
 //Placeholder Abilities
