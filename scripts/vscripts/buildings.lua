@@ -105,7 +105,7 @@ function getMudHutPoint(keys)
 	local caster = keys.caster
 	local point = BuildingHelper:AddBuildingToGrid(keys.target_points[1], 2, caster)
 	if point ~= -1 then
-		local Mud_Hut = CreateUnitByName("npc_building_mud_hut", point, false, nil, nil, caster:GetTeam())
+		local Mud_Hut = CreateUnitByName("npc_building_hut_mud", point, false, nil, nil, caster:GetTeam())
 		BuildingHelper:AddBuilding(Mud_Hut)
 		Mud_Hut:UpdateHealth(BUILD_TIME_10,true,1.0)
 		Mud_Hut:SetHullRadius(64)
@@ -156,9 +156,9 @@ function getSmokePoint(keys)
 		for itemSlot = 0, 5, 1 do
 			local Item = caster:GetItemInSlot( itemSlot )
 			if Item ~= nil and Item:GetName() == itemName then
-			caster:RemoveItem(Item)
-			return
-		end
+				caster:RemoveItem(Item)
+				return
+			end
 		end
 	else
 	end
@@ -231,7 +231,7 @@ function getWDHutPoint(keys)
 	local caster = keys.caster
 	local point = BuildingHelper:AddBuildingToGrid(keys.target_points[1], 2, caster)
 	if point ~= -1 then
-		local WDHut = CreateUnitByName("npc_building_WD_hut", point, false, nil, nil, caster:GetTeam())
+		local WDHut = CreateUnitByName("npc_building_hut_witch_doctor", point, false, nil, nil, caster:GetTeam())
 		BuildingHelper:AddBuilding(WDHut)
 		WDHut:UpdateHealth(BUILD_TIME_10,true,.7)
 		WDHut:SetHullRadius(64)

@@ -2539,7 +2539,7 @@
 	"npc_building_tent"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/tent_dk_small.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2600,7 +2600,7 @@
 	"npc_building_troll_hut"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/sniper_hut.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2657,10 +2657,10 @@
 //=================================================================================
 // Building: Mud Hut
 //=================================================================================
-	"npc_building_mud_hut"
+	"npc_building_hut_mud"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/tent_dk_small.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2720,7 +2720,7 @@
 	"npc_building_storage_chest"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_debris/secret_shop001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2779,7 +2779,7 @@
 	"npc_building_smoke_house"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/tent_dk_large.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2840,7 +2840,7 @@
 	"npc_building_armory"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/good_shop001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2900,7 +2900,7 @@
 	"npc_building_tannery"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/tent_dk_med.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -2962,7 +2962,7 @@
 	"npc_building_workshop"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/shop_newplayerexperience_01.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3019,10 +3019,10 @@
     //=================================================================================
 // Building: Witch Doctor's Hut
 //=================================================================================
-	"npc_building_WD_hut"
+	"npc_building_hut_witch_doctor"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/sideshop_radiant002.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3082,7 +3082,7 @@
 	"npc_building_mix_pot"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_tree/stump001"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3142,7 +3142,7 @@
 	"npc_building_omnitower"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/wooden_sentry_tower001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3202,7 +3202,7 @@
 	"npc_building_ensnare_trap"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/items/lone_druid/bear_trap/bear_trap.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3263,7 +3263,7 @@
 	"npc_building_spirit_ward"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/heroes/witchdoctor/witchdoctor_ward.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3323,7 +3323,7 @@
 	"npc_building_teleport_beacon"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/items/wards/nexon_sotdaeward/nexon_sotdaeward.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3384,7 +3384,7 @@
 	"npc_building_hatchery"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/items/furion/staff_eagle_1.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
@@ -3446,7 +3446,7 @@
 	"npc_building_craftmaster"
 	{
 		// General
-		"BaseClass"				"npc_dota_tower"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
