@@ -5,7 +5,7 @@ Credits to Ash47 and BMD for the timer code.
 Thanks also to Cyborgmatt, who the above authors didn't credit when they copied his code.
 ]]
 
-BUILDINGHELPER_THINK = 0.05
+BUILDINGHELPER_THINK = 0.1
 GRIDNAV_SQUARES = {}
 BUILDING_SQUARES = {}
 BH_UNITS = {}
@@ -330,7 +330,7 @@ function BuildingHelper:AddBuilding(building)
 		print("updating health")
 		building:SetHealth(1)
 		building.nfBuildTime=fBuildTime
-		building.fTimeBuildingCompleted=GameRules:GetGameTime()+fBuildTime+fBuildTime*.35
+		building.fTimeBuildingCompleted=GameRules:GetGameTime()+fBuildTime--+fBuildTime*.35
 		building.nMaxHealth = building:GetMaxHealth()
 		building.nHealthInterval = building.nMaxHealth*1/(fBuildTime/BUILDINGHELPER_THINK)
 		building.nHealthUnrounded = building.nHealthInterval
@@ -338,7 +338,6 @@ function BuildingHelper:AddBuilding(building)
 		if bScale then
 			building.fMaxScale=fMaxScale
 			building.fScaleInterval=building.fMaxScale*1/(fBuildTime/BUILDINGHELPER_THINK)
-			building.fScaleInterval=building.fScaleInterval-.1*building.fScaleInterval
 			building.fCurrentScale=.2*fMaxScale
 			building.bScale=true
 		end
@@ -402,6 +401,7 @@ function BuildingHelper:AddBuilding(building)
 				if building:GetHealth() < building.nMaxHealth and GameRules:GetGameTime() <= building.fTimeBuildingCompleted then
 					building.nHealthUnrounded = building.nHealthInterval + building.nHealthUnrounded
 					building:SetHealth(building.nHealthUnrounded)
+					print("BUILDING", building.nHealthUnrounded, GameRules:GetGameTime(), building.fTimeBuildingCompleted)
 				else
 					building.bUpdatingHealth=false
 				end

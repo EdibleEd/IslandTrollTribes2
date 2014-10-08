@@ -278,6 +278,14 @@
 		}
 		"Modifiers"
 		{
+			// "test_mod"
+			// {
+			// 	"Passive"	"1"
+			// 	"Properties"
+			// 	{
+			// 		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"10"
+			// 	}
+			// }
 			"aura_burn"
 				{
 					"IsHidden"				"0"
@@ -6304,6 +6312,53 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Building Disabled Passive
+	//=================================================================================================================
+	"ability_building_disable"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityTextureName" 			"razor_plasma_field"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Duration"		"10"
+				"Target"		"TARGET"
+				"ModifierName"	"modifier_building_disabled"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
+				"Function"		"DisablePassives"
+				"Target"		"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_building_disabled"
+			{
+				//"Passive" 		"1"
+				"IsPurgable"	"0"
+				"IsDebuff"		"1"
+				"States"
+				{
+					"MODIFIER_STATE_PASSIVES_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"				"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}

@@ -19,17 +19,24 @@ function getCampFirePoint(keys)
 	local point = BuildingHelper:AddBuildingToGrid(keys.target_points[1], 2, caster)
 	if point ~= -1 then
 		local Campfire = CreateUnitByName("npc_building_fire_basic", point, false, nil, nil, caster:GetTeam())
+		local campfireBuildTime = BUILD_TIME_10
 		BuildingHelper:AddBuilding(Campfire)
-		Campfire:UpdateHealth(BUILD_TIME_10,true,1.0)
+		Campfire:UpdateHealth(campfireBuildTime,true,1.0)
 		Campfire:SetHullRadius(64)
 		Campfire:SetFireEffect(nil) 
 		Campfire:SetControllableByPlayer( caster:GetPlayerID(), true )
+
+		Campfire:AddAbility("ability_building_disable")
+		local ab = Campfire:FindAbilityByName("ability_building_disable")
+		ab:ApplyDataDrivenModifier(Campfire, Campfire, "modifier_building_disabled", {duration = campfireBuildTime})
+		--Campfire:RemoveAbility("ability_building_disable")
+
 		for itemSlot = 0, 5, 1 do
 			local Item = caster:GetItemInSlot( itemSlot )
 			if Item ~= nil and Item:GetName() == itemName then
-			caster:RemoveItem(Item)
-			return
-		end
+				caster:RemoveItem(Item)
+				return
+			end
 		end
 	else
 		FireGameEvent( 'custom_error_show', { player_ID = caster:GetPlayerID(), _error = "Can't build here" } )
