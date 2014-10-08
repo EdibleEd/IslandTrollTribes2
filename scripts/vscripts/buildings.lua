@@ -26,11 +26,6 @@ function getCampFirePoint(keys)
 		Campfire:SetFireEffect(nil) 
 		Campfire:SetControllableByPlayer( caster:GetPlayerID(), true )
 
-		Campfire:AddAbility("ability_building_disable")
-		local ab = Campfire:FindAbilityByName("ability_building_disable")
-		ab:ApplyDataDrivenModifier(Campfire, Campfire, "modifier_building_disabled", {duration = campfireBuildTime})
-		--Campfire:RemoveAbility("ability_building_disable")
-
 		for itemSlot = 0, 5, 1 do
 			local Item = caster:GetItemInSlot( itemSlot )
 			if Item ~= nil and Item:GetName() == itemName then

@@ -314,6 +314,15 @@ function BuildingHelper:AddBuilding(building)
 			unit.bNeedsToJump=false
 		end
 	end
+
+	building:AddAbility("ability_building_disable")
+	local ab = building:FindAbilityByName("ability_building_disable")
+	ab:ApplyDataDrivenModifier(Campfire, Campfire, "modifier_building_disabled", {duration = campfireBuildTime})
+	building:RemoveAbility("ability_building_disable")
+
+	if building:HasModifier('modifier_invulnerable') then
+        building:RemoveModifierByName('modifier_invulnerable')
+    end
 	
 	function building:SetFireEffect(fireEffect)
 		if fireEffect==nil then building.bFireEnabled = false return end
@@ -327,7 +336,7 @@ function BuildingHelper:AddBuilding(building)
 	end
 
 	function building:UpdateHealth(fBuildTime, bScale, fMaxScale)
-		print("updating health")
+		--print("updating health")
 		building:SetHealth(1)
 		building.nfBuildTime=fBuildTime
 		building.fTimeBuildingCompleted=GameRules:GetGameTime()+fBuildTime--+fBuildTime*.35
@@ -401,7 +410,7 @@ function BuildingHelper:AddBuilding(building)
 				if building:GetHealth() < building.nMaxHealth and GameRules:GetGameTime() <= building.fTimeBuildingCompleted then
 					building.nHealthUnrounded = building.nHealthInterval + building.nHealthUnrounded
 					building:SetHealth(building.nHealthUnrounded)
-					print("BUILDING", building.nHealthUnrounded, GameRules:GetGameTime(), building.fTimeBuildingCompleted)
+					--print("BUILDING", building.nHealthUnrounded, GameRules:GetGameTime(), building.fTimeBuildingCompleted)
 				else
 					building.bUpdatingHealth=false
 				end

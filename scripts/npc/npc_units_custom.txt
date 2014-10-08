@@ -2412,7 +2412,7 @@
 	"npc_building_fire_basic"
 	{
 		// General
-		"BaseClass"				"npc_dota_creature"	
+		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_debris/camp_fire001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
 
