@@ -2469,6 +2469,8 @@
 		// Vision
 		"VisionDaytimeRange"	"1200"
 		"VisionNighttimeRange"	"800"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Fire (magic)
@@ -2532,6 +2534,8 @@
 		// Vision
 		"VisionDaytimeRange"	"1200"
 		"VisionNighttimeRange"	"800"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Tent
@@ -2593,6 +2597,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Troll Hut
@@ -2653,6 +2659,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Mud Hut
@@ -2713,6 +2721,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Storage Chest
@@ -2772,6 +2782,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 //=================================================================================
 // Building: Smoke House
@@ -2833,6 +2845,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 //=================================================================================
 // Building: Armory
@@ -2893,6 +2907,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 //=================================================================================
 // Building: Tannery
@@ -2955,6 +2971,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 	//=================================================================================
 // Building: Workshop
@@ -3015,6 +3033,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
     //=================================================================================
 // Building: Witch Doctor's Hut
@@ -3075,6 +3095,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 	//=================================================================================
 // Building: Mixing Pot
@@ -3135,6 +3157,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 	//=================================================================================
 // Building: Omnitower
@@ -3195,6 +3219,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 	//=================================================================================
 // Building: Ensnare Trap
@@ -3256,6 +3282,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 	//=================================================================================
 // Building: Spirit Ward
@@ -3316,6 +3344,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 	//=================================================================================
 // Building: Teleport Beacon
@@ -3377,6 +3407,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"0"
 	}
 //=================================================================================
 // Building: Hatchery
@@ -3438,6 +3470,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 	
 //=================================================================================
@@ -3498,6 +3532,8 @@
 		// Vision
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
+
+		"HasInventory"			"1"
 	}
 
 	//=================================================================================    
