@@ -315,11 +315,6 @@ function BuildingHelper:AddBuilding(building)
 		end
 	end
 
-	building:AddAbility("ability_building_disable")
-	local ab = building:FindAbilityByName("ability_building_disable")
-	ab:ApplyDataDrivenModifier(Campfire, Campfire, "modifier_building_disabled", {duration = campfireBuildTime})
-	building:RemoveAbility("ability_building_disable")
-
 	if building:HasModifier('modifier_invulnerable') then
         building:RemoveModifierByName('modifier_invulnerable')
     end
@@ -350,6 +345,10 @@ function BuildingHelper:AddBuilding(building)
 			building.fCurrentScale=.2*fMaxScale
 			building.bScale=true
 		end
+		building:AddAbility("ability_building_disable")
+		local ab = building:FindAbilityByName("ability_building_disable")
+		ab:ApplyDataDrivenModifier(building, building, "modifier_building_disabled", {duration = fBuildTime})
+		building:RemoveAbility("ability_building_disable")
 	end
 	
 	function building:RemoveBuilding(nSize, bKill)
