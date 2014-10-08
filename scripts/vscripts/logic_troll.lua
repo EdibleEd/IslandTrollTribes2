@@ -92,6 +92,9 @@ function InventoryCheck(playerID)
         for j=0,5,1 do
             if hero:GetItemInSlot(j) ~= nil then
                 local itemInSlot = hero:GetItemInSlot(j):GetName()
+                if string.find(itemInSlot, "hide") then
+                    itemInSlot = "item_hide_any"
+                end
                 heroInventoryList[j] = itemInSlot
             else
                 heroInventoryList[j] = "empty_slot_" .. j
