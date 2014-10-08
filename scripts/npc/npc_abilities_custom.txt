@@ -6506,6 +6506,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+
 		"Modifiers"
 		{
 			"modifier_priestglow"
@@ -6580,6 +6582,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"ability_priest_resistall"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
@@ -6610,14 +6614,14 @@
 				"ModifierName"	"elk_immunity"
 				"Target"
 				{
-					"Center"	"CASTER"
+					"Center"	"TARGET"
 				}
 			}
 			"FireEffect"
 			{
 				"EffectName"		"particles/items2_fx/smoke_of_deceit.vpcf"
 				"EffectAttachType"	"follow_origin"
-				"Target"			"CASTER"
+				"Target"			"TARGET"
 				"EffectRadius"		"%radius"
 			}
 		}
@@ -6768,6 +6772,8 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_priest_sprayhealing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
 		// Casting
@@ -6785,27 +6791,27 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	
-			"OnSpellStart"
+		"MaxLevel"						"1"
+
+		"OnSpellStart"
+		{
+			"Heal"
 			{
-				"Heal"
+				"HealAmount"	"%heal_amount"
+				"Target"
 				{
-					"Target" "CASTER"
-					"HealAmount"	"%heal_amount"
-					"Radius"		"%radius"
-					"Target"
-						{
-							"Center"		"CASTER"					
-							"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"							
-						}						
-					}			
-				"FireSound"
-				{
-					"EffectName"		"Hero_Dazzle.Shallow_Grave"
-					"Target"			"TARGET"
+					"Center"		"CASTER"	
+					"Radius"		"%radius"				
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
 				}
+			}	
+			"FireSound"
+			{
+				"EffectName"		"Hero_Dazzle.Shallow_Grave"
+				"Target"			"CASTER"
 			}
+		}
 		// Modifiers
 		//-------------------------------------------------------------------------------------------------------------
 
@@ -6816,7 +6822,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"heal_ammount"					"50"
+				"heal_amount"					"50"
 			}
 			"02"
 			{
