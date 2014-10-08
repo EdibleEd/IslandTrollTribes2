@@ -172,6 +172,9 @@ function ITT_GameMode:InitGameMode()
 	
 	--Listener for storing hero information and revive
 	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'On_dota_player_killed'), self)
+
+    -- Listener for drops and for removing buildings from block table
+    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )  
 end
 
 -- This code is written by Internet Veteran, handle with care.
@@ -261,6 +264,18 @@ function ITT_GameMode:OnNPCSpawned( keys )
         heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
         spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
         --heatApplier:RemoveSelf()
+    end
+end
+
+function ITT_GameMode:OnEntityKilled(keys)
+    local killedUnit = EntIndexToHScript(keys.entindex_killed)
+    -- local keys.entindex_attacker --long
+    -- local keys.entindex_inflictor --long
+    -- local keys.damagebits --long
+
+    print(killedUnit:GetUnitName() .. " has been killed")
+    if string.find(killedUnit:GetUnitName(), "building") then
+        killedUnit:RemoveBuilding(2, false)
     end
 end
 

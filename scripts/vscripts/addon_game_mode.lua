@@ -122,6 +122,8 @@ function Precache( context )
 		PrecacheUnitByNameSync(value, context)
 	end
 
+	PrecacheItemByNameSync("item_building_kit_fire_basic", context)
+
 	print("Precache Finish")
 end
 

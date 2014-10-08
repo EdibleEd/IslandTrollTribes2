@@ -486,22 +486,24 @@ function KillDummyUnit(keys)
 end
 
 function PackUp(keys)
-    local caster = keys.caster
-    local buildingName = caster:GetUnitName()
-    print(buildingName)
+    local building = keys.caster
+    local buildingName = building:GetUnitName()
 
     local stringParse = string.gmatch(buildingName, "%a+")
     local itemName = "item"
     local str = stringParse()
     while str ~= nil do
-        print(str)
-        if str ~= npc then
+        if str ~= "npc" then
             itemName = itemName .. "_" .. str
         end
         if str == "building" then
             itemName = itemName .. "_kit"
         end
         str = stringParse()
-        print(itemName)
     end
+
+    local itemKit = CreateItem(itemName, nil, nil)
+    CreateItemOnPositionSync(building:GetAbsOrigin(), itemKit)
+    building:RemoveBuilding(2,false)
+    building:RemoveSelf()
 end
