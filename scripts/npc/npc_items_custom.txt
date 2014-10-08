@@ -11530,7 +11530,7 @@
 // Custom: Tent Kit
 //=================================================================================================================
 
-		"item_building_kit_tent_basic"
+		"item_building_kit_tent"
 		{
 			"ID"							"1119"
 
@@ -11538,7 +11538,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"							"item_datadriven"
-			"AbilityTextureName"				"building_kit_tent_basic"
+			"AbilityTextureName"				"item_building_kit_tent_basic"
 			"Model"								"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 							""
 
@@ -11598,7 +11598,7 @@
 // Custom: Troll Hut
 //=================================================================================================================
 
-		"item_building_kit_hut_basic"
+		"item_building_kit_troll_hut"
 		{
 			"ID"							"1120"
 
@@ -11734,7 +11734,7 @@
 // Custom: Storage Chest
 //=================================================================================================================
 
-		"item_building_kit_chest_storage"
+		"item_building_kit_storage_chest"
 		{
 			"ID"							"1122"
 
