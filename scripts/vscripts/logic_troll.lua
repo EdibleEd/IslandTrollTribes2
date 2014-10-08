@@ -42,6 +42,9 @@ function Energy(playerID)
         if hero ~= nil then
             hero:ReduceMana(ENERGY_LOSS_PER_UNIT)
         end
+        if hero:GetMana() <= 0 then
+            hero:ForceKill(true)
+        end
     end
 end
 
@@ -53,9 +56,9 @@ function Heat(playerID)
         if hero ~= nil then
             local heatStackCount = hero:GetModifierStackCount("modifier_heat_passive", nil) - HEAT_LOSS_PER_UNIT
             hero:SetModifierStackCount("modifier_heat_passive", nil, heatStackCount)
-                if heatStackCount <= 0 then
-                    hero:ForceKill(true)
-                end
+            if heatStackCount <= 0 then
+                hero:ForceKill(true)
+            end
         end
     end
 end
@@ -76,7 +79,7 @@ TROLL_RECIPE_TABLE = {
         {"item_building_kit_teleport_beacon",   {"item_stone", "item_stone", "item_crystal_mana", "item_crystal_mana"}},
         {"item_building_kit_hatchery",          {"item_stone", "item_stone", "item_stone", "item_stick", "item_stick", "item_stick"}}
     }
-HIDE_TABLE = {"item_hide_wolf", "item_hide_elk", "item_hide_jungle_bear"}
+HIDE_ALIAS_TABLE = {"item_hide_any", {"item_hide_wolf", "item_hide_elk", "item_hide_jungle_bear"}}
 
 function InventoryCheck(playerID)
     -- print("Inv testing player " .. playerID)
