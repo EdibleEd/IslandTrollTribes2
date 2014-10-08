@@ -519,7 +519,7 @@ function PackUp(keys)
         end
         str = stringParse()
     end
-
+    print("Packing up "..buildingName.." into "..itemName)
     local itemKit = CreateItem(itemName, nil, nil)
     CreateItemOnPositionSync(building:GetAbsOrigin(), itemKit)
     building:RemoveBuilding(2,false)
