@@ -260,22 +260,6 @@
 			"particle_folder"           "particles/dire_fx"
 		}
 
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"		"aura_burn"
-				"Target"
-				{
-					"Center"		"CASTER"
-					"Radius"		"%burn_radius"
-					"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-					"Types"			"DOTA_UNIT_TARGET_BUILDING"
-				}
-				"EffectName"		"particles/winter_fx/healing_campfire_flame.vpcf"
-				"EffectAttachType"	"follow_overhead"
-			}
-		}
 		"Modifiers"
 		{
 			// "test_mod"
@@ -316,9 +300,18 @@
 				}
 				"Burn"
 				{
-					"Properties"
+					"IsPurgable"		"0"
+					"IsDebuff"			"1"
+					"IsHidden"			"0"
+					"ThinkInterval"		"%tick_rate"
+					"OnIntervalThink"
 					{
-						"modifier_warlock_golem_permanent_immolation_debuff"	"%aura_damage"	
+						"Damage"
+						{
+							"Damage"	"%aura_damage"
+							"Target"	"TARGET"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+						}
 					}
 				}
 		}
@@ -332,7 +325,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_damage"					"7.0"
+				"aura_damage"		"7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_rate"			"1.0"
 			}
 		}
 	}

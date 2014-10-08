@@ -408,6 +408,9 @@ function BuildingHelper:AddBuilding(building)
 		if IsValidEntity(building) then
 			if building.bUpdatingHealth then
 				if building:GetHealth() < building.nMaxHealth and GameRules:GetGameTime() <= building.fTimeBuildingCompleted then
+					if building.nHealthUnrounded - building:GetHealth() > 1 then
+						building.nHealthUnrounded = building:GetHealth()	--to account for attacks while being built
+					end
 					building.nHealthUnrounded = building.nHealthInterval + building.nHealthUnrounded
 					building:SetHealth(building.nHealthUnrounded)
 					--print("BUILDING", building.nHealthUnrounded, GameRules:GetGameTime(), building.fTimeBuildingCompleted)
