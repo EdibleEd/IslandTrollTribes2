@@ -1152,7 +1152,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"               "_Description OTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findhide"
 		"MaxLevel"						"1"
 		"HotKeyOverride"                "H"
@@ -3188,7 +3188,7 @@
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO"
 				}
-				"Duration"      "%pumpup_duration"
+				"Duration"      "%duration"
 				"FireSound"
 				{
 				"EffectName" 		"Hero_OgreMagi.Bloodlust.Target"
@@ -3229,7 +3229,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pumpup_duration"		"20"
+				"duration"				"20"
 			}
 			"02"
 			{
@@ -3594,7 +3594,7 @@
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_anger"
-				"Duration"      "%anger_duration"
+				"Duration"      "%duration"
 				"Target"        
 				{
 					"Target"	"TARGET"
@@ -3647,7 +3647,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"anger_duration"		"10"
+				"duration"		"10"
 			}
 			"02"
 			{
@@ -3798,7 +3798,7 @@
 			"ApplyModifier"
 			{
 				"ModifierName"  "modifier_seizures"
-				"Duration"      "%seizure_duration"
+				"Duration"      "%duration"
 				"Target"        
 				{
 					"Target"	"TARGET"
@@ -3871,7 +3871,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"seizure_duration"		"8"
+				"duration"		"8"
 			}
 			"02"
 			{
@@ -4204,7 +4204,7 @@
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"               "1"
-		"AbilityChankaTime" 			"0" 
+		"AbilityChannelTime"			"0" 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -6249,7 +6249,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED| DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6333,7 +6333,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED| DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6722,7 +6722,7 @@
 			{
 				"IsDebuff" 			"0"
 				"IsPurgable" 		"1"				
-				"Duration"      	"%pumpup_duration"
+				"Duration"      	"%duration"
     				"Properties"
     				{
 						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_speed_bonus"
@@ -6748,7 +6748,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pumpup_duration"		"20"
+				"duration"		"20"
 			}
 			"02"
 			{
@@ -6936,7 +6936,7 @@
 		}
 	}
 	//=================================================================================================================
-	// Ability: Priest - Self Preservation
+	// Ability: Priest - Self Preservation (Nice skill, gg)
 	//=================================================================================================================
 	"ability_priest_selfpreservation"
 	{
@@ -7023,6 +7023,560 @@
 			}
 		}
 	}	
+	//=================================================================================================================
+	// Ability: Priest - Ranged Heal
+	//=================================================================================================================
+	"ability_priest_rangedheal"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_priest_rangedheal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.8"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"%range"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"HealAmount"	"%heal_amount"
+				"Target"
+				{
+					"Target"		"TARGET"		
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
+				}
+			}	
+			"FireSound"
+			{
+				"EffectName"		"Hero_Dazzle.Shadow_Wave"
+				"Target"			"CASTER"
+			}
+		}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal_amount"					"50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"63000"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Replenish
+	//=================================================================================================================
+	"ability_priest_replenish"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"ability_priest_replenish"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.5"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "50"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+		}
+		"OnSpellStart"
+		{		
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_replenish"
+				"Duration"      "%replenish_duration"
+				"Target"        
+				{
+					"Target"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}   
+			"FireSound"
+			{
+			"EffectName" 		"Hero_Dazzle.Weave"
+			"Target" 			"TARGET"
+			}	
+		}			
+		"Modifiers"
+		{
+			"modifier_replenish"
+			{
+				"IsDebuff" 			"0"
+				"IsPurgable" 		"1"
+				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//something heal related
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+					"ThinkInterval" 	"1"
+					"OnIntervalThink"
+					{
+						"Heal"
+						{
+							"HealAmount"	"%heal_amount"
+							"Target"
+							{
+								"Target"		"TARGET"		
+								"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+								"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
+							}
+						}	
+					}
+					"OnTakeDamage"
+					{
+						"RemoveModifier"
+						{
+							"Target"		"TARGET"
+							"ModifierName"	"modifier_replenish"
+						}
+					}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"heal_amount"							"1"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"replenish_duration"					"150"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Fortitude
+	//=================================================================================================================
+	"ability_priest_fortitude"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_priest_fortitude"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "7"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+	
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"			"modifier_fortitude"
+					"Target"
+					{
+						"Center"			"CASTER"
+						"Radius"			"500"
+					}
+				}
+				"FireSound"
+				{
+					"EffectName"		"Hero_Invoker.Alacrity"
+					"Target"			"TARGET"
+				}
+			}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_fortitude"
+			{
+				//"EffectName"									 "shadowshaman_voodoo"
+				"Duration"										 "%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      		"%armor_bonus"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"900"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_bonus"				"1.5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Troll Battle Call
+	//=================================================================================================================
+	"ability_priest_trollbattlecall"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_priest_trollbattlecall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "1.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "20"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+	
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"			"modifier_troll_battle_call"
+					"Target"
+					{
+						"Center"			"CASTER"
+						"Radius"			"500"
+					}
+				}
+				"FireSound"
+				{
+					"EffectName"		"DOTA_Item.Buckler.Activate"
+					"Target"			"TARGET"
+				}
+				"FireSound"
+				{
+					"EffectName"		"DOTA_Item.DoE.Activate"
+					"Target"			"TARGET"
+				}
+			}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_troll_battle_call"
+			{
+				//"EffectName"									 "shadowshaman_voodoo"
+				"Duration"										 "%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      			"%armor_bonus"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE      		"%damage_bonus"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"2000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_bonus"				"1.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_bonus"				"20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"20"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Enhancing Herbal Balm
+	//=================================================================================================================
+	"ability_priest_enhancingherbalbalm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		//NEEDS FLAG FOR CAN NOT TARGET SELF.
+		"AbilityTextureName" 			"ability_priest_enhancingherbalbalm"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+		"AbilityChannelTime"			"%channeling_time"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30"
+		"AbilityCastRange"				"1000"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"precache"
+		{
+		}
+		
+		"OnChannelFinish"
+		{		
+			"FireSound"
+			{
+			"EffectName" 		"Hero_Treant.LivingArmor.Cast"
+			"Target" 			"CASTER"
+			}		
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_priest_enhancingherbalbalm"
+				"Target"        
+				{
+					"Target"	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+			"FireSound"
+			{
+				"EffectName" 		"Hero_Treant.LivingArmor.Target"
+				"Target" 			"TARGET"
+			}	
+		}
+		
+		"Modifiers"
+		{
+			"modifier_pumpup"
+			{
+				"IsDebuff" 			"0"
+				"IsPurgable" 		"1"				
+				"Duration"      	"%duration"
+    				"Properties"
+    				{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_speed_bonus"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_speed_bonus"
+						"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"					"%health_regen"
+				} 						
+        			"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//tangoes buff
+						"EffectAttachType" "follow_overhead"
+					}
+				}
+
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"channeling_time"		"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed_bonus"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed_bonus"	"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60"
+			}
+
+		}
+	}
+	//=================================================================================================================
+	// Ability: Priest - Maximum Fervor
+	//=================================================================================================================
+	"ability_priest_maximumfervor"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_priest_maximumfervor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.5"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "120"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "50"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+	
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_maximumfervor"
+				}
+				"FireSound"
+				{
+					"EffectName"		"Hero_Sven.GodsStrength"
+					"Target"			"CASTER"
+				}
+			}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_maximumfervor"
+			{
+				"EffectName"									 "shadowshaman_voodoo" //Sven ult
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%armor_bonus"		
+				}
+				"States"
+				{
+				"MODIFIER_STATE_SILENCED"		    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed"					"25"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"move_speed"					"10"
+			}	
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"armor_bonus"					"10"
+			}
+		}
+	}
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
