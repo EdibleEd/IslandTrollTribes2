@@ -6,6 +6,7 @@
 print("addon_init invoked")
 
 require( 'util' )
+require("recipe_list")
 
 --[[
     Global variables
@@ -123,6 +124,9 @@ function ITT_GameMode:InitGameMode()
 
     -- This is the troll thinker. All logic on the player's heros should be checked here
     GameMode:SetThink( "OnTrollThink", ITT_GameMode, "TrollThink", 0 )
+
+    -- This is the building thinker. All logic on building crafting goes here
+    GameMode:SetThink( "OnBuildingThink", ITT_GameMode, "BuildingThink", 0 )
 
     -- This is the item thinker. All random item spawn logic goes here
     GameMode:SetThink( "OnItemThink", ITT_GameMode, "ItemThink", 0 )
@@ -319,6 +323,32 @@ function ITT_GameMode:OnTrollThink()
         Heat(i)
         InventoryCheck(i)
         --print("burn")
+    end
+    return GAME_TROLL_TICK_TIME
+end
+
+function ITT_GameMode:OnBuildingThink()
+
+    if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        -- Will not run until pregame ends
+        return 1
+    end
+            
+    -- Find all buildings
+    buildings = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
+                                  Vector(0, 0, 0),
+                                  nil,
+                                  FIND_UNITS_EVERYWHERE,
+                                  DOTA_UNIT_TARGET_TEAM_BOTH,
+                                  DOTA_UNIT_TARGET_BUILDING,
+                                  DOTA_UNIT_TARGET_FLAG_NONE,
+                                  FIND_ANY_ORDER,
+                                  false)
+    --check each for their type, and run crafting with the corresponding table
+    for i=1, #buildings do
+        if buildings[i]:GetUnitName() == "npc_building_armory" then
+            CraftItems(buildings[i], ARMORY_RECIPE_TABLE, nil)
+        end
     end
     return GAME_TROLL_TICK_TIME
 end

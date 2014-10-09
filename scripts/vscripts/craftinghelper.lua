@@ -15,6 +15,9 @@
     Will replace any "material_1", "material_2", or "material_3" with "resulting_name"
 ]]
 function CraftItems(unit, recipeTable, aliasTable)
+    if aliasTable == nil then
+        aliasTable = {}
+    end
     local unitInventoryList = {}
     for j=0,5,1 do
         if unit:GetItemInSlot(j) ~= nil then
