@@ -178,7 +178,30 @@ function ITT_GameMode:InitGameMode()
 	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'On_dota_player_killed'), self)
 
     -- Listener for drops and for removing buildings from block table
-    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )  
+    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self ) 
+
+    --for multiteam
+    ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( ITT_GameMode, 'OnGameRulesStateChange' ), self )
+
+    --multiteam stuff
+    self.m_TeamColors = {}
+    print("DOTA_TEAM_GOODGUYS "..DOTA_TEAM_GOODGUYS, "DOTA_TEAM_BADGUYS "..DOTA_TEAM_BADGUYS, "DOTA_TEAM_CUSTOM_1 "..DOTA_TEAM_CUSTOM_1)
+    self.m_TeamColors[DOTA_TEAM_GOODGUYS] = { 255, 0, 0 }
+    self.m_TeamColors[DOTA_TEAM_BADGUYS] = { 0, 255, 0 }
+    self.m_TeamColors[DOTA_TEAM_CUSTOM_1] = { 0, 0, 255 }
+    print(self.m_TeamColors[DOTA_TEAM_GOODGUYS], self.m_TeamColors[DOTA_TEAM_BADGUYS], self.m_TeamColors[DOTA_TEAM_CUSTOM_1])
+
+    self.m_VictoryMessages = {}
+    self.m_VictoryMessages[DOTA_TEAM_GOODGUYS] = "#VictoryMessage_GoodGuys"
+    self.m_VictoryMessages[DOTA_TEAM_BADGUYS] = "#VictoryMessage_BadGuys"
+    self.m_VictoryMessages[DOTA_TEAM_CUSTOM_1] = "#VictoryMessage_Custom1"
+
+    self.m_GatheredShuffledTeams = {}
+    self.m_NumAssignedPlayers = 0
+
+    self:GatherValidTeams()
+
+    GameRules:GetGameModeEntity():SetThink( "OnThink", self, 1 ) 
 end
 
 -- This code is written by Internet Veteran, handle with care.
@@ -652,3 +675,171 @@ Convars:RegisterCommand("reload_ikv", function(cmdname) reload_ikv(cmdname) end,
 Convars:RegisterCommand("print_fix_diffs", function(cmdname) print_fix_diffs(cmdname) end, "Give any item", 0)
 Convars:RegisterCommand("print_dropped_vecs", function(cmdname) print_dropped_vecs(cmdname) end, "Give any item", 0)
 Convars:RegisterCommand("give_item", function(cmdname, itemname) give_item(cmdname, itemname) end, "Give any item", 0)
+
+--multiteam stuff
+
+---------------------------------------------------------------------------
+-- Game state change handler
+---------------------------------------------------------------------------
+function ITT_GameMode:OnGameRulesStateChange()
+    local nNewState = GameRules:State_Get()
+--  print( "OnGameRulesStateChange: " .. nNewState )
+
+    if nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+        print("DOTA_GAMERULES_STATE_HERO_SELECTION")
+        self:AssignAllPlayersToTeams()
+        GameRules:GetGameModeEntity():SetThink( "BroadcastPlayerTeamAssignments", self, 0 ) -- can't do this immediately because the player resource doesn't have the names yet
+    end
+end
+
+---------------------------------------------------------------------------
+-- Helper functions
+---------------------------------------------------------------------------
+function ShuffledList( list )
+    local result = {}
+    local count = #list
+    for i = 1, count do
+        local pick = RandomInt( 1, #list )
+        result[ #result + 1 ] = list[ pick ]
+        table.remove( list, pick )
+    end
+    return result
+end
+
+function TableCount( t )
+    local n = 0
+    for _ in pairs( t ) do
+        n = n + 1
+    end
+    return n
+end
+
+---------------------------------------------------------------------------
+-- Scan the map to see which teams have spawn points
+---------------------------------------------------------------------------
+function ITT_GameMode:GatherValidTeams()
+  print( "GatherValidTeams:" )
+
+    local foundTeams = {}
+    for _, playerStart in pairs( Entities:FindAllByClassname( "info_player_start_dota" ) ) do
+        foundTeams[  playerStart:GetTeam() ] = true
+    end
+
+  print( "GatherValidTeams - Found spawns for a total of " .. TableCount(foundTeams) .. " teams" )
+    
+    local foundTeamsList = {}
+    for t, _ in pairs( foundTeams ) do
+        table.insert( foundTeamsList, t )
+    end
+
+    self.m_GatheredShuffledTeams = foundTeamsList
+    print("gather shuffled teams", self.m_GatheredShuffledTeams, #self.m_GatheredShuffledTeams, #foundTeamsList)
+    print( "Final shuffled team list:" )
+    for _, team in pairs( self.m_GatheredShuffledTeams ) do
+     print( " - " .. team .. " ( " .. GetTeamName( team ) .. " )" )
+    end
+end
+
+
+---------------------------------------------------------------------------
+-- Assign all real players to a team
+---------------------------------------------------------------------------
+function ITT_GameMode:AssignAllPlayersToTeams()
+  print( "Assigning players to teams..." )
+    for playerID = 0, (DOTA_MAX_TEAM_PLAYERS-1) do
+        if nil ~= PlayerResource:GetPlayer( playerID ) then
+            local teamID = self:GetNextTeamAssignment()
+          print( " - Player " .. playerID .. " assigned to team " .. teamID )
+            PlayerResource:SetCustomTeamAssignment( playerID, teamID )
+        end
+    end
+end
+
+---------------------------------------------------------------------------
+-- Get the color associated with a given teamID
+---------------------------------------------------------------------------
+function ITT_GameMode:ColorForTeam( teamID )
+    local color = self.m_TeamColors[teamID]
+    if color == nil then
+        color = { 255, 255, 255 } -- default to white
+    end
+    return color
+end
+
+---------------------------------------------------------------------------
+-- Determine a good team assignment for the next player
+---------------------------------------------------------------------------
+function ITT_GameMode:GetNextTeamAssignment()
+    if #self.m_GatheredShuffledTeams == 0 then
+      print( "CANNOT ASSIGN PLAYER - NO KNOWN TEAMS" )
+        return DOTA_TEAM_NOTEAM
+    end
+
+    -- haven't assigned this player to a team yet
+    print( "m_NumAssignedPlayers = " .. self.m_NumAssignedPlayers )
+    
+    -- If the number of players per team doesn't divide evenly (ie. 10 players on 4 teams => 2.5 players per team)
+    -- Then this floor will round that down to 2 players per team
+    -- If you want to limit the number of players per team, you could just set this to eg. 1
+    local playersPerTeam = math.floor( DOTA_MAX_TEAM_PLAYERS / #self.m_GatheredShuffledTeams )
+  print( "playersPerTeam = " .. playersPerTeam )
+
+    local teamIndexForPlayer = math.floor( self.m_NumAssignedPlayers / playersPerTeam )
+  print( "teamIndexForPlayer = " .. teamIndexForPlayer )
+
+    -- Then once we get to the 9th player from the case above, we need to wrap around and start assigning to the first team
+    if teamIndexForPlayer >= #self.m_GatheredShuffledTeams then
+        teamIndexForPlayer = teamIndexForPlayer - #self.m_GatheredShuffledTeams
+      print( "teamIndexForPlayer => " .. teamIndexForPlayer )
+    end
+    
+    teamAssignment = self.m_GatheredShuffledTeams[ 1 + teamIndexForPlayer ]
+  print( "teamAssignment = " .. teamAssignment )
+
+    self.m_NumAssignedPlayers = self.m_NumAssignedPlayers + 1
+
+    return teamAssignment
+end
+
+
+---------------------------------------------------------------------------
+-- Put a label over a player's hero so people know who is on what team
+---------------------------------------------------------------------------
+function ITT_GameMode:MakeLabelForPlayer( nPlayerID )
+    if not PlayerResource:HasSelectedHero( nPlayerID ) then
+        return
+    end
+
+    local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+    if hero == nil then
+        return
+    end
+
+    local teamID = PlayerResource:GetTeam( nPlayerID )
+    local color = self:ColorForTeam( teamID )
+    hero:SetCustomHealthLabel( GetTeamName( teamID ), color[1], color[2], color[3] )
+end
+
+---------------------------------------------------------------------------
+-- Tell everyone the team assignments during hero selection
+---------------------------------------------------------------------------
+function ITT_GameMode:BroadcastPlayerTeamAssignments()
+    print("BroadcastPlayerTeamAssignments")
+    for nPlayerID = 0, (DOTA_MAX_TEAM_PLAYERS-1) do
+        local nTeamID = PlayerResource:GetTeam( nPlayerID )
+        if nTeamID ~= DOTA_TEAM_NOTEAM then
+            GameRules:SendCustomMessage( "#TeamAssignmentMessage", nPlayerID, -1 )
+        end
+    end
+end
+
+---------------------------------------------------------------------------
+-- Update player labels and the scoreboard
+---------------------------------------------------------------------------
+function ITT_GameMode:OnThink()
+    for nPlayerID = 0, (DOTA_MAX_TEAM_PLAYERS-1) do
+        self:MakeLabelForPlayer( nPlayerID )
+    end
+        
+    return 1
+end
