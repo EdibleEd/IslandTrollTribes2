@@ -7344,7 +7344,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      			"%armor_bonus"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE      		"%damage_bonus"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"      		"%damage_bonus"
 				}
 			}
 		}
