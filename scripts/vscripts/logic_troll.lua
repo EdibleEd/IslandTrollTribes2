@@ -45,9 +45,9 @@ function Energy(playerID)
         local hero = player:GetAssignedHero()
         if hero ~= nil then
             hero:ReduceMana(ENERGY_LOSS_PER_UNIT)
-        end
-        if hero:GetMana() <= 0 then
-            hero:ForceKill(true)
+            if hero:GetMana() <= 0 then
+                hero:ForceKill(true)
+            end
         end
     end
 end
