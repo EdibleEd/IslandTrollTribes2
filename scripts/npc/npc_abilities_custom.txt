@@ -882,10 +882,21 @@
 	//=================================================================================
 	// Quick Drop
 	//=================================================================================
-	"Ability_Quick_Drop"
+	"ability_quick_drop"
 	{
-	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Quick_Drop"
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"	"Quick_Drop"
+		"MaxLevel"				"1"
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"custom_functions_ability.lua"
+				"Function"		"QuickDrop"
+			}
+		}
 	}
 	//=================================================================================
 	// Mix
@@ -3415,6 +3426,509 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+	//=================================================================================================================
+	// Ability: Mage - Reduce Food
+	//=================================================================================================================
+	"ability_mage_reducefood"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"ability_mage_reducefood"
+		"HotKeyOVerride"				"R"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"800"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"ReduceFood"
+			}
+		}		
+	}
+	
+	//=================================================================================================================
+	// Ability: Mage - Metronome
+	//=================================================================================================================
+	"ability_mage_metronome"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"ability_mage_metronome"
+		"HotKeyOVerride"				"R"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"700"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"Metronome"
+			}
+		}		
+	}
+	
+	"ability_metronome_frostnova"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
+		"Precache"
+		{
+			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Target"				"TARGET"
+			}
+			"Damage"
+			{
+				"Type"   				"DAMAGE_TYPE_MAGICAL"
+				"Damage" 				"15"
+				"Target" 				"TARGET"
+			}
+			"Damage"
+			{
+				"Type"					"DAMAGE_TYPE_MAGICAL"
+				"Damage"				"10"
+				"Target"
+				{
+					"Center"			"TARGET"
+					"Radius"			"200"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"  		"modifier_frostnova"
+				"Target"        
+				{
+					"Center"			"TARGET"
+					"Radius"			"200"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+				"Duration"      		"4"
+			}	
+		}
+		
+		"Modifiers"
+		{
+			"modifier_frostnova"
+			{
+				"IsDebuff"     			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-10"
+				}
+			}
+		}
+
+	}
+	
+	"ability_metronome_cyclone"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"Brewmaster_Storm.Cyclone"
+			}
+			"ApplyModifier"
+			{	
+				"Duration"		"6"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+				"ModifierName"	"modifier_brewmaster_storm_cyclone"
+			}
+		}
+	}
+	
+	"ability_metronome_tsunami"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"EffectName"			""
+				"MoveSpeed"				"600"
+				"StartPosition"			"attach_attack1"
+				"FixedDistance"			"300"
+				"StartRadius"			"100"
+				"EndRadius"				"300"
+				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+				"HasFrontalCone"		"0"
+				"ProvidesVision"		"1"
+				"VisionRadius"			"300"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+				"Function"				"TsunamiProjectiles"
+			}
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Morphling.Waveform"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"0"
+			"Damage"
+			{
+				"Damage"	"25"
+				"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_MAGICAL"
+			}
+		}
+	}
+	
+	"ability_metronome_manaburn"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"MetronomeManaBurn"
+				"Damage"				"25"
+			}
+		}
+	}
+	
+	"ability_metronome_impale"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle"					"particles/units/heroes/hero_lion/lion_spell_impale.vpcf"
+		}
+		
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"Target"				"TARGET"
+				"TargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"EffectName"			"particles/units/heroes/hero_lion/lion_spell_impale.vpcf"
+				"MoveSpeed"				"1200"
+				"StartRadius"			"50"
+				"EndRadius"				"50"
+				"FixedDistance"			"500"
+				"ProvidesVision"		"0"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"0"
+			"Damage"
+			{
+				"Target"				"TARGET"
+				"Damage"		 		"10"
+				"Type" 					"DAMAGE_TYPE_MAGICAL"			
+			}
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName"			"modifier_lion_impale"
+				"Duration"				"1"
+			}
+			"DelayedAction"
+			{
+				"Delay"					"1"
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_stun"
+						"Duration"		"0.5"
+					}
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_impale"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	"ability_metronome_poisonthistle"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				"9999"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/base_attacks/ranged_siege_bad.vpcf"
+				"MoveSpeed"			"800"
+				"Dodgeable"			"1"
+				"ProvidesVision"	"0"
+			}					
+			"FireSound"
+			{
+				"EffectName"		"Creep_Bad_Engine.Attack"			   
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Duration"			"7.5"
+				"ModifierName"		"modifier_gun_blow_thistles"
+				"Target"	
+				{
+					"Center"		"TARGET"
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"			"DOTA_UNIT_TARGET_HERO"
+				}
+			}
+			"ApplyModifier"
+			{	
+				"Duration"			"12"
+				"ModifierName"		"modifier_gun_blow_thistles"
+				"Target"
+				{
+					"Center"		"TARGET"
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"			"DOTA_UNIT_TARGET_CREEP"
+			
+	}
+			}
+			"Damage"
+			{
+				"Damage"			"10"
+				"Type"				"DAMAGE_TYPE_PHYSICAL"
+				"Target"			"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_gun_blow_thistles"
+			{
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+				"TextureName"		"item_gun_blow_thistles"
+				"ThinkInterval"		"3"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Damage"	"1"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Target"	"TARGET"
+					}
+				}
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Venomancer.VenomousGaleImpact"
+						"Target"		"TARGET"
+					}
+				}				
+				"AttachEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-40"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-30"
+				}
+			}
+		}
 	}
 
 	//=================================================================================================================

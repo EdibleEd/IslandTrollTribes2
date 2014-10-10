@@ -9082,6 +9082,7 @@
 			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 			"ItemStackable"					"1"
 			"ItemPermanent"					"0"
+			"ItemInitialCharges" 			"1"
 			"ItemDroppable"       			"1"
 			"ItemAliases"					"quicktype"
 			"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -9092,7 +9093,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -9106,8 +9107,8 @@
 			{
 				"Heal"
 				{
-					"Target" "CASTER"
-					"HealAmount"	"%heal_amount"
+					"Target" 				"CASTER"
+					"HealAmount"			"%heal_amount"
 				}
 				"SpendCharge"
 				{
@@ -9122,8 +9123,8 @@
 				}
 				"02"
 				{
-					"var_type"					"FIELD_INTEGER"
-					"heal_amount"					"50"
+					"var_type"				"FIELD_INTEGER"
+					"heal_amount"			"50"
 				}
 			}
 		}

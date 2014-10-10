@@ -2625,7 +2625,7 @@
 		}
 
 		// Abilities	
-		"Ability1"				"Ability_Rest_Big"	
+		"Ability1"				"Ability_Rest_Big"
 
 		// Armor
 		"ArmorPhysical"			"5"
@@ -2722,7 +2722,7 @@
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 
-		"HasInventory"			"0"
+		"HasInventory"			"1"
 	}
 //=================================================================================
 // Building: Storage Chest
@@ -2748,7 +2748,7 @@
 			"particle_folder"	"particles/dire_fx/fire_barracks_glow_b.vpcf"
 		}
 
-		// Abilities	
+		// Abilities
 
 		// Armor
 		"ArmorPhysical"			"5"
@@ -3000,6 +3000,7 @@
 
 		// Abilities	
 		"Ability1"				"Ability_Quick_Build_Workshop"	
+		"Ability2"				"ability_quick_drop"
 
 		// Armor
 		"ArmorPhysical"			"2"
@@ -3220,7 +3221,7 @@
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 
-		"HasInventory"			"0"
+		"HasInventory"			"1"
 	}
 	//=================================================================================
 // Building: Ensnare Trap
@@ -3999,6 +4000,16 @@
         "Ability3"                  ""
         "Ability4"                  ""
         "Ability5"                  ""
+	}
+	"dummy_caster_metronome"
+	{
+		"BaseClass"                 "npc_dota_creature"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"        "0" 
+		"VisionNighttimeRange"      "0"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+        "MovementSpeed"				"2000"
+        "Ability1"                  "dummy_passive"    
 	}
 	"blur_illusion"
 	{

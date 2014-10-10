@@ -1,0 +1,5 @@
+[ISSUE]
+Buildings can't pick up items
+
+[ISSUE]
+No obvious way to give items a max stack count, especially important for meat 
