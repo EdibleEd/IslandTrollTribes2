@@ -14,14 +14,12 @@ TROLL_RECIPE_TABLE = {
         {"item_building_kit_teleport_beacon",   {"item_stone", "item_stone", "item_crystal_mana", "item_crystal_mana"}},
         {"item_building_kit_hatchery",          {"item_stone", "item_stone", "item_stone", "item_stick", "item_stick", "item_stick"}}
     }
-HIDE_ALIAS_TABLE = {
-        {"item_hide_any", 						{"item_hide_wolf", "item_hide_elk", "item_hide_jungle_bear"}}
-    }
 ITEM_ALIAS_TABLE = {
-        {"item_stickorbone", 					{"item_stick", "item_bone"}}
-		{"item_gloves_basic", 					{"item_gloves_elk", "item_gloves_wolf", "item_gloves_bear"}}
-		{"item_boots_basic", 					{"item_boots_elk", "item_boots_wolf", "item_boots_bear"}}
-		{"item_coat_basic", 					{"item_coat_elk", "item_coat_wolf", "item_coat_bear"}}
+        {"item_stickorbone", 					{"item_stick", "item_bone"}},
+		{"item_gloves_basic", 					{"item_gloves_elk", "item_gloves_wolf", "item_gloves_bear"}},
+		{"item_boots_basic", 					{"item_boots_elk", "item_boots_wolf", "item_boots_bear"}},
+		{"item_coat_basic", 					{"item_coat_elk", "item_coat_wolf", "item_coat_bear"}},
+		{"item_hide_any", 						{"item_hide_wolf", "item_hide_elk", "item_hide_jungle_bear"}}
     }
 ARMORY_RECIPE_TABLE = {
         {"item_ingot_iron",                   	{"item_stone", "item_flint"}},
@@ -66,7 +64,7 @@ WORKSHOP_RECIPE_TABLE = {
 		{"item_axe_battle",       				{"item_stick", "item_ingot_steel", "item_spirit_wind", "item_spirit_water", "item_hide_elk"}},	
     }
 	
-	TANNERY_RECIPE_TABLE = {
+TANNERY_RECIPE_TABLE = {
 		{"item_gloves_elk",       				{"item_hide_elk", "item_hide_elk"}},
 		{"item_boots_elk",       				{"item_hide_elk", "item_hide_elk"}},
 		{"item_coat_elk",       				{"item_hide_elk", "item_hide_elk"}},
@@ -78,7 +76,7 @@ WORKSHOP_RECIPE_TABLE = {
 		{"item_coat_bear",       				{"item_hide_bear", "item_hide_bear"}},
     }
 	
-	WDHUT_RECIPE_TABLE = {
+WDHUT_RECIPE_TABLE = {
 		{"item_scroll_fireball",       			{"item_flint", "item_crystal_mana"}},
 		{"item_scroll_entangling",       		{"item_tinder", "item_crystal_mana"}},
 		{"item_scroll_living_dead",       		{"item_bone", "item_crystal_mana"}},
