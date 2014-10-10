@@ -537,3 +537,13 @@ function PackUp(keys)
     building:RemoveBuilding(2,false)
     building:RemoveSelf()
 end
+
+function QuickDrop(keys)
+	local caster = keys.caster
+	local position = caster:GetAbsOrigin()
+	
+	for i=0,6 do
+		local item = caster:GetItemInSlot(i)
+		caster:DropItemAtPositionImmediate(item,position+RandomVector(RandomInt(50,75)))
+	end	
+end
