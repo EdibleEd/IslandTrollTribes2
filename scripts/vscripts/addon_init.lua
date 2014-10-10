@@ -38,17 +38,29 @@ itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 -- Regions of the map in xmin xmax, ymin, ymax as a box, and an int as a spawnrate
 -- Currently just a placeholder region called CENTER till I get a proper map
 REGIONS                     = {}
-CENTER                      = {}
--- Bounding box
-CENTER[1]                   = -1000
-CENTER[2]                   = 1000
-CENTER[3]                   = -1000
-CENTER[4]                   = 1000
--- Spawnrate for CENTER
-CENTER[5]                   = 1
+-- CENTER                      = {}
+TOPLEFT                     = {-8000, -600, 8000, 500, 1}  --{xmin, xmax, ymin, ymax, spawnrate}
+TOPRIGHT                    = {}
+BOTTOMRIGHT                 = {}
+BOTTOMLEFT                  = {}
+-- -- Bounding box
+-- TOPLEFT[1]                   = -8000
+-- TOPLEFT[2]                   = -600
+-- TOPLEFT[3]                   = 8000
+-- TOPLEFT[4]                   = 500
+-- -- Spawnrate for CENTER
+-- TOPLEFT[5]                   = 1
+
+-- -- Bounding box
+-- CENTER[1]                   = -1000
+-- CENTER[2]                   = 1000
+-- CENTER[3]                   = -1000
+-- CENTER[4]                   = 1000
+-- -- Spawnrate for CENTER
+-- CENTER[5]                   = 1
 
 -- Only region is CENTER
-REGIONS[1]                  = CENTER
+REGIONS[1]                  = TOPLEFT
 
 -- Tick time is 300s
 -- https://github.com/island-troll-tribes/wc3-client/blob/1562854dd098180752f0f4a99df0c4968697b38b/src/systems/spawning/Spawn%20Normal.j#L3
@@ -467,6 +479,7 @@ function ITT_SpawnItem(island)
     local item = CreateItem(itemSpawned, nil, nil)
     --item:SetPurchaseTime(Time)
     local randomVector = GetRandomVectorGivenBounds(island[1], island[2], island[3], island[4])
+    print(randomVector)
     CreateItemOnPositionSync(randomVector, item)
     item:SetOrigin(randomVector)
 end
@@ -749,7 +762,7 @@ function ITT_GameMode:AssignAllPlayersToTeams()
     for playerID = 0, (DOTA_MAX_TEAM_PLAYERS-1) do
         if nil ~= PlayerResource:GetPlayer( playerID ) then
             local teamID = self:GetNextTeamAssignment()
-          print( " - Player " .. playerID .. " assigned to team " .. teamID )
+            print( " - Player " .. playerID .. " assigned to team " .. teamID )
             PlayerResource:SetCustomTeamAssignment( playerID, teamID )
         end
     end
@@ -781,20 +794,20 @@ function ITT_GameMode:GetNextTeamAssignment()
     -- If the number of players per team doesn't divide evenly (ie. 10 players on 4 teams => 2.5 players per team)
     -- Then this floor will round that down to 2 players per team
     -- If you want to limit the number of players per team, you could just set this to eg. 1
-    local playersPerTeam = math.floor( DOTA_MAX_TEAM_PLAYERS / #self.m_GatheredShuffledTeams )
-  print( "playersPerTeam = " .. playersPerTeam )
+    local playersPerTeam = 3 --math.floor( DOTA_MAX_TEAM_PLAYERS / #self.m_GatheredShuffledTeams )
+    print( "playersPerTeam = " .. playersPerTeam )
 
     local teamIndexForPlayer = math.floor( self.m_NumAssignedPlayers / playersPerTeam )
-  print( "teamIndexForPlayer = " .. teamIndexForPlayer )
+    print( "teamIndexForPlayer = " .. teamIndexForPlayer )
 
     -- Then once we get to the 9th player from the case above, we need to wrap around and start assigning to the first team
     if teamIndexForPlayer >= #self.m_GatheredShuffledTeams then
         teamIndexForPlayer = teamIndexForPlayer - #self.m_GatheredShuffledTeams
-      print( "teamIndexForPlayer => " .. teamIndexForPlayer )
+        print( "teamIndexForPlayer => " .. teamIndexForPlayer )
     end
     
     teamAssignment = self.m_GatheredShuffledTeams[ 1 + teamIndexForPlayer ]
-  print( "teamAssignment = " .. teamAssignment )
+    print( "teamAssignment = " .. teamAssignment )
 
     self.m_NumAssignedPlayers = self.m_NumAssignedPlayers + 1
 
