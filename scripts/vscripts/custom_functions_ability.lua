@@ -531,7 +531,7 @@ function MetronomeSpell(dummy)
 		
 	local randomTarget = RandomInt(0,count)
 	target = units[randomTarget]
-	dummy:MoveToPosition(target:GetAbsOrigin())
+	dummy:MoveToNPC(target)
 	
 	if ability ~= nil then
 		print("casting spell!")
