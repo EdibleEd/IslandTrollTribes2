@@ -256,7 +256,7 @@ function RadarManipulations(keys)
         "ability_gatherer_findmagic"
     }
 
-    local numAbilities = abilityLevel
+    local numAbilities = abilityLevel + 1
 
     for i=1,numAbilities do
         print(tableDefaultSkillBook[i], tableRadarBook[i])

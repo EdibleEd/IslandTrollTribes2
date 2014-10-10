@@ -1056,7 +1056,8 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_radarmanipulations"
 		"RequiredLevel"                 "2"
-		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"			"1"
+		"MaxLevel"						"3"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1152,7 +1153,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"               "_Description OTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findhide"
 		"MaxLevel"						"1"
 		"HotKeyOverride"                "H"
