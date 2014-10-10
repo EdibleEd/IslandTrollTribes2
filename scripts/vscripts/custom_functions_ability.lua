@@ -411,6 +411,30 @@ function EnduranceSuccess(keys)
     caster:SetHealth(caster:GetHealth() + block)
 end
 
+-- Mage Ability Functons
+
+function ReduceFood(keys)
+	local target = keys.target
+	local reduction = RandomInt(0,2)
+	local i = 0
+	
+	while reduction ~= 0 do
+		local item = target:GetItemInSlot(i)
+		if item ~= nil then
+			local itemName = target:GetItemInSlot(i):GetName()
+			if itemName == "item_meat_cooked" then
+				local charges = item:GetCurrentCharges()
+				if charges <= reduction then
+					target:RemoveItem(item)
+					reduction = reduction - charges
+				else
+					item:SetCurrentCharges(charges - reduction)
+				end
+			end
+		end
+	end
+end
+
 -- Thief Ability Functions
 
 function Teleport(keys)
@@ -542,7 +566,7 @@ function QuickDrop(keys)
 	local caster = keys.caster
 	local position = caster:GetAbsOrigin()
 	
-	for i=0,6 do
+	for i=0,5 do
 		local item = caster:GetItemInSlot(i)
 		caster:DropItemAtPositionImmediate(item,position+RandomVector(RandomInt(50,75)))
 	end	

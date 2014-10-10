@@ -887,6 +887,7 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"Quick_Drop"
+		"MaxLevel"				"1"
 	
 		"OnSpellStart"
 		{
@@ -3425,6 +3426,44 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+	}
+	
+	//=================================================================================================================
+	// Ability: Mage - Reduce Food
+	//=================================================================================================================
+	"ability_mage_reducefood"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"ability_mage_reducefood"
+		"HotKeyOVerride"				"R"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"800"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"ReduceFood"
+			}
+		}		
 	}
 
 	//=================================================================================================================
