@@ -18,7 +18,7 @@ maxPlayerID = 0
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
 GAME_CREATURE_TICK_TIME     = 10
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
-GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
+--GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
 FLASH_ACK_THINK             = 2
 
 BUILDING_TICK_TIME 			= 0.03
@@ -40,9 +40,9 @@ itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 REGIONS                     = {}
 -- CENTER                      = {}
 TOPLEFT                     = {-8000, -600, 8000, 500, 1}  --{xmin, xmax, ymin, ymax, spawnrate}
-TOPRIGHT                    = {}
-BOTTOMRIGHT                 = {}
-BOTTOMLEFT                  = {}
+TOPRIGHT                    = {550, 8000, 8000, 800, 1}
+BOTTOMRIGHT                 = {-1100, -8000, -600, -8000, 1}
+BOTTOMLEFT                  = {950, 8000, -350, -8000, 1}
 -- -- Bounding box
 -- TOPLEFT[1]                   = -8000
 -- TOPLEFT[2]                   = -600
@@ -61,13 +61,16 @@ BOTTOMLEFT                  = {}
 
 -- Only region is CENTER
 REGIONS[1]                  = TOPLEFT
+REGIONS[2]                  = TOPRIGHT
+REGIONS[3]                  = BOTTOMRIGHT
+REGIONS[4]                  = BOTTOMLEFT
 
 -- Tick time is 300s
 -- https://github.com/island-troll-tribes/wc3-client/blob/1562854dd098180752f0f4a99df0c4968697b38b/src/systems/spawning/Spawn%20Normal.j#L3
 -- GAME_ITEM_TICK_TIME         = 300    
 
 -- Using a shorter time for testing's sake
-GAME_ITEM_TICK_TIME         = 30
+GAME_ITEM_TICK_TIME         = 15
 
 -- Spawnrates of items, seeded with initial rates from
 -- https://github.com/island-troll-tribes/wc3-client/blob/1562854dd098180752f0f4a99df0c4968697b38b/src/init/objects/Globals.j
@@ -462,9 +465,9 @@ function ITT_GameMode:OnItemThink()
         ITT_AdjustItemSpawns()
     end
     --print("hit mid of spawn items")
-    for i=1, table.getn(REGIONS), 1 do
+    for i=1, #REGIONS, 1 do
         for ii=1, math.floor(ITEM_BASE * REGIONS[i][5]), 1 do
-            --print("Spawning an item on island" .. i)
+            print("Spawning an item on island" .. i)
             item = ITT_SpawnItem(REGIONS[i])
         end
     end
@@ -479,7 +482,7 @@ function ITT_SpawnItem(island)
     local item = CreateItem(itemSpawned, nil, nil)
     --item:SetPurchaseTime(Time)
     local randomVector = GetRandomVectorGivenBounds(island[1], island[2], island[3], island[4])
-    print(randomVector)
+    print(item:GetName().." spawned at " .. randomVector.x .. ", " .. randomVector.y)
     CreateItemOnPositionSync(randomVector, item)
     item:SetOrigin(randomVector)
 end
