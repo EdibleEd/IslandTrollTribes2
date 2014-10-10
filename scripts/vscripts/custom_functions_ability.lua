@@ -497,7 +497,6 @@ function MetronomeSpell(dummy)
 	local impale = dummy:FindAbilityByName("ability_metronome_impale")
 	local poisonthistle = dummy:FindAbilityByName("ability_metronome_poisonthistle")	
 	
-	dummy:MoveToPosition(target:GetAbsOrigin())
 	local ability = nil
 	dieroll = RandomInt(0, 99)	
 	
@@ -532,6 +531,7 @@ function MetronomeSpell(dummy)
 		
 	local randomTarget = RandomInt(0,count)
 	target = units[randomTarget]
+	dummy:MoveToPosition(target:GetAbsOrigin())
 	
 	if ability ~= nil then
 		print("casting spell!")
