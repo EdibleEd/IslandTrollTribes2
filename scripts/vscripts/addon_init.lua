@@ -687,7 +687,7 @@ function ITT_GameMode:OnGameRulesStateChange()
 
     if nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
         print("DOTA_GAMERULES_STATE_HERO_SELECTION")
-        self:AssignAllPlayersToTeams()
+        --self:AssignAllPlayersToTeams()
         GameRules:GetGameModeEntity():SetThink( "BroadcastPlayerTeamAssignments", self, 0 ) -- can't do this immediately because the player resource doesn't have the names yet
     end
 end
