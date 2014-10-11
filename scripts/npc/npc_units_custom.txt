@@ -3989,7 +3989,7 @@
 		"Level"								"10"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						""												// Ability 1
+		"Ability1"						"ability_npc_spellimmunity"												// Ability 1
 		"Ability2"						""												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
@@ -4056,7 +4056,88 @@
 	    // Wearables
         //----------------------------------------------------------------
     }
-									
+	
+//=================================================================================================================
+// Creep: Adult Jungle Wolf
+//=================================================================================================================
+	"npc_creep_wolf_adult_jungle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"0.85"
+		"Model"								"models/items/lycan/ultimate/sirius_curse/sirius_curse.vmdl"	
+		"Level"								"12"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"npc_lifesteal"												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"18"									// Damage range min.
+		"AttackDamageMax"			"21"									// Damage range max.	
+		"AttackRate"				"1.20"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "140"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+	}								
 //=================================================================================================================
 // Creep: Adult Jungle Bear
 //=================================================================================================================
