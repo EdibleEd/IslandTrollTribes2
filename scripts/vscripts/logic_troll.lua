@@ -75,7 +75,7 @@ function InventoryCheck(playerID)
     if hero == nil then
         print("hero " .. playerID .. " doesn't exist!")
     else
-        CraftItems(hero, TROLL_RECIPE_TABLE, HIDE_ALIAS_TABLE)
+        CraftItems(hero, TROLL_RECIPE_TABLE, ITEM_ALIAS_TABLE)
         --craftinghelper.lua explains how to format the tables
         --tables are contained in recipe_list.lua
     end

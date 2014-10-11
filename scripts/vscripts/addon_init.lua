@@ -385,7 +385,11 @@ function ITT_GameMode:OnBuildingThink()
     --check each for their type, and run crafting with the corresponding table
     for i=1, #buildings do
         if buildings[i]:GetUnitName() == "npc_building_armory" then
-            CraftItems(buildings[i], ARMORY_RECIPE_TABLE, nil)
+            CraftItems(buildings[i], ARMORY_RECIPE_TABLE, ITEM_ALIAS_TABLE)
+        elseif buildings[i]:GetUnitName() == "npc_building_workshop" then
+            CraftItems(buildings[i], WORKSHOP_RECIPE_TABLE, ITEM_ALIAS_TABLE)
+        elseif buildings[i]:GetUnitName() == "npc_building_hut_witch_doctor" then
+            CraftItems(buildings[i], WDHUT_RECIPE_TABLE, ITEM_ALIAS_TABLE)
         end
     end
     return GAME_TROLL_TICK_TIME
