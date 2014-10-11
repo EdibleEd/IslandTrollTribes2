@@ -8421,6 +8421,46 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Ability: Bush Passive
+	//=================================================================================================================
+	"ability_bush_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"razor_plasma_field"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"Modifiers"
+		{
+			"modifier_bush_passive"
+			{
+				"Passive" 	"1"
+				"Hidden"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-100"
+				}
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/custom_functions_ability.lua"
+						"Function"				"DropAllItems"
+					}
+				}
+			}
+		}
+	}
+
 	
 	//=================================================================================================================
 	// Ability: Skeleton Passive

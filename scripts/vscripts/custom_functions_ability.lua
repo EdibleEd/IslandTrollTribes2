@@ -709,3 +709,19 @@ function QuickDrop(keys)
 		caster:DropItemAtPositionImmediate(item,position+RandomVector(RandomInt(50,75)))
 	end	
 end
+
+function DropAllItems(keys)
+    local caster = keys.caster 
+    if caster:HasInventory() then
+        for itemSlot = 0, 5, 1 do
+            local Item = caster:GetItemInSlot( itemSlot )
+            if Item ~= nil then
+                local itemCharges = Item:GetCurrentCharges()
+                local newItem = CreateItem(Item:GetName(), nil, nil)
+                newItem:SetCurrentCharges(itemCharges)
+                CreateItemOnPositionSync(caster:GetOrigin() + RandomVector(RandomInt(100,160)), newItem)
+                caster:RemoveItem(Item)
+            end
+        end
+    end
+end

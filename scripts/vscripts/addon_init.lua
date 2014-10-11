@@ -17,6 +17,7 @@ maxPlayerID = 0
 
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
 GAME_CREATURE_TICK_TIME     = 10
+GAME_BUSH_TICK_TIME         = 60
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 --GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
 FLASH_ACK_THINK             = 2
@@ -145,6 +146,9 @@ function ITT_GameMode:InitGameMode()
 
     -- This is the item thinker. All random item spawn logic goes here
     GameMode:SetThink( "OnItemThink", ITT_GameMode, "ItemThink", 0 )
+
+     -- This is the herb bush thinker. All herb spawn logic goes here
+    GameMode:SetThink( "OnBushThink", ITT_GameMode, "BushThink", 0 )
 
     -- This is the thinker that checks building placement
     GameMode:SetThink("Think", BuildingHelper, "buildinghelper", 0)
@@ -398,8 +402,8 @@ end
 -- This is similar, but handles spawning creatures
 function ITT_GameMode:OnCreatureThink()
     for i=1, 4, 1 do
-        SpawnCreature("elk", i)
-        SpawnCreature("hawk", i)
+        SpawnCreature("npc_dota_creature_elk", i)
+        SpawnCreature("npc_dota_creature_hawk", i)
     end
     return GAME_CREATURE_TICK_TIME
 end
@@ -471,7 +475,7 @@ function ITT_GameMode:OnItemThink()
     --print("hit mid of spawn items")
     for i=1, #REGIONS, 1 do
         for ii=1, math.floor(ITEM_BASE * REGIONS[i][5]), 1 do
-            print("Spawning an item on island" .. i)
+            --print("Spawning an item on island" .. i)
             item = ITT_SpawnItem(REGIONS[i])
         end
     end
@@ -479,6 +483,56 @@ function ITT_GameMode:OnItemThink()
     return GAME_ITEM_TICK_TIME
 end
 
+function ITT_GameMode:OnBushThink()
+    -- Find all bushes
+    print("bush think")
+    units = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
+                                  Vector(0, 0, 0),
+                                  nil,
+                                  FIND_UNITS_EVERYWHERE,
+                                  DOTA_UNIT_TARGET_TEAM_BOTH,
+                                  DOTA_UNIT_TARGET_ALL,
+                                  DOTA_UNIT_TARGET_FLAG_NONE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                                  FIND_ANY_ORDER,
+                                  false)
+    for i=1, #units do
+        if units[i]:GetItemInSlot(5) == nil then
+            print(units[i]:GetUnitName(), units[i]:GetName())
+            if units[i]:GetUnitName() == "npc_bush_herb" then
+                local newItem = CreateItem("item_herb_butsu", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_thistle" then
+                local newItem = CreateItem("item_thistles", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_river" then
+                if RandomInt(0, 1) == 1 then
+                    local newItem = CreateItem("item_river_root", nil, nil)
+                    units[i]:AddItem(newItem)
+                else
+                    local newItem = CreateItem("item_river_stem", nil, nil)
+                    units[i]:AddItem(newItem)
+                end
+            elseif units[i]:GetUnitName() == "npc_bush_mushroom" then
+                local newItem = CreateItem("item_mushroom", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_herb_yellow" then
+                local newItem = CreateItem("item_herb_yellow", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_herb_orange" then
+                local newItem = CreateItem("item_herb_orange", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_herb_blue" then
+                local newItem = CreateItem("item_herb_blue", nil, nil)
+                units[i]:AddItem(newItem)
+            elseif units[i]:GetUnitName() == "npc_bush_herb_purple" then
+                local newItem = CreateItem("item_herb_purple", nil, nil)
+                units[i]:AddItem(newItem)
+            end
+        end
+    end
+
+    return GAME_BUSH_TICK_TIME
+end
 
 function ITT_SpawnItem(island)
     local itemSpawned = ITT_GetItemFromPool()
@@ -486,7 +540,7 @@ function ITT_SpawnItem(island)
     local item = CreateItem(itemSpawned, nil, nil)
     --item:SetPurchaseTime(Time)
     local randomVector = GetRandomVectorGivenBounds(island[1], island[2], island[3], island[4])
-    print(item:GetName().." spawned at " .. randomVector.x .. ", " .. randomVector.y)
+    --print(item:GetName().." spawned at " .. randomVector.x .. ", " .. randomVector.y)
     CreateItemOnPositionSync(randomVector, item)
     item:SetOrigin(randomVector)
 end
