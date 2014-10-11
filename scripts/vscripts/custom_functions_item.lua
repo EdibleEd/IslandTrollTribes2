@@ -626,7 +626,7 @@ function PrintTest(keys)
 	print("Test ")
 end
 
-function DebugSpawnAll(keys)
+function DebugSpawnAllHeroes(keys)
 	local caster = keys.caster
 	local unitTable = {		
 		"npc_dota_hero_shadow_shaman",
@@ -663,6 +663,47 @@ function DebugSpawnAll(keys)
 		spawnLocationY = math.floor((key-1)/4)
 		spawnLocation = Vector(1,0,0)*spawnLocationX*200 + Vector(0,-1,0)*spawnLocationY*300 + Vector(1,0,0)*200
 		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, caster:GetOwner(), caster:GetOwner(), caster:GetTeam())
+		unit.vOwner = caster:GetOwner()
+		unit:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true )
+		unit:SetForwardVector(Vector(0,-1,0))
+	end
+end
+
+function DebugSpawnAllCreeps(keys)
+	local caster = keys.caster
+	local unitTable = {		
+		"npc_creep_fawn",
+		"npc_creep_wolf_pup",
+		"npc_creep_bear_cub",
+		"npc_creep_mammoth_baby",
+		"npc_creep_elk_pet",
+		"npc_creep_elk_adult",
+		"npc_creep_bear_jungle_adult",
+		"npc_creep_drake_bone",
+		"npc_creep_harpy_red",
+		"npc_creep_bat_forest",
+		"npc_creep_drake_nether",
+		"npc_creep_fish",
+		"npc_creep_fish_green",
+		"npc_creep_elk_wild",
+		"npc_creep_hawk",
+		"npc_creep_wolf_jungle",
+		"npc_creep_wolf_ice",
+		"npc_creep_wolf_adult_jungle",
+		"npc_creep_bear_jungle",
+		"npc_creep_lizard",
+		"npc_creep_panther",
+		"npc_creep_panther_elder"
+}
+
+	for key,value in pairs(unitTable) do
+		local spawnLocationX = (key-1)%4
+		spawnLocationY = math.floor((key-1)/4)
+		spawnLocation = Vector(1,0,0)*spawnLocationX*200 + Vector(0,-1,0)*spawnLocationY*300 + Vector(1,0,0)*200
+		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, caster:GetOwner(), caster:GetOwner(), caster:GetTeam())
+		if unit == nil then
+			print(value)
+		end
 		unit.vOwner = caster:GetOwner()
 		unit:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true )
 		unit:SetForwardVector(Vector(0,-1,0))
