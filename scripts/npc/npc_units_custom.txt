@@ -3016,7 +3016,7 @@
 		"VisionDaytimeRange"	"0"
 		"VisionNighttimeRange"	"0"
 	}
-    //=================================================================================
+ //=================================================================================
 // Building: Witch Doctor's Hut
 //=================================================================================
 	"npc_building_WD_hut"
@@ -3512,8 +3512,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"0"
-		"ModelScale"						"0.91"
+		"ModelScale"						"0.80"
 		"Model"								"models/items/courier/throe/throe.vmdl"	
+		"Level" 							"0"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -3593,8 +3594,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"0"
-		"ModelScale"						"0.91"
-		"Model"								"models/items/beastmaster/boar/fotw_wolf/fotw_wolf.vmdl"	
+		"ModelScale"						"0.75"
+		"Model"								"models/items/lycan/wolves/alpha_summon_01/alpha_summon_01.vmdl"	
+		"Level" 							"0"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -3676,6 +3678,7 @@
 		"ConsideredHero"					"0"
 		"ModelScale"						"0.91"
 		"Model"								"models/items/courier/d2l_steambear/d2l_steambear.vmdl"	
+		"Level" 							"0"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -3755,8 +3758,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"0"
-		"ModelScale"						"0.91"
+		"ModelScale"						"0.60"
 		"Model"								"models/heroes/magnataur/magnataur.vmdl"	
+		"Level" 							"0"
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -4885,7 +4889,88 @@
 	    // Wearables
         //----------------------------------------------------------------
 		
+	
+//=================================================================================================================
+// Creep: Ice Wolf
+//=================================================================================================================
+	"npc_creep_wolf_ice"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.15"
+		"Model"								"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl"	
+		"Level"								"6"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"4"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"									// Damage range min.
+		"AttackDamageMax"			"18"									// Damage range max.	
+		"AttackRate"				"1.35"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
 		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "135"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+			
 			
 //=================================================================================================================
 // Creep: Jungle Bear
