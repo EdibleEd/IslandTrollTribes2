@@ -3500,6 +3500,9 @@
 		"VisionNighttimeRange"	"0"
 	}
 
+	
+	
+
 //=================================================================================================================
 // Creep: Fawn
 //=================================================================================================================
@@ -3551,12 +3554,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3632,12 +3635,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3713,12 +3716,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3794,12 +3797,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3875,12 +3878,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3956,12 +3959,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -3985,7 +3988,88 @@
 
 	    // Wearables
         //----------------------------------------------------------------
+									
+//=================================================================================================================
+// Creep: Adult Jungle Bear
+//=================================================================================================================
+	"npc_creep_bear_jungle_adult"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.30"
+		"Model"								"models/heroes/lone_druid/spirit_bear.vmdl"	
+		"Level"								"12"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_npc_bash"												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"3"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"16"									// Damage range min.
+		"AttackDamageMax"			"20"									// Damage range max.	
+		"AttackRate"				"1.35"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"190"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
 		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "140"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+					
 //=================================================================================================================
 // Creep: Bone Drake
 //=================================================================================================================
@@ -4020,7 +4104,7 @@
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"4"										// Physical protection.
+		"ArmorPhysical"				"0"										// Physical protection.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
@@ -4037,11 +4121,11 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeBaseStrength"		"0"									// Base strength
 		"AttributeStrengthGain"		"0"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
 		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeBaseAgility"		"0"									// Base agility
 		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
@@ -4100,7 +4184,7 @@
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"4"										// Physical protection.
+		"ArmorPhysical"				"0"										// Physical protection.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
@@ -4117,11 +4201,11 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
+		"AttributeBaseStrength"		"0"									// Base strength
 		"AttributeStrengthGain"		"0"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
 		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
+		"AttributeBaseAgility"		"0"									// Base agility
 		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
@@ -4146,22 +4230,758 @@
 
 	    // Wearables
         //----------------------------------------------------------------
-				
 //=================================================================================================================
-// Creep: Adult Jungle Bear
+// Creep: Forest Bat
 //=================================================================================================================
-	"npc_creep_bear_jungle_adult"
+	"npc_creep_bat_forest"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"0"
 		"ModelScale"						"1.10"
-		"Model"								"models/heroes/lone_druid/spirit_bear.vmdl"	
-		"Level"								"12"
+		"Model"								"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	
+		"Level"								"5"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						"ability_npc_bash"												// Ability 1
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"400"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "135"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+//=================================================================================================================
+// Creep: Nether Drake
+//=================================================================================================================
+	"npc_creep_drake_nether"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"	
+		"Level"								"5"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"522"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "135"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+						
+//=================================================================================================================
+// Creep: Fish
+//=================================================================================================================
+	"npc_creep_fish"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/items/hex/fish_hex/fish_hex.vmdl"	
+		"Level"								"0"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "15"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+//=================================================================================================================
+// Creep: Green Fish
+//=================================================================================================================
+	"npc_creep_fish_green"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/props_wildlife/wildlife_fish002.vmdl"	
+		"Level"								"0"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "15"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------	
+		
+		
+		
+			
+//=================================================================================================================
+// Creep: Green Fish
+//=================================================================================================================
+	"npc_creep_fish_green"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/props_wildlife/wildlife_fish002.vmdl"	
+		"Level"								"0"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "15"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------	
+		
+			
+		
+		
+//=================================================================================================================
+// Creep: Elk (Wild)
+//=================================================================================================================
+	"npc_creep_elk_wild"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/items/keeper_of_the_light/northlight_spirit_stag/northlight_spirit_stag.vmdl"	
+		"Level"								"0"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"500"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "115"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------	
+		
+	
+//=================================================================================================================
+// Creep: Hawk
+//=================================================================================================================
+	"npc_creep_hawk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.10"
+		"Model"								"models/heroes/beastmaster/beastmaster_bird.vmdl"	
+		"Level"								"5"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.	
+		"AttackRate"				"0"									// Speed of attack.
+		"AttackAnimationPoint"		"0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"									// Range within a target can be acquired.
+		"AttackRange"				"0"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"400"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "135"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------	
+		
+				
+//=================================================================================================================
+// Creep: Jungle Wolf
+//=================================================================================================================
+	"npc_creep_wolf_jungle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.25"
+		"Model"								"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"	
+		"Level"								"6"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"4"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"15"									// Damage range min.
+		"AttackDamageMax"			"18"									// Damage range max.	
+		"AttackRate"				"1.35"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "135"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+		
+		
+			
+//=================================================================================================================
+// Creep: Jungle Bear
+//=================================================================================================================
+	"npc_creep_bear_jungle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.00"
+		"Model"								"models/heroes/lone_druid/spirit_bear.vmdl"	
+		"Level"								"7"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"1.5"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"16"									// Damage range min.
+		"AttackDamageMax"			"20"									// Damage range max.	
+		"AttackRate"				"1.35"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "155"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+//=================================================================================================================
+// Creep: Lizard
+//=================================================================================================================
+	"npc_creep_lizard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"0.40"
+		"Model"								"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"	
+		"Level"								"7"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						"ability_npc_poisonattack"												// Ability 1
 		"Ability2"						""												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
@@ -4186,9 +5006,9 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"16"									// Damage range min.
-		"AttackDamageMax"			"20"									// Damage range max.	
-		"AttackRate"				"1.35"									// Speed of attack.
+		"AttackDamageMin"			"3"									// Damage range min.
+		"AttackDamageMax"			"4"									// Damage range max.	
+		"AttackRate"				"0.4"									// Speed of attack.
 		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
 		"AttackRange"				"150"									// Range within a target can be attacked.
@@ -4198,24 +5018,24 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"1"									// Base strength
-		"AttributeStrengthGain"		"1"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"1"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"1"									// Base agility
-		"AttributeAgilityGain"		"1"									// Agility bonus per level.
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"190"									// Speed.
+		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 		
        // Status
        //----------------------------------------------------------------
-        "StatusHealth"                          "140"           // Base health.
+        "StatusHealth"                          "45"           // Base health.
         "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
         "StatusMana"                            "0"              // Base mana.
         "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
@@ -4227,7 +5047,169 @@
 
 	    // Wearables
         //----------------------------------------------------------------
-								
+		
+//=================================================================================================================
+// Creep: Panther
+//=================================================================================================================
+	"npc_creep_panther"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.00"
+		"Model"								"models/heroes/beastmaster/beastmaster_beast.vmdl"	
+		"Level"								"10"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"3"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"28"									// Damage range min.
+		"AttackDamageMax"			"31"									// Damage range max.	
+		"AttackRate"				"1.44"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "230"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+				
+//=================================================================================================================
+// Creep: Panther (Elder)
+//=================================================================================================================
+	"npc_creep_panther_elder"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"npc_dota_creature"
+		"ConsideredHero"					"0"
+		"ModelScale"						"1.35"
+		"Model"								"models/heroes/beastmaster/beastmaster_beast.vmdl"	
+		"Level"								"6"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"						""												// Ability 1
+		"Ability2"						""												// Ability 2
+		"Ability3"						""												// Ability 3
+		"Ability4"						""												// Ability 4
+		"Ability5"						""												// Ability 5
+		"Ability6" 						""												// Ability 6
+		"Ability7" 						""											
+		"Ability8" 						""							
+		"Ability9"  					""		
+		"Ability10" 					""		
+		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability12"  					""							//Hidden ability for beast master pet
+		"Ability13"  					""							//Hidden ability for beast master pet
+		"Ability14"  					""
+		"Ability15"  					""
+		"Ability16"  					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"3"										// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"28"									// Damage range min.
+		"AttackDamageMax"			"31"									// Damage range max.	
+		"AttackRate"				"1.44"									// Speed of attack.
+		"AttackAnimationPoint"		"1.0"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"200"									// Range within a target can be acquired.
+		"AttackRange"				"150"									// Range within a target can be attacked.
+		"ProjectileModel"			""										// Particle system model for projectile.
+		"ProjectileSpeed"			"0"										// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"									// Base strength
+		"AttributeStrengthGain"		"0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"									// Base intelligence
+		"AttributeIntelligenceGain"	"0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"									// Base agility
+		"AttributeAgilityGain"		"0"									// Agility bonus per level.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+       // Status
+       //----------------------------------------------------------------
+        "StatusHealth"                          "230"           // Base health.
+        "StatusHealthRegen"                     "0.0"           // Health regeneration rate.
+        "StatusMana"                            "0"              // Base mana.
+        "StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+               
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "1800"           // Range of vision during day light.
+        "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
+
+	    // Wearables
+        //----------------------------------------------------------------
+							
 	//=================================================================================    
     // Creature: Living Dead Scroll Skeleton
     //=================================================================================
