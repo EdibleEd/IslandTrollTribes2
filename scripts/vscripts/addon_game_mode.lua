@@ -88,7 +88,7 @@ function Precache( context )
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_omniknight",context)
 	PrecacheResource("particle_folder", "particles/status_fx",context)
 
-		local unitTable = {		
+		local heroTable = {		
 		"npc_dota_hero_shadow_shaman",
 		"npc_hero_herbmaster_tele_gatherer",
 		"npc_hero_radar_tele_gatherer",
@@ -118,7 +118,34 @@ function Precache( context )
 		"npc_hero_priest_master_healer",
 		"npc_hero_priest_sage"}
 
-	for key,value in pairs(unitTable) do
+	for key,value in pairs(heroTable) do
+		PrecacheUnitByNameSync(value, context)
+	end
+
+	local creepTable = {		
+		"npc_creep_fawn",
+		"npc_creep_wolf_pup",
+		"npc_creep_bear_cub",
+		"npc_creep_mammoth_baby",
+		"npc_creep_elk_pet",
+		"npc_creep_elk_adult",
+		"npc_creep_bear_jungle_adult",
+		"npc_creep_drake_bone",
+		"npc_creep_harpy_red",
+		"npc_creep_bat_forest",
+		"npc_creep_drake_nether",
+		"npc_creep_fish",
+		"npc_creep_fish_green",
+		"npc_creep_elk_wild",
+		"npc_creep_hawk",
+		"npc_creep_wolf_jungle",
+		"npc_creep_wolf_ice",
+		"npc_creep_wolf_adult_jungle",
+		"npc_creep_bear_jungle",
+		"npc_creep_lizard",
+		"npc_creep_panther",
+		"npc_creep_panther_elder"}
+	for key,value in pairs(creepTable) do
 		PrecacheUnitByNameSync(value, context)
 	end
 

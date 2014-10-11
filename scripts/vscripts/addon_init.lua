@@ -44,23 +44,6 @@ TOPLEFT                     = {-8000, -600, 8000, 500, 1}  --{xmin, xmax, ymin, 
 TOPRIGHT                    = {550, 8000, 8000, 800, 1}
 BOTTOMRIGHT                 = {-1100, -8000, -600, -8000, 1}
 BOTTOMLEFT                  = {950, 8000, -350, -8000, 1}
--- -- Bounding box
--- TOPLEFT[1]                   = -8000
--- TOPLEFT[2]                   = -600
--- TOPLEFT[3]                   = 8000
--- TOPLEFT[4]                   = 500
--- -- Spawnrate for CENTER
--- TOPLEFT[5]                   = 1
-
--- -- Bounding box
--- CENTER[1]                   = -1000
--- CENTER[2]                   = 1000
--- CENTER[3]                   = -1000
--- CENTER[4]                   = 1000
--- -- Spawnrate for CENTER
--- CENTER[5]                   = 1
-
--- Only region is CENTER
 REGIONS[1]                  = TOPLEFT
 REGIONS[2]                  = TOPRIGHT
 REGIONS[3]                  = BOTTOMRIGHT
@@ -485,7 +468,7 @@ end
 
 function ITT_GameMode:OnBushThink()
     -- Find all bushes
-    print("bush think")
+    --print("bush think")
     units = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
                                   Vector(0, 0, 0),
                                   nil,
@@ -497,7 +480,7 @@ function ITT_GameMode:OnBushThink()
                                   false)
     for i=1, #units do
         if units[i]:GetItemInSlot(5) == nil then
-            print(units[i]:GetUnitName(), units[i]:GetName())
+            --print(units[i]:GetUnitName(), units[i]:GetName())
             if units[i]:GetUnitName() == "npc_bush_herb" then
                 local newItem = CreateItem("item_herb_butsu", nil, nil)
                 units[i]:AddItem(newItem)

@@ -697,8 +697,8 @@ function DebugSpawnAllCreeps(keys)
 }
 
 	for key,value in pairs(unitTable) do
-		local spawnLocationX = (key-1)%4
-		spawnLocationY = math.floor((key-1)/4)
+		local spawnLocationX = (key-1)%6
+		spawnLocationY = math.floor((key-1)/6)
 		spawnLocation = Vector(1,0,0)*spawnLocationX*200 + Vector(0,-1,0)*spawnLocationY*300 + Vector(1,0,0)*200
 		local unit = CreateUnitByName(value, caster:GetOrigin() + spawnLocation, true, caster:GetOwner(), caster:GetOwner(), caster:GetTeam())
 		if unit == nil then
