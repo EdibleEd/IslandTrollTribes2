@@ -180,7 +180,7 @@ function ITT_GameMode:InitGameMode()
 	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'On_dota_player_killed'), self)
 
     -- Listener for drops and for removing buildings from block table
-    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self ) 
+    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )
 
     --for multiteam
     ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( ITT_GameMode, 'OnGameRulesStateChange' ), self )
@@ -234,6 +234,41 @@ function ITT_GameMode:InitGameMode()
             CreateUnitByName("npc_bush_river", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
         end
     end
+
+    --flash ui commands
+    print("flash ui commands")
+    Convars:RegisterCommand( "my_command", function(...) return self:_MyCommand( ... ) end, "Test console command.", 0 )
+    Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops all raw meat", 0 )
+end
+
+function ITT_GameMode:_DropMeat( cmdName)
+    print("DropMeat Command")
+    local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
+    if cmdPlayer then
+        local nPlayerID = cmdPlayer:GetPlayerID()
+        local hero = cmdPlayer:GetAssignedHero()
+        print("COMMAND FROM PLAYER: " .. nPlayerID)
+        print("Drop meat hero " .. hero:GetName())
+
+        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
+        if meatStacks > 0 then
+            for i = 1,meatStacks do
+                local newItem = CreateItem("item_meat_raw", nil, nil)
+                CreateItemOnPositionSync(hero:GetOrigin() + RandomVector(RandomInt(50,100)), newItem)
+
+                hero:SetModifierStackCount("modifier_meat_passive", nil, 0)
+            end
+        end
+    end
+end
+
+function ITT_GameMode:_MyCommand( cmdName, arg1, arg2 )
+    print("MyCommand")
+    local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
+    if cmdPlayer then
+        local nPlayerID = cmdPlayer:GetPlayerID()
+        print("COMMAND FROM PLAYER: " .. nPlayerID)
+    end
 end
 
 -- This code is written by Internet Veteran, handle with care.
@@ -274,7 +309,15 @@ function ITT_GameMode:OnPlayerPicked( keys )
         local heatApplier = CreateItem("item_heat_modifier_applier", spawnedUnit, spawnedUnit)
         heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
         spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
-        --heatApplier:RemoveSelf()
+    end
+
+     --meat handling
+    if string.find(spawnedUnit:GetClassname(), "hero") then
+        print("MEAT!")
+        spawnedUnit:RemoveModifierByName("modifier_meat_passive")
+        local heatApplier = CreateItem("item_meat_modifier_applier", spawnedUnit, spawnedUnit)
+        heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_meat_passive", {duration=-1})
+        spawnedUnit:SetModifierStackCount("modifier_meat_passive", nil, 0)
     end
 end
 	
@@ -322,7 +365,6 @@ function ITT_GameMode:OnNPCSpawned( keys )
         local heatApplier = CreateItem("item_heat_modifier_applier", spawnedUnit, spawnedUnit)
         heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
         spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
-        --heatApplier:RemoveSelf()
     end
 end
 
@@ -347,7 +389,7 @@ function ITT_GameMode:FixDropModels(dt)
             v.OriginalAngles = v:GetAngles()
             local custom = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom 
             if custom then
-                print("found custom")
+                --print("found custom")
                 if custom.ModelOffsets then
                     local offsets = itemKeyValues[v:GetContainedItem():GetAbilityName()].Custom.ModelOffsets          
                     v:SetOrigin( v.OriginalOrigin - Vector(offsets.Origin.x, offsets.Origin.y, offsets.Origin.z))
@@ -423,7 +465,7 @@ end
 
 -- The only real way of triggering code in Scaleform, events, are not reliable. Require acknowledgement of all events fired for this purpose.
 function ITT_GameMode:FlashAckThink()
-    print("ackthink!")
+    --print("ackthink!")
     for i=0,9 do
         local player = PlayerResource:GetPlayer(i)
         if player and player.eventQueue then
@@ -715,14 +757,40 @@ function ITT_GameMode:OnPlayerConnectFull(keys)
     local creature = CreateUnitByName("npc_dota_creature_elk", RandomVector(RandomFloat(0,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
 end
 
---Listener to handle telegather events from item pickup
+--Listener to handle telegather events from item pickup and picking up raw meat
 function ITT_GameMode:OnItemPickedUp(event)
-        local hero = EntIndexToHScript( event.HeroEntityIndex )
-        local hasTelegather = hero:HasModifier("modifier_telegather")
-        
-        if hasTelegather then
-            RadarTelegather(event)
+    local hero = EntIndexToHScript( event.HeroEntityIndex )
+
+    if event.itemname == "item_meat_raw" then
+        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
+        if meatStacks < 10 then
+            hero:SetModifierStackCount("modifier_meat_passive", nil, meatStacks + 1)
+            for itemSlot = 0, 5, 1 do
+                local Item = hero:GetItemInSlot( itemSlot )
+                if (Item ~= nil) and (Item:GetName() == "item_meat_raw") then
+                    hero:RemoveItem(Item)
+                end
+            end
+        else
+            for itemSlot = 0, 5, 1 do
+                local Item = hero:GetItemInSlot( itemSlot )
+                if (Item ~= nil) and (Item:GetName() == "item_meat_raw") then
+                    local itemCharges = Item:GetCurrentCharges()
+                    local newItem = CreateItem(Item:GetName(), nil, nil)
+                    newItem:SetCurrentCharges(itemCharges)
+                    CreateItemOnPositionSync(hero:GetOrigin() + RandomVector(RandomInt(50,50)), newItem)
+                    hero:RemoveItem(Item)
+                end
+            end
         end
+
+    end
+
+    local hasTelegather = hero:HasModifier("modifier_telegather")
+    
+    if hasTelegather then
+        RadarTelegather(event)
+    end
 end
 
 --Listener to handle level up
