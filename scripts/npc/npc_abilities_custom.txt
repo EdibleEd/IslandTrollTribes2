@@ -2,11 +2,7 @@
 "DOTAAbilities"
 {
 	"Version"	"1"
-
-	//=================================================================================
-	// Cook Food
-	//=================================================================================
-
+	
 	"tool_rot_x"
 	{
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
@@ -128,38 +124,42 @@
 		}
 	}
 
-	"Ability_Cook_Food"
-	{
-	// General
-	"BaseClass"			"ability_datadriven"
-	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityTextureName"	"Cook_Food"
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"1.0"
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	//=================================================================================
+	// Cook Food
+	//=================================================================================
 
-	"OnSpellStart"
+	"ability_building_cookmeat"
 	{
-		"RunScript"
+		// General
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"	"ability_building_cookmeat"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
 		{
-			"Target"		
-			"ScriptFile"	"scripts/vscripts/abilities.lua"
-			"Function"				"Cook_food"
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/custom_functions_ability.lua"
+				"Function"		"CookFood"
+				"Range"			"%radius"
+			}
 		}
-	}
-	// Special	
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-	{
-		"var_type"		"FIELD_INTEGER"
-		"radius"		"600"
-	}
-	}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"600"
+			}
+		}
 	}
 	//=================================================================================
 	// Pack Up
