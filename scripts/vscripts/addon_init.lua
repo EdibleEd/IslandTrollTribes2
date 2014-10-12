@@ -265,7 +265,7 @@ function ITT_GameMode:OnNPCSpawned( keys )
         spawnedUnit:AddItem(itemslotlock2)
     	spawnedUnit:AddItem(itemslotlock3)
      --	if spawnedUnit:GetClassname() == "scout" then
-    elseif string.find(spawnedUnit:GetUnitName(), "scout") then
+    elseif string.find(spawnedUnit:GetUnitName(), "scout") and string.find(spawnedUnit:GetUnitName(), "hero") then
     		spawnedUnit:AddItem(itemslotlock1)
      --	if spawnedUnit:GetClassname() == "priest" then
      -- if spawnedUnit:(string.find(targetName,"priest") ~= nil) then 
@@ -274,7 +274,7 @@ function ITT_GameMode:OnNPCSpawned( keys )
         spawnedUnit:AddItem(itemslotlock2)
      --	if spawnedUnit:GetClassname() == "theif" then
      -- if spawnedUnit:(string.find(targetName,"thief") ~= nil) then 
-     elseif string.find(spawnedUnit:GetUnitName(), "thief") then
+     elseif string.find(spawnedUnit:GetUnitName(), "thief") and string.find(spawnedUnit:GetUnitName(), "hero") then
     		spawnedUnit:AddItem(itemslotlock1)
      --	if spawnedUnit:GetClassname() == "beastmaster" then
      -- if spawnedUnit:(string.find(targetName,"beastmaster") ~= nil) then 
@@ -493,6 +493,50 @@ function ITT_GameMode:OnBushThink()
                     units[i]:AddItem(newItem)
                 else
                     local newItem = CreateItem("item_river_stem", nil, nil)
+                    units[i]:AddItem(newItem)
+                end
+            elseif units[i]:GetUnitName() == "npc_bush_stash" then
+                local random = RandomInt(0, 3)
+                if random == 0 then
+                    local newItem = CreateItem("item_acorn", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 1 then
+                    local newItem = CreateItem("item_acorn_magic", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 2 then
+                    local newItem = CreateItem("item_ball_clay", nil, nil)
+                    units[i]:AddItem(newItem)
+                else
+                    local newItem = CreateItem("item_mushroom", nil, nil)
+                    units[i]:AddItem(newItem)
+                end
+            elseif units[i]:GetUnitName() == "npc_bush_thief" then
+                local random = RandomInt(0, 6)
+                if random == 1 then
+                    local newItem = CreateItem("item_meat_cooked", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 2 then
+                    local newItem = CreateItem("item_net_basic", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 3 then
+                    local newItem = CreateItem("item_potion_manai", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 4 then
+                    local newItem = CreateItem("item_crystal_mana", nil, nil)
+                    units[i]:AddItem(newItem)
+                elseif  random == 5 then
+                    local newItem = CreateItem("item_bomb_smoke", nil, nil)
+                    units[i]:AddItem(newItem)
+                else
+                    local newItem = CreateItem("item_medallion_thief", nil, nil)
+                    units[i]:AddItem(newItem)
+                end
+            elseif units[i]:GetUnitName() == "npc_bush_scout" then
+                if RandomInt(0, 1) == 1 then
+                    local newItem = CreateItem("item_clay_living", nil, nil)
+                    units[i]:AddItem(newItem)
+                else
+                    local newItem = CreateItem("item_clay_explosion", nil, nil)
                     units[i]:AddItem(newItem)
                 end
             elseif units[i]:GetUnitName() == "npc_bush_mushroom" then
