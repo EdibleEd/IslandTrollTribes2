@@ -149,6 +149,21 @@ function Precache( context )
 		PrecacheUnitByNameSync(value, context)
 	end
 
+	local bushTable = {		
+		"npc_bush_herb",
+		"npc_bush_herb_yellow",
+		"npc_bush_herb_blue",
+		"npc_bush_herb_orange",
+		"npc_bush_herb_purple",
+		"npc_bush_thistle",
+		"npc_bush_stash",
+		"npc_bush_river",
+		"npc_bush_thief",
+		"npc_bush_scout",}
+	for key,value in pairs(bushTable) do
+		PrecacheUnitByNameSync(value, context)
+	end
+
 	PrecacheItemByNameSync("item_building_kit_fire_basic", context)
 
 	print("Precache Finish")

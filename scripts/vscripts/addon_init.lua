@@ -76,7 +76,7 @@ REL_MANACRYSTAL_RATE        = 0
 REL_MAGIC_RATE              = 0
 
 -- Controls the base item spawn rate 
-ITEM_BASE                   = 1
+ITEM_BASE                   = 2
 
 
 --[[
@@ -204,6 +204,36 @@ function ITT_GameMode:InitGameMode()
     self:GatherValidTeams()
 
     GameRules:GetGameModeEntity():SetThink( "OnThink", self, 1 ) 
+
+    --initial bush spawns
+    --place "npc_dota_spawner" entities on the map with the appropriate name to spawn to corresponding bush on game start
+    local bush_herb_spawnpoints = Entities:FindAllByName("spawner_npc_bush*")
+    print("bush_herb_spawnpoints " .. #bush_herb_spawnpoints)
+    for _,spawnpoint in pairs(bush_herb_spawnpoints) do
+        if string.find(spawnpoint:GetName(), "spawner_npc_bush_herb_yellow") then
+            CreateUnitByName("npc_bush_herb_yellow", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_herb_blue") then
+            CreateUnitByName("npc_bush_herb_blue", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_herb_purple") then
+            CreateUnitByName("npc_bush_herb_purple", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_herb_orange") then
+            CreateUnitByName("npc_bush_herb_orange", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_herb") then
+            CreateUnitByName("npc_bush_herb", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_mushroom") then
+            CreateUnitByName("npc_bush_mushroom", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_thistle") then
+            CreateUnitByName("npc_bush_thistle", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_stash") then
+            CreateUnitByName("npc_bush_stash", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_thief") then
+            CreateUnitByName("npc_bush_thief", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_scout") then
+            CreateUnitByName("npc_bush_scout", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        elseif string.find(spawnpoint:GetName(), "spawner_npc_bush_river") then
+            CreateUnitByName("npc_bush_river", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        end
+    end
 end
 
 -- This code is written by Internet Veteran, handle with care.
