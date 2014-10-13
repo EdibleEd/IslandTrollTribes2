@@ -9067,7 +9067,7 @@
 			"AbilityBehavior"       		 "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"meat_cooked"
-			"Model"							"models/particle/green_rocks.vmdl"
+			"Model"							"models/props_gameplay/cheese.vmdl"
 			"Effect" 						""
 
 		// Stats
@@ -9732,8 +9732,8 @@
 			"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"meat_smoked"
-			"Model"							"models/particle/green_rocks.vmdl"
-			"Effect" 						""
+			"Model"							"models/props_gameplay/cheese.vmdl"
+			"Effect" 						"particles/econ/items/spirit_breaker/spirit_breaker_weapon_fury/spirit_breaker_ambient_flame_fury_smoke.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
