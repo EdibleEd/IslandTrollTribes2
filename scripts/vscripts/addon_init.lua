@@ -381,6 +381,15 @@ function ITT_GameMode:OnNPCSpawned( keys )
         heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_heat_passive", {duration=-1})
         spawnedUnit:SetModifierStackCount("modifier_heat_passive", nil, 100)
     end
+
+    --meat handling
+    if string.find(spawnedUnit:GetClassname(), "hero") then
+        print("MEAT!")
+        spawnedUnit:RemoveModifierByName("modifier_meat_passive")
+        local heatApplier = CreateItem("item_meat_modifier_applier", spawnedUnit, spawnedUnit)
+        heatApplier:ApplyDataDrivenModifier(spawnedUnit, spawnedUnit, "modifier_meat_passive", {duration=-1})
+        spawnedUnit:SetModifierStackCount("modifier_meat_passive", nil, 0)
+    end
 end
 
 function ITT_GameMode:OnEntityKilled(keys)
