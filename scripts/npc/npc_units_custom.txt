@@ -2597,13 +2597,13 @@
 //=================================================================================
 // Building: Troll Hut
 //=================================================================================
-	"npc_building_troll_hut"
+	"npc_building_hut_troll"
 	{
 		// General
 		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/sniper_hut.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
-		"HasInventory" 			"1"
+		"HasInventory" 			"0"
 		
 		"MinimapIconSize"		"250"
 		"HealthBarOffset"		"400"
@@ -2658,13 +2658,13 @@
 //=================================================================================
 // Building: Mud Hut
 //=================================================================================
-	"npc_building_mud_hut"
+	"npc_building_hut_mud"
 	{
 		// General
 		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/tent_dk_small.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"		
-		"HasInventory" 			"1"
+		"HasInventory" 			"0"
 		
 		"MinimapIconSize"		"250"
 		"HealthBarOffset"		"400"
@@ -3026,7 +3026,7 @@
  //=================================================================================
 // Building: Witch Doctor's Hut
 //=================================================================================
-	"npc_building_WD_hut"
+	"npc_building_hut_witch_doctor"
 	{
 		// General
 		"BaseClass"				"npc_dota_building"	
@@ -3154,7 +3154,7 @@
 		"BaseClass"				"npc_dota_building"	
 		"Model"					"models/props_structures/wooden_sentry_tower001.vmdl"	// Model.
 		"SoundSet"				"Creep_Good_Melee"	
-		"HasInventory" 			"1"	
+		"HasInventory" 			"0"	
 
 		"MinimapIconSize"		"250"
 		"HealthBarOffset"		"400"

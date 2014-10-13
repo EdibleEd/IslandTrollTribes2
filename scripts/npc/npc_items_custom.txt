@@ -11678,15 +11678,15 @@
 // Custom: Troll Hut
 //=================================================================================================================
 
-		"item_building_kit_troll_hut"
+		"item_building_kit_hut_troll"
 		{
 			"ID"							"1120"
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"             		"DOTA_ABILITY_BEHAVIOR_POINT"
+			"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT"
 			"BaseClass"				"item_datadriven"
-			"AbilityTextureName"			"building_kit_hut_basic"
+			"AbilityTextureName"	"building_kit_hut_basic"
 			"Model"					"models/props_debris/creep_camp001j.vmdl"
 			"Effect" 				""
 

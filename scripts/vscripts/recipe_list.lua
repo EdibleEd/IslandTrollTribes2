@@ -1,7 +1,7 @@
 TROLL_RECIPE_TABLE = {
         {"item_building_kit_fire_basic",        {"item_tinder", "item_flint", "item_stick"}},
         {"item_building_kit_tent",              {"item_stick", "item_hide_any", "item_stick"}},
-        {"item_building_kit_troll_hut",         {"item_ball_clay", "item_stick", "item_stick", "item_hide_any", "item_hide_any"}},
+        {"item_building_kit_hut_troll",         {"item_ball_clay", "item_stick", "item_stick", "item_hide_any", "item_hide_any"}},
         {"item_building_kit_hut_mud",           {"item_ball_clay", "item_ball_clay", "item_ball_clay", "item_ball_clay"}},
         {"item_building_kit_storage_chest",     {"item_hide_any", "item_stick", "item_tinder", "item_ball_clay"}},
         {"item_building_kit_smoke_house",       {"item_stick", "item_hide_any", "item_ball_clay"}},
