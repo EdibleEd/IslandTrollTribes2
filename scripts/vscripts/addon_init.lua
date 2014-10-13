@@ -237,7 +237,7 @@ function ITT_GameMode:InitGameMode()
 
     --flash ui commands
     print("flash ui commands")
-    Convars:RegisterCommand( "my_command", function(...) return self:_MyCommand( ... ) end, "Test console command.", 0 )
+    Convars:RegisterCommand( "EatMeat", function(...) return self:_EatMeat( ... ) end, "Player eats one raw meat", 0 )
     Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops all raw meat", 0 )
 end
 
@@ -262,12 +262,27 @@ function ITT_GameMode:_DropMeat( cmdName)
     end
 end
 
-function ITT_GameMode:_MyCommand( cmdName, arg1, arg2 )
-    print("MyCommand")
+function ITT_GameMode:_EatMeat( cmdName, arg1, arg2 )
+    print("EatMeat Command")
     local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
     if cmdPlayer then
         local nPlayerID = cmdPlayer:GetPlayerID()
-        print("COMMAND FROM PLAYER: " .. nPlayerID)
+        local hero = cmdPlayer:GetAssignedHero()
+
+        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
+        if meatStacks > 0 then
+            local abilityName = "ability_item_eat_meat_raw"
+            local ability = hero:FindAbilityByName(abilityName)
+            if ability == nil then
+                hero:AddAbility(abilityName)
+                ability = hero:FindAbilityByName( abilityName )
+                ability:SetLevel(1)
+            end
+            print("trying to cast ability ", abilityName)
+            hero:CastAbilityNoTarget(ability, -1)
+
+            hero:SetModifierStackCount("modifier_meat_passive", nil, meatStacks-1)
+        end
     end
 end
 

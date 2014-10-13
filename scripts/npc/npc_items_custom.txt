@@ -421,7 +421,7 @@
 			"03"
 			{
 				"var_type"                              "FIELD_INTEGER"
-					"hp_per_tick"                  			 "1"  // %total_mana / %buff_duration
+				"hp_per_tick"                  		"1"  // %total_mana / %buff_duration
 			}
 		}
 	}
