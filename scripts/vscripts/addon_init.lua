@@ -16,7 +16,7 @@ playerList = {}
 maxPlayerID = 0
 
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
-GAME_CREATURE_TICK_TIME     = 10
+GAME_CREATURE_TICK_TIME     = 30
 GAME_BUSH_TICK_TIME         = 60
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 --GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
@@ -177,7 +177,7 @@ function ITT_GameMode:InitGameMode()
     ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(ITT_GameMode, 'OnPlayerGainedLevel'), self) 
 	
 	--Listener for storing hero information and revive
-	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'On_dota_player_killed'), self)
+	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'OnDotaPlayerKilled'), self)
 
     -- Listener for drops and for removing buildings from block table
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )
@@ -207,7 +207,7 @@ function ITT_GameMode:InitGameMode()
 
     --initial bush spawns
     --place "npc_dota_spawner" entities on the map with the appropriate name to spawn to corresponding bush on game start
-    local bush_herb_spawnpoints = Entities:FindAllByName("spawner_npc_bush*")
+    local bush_herb_spawnpoints = Entities:FindAllByClassname("npc_dota_spawner")
     print("bush_herb_spawnpoints " .. #bush_herb_spawnpoints)
     for _,spawnpoint in pairs(bush_herb_spawnpoints) do
         if string.find(spawnpoint:GetName(), "spawner_npc_bush_herb_yellow") then
@@ -234,6 +234,18 @@ function ITT_GameMode:InitGameMode()
             CreateUnitByName("npc_bush_river", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
         end
     end
+
+    -- spawner_npc_bush_herb_yellow
+    -- spawner_npc_bush_herb_blue
+    -- spawner_npc_bush_herb_purple
+    -- spawner_npc_bush_herb_orange
+    -- spawner_npc_bush_herb
+    -- spawner_npc_bush_river
+    -- spawner_npc_bush_mushroom
+    -- spawner_npc_bush_thistle
+    -- spawner_npc_bush_stash
+    -- spawner_npc_bush_thief
+    -- spawner_npc_bush_scout
 
     --flash ui commands
     print("flash ui commands")
@@ -404,6 +416,12 @@ function ITT_GameMode:OnEntityKilled(keys)
     end
 end
 
+function ITT_GameMode:OnDotaPlayerKilled(keys)
+    local playerId = keys.PlayerID
+
+    print(GetPlayer(playerID):GetAssignedHero())
+end
+
 function ITT_GameMode:FixDropModels(dt)
     for _,v in pairs(Entities:FindAllByClassname("dota_item_drop")) do
         if not v.ModelFixInit then
@@ -480,10 +498,8 @@ end
 
 -- This is similar, but handles spawning creatures
 function ITT_GameMode:OnCreatureThink()
-    for i=1, 4, 1 do
-        SpawnCreature("npc_dota_creature_elk", i)
-        SpawnCreature("npc_dota_creature_hawk", i)
-    end
+    SpawnCreature("npc_dota_creature_elk", i)
+    --SpawnCreature("npc_dota_creature_hawk", i)
     return GAME_CREATURE_TICK_TIME
 end
 

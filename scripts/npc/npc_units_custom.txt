@@ -4723,6 +4723,7 @@
 		"ModelScale"						"1.10"
 		"Model"								"models/items/keeper_of_the_light/northlight_spirit_stag/northlight_spirit_stag.vmdl"	
 		"Level"								"0"
+		"vscripts"							"passive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
