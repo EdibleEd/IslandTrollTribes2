@@ -16,7 +16,7 @@ playerList = {}
 maxPlayerID = 0
 
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
-GAME_CREATURE_TICK_TIME     = 30    -- Time for each creature spawn
+GAME_CREATURE_TICK_TIME     = 60    -- Time for each creature spawn
 GAME_BUSH_TICK_TIME         = 60
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
@@ -24,26 +24,6 @@ FLASH_ACK_THINK             = 2
 
 BUILDING_TICK_TIME 			= 0.03
 DROPMODEL_TICK_TIME         = 0.03
-
-MAXIMUM_PASSIVE_NEUTRALS    = 30
-MAXIMUM_AGGRESSIVE_NEUTRALS = 20
-
-ELK_PER_SPAWN               = 2     --every tick time, how many spawn at random points
-HAWK_PER_SPAWN              = 2
-FISH_PER_SPAWN              = 5
-WOLF_BEAR_PER_SPAWN         = 2
-SNAKE_PER_SPAWN             = 1
-PANTHER_PER_SPAWN           = 1
-
-SMALL_FISH_SPAWN_CHANCE     = 70    --out of the possibilities, the ratio for each to spawn
-GREEN_FISH_SPAWN_CHANCE     = 30
-
-WOLF_SPAWN_CHANCE           = 50
-BEAR_SPAWN_CHANCE           = 50
-
-PANTHER_SPAWN_CHANCE        = 50
-ELDER_PANTHER_SPAWN_CHANCE  = 50
-
 
 itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 
@@ -448,13 +428,13 @@ function ITT_GameMode:OnDotaPlayerKilled(keys)
 end
 
 function ITT_GameMode:On_entity_hurt(data)
-    print("entity_hurt")
+    --print("entity_hurt")
     local attacker = EntIndexToHScript(data.entindex_attacker)
     local killed = EntIndexToHScript(data.entindex_killed)
-    if (string.find(killed:GetUnitName(), "elk")) then
+    if (string.find(killed:GetUnitName(), "elk") or string.find(killed:GetUnitName(), "fish") or string.find(killed:GetUnitName(), "hawk")) then
         killed.state = "flee"
     end
-    print("attacker: "..attacker:GetUnitName(), "killed: "..killed:GetUnitName())
+    --print("attacker: "..attacker:GetUnitName(), "killed: "..killed:GetUnitName())
 
 end
 
@@ -538,24 +518,31 @@ function ITT_GameMode:OnCreatureThink()
     MAXIMUM_PASSIVE_NEUTRALS    = 30
     MAXIMUM_AGGRESSIVE_NEUTRALS = 20
 
-    ELK_PER_SPAWN               = 2     --every tick time, how many spawn at random points
-    HAWK_PER_SPAWN              = 2
-    FISH_PER_SPAWN              = 5
-    WOLF_BEAR_PER_SPAWN         = 2
-    SNAKE_PER_SPAWN             = 1
-    PANTHER_PER_SPAWN           = 1
+    neutralSpawnTable = {
+        --{"creep_name", "spawner_name", spawn_chance, number_to_spawn},
+        {"npc_creep_elk_wild",      "spawner_neutral_elk",  100, 2},
+        {"npc_creep_hawk",          "spawner_neutral_hawk",  100, 2},
+        {"npc_creep_fish",          "spawner_neutral_fish",     100, 5},
+        {"npc_creep_fish_green",    "spawner_neutral_fish",     100, 2},
+        {"npc_creep_wolf_jungle",   "spawner_neutral_wolf",     100, 1},
+        {"npc_creep_bear_jungle",   "spawner_neutral_bear",     100, 1},
+        {"npc_creep_lizard",        "spawner_neutral_lizard",   100, 1},
+        {"npc_creep_panther",       "spawner_neutral_panther",  100, 1},
+        {"npc_creep_panther_elder", "spawner_neutral_panther",  100, 1},
+    }
+    for _,v in pairs(neutralSpawnTable) do
+        local creepName = v[1]
+        local spawnerName = v[2]
+        local spawnChance = v[3]
+        local numToSpawn = v[4]
 
-    SMALL_FISH_SPAWN_CHANCE     = 70    --out of the possibilities, the ratio for each to spawn
-    GREEN_FISH_SPAWN_CHANCE     = 30
+        for i=1,numToSpawn do
+            if spawnChance >= RandomInt(1, 100) then
+                SpawnCreature(creepName, spawnerName)
+            end
+        end
+    end
 
-    WOLF_SPAWN_CHANCE           = 50
-    BEAR_SPAWN_CHANCE           = 50
-
-    PANTHER_SPAWN_CHANCE        = 50
-    ELDER_PANTHER_SPAWN_CHANCE  = 50
-    
-    SpawnCreature("npc_creep_elk_wild")
-    --SpawnCreature("npc_dota_creature_hawk")
     return GAME_CREATURE_TICK_TIME
 end
 

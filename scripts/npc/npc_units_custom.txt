@@ -4567,6 +4567,7 @@
 		"ModelScale"						"1.10"
 		"Model"								"models/items/hex/fish_hex/fish_hex.vmdl"	
 		"Level"								"0"
+		"vscripts"							"passive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -4649,6 +4650,7 @@
 		"ModelScale"						"1.10"
 		"Model"								"models/props_wildlife/wildlife_fish002.vmdl"	
 		"Level"								"0"
+		"vscripts"							"passive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -4980,6 +4982,7 @@
 		"ModelScale"						"1.15"
 		"Model"								"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl"	
 		"Level"								"6"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -5062,6 +5065,7 @@
 		"ModelScale"						"1.00"
 		"Model"								"models/heroes/lone_druid/spirit_bear.vmdl"	
 		"Level"								"7"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -5143,6 +5147,7 @@
 		"ModelScale"						"0.40"
 		"Model"								"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"	
 		"Level"								"7"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_npc_poisonattack"												// Ability 1
@@ -5225,6 +5230,7 @@
 		"ModelScale"						"1.00"
 		"Model"								"models/heroes/beastmaster/beastmaster_beast.vmdl"	
 		"Level"								"10"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -5307,6 +5313,7 @@
 		"ModelScale"						"1.35"
 		"Model"								"models/heroes/beastmaster/beastmaster_beast.vmdl"	
 		"Level"								"6"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
