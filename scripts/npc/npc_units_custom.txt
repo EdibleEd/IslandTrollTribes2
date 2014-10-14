@@ -4799,9 +4799,6 @@
         //----------------------------------------------------------------
         "VisionDaytimeRange"            "1800"           // Range of vision during day light.
         "VisionNighttimeRange"          "1800"           // Range of vision at night time. 
-
-	    // Wearables
-        //----------------------------------------------------------------	
     }
 		
 	
@@ -4817,6 +4814,7 @@
 		"ModelScale"						"1.10"
 		"Model"								"models/heroes/beastmaster/beastmaster_bird.vmdl"	
 		"Level"								"5"
+		"vscripts"							"passive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
@@ -4897,8 +4895,9 @@
 		"BaseClass"							"npc_dota_creature"
 		"ConsideredHero"					"0"
 		"ModelScale"						"1.25"
-		"Model"								"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"	
+		"Model"								"models/heroes/lycan/summon_wolves.vmdl"	
 		"Level"								"6"
+		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						""												// Ability 1
