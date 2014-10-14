@@ -1,4 +1,4 @@
-function SpawnCreature(t, index)
+function SpawnCreature(unitName)
     print("spawn")
 
     local spawnLocation = Entities:FindByName( nil, ("spawner_neutral_passive*"))
@@ -10,6 +10,18 @@ function SpawnCreature(t, index)
     --creature:SetInitialGoalEntity( waypointlocation )
     --local waypointlocation = Entities:FindByName ( nil, (t .. "_wp" .. i))
     if spawnLocation ~= nil then
-        CreateUnitByName("npc_creep_elk_wild", spawnLocation:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        local nearbyUnits = FindUnitsInRadius(
+                                DOTA_TEAM_BADGUYS,
+                                spawnLocation:GetOrigin(),
+                                nil, 100,
+                                DOTA_UNIT_TARGET_TEAM_BOTH,
+                                DOTA_UNIT_TARGET_ALL,
+                                DOTA_UNIT_TARGET_FLAG_NONE,
+                                FIND_ANY_ORDER,
+                                false)
+        if #nearbyUnits == 0 then
+            CreateUnitByName(unitName, spawnLocation:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+            --CreateUnitByName("npc_creep_hawk", spawnLocation:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+        end
     end
 end

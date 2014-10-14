@@ -16,14 +16,34 @@ playerList = {}
 maxPlayerID = 0
 
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
-GAME_CREATURE_TICK_TIME     = 30
+GAME_CREATURE_TICK_TIME     = 30    -- Time for each creature spawn
 GAME_BUSH_TICK_TIME         = 60
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
---GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
+GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
 FLASH_ACK_THINK             = 2
 
 BUILDING_TICK_TIME 			= 0.03
 DROPMODEL_TICK_TIME         = 0.03
+
+MAXIMUM_PASSIVE_NEUTRALS    = 30
+MAXIMUM_AGGRESSIVE_NEUTRALS = 20
+
+ELK_PER_SPAWN               = 2     --every tick time, how many spawn at random points
+HAWK_PER_SPAWN              = 2
+FISH_PER_SPAWN              = 5
+WOLF_BEAR_PER_SPAWN         = 2
+SNAKE_PER_SPAWN             = 1
+PANTHER_PER_SPAWN           = 1
+
+SMALL_FISH_SPAWN_CHANCE     = 70    --out of the possibilities, the ratio for each to spawn
+GREEN_FISH_SPAWN_CHANCE     = 30
+
+WOLF_SPAWN_CHANCE           = 50
+BEAR_SPAWN_CHANCE           = 50
+
+PANTHER_SPAWN_CHANCE        = 50
+ELDER_PANTHER_SPAWN_CHANCE  = 50
+
 
 itemKeyValues = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 
@@ -54,7 +74,7 @@ REGIONS[4]                  = BOTTOMLEFT
 -- GAME_ITEM_TICK_TIME         = 300    
 
 -- Using a shorter time for testing's sake
-GAME_ITEM_TICK_TIME         = 15
+--GAME_ITEM_TICK_TIME         = 15
 
 -- Spawnrates of items, seeded with initial rates from
 -- https://github.com/island-troll-tribes/wc3-client/blob/1562854dd098180752f0f4a99df0c4968697b38b/src/init/objects/Globals.j
@@ -180,7 +200,9 @@ function ITT_GameMode:InitGameMode()
 	ListenToGameEvent("dota_player_killed", Dynamic_Wrap(ITT_GameMode, 'OnDotaPlayerKilled'), self)
 
     -- Listener for drops and for removing buildings from block table
-    ListenToGameEvent( "entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )
+    ListenToGameEvent("entity_killed", Dynamic_Wrap( ITT_GameMode, "OnEntityKilled" ), self )
+
+    ListenToGameEvent("entity_hurt", Dynamic_Wrap(ITT_GameMode, 'On_entity_hurt'), self)
 
     --for multiteam
     ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( ITT_GameMode, 'OnGameRulesStateChange' ), self )
@@ -234,16 +256,15 @@ function ITT_GameMode:InitGameMode()
             CreateUnitByName("npc_bush_river", spawnpoint:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
         end
     end
-
-    -- spawner_npc_bush_herb_yellow
-    -- spawner_npc_bush_herb_blue
-    -- spawner_npc_bush_herb_purple
-    -- spawner_npc_bush_herb_orange
     -- spawner_npc_bush_herb
     -- spawner_npc_bush_river
     -- spawner_npc_bush_mushroom
     -- spawner_npc_bush_thistle
     -- spawner_npc_bush_stash
+    -- spawner_npc_bush_herb_yellow
+    -- spawner_npc_bush_herb_blue
+    -- spawner_npc_bush_herb_purple
+    -- spawner_npc_bush_herb_orange
     -- spawner_npc_bush_thief
     -- spawner_npc_bush_scout
 
@@ -251,6 +272,10 @@ function ITT_GameMode:InitGameMode()
     print("flash ui commands")
     Convars:RegisterCommand( "EatMeat", function(...) return self:_EatMeat( ... ) end, "Player eats one raw meat", 0 )
     Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops all raw meat", 0 )
+
+    --prepare neutral spawns
+    self.NumPassiveNeutrals = 0
+    self.NumAggressiveNeutrals = 0
 end
 
 function ITT_GameMode:_DropMeat( cmdName)
@@ -422,6 +447,17 @@ function ITT_GameMode:OnDotaPlayerKilled(keys)
     print(GetPlayer(playerID):GetAssignedHero())
 end
 
+function ITT_GameMode:On_entity_hurt(data)
+    print("entity_hurt")
+    local attacker = EntIndexToHScript(data.entindex_attacker)
+    local killed = EntIndexToHScript(data.entindex_killed)
+    if (string.find(killed:GetUnitName(), "elk")) then
+        killed.state = "flee"
+    end
+    print("attacker: "..attacker:GetUnitName(), "killed: "..killed:GetUnitName())
+
+end
+
 function ITT_GameMode:FixDropModels(dt)
     for _,v in pairs(Entities:FindAllByClassname("dota_item_drop")) do
         if not v.ModelFixInit then
@@ -498,8 +534,28 @@ end
 
 -- This is similar, but handles spawning creatures
 function ITT_GameMode:OnCreatureThink()
-    SpawnCreature("npc_dota_creature_elk", i)
-    --SpawnCreature("npc_dota_creature_hawk", i)
+
+    MAXIMUM_PASSIVE_NEUTRALS    = 30
+    MAXIMUM_AGGRESSIVE_NEUTRALS = 20
+
+    ELK_PER_SPAWN               = 2     --every tick time, how many spawn at random points
+    HAWK_PER_SPAWN              = 2
+    FISH_PER_SPAWN              = 5
+    WOLF_BEAR_PER_SPAWN         = 2
+    SNAKE_PER_SPAWN             = 1
+    PANTHER_PER_SPAWN           = 1
+
+    SMALL_FISH_SPAWN_CHANCE     = 70    --out of the possibilities, the ratio for each to spawn
+    GREEN_FISH_SPAWN_CHANCE     = 30
+
+    WOLF_SPAWN_CHANCE           = 50
+    BEAR_SPAWN_CHANCE           = 50
+
+    PANTHER_SPAWN_CHANCE        = 50
+    ELDER_PANTHER_SPAWN_CHANCE  = 50
+    
+    SpawnCreature("npc_creep_elk_wild")
+    --SpawnCreature("npc_dota_creature_hawk")
     return GAME_CREATURE_TICK_TIME
 end
 
