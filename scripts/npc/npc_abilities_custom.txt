@@ -4824,21 +4824,21 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName" 			"ability_scout_reveal"
 		"HotKeyOverride"				"V"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.5"
+		"AbilityCastPoint"              "0.2 0.2 02"
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "20"
+		"AbilityCooldown"               "20 20 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "10"
+		"AbilityManaCost"               "10 10 10"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4854,89 +4854,52 @@
 		}
 		"OnSpellStart"
 		{
-					"ApplyModifier"
-					{
-						"Target"				"CASTER"
-						"Duration"				"%reveal_duration"
-						"ModifierName"			"dummy_spotter_modifier"
-					}
-					"ApplyModifier"
-					{
-						"Target"				"CASTER"
-						"Duration"				"%reveal_duration"
-						"ModifierName"			"dummy_spotter_modifier"
-					}
-		}
-		"Modifiers"
-		{
-			"dummy_spotter_modifier"
+			"SpawnUnit"
 			{
-				"Target"				"TARGET"
-				"IsHidden"              "1"    
-				"States"
-				{
-					"MODIFIER_STATE_UNSELECTABLE"   "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVISIBLE"		 "MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
-				}
-				
-				"Properties"
-				{
-					//By default the spotter has 600
-					"MODIFIER_PROPERTY_BONUS_DAY_VISION"        "%reveal_radius"
-					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"      "%reveal_radius"
-				}
+				"UnitName"          			"dummy_caster_reveal1"
+				"UnitCount"						"%count1"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"8"
+				"Target"						"CASTER"				
 			}
-			"modifier_revealtruesight"
+			"SpawnUnit"
 			{
-				"IsDebuff"     				"1"
-				"Aura" 						"reveal_aura"
-				"Aura_Radius" 				"%revealaura_radius"
-				"Aura_Teams"      			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"      			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				"Aura_ApplyToCaster"		"0"
+				"UnitName"          			"dummy_caster_reveal2"
+				"UnitCount"						"%count2"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"8"
+				"Target"						"CASTER"				
 			}
-			"reveal_aura"
+			"SpawnUnit"
 			{
-				"IsDebuff" 			"1"
-				"IsPurgable" 		"0"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" "TARGET"
-						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
-						"EffectAttachType" "follow_overhead"
-					}
-				}				
-				"States"
-				{
-				"MODIFIER_STATE_INVISIBLE"  	"MODIFIER_STATE_VALUE_DISABLED"
-				}
+				"UnitName"          			"dummy_caster_reveal3"
+				"UnitCount"						"%count3"
+				"UnitLimit"						"10"
+				"SpawnRadius"					"0"
+				"Duration"						"8"
+				"Target"						"CASTER"				
 			}
 		}
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"reveal_radius"						"400	1000	1800"
-			}			
+				"var_type"						"FIELD_INTEGER"
+				"count1"						"1 0 0"
+			}
 			"02"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"reveal_duration"					"8"
+				"var_type"						"FIELD_INTEGER"
+				"count2"						"0 1 0"
 			}
 			"03"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"reveal_radius2"					"1000	1600	2400"
+				"var_type"						"FIELD_INTEGER"
+				"count3"						"0 0 1"
 			}
 		}
 	}
