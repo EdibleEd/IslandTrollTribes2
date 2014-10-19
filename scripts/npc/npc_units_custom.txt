@@ -6542,7 +6542,43 @@
         "Ability4"                  ""
         "Ability5"                  ""
 	}
-
+	"dummy_caster_reveal1"
+	{
+		"BaseClass"                 "npc_dota_creature"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"        "1000" 
+		"VisionNighttimeRange"      "1000"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+        "Ability1"                  "dummy_passive"    
+        "Ability2"                  "ability_the_one_truesight"
+        "Ability3"                  ""
+        "Ability4"                  ""
+		"Ability5"					""
+	}
+	"dummy_caster_reveal2"
+	{
+		"BaseClass"                 "npc_dota_creature"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"        "1600" 
+		"VisionNighttimeRange"      "1600"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+        "Ability1"                  "dummy_passive"    
+        "Ability2"                  "ability_the_one_truesight"
+        "Ability3"                  ""
+        "Ability4"                  ""
+	}
+	"dummy_caster_reveal3"
+	{
+		"BaseClass"                 "npc_dota_creature"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"        "2200" 
+		"VisionNighttimeRange"      "2200"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+        "Ability1"                  "dummy_passive"    
+        "Ability2"                  "ability_the_one_truesight"
+        "Ability3"                  ""
+        "Ability4"                  ""
+	}
 	"blur_illusion"
 	{
 		"BaseClass"					"npc_dota_creature"
