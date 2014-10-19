@@ -65,6 +65,7 @@ function AggressiveNeutralThink()
 			thisEntity:RemoveModifierByName("modifier_sleep")
 			thisEntity.state = "wander"
 			print("sleep -> wander")
+			return 0.05
 		end
 
 		local targets = FindUnitsInRadius(

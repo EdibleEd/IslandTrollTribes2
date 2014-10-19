@@ -410,21 +410,60 @@ function ITT_GameMode:OnNPCSpawned( keys )
 end
 
 function ITT_GameMode:OnEntityKilled(keys)
+    local dropTable = {
+        --{"unit_name", {"item_1", drop_chance}, {"mutually_exclusive_item_1", "mutually_exclusive_item_2", drop_chance}},
+        {"npc_creep_elk_wild", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_elk", 100}, {"item_bone", 100}},
+        {"npc_creep_wolf_jungle", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_wolf", 100}, {"item_bone", 100}},
+        {"npc_creep_bear_jungle", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_jungle_bear", 100}, {"item_bone", 100}},
+        {"npc_creep_panther", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_bone", 100}},
+        {"npc_creep_panther_elder", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_bone", 100}},
+        {"npc_creep_lizard", {"item_meat_raw", 100}},
+        {"npc_creep_fish_green", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}},
+        {"npc_creep_fish", {"item_meat_raw", 100}},
+        {"npc_creep_hawk", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_egg_hawk", 10}}
+    }       
     local killedUnit = EntIndexToHScript(keys.entindex_killed)
     -- local keys.entindex_attacker --long
     -- local keys.entindex_inflictor --long
     -- local keys.damagebits --long
-
-    print(killedUnit:GetUnitName() .. " has been killed")
-    if string.find(killedUnit:GetUnitName(), "building") then
+    local unitName = killedUnit:GetUnitName() 
+    print(unitName .. " has been killed")
+    if string.find(unitName, "building") then
         killedUnit:RemoveBuilding(2, false)
+    end
+
+    --deal with killed heros
+    if killedUnit:IsHero() then
+        --if it's a hero, drop all carried raw meat, plus 3, and a bone
+        meatStacks = killedUnit:GetModifierStackCount("modifier_meat_passive", nil)
+        for i= 1, meatStacks+3, 1 do
+            local newItem = CreateItem("item_meat_raw", nil, nil)
+            CreateItemOnPositionSync(killedUnit:GetOrigin() + RandomVector(RandomInt(20,100)), newItem) 
+        end
+        local newItem = CreateItem("item_bone", nil, nil)
+        CreateItemOnPositionSync(killedUnit:GetOrigin() + RandomVector(RandomInt(20,100)), newItem) 
+    end
+
+    --drop system
+    for _,v in pairs(dropTable) do
+        if unitName == v[1] then
+            for itemNum = 2,#v,1 do
+                itemName = v[itemNum][1]
+                itemChance = v[itemNum][2]
+
+                if RandomInt(0, 100) <= itemChance then
+                    local newItem = CreateItem(itemName, nil, nil)
+                    CreateItemOnPositionSync(killedUnit:GetOrigin() + RandomVector(RandomInt(20,100)), newItem) 
+                end
+            end
+        end
     end
 end
 
 function ITT_GameMode:OnDotaPlayerKilled(keys)
     local playerId = keys.PlayerID
-
-    print(GetPlayer(playerID):GetAssignedHero())
+    print(playerId)
+    --print(PlayerResource:GetPlayer(playerID):GetAssignedHero())
 end
 
 function ITT_GameMode:On_entity_hurt(data)
@@ -515,13 +554,13 @@ end
 -- This is similar, but handles spawning creatures
 function ITT_GameMode:OnCreatureThink()
 
-    MAXIMUM_PASSIVE_NEUTRALS    = 30
+    MAXIMUM_PASSIVE_NEUTRALS    = 300 --this isn't implemented yet
     MAXIMUM_AGGRESSIVE_NEUTRALS = 20
 
     neutralSpawnTable = {
         --{"creep_name", "spawner_name", spawn_chance, number_to_spawn},
-        {"npc_creep_elk_wild",      "spawner_neutral_elk",  100, 2},
-        {"npc_creep_hawk",          "spawner_neutral_hawk",  100, 2},
+        {"npc_creep_elk_wild",      "spawner_neutral_elk",      100, 2},
+        {"npc_creep_hawk",          "spawner_neutral_hawk",     100, 2},
         {"npc_creep_fish",          "spawner_neutral_fish",     100, 5},
         {"npc_creep_fish_green",    "spawner_neutral_fish",     100, 2},
         {"npc_creep_wolf_jungle",   "spawner_neutral_wolf",     100, 1},
