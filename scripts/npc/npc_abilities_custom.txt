@@ -8721,6 +8721,38 @@
 	}
 
 	//=================================================================================================================
+	// Ability: Mechant Boat Passive
+	//=================================================================================================================
+	"ability_boat_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"razor_plasma_field"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"Modifiers"
+		{
+			"ability_boat_passive"
+			{
+				"Passive" 	"1"
+				"Hidden"	"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
 	// Ability: Building Disabled Passive
 	//=================================================================================================================
 	"ability_building_disable"
