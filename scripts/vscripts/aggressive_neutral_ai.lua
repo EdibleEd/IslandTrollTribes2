@@ -3,7 +3,7 @@ function Spawn(entityKeyValues)
 	thisEntity.state = "wander"		--possible states = wander, attack, sleep, flee
 	thisEntity.WanderDistance = 300
 	thisEntity.FleeDistance = 300
-	print("starting aggressive neutral ai for "..thisEntity:GetUnitName()..thisEntity:GetEntityIndex())
+	--print("starting aggressive neutral ai for "..thisEntity:GetUnitName()..thisEntity:GetEntityIndex())
 
 	thisEntity.spawnTime = GameRules:GetGameTime()
 	thisEntity.wander_wait_time = GameRules:GetGameTime() + 0	
@@ -29,10 +29,10 @@ function AggressiveNeutralThink()
                             false)
 
 		if #targets > 0 then
-			print(targets[1]:GetUnitName())
+			--print(targets[1]:GetUnitName())
 			thisEntity:MoveToTargetToAttack(targets[1])
 			thisEntity.state = "attack"
-			print("wander -> attack")
+			--print("wander -> attack")
 		end
 
 		if GameRules:GetGameTime() >= thisEntity.wander_wait_time then
@@ -55,7 +55,7 @@ function AggressiveNeutralThink()
             ability:ApplyDataDrivenModifier(thisEntity, thisEntity, "modifier_sleep", {duration = -1})
 
 			thisEntity.state = "sleep"
-			print("wander -> sleep")
+			--print("wander -> sleep")
 		end
 	elseif (thisEntity.state == "attack") then
 		--attacking until killed
@@ -64,7 +64,7 @@ function AggressiveNeutralThink()
 		if GameRules:IsDaytime() then
 			thisEntity:RemoveModifierByName("modifier_sleep")
 			thisEntity.state = "wander"
-			print("sleep -> wander")
+			--print("sleep -> wander")
 			return 0.05
 		end
 
@@ -79,10 +79,10 @@ function AggressiveNeutralThink()
                             false)
 
 		if #targets > 0 then
-			print(targets[1]:GetUnitName())
+			--print(targets[1]:GetUnitName())
 			thisEntity:MoveToTargetToAttack(targets[1])
 			thisEntity.state = "attack"
-			print("wander -> attack")
+			--print("wander -> attack")
 		end
 
 	elseif (thisEntity.state == "flee") then

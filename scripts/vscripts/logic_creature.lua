@@ -1,5 +1,5 @@
 function SpawnCreature(unitName, spawnerName)
-	print("spawn")
+	--print("spawn")
 
 	local allSpawns = Entities:FindAllByClassname("npc_dota_spawner")
 	local possibleLocations = {}

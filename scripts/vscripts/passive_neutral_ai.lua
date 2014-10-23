@@ -17,7 +17,7 @@ function Spawn(entityKeyValues)
 		thisEntity.MinWaitTime = 3
 		thisEntity.MaxWaitTime = 7.5
 	end
-	print("starting passive neutral ai for "..thisEntity:GetUnitName()..thisEntity:GetEntityIndex())
+	--print("starting passive neutral ai for "..thisEntity:GetUnitName()..thisEntity:GetEntityIndex())
 
 	thisEntity.spawnTime = GameRules:GetGameTime()
 	thisEntity.wander_wait_time = GameRules:GetGameTime() + 0	
