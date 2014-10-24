@@ -16,7 +16,7 @@ playerList = {}
 maxPlayerID = 0
 
 GAME_TICK_TIME              = 0.1  	-- The game should update every tenth second
-GAME_CREATURE_TICK_TIME     = 60    -- Time for each creature spawn
+GAME_CREATURE_TICK_TIME     = 120    -- Time for each creature spawn
 GAME_BUSH_TICK_TIME         = 60
 GAME_TROLL_TICK_TIME        = 0.5  	-- Its really like its wc3!
 GAME_ITEM_TICK_TIME         = 30  	-- Spawn items every 30?
@@ -78,7 +78,10 @@ REL_MAGIC_RATE              = 0
 -- Controls the base item spawn rate 
 ITEM_BASE                   = 2
 
+--Merchant Boat paths
+PATH1 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5"}
 
+PATH_LIST = {PATH1}
 --[[
     Default cruft to set everything up
     In the game creation trace, this runs after 
@@ -120,6 +123,16 @@ function ITT_GameMode:InitGameMode()
 
     -- This is the creature thinker. All neutral creature spawn logic goes here
     GameMode:SetThink( "OnCreatureThink", ITT_GameMode, "CreatureThink", 2 )
+    GameMode.neutralCurNum = {}
+        GameMode.neutralCurNum["npc_creep_elk_wild"] = 0
+        GameMode.neutralCurNum["npc_creep_hawk"] = 0
+        GameMode.neutralCurNum["npc_creep_fish"] = 0
+        GameMode.neutralCurNum["npc_creep_fish_green"] = 0
+        GameMode.neutralCurNum["npc_creep_wolf_jungle"] = 0
+        GameMode.neutralCurNum["npc_creep_bear_jungle"] = 0
+        GameMode.neutralCurNum["npc_creep_lizard"] = 0
+        GameMode.neutralCurNum["npc_creep_panther"] = 0
+        GameMode.neutralCurNum["npc_creep_panther_elder"] = 0
 
     -- This is the troll thinker. All logic on the player's heros should be checked here
     GameMode:SetThink( "OnTrollThink", ITT_GameMode, "TrollThink", 0 )
@@ -132,6 +145,12 @@ function ITT_GameMode:InitGameMode()
 
      -- This is the herb bush thinker. All herb spawn logic goes here
     GameMode:SetThink( "OnBushThink", ITT_GameMode, "BushThink", 0 )
+
+     -- This is the boat thinker. All boat logic goes here
+    GameMode:SetThink( "OnBoatThink", ITT_GameMode, "BoatThink", 0 )
+    boatStartTime = math.floor(GameRules:GetGameTime())
+    GameMode.spawnedShops = {}
+    GameMode.shopEntities = Entities:FindAllByName("entity_ship_merchant_*")
 
     -- This is the thinker that checks building placement
     GameMode:SetThink("Think", BuildingHelper, "buildinghelper", 0)
@@ -458,6 +477,12 @@ function ITT_GameMode:OnEntityKilled(keys)
             end
         end
     end
+
+    --tracking number of neutrals
+    --local numOfUnit = GameMode.neutralCurNum[unitName]
+    if GameMode.neutralCurNum[unitName] ~= nil then
+        GameMode.neutralCurNum[unitName] = GameMode.neutralCurNum[unitName] - 1
+    end
 end
 
 function ITT_GameMode:OnDotaPlayerKilled(keys)
@@ -569,6 +594,17 @@ function ITT_GameMode:OnCreatureThink()
         {"npc_creep_panther",       "spawner_neutral_panther",  100, 1},
         {"npc_creep_panther_elder", "spawner_neutral_panther",  100, 1},
     }
+    neutralMaxTable = {}
+        neutralMaxTable["npc_creep_elk_wild"] = 20
+        neutralMaxTable["npc_creep_hawk"] = 8
+        neutralMaxTable["npc_creep_fish"] = 20
+        neutralMaxTable["npc_creep_fish_green"] = 10
+        neutralMaxTable["npc_creep_wolf_jungle"] = 12
+        neutralMaxTable["npc_creep_bear_jungle"] = 8
+        neutralMaxTable["npc_creep_lizard"] = 8
+        neutralMaxTable["npc_creep_panther"] = 4
+        neutralMaxTable["npc_creep_panther_elder"] = 4
+
     for _,v in pairs(neutralSpawnTable) do
         local creepName = v[1]
         local spawnerName = v[2]
@@ -576,7 +612,7 @@ function ITT_GameMode:OnCreatureThink()
         local numToSpawn = v[4]
 
         for i=1,numToSpawn do
-            if spawnChance >= RandomInt(1, 100) then
+            if (spawnChance >= RandomInt(1, 100)) and (GameMode.neutralCurNum[creepName] < neutralMaxTable[creepName]) then
                 SpawnCreature(creepName, spawnerName)
             end
         end
@@ -753,6 +789,25 @@ function ITT_GameMode:OnBushThink()
     end
 
     return GAME_BUSH_TICK_TIME
+end
+
+function ITT_GameMode:OnBoatThink()
+    local currentTime = math.floor(GameRules:GetGameTime())
+
+    for _,shopUnit in pairs(GameMode.spawnedShops) do
+        local shopent = shopEntities[shopUnit:GetUnitName()]
+
+        --local shopent = Entities:FindAllByClassname("ent_dota_shop")
+        if shopUnit ~= nil then
+            if shopUnit:IsAlive() then
+                shopent:SetOrigin(shopUnit:GetOrigin())
+                shopent:SetForwardVector(shopUnit:GetForwardVector())
+            end
+        else
+            shopent:SetOrigin(Vector(10000,10000,120))
+        end
+    end
+    return 0.1
 end
 
 function ITT_SpawnItem(island)

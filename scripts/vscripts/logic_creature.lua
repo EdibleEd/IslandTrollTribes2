@@ -1,6 +1,6 @@
 function SpawnCreature(unitName, spawnerName)
 	--print("spawn")
-
+	GameMode = GameRules:GetGameModeEntity()
 	local allSpawns = Entities:FindAllByClassname("npc_dota_spawner")
 	local possibleLocations = {}
 	for _,v in pairs(allSpawns) do
@@ -22,6 +22,7 @@ function SpawnCreature(unitName, spawnerName)
 								false)
 		if #nearbyUnits == 0 then
 			CreateUnitByName(unitName, spawnLocation:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
+			GameMode.neutralCurNum[unitName] = GameMode.neutralCurNum[unitName] + 1
 			--CreateUnitByName("npc_creep_hawk", spawnLocation:GetOrigin(), false, nil, nil, DOTA_TEAM_NEUTRALS)
 		end
 	end
