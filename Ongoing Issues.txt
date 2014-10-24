@@ -3,3 +3,12 @@ Buildings can't pick up items
 
 [ISSUE]
 No obvious way to give items a max stack count, especially important for meat 
+
+[ISSUE]
+It's possible to build buildings on top of neutrals, blocking them from moving
+
+[ISSUE]
+Shops can't be tied to npcs, so currently there is a purely vosmetic unit representing a shop, and a stumpy courier following that is the actual shop
+
+[ISSUE]
+Shops are always shown on the minimap
