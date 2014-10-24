@@ -2496,7 +2496,7 @@
 
 		// Abilities	
 		"Ability1"				"ability_building_cookmeat"	
-		"Ability2"				"Ability_Pack_up"
+		"Ability2"				"Ability_Pack_up_magefire"
 		"Ability3"				"Ability_Restore_Heat_Magic"
 		"Ability4"				"Ability_Burn_Building_Magic"
 

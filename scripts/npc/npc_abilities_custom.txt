@@ -190,6 +190,37 @@
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
 	}
+	
+	//=================================================================================
+	// Pack Up - Mage Fire
+	//=================================================================================
+	"Ability_Pack_up_magefire"
+	{
+	// General
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"	"ability_building_packup"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0"
+	"AbilityCastPoint"				"0.5"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"		"CASTER"
+			"ScriptFile"	"scripts/vscripts/custom_functions_ability.lua"
+			"Function"		"PackUpMageFire"
+		}
+	}
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	}
+
 	//=================================================================================
 	// Restore Heat
 	//=================================================================================
@@ -2470,7 +2501,7 @@
 				"UnitName"          			"npc_building_fire_mage"
 				"UnitCount"						"1"
 				"UnitLimit"						"10"
-				"SpawnRadius"					"200"
+				"SpawnRadius"					"100"
 				"Duration"						"30"
 				"Target"						"CASTER"				
 			}
