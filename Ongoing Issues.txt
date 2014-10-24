@@ -3,3 +3,7 @@ Buildings can't pick up items
 
 [ISSUE]
 No obvious way to give items a max stack count, especially important for meat 
+
+[ISSUE]
+No way to signal the minimap? I've looked in actions, API functions, dota events, no luck.
+Necessary for item and enemy radar.
