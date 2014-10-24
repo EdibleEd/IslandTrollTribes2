@@ -78,10 +78,15 @@ REL_MAGIC_RATE              = 0
 -- Controls the base item spawn rate 
 ITEM_BASE                   = 2
 
---Merchant Boat paths
-PATH1 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5"}
+--Merchant Boat paths, and other lists
+PATH1 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7"}
+PATH2 = {"path_ship_waypoint_8","path_ship_waypoint_9","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7"}
+PATH3 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7","path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
+PATH4 = {"path_ship_waypoint_8","path_ship_waypoint_9","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7","path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
+PATH_LIST = {PATH1, PATH2, PATH3, PATH4}
+SHOP_UNIT_NAME_LIST = {"npc_ship_merchant_1"}
+TOTAL_SHOPS = #SHOP_UNIT_NAME_LIST
 
-PATH_LIST = {PATH1}
 --[[
     Default cruft to set everything up
     In the game creation trace, this runs after 
@@ -793,9 +798,38 @@ end
 
 function ITT_GameMode:OnBoatThink()
     local currentTime = math.floor(GameRules:GetGameTime())
+    local numShopsSpawned = 0
+    for k,_ in pairs(GameMode.spawnedShops) do
+        numShopsSpawned = numShopsSpawned + 1
+    end
+
+    if numShopsSpawned < TOTAL_SHOPS then
+        local pathNum = RandomInt(1, #PATH_LIST)
+        local path = PATH_LIST[pathNum]
+
+        local initialWaypoint = Entities:FindByName(nil, path[1])
+        local spawnOrigin = initialWaypoint:GetOrigin()
+
+        local merchantNum = RandomInt(1, TOTAL_SHOPS)
+        unitName = SHOP_UNIT_NAME_LIST[merchantNum]
+        local shopUnit = CreateUnitByName(unitName, spawnOrigin, false, nil, nil, DOTA_TEAM_NEUTRALS)
+        shopUnit.path = path
+        --print("Spawning merchant ship on path " .. pathNum)
+    end
 
     for _,shopUnit in pairs(GameMode.spawnedShops) do
-        local shopent = shopEntities[shopUnit:GetUnitName()]
+        local shopent = nil
+        for _,entity in pairs(GameMode.shopEntities) do 
+            local nameToFind = string.sub(shopUnit:GetUnitName(), 5)
+            if string.find(entity:GetName(), nameToFind) then
+                shopent = entity
+            end
+        end
+        
+        if shopent == nil then
+            print("No Shop Ent Found!")
+            return 0.1
+        end
 
         --local shopent = Entities:FindAllByClassname("ent_dota_shop")
         if shopUnit ~= nil then
@@ -807,6 +841,7 @@ function ITT_GameMode:OnBoatThink()
             shopent:SetOrigin(Vector(10000,10000,120))
         end
     end
+
     return 0.1
 end
 

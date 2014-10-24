@@ -271,10 +271,13 @@ function Precache( context )
 	PrecacheResource("model", "models/items/wards/nexon_sotdaeward/nexon_sotdaeward.vmdl",context)
 	PrecacheResource("model", "models/items/furion/staff_eagle_1.vmdl",context)
 	PrecacheResource("model", "models/courier/drodo/drodo.vmdl",context)
+	PrecacheResource("model", "models/courier/skippy_parrot/skippy_parrot_flying_sailboat.vmdl",context)
 	PrecacheResource("model", "models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl",context)
 	
 	PrecacheResource("particle_folder","particles/dire_fx",context)
 	PrecacheResource("particle_folder","particles/winter_fx",context)
+	PrecacheResource("particle_folder","particles/rain_fx",context)
+	PrecacheResource("particle_folder","particles/rain_storm_fx",context)
 	PrecacheResource("particle_folder","particles/world_environmental_fx",context)
 	
 	PrecacheResource("model", "models/props_destruction/lion_groundspikes.vmdl",context)
