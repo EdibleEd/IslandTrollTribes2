@@ -12,3 +12,7 @@ Shops can't be tied to npcs, so currently there is a purely vosmetic unit repres
 
 [ISSUE]
 Shops are always shown on the minimap
+
+[ISSUE]
+No way to signal the minimap? I've looked in actions, API functions, dota events, no luck.
+Necessary for item and enemy radar.

@@ -778,6 +778,11 @@ function PackUp(keys)
     building:RemoveSelf()
 end
 
+function PackUpMageFire(keys)
+    local building = keys.caster
+    building:RemoveSelf()
+end
+
 function QuickDrop(keys)
 	local caster = keys.caster
 	local position = caster:GetAbsOrigin()
