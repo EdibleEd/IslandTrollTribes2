@@ -4,7 +4,7 @@ function Spawn(entityKeyValues)
 	
 	
 	print("starting merchant boat ai")
-	thisEntity.waypointNum = 1
+	thisEntity.waypointNum = 2
 	thisEntity.spawnTime = GameRules:GetGameTime()
 	thisEntity.endWait = 9999
 	local GameMode = GameRules:GetGameModeEntity()
@@ -22,6 +22,14 @@ function boatmerchantthink()
 	local waypointPos = waypointEnt:GetOrigin()
 	local GameMode = GameRules:GetGameModeEntity()
 
+	local shopent = nil
+    for _,entity in pairs(GameMode.shopEntities) do 
+        local nameToFind = string.sub(thisEntity:GetUnitName(), 5)
+        if string.find(entity:GetName(), nameToFind) then
+            shopent = entity
+        end
+    end
+
 	if not thisEntity:IsAlive() then
 		return nil
 	end
@@ -31,14 +39,14 @@ function boatmerchantthink()
     elseif (thisEntity.state == "move") and (distanceToWaypoint:Length2D() == 0) then
     	thisEntity.state = "wait"
     	thisEntity.endWait = GameRules:GetGameTime()+ 15
+	elseif (thisEntity.state == "wait") and (waypointNum >= #path) then
+		shopent:SetOrigin(Vector(10000,10000,120))
+    	print(thisEntity:GetUnitName() .. " despawning")
+		GameMode.spawnedShops[thisEntity:GetUnitName()] = nil
+    	thisEntity:RemoveSelf()
 	elseif (thisEntity.state == "wait") and (GameRules:GetGameTime() >= thisEntity.endWait) then
     	thisEntity.state = "move"
-    	if waypointNum >= #path then
-    		GameMode.spawnedShops[thisEntity:GetUnitName()] = nil
-    		thisEntity:RemoveSelf()
-		else
-			thisEntity.waypointNum = thisEntity.waypointNum + 1
-		end
+		thisEntity.waypointNum = thisEntity.waypointNum + 1
 	end
 
 	return 0.25

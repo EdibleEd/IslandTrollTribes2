@@ -81,11 +81,12 @@ ITEM_BASE                   = 2
 --Merchant Boat paths, and other lists
 PATH1 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7"}
 PATH2 = {"path_ship_waypoint_8","path_ship_waypoint_9","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7"}
-PATH3 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7","path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
-PATH4 = {"path_ship_waypoint_8","path_ship_waypoint_9","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_6", "path_ship_waypoint_7","path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
+PATH3 = {"path_ship_waypoint_1","path_ship_waypoint_2","path_ship_waypoint_3","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
+PATH4 = {"path_ship_waypoint_8","path_ship_waypoint_9","path_ship_waypoint_4","path_ship_waypoint_5", "path_ship_waypoint_10", "path_ship_waypoint_11", "path_ship_waypoint_12"}
 PATH_LIST = {PATH1, PATH2, PATH3, PATH4}
-SHOP_UNIT_NAME_LIST = {"npc_ship_merchant_1"}
+SHOP_UNIT_NAME_LIST = {"npc_ship_merchant_1", "npc_ship_merchant_2", "npc_ship_merchant_3"}
 TOTAL_SHOPS = #SHOP_UNIT_NAME_LIST
+MAX_SHOPS_ON_MAP = 1
 
 --[[
     Default cruft to set everything up
@@ -803,7 +804,7 @@ function ITT_GameMode:OnBoatThink()
         numShopsSpawned = numShopsSpawned + 1
     end
 
-    if numShopsSpawned < TOTAL_SHOPS then
+    if numShopsSpawned < MAX_SHOPS_ON_MAP then
         local pathNum = RandomInt(1, #PATH_LIST)
         local path = PATH_LIST[pathNum]
 
@@ -814,7 +815,7 @@ function ITT_GameMode:OnBoatThink()
         unitName = SHOP_UNIT_NAME_LIST[merchantNum]
         local shopUnit = CreateUnitByName(unitName, spawnOrigin, false, nil, nil, DOTA_TEAM_NEUTRALS)
         shopUnit.path = path
-        --print("Spawning merchant ship on path " .. pathNum)
+        print("Spawning " .. unitName .. " on path " .. pathNum .. " at time " .. currentTime)
     end
 
     for _,shopUnit in pairs(GameMode.spawnedShops) do
@@ -836,6 +837,8 @@ function ITT_GameMode:OnBoatThink()
             if shopUnit:IsAlive() then
                 shopent:SetOrigin(shopUnit:GetOrigin())
                 shopent:SetForwardVector(shopUnit:GetForwardVector())
+            else
+                shopent:SetOrigin(Vector(10000,10000,120))
             end
         else
             shopent:SetOrigin(Vector(10000,10000,120))

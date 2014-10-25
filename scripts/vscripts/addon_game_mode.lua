@@ -272,6 +272,8 @@ function Precache( context )
 	PrecacheResource("model", "models/items/furion/staff_eagle_1.vmdl",context)
 	PrecacheResource("model", "models/courier/drodo/drodo.vmdl",context)
 	PrecacheResource("model", "models/courier/skippy_parrot/skippy_parrot_flying_sailboat.vmdl",context)
+	PrecacheResource("model", "models/courier/skippy_parrot/skippy_parrot_flying_rowboat.vmdl",context)
+	PrecacheResource("model", "models/props_structures/boat_dragonknight.vmdl",context)	
 	PrecacheResource("model", "models/items/warlock/warlocks_summoning_scroll/warlocks_summoning_scroll.vmdl",context)
 	
 	PrecacheResource("particle_folder","particles/dire_fx",context)
