@@ -2,173 +2,60 @@
 {
 	"consumables"
 	{
-		"item"		"item_acorn"
-		"item"		"item_acorn_magic"
-		"item"		"item_armour_battle"
-		"item"		"item_axe_battle"
-		"item"		"item_axe_flint"
-		"item"		"item_axe_iron"
-		"item"		"item_axe_mage_masher"
-		"item"		"item_axe_steel"
-		"item"		"item_axe_stone"
-		"item"		"item_basic"
-		"item"		"item_bee_hive"
-		"item"		"item_blow_gun"
-		"item"		"item_bomb_smoke"
-		"item"		"item_bone"
-		"item"		"item_boots_anabolic"
-		"item"		"item_boots_bear"
-		"item"		"item_boots_bone"
-		"item"		"item_boots_elk"
-		"item"		"item_boots_iron"
-		"item"		"item_boots_steel"
-		"item"		"item_boots_wolf"
-		"item"		"item_bow_blood"
-		"item"		"item_building_armory"
-		"item"		"item_building_armory"
-		"item"		"item_building_chest_storage"
-		"item"		"item_building_fire_basic"
-		"item"		"item_building_fire_mage"
-
+		"item"		"item_boat_scroll_fireball"
+		"item"		"item_boat_scroll_living_dead"
+		"item"		"item_boat_scroll_stoneskin"
+		"item"		"item_boat_kit_smokehouse"
+		"item"		"item_boat_spear_basic"
+		"item"		"item_boat_spirit_water"
+		"item"		"item_boat_axe_steel"
+		"item"		"item_boat_ingot_steel"
+		"item"		"item_boat_shield_steel"
+		"item"		"item_boat_stick"
+		"item"		"item_boat_stone"
+		"item"		"item_boat_kit_storage"
+		"item"		"item_boat_kit_tannery"
+		"item"		"item_boat_beacon_teleport"
+		"item"		"item_boat_kit_tent"
+		"item"		"item_boat_tinder"
+		"item"		"item_boat_kit_hut_troll"
+		"item"		"item_boat_kit_workshop"
+		"item"		"item_boat_rock_dark"
 	}
 
 	"attributes"
 	{
-		"item"		"item_building_hatchery"
-		"item"		"item_building_hut_basic"
-		"item"		"item_building_hut_mud"
-		"item"		"item_building_hut_witch_doctor"
-		"item"		"item_building_mixing_pot"
-		"item"		"item_building_smoke_house"
-		"item"		"item_building_spirit_ward"
-		"item"		"item_building_teleport_beacon"
-		"item"		"item_building_tent_basic"
-		"item"		"item_building_tower_omni"
-		"item"		"item_building_trap_ensnare"
-		"item"		"item_building_workshop"
-		"item"		"item_clay_ball"
-		"item"		"item_clay_living"
-		"item"		"item_cloak_fire"
-		"item"		"item_cloak_frost"
-		"item"		"item_cloak_protection"
-		"item"		"item_coat_bear"
-		"item"		"item_coat_bone"
-		"item"		"item_coat_camouflage"
-		"item"		"item_coat_elk"
-		"item"		"item_coat_iron"
-		"item"		"item_coat_steel"
+		
 	
 	}
 
 	"weapons_armor"
 	{
-		"item"		"item_coat_wolf"
-		"item"		"item_compass_sonar"
-		"item"		"item_egg_hawk"
-		"item"		"item_essence_bees"
-		"item"		"item_flint"
-		"item"		"item_gem_of_knowledge"
-		"item"		"item_gloves_battle"
-		"item"		"item_gloves_bear"
-		"item"		"item_gloves_Bone"
-		"item"		"item_gloves_elk"
-		"item"		"item_gloves_iron"
-		"item"		"item_gloves_iron"
-		"item"		"item_gloves_wolf"
-		"item"		"item_gun_blow"
-		"item"		"item_gun_blow_bones"
-		"item"		"item_gun_blow_empty"
-		"item"		"item_gun_blow_thistles"
-		"item"		"item_gun_blow_thistles_dark"
-		"item"		"item_herb_blue"
-		"item"		"item_herb_butsu"
-		"item"		"item_herb_orange"
-		"item"		"item_herb_purple"
-		"item"		"item_herb_yellow"
+		
 
 	}
 
 	"misc"
 	{
-		"item"		"item_hide_elk"
-		"item"		"item_hide_jungle_bear"
-		"item"		"item_hide_wolf"
-		"item"		"item_ingot_iron"
-		"item"		"item_ingot_steel"
-		"item"		"item_magic_raw"
-		"item"		"item_crystal_mana"
-		"item"		"item_meat_cooked"
-		"item"		"item_meat_diseased"
-		"item"		"item_meat_raw"
-		"item"		"item_meat_smoked"
-		"item"		"item_medallion_of_courage"
-		"item"		"item_mushroom"
-		"item"		"item_net_basic"
-		"item"		"item_pinion_fire"
-		"item"		"item_pinion_pain"
-		"item"		"item_pinion_shadow"
-		"item"		"item_potion_acid"
-		"item"		"item_potion_anabolic"
-		"item"		"item_potion_anti_magic"
+		
 
 	}	
 
 	// Level 1 - Green Recipes
 	"basics"
 	{
-		"item"		"item_potion_cure_all"
-		"item"		"item_potion_disease"
-		"item"		"item_potion_drunk"
-		"item"		"item_potion_elemental"
-		"item"		"item_potion_fervor"
-		"item"		"item_potion_healingi"
-		"item"		"item_potion_healingiii"
-		"item"		"item_potion_healingiv"
-		"item"		"item_potion_manai"
-		"item"		"item_potion_manaiii"
-		"item"		"item_potion_manaiv"
 
 	}
 
 	// Level 2 - Blue Recipes
 	"support"
 	{
-		"item"		"item_potion_nether"
-		"item"		"item_potion_poison"
-		"item"		"item_potion_poison_ultra"
-		"item"		"item_potion_twin_island"
-		"item"		"item_river_root"
-		"item"		"item_river_stem"
-		"item"		"item_rock_dark"
-		"item"		"item_scales_hydra"
-		"item"		"item_scroll_cyclone"
-
+		
 	}
 
 	"magics"
 	{
-		"item"		"item_scroll_entangling"
-		"item"		"item_scroll_fireball"
-		"item"		"item_scroll_living_dead"
-		"item"		"item_scroll_stoneskin"
-		"item"		"item_scroll_tsunami"
-		"item"		"item_seed_magic"
-		"item"		"item_shield"
-		"item"		"item_shield_battle"
-		"item"		"item_shield_bone"
-		"item"		"item_shield_iron"
-		"item"		"item_shield_steel"
-		"item"		"item_ship_transport"
-		"item"		"item_spear_basic"
-		"item"		"item_spear_dark"
-		"item"		"item_spear_iron"
-		"item"		"item_spear_poison"
-		"item"		"item_spear_poison_refined"
-		"item"		"item_spear_poison_ultra"
-		"item"		"item_spear_steel"
-		"item"		"item_spirit_water"
-		"item"		"item_spirit_wind"
-		"item"		"item_stick"
+		
 	}
 
 	// Level 3 - Purple Recipes
@@ -190,7 +77,21 @@
 
 	"sideshop1"
 	{
-
+		"item"		"item_boat_gloves_iron"
+		"item"		"item_boat_ingot_iron"
+		"item"		"item_boat_spear_iron"
+		"item"		"item_boat_clay_living"
+		"item"		"item_boat_kit_fire_mage"
+		"item"		"item_boat_seed_magic"
+		"item"		"item_boat_crystal_mana"
+		"item"		"item_boat_potion_mana_iv"
+		"item"		"item_boat_kit_mud_hut"
+		"item"		"item_boat_mushroom"
+		"item"		"item_boat_nets"
+		"item"		"item_boat_kit_omnidefender"
+		"item"		"item_boat_spear_poison"
+		"item"		"item_boat_scroll_cyclone"
+		"item"		"item_boat_scroll_entangling"
 	}
 
 	"sideshop2"
@@ -200,6 +101,19 @@
 
 	"secretshop"
 	{
+		"item"		"item_boat_kit_armory"
+		"item"		"item_boat_shield_basic"
+		"item"		"item_boat_bone"
+		"item"		"item_boat_kit_camp_fire"
+		"item"		"item_boat_ball_clay"
+		"item"		"item_boat_meat_cooked"
+		"item"		"item_boat_rock_dark"
+		"item"		"item_boat_kit_trap_ensnare"
+		"item"		"item_boat_flint"
+		"item"		"item_boat_potion_healing_iv"
+		"item"		"item_boat_axe_iron"
+		"item"		"item_boat_boots_iron"
+		"item"		"item_boat_coat_iron"
 
 	}
 }
