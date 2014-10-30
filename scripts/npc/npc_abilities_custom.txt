@@ -7180,7 +7180,7 @@
 				"Passive"				"1"
 				"Aura"					"modifier_glow_restore"
 				"Aura_Radius"			"%radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
 				"Aura_ApplyToCaster"	"1"
 			}
@@ -7201,8 +7201,8 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	"%move_speed"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT " 	"%attack_speed"
 				}				
 			}
 		}
