@@ -470,19 +470,17 @@
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         		"6"        
-		"Ability1"						"ability_priest_theglow"											// Ability 1
-		"Ability2"						"ability_priest_resistall"											// Ability 2
-		"Ability3"						"ability_priest_cureall"											// Ability 3
-		"Ability4"						"ability_priest_sprayhealing"											// Ability 4
-		"Ability5"						"ability_priest_pumpup"												// Ability 5
-		"Ability6" 						"ability_priest_magicmist"									// Ability 6
-		"Ability7" 						"ability_priest_mixhealth"										
-		"Ability8" 						"ability_priest_mixmana"							
-		"Ability9"  					"ability_priest_mixheat"		
-		//"Ability10" 					""		
-		//"Ability11"  					""
-        //"Ability9"              ""
-        //"Ability10"             ""
+		"Ability1"						"ability_priest_swap1"
+		"Ability2"						"ability_priest_swap2"
+		"Ability3"						"ability_priest_theglow"											
+		"Ability4"						"ability_priest_resistall"											
+		"Ability5"						"ability_priest_cureall"										
+		"Ability6"						"ability_priest_pumpup"									
+		"Ability7"						"ability_priest_sprayhealing"										
+		"Ability8" 						"ability_priest_pacifyingsmoke"									
+		"Ability9" 						"ability_priest_mixhealth"										
+		"Ability10" 					"ability_priest_mixenergy"							
+		"Ability11"  					"ability_priest_mixheat"		
         
         // Armor
         //-------------------------------------------------------------------------------------------------------------

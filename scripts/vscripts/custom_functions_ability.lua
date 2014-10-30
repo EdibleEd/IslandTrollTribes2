@@ -676,6 +676,41 @@ end
 
 -- Priest Ability Functions
 
+function SwapPriestSpells(keys)
+    local caster = keys.caster
+    local book = keys.activeBook
+		
+	if book == 1 then
+		book1 = caster:FindAbilityByName("ability_priest_swap1")	
+		book2 = caster:FindAbilityByName("ability_priest_swap2")	
+		book1:SetHidden(true)
+		book2:SetHidden(false)
+		caster:FindAbilityByName("ability_priest_theglow"):SetHidden(true)
+		caster:FindAbilityByName("ability_priest_cureall"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_resistall"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_pumpup"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_sprayhealing"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_pacifyingsmoke"):SetHidden(false)
+		caster:FindAbilityByName("ability_priest_mixheat"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_mixenergy"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_mixhealth"):SetHidden(false)
+	else
+		book1 = caster:FindAbilityByName("ability_priest_swap1")	
+		book2 = caster:FindAbilityByName("ability_priest_swap2")	
+		book2:SetHidden(true)
+		book1:SetHidden(false)
+		caster:FindAbilityByName("ability_priest_theglow"):SetHidden(false)
+		caster:FindAbilityByName("ability_priest_cureall"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_resistall"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_pumpup"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_sprayhealing"):SetHidden(false)
+        caster:FindAbilityByName("ability_priest_pacifyingsmoke"):SetHidden(true)
+		caster:FindAbilityByName("ability_priest_mixheat"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_mixenergy"):SetHidden(true)
+        caster:FindAbilityByName("ability_priest_mixhealth"):SetHidden(true)
+    end
+end
+
 function MixHeat(keys)
 	local caster = keys.caster
 	local target = keys.target

@@ -1049,14 +1049,10 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 			hero:FindAbilityByName("ability_mage_flamespray"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_negativeblast"):UpgradeAbility()
 		elseif level == 3 then
-			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_reducefood"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_magefire"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_depress"):UpgradeAbility()
 		elseif level == 4 then
-			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_metronome"):UpgradeAbility()
 		end
 	elseif hero:GetClassname() == "npc_dota_hero_huskar" then
@@ -1077,8 +1073,10 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 			hero:FindAbilityByName("ability_priest_pumpup"):UpgradeAbility()
 			hero:FindAbilityByName("ability_priest_resistall"):UpgradeAbility()
 		elseif level == 3 then
+			hero:FindAbilityByName("ability_priest_swap1"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_priest_sprayhealing"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_magicmist"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_pacifyingsmoke"):UpgradeAbility()
 		elseif level == 4 then
 			hero:FindAbilityByName("ability_priest_mixheat"):UpgradeAbility()
 			hero:FindAbilityByName("ability_priest_mixhealth"):UpgradeAbility()
