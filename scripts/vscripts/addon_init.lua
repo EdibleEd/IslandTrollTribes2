@@ -346,18 +346,40 @@ function ITT_GameMode:OnPlayerPicked( keys )
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
         spawnedUnit:AddItem(itemslotlock3)	
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_hunter_ensnare")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lion" then
  		spawnedUnit:AddItem(itemslotlock1)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_scout_enemyradar")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_shadow_shaman" then
 		print(spawnedUnit:GetClassname() .. " is a gatherer")
+ 		spawnedUnit:AddItem(itemslotlock1)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_gatherer_itemradar")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_dazzle" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
+ 		spawnedUnit:AddItem(itemslotlock1)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_priest_theglow")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_riki" then
   		spawnedUnit:AddItem(itemslotlock1)
+ 		spawnedUnit:AddItem(itemslotlock1)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_thief_teleport")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lycan" then
   		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
+ 		spawnedUnit:AddItem(itemslotlock1)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_spiritofthebeast")
+		innate:UpgradeAbility()
 	else
 	print(spawnedUnit:GetUnitName() .. " is a non baseclass")
 	end
@@ -1017,29 +1039,66 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 	local player = EntIndexToHScript(event.player)
 	local hero = player:GetAssignedHero()
 	local level = event.level
+	hero:SetAbilityPoints(0)
 	
-	print(level)
-		
 	if hero:GetClassname() == "npc_dota_hero_witch_doctor" then
 		if level == 2 then
-			hero:SetAbilityPoints(0)
 			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_pumpup"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_flamespray"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_negativeblast"):UpgradeAbility()
 		elseif level == 3 then
-			hero:SetAbilityPoints(0)
 			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_reducefood"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_magefire"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_depress"):UpgradeAbility()
 		elseif level == 4 then
-			hero:SetAbilityPoints(0)
 			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_metronome"):UpgradeAbility()
+		end
+	elseif hero:GetClassname() == "npc_dota_hero_huskar" then
+		if level < 5 then
+			hero:FindAbilityByName("ability_hunter_track"):UpgradeAbility()
+		end
+	elseif hero:GetClassname() == "npc_dota_hero_shadow_shaman" then
+		if level == 2 then
+			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
+		elseif level == 3 then
+			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
+		elseif level == 4 then
+			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
+		end
+	elseif hero:GetClassname() == "npc_dota_hero_dazzle" then
+		if level == 2 then
+			hero:FindAbilityByName("ability_priest_cureall"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_pumpup"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_resistall"):UpgradeAbility()
+		elseif level == 3 then
+			hero:FindAbilityByName("ability_priest_sprayhealing"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_magicmist"):UpgradeAbility()
+		elseif level == 4 then
+			hero:FindAbilityByName("ability_priest_mixheat"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_mixhealth"):UpgradeAbility()
+			hero:FindAbilityByName("ability_priest_mixenergy"):UpgradeAbility()
+		end
+	elseif hero:GetClassname() == "npc_dota_hero_lion" then
+		if level == 2 then
+			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
+		elseif level == 3 then
+			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
+		elseif level == 5 then
+			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
+		end
+	elseif hero:GetClassname() == "npc_dota_hero_riki" then
+		if level == 2 then
+			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
+		elseif level == 3 then
+			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
+		elseif level == 5 then
+			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
 		end
 	end
 end
