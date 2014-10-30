@@ -4052,13 +4052,13 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY "
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			"BaseClass"						"item_datadriven"
 			"AbilityTextureName"			"item_urn_of_shadows"
-			"Model"					"models/items/alchemist/convict_trophy_offhand/convict_trophy_offhand.vmdl"
-			"Effect"				"particles/units/heroes/hero_alchemist/alchemist_unstableconc_bottles.vpcf"
+			"Model"							"models/items/alchemist/convict_trophy_offhand/convict_trophy_offhand.vmdl"
+			"Effect"						"particles/units/heroes/hero_alchemist/alchemist_unstableconc_bottles.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4084,7 +4084,7 @@
 				"RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-					"Function"			"DropItemOnDeath"
+					"Function"				"DropItemOnDeath"
 				}
 			}
 		// Sound
@@ -4102,9 +4102,9 @@
 			{
 				"TrackingProjectile"
 				{
-					"Target"    "TARGET"
-					"EffectName"   "particles/base_attacks/ranged_siege_bad.vpcf"
-					"MoveSpeed"    "900"
+					"Target"    			"TARGET"
+					"EffectName"   			"particles/base_attacks/ranged_siege_bad.vpcf"
+					"MoveSpeed"    			"900"
 				}
 				"SpendCharge"
 				{
@@ -4112,23 +4112,16 @@
 			}
 			"OnProjectileHitUnit"
 			{
-				"Random"
+				"RunScript"
 				{
-					"Chance"		"%chance"
-					"OnSuccess"
-					{
-						"RunScript"
-							{
-							"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-							"Function"				"PotionDiseaseUse"
-							}
-					}
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"				"PotionDiseaseUse"
 				}
 				"FireSound"
-					{
-						"EffectName"				"Hero_OgreMagi.Ignite.Target"
-						"Target"					"TARGET"
-					}
+				{
+					"EffectName"		"Hero_OgreMagi.Ignite.Target"
+					"Target"			"TARGET"
+				}
 			}
 			"Modifiers"
 			{
@@ -4145,113 +4138,126 @@
 							"Type"			"DAMAGE_TYPE_MAGICAL"
 						}
 					}
-					"Duration"				"100"
 				}
 				"modifier_disease2"
 				{   
-					"IsDebuff"			"1"
-					"Aura"				"disease2_aura"
-					"Aura_Radius"		"250"
-					"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Aura_Types"		"DOTA_UNIT_TARGET_HERO"
-					"Duration"			"300"
+					"IsDebuff"				"1"
+					"Aura"					"disease2_aura"
+					"Aura_Radius"			"250"
+					"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+					"ThinkInterval" 		"1"
+					"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Type"   		"DAMAGE_TYPE_MAGICAL"
+							"Damage" 		"1"
+							"Target" 		"TARGET"
+						}
+					}
 					"OnCreated"
 					{
 						"AttachEffect"
 						{
-							"Target" "TARGET"
-							"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+							"Target" 		"TARGET"
+							"EffectName" 	"particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
 							"EffectAttachType" "follow_overhead"
 						}
 					}
-						"ThinkInterval" 	"1.0"
-						"OnIntervalThink"
+					"OnDestroy"
+					{
+						"RemoveModifier"
 						{
-							"Damage"
-							{
-								"Type"   "DAMAGE_TYPE_MAGICAL"
-								"Damage" "1"
-								"Target" "TARGET"
-							}
+							"Target"		"TARGET"
+							"ModifierName"	"disease2_aura"
 						}
+					}
 				}
 				"disease2_aura"
 				{
-					"IsDebuff" 			"1"
-					"IsPurgable" 		"1"
-					"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+					"IsDebuff" 				"1"
+					"IsPurgable" 			"1"
+					"EffectName"			"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
 					"OnCreated"
 					{
 						"AttachEffect"
 						{
-							"Target" "TARGET"
-							"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+							"Target" 		"TARGET"
+							"EffectName" 	"particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
 							"EffectAttachType" "follow_overhead"
 						}
 						"ApplyModifier"
 						{
-						"ModifierName"  "modifier_disease2"
-						"Target"        
-						{
-							"Center"	"SELF"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO"
-						}
-						"Duration"      "300"
+							"ModifierName"  "modifier_disease2"
+							"Duration"      "300"
+							"Target"        
+							{
+								"Center"	"SELF"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO"
+							}
 						}			 
 					}
 				}
-					"modifier_disease3"
-						{   
-						"IsDebuff"			"1"
-						"Aura"				"disease3_aura"
-						"Aura_Radius"		"250"
-						"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-						"Aura_Types"		"DOTA_UNIT_TARGET_HERO"
-						"Duration"			"150"
-						"OnCreated"
+				"modifier_disease3"
+				{   
+					"IsDebuff"				"1"
+					"Aura"					"disease3_aura"
+					"Aura_Radius"			"250"
+					"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+					"ThinkInterval" 		"1"
+					"OnIntervalThink"
+					{
+						"Damage"
 						{
-							"AttachEffect"
-							{
-								"Target" "TARGET"
-								"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
-								"EffectAttachType" "follow_overhead"
-							}
+							"Type"   		"DAMAGE_TYPE_MAGICAL"
+							"Damage" 		"1"
+							"Target" 		"TARGET"
 						}
-						"ThinkInterval" 	"1.0"
-						"OnIntervalThink"
-						{
-							"Damage"
-							{
-								"Type"   "DAMAGE_TYPE_MAGICAL"
-								"Damage" "1"
-								"Target" "TARGET"
-							}
-						}
-					}
-				"disease3_aura"
-				{
-					"IsDebuff" 			"1"
-					"IsPurgable" 		"1"
-					"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+					}				
 					"OnCreated"
 					{
 						"AttachEffect"
 						{
-							"Target" "TARGET"
-							"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+							"Target" 		"TARGET"
+							"EffectName" 	"particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
+							"EffectAttachType" "follow_overhead"
+						}
+					}
+					"OnDestroy"
+					{
+						"RemoveModifier"
+						{
+							"Target"		"TARGET"
+							"ModifierName"	"disease3_aura"
+						}
+					}
+				}
+				"disease3_aura"
+				{
+					"IsDebuff" 				"1"
+					"IsPurgable" 			"1"
+					"EffectName"			"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+					"OnCreated"
+					{
+						"AttachEffect"
+						{
+							"Target" 		"TARGET"
+							"EffectName" 	"particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"
 							"EffectAttachType" "follow_overhead"
 						}
 						"ApplyModifier"
 						{
-						"ModifierName"  "modifier_disease3"
-						"Target"        
-						{
-							"Center"	"SELF"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO"
-						}
-						"Duration"      "150"
+							"ModifierName"  "modifier_disease3"							
+							"Duration"      "150"
+							"Target"        
+							{
+								"Center"	"SELF"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO"
+							}
 						}			 
 					}						
 				}
@@ -4261,12 +4267,12 @@
 				"01"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"max_stacks"				"2"
+					"max_stacks"			"2"
 				}
 				"02"
 				{
-					"var_type"		"FIELD_INTEGER"
-					"chance"		"33"
+					"var_type"				"FIELD_INTEGER"
+					"chance"				"33"
 				}
 			}
 		}
