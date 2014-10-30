@@ -7436,10 +7436,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_priest_sprayhealing"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AOERadius"						"400"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -7448,7 +7447,7 @@
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"               "20"
-		"AbilityCastRange"				"200"
+		"AbilityCastRange"				"600"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -7457,42 +7456,50 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
-
+		
 		"OnSpellStart"
 		{
-			"Heal"
+			"LinearProjectile"
 			{
-				"HealAmount"	"%heal_amount"
-				"Target"
-				{
-					"Center"		"CASTER"	
-					"Radius"		"%radius"				
-					"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
-				}
-			}	
-			"FireSound"
-			{
-				"EffectName"		"Hero_Dazzle.Shallow_Grave"
-				"Target"			"CASTER"
+				"Target"				"POINT"
+				"MoveSpeed"				"600"
+				"ProvidesVision"		"false"
 			}
 		}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"OnProjectileFinish"
 		{
-			"01"
+			"ApplyModifier"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"heal_amount"					"50"
+				"Target"				"CASTER"
+				"ModifierName" 			"modifier_exclude_caster"
+				"Duration"				"5"
 			}
-			"02"
+			"Heal"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"400"
+				"Target"
+				{
+					"Center"			"POINT"
+					"Radius"			"400"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+				"HealAmount"			"50"
+			}
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName" 			"modifier_exclude_caster"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_exclude_caster"
+			{
+				"IsHidden"					"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
+				}
 			}
 		}
 	}
