@@ -181,17 +181,17 @@
         
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityLayout"         "6"        
-		"Ability1"						"ability_mage_nulldamage"									// Ability 1
-		"Ability2"						"ability_mage_negativeblast"								// Ability 2
-		"Ability3"						"ability_mage_pumpup"										// Ability 3
-		"Ability4"						"ability_mage_reducefood"									// Ability 4
+        "AbilityLayout"         "5"        
+		"Ability1"						"ability_mage_swap1"										// Ability 1
+		"Ability2"						"ability_mage_swap2"										// Ability 2
+		"Ability3"						"ability_mage_nulldamage"									// Ability 3
+		"Ability4"						"ability_mage_pumpup"										// Ability 4
 		"Ability5"						"ability_mage_magefire"										// Ability 5
-        "Ability6"             			"ability_mage_flamespray"
-		"Ability7"             			"ability_mage_depress"
-		"Ability8"             			"ability_mage_metronome"
-        //"Ability9"              ""
-        //"Ability10"             ""
+		"Ability6"						"ability_mage_reducefood"									// Ability 6
+		"Ability7"						"ability_mage_negativeblast"
+		"Ability8"						"ability_mage_flamespray"
+		"Ability9"						"ability_mage_depress"
+		"Ability10"						"ability_mage_metronome"
         
         // Armor
         //-------------------------------------------------------------------------------------------------------------

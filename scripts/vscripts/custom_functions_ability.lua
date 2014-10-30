@@ -413,6 +413,39 @@ end
 
 -- Mage Ability Functons
 
+function SwapMageSpells(keys)
+    local caster = keys.caster
+    local book = keys.activeBook
+		
+	if book == 1 then
+		book1 = caster:FindAbilityByName("ability_mage_swap1")	
+		book2 = caster:FindAbilityByName("ability_mage_swap2")	
+		book1:SetHidden(true)
+		book2:SetHidden(false)
+		caster:FindAbilityByName("ability_mage_nulldamage"):SetHidden(true)
+		caster:FindAbilityByName("ability_mage_pumpup"):SetHidden(true)
+        caster:FindAbilityByName("ability_mage_magefire"):SetHidden(true)
+        caster:FindAbilityByName("ability_mage_reducefood"):SetHidden(true)
+        caster:FindAbilityByName("ability_mage_negativeblast"):SetHidden(false)
+		caster:FindAbilityByName("ability_mage_flamespray"):SetHidden(false)
+        caster:FindAbilityByName("ability_mage_depress"):SetHidden(false)
+        caster:FindAbilityByName("ability_mage_metronome"):SetHidden(false)
+	else
+		book1 = caster:FindAbilityByName("ability_mage_swap1")	
+		book2 = caster:FindAbilityByName("ability_mage_swap2")	
+		book2:SetHidden(true)
+		book1:SetHidden(false)
+        caster:FindAbilityByName("ability_mage_nulldamage"):SetHidden(false)
+		caster:FindAbilityByName("ability_mage_pumpup"):SetHidden(false)
+        caster:FindAbilityByName("ability_mage_magefire"):SetHidden(false)
+        caster:FindAbilityByName("ability_mage_reducefood"):SetHidden(false)
+        caster:FindAbilityByName("ability_mage_negativeblast"):SetHidden(true)
+		caster:FindAbilityByName("ability_mage_flamespray"):SetHidden(true)
+        caster:FindAbilityByName("ability_mage_depress"):SetHidden(true)
+        caster:FindAbilityByName("ability_mage_metronome"):SetHidden(true)
+    end
+end
+
 function ReduceFood(keys)
 	local target = keys.target
 	local reduction = RandomInt(0,2)

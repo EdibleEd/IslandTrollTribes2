@@ -198,7 +198,7 @@
 	{
 	// General
 	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"AbilityTextureName"	"ability_building_packup"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -2464,7 +2464,61 @@
 //=================================================================================
 //Mage Abilities
 //=================================================================================
+	//=================================================================================================================
+	// Mage Spellbook Swapping
+	//=================================================================================================================
+	"ability_mage_swap1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            ""
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"MaxLevel"						"3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    		"custom_functions_abilities.lua"
+				"Function"      		"SwapMageSpells"
+				"activeBook"    		"1"
+			}
+		}
+	}
 	
+	"ability_mage_swap2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            ""
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"MaxLevel"						"3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    		"custom_functions_abilities.lua"
+				"Function"      		"SwapMageSpells"
+				"activeBook"     		"2"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Mage - Mage Fire
 	//=================================================================================================================
@@ -2798,7 +2852,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_negativeblast"
@@ -2834,7 +2888,13 @@
 		}
 		
 		"OnSpellStart"
-		{		
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"SwapMageSpells"
+				"isOpening"				"false"
+			}
 			"TrackingProjectile"
 			{	
 				"Target"            	"TARGET"
@@ -3212,7 +3272,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_datadriven"		
-		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName" 				"ability_mage_flamespray"
 		"HotKeyOverride"					"F"
 		"AbilityCastAnimation"				"ACT_DOTA_ATTACK"
@@ -3242,6 +3302,12 @@
 		}
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"SwapMageSpells"
+				"isOpening"				"false"
+			}
 			"ActOnTargets"
 			{
 				"Target"
@@ -3411,7 +3477,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_depress"
@@ -3446,7 +3512,13 @@
 		}
 		
 		"OnSpellStart"
-		{		
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"SwapMageSpells"
+				"isOpening"				"false"
+			}
 			"TrackingProjectile"
 			{	
 				"Target"           		 "TARGET"
@@ -3619,7 +3691,7 @@
 	"ability_mage_metronome"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"			"ability_mage_metronome"
@@ -3644,6 +3716,12 @@
 		
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"SwapMageSpells"
+				"isOpening"				"false"
+			}
 			"RunScript"
 			{
 				"ScriptFile"			"custom_functions_ability.lua"
@@ -7158,6 +7236,35 @@
 //=====================================================================================================================
 // Priest Abilities
 //=====================================================================================================================
+	//=================================================================================================================
+	// Priest Spellbook
+	//=================================================================================================================
+	"ability_priest_spellbook"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"            ""
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"MaxLevel"						"3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		
+		"OnSpellStart"
+		{            
+			"RunScript"
+			{
+				"ScriptFile"    "custom_functions_abilities.lua"
+				"Function"      "PriestSpellBook"
+				"isOpening"     "true"
+			}
+		}
+	}
+
 	//=================================================================================
 	//  Ability Priest - The Glow
 	//=================================================================================
@@ -9142,7 +9249,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rubick_empty1"
 		"MaxLevel"						"0"
 
@@ -9156,7 +9263,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"0"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "rubick_empty1"
