@@ -2497,7 +2497,7 @@
 		// Abilities	
 		"Ability1"				"ability_building_cookmeat"	
 		"Ability2"				"Ability_Pack_up_magefire"
-		"Ability3"				"Ability_Restore_Heat_Magic"
+		"Ability3"				"ability_building_restoreheat_magic"
 		"Ability4"				"Ability_Burn_Building_Magic"
 
 		// Armor

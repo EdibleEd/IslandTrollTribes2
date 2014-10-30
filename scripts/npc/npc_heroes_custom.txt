@@ -181,7 +181,7 @@
         
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityLayout"         "2"        
+        "AbilityLayout"         "6"        
 		"Ability1"						"ability_mage_nulldamage"									// Ability 1
 		"Ability2"						"ability_mage_negativeblast"								// Ability 2
 		"Ability3"						"ability_mage_pumpup"										// Ability 3

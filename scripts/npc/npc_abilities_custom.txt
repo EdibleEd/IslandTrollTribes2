@@ -279,6 +279,63 @@
 		}
 	}
 	//=================================================================================
+	// Restore Heat(Magic)
+	//=================================================================================
+	"ability_building_restoreheat_magic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 				"ability_building_restoreheat"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_restore_heat_aura"
+			{
+				"Passive"					"1"
+				"Aura"						"modifier_restore_heat_effect"
+				"Aura_Radius"				"290"
+				"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"				"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"		"0"
+			}	
+			"modifier_restore_heat_effect"
+			{
+				"IsHidden"					"0"
+				"IsPurgable"				"0"
+				"ThinkInterval"				"%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
+						"Function"			"AddHeat"
+						"Heat"				"%heat"
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heat"						"16"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"3"
+			}
+		}
+	}
+	//=================================================================================
 	// Burn Building
 	//=================================================================================
 	"Ability_Burn_Building"
@@ -371,112 +428,55 @@
 	//=================================================================================
 	"Ability_Burn_Building_Magic"
 	{
-	"BaseClass"			"ability_datadriven"
-	"AbilityTextureName"	"Burn_Building_Magic"
-	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"OnSpellStart"
-	{
-		"ApplyModifier"
+		"BaseClass"			"ability_datadriven"
+		"AbilityTextureName"	"Burn_Building_Magic"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"OnSpellStart"
 		{
-			"ModifierName"		"aura_burn"
-			"Target"
+			"ApplyModifier"
 			{
-				"Center"		"CASTER"
-				"Radius"		"%burn_radius"
-				"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-				"Types"			"DOTA_UNIT_TARGET_BUILDING"
-			}
-		}
-	}
-	"Modifiers"
-	{
-		"aura_burn"
-			{
-				"IsHidden"				"0"
-				"Passive"				"1"
-				
-				"Aura"					"Burn"
-				"Aura_Radius"			"%burn_radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-				"Aura_Types"			"DOTA_UNIT_TARGET_BUILDING"
-				"Aura_ApplyToCaster"	"0"
-			}
-			"Burn"
-			{
-				"Properties"
+				"ModifierName"		"aura_burn"
+				"Target"
 				{
-					"modifier_warlock_golem_permanent_immolation_debuff"
+					"Center"		"CASTER"
+					"Radius"		"%burn_radius"
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+					"Types"			"DOTA_UNIT_TARGET_BUILDING"
 				}
 			}
-	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"burn_radius"		"360"
 		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"aura_damage"			"20"
-		}
-	}
-	}
-	//=================================================================================
-	// Restore Heat(Magic)
-	//=================================================================================
-	"Ability_Restore_Heat_Magic"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName" 			"ability_building_restoreheat"	
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_restore_heat_aura_magic"
-			{
-				"Passive"				"1"
-				"Aura"					"modifier_restore_heat_effect"
-				"Aura_Radius"			"290"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_ApplyToCaster"	"0"
-			}
-			"modifier_restore_heat_effect_magic"
-			{
-				"IsHidden"		"0"
-				"IsPurgable"	"0"
-				"ThinkInterval"	"%tick_rate"
-				"OnIntervalThink"
+			"aura_burn"
 				{
-					"RunScript"
+					"IsHidden"				"0"
+					"Passive"				"1"
+					
+					"Aura"					"Burn"
+					"Aura_Radius"			"%burn_radius"
+					"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+					"Aura_Types"			"DOTA_UNIT_TARGET_BUILDING"
+					"Aura_ApplyToCaster"	"0"
+				}
+				"Burn"
+				{
+					"Properties"
 					{
-						"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
-						"Function"				"AddHeat"
-						"Heat"					"%heat"
+						"modifier_warlock_golem_permanent_immolation_debuff"
 					}
 				}
-			}
 		}
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"heat"					"10"
+				"var_type"			"FIELD_INTEGER"
+				"burn_radius"		"360"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_rate"				"3"
+				"var_type"			"FIELD_INTEGER"
+				"aura_damage"			"20"
 			}
 		}
 	}
