@@ -339,6 +339,9 @@ function ITT_GameMode:OnPlayerPicked( keys )
  	if spawnedUnit:GetClassname() == "npc_dota_hero_witch_doctor" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
+		spawnedUnit:SetAbilityPoints(0)
+		innate = spawnedUnit:FindAbilityByName("ability_mage_nulldamage")
+		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_huskar" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
@@ -1011,6 +1014,34 @@ end
 --Listener to handle level up
 function ITT_GameMode:OnPlayerGainedLevel(event)
 	print("PlayerGainedLevel")
+	local player = EntIndexToHScript(event.player)
+	local hero = player:GetAssignedHero()
+	local level = event.level
+	
+	print(level)
+		
+	if hero:GetClassname() == "npc_dota_hero_witch_doctor" then
+		if level == 2 then
+			hero:SetAbilityPoints(0)
+			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_pumpup"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_flamespray"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_negativeblast"):UpgradeAbility()
+		elseif level == 3 then
+			hero:SetAbilityPoints(0)
+			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_reducefood"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_magefire"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_depress"):UpgradeAbility()
+		elseif level == 4 then
+			hero:SetAbilityPoints(0)
+			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_metronome"):UpgradeAbility()
+		end
+	end
 end
 
 function give_item(cmdname, itemname)
