@@ -3205,6 +3205,80 @@
 	}
 	
 	//=================================================================================================================
+	// Ability: Mage - Flame Spray
+	//=================================================================================================================
+	"ability_mage_flamespray"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_datadriven"		
+		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" 				"ability_mage_flamespray"
+		"HotKeyOverride"					"F"
+		"AbilityCastAnimation"				"ACT_DOTA_ATTACK"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              	"0.2"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               	"30"
+		"AbilityCastRange"					"600"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               	"10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      	"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"Particle"						"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"				"CASTER"
+					"Radius"				"600"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Flags"					"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+					"MaxTargets"			"4"
+					"Random"				"true"
+				}	
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+						"Dodgeable"			"false"
+						"ProvidesVision"	"false"
+						"MoveSpeed"			"600"
+					}		
+				}
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"					"TARGET"
+				"Damage"					"20"
+				"Type"						"DAMAGE_TYPE_MAGICAL"
+			}
+		}
+	}
+	
+	//=================================================================================================================
 	// Ability: Mage - Pump Up
 	//=================================================================================================================
 	"ability_mage_pumpup"
