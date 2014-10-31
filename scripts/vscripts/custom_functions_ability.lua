@@ -651,17 +651,91 @@ function TamePet(keys)
 	local unitName = target:GetUnitName()
 	local owner = caster:GetOwner()
 	
-	print(unitName)
-	if unitName == "npc_creep_fawn" then
+	if unitName == "npc_creep_fawn" or unitName == "npc_creep_wolf_pup" or unitName == "npc_creep_bear_cub" then
 		target.vOwner = owner
-		target:SetControllableByPlayer(owner:GetPlayerID(), true )
-	elseif unitName == "npc_creep_wolf_pup" then
-		target.vOwner = owner	
-		target:SetControllableByPlayer(owner:GetPlayerID(), true )
-	elseif unitName == "npc_creep_bear_cub" then
-		target.vOwner = owner	
-		target:SetControllableByPlayer(owner:GetPlayerID(), true )
+		target:FindAbilityByName("ability_beastmaster_pet_grow1"):SetLevel(1)
+		caster:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(true)
+		caster:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(false)
+		caster:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(false)
+		caster:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(false)
 	end
+end
+
+-- cast by pet
+function GetPet(keys)
+	local caster = keys.caster
+	local owner = caster.vOwner
+	local teamnumber = caster:GetTeamNumber()
+	local pet = nil
+	
+	local units = FindUnitsInRadius(teamnumber,
+									Vector(0,0,0),
+									nil,
+									FIND_UNITS_EVERYWHERE,
+									DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+									DOTA_UNIT_TARGET_CREEP,
+									DOTA_UNIT_TARGET_FLAG_NONE,
+									FIND_ANY_ORDER,
+									false)
+	for _,unit in pairs(units) do
+		if unit:HasAbility("ability_wander") and unit.vOwner == owner then
+			pet = unit
+			break
+		end
+	end
+	
+	return pet
+end
+
+function GrowPet(keys)
+	local caster = keys.caster
+	local owner = caster.vOwner
+	local hero = owner:GetAssignedHero()
+	
+	local GrowTable = {
+						{"npc_creep_fawn","npc_creep_elk_pet"},
+						{"npc_creep_wolf_pup","npc_creep_wolf_jungle"},
+						{"npc_creep_bear_cub","npc_creep_bear_jungle"},
+						{"npc_creep_elk_pet","npc_creep_elk_adult"},
+						{"npc_creep_wolf_jungle","npc_creep_wolf_jungle_adult"},
+						{"npc_creep_bear_jungle","npc_creep_bear_jungle_adult"}}
+	
+	local pet = GetPet(keys)
+	if pet ~= nil then
+		name = pet:GetUnitName()
+		print("Pet upgrade")
+		
+		for _,v in pairs(GrowTable) do
+			if v[1] == name then
+				local location = pet:GetAbsOrigin()
+				local team = pet:GetTeam()
+				pet:RemoveSelf()
+				local newPet = CreateUnitByName(v[2],location, true,nil,nil,team)
+				newPet.vOwner = owner
+				if newPet:HasAbility("ability_beastmaster_pet_grow2") then
+					newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
+					hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(false)
+					hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(false)	
+				end
+				break
+			end
+		end	
+	end
+end
+
+function PetCommand(keys)
+	local caster = keys.caster
+	local command = keys.Command	
+	local pet = GetPet(keys)
+	
+	if pet ~= nil then
+		if command == "release" then
+		elseif command == "follow" then
+		elseif command == "stay" then
+		elseif command == "sleep" then
+		elseif command == "attack" then
+		end
+	end	
 end
 	
 -- Thief Ability Functions

@@ -397,14 +397,14 @@
         
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityLayout"         		"2"        
+        "AbilityLayout"         		"6"        
 		"Ability1"						"ability_beastmaster_spiritofthebeast"						// Ability 1
 		"Ability2"						"ability_beastmaster_tamepet"								// Ability 2
-		"Ability3"						""															// Ability 3
-		"Ability4"						""															// Ability 4
-		"Ability5"						""															// Ability 5
-        "Ability6"             			""
-		"Ability7"             			""
+		"Ability3"						"ability_beastmaster_pet_release"							// Ability 3
+		"Ability4"						"ability_beastmaster_pet_follow"							// Ability 4
+		"Ability5"						"ability_beastmaster_pet_stay"								// Ability 5
+        "Ability6"             			"ability_beastmaster_pet_sleep"
+		"Ability7"             			"ability_beastmaster_pet_attack"
 		"Ability8"             			""
         //"Ability9"              ""
         //"Ability10"             ""

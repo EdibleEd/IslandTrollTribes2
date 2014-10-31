@@ -3596,7 +3596,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""												//Hidden ability for radar manipulation usage
+		"Ability11"  					"ability_beastmaster_pet_grow1"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for radar manipulation usage
 		"Ability13"  					""							//Hidden ability for radar manipulation usage
 		"Ability14"  					""
@@ -3679,7 +3679,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""												//Hidden ability for radar manipulation usage
+		"Ability11"  					"ability_beastmaster_pet_grow1"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for radar manipulation usage
 		"Ability13"  					""							//Hidden ability for radar manipulation usage
 		"Ability14"  					""
@@ -3762,7 +3762,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""												//Hidden ability for radar manipulation usage
+		"Ability11"  					"ability_beastmaster_pet_grow1"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for radar manipulation usage
 		"Ability13"  					""							//Hidden ability for radar manipulation usage
 		"Ability14"  					""
@@ -3917,7 +3917,7 @@
 		"Level"								"7"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						""												// Ability 1
+		"Ability1"						"ability_wander"												// Ability 1
 		"Ability2"						""												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
@@ -3927,7 +3927,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability11"  					"ability_beastmaster_pet_grow2"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for beast master pet
 		"Ability13"  					""							//Hidden ability for beast master pet
 		"Ability14"  					""
@@ -4738,7 +4738,7 @@
 		"vscripts"							"passive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						""												// Ability 1
+		"Ability1"						"ability_wander"												// Ability 1
 		"Ability2"						""												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
@@ -4748,7 +4748,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability11"  					"ability_beastmaster_pet_grow2"					//Hidden ability for beast master pet
 		"Ability12"  					""							//Hidden ability for beast master pet
 		"Ability13"  					""							//Hidden ability for beast master pet
 		"Ability14"  					""
@@ -4912,7 +4912,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability11"  					"ability_beastmaster_pet_grow2"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for beast master pet
 		"Ability13"  					""							//Hidden ability for beast master pet
 		"Ability14"  					""
@@ -5078,7 +5078,7 @@
 		"Ability8" 						""							
 		"Ability9"  					""		
 		"Ability10" 					""		
-		"Ability11"  					""							//Hidden ability for beast master pet
+		"Ability11"  					"ability_beastmaster_pet_grow2"					//Hidden ability for radar manipulation usage
 		"Ability12"  					""							//Hidden ability for beast master pet
 		"Ability13"  					""							//Hidden ability for beast master pet
 		"Ability14"  					""

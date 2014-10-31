@@ -382,6 +382,16 @@ function ITT_GameMode:OnPlayerPicked( keys )
 		innate:UpgradeAbility()
 		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_spiritofthebeast")
 		innate:UpgradeAbility()
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_release")
+		innate:UpgradeAbility()
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_follow")
+		innate:UpgradeAbility()
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_stay")
+		innate:UpgradeAbility()
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_sleep")
+		innate:UpgradeAbility()
+		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_attack")
+		innate:UpgradeAbility()
 	else
 	print(spawnedUnit:GetUnitName() .. " is a non baseclass")
 	end
@@ -519,7 +529,7 @@ function ITT_GameMode:OnEntityKilled(keys)
     end
 	
 	--spawn young animals
-	local dieRoll = RandomInt(0,1)
+	local dieRoll = RandomInt(0,19)
 	
 	if dieRoll == 0 then
 		print("Success! Spawning young animal")
