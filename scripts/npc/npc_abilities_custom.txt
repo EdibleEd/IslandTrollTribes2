@@ -198,7 +198,7 @@
 	{
 	// General
 	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"	"ability_building_packup"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -1052,7 +1052,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1110,7 +1110,7 @@
 			//do some swapping shenanigans
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "true"
 			}
@@ -1148,7 +1148,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1163,7 +1163,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1218,7 +1218,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1233,7 +1233,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1288,7 +1288,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1303,7 +1303,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1358,7 +1358,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1372,7 +1372,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1427,7 +1427,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1440,7 +1440,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1495,7 +1495,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "PingItemInRange"
 				"Target"        "CASTER"
 				"Range"         "%range"
@@ -1508,7 +1508,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarManipulations"
 				"isOpening"     "false"
 			}
@@ -1553,7 +1553,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "MixHerbs"
 				"Target"        "CASTER"
 			}
@@ -1600,7 +1600,7 @@
 			
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "RadarTelegatherInit"
 				"Target"        "TARGET"
 			}
@@ -1659,7 +1659,7 @@
 		{            
 			// "RunScript"
 			// {
-				// "ScriptFile"    "custom_functions_abilities.lua"
+				// "ScriptFile"    "custom_functions_ability.lua"
 				// "Function"      "MixHerbs"
 				// "Target"        "CASTER"
 			// }
@@ -1722,7 +1722,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "EnsnareUnit"
 				"Target"        "TARGET"
 			}            
@@ -2472,7 +2472,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_mage_swap"
 		"RequiredLevel"					"2"
 		"LevelsBetweenUpgrades"			"1"
@@ -2486,7 +2486,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    		"custom_functions_abilities.lua"
+				"ScriptFile"    		"custom_functions_ability.lua"
 				"Function"      		"SwapMageSpells"
 				"activeBook"    		"1"
 			}
@@ -2512,7 +2512,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    		"custom_functions_abilities.lua"
+				"ScriptFile"    		"custom_functions_ability.lua"
 				"Function"      		"SwapMageSpells"
 				"activeBook"     		"2"
 			}
@@ -2889,12 +2889,6 @@
 		
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"custom_functions_ability.lua"
-				"Function"				"SwapMageSpells"
-				"isOpening"				"false"
-			}
 			"TrackingProjectile"
 			{	
 				"Target"            	"TARGET"
@@ -3302,12 +3296,6 @@
 		}
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"custom_functions_ability.lua"
-				"Function"				"SwapMageSpells"
-				"isOpening"				"false"
-			}
 			"ActOnTargets"
 			{
 				"Target"
@@ -3513,12 +3501,6 @@
 		
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"custom_functions_ability.lua"
-				"Function"				"SwapMageSpells"
-				"isOpening"				"false"
-			}
 			"TrackingProjectile"
 			{	
 				"Target"           		 "TARGET"
@@ -3716,12 +3698,6 @@
 		
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"custom_functions_ability.lua"
-				"Function"				"SwapMageSpells"
-				"isOpening"				"false"
-			}
 			"RunScript"
 			{
 				"ScriptFile"			"custom_functions_ability.lua"
@@ -4467,7 +4443,7 @@
 						}
 						"RunScript"
 						{
-							"ScriptFile"    "custom_functions_abilities.lua"
+							"ScriptFile"    "custom_functions_ability.lua"
 							"Function"      "DepressionAura"
 							"Target"        "SELF"
 						}  					
@@ -4817,7 +4793,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "LezRune"
 				"Target"        "SELF"
 			}  	
@@ -4895,7 +4871,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "NelRune"
 				"Target"        "SELF"
 			}
@@ -4973,7 +4949,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "KaRune"
 				"Target"        "SELF"
 			}
@@ -7640,7 +7616,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    		"custom_functions_abilities.lua"
+				"ScriptFile"    		"custom_functions_ability.lua"
 				"Function"      		"SwapPriestSpells"
 				"activeBook"    		"1"
 			}
@@ -7664,7 +7640,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    		"custom_functions_abilities.lua"
+				"ScriptFile"    		"custom_functions_ability.lua"
 				"Function"      		"SwapPriestSpells"
 				"activeBook"     		"2"
 			}
@@ -9264,7 +9240,7 @@
 		{            
 			"RunScript"
 			{
-				"ScriptFile"    "custom_functions_abilities.lua"
+				"ScriptFile"    "custom_functions_ability.lua"
 				"Function"      "EnsnareUnit"
 				"Target"        "TARGET"
 			}            

@@ -1075,6 +1075,7 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 	if hero:GetClassname() == "npc_dota_hero_witch_doctor" then
 		if level == 2 then
 			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
+			hero:FindAbilityByName("ability_mage_swap1"):SetHidden(false)
 			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_pumpup"):UpgradeAbility()
 			hero:FindAbilityByName("ability_mage_flamespray"):UpgradeAbility()
