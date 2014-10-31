@@ -465,15 +465,22 @@ function ITT_GameMode:OnEntityKilled(keys)
         {"npc_creep_elk_wild", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_elk", 100}, {"item_bone", 100}},
         {"npc_creep_wolf_jungle", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_wolf", 100}, {"item_bone", 100}},
         {"npc_creep_bear_jungle", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_jungle_bear", 100}, {"item_bone", 100}},
+        {"npc_creep_bear_jungle_adult", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_hide_jungle_bear", 100}, {"item_bone", 100}},
         {"npc_creep_panther", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_bone", 100}},
         {"npc_creep_panther_elder", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_bone", 100}},
         {"npc_creep_lizard", {"item_meat_raw", 100}},
         {"npc_creep_fish_green", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_meat_raw", 100}},
         {"npc_creep_fish", {"item_meat_raw", 100}},
         {"npc_creep_hawk", {"item_meat_raw", 100}, {"item_meat_raw", 100}, {"item_bone", 100}, {"item_egg_hawk", 10}}
-    }       
+    }
+	local spawnTable = { 
+						{"npc_creep_elk_wild","npc_creep_fawn"}, 
+						{"npc_creep_wolf_jungle","npc_creep_wolf_pup"},
+						{"npc_creep_bear_jungle","npc_creep_bear_cub"},
+						{"npc_creep_bear_jungle_adult","npc_creep_bear_cub"}}
+       
     local killedUnit = EntIndexToHScript(keys.entindex_killed)
-    -- local keys.entindex_attacker --long
+    local killer = EntIndexToHScript(keys.entindex_attacker)
     -- local keys.entindex_inflictor --long
     -- local keys.damagebits --long
     local unitName = killedUnit:GetUnitName() 
@@ -508,6 +515,18 @@ function ITT_GameMode:OnEntityKilled(keys)
             end
         end
     end
+	
+	--spawn young animals
+	local dieRoll = RandomInt(0,19)
+	
+	if dieRoll == 0 then
+		print("Success! Spawning young animal")
+		for _,v in pairs(spawnTable) do
+			if unitName == v[1] then
+				CreateUnitByName(v[2],killedUnit:GetOrigin(), true,nil,nil,killedUnit:GetTeam()) 
+			end
+		end
+	end
 
     --tracking number of neutrals
     --local numOfUnit = GameMode.neutralCurNum[unitName]
