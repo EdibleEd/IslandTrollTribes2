@@ -2473,7 +2473,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            "ability_mage_swap"
 		"RequiredLevel"					"2"
 		"LevelsBetweenUpgrades"			"1"
 		"MaxLevel"						"3"
@@ -2499,7 +2499,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            "ability_mage_swap"
 		"RequiredLevel"					"2"
 		"LevelsBetweenUpgrades"			"1"
 		"MaxLevel"						"3"
@@ -7629,7 +7629,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            "ability_mage_swap"
 		"MaxLevel"						"1"
 		
 		// Casting
@@ -7653,7 +7653,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            "ability_mage_swap"
 		"MaxLevel"						"1"
 		
 		// Casting
