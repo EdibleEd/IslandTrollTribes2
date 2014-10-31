@@ -340,44 +340,46 @@ function ITT_GameMode:OnPlayerPicked( keys )
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_mage_nulldamage")
+		local innate = spawnedUnit:FindAbilityByName("ability_mage_nulldamage")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_huskar" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
         spawnedUnit:AddItem(itemslotlock3)	
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_hunter_ensnare")
+		local innate = spawnedUnit:FindAbilityByName("ability_hunter_ensnare")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lion" then
  		spawnedUnit:AddItem(itemslotlock1)
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_scout_enemyradar")
+		local innate = spawnedUnit:FindAbilityByName("ability_scout_enemyradar")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_shadow_shaman" then
 		print(spawnedUnit:GetClassname() .. " is a gatherer")
  		spawnedUnit:AddItem(itemslotlock1)
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_gatherer_itemradar")
+		local innate = spawnedUnit:FindAbilityByName("ability_gatherer_itemradar")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_dazzle" then
  		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
  		spawnedUnit:AddItem(itemslotlock1)
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_priest_theglow")
+		local innate = spawnedUnit:FindAbilityByName("ability_priest_theglow")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_riki" then
   		spawnedUnit:AddItem(itemslotlock1)
  		spawnedUnit:AddItem(itemslotlock1)
 		spawnedUnit:SetAbilityPoints(0)
-		innate = spawnedUnit:FindAbilityByName("ability_thief_teleport")
+		local innate = spawnedUnit:FindAbilityByName("ability_thief_teleport")
 		innate:UpgradeAbility()
 	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lycan" then
   		spawnedUnit:AddItem(itemslotlock1)
         spawnedUnit:AddItem(itemslotlock2)
  		spawnedUnit:AddItem(itemslotlock1)
 		spawnedUnit:SetAbilityPoints(0)
+		local innate = spawnedUnit:FindAbilityByName("ability_beastmaster_tamepet")
+		innate:UpgradeAbility()
 		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_spiritofthebeast")
 		innate:UpgradeAbility()
 	else
@@ -517,13 +519,13 @@ function ITT_GameMode:OnEntityKilled(keys)
     end
 	
 	--spawn young animals
-	local dieRoll = RandomInt(0,19)
+	local dieRoll = RandomInt(0,1)
 	
 	if dieRoll == 0 then
 		print("Success! Spawning young animal")
 		for _,v in pairs(spawnTable) do
 			if unitName == v[1] then
-				CreateUnitByName(v[2],killedUnit:GetOrigin(), true,nil,nil,killedUnit:GetTeam()) 
+				CreateUnitByName(v[2],killedUnit:GetOrigin(), true,nil,nil,killer:GetTeam()) 
 			end
 		end
 	end

@@ -642,6 +642,27 @@ function EnemyRadar(keys)
         unit:EmitSound("General.Ping")   --may be deafening
 	end
 end    
+
+-- Beast Master Ability Functions
+
+function TamePet(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local unitName = target:GetUnitName()
+	local owner = caster:GetOwner()
+	
+	print(unitName)
+	if unitName == "npc_creep_fawn" then
+		target.vOwner = owner
+		target:SetControllableByPlayer(owner:GetPlayerID(), true )
+	elseif unitName == "npc_creep_wolf_pup" then
+		target.vOwner = owner	
+		target:SetControllableByPlayer(owner:GetPlayerID(), true )
+	elseif unitName == "npc_creep_bear_cub" then
+		target.vOwner = owner	
+		target:SetControllableByPlayer(owner:GetPlayerID(), true )
+	end
+end
 	
 -- Thief Ability Functions
 

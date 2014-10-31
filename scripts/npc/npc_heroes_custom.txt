@@ -398,8 +398,8 @@
         // Abilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         		"2"        
-		"Ability1"						"ability_beastmaster_spiritofthebeast"									// Ability 1
-		"Ability2"						"ability_beastmaster_tamepet"										// Ability 2
+		"Ability1"						"ability_beastmaster_spiritofthebeast"						// Ability 1
+		"Ability2"						"ability_beastmaster_tamepet"								// Ability 2
 		"Ability3"						""															// Ability 3
 		"Ability4"						""															// Ability 4
 		"Ability5"						""															// Ability 5

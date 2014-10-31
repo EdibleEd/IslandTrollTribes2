@@ -6280,6 +6280,22 @@
 // Beast Master Abilities
 //=====================================================================================================================
 	//=================================================================================================================
+	// Ability: Beastmaster - Spirit of the Beast
+	//=================================================================================================================
+	"ability_beastmaster_spiritofthebeast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName" 			"ability_beastmaster_spiritofthebeast"
+				
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+	}
+
+	//=================================================================================================================
 	// Ability: Beastmaster - Tame Pet 
 	//=================================================================================================================
 	"ability_beastmaster_tamepet"
@@ -6288,7 +6304,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"ability_beastmaster_tamepet"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
@@ -6309,25 +6325,14 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		   
-		"precache"
-		{
-		}		
+				
 		"OnSpellStart"
 		{		
 		"RunScript"
 			{
 				"ScriptFile"		"custom_functions_ability.lua"
 				"Function"			"TamePet"
-				//"Ability"			"ability_beastmaster_tamepet"
 			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
 		}
 	}
 	//=================================================================================================================
