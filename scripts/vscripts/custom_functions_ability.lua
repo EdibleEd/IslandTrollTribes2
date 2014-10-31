@@ -661,10 +661,12 @@ function TamePet(keys)
 	end
 end
 
--- cast by pet
 function GetPet(keys)
 	local caster = keys.caster
-	local owner = caster.vOwner
+	local owner = caster:GetOwner()
+	if owner == nil then
+		owner = caster.vOwner
+	end
 	local teamnumber = caster:GetTeamNumber()
 	local pet = nil
 	
@@ -682,6 +684,10 @@ function GetPet(keys)
 			pet = unit
 			break
 		end
+	end
+	
+	if pet == nil then
+		print("Failed to find pet")
 	end
 	
 	return pet
@@ -729,13 +735,55 @@ function PetCommand(keys)
 	local pet = GetPet(keys)
 	
 	if pet ~= nil then
+		print(command)
 		if command == "release" then
+			ReleasePet(caster,pet)
 		elseif command == "follow" then
+			pet:MoveToNPC(caster) 
 		elseif command == "stay" then
+			pet:Stop()
 		elseif command == "sleep" then
+			sleep = pet:FindAbilityByName("ability_pet_sleep")
+			if sleep ~= nil then
+				sleep:SetLevel(1)
+				sleep:CastAbility()
+			end
 		elseif command == "attack" then
+			pet:MoveToPositionAggressive(caster:GetAbsOrigin())
 		end
 	end	
+end
+
+function PetDeath(keys)
+	local pet = keys.caster
+	local owner = pet.vOwner
+	local hero = owner:GetAssignedHero()
+	
+	hero:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(false)
+	hero:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(true)
+	hero:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(true)
+	hero:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(true)
+	hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(true)
+	hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(true)
+end
+
+function ReleasePet(caster,pet)
+	print("Releasing pet")
+	pet:SetTeam(DOTA_TEAM_NEUTRALS)
+	caster:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(false)
+	caster:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(true)
+	caster:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(true)
+	caster:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(true)
+	caster:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(true)
+	caster:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(true)
+end
+
+function HealPet(keys)
+	local caster = keys.caster
+	local maxHealth = caster:GetMaxHealth()
+	local healAmount = maxHealth * 0.025
+	
+	caster:Heal(healAmount,nil)	
 end
 	
 -- Thief Ability Functions

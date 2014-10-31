@@ -3918,7 +3918,7 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_wander"												// Ability 1
-		"Ability2"						""												// Ability 2
+		"Ability2"						"ability_pet_sleep"												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
@@ -4000,8 +4000,8 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_npc_spellimmunity"												// Ability 1
-		"Ability2"						""												// Ability 2
-		"Ability3"						""												// Ability 3
+		"Ability2"						"ability_wander"												// Ability 2
+		"Ability3"						"ability_pet_sleep"												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
 		"Ability6" 						""												// Ability 6
@@ -4082,8 +4082,8 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"npc_lifesteal"												// Ability 1
-		"Ability2"						""												// Ability 2
-		"Ability3"						""												// Ability 3
+		"Ability2"						"ability_wander"												// Ability 2
+		"Ability3"						"ability_pet_sleep"												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
 		"Ability6" 						""												// Ability 6
@@ -4163,8 +4163,8 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"						"ability_npc_bash"												// Ability 1
-		"Ability2"						""												// Ability 2
-		"Ability3"						""												// Ability 3
+		"Ability2"						"ability_wander"												// Ability 2
+		"Ability3"						"ability_pet_sleep"												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
 		"Ability6" 						""												// Ability 6
@@ -4902,8 +4902,8 @@
 		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						""												// Ability 1
-		"Ability2"						""												// Ability 2
+		"Ability1"						"ability_wander"												// Ability 1
+		"Ability2"						"ability_pet_sleep"												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
@@ -5068,8 +5068,8 @@
 		"vscripts"							"aggressive_neutral_ai.lua"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						""												// Ability 1
-		"Ability2"						""												// Ability 2
+		"Ability1"						"ability_wander"												// Ability 1
+		"Ability2"						"ability_pet_sleep"												// Ability 2
 		"Ability3"						""												// Ability 3
 		"Ability4"						""												// Ability 4
 		"Ability5"						""												// Ability 5
