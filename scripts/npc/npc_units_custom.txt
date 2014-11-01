@@ -6706,6 +6706,16 @@
         "Ability3"                  ""
         "Ability4"                  ""
 	}
+	"dummy_caster_metronome"
+	{
+		"BaseClass"                 "npc_dota_creature"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"        "0" 
+		"VisionNighttimeRange"      "0"
+		"MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+        "MovementSpeed"				"2000"
+        "Ability1"                  "dummy_passive"    
+	}
 	"blur_illusion"
 	{
 		"BaseClass"					"npc_dota_creature"

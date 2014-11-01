@@ -2474,9 +2474,7 @@
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_mage_swap"
-		"RequiredLevel"					"2"
-		"LevelsBetweenUpgrades"			"1"
-		"MaxLevel"						"3"
+		"MaxLevel"						"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -2500,9 +2498,7 @@
 		"BaseClass"                     "ability_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_mage_swap"
-		"RequiredLevel"					"2"
-		"LevelsBetweenUpgrades"			"1"
-		"MaxLevel"						"3"
+		"MaxLevel"						"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3685,12 +3681,12 @@
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "0"
+		"AbilityCooldown"               "45"
 		"AbilityCastRange"				"700"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"               "20"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------

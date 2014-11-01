@@ -569,7 +569,7 @@ function MetronomeSpell(dummy)
 									DOTA_UNIT_TARGET_FLAG_NONE,
 									FIND_ANY_ORDER,
 									false)	
-	local count = -1
+	local count = 0
 	for _ in pairs(units) do 
 		count = count + 1 
 	end
