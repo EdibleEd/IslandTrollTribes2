@@ -529,9 +529,14 @@ function ITT_GameMode:OnEntityKilled(keys)
     end
 	
 	--spawn young animals
-	local dieRoll = RandomInt(0,19)
+	local dieRoll = RandomInt(1,20)
+	local chance = 1
+	local bonusChance = killedUnit:GetModifierStackCount("modifier_spawn_chance",nil)
+	if bonusChance ~= nil then
+		chance = chance + bonusChance
+	end
 	
-	if dieRoll == 0 then
+	if dieRoll <= chance then
 		print("Success! Spawning young animal")
 		for _,v in pairs(spawnTable) do
 			if unitName == v[1] then

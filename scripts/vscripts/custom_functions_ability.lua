@@ -446,6 +446,18 @@ function SwapMageSpells(keys)
     end
 end
 
+function SpawnMageFire(keys)
+	local caster = keys.caster
+	local spawnPosition = caster:GetAbsOrigin() + (caster:GetForwardVector() * 150) 
+	
+	CreateUnitByName("npc_building_fire_mage",
+						spawnPosition,
+						false,
+						caster,
+						caster,
+						caster:GetTeam())	
+end
+
 function ReduceFood(keys)
 	local target = keys.target
 	local reduction = RandomInt(0,2)
@@ -661,7 +673,7 @@ function TamePet(keys)
 	end
 end
 
-function GetPet(keys)
+function FindPet(keys)
 	local caster = keys.caster
 	local owner = caster:GetOwner()
 	if owner == nil then
@@ -706,7 +718,7 @@ function GrowPet(keys)
 						{"npc_creep_wolf_jungle","npc_creep_wolf_jungle_adult"},
 						{"npc_creep_bear_jungle","npc_creep_bear_jungle_adult"}}
 	
-	local pet = GetPet(keys)
+	local pet = FindPet(keys)
 	if pet ~= nil then
 		name = pet:GetUnitName()
 		print("Pet upgrade")
@@ -732,7 +744,7 @@ end
 function PetCommand(keys)
 	local caster = keys.caster
 	local command = keys.Command	
-	local pet = GetPet(keys)
+	local pet = FindPet(keys)
 	
 	if pet ~= nil then
 		print(command)
@@ -784,6 +796,26 @@ function HealPet(keys)
 	local healAmount = maxHealth * 0.025
 	
 	caster:Heal(healAmount,nil)	
+end
+
+function SetSpawnChance(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local level = caster:GetLevel()
+	
+	if keys.Remove == "1" then
+		level = 0
+	end
+	
+	target:SetModifierStackCount("modifier_spawn_chance",nil,level)
+end
+
+function AttractAnimal(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local position = caster:GetAbsOrigin() + RandomVector(RandomInt(0,100))
+	
+	target:MoveToPositionAggressive(position)
 end
 	
 -- Thief Ability Functions
