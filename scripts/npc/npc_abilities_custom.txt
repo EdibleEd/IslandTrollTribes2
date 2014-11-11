@@ -9079,7 +9079,189 @@
 			}
 		}
 	}
+			
+//=====================================================================================================================
+//General Abilities
+//=====================================================================================================================
+
 	
+	//=================================================================================================================
+	// Ability: Panic
+	//=================================================================================================================
+	"ability_panic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET |"
+		"AbilityTextureName" 			"razor_plasma_field"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_panic"
+				}
+				"FireSound"
+				{
+					"EffectName"		"Hero_Undying.FleshGolem.Cast"
+					"Target"			"CASTER"
+				}
+			}
+		"Modifiers"
+		{
+			"modifier_panic"
+			{
+				"Passive" 			"1"
+				"Hidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable" 		"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%incoming_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%attack_speed"
+				}
+			}	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed"					"20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"move_speed"					"30"
+			}	
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"incoming_damage"				"110"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Sleep Outside
+	//=================================================================================================================
+	"ability_sleepoutside"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET |"
+		"AbilityTextureName" 			"razor_plasma_field"
+		"AbilityCooldown"               "5"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_sleepoutside"
+				}
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_sleepoutsideinvul"
+				}
+				"FireSound"
+				{
+					"EffectName"		"Hero_Undying.FleshGolem.Cast"
+					"Target"			"CASTER"
+				}
+				"RunScript"
+				{
+					"ScriptFile"    	"custom_functions_ability.lua"
+					"Function"      	"RestoreMana"
+					"ManaRestored" 		"%mana_restored"
+					"Target"        	"TARGET"
+				}
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/custom_functions_item.lua"
+					"Function"				"AddHeat"
+					"Heat"					"%heat"
+				}
+				"Damage"
+				{
+					"Type"   				"DAMAGE_TYPE_PURE"
+					"Damage" 				"20"
+					"Target" 				"TARGET"
+				}
+			}
+		"Modifiers"
+		{
+			"modifier_sleepoutside" 
+			{
+				"IsDebuff"			"0"
+				"IsPurgable" 		"0"
+				"Duration"			"6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"  
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"					"TARGET"
+						"EffectName" 				"particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" 			"follow_overhead"
+ 						"EffectLifeDurationScale" 	"1"							
+					}	
+				}
+				"OnTakeDamage" 
+				{
+					"RemoveModifier" 
+					{
+						"ModifierName" 				"modifier_sleepoutside" 
+						"Target" 					"TARGET" 
+					}
+				}
+				"OnAttacked" 
+				{
+					"RemoveModifier" 
+					{
+						"ModifierName" 				"modifier_sleepoutside" 
+						"Target" 					"TARGET" 
+					}
+				}
+			}
+			"modifier_sleepoutsideinvul" 
+			{
+				"IsDebuff"			"1"
+				"IsPurgable" 		"0"
+				"Duration"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"  
+				}
+			}
+		}		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_restored"					"20"
+			}			
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heat"							"-20"
+			}
+		}
+		
 //=====================================================================================================================
 //NPC Abilities
 //=====================================================================================================================
