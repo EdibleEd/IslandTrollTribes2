@@ -5214,22 +5214,11 @@
 		
 		"OnSpellStart"
 		{
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"          			"dummy_planningphase_vision"
-				"UnitCount"						"1"
-				"UnitLimit"						"10"
-				"SpawnRadius"					"0"
-				"Duration"						"0.01"
+				"ScriptFile"					"custom_functions_ability.lua"
+				"Function"						"Teleport"
 				"Target"						"POINT"
-				
-				"OnSpawn"
-				{
-						"Blink"
-						{
-							"Target"	"TARGET"
-						}
-				}
 			}
 		}
 	}
