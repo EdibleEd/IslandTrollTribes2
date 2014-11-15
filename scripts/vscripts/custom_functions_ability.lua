@@ -647,7 +647,7 @@ function EnemyRadar(keys)
 			blueVal = 255
 		end
 	
-		local thisParticle = ParticleManager:CreateParticle("particles/ui_mouseactions/ping_world.vpcf", PATTACH_ABSORIGIN, unit)
+		local thisParticle = ParticleManager:CreateParticle("particles/ui_mouseactions/ping_world.vpcf", PATTACH_ABSORIGIN, caster:GetOwner())
         ParticleManager:SetParticleControl(thisParticle, 0, unit:GetAbsOrigin())
         ParticleManager:SetParticleControl(thisParticle, 1, Vector(redVal, greenVal, blueVal))
         ParticleManager:ReleaseParticleIndex(thisParticle)
