@@ -258,6 +258,11 @@
 						"Function"				"AddHeat"
 						"Heat"					"%heat"
 					}
+					"RemoveModifier"
+					{
+						"Target"				"TARGET"
+						"ModifierName"			"modifier_cold"
+					}
 				}
 			}
 		}
@@ -314,6 +319,11 @@
 						"ScriptFile"		"scripts/vscripts/custom_functions_item.lua"
 						"Function"			"AddHeat"
 						"Heat"				"%heat"
+					}
+					"RemoveModifier"
+					{
+						"Target"				"TARGET"
+						"ModifierName"			"modifier_cold"
 					}
 				}
 			}
@@ -4280,9 +4290,9 @@
 	//=================================================================================================================
 	"ability_mage_defenderenergy"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_defenderenergy"
-		"AbilityBehavior"		""
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_defenderenergy"
+		"AbilityBehavior"				""
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4310,9 +4320,9 @@
 	//=================================================================================================================
 	"ability_mage_electromagnet"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_electromagnet"
-		"AbilityBehavior"		""
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_electromagnet"
+		"AbilityBehavior"				""
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4340,9 +4350,11 @@
 	//=================================================================================================================
 	"ability_mage_chainlightning"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_chainlightning"
-		"AbilityBehavior"		""
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_chainlightning"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4350,12 +4362,12 @@
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "0"
-		"AbilityCastRange"				""
+		"AbilityCooldown"               "40"
+		"AbilityCastRange"				"500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"               "30"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4370,9 +4382,10 @@
 	//=================================================================================================================
 	"ability_mage_freezingblast"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_freezingblast"
-		"AbilityBehavior"		""
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_freezingblast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AOERadius"						"300"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4380,12 +4393,12 @@
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "0"
-		"AbilityCastRange"				""
+		"AbilityCooldown"               "60"
+		"AbilityCastRange"				"800"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"               "25"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4393,6 +4406,54 @@
 
 		"OnSpellStart"
 		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  			"POINT"
+					"Radius"  			"300"
+					"Teams"  			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   			"DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"35"
+					}
+					"ApplyModifier"
+					{
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_cold"
+						"Duration"		"25"
+					}
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cold"
+			{
+				"IsDebuff"				"1"
+				"IsPurgable"			"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-10"
+				}
+				"ThinkInterval"			"1.25"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/custom_functions_item.lua"
+						"Function"		"AddHeat"
+						"Heat"			"-1"
+					}
+				}
+			}
 		}
 	}
 	//=================================================================================================================
@@ -4400,9 +4461,9 @@
 	//=================================================================================================================
 	"ability_mage_stormearthfire"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_stormearthfire"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_stormearthfire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4421,73 +4482,75 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"	
 		
-		
 		"OnSpellStart"
 		{
 			"ActOnTargets"
 		  {
 			"Target"
 			{
-			  "Center"  "CASTER"
-			  "Radius"  "%ewf_radius"
-			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			  "Types"   "DOTA_UNIT_TARGET_HERO"
+			  "Center"  				"CASTER"
+			  "Radius"  				"%ewf_radius"
+			  "Teams"   				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			  "Types"   				"DOTA_UNIT_TARGET_HERO"
 			}
 			"Action"
 			{
 			  "Damage"
 			  {
-				"Type" "DAMAGE_TYPE_MAGICAL"
-				"Damage" "%damage"
-				"Target" "TARGET"
+				"Type" 					"DAMAGE_TYPE_MAGICAL"
+				"Damage" 				"%damage"
+				"Target" 				"TARGET"
 			  }          
 			}
 		  }
 		  "FireEffect"
 		  {
-			"TargetPoint" "POINT"
-			"EffectName" "generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" "follow_origin"
-			"EffectRadius" "320"
-			"EffectDurationScale" "1"
-			"EffectLifeDurationScale" "1"
-			"EffectColorA" "25 50 200"
-			"EffectColorB" "25 50 200"
+			"TargetPoint" 				"POINT"
+			"EffectName" 				"generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" 			"follow_origin"
+			"EffectRadius" 				"320"
+			"EffectDurationScale" 		"1"
+			"EffectLifeDurationScale" 	"1"
+			"EffectColorA" 				"25 50 200"
+			"EffectColorB" 				"25 50 200"
 		  }
 		  "FireEffect"
 		  {
-			"TargetPoint" "POINT"
-			"EffectName" "generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" "follow_origin"
-			"EffectRadius" "320"
-			"EffectDurationScale" "1"
-			"EffectLifeDurationScale" "1"
-			"EffectColorA" "205 50 200"
-			"EffectColorB" "205 50 200"
+			"TargetPoint" 				"POINT"
+			"EffectName" 				"generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" 			"follow_origin"
+			"EffectRadius" 				"320"
+			"EffectDurationScale" 		"1"
+			"EffectLifeDurationScale" 	"1"
+			"EffectColorA" 				"205 50 200"
+			"EffectColorB" 				"205 50 200"
 		  }
 		  "FireEffect"
 		  {
-			"TargetPoint" "POINT"
-			"EffectName" "generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" "follow_origin"
-			"EffectRadius" "320"
-			"EffectDurationScale" "1"
-			"EffectLifeDurationScale" "1"
-			"EffectColorA" "255 0 0"
-			"EffectColorB" "255 0 0"
+			"TargetPoint"				"POINT"
+			"EffectName" 				"generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" 			"follow_origin"
+			"EffectRadius" 				"320"
+			"EffectDurationScale" 		"1"
+			"EffectLifeDurationScale" 	"1"
+			"EffectColorA" 				"255 0 0"
+			"EffectColorB" 				"255 0 0"
 		  }
 		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"ewf_radius"		"315"
+				"var_type"				"FIELD_INTEGER"
+				"ewf_radius"			"315"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"40"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40"
 			}
 		}
 	}

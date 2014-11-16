@@ -1075,7 +1075,6 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 	local player = EntIndexToHScript(event.player)
 	local hero = player:GetAssignedHero()
 	local level = event.level
-	hero:SetAbilityPoints(0)
 	
 	if hero:GetClassname() == "npc_dota_hero_witch_doctor" then
 		if level == 2 then
