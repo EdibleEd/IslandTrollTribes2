@@ -3701,7 +3701,9 @@
 			}
 		}		
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Frost Nova
+	//=================================================================================================================
 	"ability_metronome_frostnova"
 	{	
 		"BaseClass"						"ability_datadriven"
@@ -3784,9 +3786,10 @@
 				}
 			}
 		}
-
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Cyclone
+	//=================================================================================================================
 	"ability_metronome_cyclone"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -3831,7 +3834,9 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Tsunami
+	//=================================================================================================================	
 	"ability_metronome_tsunami"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -3895,7 +3900,9 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Mana Burn
+	//=================================================================================================================	
 	"ability_metronome_manaburn"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -3930,7 +3937,9 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Impale
+	//=================================================================================================================
 	"ability_metronome_impale"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -4015,7 +4024,9 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Ability: Mage - Metronome - Poison Thistle
+	//=================================================================================================================
 	"ability_metronome_poisonthistle"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -4076,9 +4087,8 @@
 				{
 					"Center"		"TARGET"
 					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"			"DOTA_UNIT_TARGET_CREEP"
-			
-	}
+					"Types"			"DOTA_UNIT_TARGET_CREEP"			
+				}
 			}
 			"Damage"
 			{
@@ -4127,15 +4137,14 @@
 			}
 		}
 	}
-
 	//=================================================================================================================
 	// Ability: Mage - Eruption
 	//=================================================================================================================
 	"ability_mage_eruption"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_eruption"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_eruption"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4209,9 +4218,9 @@
 	//=================================================================================================================
 	"ability_mage_spittingfire"
 	{
-		"BaseClass"				"ability_datadriven"
-		"AbilityTextureName"	"ability_mage_spitfire"
-		"AbilityBehavior"		""
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_mage_spitfire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4219,12 +4228,11 @@
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "0"
-		"AbilityCastRange"				""
+		"AbilityCooldown"               "50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"               "25"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4232,6 +4240,39 @@
 
 		"OnSpellStart"
 		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  			"CASTER"
+					"Radius"  			"800"
+					"Teams"  			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   			"DOTA_UNIT_TARGET_HERO"
+					"MaxTargets"		"6"
+					"Random"			"true"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Type" 			"DAMAGE_TYPE_MAGICAL"
+						"Damage" 		"20"
+						"Target" 		"TARGET"
+					}          
+					"Damage"
+					{
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"20"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"200"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO"
+						}
+					}
+				}
+			}
 		}
 	}
 	//=================================================================================================================
