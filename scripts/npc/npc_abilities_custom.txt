@@ -4226,7 +4226,7 @@
 	//=================================================================================================================
 	// Ability: Mage - Spitting Fire
 	//=================================================================================================================
-	"ability_mage_spittingfire"
+	"ability_mage_spitfire"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_mage_spitfire"
@@ -4322,27 +4322,86 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ability_mage_electromagnet"
-		"AbilityBehavior"				""
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime" 			"2" 
 
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "0"
-		"AbilityCastRange"				""
+		"AbilityCooldown"               "90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "0"
+		"AbilityManaCost"               "30"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"	
+		
+		"Precache"
+		{
+			"Particle"					"particles/units/heroes/hero_razor/razor_static_link_beam.vpcf"
+		}
 
 		"OnSpellStart"
 		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius"  				"700"
+					"Teams"  				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   				"DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_pulled"
+						"Duration"			"2"
+					}
+				}
+			}
+		}
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius"  				"700"
+					"Teams"  				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   				"DOTA_UNIT_TARGET_HERO"
+				}
+				"ModifierName"				"modifier_pulled"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_pulled"
+			{
+				"IsHidden"					"1"
+				"IsPurgable"				"0"
+				"ThinkInterval"				"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"custom_functions_ability"
+						"Function"			"PullCloser"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 		}
 	}
 	//=================================================================================================================

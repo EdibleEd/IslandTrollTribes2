@@ -618,6 +618,24 @@ function MetronomeManaBurn(keys)
 	target:EmitSound("Hero_NyxAssassin.ManaBurn.Target")
 end
 
+function PullCloser(keys)
+	local caster = keys.caster
+	local casterPosition = caster:GetAbsOrigin()
+	local target = keys.target
+	local targetPosition = target:GetAbsOrigin()
+	
+	local pull = ParticleManager:CreateParticle("particles/units/heroes/hero_razor/razor_static_link_beam.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(pull,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z+((target:GetBoundingMaxs().z - target:GetBoundingMins().z)/2)))
+	
+    local direction = casterPosition - targetPosition
+    local vec = direction:Normalized() * 30.0
+	target:SetAbsOrigin(targetPosition + vec)
+	FindClearSpaceForUnit(target,target:GetAbsOrigin(),true)
+	
+	-- disabled particle, stays infinitely in current implementation, causing huge lag
+	ParticleManager:DestroyParticle(pull,false)
+end
+
 function ChainLightning(keys)
 	local caster = keys.caster
 	local target = keys.target
@@ -632,7 +650,7 @@ function ChainLightning(keys)
 	local damageTable = {victim = target, attacker = caster, damage = dmg, damage_type = DAMAGE_TYPE_MAGICAL}
 	ApplyDamage(damageTable)
 	table.insert(hitUnits, target)
-	lightningBolt = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	local lightningBolt = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(lightningBolt,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z+((target:GetBoundingMaxs().z - target:GetBoundingMins().z)/2)))
 	
 	for i=0,bounces do
