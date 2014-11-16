@@ -4372,9 +4372,23 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"	
+		
+		"Precache"
+		{
+			"particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+		}
 
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"ChainLightning"
+				"Damage"				"45"
+				"Bounces"				"3"
+				"BounceRadius"			"1500"
+				"BounceDamageFactor"	"0.9"
+			}
 		}
 	}
 	//=================================================================================================================
