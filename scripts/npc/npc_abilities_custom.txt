@@ -4133,54 +4133,225 @@
 	//=================================================================================================================
 	"ability_mage_eruption"
 	{
-	"BaseClass"				"ability_datadriven"
-	"AbilityTextureName"	"ability_mage_eruption"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_eruption"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "60"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
 		"OnSpellStart"
 		{
 			"ActOnTargets"
-		  {
-			"Target"
 			{
-			  "Center"  "CASTER"
-			  "Radius"  "%eruption_radius"
-			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			  "Types"   "DOTA_UNIT_TARGET_HERO"
+				"Target"
+				{
+					"Center"  			"CASTER"
+					"Radius"  			"%eruption_radius"
+					"Teams"  			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   			"DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Type" 			"DAMAGE_TYPE_MAGICAL"
+						"Damage" 		"%damage"
+						"Target" 		"TARGET"
+					}          
+				}
 			}
-			"Action"
+			"FireEffect"
 			{
-			  "Damage"
-			  {
-				"Type" "DAMAGE_TYPE_MAGICAL"
-				"Damage" "%damage"
-				"Target" "TARGET"
-			  }          
+				"TargetPoint" 			"POINT"
+				"EffectName" 			"generic_aoe_explosion_sphere_1_a"
+				"EffectAttachType" 		"follow_origin"
+				"EffectRadius" 			"260"
+				"EffectDurationScale" 	"1"
+				"EffectLifeDurationScale" "1"
+				"EffectColorA" 			"25 50 200"
+				"EffectColorB" 			"25 50 200"
 			}
-		  }
-		  "FireEffect"
-		  {
-			"TargetPoint" "POINT"
-			"EffectName" "generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" "follow_origin"
-			"EffectRadius" "260"
-			"EffectDurationScale" "1"
-			"EffectLifeDurationScale" "1"
-			"EffectColorA" "25 50 200"
-			"EffectColorB" "25 50 200"
-		  }
 		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"eruption_radius"		"315"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"40"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40"
 			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Spitting Fire
+	//=================================================================================================================
+	"ability_mage_spittingfire"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_spitfire"
+		"AbilityBehavior"		""
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Defender Energy
+	//=================================================================================================================
+	"ability_mage_defenderenergy"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_defenderenergy"
+		"AbilityBehavior"		""
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Electromagnet
+	//=================================================================================================================
+	"ability_mage_electromagnet"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_electromagnet"
+		"AbilityBehavior"		""
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Chain Lightning
+	//=================================================================================================================
+	"ability_mage_chainlightning"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_chainlightning"
+		"AbilityBehavior"		""
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mage - Freezing Blast
+	//=================================================================================================================
+	"ability_mage_freezingblast"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_freezingblast"
+		"AbilityBehavior"		""
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+
+		"OnSpellStart"
+		{
 		}
 	}
 	//=================================================================================================================
@@ -4188,9 +4359,28 @@
 	//=================================================================================================================
 	"ability_mage_stormearthfire"
 	{
-	"BaseClass"				"ability_datadriven"
-	"AbilityTextureName"	"ability_mage_stormearthfire"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"	"ability_mage_stormearthfire"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0"
+		"AbilityCastRange"				""
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"	
+		
+		
 		"OnSpellStart"
 		{
 			"ActOnTargets"
