@@ -909,7 +909,7 @@ function Shapeshift(keys)
 			ability:SetHidden(hidden)
 		end
 	end
-	end
+end
 	
 -- Thief Ability Functions
 

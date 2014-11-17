@@ -7646,10 +7646,11 @@
 				"ModelName"				"models/heroes/lone_druid/spirit_bear.vmdl"
 				"Properties"
 				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"-1"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"	
-					"MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS"					"%health_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"					"%health_bonus"
 					//"MODIFIER_PROPERTY_MODEL_CHANGE"
 				}
 			}
@@ -7738,6 +7739,7 @@
 				"ModelName"				"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
 				"Properties"
 				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"-1"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"				
@@ -7825,6 +7827,7 @@
 				"ModelName"				"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
 				"Properties"
 				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"-1"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"			
