@@ -2495,7 +2495,7 @@
 			"RunScript"
 			{
 				"ScriptFile"    		"custom_functions_ability.lua"
-				"Function"      		"SwapMageSpells"
+				"Function"      		"SwapSpellBook"
 				"activeBook"    		"1"
 			}
 		}
@@ -2519,7 +2519,7 @@
 			"RunScript"
 			{
 				"ScriptFile"    		"custom_functions_ability.lua"
-				"Function"      		"SwapMageSpells"
+				"Function"      		"SwapSpellBook"
 				"activeBook"     		"2"
 			}
 		}
@@ -8056,7 +8056,7 @@
 			"RunScript"
 			{
 				"ScriptFile"    		"custom_functions_ability.lua"
-				"Function"      		"SwapPriestSpells"
+				"Function"      		"SwapSpellBook"
 				"activeBook"    		"1"
 			}
 		}
@@ -8080,7 +8080,7 @@
 			"RunScript"
 			{
 				"ScriptFile"    		"custom_functions_ability.lua"
-				"Function"      		"SwapPriestSpells"
+				"Function"      		"SwapSpellBook"
 				"activeBook"     		"2"
 			}
 		}

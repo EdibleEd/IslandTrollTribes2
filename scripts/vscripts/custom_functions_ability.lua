@@ -1,3 +1,12 @@
+-- Global variables
+HUNTER = "npc_dota_hero_huskar"
+PRIEST = "npc_dota_hero_dazzle"
+MAGE = "npc_dota_hero_witch_doctor"
+BEASTMASTER = "npc_dota_hero_lycan"
+THIEF = "npc_dota_hero_riki"
+SCOUT = "npc_dota_hero_lion"
+GATHERER = "npc_dota_hero_shadow_shaman"
+
 --Gatherer Ability Functions
 
 --[[Pings the items in parameter ItemTable with their corresponding color]]
@@ -413,38 +422,6 @@ end
 
 -- Mage Ability Functons
 
-function SwapMageSpells(keys)
-    local caster = keys.caster
-    local book = keys.activeBook
-		
-	if book == 1 then
-		book1 = caster:FindAbilityByName("ability_mage_swap1")	
-		book2 = caster:FindAbilityByName("ability_mage_swap2")	
-		book1:SetHidden(true)
-		book2:SetHidden(false)
-		caster:FindAbilityByName("ability_mage_nulldamage"):SetHidden(true)
-		caster:FindAbilityByName("ability_mage_pumpup"):SetHidden(true)
-        caster:FindAbilityByName("ability_mage_magefire"):SetHidden(true)
-        caster:FindAbilityByName("ability_mage_reducefood"):SetHidden(true)
-        caster:FindAbilityByName("ability_mage_negativeblast"):SetHidden(false)
-		caster:FindAbilityByName("ability_mage_flamespray"):SetHidden(false)
-        caster:FindAbilityByName("ability_mage_depress"):SetHidden(false)
-        caster:FindAbilityByName("ability_mage_metronome"):SetHidden(false)
-	else
-		book1 = caster:FindAbilityByName("ability_mage_swap1")	
-		book2 = caster:FindAbilityByName("ability_mage_swap2")	
-		book2:SetHidden(true)
-		book1:SetHidden(false)
-        caster:FindAbilityByName("ability_mage_nulldamage"):SetHidden(false)
-		caster:FindAbilityByName("ability_mage_pumpup"):SetHidden(false)
-        caster:FindAbilityByName("ability_mage_magefire"):SetHidden(false)
-        caster:FindAbilityByName("ability_mage_reducefood"):SetHidden(false)
-        caster:FindAbilityByName("ability_mage_negativeblast"):SetHidden(true)
-		caster:FindAbilityByName("ability_mage_flamespray"):SetHidden(true)
-        caster:FindAbilityByName("ability_mage_depress"):SetHidden(true)
-        caster:FindAbilityByName("ability_mage_metronome"):SetHidden(true)
-    end
-end
 
 function SpawnMageFire(keys)
 	local caster = keys.caster
@@ -937,41 +914,6 @@ end
 
 -- Priest Ability Functions
 
-function SwapPriestSpells(keys)
-    local caster = keys.caster
-    local book = keys.activeBook
-		
-	if book == 1 then
-		book1 = caster:FindAbilityByName("ability_priest_swap1")	
-		book2 = caster:FindAbilityByName("ability_priest_swap2")	
-		book1:SetHidden(true)
-		book2:SetHidden(false)
-		caster:FindAbilityByName("ability_priest_theglow"):SetHidden(true)
-		caster:FindAbilityByName("ability_priest_cureall"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_resistall"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_pumpup"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_sprayhealing"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_pacifyingsmoke"):SetHidden(false)
-		caster:FindAbilityByName("ability_priest_mixheat"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_mixenergy"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_mixhealth"):SetHidden(false)
-	else
-		book1 = caster:FindAbilityByName("ability_priest_swap1")	
-		book2 = caster:FindAbilityByName("ability_priest_swap2")	
-		book2:SetHidden(true)
-		book1:SetHidden(false)
-		caster:FindAbilityByName("ability_priest_theglow"):SetHidden(false)
-		caster:FindAbilityByName("ability_priest_cureall"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_resistall"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_pumpup"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_sprayhealing"):SetHidden(false)
-        caster:FindAbilityByName("ability_priest_pacifyingsmoke"):SetHidden(true)
-		caster:FindAbilityByName("ability_priest_mixheat"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_mixenergy"):SetHidden(true)
-        caster:FindAbilityByName("ability_priest_mixhealth"):SetHidden(true)
-    end
-end
-
 function MixHeat(keys)
 	local caster = keys.caster
 	local target = keys.target
@@ -1022,6 +964,68 @@ function CureAll(keys)
 end
 
 --utility functions
+function SwapSpellBook(keys)
+    local caster = keys.caster
+    local book = keys.activeBook
+	local class = caster:GetClassname()
+	local book1 = {}
+	local book2 = {}
+	
+	mage_book1Spells = {
+		"ability_mage_swap1",
+		"ability_mage_nulldamage",
+		"ability_mage_pumpup",
+		"ability_mage_magefire",
+		"ability_mage_reducefood"
+	}	
+	mage_book2Spells = {
+		"ability_mage_swap2",
+		"ability_mage_negativeblast",
+		"ability_mage_flamespray",
+		"ability_mage_depress",
+		"ability_mage_metronome"
+	}	
+	priest_book1Spells = {
+		"ability_priest_swap1",
+		"ability_priest_theglow",
+		"ability_priest_cureall",
+		"ability_priest_resistall",
+		"ability_priest_pumpup",
+		"ability_priest_sprayhealing",
+	}
+	priest_book2Spells = {
+		"ability_priest_swap2",
+		"ability_priest_pacifyingsmoke",
+		"ability_priest_mixheat",
+		"ability_priest_mixenergy",
+		"ability_priest_mixhealth",
+	}
+	
+	local HideBook1 = true
+	local HideBook2 = false
+	if book == 2 then
+		HideBook1 = false
+		HideBook2 = true
+	end
+	
+	if class == MAGE then
+		book1 = mage_book1Spells
+		book2 = mage_book2Spells
+	elseif class == PRIEST then
+		book1 = priest_book1Spells
+		book2 = priest_book2Spells
+	end
+		
+	for _,spell in pairs(book1) do
+		ability = caster:FindAbilityByName(spell)
+		ability:SetHidden(HideBook1)
+	end
+	for _,spell in pairs(book2) do
+		ability = caster:FindAbilityByName(spell)
+		ability:SetHidden(HideBook2)
+	end
+end
+
 function callModApplier( caster, modName, abilityLevel)
     if abilityLevel == nil then
         abilityLevel = 1
