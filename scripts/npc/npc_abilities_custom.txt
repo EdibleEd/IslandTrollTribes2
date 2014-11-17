@@ -9062,7 +9062,7 @@
 		"AbilityTextureName"			"ability_priest_rangedheal"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
 		// Casting
@@ -9072,7 +9072,7 @@
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"               "20"
-		"AbilityCastRange"				"%range"
+		"AbilityCastRange"				"6000"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -9086,36 +9086,24 @@
 		{
 			"Heal"
 			{
-				"HealAmount"	"%heal_amount"
-				"Target"
-				{
-					"Target"		"TARGET"		
-					"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
-				}
+				"HealAmount"			"%heal_amount"
+				"Target"				"TARGET"
 			}	
 			"FireSound"
 			{
-				"EffectName"		"Hero_Dazzle.Shadow_Wave"
-				"Target"			"CASTER"
+				"EffectName"			"Hero_Dazzle.Shadow_Wave"
+				"Target"				"CASTER"
 			}
 		}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"heal_amount"					"50"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"63000"
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"50"
 			}
 		}
 	}
@@ -9129,7 +9117,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"ability_priest_replenish"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
@@ -9149,69 +9137,57 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"                      "1"
+		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		   
-		"precache"
-		{
-		}
+		
 		"OnSpellStart"
 		{		
 			"ApplyModifier"
 			{
-				"ModifierName"  "modifier_replenish"
-				"Duration"      "%replenish_duration"
-				"Target"        
-				{
-					"Target"	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				}
+				"ModifierName"  		"modifier_replenish"
+				"Duration"      		"%replenish_duration"
+				"Target"        		"TARGET"
 			}   
 			"FireSound"
 			{
-			"EffectName" 		"Hero_Dazzle.Weave"
-			"Target" 			"TARGET"
+				"EffectName" 			"Hero_Dazzle.Weave"
+				"Target" 				"TARGET"
 			}	
 		}			
 		"Modifiers"
 		{
 			"modifier_replenish"
 			{
-				"IsDebuff" 			"0"
-				"IsPurgable" 		"1"
-				"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
+				"IsDebuff" 				"0"
+				"IsPurgable" 			"1"
+				"EffectName"			"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"         
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
-						"Target" "TARGET"
-						"EffectName" "particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//something heal related
+						"Target" 		"TARGET"
+						"EffectName" 	"particles/econ/wards/bane/bane_ward/bane_ward_droplets.vpcf"	//something heal related
 						"EffectAttachType" "follow_overhead"
 					}
 				}
-					"ThinkInterval" 	"1"
-					"OnIntervalThink"
+				"ThinkInterval" 	"1"
+				"OnIntervalThink"
+				{
+					"Heal"
 					{
-						"Heal"
-						{
-							"HealAmount"	"%heal_amount"
-							"Target"
-							{
-								"Target"		"TARGET"		
-								"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-								"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"					
-							}
-						}	
-					}
-					"OnTakeDamage"
+						"HealAmount"	"%heal_amount"
+						"Target"		"TARGET"
+					}	
+				}
+				"OnTakeDamage"
+				{
+					"RemoveModifier"
 					{
-						"RemoveModifier"
-						{
-							"Target"		"TARGET"
-							"ModifierName"	"modifier_replenish"
-						}
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_replenish"
 					}
+				}
 			}
 		}
 		// Special

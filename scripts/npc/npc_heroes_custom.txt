@@ -544,10 +544,10 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         "6"        
 
-        "Ability1"              "ability_mage_eruption"
-        "Ability2"              "ability_mage_spittingfire"
-        "Ability3"              "ability_mage_defenderenergy"
-        "Ability4"              "ability_mage_electromagnet"
+        "Ability1"              "ability_priest_selfpreservation"
+        "Ability2"              "ability_priest_rangedheal"
+        "Ability3"              "ability_priest_replenish"
+        "Ability4"              "ability_priest_healingwave"
         "Ability5"              "ability_mage_chainlightning"
         "Ability6"              "ability_mage_freezingblast"
         "Ability7"              "ability_mage_stormearthfire"
