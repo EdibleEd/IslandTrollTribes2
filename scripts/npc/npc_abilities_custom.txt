@@ -1042,7 +1042,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_itemradar"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "T" //Overlaps, but is replaced when Radar Manipulations is used
+		//"HotKeyOverride"                "T" //Overlaps, but is replaced when Radar Manipulations is used
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1138,7 +1138,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findmushroomstickortinder"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "T"
+		////"HotKeyOverride"                "T"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1208,7 +1208,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findhide"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "H"
+		//"HotKeyOverride"                "H"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1278,7 +1278,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findclayballcookedmeatorbone"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "C"
+		//"HotKeyOverride"                "C"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1348,7 +1348,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"            "ability_gatherer_findmanacrystalorstone"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "M"
+		//"HotKeyOverride"                "M"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1417,7 +1417,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_findflint"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "F"
+		//"HotKeyOverride"                "F"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1485,7 +1485,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_findmagic"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "D"
+		//"HotKeyOverride"                "D"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1553,7 +1553,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_mixherbs"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "X"
+		//"HotKeyOverride"                "X"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1583,7 +1583,7 @@
 		"AbilityUnitTargetType"		    "DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"            "ability_gatherer_telegather"
 		"MaxLevel"						"3"
-		"HotKeyOverride"                "T"
+		//"HotKeyOverride"                "T"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -1659,7 +1659,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"            "ability_gatherer_itemwarp"
 		"MaxLevel"						"1"
-		"HotKeyOverride"                "X"
+		//"HotKeyOverride"                "X"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -2135,7 +2135,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_hunter_demoralizingwarcry"	
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		
@@ -2535,7 +2535,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName" 			"ability_mage_magefire"
-		"HotKeyOverride"				"M"
+		//"HotKeyOverride"				"M"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -2580,7 +2580,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_nulldamage"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -2721,7 +2721,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_quantumnulldamage"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -2863,7 +2863,7 @@
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_negativeblast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -2999,7 +2999,7 @@
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_giganegativeblast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -3134,7 +3134,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_maddeningdischarge"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -3274,7 +3274,7 @@
 		"BaseClass"							"ability_datadriven"		
 		"AbilityBehavior"               	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName" 				"ability_mage_flamespray"
-		"HotKeyOverride"					"F"
+		//"HotKeyOverride"					"F"
 		"AbilityCastAnimation"				"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -3350,7 +3350,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_pumpup"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -3475,7 +3475,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_depress"
-		"HotKeyOverride"				"G"
+		//"HotKeyOverride"				"G"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -3645,7 +3645,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"ability_mage_reducefood"
-		"HotKeyOVerride"				"R"
+		//"HotKeyOverride"				"R"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3683,7 +3683,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"			"ability_mage_metronome"
-		"HotKeyOVerride"				"R"
+		//"HotKeyOverride"				"R"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4639,7 +4639,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_anger"
-		"HotKeyOverride"				"A"
+		//"HotKeyOverride"				"A"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -4845,7 +4845,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_seizures"
-		"HotKeyOverride"				"S"
+		//"HotKeyOverride"				"S"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
@@ -4970,7 +4970,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName" 			"ability_mage_stupefyingfield"
-		"HotKeyOverride"				"S"
+		//"HotKeyOverride"				"S"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		
 		// Casting
@@ -5117,7 +5117,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName" 			"ability_mage_lezrune"
-		"HotKeyOverride"				"E"
+		//"HotKeyOverride"				"E"
 		"AbilityCastAnimation"			""
 		
 		// Casting
@@ -5195,7 +5195,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName" 			"ability_mage_nelrune"
-		"HotKeyOverride"				"E"
+		//"HotKeyOverride"				"E"
 		"AbilityCastAnimation"			""
 		
 		// Casting
@@ -5273,7 +5273,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName" 			"ability_mage_karune"
-		"HotKeyOverride"				"E"
+		//"HotKeyOverride"				"E"
 		"AbilityCastAnimation"			""
 		
 		// Casting
@@ -5390,7 +5390,7 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName" 			"ability_scout_reveal"
-		"HotKeyOverride"				"V"
+		//"HotKeyOverride"				"V"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -5559,7 +5559,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_datadriven"
 		"AbilityBehavior"              			"DOTA_ABILITY_BEHAVIOR_POINT"
-		"HotKeyOverride"						"T"
+		//"HotKeyOverride"						"T"
 		"AbilityTextureName"					"ability_thief_teleport"
 		
 		// Casting
@@ -5599,7 +5599,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_datadriven"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"HotKeyOverride"						"w"
+		//"HotKeyOverride"						"w"
 		"AbilityTextureName"					"ability_thief_cloak"
 		
 		// Casting
@@ -5680,7 +5680,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_datadriven"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"HotKeyOverride"						"w"
+		//"HotKeyOverride"						"w"
 		"AbilityTextureName"					"ability_thief_cloak"
 		
 		// Casting
@@ -6208,7 +6208,7 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType" 			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"				"ability_thief_throwingknife"
-		"HotKeyOVerride"					"x"
+		//"HotKeyOverride"					"x"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6333,7 +6333,7 @@
 		"BaseClass"							"ability_datadriven"
 		"AbilityTextureName"				"ability_thief_planningphase"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"HotKeyOVerride"					"z"
+		//"HotKeyOverride"					"z"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6510,7 +6510,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_datadriven"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"HotKeyOverride"						"w"
+		//"HotKeyOverride"						"w"
 		"AbilityTextureName"					"ability_thief_assassinate"
 		
 		// Casting
@@ -8255,7 +8255,7 @@
 		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"ability_mage_pumpup"
-		"HotKeyOverride"				"D"
+		//"HotKeyOverride"				"D"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Casting
