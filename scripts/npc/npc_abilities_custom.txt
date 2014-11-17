@@ -7889,29 +7889,29 @@
 				{
 					"Random"
 					{
-						"Chance" "%bash_chance"
+						"Chance" 		"%bash_chance"
 						"OnSuccess"
 						{
 							"ApplyModifier"
 							{
-								"Target"	   "CASTER"
+								"Target"	   "TARGET"
 								"ModifierName" "modifier_bear_bash"
 							}		
 						}
 					}
 				}
 			}
-		"modifier_bear_bash"
+			"modifier_bear_bash"
+			{
+				"EffectName" 			"generic_stunned"
+				"EffectAttachType" 		"follow_overhead"
+				"Duration"  			"1.0"
+				"OverrideAnimation" 	"ACT_DOTA_DISABLED"
+				"States"
 				{
-						 "EffectName" "generic_stunned"
-						 "EffectAttachType" "follow_overhead"
-						 "Duration"  "1.0"
-						 "OverrideAnimation" "ACT_DOTA_DISABLED"
-						 "States"
-						 {
-						   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-						 }			
-				}
+					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+				}				
+			}
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
