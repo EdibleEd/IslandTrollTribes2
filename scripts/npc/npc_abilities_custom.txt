@@ -7884,8 +7884,8 @@
 		{
 			"modifier_bear_bash_passive"
 			{
-				"Passive" "1"
-				"OnAttackStart"
+				"Passive" 				"1"
+				"OnAttackLanded"
 				{
 					"Random"
 					{
@@ -7896,7 +7896,7 @@
 							{
 								"Target"	   "TARGET"
 								"ModifierName" "modifier_bear_bash"
-							}		
+							}
 						}
 					}
 				}
@@ -7932,64 +7932,63 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"ability_datadriven"
-		"AbilityTextureName"		"ability_beastmaster_slam"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityCastAnimation"		"1"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_slam"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityCastAnimation"			"1"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint" 			"0.5"
-		
+		"AbilityCastPoint" 				"0.5"
+			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"                  "1"
+		"MaxLevel"                  	"1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"Precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+		}
 		
 		"OnSpellStart"
 		{
 			"ActOnTargets"
-		  {
-			"Target"
 			{
-			  "Center"  "CASTER"
-			  "Radius"  "%slam_radius"
-			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			  "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Target"
+				{
+					"Center"  			"CASTER"
+					"Radius"  			"%slam_radius"
+					"Teams"   			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"   			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target" 		"TARGET"
+						"Type" 			"DAMAGE_TYPE_MAGICAL"
+						"Damage" 		"%damage"
+					}
+					"ApplyModifier"
+					{
+						"Target"		"TARGET"
+						"ModifierName" 	"bear_slam_slow"
+						"Duration"		"4"
+					}	
+				}
 			}
-			"Action"
-			{
-			  "Damage"
-			  {
-				"Type" "DAMAGE_TYPE_MAGICAL"
-				"Damage" "%damage"
-				"Target" "TARGET"
-			  }          
+			"FireEffect"
+			{	
+				"TargetPoint" 			"POINT"
+				"EffectName" 			"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+				"EffectAttachType" 		"follow_origin"
+				"EffectRadius"		 	"%slam_radius"
 			}
-			"ApplyModifier"
-			{
-			"Target"				    "POINT"
-			"Radius"  					"%slam_radius"
-			"Teams"   					"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"Types"  					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"ModifierName" 				"bear_slammed"
-			}	
-		  }
-		  "FireEffect"
-		  {
-			"TargetPoint" 			"POINT"
-			"EffectName" 			"generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" 		"follow_origin"
-			"EffectRadius"		 	"%slam_radius"
-		  }
 		}
 		"Modifiers"
 		{
-			"bear_slammed"
+			"bear_slam_slow"
 			{
-				"Duration"      "%slow_duration"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%slow"
@@ -8001,18 +8000,18 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"slam_radius"		"315"
+				"var_type"				"FIELD_INTEGER"
+				"slam_radius"			"315"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"65"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"65"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-50"
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-50"
 			}
 		}
 	}
