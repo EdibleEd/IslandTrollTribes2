@@ -254,6 +254,7 @@ function Precache( context )
 	PrecacheUnitByNameSync( "npc_hero_priest_booster", context )
 	PrecacheUnitByNameSync( "npc_hero_priest_master_healer", context )
 	PrecacheUnitByNameSync( "npc_hero_priest_sage", context )
+	PrecacheUnitByNameSync(	"scout_ward", context)
 
 	PrecacheResource("model", "models/props_debris/camp_fire001.vmdl",context)
 	PrecacheResource("model", "models/props_structures/tent_dk_small.vmdl",context)

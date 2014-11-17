@@ -707,6 +707,22 @@ function EnemyRadar(keys)
 	end
 end    
 
+function WardArea(keys)
+	local caster = keys.caster
+	local radius = keys.Radius
+	local abilityLevel = caster:FindAbilityByName("ability_scout_wardthearea"):GetLevel()
+	local wards = abilityLevel + 1
+	local casterPosition = caster:GetAbsOrigin()
+	
+	for i = 1, wards do
+		local team = caster:GetTeam()
+		local randomLocation = casterPosition + RandomVector(RandomInt(0,800))
+		local ward = CreateUnitByName("scout_ward",randomLocation,true,nil,nil,team)
+		local lifetime = ward:FindAbilityByName("ability_scout_ward_lifetime")
+		lifetime:SetLevel(abilityLevel)
+	end
+end
+
 -- Beast Master Ability Functions
 
 function TamePet(keys)
@@ -889,15 +905,16 @@ function Teleport(keys)
 	end
 end
 
-function BlurCollisionCheck(keys)
+function DieOnEnemyCollision(keys)
 	local caster = keys.caster
 	local teamnumber = caster:GetTeamNumber()
 	local casterPosition = caster:GetAbsOrigin()
+	local radius = keys.Radius
 	
 	local units = FindUnitsInRadius(teamnumber,
 									casterPosition,
 									nil,
-									100,
+									radius,
 									DOTA_UNIT_TARGET_TEAM_ENEMY,
 									DOTA_UNIT_TARGET_HERO,
 									DOTA_UNIT_TARGET_FLAG_NONE,
@@ -1121,7 +1138,7 @@ function PackUp(keys)
     building:RemoveSelf()
 end
 
-function PackUpMageFire(keys)
+function RemoveEntity(keys)
     local building = keys.caster
     building:RemoveSelf()
 end

@@ -214,7 +214,7 @@
 		{
 			"Target"		"CASTER"
 			"ScriptFile"	"scripts/vscripts/custom_functions_ability.lua"
-			"Function"		"PackUpMageFire"
+			"Function"		"RemoveEntity"
 		}
 	}
 	// Special	
@@ -5558,7 +5558,6 @@
 		"BaseClass"						"ability_datadriven"		
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName" 			"ability_scout_greaterreveal"
-		//"HotKeyOverride"				"V"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -5594,6 +5593,137 @@
 				"SpawnRadius"					"0"
 				"Duration"						"10"
 				"Target"						"CASTER"				
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Observer - Ward The Area
+	//=================================================================================================================
+	"ability_scout_wardthearea"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" 			"ability_scout_wardthearea"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.2 0.2 0.2"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "70 60 50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "10 10 10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "3"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		   
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" 			"custom_functions_ability.lua"
+				"Function" 				"WardArea"
+				"Radius"				"800"
+			}
+		}
+	}
+	
+	"ability_scout_ward_collision"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_collision_check"
+			{
+				"Passive"					"1"
+				"ThinkInterval"				"0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"custom_functions_ability.lua"
+						"Function"			"DieOnEnemyCollision"
+						"Radius"			"50"
+					}
+				}
+				"OnDeath"
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"		"CASTER"
+							"Radius"		"50"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}
+						"Type"				"DAMAGE_TYPE_MAGICAL"
+						"Damage"			"10"
+					}					
+				}
+			}
+		}
+	}
+	
+	"ability_scout_ward_lifetime"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"3"
+		
+		"Modifiers"
+		{
+			"modifier_lifetime"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"OnCreated"
+				{
+					"DelayedAction"
+					{
+						"Delay"			"%lifetime"
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"custom_functions_ability.lua"
+								"Function"		"RemoveEntity"
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifetime"				"360 480 600"
 			}
 		}
 	}
@@ -5973,7 +6103,8 @@
 					"RunScript"
 					{
 						"ScriptFile"		"custom_functions_ability.lua"
-						"Function"			"BlurCollisionCheck"
+						"Function"			"DieOnEnemyCollision"
+						"Radius"			"100"
 					}
 				}
 				"OnDeath"
@@ -6016,7 +6147,6 @@
 				"miss_chance"			"20"
 			}
 		}
-
 	}
 	
 	//=================================================================================================================
