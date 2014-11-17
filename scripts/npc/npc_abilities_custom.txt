@@ -8115,23 +8115,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"							"ability_datadriven"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName" 				"ability_beastmaster_criticalstrike"	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName" 			"ability_beastmaster_criticalstrike"	
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		
 		"Modifiers"
 		{
-			"the_one_criticalstrike_passive"
+			"modifier_wolf_crit"
 			{
-				"Passive" 					"1"
+				"Passive" 				"1"
 				"OnAttackStart"
 				{
 					"Random"
 					{
-						"Chance" 			"%crit_chance"
+						"Chance" 		"%crit_chance"
 						"OnSuccess"
 						{
 							"ApplyModifier"
@@ -8154,13 +8156,13 @@
 				{
 					"FireEffect"
 					{
-						"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
-						"EffectAttachType"	 "follow_origin"
-						"Target"			 "TARGET"
+						"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
 					}
 					"RemoveModifier"
 					{
-						"ModifierName"		"the_one_critical"
+						"ModifierName"		"wolf_crit"
 						"Target"			"CASTER"	
 					}
 				}
@@ -8173,14 +8175,14 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"30"
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"30"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_bonus"		    "150"
-			}
+				"var_type"					"FIELD_INTEGER"
+				"crit_bonus"		   		"125"
+			}	
 		}
 	}
 	
