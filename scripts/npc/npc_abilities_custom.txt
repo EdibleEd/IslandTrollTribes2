@@ -8042,32 +8042,43 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
 	
-			"OnSpellStart"
+		"OnSpellStart"
+		{
+			"ActOnTargets"
 			{
-				"ApplyModifier"
+				"Target"
 				{
-					"ModifierName"			"modifier_bearform"
-					"Target"
+					"Center"			"CASTER"
+					"Radius"			"%radius"
+					"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				}	
+				"Action"
+				{
+					"ApplyModifier"
 					{
-						"Center"			"CASTER"
-						"Radius"			"500"
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_howl"
+						"Duration"		"4"
 					}
 				}
-				"FireSound"
-				{
-					"EffectName"		"Hero_Lycan.Howl.Team"
-					"Target"			"TARGET"
-				}
 			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_Lycan.Howl.Team"
+				"Target"				"TARGET"
+			}
+		}
+		
 		// Modifiers
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
 			"modifier_howl"
 			{
-				"EffectName"									 "shadowshaman_voodoo"
-				"Duration"										 "%duration"
+				"EffectName"			"shadowshaman_voodoo"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%attack_speed"
@@ -8082,18 +8093,18 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"450"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"armor_reduction"			"-4"
+				"var_type"				"FIELD_FLOAT"
+				"armor_reduction"		"-4"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"attack_speed"				"-15"
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"			"-15"
 			}
 		}
 	}
@@ -8104,10 +8115,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName" 			"ability_beastmaster_criticalstrike"	
+		"BaseClass"							"ability_datadriven"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName" 				"ability_beastmaster_criticalstrike"	
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8115,12 +8126,12 @@
 		{
 			"the_one_criticalstrike_passive"
 			{
-				"Passive" "1"
+				"Passive" 					"1"
 				"OnAttackStart"
 				{
 					"Random"
 					{
-						"Chance" "%crit_chance"
+						"Chance" 			"%crit_chance"
 						"OnSuccess"
 						{
 							"ApplyModifier"
