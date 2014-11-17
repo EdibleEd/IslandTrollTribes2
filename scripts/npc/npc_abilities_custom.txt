@@ -7548,17 +7548,482 @@
 			}
 		}
 	}
+	
+	//=================================================================================================================
+	// Ability: Beast Master - Shapeshift to Normal Form
+	//=================================================================================================================
+	"ability_beastmaster_normalform"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_normalform"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"Shapeshift"
+				"Form"					"Normal"
+			}
+		}			
+	}
+
+	//=================================================================================================================
+	// Ability: Beast Master - Shapeshift to Bear Form
+	//=================================================================================================================
+	"ability_beastmaster_bearform"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_bearform"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"Shapeshift"
+				"Form"					"Bear"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"			"modifier_bearform"
+				"Target"				"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_LoneDruid.BattleCry.Bear"
+				"Target"				"CASTER"
+			}
+		}
+			
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_bearform"
+			{
+				"EffectName"			"shadowshaman_voodoo"
+				"ModelName"				"models/heroes/lone_druid/spirit_bear.vmdl"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"	
+					"MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS"					"%health_bonus"
+					//"MODIFIER_PROPERTY_MODEL_CHANGE"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"			"-4"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"-15"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_bonus"			"50"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Beast Master - Shapeshift to Wolf Form
+	//=================================================================================================================
+	"ability_beastmaster_wolfform"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_wolfform"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"Shapeshift"
+				"Form"					"Wolf"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_wolfform"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_Lycan.Howl.Team"
+				"Target"				"TARGET"
+			}
+		}
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_wolfform"
+			{
+				"EffectName"			"shadowshaman_voodoo"
+				"ModelName"				"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"				
+					//"MODIFIER_PROPERTY_MODEL_CHANGE"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"			"5"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"10"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Beast Master - Shapeshift to Elk Form
+	//=================================================================================================================
+	"ability_beastmaster_elkform"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_elkform"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "5"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "30"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"Shapeshift"
+				"Form"					"Elk"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_elkform"
+			}
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Lycan.Howl.Team"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_elkform"
+			{
+				"EffectName"			"shadowshaman_voodoo"
+				"ModelName"				"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     		"%move_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"			
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%magic_resist"
+					//"MODIFIER_PROPERTY_MODEL_CHANGE"
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"-4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed"			"10"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"35"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"25"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Beastmaster - Bear (Bash)
+	//=================================================================================================================
+	"ability_beastmaster_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"		
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName" 			"ability_beastmaster_bash"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                      "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_bear_bash_passive"
+			{
+				"Passive" "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "%bash_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"	   "CASTER"
+								"ModifierName" "modifier_bear_bash"
+							}		
+						}
+					}
+				}
+			}
+		"modifier_bear_bash"
+				{
+						 "EffectName" "generic_stunned"
+						 "EffectAttachType" "follow_overhead"
+						 "Duration"  "1.0"
+						 "OverrideAnimation" "ACT_DOTA_DISABLED"
+						 "States"
+						 {
+						   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+						 }			
+				}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bash_chance"					"20"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Beastmaster - Bear (Slam)
+	//=================================================================================================================
+	"ability_beastmaster_slam"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"ability_beastmaster_slam"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityCastAnimation"		"1"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" 			"0.5"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"                  "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+		  {
+			"Target"
+			{
+			  "Center"  "CASTER"
+			  "Radius"  "%slam_radius"
+			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			  "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+			"Action"
+			{
+			  "Damage"
+			  {
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%damage"
+				"Target" "TARGET"
+			  }          
+			}
+			"ApplyModifier"
+			{
+			"Target"				    "POINT"
+			"Radius"  					"%slam_radius"
+			"Teams"   					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Types"  					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			"ModifierName" 				"bear_slammed"
+			}	
+		  }
+		  "FireEffect"
+		  {
+			"TargetPoint" 			"POINT"
+			"EffectName" 			"generic_aoe_explosion_sphere_1_a"
+			"EffectAttachType" 		"follow_origin"
+			"EffectRadius"		 	"%slam_radius"
+		  }
+		}
+		"Modifiers"
+		{
+			"bear_slammed"
+			{
+				"Duration"      "%slow_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%slow"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slam_radius"		"315"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"65"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"-50"
+			}
+		}
+	}
+	
 	//=================================================================================================================
 	// Ability: Beast Master - (Wolf) Howl
 	//=================================================================================================================
-	//The beast master uses his wolf to howl giving -4 armor -15% attack speed to all nearby units
 	"ability_beastmaster_howl"
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"ability_beastmaster_howl"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -7638,7 +8103,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName" 			"ability_beastmaster_criticalstrike"	
 		
@@ -7705,436 +8170,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Ability: Beast Master - Shapeshift to Bear Form
-	//=================================================================================================================
-	"ability_beastmaster_bearform"
-	{
-	// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0"
-
-		// Time        
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "5"
-		"AbilityCastRange"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "30"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
-			"OnSpellStart"
-			{
-				"ApplyModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_bearform"
-				}
-				"FireSound"
-				{
-					"EffectName"		"Hero_LoneDruid.BattleCry.Bear"
-					"Target"			"TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"		"custom_functions_ability.lua"
-					"Function"			"ShapeshiftDegen"
-					"Ability"			"ShapeshiftDegen"
-				}
-			}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_bearform"
-			{
-				"EffectName"									 "shadowshaman_voodoo"
-				"ModelName"										 "models/heroes/lone_druid/spirit_bear.vmdl"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"	
-					"MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS"					"%health_bonus"
-					//"MODIFIER_PROPERTY_MODEL_CHANGE"
-				}
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"attack_damage"					"7"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"attack_speed"					"-4"
-			}	
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"move_speed"					"-15"
-			}			
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"health_bonus"					"50"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Beastmaster - Bear (Bash)
-	//=================================================================================================================
-	"ability_beastmaster_bash"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName" 			"ability_beastmaster_bash"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Time        
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"                      "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_bear_bash_passive"
-			{
-				"Passive" "1"
-				"OnAttackStart"
-				{
-					"Random"
-					{
-						"Chance" "%bash_chance"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"Target"	   "CASTER"
-								"ModifierName" "modifier_bear_bash"
-							}		
-						}
-					}
-				}
-			}
-		"modifier_bear_bash"
-				{
-						 "EffectName" "generic_stunned"
-						 "EffectAttachType" "follow_overhead"
-						 "Duration"  "1.0"
-						 "OverrideAnimation" "ACT_DOTA_DISABLED"
-						 "States"
-						 {
-						   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-						 }			
-				}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bash_chance"					"20"
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Ability: Beastmaster - Bear (Slam)
-	//=================================================================================================================
-	"ability_beastmaster_slam"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"ability_datadriven"
-		"AbilityTextureName"		"ability_beastmaster_slam"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastAnimation"		"1"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint" 			"0.5"
-		// Time        
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"                      "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		
-		"OnSpellStart"
-		{
-			"ActOnTargets"
-		  {
-			"Target"
-			{
-			  "Center"  "CASTER"
-			  "Radius"  "%slam_radius"
-			  "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			  "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			}
-			"Action"
-			{
-			  "Damage"
-			  {
-				"Type" "DAMAGE_TYPE_MAGICAL"
-				"Damage" "%damage"
-				"Target" "TARGET"
-			  }          
-			}
-			"ApplyModifier"
-			{
-			"Target"				    "POINT"
-			"Radius"  					"%slam_radius"
-			"Teams"   					"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"Types"  					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-			"ModifierName" 				"bear_slammed"
-			}	
-		  }
-		  "FireEffect"
-		  {
-			"TargetPoint" 			"POINT"
-			"EffectName" 			"generic_aoe_explosion_sphere_1_a"
-			"EffectAttachType" 		"follow_origin"
-			"EffectRadius"		 	"%slam_radius"
-		  }
-		}
-		"Modifiers"
-		{
-			"bear_slammed"
-			{
-				"Duration"      "%slow_duration"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%slow"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%slow"
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slam_radius"		"315"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"65"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-50"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Beast Master - Shapeshift to Wolf Form
-	//=================================================================================================================
-	"ability_beastmaster_bearform"
-	{
-	// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0"
-
-		// Time        
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "5"
-		"AbilityCastRange"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "30"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
-			"OnSpellStart"
-			{
-				"ApplyModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_bearform"
-				}
-				"FireSound"
-				{
-					"EffectName"		"Hero_Lycan.Howl.Team"
-					"Target"			"TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"		"custom_functions_ability.lua"
-					"Function"			"ShapeshiftDegen"
-					"Ability"			"ShapeshiftDegen"
-				}
-			}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_bearform"
-			{
-				"EffectName"									 "shadowshaman_voodoo"
-				"ModelName"										 "models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"				
-					//"MODIFIER_PROPERTY_MODEL_CHANGE"
-				}
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"attack_damage"					"2"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"attack_speed"					"5"
-			}	
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"move_speed"					"10"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Beast Master - Shapeshift to Elk Form
-	//=================================================================================================================
-	"ability_beastmaster_bearform"
-	{
-	// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"ability_beastmaster_bearform"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0.0"
-
-		// Time        
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "5"
-		"AbilityCastRange"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "30"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
-			"OnSpellStart"
-			{
-				"ApplyModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_bearform"
-				}
-				"FireSound"
-				{
-					"EffectName"		"Hero_Lycan.Howl.Team"
-					"Target"			"TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"		"custom_functions_ability.lua"
-					"Function"			"ShapeshiftDegen"
-					"Ability"			"ShapeshiftDegen"
-				}
-			}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_bearform"
-			{
-				"EffectName"									 "shadowshaman_voodoo"
-				"ModelName"										 "models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      	"%attack_speed"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     		"%move_speed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      		"%attack_damage"			
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%magic_resist"
-					//"MODIFIER_PROPERTY_MODEL_CHANGE"
-				}
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"attack_damage"					"-4"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"attack_speed"					"10"
-			}	
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"move_speed"					"35"
-			}			
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"move_speed"					"25"
-			}
-		}
-	}
 	
 	//=================================================================================================================
 	// Ability: Beastmaster - (Elk) Magic Immunity
@@ -8144,7 +8179,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"		
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName" 			"ability_beastmaster_magicimmunity"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		

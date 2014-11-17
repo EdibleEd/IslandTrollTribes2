@@ -544,16 +544,16 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         "6"        
 
-        "Ability1"              "ability_priest_selfpreservation"
-        "Ability2"              "ability_priest_rangedheal"
-        "Ability3"              "ability_priest_replenish"
-        "Ability4"              "ability_priest_healingwave"
-        "Ability5"              "ability_mage_chainlightning"
-        "Ability6"              "ability_mage_freezingblast"
-        "Ability7"              "ability_mage_stormearthfire"
-        "Ability8"              "ability_gatherer_findhide"
-        "Ability9"              "ability_gatherer_findclayballcookedmeatorbone"
-        "Ability10"             "ability_gatherer_findmanacrystalorstone"
+        "Ability1"              "ability_beastmaster_bearform"
+        "Ability2"              "ability_beastmaster_elkform"
+        "Ability3"              "ability_beastmaster_wolfform"
+        "Ability4"              "ability_beastmaster_normalform"
+        "Ability5"              "ability_beastmaster_bash"
+        "Ability6"              "ability_beastmaster_slam"
+        "Ability7"              "ability_beastmaster_howl"
+        "Ability8"              "ability_beastmaster_criticalstrike"
+        "Ability9"              "ability_beastmaster_magicimmunity"
+        "Ability10"             "ability_beastmaster_ram"
         "Ability11"             "attribute_bonus"
         //ability_gatherer_mixherbs
         
