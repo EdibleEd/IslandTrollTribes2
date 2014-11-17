@@ -2556,14 +2556,10 @@
 	
 		"OnSpellStart"
 		{
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"          			"npc_building_fire_mage"
-				"UnitCount"						"1"
-				"UnitLimit"						"10"
-				"SpawnRadius"					"100"
-				"Duration"						"30"
-				"Target"						"CASTER"				
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"SpawnMageFire"
 			}
 		}
 	}
