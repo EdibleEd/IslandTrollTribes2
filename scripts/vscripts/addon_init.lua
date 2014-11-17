@@ -1063,65 +1063,82 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 	print("PlayerGainedLevel")
 	local player = EntIndexToHScript(event.player)
 	local hero = player:GetAssignedHero()
+	local class = hero:GetClassname()
 	local level = event.level
 	
-	if hero:GetClassname() == "npc_dota_hero_witch_doctor" then
-		if level == 2 then
-			hero:FindAbilityByName("ability_mage_swap1"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_swap1"):SetHidden(false)
-			hero:FindAbilityByName("ability_mage_swap2"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_pumpup"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_flamespray"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_negativeblast"):UpgradeAbility()
-		elseif level == 3 then
-			hero:FindAbilityByName("ability_mage_reducefood"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_magefire"):UpgradeAbility()
-			hero:FindAbilityByName("ability_mage_depress"):UpgradeAbility()
-		elseif level == 4 then
-			hero:FindAbilityByName("ability_mage_metronome"):UpgradeAbility()
-		end
-	elseif hero:GetClassname() == "npc_dota_hero_huskar" then
-		if level < 5 then
-			hero:FindAbilityByName("ability_hunter_track"):UpgradeAbility()
-		end
-	elseif hero:GetClassname() == "npc_dota_hero_shadow_shaman" then
-		if level == 2 then
-			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
-		elseif level == 3 then
-			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
-		elseif level == 4 then
-			hero:FindAbilityByName("ability_gatherer_radarmanipulations"):UpgradeAbility()
-		end
-	elseif hero:GetClassname() == "npc_dota_hero_dazzle" then
-		if level == 2 then
-			hero:FindAbilityByName("ability_priest_cureall"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_pumpup"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_resistall"):UpgradeAbility()
-		elseif level == 3 then
-			hero:FindAbilityByName("ability_priest_swap1"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_swap2"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_sprayhealing"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_pacifyingsmoke"):UpgradeAbility()
-		elseif level == 4 then
-			hero:FindAbilityByName("ability_priest_mixheat"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_mixhealth"):UpgradeAbility()
-			hero:FindAbilityByName("ability_priest_mixenergy"):UpgradeAbility()
-		end
-	elseif hero:GetClassname() == "npc_dota_hero_lion" then
-		if level == 2 then
-			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
-		elseif level == 3 then
-			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
-		elseif level == 5 then
-			hero:FindAbilityByName("ability_scout_reveal"):UpgradeAbility()
-		end
-	elseif hero:GetClassname() == "npc_dota_hero_riki" then
-		if level == 2 then
-			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
-		elseif level == 3 then
-			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
-		elseif level == 5 then
-			hero:FindAbilityByName("ability_thief_cloak"):UpgradeAbility()
+	-- contains skill progression for all classes
+	-- first list denotes level 2 skills, since level 1 skills are automatically granted on spawning
+	local skillProgression = {
+		{HUNTER,
+			{"ability_hunter_track"},
+			{"ability_hunter_track"},
+			{"ability_hunter_track"}
+		},
+		--{WARRIOR,}
+		--{TRACKER,}
+		--{JUGGERNAUT,}
+		
+		{MAGE,
+			{"ability_mage_swap1","ability_mage_swap2","ability_mage_pumpup","ability_mage_flamespray","ability_mage_negativeblast"},
+			{"ability_mage_reducefood","ability_mage_magefire","ability_mage_depress"},
+			{"ability_mage_metronome"}
+		},
+		--{ELEMENTALIST,}
+		--{HYPNOTIST,}
+		--{DEMENTIA_MASTER,}
+		
+		{PRIEST,
+			{"ability_priest_cureall","ability_priest_pumpup","ability_priest_resistall"},
+			{"ability_priest_swap1","ability_priest_swap2","ability_priest_sprayhealing","ability_priest_pacifyingsmoke"},
+			{"ability_priest_mixheat","ability_priest_mixhealth","ability_priest_mixenergy"}
+		},
+		--{BOOSTER},
+		--{MASTER_HEALER},
+		--{SHAMAN,}
+		
+		{BEASTMASTER,
+		},
+		--{CHICKEN_FORM,}
+		--{PACK_LEADER,}
+		--{SHAPESHIFTER,}
+		
+		{THIEF,
+			{"ability_thief_teleport"},
+			{"ability_thief_teleport"},
+			{},
+			{"ability_thief_teleport"}
+		},
+		--{ESCAPE_ARTIST,}
+		--{CONTORTIONIST,}
+		--{ASSASSIN,}
+		
+		{SCOUT,
+			{"ability_scout_reveal"},
+			{"ability_scout_reveal"},
+			{},
+			{"ability_scout_reveal"}
+		},
+		--{OBSERVER,}
+		--{RADAR_SCOUT,}
+		--{SPY,}
+		
+		{GATHERER,
+			{"ability_gatherer_radarmanipulations"},
+			{"ability_gatherer_radarmanipulations"},
+			{"ability_gatherer_radarmanipulations"}
+		}
+		--{HERB_MASTER_TELEGATHERER,}
+		--{RADAR_TELEGATHERER,}
+		--{REMOTE_TELEGATHERER,}	
+	}
+
+	-- grant skills 
+	for _,skillList in pairs(skillProgression) do
+		if skillList[1] == class then
+			local skills = skillList[level]
+			for _,skill in pairs(skills) do
+				hero:FindAbilityByName(skill):UpgradeAbility()
+			end
 		end
 	end
 end
