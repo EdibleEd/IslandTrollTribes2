@@ -1,3 +1,12 @@
+-- Global variables
+HUNTER = "npc_dota_hero_huskar"
+PRIEST = "npc_dota_hero_dazzle"
+MAGE = "npc_dota_hero_witch_doctor"
+BEASTMASTER = "npc_dota_hero_lycan"
+THIEF = "npc_dota_hero_riki"
+SCOUT = "npc_dota_hero_lion"
+GATHERER = "npc_dota_hero_shadow_shaman"
+
 --[[
 	This is where the meat of the addon is defined and modified
 	This file exists mostly because addon_game_mode can't be dynamically reloaded
@@ -332,68 +341,48 @@ end
 --Distribute slot locked item based off of the class.
 function ITT_GameMode:OnPlayerPicked( keys ) 
     local spawnedUnit = EntIndexToHScript( keys.heroindex )
-    local itemslotlock1 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
-    local itemslotlock2 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
-    local itemslotlock3 = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
-
- 	if spawnedUnit:GetClassname() == "npc_dota_hero_witch_doctor" then
- 		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_mage_nulldamage")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_huskar" then
- 		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
-        spawnedUnit:AddItem(itemslotlock3)	
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_hunter_ensnare")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lion" then
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_scout_enemyradar")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_shadow_shaman" then
-		print(spawnedUnit:GetClassname() .. " is a gatherer")
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_gatherer_itemradar")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_dazzle" then
- 		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_priest_theglow")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_riki" then
-  		spawnedUnit:AddItem(itemslotlock1)
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_thief_teleport")
-		innate:UpgradeAbility()
-	elseif spawnedUnit:GetClassname() == "npc_dota_hero_lycan" then
-  		spawnedUnit:AddItem(itemslotlock1)
-        spawnedUnit:AddItem(itemslotlock2)
- 		spawnedUnit:AddItem(itemslotlock1)
-		spawnedUnit:SetAbilityPoints(0)
-		local innate = spawnedUnit:FindAbilityByName("ability_beastmaster_tamepet")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_spiritofthebeast")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_release")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_follow")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_stay")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_sleep")
-		innate:UpgradeAbility()
-		innate = spawnedUnit:FindAbilityByName("ability_beastmaster_pet_attack")
-		innate:UpgradeAbility()
-	else
-	print(spawnedUnit:GetUnitName() .. " is a non baseclass")
+    local itemslotlock = CreateItem("item_slot_locked", spawnedUnit, spawnedUnit)
+	
+	local innateSkills = {
+		{HUNTER,"ability_hunter_ensnare"},
+		{PRIEST,"ability_priest_the_glow"},
+		{MAGE,"ability_mage_nulldamage"},
+		{BEASTMASTER,"ability_beastmaster_tamepet","ability_beastmaster_spiritofthebeast","ability_beastmaster_pet_release",
+						"ability_beastmaster_pet_follow","ability_beastmaster_pet_stay","ability_beastmaster_pet_sleep","ability_beastmaster_pet_attack"},
+		{THIEF,"ability_thief_teleport"},
+		{SCOUT,"ability_scout_enemyradar"},
+		{GATHERER,"ability_gatherer_itemradar"}
+	}
+	local lockedSlots = {
+		{HUNTER,3},
+		{PRIEST,2},
+		{MAGE,2},
+		{BEASTMASTER,2},
+		{THIEF,1},
+		{SCOUT,1},
+		{GATHERER,0}
+	}
+	
+	local class = spawnedUnit:GetClassname()
+	
+	-- lock slots
+	for _,slotList in pairs(lockedSlots) do
+		if slotList[1] == class then
+			for i = 1, slotList[2] do
+				spawnedUnit:AddItem(itemslotlock)
+			end
+		end		
+	end
+	
+	-- add innate skills
+	spawnedUnit:SetAbilityPoints(0)
+	for _,spellList in pairs(innateSkills) do
+		if spellList[1] == class then
+			for i = 2, #spellList do
+				local ability = spawnedUnit:FindAbilityByName(spellList[i])
+				ability:UpgradeAbility()
+			end
+		end
 	end
 
     --heat handling
