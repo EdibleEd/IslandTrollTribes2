@@ -8997,79 +8997,59 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint" 			"0.0"
+		"AbilityCastPoint" 				"0.0"
+		
 		// Time        
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"			"40"
+		"AbilityCooldown"				"40"
+		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"			"10"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"                  "1"
+		"AbilityManaCost"				"10"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		   
+		"MaxLevel"                  	"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"particle_folder"           "particles/items_fx"
+			"particle"					"particles/items_fx/smoke_of_deceit.vpcf"
 		}
+		
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"RunScript"
 			{
-				"ModifierName"	"modifier_preservation"
-				"Target"
-				{
-					"Center"	"CASTER"
-				}
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"AddHeat"
+				"Heat"					"50"
+			}
+			"Heal"
+			{
+				"Target"				"CASTER"
+				"HealAmount" 			"50"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"RestoreMana"
+				"ManaRestored"			"50"	
 			}
 			"FireEffect"
 			{
-				"EffectName"		"particles/items2_fx/smoke_of_deceit.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"Target"			"CASTER"
-				"EffectRadius"		"200"
+				"EffectName"			"particles/items2_fx/smoke_of_deceit.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Target"				"CASTER"
+				"EffectRadius"			"200"
 			}
 			"FireSound"
 			{
-				"Target"		"TARGET"
-				"FireSound"		"Hero_Dazzle.Shallow_Grave"
+				"Target"				"TARGET"
+				"FireSound"				"Hero_Dazzle.Shallow_Grave"
 			}
-		}
-		
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-
-		"Modifiers"
-		{
-			"modifier_preservation"
-			{
-				"EffectName" 		"particles/items_fx/black_king_bar_avatar.vpcf" //make it something like flames idk
-				"EffectAttachType"	"follow_origin"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"custom_functions_ability.lua"
-						"Function"			"Preservation"
-						"Ability"			"ability_priest_selfpreservation"
-					}
-				}
-			}
-		}
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus"					"50.0"
-			}
-		}
+		}		
 	}	
 	//=================================================================================================================
 	// Ability: Priest - Ranged Heal
