@@ -544,9 +544,9 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityLayout"         "6"        
 
-        "Ability1"              "ability_beastmaster_bearform"
-        "Ability2"              "ability_beastmaster_elkform"
-        "Ability3"              "ability_beastmaster_wolfform"
+        "Ability1"              "ability_beastmaster_tamepet"
+        "Ability2"              "ability_beastmaster_calltobattle"
+        "Ability3"              "ability_beastmaster_fleaattackaura"
         "Ability4"              "ability_beastmaster_normalform"
         "Ability5"              "ability_beastmaster_bash"
         "Ability6"              "ability_beastmaster_slam"

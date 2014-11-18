@@ -15377,5 +15377,97 @@
 			}				
 		}
 	}
+	
+//=================================================================================================================
+// Custom: Call To Battle Modifier Applier
+//=================================================================================================================
+	"item_calltobattle_modifier_applier"
+	{
+		"ID"							"1902"
 
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"			"item_meat_modifier_applier"
+	    "ItemBaseLevel"                 "1"
+
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "9999"
+	    "AbilityCastPoint"              "0.0"
+	
+		"Modifiers"
+		{
+			"modifier_calltobattle"
+			{
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"IsDebuff"					"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "25"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"      	"30"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      		"2"
+				}
+			}				
+		}
+	}
+	
+//=================================================================================================================
+// Custom: Flea Attack Cooldown Modifier Applier
+//=================================================================================================================
+	"item_fleaattackcooldown_modifier_applier"
+	{
+		"ID"							"1903"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+	    "ItemBaseLevel"                 "1"
+
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "9999"
+	    "AbilityCastPoint"              "0.0"
+	
+		"Modifiers"
+		{
+			"modifier_fleacooldown"
+			{
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"IsDebuff"					"0"
+			}				
+		}
+	}	
+//=================================================================================================================
+// Custom: Flea Attack DPS Modifier Applier
+//=================================================================================================================
+	"item_fleaattackdps_modifier_applier"
+	{
+		"ID"							"1904"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+	    "ItemBaseLevel"                 "1"
+
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "9999"
+	    "AbilityCastPoint"              "0.0"
+	
+		"Modifiers"
+		{
+			"modifier_fleadps"
+			{
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"IsDebuff"					"0"
+			}				
+		}
+	}	
 }

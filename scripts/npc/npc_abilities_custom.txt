@@ -7307,7 +7307,6 @@
 	//=================================================================================================================
 	// Ability: Beast Master - Call to Battle
 	//=================================================================================================================
-	//Boosts stats to the beastmaster's units.
 	"ability_beastmaster_calltobattle"
 	{
 	// General
@@ -7332,70 +7331,72 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 	
-			"OnSpellStart"
+		"OnSpellStart"
+		{
+			"RunScript"
 			{
-				"ApplyModifier"
-					{
-						"ModifierName"  "modifier_calltobattle"
-						"Duration"      "%duration"
-						"Radius"		"GLOBAL"
-						"Target"
-						{
-							"Center"		"CASTER"					
-							"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types" 		"DOTA_UNIT_TARGET_CREEP"							
-							"Flags"			"DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-						}						
-					}			
-				"FireSound"
-				{
-					"EffectName"		"Hero_LoneDruid.BattleCry"
-					"Target"			"TARGET"
-				}
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"CallToBattle"
+				"Duration"				"6"
 			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_LoneDruid.BattleCry"
+				"Target"				"TARGET"
+			}
+		}		
+	}
+	
+	//=================================================================================================================
+	// Ability: Beast Master - Flea Attack Aura
+	//=================================================================================================================
+	"ability_beastmaster_fleaattackaura"
+	{
+	// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ability_beastmaster_fleaattackaura"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"Precache" 
+		{
+			"particle"					"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
+		}
+		
+		"OnProjectileFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_functions_ability.lua"
+				"Function"				"FleaAttackDamage"
+			}
+		}
+		
 		// Modifiers
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"modifier_calltobattle"
+			"modifier_flea_attack"
 			{
-				"EffectName"									 "shadowshaman_voodoo"
-				"Duration"										 "%duration"
-				"Properties"
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"ThinkInterval"			"0.05"
+				"OnIntervalThink"		
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%move_speed"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"      	"%attack_damage"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      		"%armor_bonus"
+					"RunScript"
+					{
+						"ScriptFile"	"custom_functions_ability.lua"
+						"Function"		"FleaAttack"
+						"Particle"		"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
+					}
 				}
 			}
 		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"					"6"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_damage"				"30"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"move_speed"				"25"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"armor_bonus"				"2"
-			}
-		}
 	}
+	
 	//=================================================================================================================
 	// Ability: Beast Master - Fowl Play
 	//=================================================================================================================
