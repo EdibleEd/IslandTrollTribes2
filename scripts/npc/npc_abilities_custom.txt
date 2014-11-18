@@ -7360,6 +7360,8 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+
 		"Precache" 
 		{
 			"particle"					"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
@@ -7401,7 +7403,7 @@
 	// Ability: Beast Master - Fowl Play
 	//=================================================================================================================
 	//Transforms all nearby trolls in a 450 AoE into a chicken for 2.25 seconds.
-	"ability_beastmaster_fowl_play"
+	"ability_beastmaster_fowlplay"
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -7426,26 +7428,27 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
 	
-			"OnSpellStart"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
 			{
-				"ApplyModifier"
+				"ModifierName"			"modifier_fowlplay"
+				"Target"
 				{
-					"ModifierName"			"modifier_fowlplay"
-					"Target"
-					{
-						"Center"			"CASTER"
-						"Radius"			"%radius"
-						"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types"				"DOTA_UNIT_TARGET_HERO"
-					}
-				}
-				"FireSound"
-				{
-					"EffectName"		"General.Chicken"
-					"Target"			"TARGET"
+					"Center"			"CASTER"
+					"Radius"			"%radius"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO"
 				}
 			}
+			"FireSound"
+			{
+				"EffectName"		"General.Chicken"
+				"Target"			"TARGET"
+			}
+		}
 		// Modifiers
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
