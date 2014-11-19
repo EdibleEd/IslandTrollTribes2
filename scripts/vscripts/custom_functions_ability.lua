@@ -749,7 +749,8 @@ function TamePet(keys)
 		
 	if (#pets) >= maxPets then
 		print("Maximum amount of pets reached, removing tame pet skill!")
-		caster:FindAbilityByName("ability_beastmaster_tamepet2"):SetHidden(true)
+		SetAbilityVisibility(caster, "ability_beastmaster_tamepet", false)
+		SetAbilityVisibility(caster, "ability_beastmaster_tamepet2", false)
 	end
 end
 
@@ -812,8 +813,8 @@ function GrowPet(keys)
 			newPet.vOwner = owner
 			if newPet:HasAbility("ability_beastmaster_pet_grow2") then
 				newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
-				hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(false)
-				hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(false)	
+				SetAbilityVisibility(caster, "ability_beastmaster_pet_sleep", true)
+				SetAbilityVisibility(caster, "ability_beastmaster_pet_attack", true)
 			end
 			break
 		end
@@ -853,23 +854,25 @@ function PetDeath(keys)
 	local owner = pet.vOwner
 	local hero = owner:GetAssignedHero()
 	
-	hero:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(false)
-	hero:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(true)
-	hero:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(true)
-	hero:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(true)
-	hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(true)
-	hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(true)
+	SetAbilityVisibility(caster,"ability_beastmaster_tamepet", true)
+	SetAbilityVisibility(caster,"ability_beastmaster_tamepet2", true)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_sleep", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_attack", false)
 end
 
 function ReleasePet(caster,pet)
 	print("Releasing pet")
 	pet:SetTeam(DOTA_TEAM_NEUTRALS)
-	caster:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(false)
-	caster:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(true)
-	caster:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(true)
-	caster:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(true)
-	caster:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(true)
-	caster:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(true)
+	SetAbilityVisibility(caster,"ability_beastmaster_tamepet", true)
+	SetAbilityVisibility(caster,"ability_beastmaster_tamepet2", true)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_sleep", false)
+	SetAbilityVisibility(caster,"ability_beastmaster_pet_attack", false)
 end
 
 function HealPet(keys)
@@ -1065,14 +1068,13 @@ function Shapeshift(keys)
 	
 	-- modify skill visibilities, remove modifiers from other forms
 	for _,skillList in pairs(formSkills) do
-		local hidden = (form ~= skillList[1])
+		local isVisible = (form == skillList[1])
 		local modifier = skillList[2]
 		if form ~= skillList[1] and modifier ~= nil then
 			caster:RemoveModifierByName(modifier)
 		end
 		for _,skill in pairs(skillList[3]) do
-			local ability = caster:FindAbilityByName(skill)
-			ability:SetHidden(hidden)
+			SetAbilityVisibility(caster, skill, isVisible)
 		end
 	end
 end
@@ -1316,12 +1318,8 @@ function SwapSpellBook(keys)
 		"ability_priest_mixhealth",
 	}
 	
-	local HideBook1 = true
-	local HideBook2 = false
-	if book == 2 then
-		HideBook1 = false
-		HideBook2 = true
-	end
+	local Book1Visibility = (book == 2)
+	local Book2Visibiltiy = (book == 1)
 	
 	if class == MAGE then
 		book1 = mage_book1Spells
@@ -1332,12 +1330,10 @@ function SwapSpellBook(keys)
 	end
 		
 	for _,spell in pairs(book1) do
-		ability = caster:FindAbilityByName(spell)
-		ability:SetHidden(HideBook1)
+		SetAbilityVisibility(caster, spell, Book1Visibility)
 	end
 	for _,spell in pairs(book2) do
-		ability = caster:FindAbilityByName(spell)
-		ability:SetHidden(HideBook2)
+		SetAbilityVisibility(caster, spell, Book2Visibility)
 	end
 end
 
