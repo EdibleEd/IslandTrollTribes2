@@ -794,6 +794,11 @@ function GrowPet(keys)
 	local owner = pet.vOwner
 	local hero = owner:GetAssignedHero()
 	
+	local isBaby = false
+	if pet:HasAbility("ability_beastmaster_pet_grow1") then
+		isBaby = true
+	end
+	
 	local GrowTable = {
 						{"npc_creep_fawn","npc_creep_elk_pet"},
 						{"npc_creep_wolf_pup","npc_creep_wolf_jungle"},
@@ -811,7 +816,10 @@ function GrowPet(keys)
 			pet:RemoveSelf()
 			local newPet = CreateUnitByName(v[2],location, true,nil,nil,team)
 			newPet.vOwner = owner
-			if newPet:HasAbility("ability_beastmaster_pet_grow2") then
+			newPet.AddAbility("ability_beastmaster_pet_sleep")
+			newPet:FindAbilityByName("ability_beastmaster_pet_sleep"):SetLevel(1)
+			if isBaby then
+				newPet.AddAbility("ability_beastmaster_pet_grow2")
 				newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
 				SetAbilityVisibility(caster, "ability_beastmaster_pet_sleep", true)
 				SetAbilityVisibility(caster, "ability_beastmaster_pet_attack", true)
