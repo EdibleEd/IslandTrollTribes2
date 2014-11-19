@@ -731,25 +731,37 @@ function TamePet(keys)
 	local target = keys.target
 	local unitName = target:GetUnitName()
 	local owner = caster:GetOwner()
+	local maxPets = keys.MaxPets
 	
-	if unitName == "npc_creep_fawn" or unitName == "npc_creep_wolf_pup" or unitName == "npc_creep_bear_cub" then
-		target.vOwner = owner
-		target:FindAbilityByName("ability_beastmaster_pet_grow1"):SetLevel(1)
-		caster:FindAbilityByName("ability_beastmaster_tamepet"):SetHidden(true)
-		caster:FindAbilityByName("ability_beastmaster_pet_release"):SetHidden(false)
-		caster:FindAbilityByName("ability_beastmaster_pet_follow"):SetHidden(false)
-		caster:FindAbilityByName("ability_beastmaster_pet_stay"):SetHidden(false)
+	if (unitName == "npc_creep_fawn") or (unitName == "npc_creep_wolf_pup") or (unitName == "npc_creep_bear_cub") then
+		if target:FindAbilityByName("ability_pet") == nil then
+			target.vOwner = owner
+			target:AddAbility("ability_pet")
+			target:FindAbilityByName("ability_pet"):SetLevel(1)
+			target:FindAbilityByName("ability_beastmaster_pet_grow1"):SetLevel(1)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
+		end
+	end
+	
+	local pets = FindPets(keys)
+		
+	if (#pets) >= maxPets then
+		print("Maximum amount of pets reached, removing tame pet skill!")
+		caster:FindAbilityByName("ability_beastmaster_tamepet2"):SetHidden(true)
 	end
 end
 
-function FindPet(keys)
+function FindPets(keys)
 	local caster = keys.caster
 	local owner = caster:GetOwner()
 	if owner == nil then
+		print("using different owner field")
 		owner = caster.vOwner
 	end
 	local teamnumber = caster:GetTeamNumber()
-	local pet = nil
+	local pets = {}
 	
 	local units = FindUnitsInRadius(teamnumber,
 									Vector(0,0,0),
@@ -761,22 +773,24 @@ function FindPet(keys)
 									FIND_ANY_ORDER,
 									false)
 	for _,unit in pairs(units) do
-		if unit:HasAbility("ability_wander") and unit.vOwner == owner then
-			pet = unit
-			break
+		if unit:HasAbility("ability_pet") and unit.vOwner == owner then
+			print("Found a pet!")
+			table.insert(pets,unit)
 		end
 	end
 	
-	if pet == nil then
+	if pets == {} then
 		print("Failed to find pet")
 	end
 	
-	return pet
+	return pets
 end
 
 function GrowPet(keys)
-	local caster = keys.caster
-	local owner = caster.vOwner
+	local pet = keys.caster
+	local name = pet:GetUnitName()
+	local team = pet:GetTeam()
+	local owner = pet.vOwner
 	local hero = owner:GetAssignedHero()
 	
 	local GrowTable = {
@@ -787,33 +801,32 @@ function GrowPet(keys)
 						{"npc_creep_wolf_jungle","npc_creep_wolf_jungle_adult"},
 						{"npc_creep_bear_jungle","npc_creep_bear_jungle_adult"}}
 	
-	local pet = FindPet(keys)
-	if pet ~= nil then
-		name = pet:GetUnitName()
-		print("Pet upgrade")
-		
-		for _,v in pairs(GrowTable) do
-			if v[1] == name then
-				local location = pet:GetAbsOrigin()
-				local team = pet:GetTeam()
-				pet:RemoveSelf()
-				local newPet = CreateUnitByName(v[2],location, true,nil,nil,team)
-				newPet.vOwner = owner
-				if newPet:HasAbility("ability_beastmaster_pet_grow2") then
-					newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
-					hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(false)
-					hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(false)	
-				end
-				break
+	
+	print("Pet is growing into its next stage")	
+	
+	for _,v in pairs(GrowTable) do
+		if v[1] == name then
+			local location = pet:GetAbsOrigin()
+			pet:RemoveSelf()
+			local newPet = CreateUnitByName(v[2],location, true,nil,nil,team)
+			newPet.vOwner = owner
+			if newPet:HasAbility("ability_beastmaster_pet_grow2") then
+				newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
+				hero:FindAbilityByName("ability_beastmaster_pet_sleep"):SetHidden(false)
+				hero:FindAbilityByName("ability_beastmaster_pet_attack"):SetHidden(false)	
 			end
-		end	
-	end
+			break
+		end
+	end	
 end
 
 function PetCommand(keys)
 	local caster = keys.caster
-	local command = keys.Command	
-	local pet = FindPet(keys)
+	local command = keys.Command
+	local petNumber = keys.PetNumber
+	
+	local pets = FindPet(keys)
+	local pet = pets[petNumber]
 	
 	if pet ~= nil then
 		print(command)
@@ -893,11 +906,13 @@ end
 
 function CallToBattle(keys)
 	local caster = keys.caster
-	local pet = FindPet(keys)
+	local pets = FindPets(keys)
 	local dur = keys.Duration
 	
-	local item = CreateItem("item_calltobattle_modifier_applier", caster, caster)
-    item:ApplyDataDrivenModifier(caster, pet, "modifier_calltobattle", {duration=dur})
+	for _,pet in pairs(pets) do
+		local item = CreateItem("item_calltobattle_modifier_applier", caster, caster)
+		item:ApplyDataDrivenModifier(caster, pet, "modifier_calltobattle", {duration=dur})
+	end
 end
 
 function FleaAttack(keys)
@@ -1372,6 +1387,13 @@ function ToggleAbility(keys)
 		else			
 			ability:SetActivated(true)	
 		end
+	end
+end
+
+function SetAbilityVisibility(unit, abilityName, visibility)
+	local ability = unit:FindAbilityByName(abilityName)
+	if ability ~= nil then
+		ability:SetHidden(visibility)
 	end
 end
 
