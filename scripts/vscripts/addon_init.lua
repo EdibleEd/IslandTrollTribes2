@@ -1097,6 +1097,11 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 		--{SHAMAN,}
 		
 		{BEASTMASTER,
+			{},
+			{},
+			{},
+			{},
+			{}
 		},
 		--{CHICKEN_FORM,}
 		--{PACK_LEADER,}
@@ -1136,8 +1141,10 @@ function ITT_GameMode:OnPlayerGainedLevel(event)
 	for _,skillList in pairs(skillProgression) do
 		if skillList[1] == class then
 			local skills = skillList[level]
-			for _,skill in pairs(skills) do
-				hero:FindAbilityByName(skill):UpgradeAbility()
+			if skills ~= nil then
+				for _,skill in pairs(skills) do
+					hero:FindAbilityByName(skill):UpgradeAbility()
+				end
 			end
 		end
 	end

@@ -746,9 +746,9 @@ function TamePet(keys)
 			target:AddAbility(growAbility)
 			target:FindAbilityByName("ability_pet"):SetLevel(1)
 			target:FindAbilityByName(growAbility):SetLevel(1)
-			SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
-			SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
-			SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_release", true)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", true)
+			SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", true)
 		end
 	end
 	
@@ -795,7 +795,7 @@ function FindPets(keys)
 end
 
 function GrowPet(keys)
-	local pet =f keys.caster
+	local pet = keys.caster
 	local name = pet:GetUnitName()
 	local team = pet:GetTeam()
 	local owner = pet.vOwner
@@ -829,13 +829,14 @@ function GrowPet(keys)
 			pet:RemoveSelf()
 			local newPet = CreateUnitByName(v[2],location, true,nil,nil,team)
 			newPet.vOwner = owner
-			newPet.AddAbility("ability_beastmaster_pet_sleep")
+			newPet:AddAbility("ability_pet")
+			newPet:AddAbility("ability_beastmaster_pet_sleep")
 			newPet:FindAbilityByName("ability_beastmaster_pet_sleep"):SetLevel(1)
 			if isBaby then
-				newPet.AddAbility(growAbility)
+				newPet:AddAbility(growAbility)
 				newPet:FindAbilityByName(growAbility):SetLevel(1)
-				SetAbilityVisibility(caster, "ability_beastmaster_pet_sleep", true)
-				SetAbilityVisibility(caster, "ability_beastmaster_pet_attack", true)
+				SetAbilityVisibility(hero, "ability_beastmaster_pet_sleep", true)
+				SetAbilityVisibility(hero, "ability_beastmaster_pet_attack", true)
 			end
 			break
 		end
@@ -847,7 +848,7 @@ function PetCommand(keys)
 	local command = keys.Command
 	local petNumber = 1
 	
-	local pets = FindPet(keys)
+	local pets = FindPets(keys)
 	local pet = pets[petNumber]
 	
 	if pet ~= nil then
