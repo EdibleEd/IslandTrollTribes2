@@ -7006,6 +7006,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"ability_beastmaster_empathicrage"
+		
+		"MaxLevel"						"1"
 	}	
 	
 	//=================================================================================================================

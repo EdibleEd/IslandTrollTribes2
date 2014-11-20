@@ -862,13 +862,13 @@ function PetDeath(keys)
 	local owner = pet.vOwner
 	local hero = owner:GetAssignedHero()
 	
-	SetAbilityVisibility(caster,"ability_beastmaster_tamepet", true)
-	SetAbilityVisibility(caster,"ability_beastmaster_tamepet2", true)
-	SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
-	SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
-	SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
-	SetAbilityVisibility(caster,"ability_beastmaster_pet_sleep", false)
-	SetAbilityVisibility(caster,"ability_beastmaster_pet_attack", false)
+	SetAbilityVisibility(hero,"ability_beastmaster_tamepet", true)
+	SetAbilityVisibility(hero,"ability_beastmaster_tamepet2", true)
+	SetAbilityVisibility(hero,"ability_beastmaster_pet_release", false)
+	SetAbilityVisibility(hero,"ability_beastmaster_pet_follow", false)
+	SetAbilityVisibility(hero,"ability_beastmaster_pet_stay", false)
+	SetAbilityVisibility(hero,"ability_beastmaster_pet_sleep", false)
+	SetAbilityVisibility(hero,"ability_beastmaster_pet_attack", false)
 	
 	-- check if BM is within 600 range
 	local distance = pet:GetRangeToUnit(hero)
@@ -1407,8 +1407,9 @@ end
 
 function SetAbilityVisibility(unit, abilityName, visibility)
 	local ability = unit:FindAbilityByName(abilityName)
-	if ability ~= nil then
-		ability:SetHidden(visibility)
+	local hidden = (visibility == false)
+	if ability ~= nil and unit ~= nil then
+		ability:SetHidden(hidden)
 	end
 end
 
