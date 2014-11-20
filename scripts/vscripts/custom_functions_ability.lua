@@ -732,13 +732,20 @@ function TamePet(keys)
 	local unitName = target:GetUnitName()
 	local owner = caster:GetOwner()
 	local maxPets = keys.MaxPets
+	local growSpeed = keys.Growth
+	local growAbility = "ability_beastmaster_pet_grow1"
+	
+	if growSpeed == "Fast" then
+		growAbility = "ability_beastmaster_pet_grow1fast"
+	end
 	
 	if (unitName == "npc_creep_fawn") or (unitName == "npc_creep_wolf_pup") or (unitName == "npc_creep_bear_cub") then
 		if target:FindAbilityByName("ability_pet") == nil then
 			target.vOwner = owner
 			target:AddAbility("ability_pet")
+			target:AddAbility(growAbility)
 			target:FindAbilityByName("ability_pet"):SetLevel(1)
-			target:FindAbilityByName("ability_beastmaster_pet_grow1"):SetLevel(1)
+			target:FindAbilityByName(growAbility):SetLevel(1)
 			SetAbilityVisibility(caster,"ability_beastmaster_pet_release", false)
 			SetAbilityVisibility(caster,"ability_beastmaster_pet_follow", false)
 			SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
@@ -788,14 +795,20 @@ function FindPets(keys)
 end
 
 function GrowPet(keys)
-	local pet = keys.caster
+	local pet =f keys.caster
 	local name = pet:GetUnitName()
 	local team = pet:GetTeam()
 	local owner = pet.vOwner
 	local hero = owner:GetAssignedHero()
+	local heroIsSub = hero:HasAbility("ability_beastmaster_tamepet2")
+	local growAbility = "ability_beastmaster_pet_grow2"
+	
+	if heroIsSub then
+		growAbility = "ability_beastmaster_pet_grow2fast"
+	end
 	
 	local isBaby = false
-	if pet:HasAbility("ability_beastmaster_pet_grow1") then
+	if pet:HasAbility("ability_beastmaster_pet_grow1") or pet:HasAbility("ability_beastmaster_pet_grow1fast") then
 		isBaby = true
 	end
 	
@@ -819,8 +832,8 @@ function GrowPet(keys)
 			newPet.AddAbility("ability_beastmaster_pet_sleep")
 			newPet:FindAbilityByName("ability_beastmaster_pet_sleep"):SetLevel(1)
 			if isBaby then
-				newPet.AddAbility("ability_beastmaster_pet_grow2")
-				newPet:FindAbilityByName("ability_beastmaster_pet_grow2"):SetLevel(1)
+				newPet.AddAbility(growAbility)
+				newPet:FindAbilityByName(growAbility):SetLevel(1)
 				SetAbilityVisibility(caster, "ability_beastmaster_pet_sleep", true)
 				SetAbilityVisibility(caster, "ability_beastmaster_pet_attack", true)
 			end
@@ -832,7 +845,7 @@ end
 function PetCommand(keys)
 	local caster = keys.caster
 	local command = keys.Command
-	local petNumber = keys.PetNumber
+	local petNumber = 1
 	
 	local pets = FindPet(keys)
 	local pet = pets[petNumber]
@@ -906,13 +919,24 @@ function SetSpawnChance(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local level = caster:GetLevel()
+	local bonus = 0
+	local maxLevel = 4
+	-- shitty way of determining whether the BM is pack leader form
+	-- easier than copy pasting the massive spirit of the beast ability and only changing one function argument
+	local heroIsSub = caster:HasAbility("ability_beastmaster_tamepet2")
+	
+	if heroIsSub then
+		bonus = 5
+		maxLevel = 9
+	end
 	
 	if keys.Remove == "1" then
 		level = 0
 	end
 	
-	if level > 5 then
-		level = 5
+	level = level + bonus
+	if level > maxLevel then
+		level = maxLevel
 	end
 	
 	target:SetModifierStackCount("modifier_spawn_chance",nil,level)
