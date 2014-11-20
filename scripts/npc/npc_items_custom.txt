@@ -15286,15 +15286,15 @@
 	{
 		"ID"							"1902"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "BEHAVIOR DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sphere"
 		"Effect" 						""
 
-	// Item Info
-	//-------------------------------------------------------------------------------------------------------------
+		// Item Info
+		//---------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
@@ -15323,15 +15323,15 @@
 	{
 		"ID"							"1900"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"			"heat_modifier_applier"
 	    "ItemBaseLevel"                 "1"
 
 	    // Stats
-	    //-------------------------------------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "9999"
 	    "AbilityCastPoint"              "0.0"
 	
@@ -15339,10 +15339,10 @@
 		{
 			"modifier_heat_passive"
 			{
-				"Passive"					"1"
-				"IsHidden"					"0"
-				"IsDebuff"					"0"
-				"TextureName"				"item_heat_modifier_applier"
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"TextureName"			"item_heat_modifier_applier"
 			}				
 		}
 	}
@@ -15354,15 +15354,15 @@
 	{
 		"ID"							"1901"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"			"item_meat_modifier_applier"
 	    "ItemBaseLevel"                 "1"
 
 	    // Stats
-	    //-------------------------------------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "9999"
 	    "AbilityCastPoint"              "0.0"
 	
@@ -15370,10 +15370,10 @@
 		{
 			"modifier_meat_passive"
 			{
-				"Passive"					"1"
-				"IsHidden"					"0"
-				"IsDebuff"					"0"
-				"TextureName"				"item_meat_modifier_applier"
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"TextureName"			"item_meat_modifier_applier"
 			}				
 		}
 	}
@@ -15385,15 +15385,15 @@
 	{
 		"ID"							"1902"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"			"item_meat_modifier_applier"
 	    "ItemBaseLevel"                 "1"
 
 	    // Stats
-	    //-------------------------------------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "9999"
 	    "AbilityCastPoint"              "0.0"
 	
@@ -15401,9 +15401,9 @@
 		{
 			"modifier_calltobattle"
 			{
-				"Passive"					"1"
-				"IsHidden"					"1"
-				"IsDebuff"					"0"
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsDebuff"				"0"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "25"
@@ -15421,14 +15421,14 @@
 	{
 		"ID"							"1903"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 	    "ItemBaseLevel"                 "1"
 
 	    // Stats
-	    //-------------------------------------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "9999"
 	    "AbilityCastPoint"              "0.0"
 	
@@ -15436,9 +15436,9 @@
 		{
 			"modifier_fleacooldown"
 			{
-				"Passive"					"1"
-				"IsHidden"					"1"
-				"IsDebuff"					"0"
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsDebuff"				"0"
 			}				
 		}
 	}	
@@ -15449,14 +15449,14 @@
 	{
 		"ID"							"1904"
 
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+		// General
+		//---------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 	    "ItemBaseLevel"                 "1"
 
 	    // Stats
-	    //-------------------------------------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "9999"
 	    "AbilityCastPoint"              "0.0"
 	
@@ -15464,10 +15464,46 @@
 		{
 			"modifier_fleadps"
 			{
-				"Passive"					"1"
-				"IsHidden"					"1"
-				"IsDebuff"					"0"
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsDebuff"				"0"
 			}				
 		}
-	}	
+	}
+
+//=================================================================================================================
+// Custom: Empathic Rage Modifier Applier
+//=================================================================================================================
+	"item_empathicrage_modifier_applier"
+	{
+		"ID"							"1905"
+
+		// General
+		//---------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+	    "ItemBaseLevel"                 "1"
+
+	    // Stats
+	    //---------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "9999"
+	    "AbilityCastPoint"              "0.0"
+	
+		"Modifiers"
+		{
+			"modifier_empathicrage"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"IsPurgable"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "20"				
+				}
+			}				
+		}
+	}
 }

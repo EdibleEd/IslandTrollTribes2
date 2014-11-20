@@ -869,6 +869,17 @@ function PetDeath(keys)
 	SetAbilityVisibility(caster,"ability_beastmaster_pet_stay", false)
 	SetAbilityVisibility(caster,"ability_beastmaster_pet_sleep", false)
 	SetAbilityVisibility(caster,"ability_beastmaster_pet_attack", false)
+	
+	-- check if BM is within 600 range
+	local distance = pet:GetRangeToUnit(hero)
+	print(distance)
+	
+	if distance <= 600 then
+		if hero:HasAbility("ability_beastmaster_empathicrage") then
+			local item = CreateItem("item_empathicrage_modifier_applier", hero, hero)
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_empathicrage", {duration=10})			
+		end
+	end
 end
 
 function ReleasePet(caster,pet)

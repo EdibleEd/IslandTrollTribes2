@@ -547,7 +547,7 @@
         "Ability1"              "ability_beastmaster_tamepet"
         "Ability2"              "ability_beastmaster_calltobattle"
         "Ability3"              "ability_beastmaster_fleaattackaura"
-        "Ability4"              "ability_beastmaster_normalform"
+        "Ability4"              "ability_beastmaster_empathicrage"
         "Ability5"              "ability_beastmaster_bash"
         "Ability6"              "ability_beastmaster_slam"
         "Ability7"              "ability_beastmaster_howl"
