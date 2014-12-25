@@ -283,37 +283,40 @@ function ITT_GameMode:InitGameMode()
     -- spawner_npc_bush_scout
 
     --flash ui commands
-    print("flash ui commands")
+    --print("flash ui commands")
+    Convars:RegisterCommand( "Sleep", function(...) return self:_Sleep( ... ) end, "Player is put to sleep", 0 )
+    Convars:RegisterCommand( "PickUpMeat", function(...) return self:_PickUpMeat( ... ) end, "Player drops one raw meat", 0)
     Convars:RegisterCommand( "EatMeat", function(...) return self:_EatMeat( ... ) end, "Player eats one raw meat", 0 )
-    Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops all raw meat", 0 )
+    Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops one raw meat", 0 )
+    Convars:RegisterCommand( "DropAllMeat", function(...) return self:_DropAllMeat( ... ) end, "Player drops all raw meat", 0)
+    Convars:RegisterCommand( "Panic", function(...) return self:_DropAllMeat( ... ) end, "Player panics!", 0)
 
     --prepare neutral spawns
     self.NumPassiveNeutrals = 0
     self.NumAggressiveNeutrals = 0
 end
 
-function ITT_GameMode:_DropMeat( cmdName)
-    print("DropMeat Command")
+--Handlers for commands from custom UI
+function ITT_GameMode:_Sleep(cmdName)
+    print("Sleep Command")
     local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
     if cmdPlayer then
         local nPlayerID = cmdPlayer:GetPlayerID()
         local hero = cmdPlayer:GetAssignedHero()
-        print("COMMAND FROM PLAYER: " .. nPlayerID)
-        print("Drop meat hero " .. hero:GetName())
 
-        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
-        if meatStacks > 0 then
-            for i = 1,meatStacks do
-                local newItem = CreateItem("item_meat_raw", nil, nil)
-                CreateItemOnPositionSync(hero:GetOrigin() + RandomVector(RandomInt(50,100)), newItem)
-
-                hero:SetModifierStackCount("modifier_meat_passive", nil, 0)
-            end
+        local abilityName = "Ability_Rest_Troll"
+        local ability = hero:FindAbilityByName(abilityName)
+        if ability == nil then
+            hero:AddAbility(abilityName)
+            ability = hero:FindAbilityByName( abilityName )
+            ability:SetLevel(1)
         end
+        print("trying to cast ability ", abilityName)
+        hero:CastAbilityNoTarget(ability, -1)
     end
 end
 
-function ITT_GameMode:_EatMeat( cmdName, arg1, arg2 )
+function ITT_GameMode:_EatMeat(cmdName)
     print("EatMeat Command")
     local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
     if cmdPlayer then
@@ -333,6 +336,46 @@ function ITT_GameMode:_EatMeat( cmdName, arg1, arg2 )
             hero:CastAbilityNoTarget(ability, -1)
 
             hero:SetModifierStackCount("modifier_meat_passive", nil, meatStacks-1)
+        end
+    end
+end
+
+function ITT_GameMode:_DropMeat(cmdName)
+    print("DropMeat Command")
+    local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
+    if cmdPlayer then
+        local nPlayerID = cmdPlayer:GetPlayerID()
+        local hero = cmdPlayer:GetAssignedHero()
+        print("COMMAND FROM PLAYER: " .. nPlayerID)
+        print("Drop one meat from hero " .. hero:GetName())
+
+        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
+        if meatStacks > 0 then
+            local newItem = CreateItem("item_meat_raw", nil, nil)
+            CreateItemOnPositionSync(hero:GetOrigin() + RandomVector(RandomInt(50,100)), newItem)
+
+            hero:SetModifierStackCount("modifier_meat_passive", nil, meatStacks - 1)
+        end
+    end
+end
+
+function ITT_GameMode:_DropAllMeat(cmdName)
+    print("DropAllMeat Command")
+    local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
+    if cmdPlayer then
+        local nPlayerID = cmdPlayer:GetPlayerID()
+        local hero = cmdPlayer:GetAssignedHero()
+        print("COMMAND FROM PLAYER: " .. nPlayerID)
+        print("Drop all meat hero " .. hero:GetName())
+
+        local meatStacks = hero:GetModifierStackCount("modifier_meat_passive", nil)
+        if meatStacks > 0 then
+            for i = 1,meatStacks do
+                local newItem = CreateItem("item_meat_raw", nil, nil)
+                CreateItemOnPositionSync(hero:GetOrigin() + RandomVector(RandomInt(50,100)), newItem)
+
+                hero:SetModifierStackCount("modifier_meat_passive", nil, 0)
+            end
         end
     end
 end
