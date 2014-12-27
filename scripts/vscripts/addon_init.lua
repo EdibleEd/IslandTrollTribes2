@@ -289,7 +289,7 @@ function ITT_GameMode:InitGameMode()
     Convars:RegisterCommand( "EatMeat", function(...) return self:_EatMeat( ... ) end, "Player eats one raw meat", 0 )
     Convars:RegisterCommand( "DropMeat", function(...) return self:_DropMeat( ... ) end, "Player drops one raw meat", 0 )
     Convars:RegisterCommand( "DropAllMeat", function(...) return self:_DropAllMeat( ... ) end, "Player drops all raw meat", 0)
-    Convars:RegisterCommand( "Panic", function(...) return self:_DropAllMeat( ... ) end, "Player panics!", 0)
+    Convars:RegisterCommand( "Panic", function(...) return self:_Panic( ... ) end, "Player panics!", 0)
 
     --prepare neutral spawns
     self.NumPassiveNeutrals = 0
@@ -377,6 +377,25 @@ function ITT_GameMode:_DropAllMeat(cmdName)
                 hero:SetModifierStackCount("modifier_meat_passive", nil, 0)
             end
         end
+    end
+end
+
+function ITT_GameMode:_Panic(cmdName)
+    print("Panic Command")
+    local cmdPlayer = Convars:GetCommandClient()  -- returns the player who issued the console command
+    if cmdPlayer then
+        local nPlayerID = cmdPlayer:GetPlayerID()
+        local hero = cmdPlayer:GetAssignedHero()
+
+        local abilityName = "ability_panic"
+        local ability = hero:FindAbilityByName(abilityName)
+        if ability == nil then
+            hero:AddAbility(abilityName)
+            ability = hero:FindAbilityByName( abilityName )
+            ability:SetLevel(1)
+        end
+        print("trying to cast ability ", abilityName)
+        hero:CastAbilityNoTarget(ability, -1)
     end
 end
 

@@ -9923,8 +9923,21 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET |"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName" 			"razor_plasma_field"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+
+		// Time        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "15"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "20"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9934,6 +9947,7 @@
 				{
 					"Target"			"CASTER"
 					"ModifierName"		"modifier_panic"
+					"Duration"			"15"
 				}
 				"FireSound"
 				{
