@@ -407,7 +407,7 @@ function ITT_GameMode:OnPlayerPicked( keys )
 	
 	local innateSkills = {
 		{HUNTER,"ability_hunter_ensnare"},
-		{PRIEST,"ability_priest_the_glow"},
+		{PRIEST,"ability_priest_theglow"},
 		{MAGE,"ability_mage_nulldamage"},
 		{BEASTMASTER,"ability_beastmaster_tamepet","ability_beastmaster_spiritofthebeast","ability_beastmaster_pet_release",
 						"ability_beastmaster_pet_follow","ability_beastmaster_pet_stay","ability_beastmaster_pet_sleep","ability_beastmaster_pet_attack"},
@@ -441,8 +441,9 @@ function ITT_GameMode:OnPlayerPicked( keys )
 	for _,spellList in pairs(innateSkills) do
 		if spellList[1] == class then
 			for i = 2, #spellList do
+                print("adding innate spell " .. spellList[i])
 				local ability = spawnedUnit:FindAbilityByName(spellList[i])
-				ability:UpgradeAbility()
+				ability:UpgradeAbility(true)
 			end
 		end
 	end
